@@ -22,7 +22,7 @@ const classes = pageClasses(data);
         {classes.map((item) => (
           <li>
             <a href={`${base}/${item.slug}/`} aria-current={item.id === cls.id ? 'page' : undefined}>
-              {item.label} ({item.ranked.length + item.unverified.length})
+              {item.label} {item.ranked.length + item.unverified.length > 0 ? `(${item.ranked.length + item.unverified.length})` : '(combinations)'}
             </a>
           </li>
         ))}

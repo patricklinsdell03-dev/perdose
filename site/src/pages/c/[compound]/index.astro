@@ -47,7 +47,7 @@ const description = cls.ranked.length
         <ul>
           {unknown.unverified.map((offer) => (
             <li>
-              <a href={`/p/${offer.product_id}/`}>{offer.name}</a> — {money(offer.price_gbp)} at {retailerName(offer.retailer_id)}
+              <a href={`/p/${offer.product_id}/`}>{offer.display_name}</a> — {money(offer.price_gbp)} at {retailerName(offer.retailer_id)}
             </li>
           ))}
         </ul>

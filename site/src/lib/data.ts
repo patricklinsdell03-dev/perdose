@@ -38,6 +38,8 @@ export interface Offer {
   product_id: string;
   brand: string | null;
   name: string;
+  /** The name without pack size or a repeated brand; `name` is the raw feed title. */
+  display_name: string;
   retailer_id: string;
   url: string;
   image_url: string | null;
@@ -109,7 +111,9 @@ export const compoundSlug = (id: string) => id.replaceAll('_', '-');
 
 /** Classes that get their own page: at least one product, and a known form (brief §12.5). */
 export const pageClasses = (data: CompoundData) =>
-  data.classes.filter((cls) => cls.id !== 'unknown' && cls.ranked.length + cls.unverified.length > 0);
+  data.classes.filter(
+    (cls) => cls.id !== 'unknown' && cls.ranked.length + cls.unverified.length + cls.combinations.length > 0,
+  );
 
 /** The class shown first on a compound page: the one with the most ranked products. */
 export const defaultClass = (data: CompoundData) =>
@@ -151,7 +155,7 @@ export function products(): ProductView[] {
         for (const offer of offers) {
           let product = byId.get(offer.product_id);
           if (!product) {
-            product = { id: offer.product_id, brand: offer.brand, name: offer.name, image_url: offer.image_url, actives: [] };
+            product = { id: offer.product_id, brand: offer.brand, name: offer.display_name, image_url: offer.image_url, actives: [] };
             byId.set(offer.product_id, product);
           }
           let active = product.actives.find((a) => a.data === data && a.cls === cls && a.status === status);

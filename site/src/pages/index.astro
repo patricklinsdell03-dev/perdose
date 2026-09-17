@@ -1,55 +1,65 @@
 ---
 import Base from '../layouts/Base.astro';
-import { CATEGORY_LABELS, compoundSlug, compounds, meta, pageClasses } from '../lib/data';
+import { CATEGORY_LABELS, compoundSlug, compounds, defaultClass, meta, pageClasses } from '../lib/data';
 import { doseLabel, isoToLong, perDose } from '../lib/format';
-import { site } from '../lib/site';
 
 const categories = [...new Set(compounds.map((d) => d.compound.category))];
+const cards = compounds
+  .map((data) => {
+    const priced = pageClasses(data).filter((cls) => cls.ranked.length > 0);
+    const lead = priced.includes(defaultClass(data)) ? defaultClass(data) : priced[0];
+    const products = new Set(data.classes.flatMap((c) => [...c.ranked, ...c.combinations, ...c.unverified].map((o) => o.product_id)));
+    return { data, lead, rest: priced.filter((cls) => cls !== lead), products: products.size };
+  })
+  .filter((card) => card.lead);
 ---
 
 <Base>
-  <h1>{site.tagline}</h1>
-  <p class="prose">
-    Supplement labels are hard to compare: different pack sizes, different serving sizes, and amounts quoted in
-    different ways. We work out what each product really costs per standard dose, form by form, across{' '}
-    {meta.retailers.length} UK retailers and {meta.counts.products} products. Prices last checked {isoToLong(meta.generated_at)}.
-  </p>
-
-  <section id="search" aria-label="Search">
-    <h2>Search</h2>
-    <div id="pagefind" data-pagefind-ignore>
-      <p class="muted">Search loads on the built site. You can also browse below or use the <a href="/a-z/">A–Z</a>.</p>
+  <section class="hero">
+    <h1>What supplements <em>really</em> cost, per dose.</h1>
+    <p class="lede">
+      Tubs, servings and labels are all different, so shelf prices tell you very little. We work out the price of the
+      same dose of every product, form by form, and rank them. No one can pay to be higher.
+    </p>
+    <div id="search" class="hero-search">
+      <div id="pagefind" data-pagefind-ignore>
+        <p class="muted">Search loads on the built site. Browse below, or use the <a href="/a-z/">A–Z</a>.</p>
+      </div>
     </div>
+    <p class="muted">
+      {meta.counts.products} products · {meta.retailers.map((r) => r.name).join(', ')} · prices checked {isoToLong(meta.generated_at)}
+    </p>
   </section>
 
   <h2>Compare prices</h2>
   <ul class="cards">
     {
-      compounds.map((data) => {
-        const classes = pageClasses(data).filter((cls) => cls.ranked.length > 0);
-        return (
-          <li class="card">
-            <h3><a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a></h3>
-            <p class="muted">
-              {new Set(data.classes.flatMap((c) => [...c.ranked, ...c.unverified].map((o) => o.product_id))).size} products ·{' '}
-              {new Set(data.classes.flatMap((c) => c.ranked.map((o) => o.retailer_id))).size} retailers
-            </p>
+      cards.map(({ data, lead, rest, products }) => (
+        <li class="card">
+          <h3><a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a></h3>
+          <a class="lead" href={`/c/${compoundSlug(data.compound.id)}/${lead.slug}/`}>
+            <span class="from">{rest.length ? `${lead.label} from` : 'from'}</span>
+            <span class="figure">{perDose(lead.ranked[0].price_per_std_dose)}</span>
+            <span class="unit">{doseLabel(data.compound, lead.standard_dose)}</span>
+          </a>
+          {rest.length > 0 && (
             <ul>
-              {classes.map((cls) => (
+              {rest.map((cls) => (
                 <li>
-                  <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>: from{' '}
-                  <strong>{perDose(cls.ranked[0].price_per_std_dose)}</strong> {doseLabel(data.compound, cls.standard_dose)}
+                  <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>
+                  <strong>{perDose(cls.ranked[0].price_per_std_dose)}</strong>
                 </li>
               ))}
             </ul>
-          </li>
-        );
-      })
+          )}
+          <p class="muted count">{products} products</p>
+        </li>
+      ))
     }
   </ul>
 
   <h2>Browse by type</h2>
-  <ul>
+  <ul class="tabs">
     {categories.map((id) => <li><a href={`/browse/${id}/`}>{CATEGORY_LABELS[id] ?? id}</a></li>)}
   </ul>
 </Base>
@@ -67,7 +77,13 @@ const categories = [...new Set(compounds.map((d) => d.compound.category))];
     script.onload = () => {
       target.textContent = '';
       // @ts-expect-error PagefindUI is defined by the script loaded above
-      new PagefindUI({ element: '#pagefind', showSubResults: false, showImages: false, resetStyles: false });
+      new PagefindUI({
+        element: '#pagefind',
+        showSubResults: false,
+        showImages: false,
+        resetStyles: false,
+        translations: { placeholder: 'Search magnesium, vitamin D, fish oil…' },
+      });
       document.head.append(css);
     };
     document.head.append(script);

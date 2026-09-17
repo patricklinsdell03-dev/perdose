@@ -348,6 +348,19 @@ tr.is-best .rank {
 .name:hover {
   text-decoration: underline;
 }
+.by {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+.badge.combo {
+  color: var(--color-coral-text);
+  font-weight: 600;
+}
+tr.is-combo .rank {
+  background: var(--color-sunken);
+  color: var(--color-muted);
+}
 .badges {
   display: flex;
   flex-wrap: wrap;
@@ -507,7 +520,7 @@ dl.facts dd {
     grid-template-columns: 1.4fr 1fr 1fr;
     grid-template-areas:
       'product product product'
-      'retailer pack serving'
+      'pack pack serving'
       'dose month days'
       'buy buy buy';
     gap: var(--space-2);
@@ -515,6 +528,9 @@ dl.facts dd {
     padding: var(--space-3);
     background: var(--color-surface);
     border-radius: var(--radius-card) var(--radius-card) 0 0;
+  }
+  tr.offer.is-best {
+    box-shadow: inset 0 4px 0 var(--color-accent);
   }
   tbody tr.offer td {
     border: 0;
@@ -525,16 +541,12 @@ dl.facts dd {
   td[data-cell='product'] {
     grid-area: product;
   }
-  td[data-cell='retailer'] {
-    grid-area: retailer;
-  }
   td[data-cell='pack'] {
     grid-area: pack;
   }
   td[data-cell='serving'] {
     grid-area: serving;
   }
-  td[data-cell='retailer'],
   td[data-cell='pack'],
   td[data-cell='serving'] {
     font-size: 0.78rem;
@@ -631,4 +643,65 @@ dl.facts dd {
   td[data-cell='serving']::after {
     content: ' a serving';
   }
+}
+
+/* Home: the opening and the compound cards */
+.hero {
+  padding: var(--space-4) 0 var(--space-2);
+  max-width: 46rem;
+}
+.hero h1 {
+  font-size: clamp(2rem, 7vw, 3.25rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+.lede {
+  font-size: 1.0625rem;
+  color: var(--color-muted);
+  max-width: 40rem;
+  margin: 0 0 var(--space-4);
+}
+.hero-search {
+  margin-bottom: var(--space-3);
+}
+.card {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+}
+.card .lead {
+  display: grid;
+  text-decoration: none;
+  background: var(--color-accent-tint);
+  border-radius: var(--radius);
+  padding: var(--space-2) var(--space-3) var(--space-3);
+  color: var(--color-text);
+}
+.card .lead:hover .figure {
+  text-decoration: underline;
+}
+.card .from,
+.card .unit {
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+.card .figure {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 1.9rem;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-link);
+  font-variant-numeric: tabular-nums;
+}
+.card ul {
+  margin: 0;
+}
+.card li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+.card .count {
+  font-size: 0.78rem;
 }
