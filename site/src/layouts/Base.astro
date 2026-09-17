@@ -18,9 +18,12 @@ interface Props {
   searchTerms?: string[];
   /** Relative importance in search results; product pages rank below compound pages. */
   searchWeight?: number;
+  /** Shown in search results: what kind of page this is, and a one-line factual summary. */
+  searchKind?: 'Compare' | 'Product' | 'Guide';
+  searchSummary?: string;
 }
 
-const { title, description = site.tagline, image, noindex = false, jsonLd, searchTerms = [], searchWeight } = Astro.props;
+const { title, description = site.tagline, image, noindex = false, jsonLd, searchTerms = [], searchWeight, searchKind = 'Guide', searchSummary = description } = Astro.props;
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
 const canonical = site.base_url ? new URL(Astro.url.pathname, site.base_url).href : undefined;
 const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : image;
@@ -59,6 +62,8 @@ const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : i
       </div>
     </header>
     <main class="wrap" data-pagefind-body={noindex ? undefined : true} data-pagefind-weight={searchWeight}>
+      <span hidden data-pagefind-meta="kind[data-v]" data-v={searchKind}></span>
+      <span hidden data-pagefind-meta="summary[data-v]" data-v={searchSummary}></span>
       <slot />
       {searchTerms.length > 0 && <p class="sr-only" data-pagefind-weight="10">Also known as: {searchTerms.join(', ')}.</p>}
     </main>

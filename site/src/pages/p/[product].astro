@@ -49,6 +49,8 @@ const report = `mailto:${site.contact_email}?subject=${encodeURIComponent(`Error
   description={`${product.name}: ${money(cheapest.price_gbp)} at ${retailerName(cheapest.retailer_id)}. Price per standard dose and how we worked it out.`}
   jsonLd={jsonLd}
   searchWeight={0.3}
+  searchKind="Product"
+  searchSummary={`${product.brand ? `${product.brand} · ` : ''}${money(cheapest.price_gbp)} at ${retailerName(cheapest.retailer_id)}`}
 >
   <p class="breadcrumb">
     <a href="/">Home</a> ›{' '}

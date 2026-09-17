@@ -27,7 +27,7 @@ const heading = cls.label.toLowerCase().includes(c.name.toLowerCase()) ? cls.lab
 const retailerCount = new Set(cls.ranked.map((o) => o.retailer_id)).size;
 const title = `Cheapest ${heading} in the UK — price ${doseLabel(c, cls.standard_dose)} (${monthYear(data.generated_at)})`;
 const description = cls.ranked.length
-  ? `From ${perDose(cls.ranked[0].price_per_std_dose)} ${doseLabel(c, cls.standard_dose)} across ${retailerCount} ${retailerCount === 1 ? 'retailer' : 'retailers'}, ${cls.ranked.length} products.`
+  ? `From ${perDose(cls.ranked[0].price_per_std_dose)} ${doseLabel(c, cls.standard_dose)} across ${retailerCount} ${retailerCount === 1 ? 'retailer' : 'retailers'}, ${cls.ranked.length} ${cls.ranked.length === 1 ? 'product' : 'products'}.`
   : `${heading}: products we could not yet verify.`;
 
 const absolute = (p: string) => (site.base_url ? new URL(p, site.base_url).href : p);
@@ -51,6 +51,8 @@ const jsonLd = {
   image={`/og/${compoundSlug(c.id)}/${cls.slug}.png`}
   jsonLd={cls.ranked.length ? jsonLd : undefined}
   searchTerms={c.aliases}
+  searchWeight={2}
+  searchKind="Compare"
 >
   <p class="breadcrumb">
     <a href="/">Home</a> › <a href={`/browse/${c.category}/`}>{CATEGORY_LABELS[c.category]}</a> ›{' '}

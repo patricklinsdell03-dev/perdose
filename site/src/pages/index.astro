@@ -21,10 +21,22 @@ const cards = compounds
       Tubs, servings and labels are all different, so shelf prices tell you very little. We work out the price of the
       same dose of every product, form by form, and rank them. No one can pay to be higher.
     </p>
-    <div id="search" class="hero-search">
-      <div id="pagefind" data-pagefind-ignore>
-        <p class="muted">Search loads on the built site. Browse below, or use the <a href="/a-z/">A–Z</a>.</p>
-      </div>
+    <div id="search" class="hero-search" data-pagefind-ignore>
+      <form class="search-box" role="search" aria-label="Search this site" id="search-form">
+        <input
+          id="search-input"
+          type="search"
+          name="q"
+          autocomplete="off"
+          placeholder="Search magnesium, vitamin D, fish oil…"
+          aria-label="Search supplements and products"
+        />
+        <button type="reset" id="search-clear" hidden>Clear</button>
+      </form>
+      <p class="search-status" id="search-status" role="status" aria-live="polite">
+        <noscript>Search needs JavaScript. Browse below, or use the <a href="/a-z/">A–Z</a>.</noscript>
+      </p>
+      <ul class="search-results" id="search-results"></ul>
     </div>
     <p class="muted">
       {meta.counts.products} products · {meta.retailers.map((r) => r.name).join(', ')} · prices checked {isoToLong(meta.generated_at)}
@@ -64,28 +76,106 @@ const cards = compounds
   </ul>
 </Base>
 
-<script>
-  // Pagefind's index only exists after a production build (npm run build), so load it lazily
-  // and leave the fallback text in place if it is missing (e.g. in `astro dev`).
-  const target = document.getElementById('pagefind');
-  if (target) {
-    const css = document.createElement('link');
-    css.rel = 'stylesheet';
-    css.href = '/pagefind/pagefind-ui.css';
-    const script = document.createElement('script');
-    script.src = '/pagefind/pagefind-ui.js';
-    script.onload = () => {
-      target.textContent = '';
-      // @ts-expect-error PagefindUI is defined by the script loaded above
-      new PagefindUI({
-        element: '#pagefind',
-        showSubResults: false,
-        showImages: false,
-        resetStyles: false,
-        translations: { placeholder: 'Search magnesium, vitamin D, fish oil…' },
-      });
-      document.head.append(css);
-    };
-    document.head.append(script);
+<script is:inline type="module">
+  // Plain inline module: Vite must not touch the import of Pagefind's own bundle.
+  // Pagefind builds the index after `astro build`; in `astro dev` it does not exist, so
+  // search says so instead of failing. Results are our own markup: kind, title, one factual line.
+  const GROUPS = [
+    ['Compare', 'Price comparisons', 6],
+    ['Product', 'Products', 8],
+    ['Guide', 'About this site', 3],
+  ];
+  const form = document.getElementById('search-form');
+  const input = document.getElementById('search-input');
+  const clear = document.getElementById('search-clear');
+  const status = document.getElementById('search-status');
+  const list = document.getElementById('search-results');
+  let engine;
+
+  async function load() {
+    if (engine === undefined) {
+      try {
+        const path = '/pagefind/pagefind.js';
+        engine = await import(path);
+        await engine.init();
+      } catch {
+        engine = null;
+      }
+    }
+    return engine;
+  }
+
+  function render(hits, total, query) {
+    if (!list || !status) return;
+    list.replaceChildren();
+    status.textContent = total
+      ? `${total} ${total === 1 ? 'result' : 'results'} for “${query}”`
+      : `Nothing found for “${query}”. Try the A–Z below the search.`;
+    for (const [kind, label, limit] of GROUPS) {
+      // A supplement's overview page goes above its form-by-form pages.
+      const overview = (hit) => (/^\/c\/[^/]+\/$/.test(hit.url) ? 0 : 1);
+      const group = hits
+        .filter((hit) => (hit.meta.kind ?? 'Guide') === kind)
+        .sort((x, y) => overview(x) - overview(y))
+        .slice(0, limit);
+      if (!group.length) continue;
+      const heading = document.createElement('li');
+      const h3 = document.createElement('h3');
+      h3.textContent = label;
+      heading.append(h3);
+      list.append(heading);
+      for (const hit of group) {
+        const item = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = hit.url;
+        const title = document.createElement('span');
+        title.className = 'hit-title';
+        title.textContent = hit.meta.title ?? hit.url;
+        link.append(title);
+        if (hit.meta.summary) {
+          const summary = document.createElement('span');
+          summary.className = 'hit-summary';
+          summary.textContent = hit.meta.summary;
+          link.append(summary);
+        }
+        item.append(link);
+        list.append(item);
+      }
+    }
+  }
+
+  async function run() {
+    if (!input || !list || !status || !clear) return;
+    const query = input.value.trim();
+    clear.hidden = !query;
+    const url = new URL(location.href);
+    if (query) url.searchParams.set('q', query);
+    else url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+    if (!query) {
+      list.replaceChildren();
+      status.textContent = '';
+      return;
+    }
+    const pagefind = await load();
+    if (!pagefind) {
+      status.textContent = 'Search works on the built site. Browse below, or use the A–Z.';
+      return;
+    }
+    const search = await pagefind.debouncedSearch(query, {}, 180);
+    if (search === null) return; // a newer keystroke took over
+    const hits = await Promise.all(search.results.slice(0, 40).map((r) => r.data()));
+    render(hits, search.results.length, query);
+  }
+
+  if (form && input) {
+    input.addEventListener('input', run);
+    form.addEventListener('submit', (event) => event.preventDefault());
+    form.addEventListener('reset', () => setTimeout(run));
+    const initial = new URL(location.href).searchParams.get('q');
+    if (initial) {
+      input.value = initial;
+      run();
+    }
   }
 </script>

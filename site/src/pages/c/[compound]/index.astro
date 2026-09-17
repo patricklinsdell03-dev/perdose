@@ -29,7 +29,7 @@ const description = cls.ranked.length
   : `${c.name} prices compared form by form.`;
 ---
 
-<Base title={title} description={description} image={`/og/${compoundSlug(c.id)}/${cls.slug}.png`} searchTerms={c.aliases}>
+<Base title={title} description={description} image={`/og/${compoundSlug(c.id)}/${cls.slug}.png`} searchTerms={c.aliases} searchWeight={4} searchKind="Compare">
   <p class="breadcrumb">
     <a href="/">Home</a> › <a href={`/browse/${c.category}/`}>{CATEGORY_LABELS[c.category]}</a>
   </p>

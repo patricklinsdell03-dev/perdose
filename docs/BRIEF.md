@@ -518,7 +518,7 @@ Mobile: stack to card rows; **per standard dose** always visible.
 5. Labels in sentence case; no tiny uppercase eyebrow labels; British English.
 6. Both themes are designed, contrast AA or better, visible keyboard focus, reduced motion respected.
 
-**Known refinement list (to do at the polish pass):** home page needs a proper opening (headline, search as the hero, "from £X" figures on the cards); product names should be split into name + pack size rather than shown as one feed title; decide whether claimed chips belong in the row or only in the expanded panel; best-row emphasis on phones; share-card typography (currently system fonts at build time); search results ranking and styling; an identity for the methodology/learn pages' long-form text.
+**Known refinement list (to do at the polish pass):** best-row emphasis on phones (today: teal top edge plus the words "Cheapest per dose"); whether the home page cards need more than "from £X"; a designed empty/zero-results state; a final pass on spacing and dark-mode contrast with Patrick looking at real phones. *Done since v1.5 (see DECISIONS.md):* home page opening with search as the hero; product names split into name + pack size; claimed chips stay in the row (quiet grey) because shoppers choose on them; share cards drawn in Red Hat Display; search results rebuilt as our own list (comparisons first, then products, each with one factual line); long-form pages given a reading column, ruled headings and the sums set in the figures typeface.
 
 Rejected directions, for the record: "Shelf Edge" (supermarket price ticket — too loud), "Receipt" (till-receipt working), "Graduated" (measuring-ruler rows), "Label" (printed dispensing label). Mock-ups are linked from DECISIONS.md.
 
