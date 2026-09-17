@@ -1,0 +1,35 @@
+name: daily
+
+# Daily refresh (brief §14). The cron is switched on in Phase 5, once `make all`
+# works end to end — see docs/DECISIONS.md 2026-09-17. Until then: manual runs only.
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "10 5 * * *" # 06:10 BST / 05:10 GMT
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      TZ: Europe/London
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: make setup
+      - run: make all
+      - name: Commit refreshed export data if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/export
+          git diff --cached --quiet || git commit -m "data: refresh $(date +%F)"
+          git push

@@ -1,0 +1,3 @@
+# Banned phrasing for the claim linter (brief §20.3). List is written in Phase 9.
+version: 1
+banned: []

@@ -1,0 +1,36 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Pipeline data that must not be committed
+data/raw/
+data/perdose.sqlite
+data/perdose.sqlite-*
+data/history.sqlite
+data/review/
+logs/
+
+# Pasted community thread text for learn pages (brief §20.3) — local only
+content/**/threads_raw*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+# Site
+node_modules/
+site/dist/
+site/.astro/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# LLM response cache dir (config/llm.yml)
+data/llm_cache/

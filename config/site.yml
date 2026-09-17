@@ -1,0 +1,8 @@
+# The ONLY place the site name lives (CLAUDE.md). "PerDose" is a working name.
+name: PerDose
+base_url: ""        # TODO Patrick: the live domain, e.g. https://example.co.uk — blank until chosen
+tagline: UK supplement prices compared per standard dose
+disclosure: >-
+  We earn commission on purchases made through our links. It never affects ranking:
+  tables are ordered purely by price per dose, and no retailer or brand can pay for position.
+contact_email: ""   # TODO Patrick: address for "report an error" links

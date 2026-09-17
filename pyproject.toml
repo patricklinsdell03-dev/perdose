@@ -1,0 +1,29 @@
+[project]
+name = "pipeline"
+version = "0.0.0"
+description = "UK supplement price comparison pipeline: ingest -> normalise -> price -> export"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "anthropic",
+    "httpx",
+    "pydantic>=2",
+    "pyyaml",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+extend-exclude = ["site", "docs", "content"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

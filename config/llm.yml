@@ -1,0 +1,13 @@
+# LLM settings for the normaliser (brief §9.2). The client that reads this is Phase 2.
+# Model ids checked against https://docs.claude.com on 2026-09-17 (see docs/DECISIONS.md).
+# NOTE: docs list claude-haiku-4-5-20251001 retirement as "not sooner than 2026-10-15" —
+# re-check before Phase 2.
+models:
+  default: claude-haiku-4-5-20251001
+  escalation: claude-sonnet-5
+temperature: 0
+max_tokens: 1500
+escalation_confidence_threshold: 0.7
+prompt_version: "1.0.0"
+max_calls_per_run: 5000
+cache_dir: data/llm_cache

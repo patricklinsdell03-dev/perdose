@@ -1,0 +1,4 @@
+# One entry per retailer (brief §7.3). Empty until Patrick supplies seed CSVs (Phase 3).
+# Never add a retailer here that we do not have real data for.
+version: 1
+retailers: []

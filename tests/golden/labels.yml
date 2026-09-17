@@ -1,0 +1,5 @@
+# Golden label set (brief §15, Appendix B). Test inputs only — never shown on the site.
+# Each item: id, title, description, price_gbp, expect: {fields that must match}.
+# Empty in Phase 0; the 30 Appendix B labels are added in Phase 1.
+version: 1
+labels: []

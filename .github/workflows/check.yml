@@ -1,0 +1,21 @@
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: make setup
+      # ruff + pytest (golden set in replay mode) + astro check + build.
+      # The golden threshold and the meta.json regression guard are added in Phases 2 and 5.
+      - run: make check
