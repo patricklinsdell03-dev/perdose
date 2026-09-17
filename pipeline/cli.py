@@ -142,7 +142,7 @@ def run_ingest(retailer: str | None, run_date: str | None) -> int:
         connect(), load_registry(), load_retailers(), load_exclusions(), when, only=retailer
     )
     for retailer_id, count in counts.items():
-        print(f"ingest: {retailer_id}: kept {count['kept']}, dropped {count['dropped']}")
+        print(f"ingest: {retailer_id}: " + ", ".join(f"{k} {v}" for k, v in count.items()))
     if not counts:
         print("ingest: no retailer data found")
         return 1

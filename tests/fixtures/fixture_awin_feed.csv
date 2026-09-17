@@ -1,0 +1,6 @@
+aw_deep_link,product_name,aw_product_id,merchant_product_id,merchant_image_url,description,merchant_category,search_price,merchant_name,currency,brand_name,ean,in_stock,stock_quantity
+https://example.invalid/aw/1,Fixture Magnesium Citrate 120 Capsules,900001,fixture_f1,https://example.invalid/i/1.jpg,"Two capsules provide 200mg magnesium",Vitamins,8.49,Fixture Merchant,GBP,Fixture Brand,0000000000024,1,40
+https://example.invalid/aw/2,Fixture Zinc Picolinate 15mg 90 Tablets,900002,fixture_f2,,,Vitamins,"£5.99",Fixture Merchant,GBP,Fixture Brand,,0,0
+https://example.invalid/aw/3,Fixture Vitamin D3 1000IU 90 Tablets,900003,fixture_f3,,,Vitamins,3.00,Fixture Merchant,EUR,Fixture Brand,,1,5
+https://example.invalid/aw/4,Fixture Whey Protein 1kg,900004,fixture_f4,,,Protein,19.99,Fixture Merchant,GBP,Fixture Brand,,1,5
+https://example.invalid/aw/5,Fixture Creatine Monohydrate 500g,900005,fixture_f5,,,Sports,not-a-price,Fixture Merchant,GBP,Fixture Brand,,1,5

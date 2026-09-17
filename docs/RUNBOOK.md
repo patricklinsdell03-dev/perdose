@@ -75,9 +75,36 @@ Not linked from anywhere and hidden from search engines. It shows when the pipel
 2. Replace the value in your local `.env`.
 3. (From Phase 5) replace the `ANTHROPIC_API_KEY` secret in the GitHub repository settings.
 
+## Connecting a live affiliate feed (once a programme approves you)
+
+1. In the network's dashboard (Awin: "Create-a-Feed"; Impact: the catalogue export) generate the product feed **download link** for that retailer. It contains your API key, so treat it like a password.
+2. Put it in `.env` on a new line: `AWIN_FEED_URL_MYPROTEIN=<the link>` (and later as a GitHub secret with the same name). Never paste it into chat or any committed file.
+3. In `config/retailers.yml` change that retailer's feed from `{ type: seed_csv }` to:
+
+   ```yaml
+   feed: { type: awin_csv, url_env: AWIN_FEED_URL_MYPROTEIN, gzip: true }
+   ```
+
+   (`impact_csv` for Impact.) Delete or rename its `data/seed/<id>.csv` so the two do not mix.
+4. `make ingest`. You should see `ingest: myprotein: kept N, dropped M` - "dropped" are products that are not one of our supplements, which for a full catalogue is most of them. `not_gbp` and `invalid_row` counts are rows the feed itself got wrong.
+5. `make all`, then check `/ops/`. New listings are read by the AI once (about 1p each); after that only new or changed listings cost anything. If a feed has more than 5,000 unread listings the run stops and asks you to raise `max_calls_per_run` in `config/llm.yml` - that is the spending guard, not a fault.
+
+A feed listing that disappears for 14 days is hidden automatically.
+
 ## What to do when a feed column name changes
 
-_To be written in Phase 6._
+The symptom is `WARNING: <retailer>: required columns missing: price_gbp (their column 'search_price'); skipped` - that retailer keeps yesterday's data and everything else carries on.
+
+Open the feed file, find what the column is called now, and override just that column in `config/retailers.yml`:
+
+```yaml
+feed:
+  type: awin_csv
+  url_env: AWIN_FEED_URL_MYPROTEIN
+  column_map: { price_gbp: store_price }
+```
+
+Our field names are: `merchant_pid`, `ean`, `brand`, `title`, `description`, `url`, `image_url`, `price_gbp`, `in_stock`, `currency`. The defaults for each network are in `pipeline/ingest/feeds.py`.
 
 ## Working down the unverified queue (`make review` / `make review-apply`)
 

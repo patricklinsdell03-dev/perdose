@@ -16,6 +16,7 @@ import yaml
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 
 from pipeline.compounds import Registry
+from pipeline.ingest import feeds
 from pipeline.normalise.prompt import find_candidates
 from pipeline.normalise.rules import find_term
 from pipeline.normalise.run import content_hash
@@ -34,6 +35,7 @@ class _Model(BaseModel):
 class Feed(_Model):
     type: Literal["seed_csv", "awin_csv", "impact_csv"]
     url_env: str | None = None
+    path: str | None = None  # a local copy of the feed (tests, manual downloads)
     gzip: bool = False
     column_map: dict[str, str] = {}
 
@@ -150,6 +152,19 @@ def upsert_listing(conn: sqlite3.Connection, retailer: Retailer, listing: RawLis
     )
 
 
+def _read_live_feed(retailer: Retailer, run_date: date, rejected: dict[str, int]) -> list:
+    feed = retailer.feed
+    text = feeds.fetch_feed_text(feed.url_env, feed.path, feed.gzip)
+    column_map = feeds.column_map_for(feed.type, feed.column_map)
+    listings = []
+    for listing, problem in feeds.read_feed(text, column_map, run_date, RawListing):
+        if listing is not None:
+            listings.append(listing)
+        else:
+            rejected[problem] = rejected.get(problem, 0) + 1
+    return listings
+
+
 def ingest(
     conn: sqlite3.Connection,
     registry: Registry,
@@ -165,24 +180,32 @@ def ingest(
     for retailer in retailers:
         if not retailer.enabled or (only and retailer.id != only):
             continue
-        if retailer.feed.type != "seed_csv":
-            print(f"WARNING: {retailer.id}: feed type {retailer.feed.type} arrives in Phase 6")
-            continue
-        source = seed_dir / f"{retailer.id}.csv"
-        if not source.exists():
-            print(f"WARNING: {retailer.id}: {source.as_posix()} not found; skipped")
-            continue
-
-        listings = list(read_seed_csv(source))
+        rejected: dict[str, int] = {}
+        if retailer.feed.type == "seed_csv":
+            source = seed_dir / f"{retailer.id}.csv"
+            if not source.exists():
+                print(f"WARNING: {retailer.id}: {source.as_posix()} not found; skipped")
+                continue
+            listings = list(read_seed_csv(source))
+        else:
+            try:
+                listings = _read_live_feed(retailer, run_date, rejected)
+            except feeds.FeedError as error:
+                # One broken feed must not stop the others (brief §18).
+                print(f"WARNING: {retailer.id}: {error}; skipped")
+                continue
         kept = [item for item in listings if is_relevant(item, registry, exclusions)]
         if raw_dir is not None:  # idempotent: re-running overwrites that day's file
             raw_file = raw_dir / retailer.id / f"{run_date.isoformat()}.jsonl"
             raw_file.parent.mkdir(parents=True, exist_ok=True)
-            lines = [item.model_dump_json() for item in listings]
+            # Seed files are small and kept whole; feeds run to thousands of rows, so only the
+            # relevant ones are kept.
+            saved = listings if retailer.feed.type == "seed_csv" else kept
+            lines = [item.model_dump_json() for item in saved]
             raw_file.write_text("\n".join(lines) + "\n", encoding="utf-8")
         for listing in kept:
             upsert_listing(conn, retailer, listing)
-        counts[retailer.id] = {"kept": len(kept), "dropped": len(listings) - len(kept)}
+        counts[retailer.id] = {"kept": len(kept), "dropped": len(listings) - len(kept), **rejected}
 
     # A feed listing not seen for 14 days is hidden. Seed rows are dated by hand
     # (`captured_on`), so they are exempt — they go stale, they do not disappear.
