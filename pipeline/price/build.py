@@ -6,7 +6,7 @@ time, so a rule change or a new extraction always flows through.
 
 import re
 import sqlite3
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -30,12 +30,19 @@ class Overrides:
 
     split: set[str]  # listing ids that must be their own product
     merge: dict[str, str]  # product id -> product id it should be folded into
+    exclude: set[str] = field(default_factory=set)  # listing ids never to show
+    values: dict[str, dict] = field(default_factory=dict)  # listing id -> confirmed facts
 
 
 def load_overrides(path: Path = OVERRIDES_PATH) -> Overrides:
     data = (yaml.safe_load(path.read_text(encoding="utf-8")) if path.exists() else None) or {}
     merge = {item["product"]: item["into"] for item in data.get("merge") or []}
-    return Overrides(split=set(data.get("split") or []), merge=merge)
+    return Overrides(
+        split=set(data.get("split") or []),
+        merge=merge,
+        exclude=set(data.get("exclude") or []),
+        values=dict(data.get("values") or {}),
+    )
 
 
 def slugify(*parts: str | None) -> str:
@@ -63,6 +70,25 @@ def match_key(brand: str | None, product: NormalisedProduct) -> str | None:
         "+".join(others),
     ]
     return "|".join(str(part) for part in parts)
+
+
+ACTIVE_VALUE_KEYS = {"form_id", "amount_per_serving", "amount_unit", "amount_refers_to"}
+
+
+def _with_confirmed_values(extraction: Extraction, confirmed: dict) -> Extraction:
+    """Overlay facts a person confirmed in review (§12.3) on what the model read. Values for
+    the amount and form apply to the first (headline) active."""
+    if not confirmed:
+        return extraction
+    data = extraction.model_dump()
+    for key, value in confirmed.items():
+        if key in ACTIVE_VALUE_KEYS:
+            if data["actives"]:
+                data["actives"][0][key] = value
+        else:
+            data[key] = value
+    data["confidence"] = 1.0
+    return Extraction.model_validate(data)
 
 
 def _now() -> str:
@@ -105,8 +131,16 @@ def build(conn: sqlite3.Connection, registry: Registry, prompt_version: str, ove
     now = _now()
 
     for listing_id, ean, brand, title, description, price_gbp, extracted_json in rows:
+        if listing_id in overrides.exclude:
+            continue
         extraction = Extraction.model_validate_json(extracted_json)
-        product = apply_rules(extraction, registry, title, description or "")
+        confirmed = overrides.values.get(listing_id, {})
+        extraction = _with_confirmed_values(extraction, confirmed)
+        product = apply_rules(
+            extraction, registry, title, description or "", manual_fields=frozenset(confirmed)
+        )
+        if confirmed:
+            product.confidence = 1.0
         if not product.actives:
             stats["no_active"] += 1
             continue

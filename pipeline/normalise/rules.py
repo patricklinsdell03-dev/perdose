@@ -246,7 +246,11 @@ def _resolve_form(active: ActiveExtraction, compound: Compound, title: str) -> F
 
 
 def _resolve_active(
-    active: ActiveExtraction, compound: Compound, label_text: str | None, title: str
+    active: ActiveExtraction,
+    compound: Compound,
+    label_text: str | None,
+    title: str,
+    manual: bool = False,
 ):
     form = _resolve_form(active, compound, title)
     reasons: list[str] = []
@@ -255,7 +259,7 @@ def _resolve_active(
 
     amount = None
     if active.amount_per_serving is not None and active.amount_unit:
-        if _evidenced(active.evidence, "amount_per_serving", label_text):
+        if manual or _evidenced(active.evidence, "amount_per_serving", label_text):
             amount = convert_amount(active.amount_per_serving, active.amount_unit, compound)
             if amount is None:
                 reasons.append("unit_not_convertible")
@@ -303,15 +307,20 @@ def apply_rules(
     title: str = "",
     description: str = "",
     verify_quotes: bool = True,
+    manual_fields: frozenset[str] = frozenset(),
 ) -> NormalisedProduct:
-    """`verify_quotes` checks every evidence quote really occurs in the title/description."""
+    """`verify_quotes` checks every evidence quote really occurs in the title/description.
+    `manual_fields` are facts a person confirmed in review (§12.3): they need no quote."""
     label_text = f"{title}\n{description}" if verify_quotes else None
     reasons: list[str] = []
     confidence = extraction.confidence
 
     def kept(field_name: str):
         value = getattr(extraction, field_name)
-        if value is not None and _evidenced(extraction.evidence, field_name, label_text):
+        confirmed = field_name in manual_fields
+        if value is not None and (
+            confirmed or _evidenced(extraction.evidence, field_name, label_text)
+        ):
             return value
         return None
 
@@ -344,7 +353,8 @@ def apply_rules(
         if compound is None or compound.id in compounds:
             continue
         compounds[compound.id] = compound
-        resolved, result = _resolve_active(active, compound, label_text, title)
+        manual = bool(manual_fields) and active is extraction.actives[0]
+        resolved, result = _resolve_active(active, compound, label_text, title, manual)
         confidence = min(confidence, result.confidence_cap) - result.confidence_penalty
         actives.append(resolved)
 
