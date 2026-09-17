@@ -17,6 +17,11 @@ ATOMIC_WEIGHT = {
     "S": 32.06,
     "Cl": 35.45,
     "Zn": 65.38,
+    "K": 39.098,
+    "Ca": 40.078,
+    "Cr": 51.996,
+    "Fe": 55.845,
+    "I": 126.904,
 }
 SOURCES = yaml.safe_load(Path("config/factor_sources.yml").read_text(encoding="utf-8"))["sources"]
 REGISTRY = load_registry()

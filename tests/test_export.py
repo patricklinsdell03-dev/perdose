@@ -93,7 +93,7 @@ def test_index_and_meta(exported):
 def test_rules_export_has_no_internal_notes(exported):
     files, _ = exported
     assert "note" not in json.dumps(files["compounds.json"])
-    assert len(files["compounds.json"]) == 10
+    assert len(files["compounds.json"]) == len(load_registry().compounds)
 
 
 def test_size_guard(exported, monkeypatch):

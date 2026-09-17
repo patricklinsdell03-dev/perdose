@@ -39,7 +39,7 @@
        "chelate",
        "buffered chelate"
       ],
-      "elemental_factor": 0.141
+      "elemental_factor": 0.117
      }
     ]
    },
@@ -909,6 +909,1007 @@
        "l-theanine",
        "theanine",
        "suntheanine"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b6",
+  "name": "Vitamin B6",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "vitamin B6",
+  "unit": "mg",
+  "standard_dose": 50.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "vitamin b6",
+   "b6",
+   "pyridoxine",
+   "pyridoxal-5-phosphate",
+   "pyridoxal 5 phosphate",
+   "p5p",
+   "p-5-p"
+  ],
+  "classes": [
+   {
+    "id": "b6_pyridoxine",
+    "label": "Pyridoxine HCl",
+    "slug": "pyridoxine",
+    "standard_dose": 50.0,
+    "forms": [
+     {
+      "id": "pyridoxine_hcl",
+      "names": [
+       "pyridoxine",
+       "pyridoxine hcl",
+       "pyridoxine hydrochloride",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b6_p5p",
+    "label": "P-5-P (active form)",
+    "slug": "p5p",
+    "standard_dose": 50.0,
+    "forms": [
+     {
+      "id": "p5p",
+      "names": [
+       "p5p",
+       "p-5-p",
+       "pyridoxal-5-phosphate",
+       "pyridoxal 5 phosphate"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b7",
+  "name": "Biotin",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "biotin",
+  "unit": "mcg",
+  "standard_dose": 5000.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "biotin",
+   "vitamin b7",
+   "vitamin h",
+   "d-biotin"
+  ],
+  "classes": [
+   {
+    "id": "biotin",
+    "label": "Biotin",
+    "slug": "biotin",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "biotin",
+      "names": [
+       "biotin",
+       "d-biotin",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b9",
+  "name": "Folate",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "folate",
+  "unit": "mcg",
+  "standard_dose": 400.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "folate",
+   "folic acid",
+   "vitamin b9",
+   "methylfolate",
+   "5-mthf",
+   "l-methylfolate",
+   "quatrefolic",
+   "metafolin"
+  ],
+  "classes": [
+   {
+    "id": "b9_folic_acid",
+    "label": "Folic acid",
+    "slug": "folic-acid",
+    "standard_dose": 400.0,
+    "forms": [
+     {
+      "id": "folic_acid",
+      "names": [
+       "folic acid",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b9_methylfolate",
+    "label": "Methylfolate (5-MTHF)",
+    "slug": "methylfolate",
+    "standard_dose": 400.0,
+    "forms": [
+     {
+      "id": "methylfolate",
+      "names": [
+       "methylfolate",
+       "5-mthf",
+       "l-methylfolate",
+       "quatrefolic",
+       "metafolin"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "calcium",
+  "name": "Calcium",
+  "category": "minerals",
+  "tier": 1,
+  "comparison_quantity": "elemental calcium",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "calcium",
+   "calcium carbonate",
+   "calcium citrate"
+  ],
+  "classes": [
+   {
+    "id": "ca_carbonate",
+    "label": "Carbonate",
+    "slug": "carbonate",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "carbonate",
+      "names": [
+       "carbonate"
+      ],
+      "elemental_factor": 0.4
+     }
+    ]
+   },
+   {
+    "id": "ca_citrate",
+    "label": "Citrate",
+    "slug": "citrate",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "citrate",
+      "names": [
+       "citrate"
+      ],
+      "elemental_factor": 0.211
+     }
+    ]
+   },
+   {
+    "id": "ca_other",
+    "label": "Other forms",
+    "slug": "other",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "lactate",
+       "gluconate",
+       "citrate malate",
+       "marine algae",
+       "algae",
+       "coral",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "iron",
+  "name": "Iron",
+  "category": "minerals",
+  "tier": 1,
+  "comparison_quantity": "elemental iron",
+  "unit": "mg",
+  "standard_dose": 14.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "iron",
+   "ferrous",
+   "iron bisglycinate",
+   "ferrous fumarate",
+   "ferrous sulphate",
+   "ferrous sulfate",
+   "ferrous gluconate"
+  ],
+  "classes": [
+   {
+    "id": "fe_bisglycinate",
+    "label": "Bisglycinate (gentle iron)",
+    "slug": "bisglycinate",
+    "standard_dose": 14.0,
+    "forms": [
+     {
+      "id": "bisglycinate",
+      "names": [
+       "bisglycinate",
+       "glycinate",
+       "ferrochel",
+       "gentle iron"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "fe_fumarate",
+    "label": "Fumarate",
+    "slug": "fumarate",
+    "standard_dose": 14.0,
+    "forms": [
+     {
+      "id": "fumarate",
+      "names": [
+       "fumarate"
+      ],
+      "elemental_factor": 0.329
+     }
+    ]
+   },
+   {
+    "id": "fe_sulfate",
+    "label": "Sulphate",
+    "slug": "sulphate",
+    "standard_dose": 14.0,
+    "forms": [
+     {
+      "id": "sulfate",
+      "names": [
+       "sulfate",
+       "sulphate"
+      ],
+      "elemental_factor": 0.201
+     }
+    ]
+   },
+   {
+    "id": "fe_gluconate",
+    "label": "Gluconate",
+    "slug": "gluconate",
+    "standard_dose": 14.0,
+    "forms": [
+     {
+      "id": "gluconate",
+      "names": [
+       "gluconate"
+      ],
+      "elemental_factor": 0.116
+     }
+    ]
+   },
+   {
+    "id": "fe_other",
+    "label": "Other forms",
+    "slug": "other",
+    "standard_dose": 14.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "citrate",
+       "pyrophosphate",
+       "liquid",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "selenium",
+  "name": "Selenium",
+  "category": "minerals",
+  "tier": 1,
+  "comparison_quantity": "elemental selenium",
+  "unit": "mcg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "selenium",
+   "selenomethionine",
+   "sodium selenite"
+  ],
+  "classes": [
+   {
+    "id": "se_selenomethionine",
+    "label": "Selenomethionine",
+    "slug": "selenomethionine",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "selenomethionine",
+      "names": [
+       "selenomethionine",
+       "l-selenomethionine"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "se_other",
+    "label": "Other forms",
+    "slug": "other",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "selenite",
+       "selenate",
+       "yeast",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "iodine",
+  "name": "Iodine",
+  "category": "minerals",
+  "tier": 2,
+  "comparison_quantity": "elemental iodine",
+  "unit": "mcg",
+  "standard_dose": 150.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "iodine",
+   "potassium iodide",
+   "kelp"
+  ],
+  "classes": [
+   {
+    "id": "i_iodide",
+    "label": "Potassium iodide",
+    "slug": "potassium-iodide",
+    "standard_dose": 150.0,
+    "forms": [
+     {
+      "id": "potassium_iodide",
+      "names": [
+       "potassium iodide",
+       "iodide",
+       "unspecified"
+      ],
+      "elemental_factor": 0.764
+     }
+    ]
+   },
+   {
+    "id": "i_kelp",
+    "label": "Kelp",
+    "slug": "kelp",
+    "standard_dose": 150.0,
+    "forms": [
+     {
+      "id": "kelp",
+      "names": [
+       "kelp",
+       "seaweed"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "chromium",
+  "name": "Chromium",
+  "category": "minerals",
+  "tier": 2,
+  "comparison_quantity": "elemental chromium",
+  "unit": "mcg",
+  "standard_dose": 200.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "chromium",
+   "chromium picolinate"
+  ],
+  "classes": [
+   {
+    "id": "cr_picolinate",
+    "label": "Picolinate",
+    "slug": "picolinate",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "picolinate",
+      "names": [
+       "picolinate"
+      ],
+      "elemental_factor": 0.124
+     }
+    ]
+   },
+   {
+    "id": "cr_min_other",
+    "label": "Other forms",
+    "slug": "other",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "polynicotinate",
+       "chloride",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "potassium",
+  "name": "Potassium",
+  "category": "minerals",
+  "tier": 2,
+  "comparison_quantity": "elemental potassium",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "potassium",
+   "potassium citrate",
+   "potassium chloride",
+   "potassium gluconate"
+  ],
+  "classes": [
+   {
+    "id": "k_citrate",
+    "label": "Citrate",
+    "slug": "citrate",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "citrate",
+      "names": [
+       "citrate"
+      ],
+      "elemental_factor": 0.362
+     }
+    ]
+   },
+   {
+    "id": "k_chloride",
+    "label": "Chloride",
+    "slug": "chloride",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "chloride",
+      "names": [
+       "chloride"
+      ],
+      "elemental_factor": 0.524
+     }
+    ]
+   },
+   {
+    "id": "k_gluconate",
+    "label": "Gluconate",
+    "slug": "gluconate",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "gluconate",
+      "names": [
+       "gluconate"
+      ],
+      "elemental_factor": 0.167
+     }
+    ]
+   },
+   {
+    "id": "k_other",
+    "label": "Other forms",
+    "slug": "other",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "bicarbonate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "beta_alanine",
+  "name": "Beta-alanine",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "beta-alanine",
+  "unit": "mg",
+  "standard_dose": 3200.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "beta-alanine",
+   "beta alanine",
+   "carnosyn"
+  ],
+  "classes": [
+   {
+    "id": "beta_alanine",
+    "label": "Beta-alanine",
+    "slug": "beta-alanine",
+    "standard_dose": 3200.0,
+    "forms": [
+     {
+      "id": "beta_alanine",
+      "names": [
+       "beta-alanine",
+       "beta alanine",
+       "carnosyn",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "glutamine",
+  "name": "L-Glutamine",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "L-glutamine",
+  "unit": "mg",
+  "standard_dose": 5000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "glutamine",
+   "l-glutamine"
+  ],
+  "classes": [
+   {
+    "id": "glutamine",
+    "label": "L-glutamine",
+    "slug": "l-glutamine",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "l_glutamine",
+      "names": [
+       "l-glutamine",
+       "glutamine",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "taurine",
+  "name": "Taurine",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "taurine",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "taurine"
+  ],
+  "classes": [
+   {
+    "id": "taurine",
+    "label": "Taurine",
+    "slug": "taurine",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "taurine",
+      "names": [
+       "taurine",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "glycine",
+  "name": "Glycine",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "glycine",
+  "unit": "mg",
+  "standard_dose": 3000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "glycine"
+  ],
+  "classes": [
+   {
+    "id": "glycine",
+    "label": "Glycine",
+    "slug": "glycine",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "glycine",
+      "names": [
+       "glycine",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "nac",
+  "name": "N-Acetyl Cysteine",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "N-acetyl cysteine",
+  "unit": "mg",
+  "standard_dose": 600.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "nac",
+   "n-acetyl cysteine",
+   "n-acetyl-cysteine",
+   "n-acetyl l-cysteine",
+   "n-acetyl-l-cysteine",
+   "acetylcysteine"
+  ],
+  "classes": [
+   {
+    "id": "nac",
+    "label": "NAC",
+    "slug": "nac",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "nac",
+      "names": [
+       "nac",
+       "n-acetyl cysteine",
+       "n-acetyl-l-cysteine",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tyrosine",
+  "name": "L-Tyrosine",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "L-tyrosine",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "tyrosine",
+   "l-tyrosine",
+   "n-acetyl l-tyrosine",
+   "n-acetyl-l-tyrosine",
+   "nalt"
+  ],
+  "classes": [
+   {
+    "id": "tyrosine",
+    "label": "L-tyrosine",
+    "slug": "l-tyrosine",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "l_tyrosine",
+      "names": [
+       "l-tyrosine",
+       "tyrosine",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "tyrosine_nalt",
+    "label": "N-acetyl L-tyrosine (NALT)",
+    "slug": "nalt",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "nalt",
+      "names": [
+       "nalt",
+       "n-acetyl l-tyrosine",
+       "n-acetyl-l-tyrosine"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "five_htp",
+  "name": "5-HTP",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "5-HTP",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "5-htp",
+   "5 htp",
+   "5htp",
+   "5-hydroxytryptophan",
+   "griffonia"
+  ],
+  "classes": [
+   {
+    "id": "five_htp",
+    "label": "5-HTP",
+    "slug": "5-htp",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "five_htp",
+      "names": [
+       "5-htp",
+       "5htp",
+       "griffonia",
+       "griffonia seed extract",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "coq10",
+  "name": "CoQ10",
+  "category": "general-health",
+  "tier": 1,
+  "comparison_quantity": "coenzyme Q10",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "coq10",
+   "co-q10",
+   "co q10",
+   "coenzyme q10",
+   "ubiquinol",
+   "ubiquinone"
+  ],
+  "classes": [
+   {
+    "id": "coq10_ubiquinone",
+    "label": "Ubiquinone",
+    "slug": "ubiquinone",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "ubiquinone",
+      "names": [
+       "ubiquinone",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "coq10_ubiquinol",
+    "label": "Ubiquinol",
+    "slug": "ubiquinol",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "ubiquinol",
+      "names": [
+       "ubiquinol",
+       "kaneka ubiquinol"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "glucosamine",
+  "name": "Glucosamine",
+  "category": "general-health",
+  "tier": 1,
+  "comparison_quantity": "glucosamine salt (as stated)",
+  "unit": "mg",
+  "standard_dose": 1500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "glucosamine",
+   "glucosamine sulphate",
+   "glucosamine sulfate",
+   "glucosamine hcl",
+   "glucosamine hydrochloride"
+  ],
+  "classes": [
+   {
+    "id": "glucosamine_sulfate",
+    "label": "Sulphate (2KCl)",
+    "slug": "sulphate",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "sulfate_2kcl",
+      "names": [
+       "sulphate",
+       "sulfate",
+       "sulphate 2kcl",
+       "sulfate 2kcl"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "glucosamine_hcl",
+    "label": "HCl",
+    "slug": "hcl",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "hcl",
+      "names": [
+       "hcl",
+       "hydrochloride"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "msm",
+  "name": "MSM",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "methylsulfonylmethane",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "msm",
+   "methylsulfonylmethane",
+   "methylsulphonylmethane"
+  ],
+  "classes": [
+   {
+    "id": "msm",
+    "label": "MSM",
+    "slug": "msm",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "msm",
+      "names": [
+       "msm",
+       "optimsm",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "caffeine",
+  "name": "Caffeine",
+  "category": "sports",
+  "tier": 1,
+  "comparison_quantity": "caffeine",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "caffeine",
+   "caffeine anhydrous"
+  ],
+  "classes": [
+   {
+    "id": "caffeine",
+    "label": "Caffeine",
+    "slug": "caffeine",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "caffeine",
+      "names": [
+       "caffeine",
+       "anhydrous",
+       "caffeine anhydrous",
+       "natural caffeine",
+       "unspecified"
       ],
       "elemental_factor": null
      }

@@ -7,7 +7,7 @@ version: 1
 atomic_weights_source: "IUPAC abridged standard atomic weights, https://iupac.qmul.ac.uk/AtWt/"
 checked_on: 2026-09-17
 sources:
-  - { compound: magnesium, form: bisglycinate, element: Mg, substance: "magnesium bisglycinate, anhydrous", atoms: { Mg: 1, C: 4, H: 8, N: 2, O: 4 } }
+  - { compound: magnesium, form: bisglycinate, element: Mg, substance: "magnesium bisglycinate dihydrate", atoms: { Mg: 1, C: 4, H: 12, N: 2, O: 6 } }
   - { compound: magnesium, form: citrate,      element: Mg, substance: "trimagnesium dicitrate, anhydrous", atoms: { Mg: 3, C: 12, H: 10, O: 14 } }
   - { compound: magnesium, form: malate,       element: Mg, substance: "magnesium malate (1:1), anhydrous", atoms: { Mg: 1, C: 4, H: 4, O: 5 } }
   - { compound: magnesium, form: taurate,      element: Mg, substance: "magnesium taurate (ditaurinate)", atoms: { Mg: 1, C: 4, H: 12, N: 2, O: 6, S: 2 } }
@@ -20,3 +20,13 @@ sources:
   - { compound: zinc, form: bisglycinate, element: Zn, substance: "zinc bisglycinate, anhydrous", atoms: { Zn: 1, C: 4, H: 8, N: 2, O: 4 } }
   - { compound: zinc, form: oxide,        element: Zn, substance: "zinc oxide", atoms: { Zn: 1, O: 1 } }
   - { compound: zinc, form: sulfate,      element: Zn, substance: "zinc sulfate monohydrate", atoms: { Zn: 1, S: 1, H: 2, O: 5 } }
+  - { compound: calcium,   form: carbonate,        element: Ca, substance: "calcium carbonate", atoms: { Ca: 1, C: 1, O: 3 } }
+  - { compound: calcium,   form: citrate,          element: Ca, substance: "tricalcium dicitrate tetrahydrate", atoms: { Ca: 3, C: 12, H: 18, O: 18 } }
+  - { compound: iron,      form: fumarate,         element: Fe, substance: "ferrous fumarate", atoms: { Fe: 1, C: 4, H: 2, O: 4 } }
+  - { compound: iron,      form: sulfate,          element: Fe, substance: "ferrous sulfate heptahydrate", atoms: { Fe: 1, S: 1, H: 14, O: 11 } }
+  - { compound: iron,      form: gluconate,        element: Fe, substance: "ferrous gluconate dihydrate", atoms: { Fe: 1, C: 12, H: 26, O: 16 } }
+  - { compound: iodine,    form: potassium_iodide, element: I,  substance: "potassium iodide", atoms: { K: 1, I: 1 } }
+  - { compound: chromium,  form: picolinate,       element: Cr, substance: "chromium(III) picolinate", atoms: { Cr: 1, C: 18, H: 12, N: 3, O: 6 } }
+  - { compound: potassium, form: citrate,          element: K,  substance: "tripotassium citrate monohydrate", atoms: { K: 3, C: 6, H: 7, O: 8 } }
+  - { compound: potassium, form: chloride,         element: K,  substance: "potassium chloride", atoms: { K: 1, Cl: 1 } }
+  - { compound: potassium, form: gluconate,        element: K,  substance: "potassium gluconate", atoms: { K: 1, C: 6, H: 11, O: 7 } }

@@ -836,7 +836,7 @@ Every entry becomes one `compounds.yml` record with `category` set to the sectio
 |---|---|---|---|---|---|---|
 | creatine | Creatine | mg | simple_mass | 5000 | (v1) monohydrate / hcl (1500) / other | 1 |
 | beta_alanine | Beta-alanine | mg | simple_mass | 3200 | one class (CarnoSyn badge) | 1 |
-| citrulline | L-Citrulline | mg | mineral_elemental | 3000 | base vs malate_2_1 (~66% citrulline by weight when "2:1" stated; else review); `label_convention: ambiguous` | 1 |
+| citrulline | L-Citrulline | mg | mineral_elemental | 3000 | base vs malate_2_1 (**72.3 %** citrulline by weight when "2:1" stated — by formula, DECISIONS.md 2026-09-17; 1:1 is 56.6 %; ratio not stated → review); `label_convention: ambiguous` | 1 |
 | arginine | L-Arginine | mg | simple_mass | 3000 | base vs akg (separate) | 2 |
 | glutamine | L-Glutamine | mg | simple_mass | 5000 | one class | 1 |
 | leucine | L-Leucine | mg | simple_mass | 3000 | one class | 3 |

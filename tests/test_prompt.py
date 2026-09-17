@@ -14,7 +14,7 @@ def ids(title, description=""):
 
 
 def test_candidates_come_from_aliases_in_mention_order():
-    assert ids("ZMA Zinc Magnesium B6 — 90 caps") == ["zinc", "magnesium"]
+    assert ids("ZMA Zinc Magnesium B6 — 90 caps") == ["zinc", "magnesium", "vitamin_b6"]
     assert ids("Vit D 1000IU 90 Tablets") == ["vitamin_d3"]
     assert ids("Fixture Yoga Mat") == []
 

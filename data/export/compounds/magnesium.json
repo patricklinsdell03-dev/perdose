@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T21:56:21+01:00",
+ "generated_at": "2026-09-17T23:19:23+01:00",
  "compound": {
   "id": "magnesium",
   "name": "Magnesium",
@@ -40,7 +40,7 @@
        "chelate",
        "buffered chelate"
       ],
-      "elemental_factor": 0.141
+      "elemental_factor": 0.117
      }
     ]
    },

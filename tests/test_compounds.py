@@ -14,9 +14,17 @@ def _raw():
     return copy.deepcopy(RAW)
 
 
-def test_registry_loads_ten_prototype_compounds():
+PROTOTYPE_IDS = {
+    "magnesium", "zinc", "vitamin_d3", "vitamin_k2", "vitamin_c", "vitamin_b12",
+    "omega_3", "creatine", "ashwagandha", "l_theanine",
+}  # fmt: skip
+
+
+def test_registry_loads_the_prototype_compounds_and_batch_one():
     registry = load_registry()
-    assert len(registry.compounds) == 10
+    ids = {c.id for c in registry.compounds}
+    assert PROTOTYPE_IDS <= ids
+    assert len(ids) == 30  # 10 prototype + batch 1 (DECISIONS.md 2026-09-17)
     assert registry.get("magnesium").form("bisglycinate").form_class == "mg_glycinate"
 
 

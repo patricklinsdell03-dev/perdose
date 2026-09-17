@@ -18,8 +18,12 @@ def load(name):
 
 
 def test_at_least_fifty_products_across_all_ten_compounds():
+    # Only compounds with products get a card; batch 1 has none until a retailer stocks them.
     index = load("index.json")
-    assert {card["id"] for card in index} == {c.id for c in load_registry().compounds}
+    from tests.test_compounds import PROTOTYPE_IDS
+
+    carded = {card["id"] for card in index}
+    assert PROTOTYPE_IDS <= carded <= {c.id for c in load_registry().compounds}
     assert load("meta.json")["counts"]["products"] >= 50
 
 
