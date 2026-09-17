@@ -27,7 +27,6 @@ from pipeline.settings import load_env, load_llm_config
 # subcommand -> (help text, phase in brief §17 that builds it)
 NOT_BUILT_YET = {
     "content": ("draft a learn page + evidence.json", 9),
-    "content-check": ("claim linter + frontmatter check on content/", 9),
 }
 
 
@@ -49,6 +48,7 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("review", help="export unverified listings to data/review/<date>.csv")
     apply = sub.add_parser("review-apply", help="fold a filled-in review CSV into the overrides")
     apply.add_argument("--file", default=None, help="default: the newest CSV in data/review")
+    sub.add_parser("content-check", help="claim linter + structure check on content/*/learn.md")
     guard = sub.add_parser("guard", help="fail if the export lost tables since the last run")
     guard.add_argument("--before", required=True, help="the previous meta.json")
     golden = sub.add_parser("golden", help="run the golden label set, print pass/fail table")
@@ -208,6 +208,31 @@ def run_review_apply(file: str | None) -> int:
     return 0
 
 
+def run_content_check() -> int:
+    import json
+
+    from pipeline.content_check import check_all
+    from pipeline.export.run import EXPORT_DIR
+    from pipeline.ingest.run import load_retailers
+
+    names = {r.name for r in load_retailers()}
+    for path in (EXPORT_DIR / "compounds").glob("*.json"):
+        for cls in json.loads(path.read_text(encoding="utf-8"))["classes"]:
+            for group in ("ranked", "combinations", "unverified"):
+                names |= {offer["brand"] for offer in cls[group] if offer["brand"]}
+    results = check_all(sorted(names))
+    if not results:
+        print("content-check: no learn pages yet (content/<compound>/learn.md)")
+        return 0
+    for compound_id, problems in results.items():
+        print(f"  {compound_id}  {'PASS' if not problems else 'FAIL'}")
+        for problem in problems:
+            print(f"         - {problem}")
+    failed = sum(1 for problems in results.values() if problems)
+    print(f"content-check: {len(results) - failed}/{len(results)} pages pass")
+    return 1 if failed else 0
+
+
 def run_guard(before: str) -> int:
     from pathlib import Path
 
@@ -239,6 +264,8 @@ def main(argv: list[str] | None = None) -> int:
             return run_review()
         if args.command == "review-apply":
             return run_review_apply(args.file)
+        if args.command == "content-check":
+            return run_content_check()
         if args.command == "guard":
             return run_guard(args.before)
     except anthropic.AuthenticationError:

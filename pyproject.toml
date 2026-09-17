@@ -27,6 +27,8 @@ select = ["E", "F", "I", "UP", "B"]
 
 [tool.ruff.lint.per-file-ignores]
 "pipeline/db.py" = ["E501"] # the SQL schema is kept verbatim from the brief
+"tests/test_content_check.py" = ["E501"] # prose fixtures
+"tests/test_feeds.py" = ["E501"] # CSV fixture rows
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

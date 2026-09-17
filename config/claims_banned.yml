@@ -1,3 +1,19 @@
-# Banned phrasing for the claim linter (brief §20.3). List is written in Phase 9.
+# Wording that must never appear on a learn page (brief §16, §20.3). `make content-check`
+# fails a page that contains any of it. Patterns are regular expressions, matched without
+# regard to case. Findings must be phrased as what studies measured and found, never as what
+# a supplement does for the reader.
 version: 1
-banned: []
+banned:
+  - { pattern: '\bcures?\b|\bcuring\b', why: "medicinal claim" }
+  - { pattern: '\btreats?\b|\btreating\b|\btreatment for\b', why: "medicinal claim" }
+  - { pattern: '\bprevents?\b|\bpreventing\b|\bprevention of\b', why: "medicinal claim" }
+  - { pattern: '\bheals?\b|\bhealing\b', why: "medicinal claim" }
+  - { pattern: '\bboosts?\b|\bboosting\b', why: "unauthorised health claim wording" }
+  - { pattern: '\bdetox', why: "unauthorised health claim wording" }
+  - { pattern: 'clinically proven|scientifically proven|proven to', why: "overstates evidence" }
+  - { pattern: '\bmiracle\b|\bsuperfood\b|\bwonder\b', why: "marketing language" }
+  - { pattern: 'immune (support|boost)|supports? (your )?immun', why: "unauthorised health claim wording" }
+  - { pattern: '\banti-?ageing\b|\banti-?aging\b', why: "unauthorised health claim wording" }
+  - { pattern: '\bfights?\b|\bcombats?\b', why: "medicinal claim" }
+  - { pattern: 'you (should|need to) take|we recommend (taking|you)', why: "we never recommend what to take" }
+  - { pattern: '\bbest (supplement|brand|product)\b', why: "learn pages carry no product judgements" }
