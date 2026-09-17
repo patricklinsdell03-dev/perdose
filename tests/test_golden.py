@@ -8,7 +8,9 @@ from pipeline.golden import (
     coverage_gaps,
     load_golden_labels,
     run_calc_only,
+    run_replay,
 )
+from pipeline.settings import load_llm_config
 
 REGISTRY = load_registry()
 LABELS = load_golden_labels()
@@ -45,3 +47,13 @@ def test_checker_is_not_vacuous():
 def test_checker_rejects_unknown_expect_keys():
     label = dict(LABELS[0], expect={"ammount": 200})
     assert run_calc_only(REGISTRY, [label])[label["id"]] == ["unknown expect key 'ammount'"]
+
+
+def test_replay_of_saved_llm_extractions_meets_threshold():
+    # tests/golden/cache/ holds real model output from `make golden-live` (brief §15).
+    replayed = run_replay(REGISTRY, LABELS, load_llm_config().prompt_version)
+    if not replayed:
+        pytest.skip("no saved extractions for this prompt version; run `make golden-live`")
+    passed = sum(1 for problems in replayed.values() if not problems)
+    assert len(replayed) == len(LABELS), "saved extractions are incomplete; re-run golden-live"
+    assert passed / len(replayed) >= PASS_THRESHOLD

@@ -888,7 +888,7 @@ labels:
           evidence: { amount_per_serving: "Zinc 10mg" }
         - compound_id: vitamin_c
           form_raw: Vitamin C
-          form_id: ascorbic_acid
+          form_id: unspecified
           amount_per_serving: 500
           amount_unit: mg
           amount_refers_to: elemental

@@ -1,0 +1,39 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "vitamin_d3",
+        "form_raw": "D3",
+        "form_id": "d3",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "IU",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin D3 1000IU"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": 3,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "3 x 90 Tablets",
+      "multipack_count": "3 x 90 Tablets"
+    }
+  }
+}

@@ -25,7 +25,9 @@ matching the provided schema. Rules:
    or a broad blend still gets an entry per candidate it contains.
 2. form_raw: copy the form words exactly as written (e.g. "bisglycinate", "MK-7",
    "KSM-66", "ethyl ester"). form_id: map to the closest id from that compound's
-   form list supplied in the user message; null if unsure.
+   form list supplied in the user message. If the label names no form at all, use
+   that compound's form whose names include "unspecified" when there is one;
+   otherwise null. Null if unsure.
    is_single_ingredient: true only when exactly one active is present, counting
    candidates and other_actives together.
 3. pack_units / pack_unit_type: the count of capsules, tablets, softgels, gummies,
@@ -60,8 +62,16 @@ matching the provided schema. Rules:
 10. evidence: for every numeric field you fill, add an entry whose `field` is the
     field name (for a component, the component's name) and whose `quote` is the exact
     substring of the listing it came from, copied character for character. A number
-    without evidence will be discarded.
-11. confidence: 0-1 for the whole extraction. Below 0.7 means a human should look.
+    without evidence will be discarded. This applies to BOTH evidence lists: each
+    active's evidence (amount_per_serving, components) and the top-level evidence
+    (pack_units, units_per_serving, servings_stated, multipack_count).
+11. confidence: 0-1, how sure you are that you READ THE LISTING CORRECTLY - right
+    numbers in the right fields. It is not a judgement of the label. A label that
+    is itself ambiguous or terse is fully handled by amount_refers_to "unclear",
+    nulls and review_reasons; if you transcribed it accurately, confidence stays
+    high (0.9+). Short titles such as "Zinc Picolinate 50mg 100 Capsules" are
+    normal and can be read with high confidence. Use below 0.7 only when the text
+    is garbled, self-contradictory, or you had to guess which number belongs where.
 12. review_reasons: short phrases for anything odd (conflicting numbers, serving size
     missing, "buffered" chelate, marketing claims that contradict the label).
 """

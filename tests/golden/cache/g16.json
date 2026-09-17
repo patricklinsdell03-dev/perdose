@@ -1,0 +1,52 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "vitamin_d3",
+        "form_raw": "D3",
+        "form_id": "d3",
+        "amount_per_serving": 2000.0,
+        "amount_unit": "IU",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "2000IU"
+        }
+      },
+      {
+        "compound_id": "vitamin_k2",
+        "form_raw": "MK-7",
+        "form_id": "mk7",
+        "amount_per_serving": 75.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "75µg MK-7"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 caps"
+    }
+  }
+}

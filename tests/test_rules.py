@@ -363,3 +363,23 @@ def test_tested_flag_from_label_claims():
 def test_unknown_form_needs_review():
     product = run([fixture_active("magnesium", None, 100, "mg", "elemental")])
     assert "form_unknown" in product.review_reasons
+
+
+def test_component_evidence_may_be_keyed_with_a_components_prefix():
+    active = fixture_omega([{"name": "EPA", "amount": 660, "unit": "mg"}])
+    active["evidence"] = {"components.EPA": "fixture"}
+    assert run([active]).actives[0].amount_per_serving == 660
+
+
+def test_a_total_the_model_added_up_itself_is_discarded():
+    # "EPA 660mg DHA 440mg" -> the model may offer 1100 as the amount; it has no quote, so
+    # only the evidenced components count (the model extracts, the code computes).
+    components = [
+        {"name": "EPA", "amount": 660, "unit": "mg"},
+        {"name": "DHA", "amount": 440, "unit": "mg"},
+    ]
+    active = fixture_omega(components)
+    active["amount_per_serving"] = 1100
+    del active["evidence"]["amount_per_serving"]
+    resolved = run([active]).actives[0]
+    assert (resolved.amount_per_serving, resolved.amount_basis) == (1100, "stated_component_sum")

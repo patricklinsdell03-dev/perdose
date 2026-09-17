@@ -115,7 +115,9 @@ def _component(active: ActiveExtraction, name: str, compound: Compound, label_te
     """A named sub-amount in the compound's unit, if stated with evidence."""
     for comp in active.components:
         if comp.name.lower() == name.lower() and comp.unit != "percent":
-            if _evidenced(active.evidence, comp.name, label_text):
+            # The model keys a component's quote as "EPA" or "components.EPA"; accept both.
+            keys = (comp.name, f"components.{comp.name}")
+            if any(_evidenced(active.evidence, key, label_text) for key in keys):
                 return convert_amount(comp.amount, comp.unit, compound)
     return None
 

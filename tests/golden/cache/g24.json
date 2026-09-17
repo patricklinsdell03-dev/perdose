@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "creatine",
+        "form_raw": "Monohydrate",
+        "form_id": "monohydrate",
+        "amount_per_serving": 3.0,
+        "amount_unit": "g",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "3g scoop"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 1000,
+    "pack_unit_type": "gram",
+    "units_per_serving": 3.0,
+    "servings_stated": 333,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "1kg",
+      "units_per_serving": "3g scoop",
+      "servings_stated": "333 servings"
+    }
+  }
+}

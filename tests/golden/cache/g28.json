@@ -1,0 +1,45 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "ashwagandha",
+        "form_raw": "10:1 root extract",
+        "form_id": "generic_extract",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "herb_equivalent",
+            "amount": 5000.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "10:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "500mg 10:1 root extract",
+          "herb_equivalent": "5000mg (from 500mg 10:1 root extract)"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "units per serving not explicitly stated"
+    ],
+    "evidence": {
+      "pack_units": "120 tabs"
+    }
+  }
+}

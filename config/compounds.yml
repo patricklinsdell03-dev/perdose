@@ -57,7 +57,7 @@ compounds:
         elemental_factor: 0.12
         note: "Hexahydrate ~12%."
       - id: other
-        names: [orotate, lactate, aspartate, carbonate, sulfate, sulphate, blend, complex]
+        names: [orotate, lactate, aspartate, carbonate, sulfate, sulphate, blend, complex, unspecified]
         class: mg_other
         elemental_factor: null
         note: "No factor -> requires stated elemental or needs_review."
@@ -80,7 +80,7 @@ compounds:
       - { id: bisglycinate, names: [bisglycinate, glycinate, chelate], class: zn_glycinate, elemental_factor: 0.306 }
       - { id: oxide,        names: [oxide],                      class: zn_oxide,        elemental_factor: 0.803 }
       - { id: sulfate,      names: [sulfate, sulphate],          class: zn_sulfate,      elemental_factor: 0.364, note: "Monohydrate ~36%; heptahydrate ~23%." }
-      - { id: other,        names: [acetate, methionine, orotate, blend], class: zn_other, elemental_factor: null }
+      - { id: other,        names: [acetate, methionine, orotate, blend, unspecified], class: zn_other, elemental_factor: null }
 
   - id: vitamin_d3
     name: Vitamin D3
@@ -182,6 +182,7 @@ compounds:
     accepted_cofactors: [rosehip, bioflavonoids, citrus bioflavonoids, zinc]
     forms:
       - { id: ascorbic_acid,   names: [ascorbic acid],            class: vc_standard, elemental_factor: null }
+      - { id: unspecified,     names: [unspecified, vitamin c],   class: vc_standard, elemental_factor: null, note: "Label names no form. Plain vitamin C is ascorbic acid or an ascorbate; all state vitamin C content." }
       - { id: buffered,        names: [sodium ascorbate, calcium ascorbate, magnesium ascorbate, ester-c, buffered], class: vc_standard, elemental_factor: null, note: "Labels state vitamin C content; use stated." }
       - { id: liposomal,       names: [liposomal],                class: vc_liposomal, elemental_factor: null }
       - { id: timed_release,   names: [timed release, time release, slow release], class: vc_standard, elemental_factor: null }

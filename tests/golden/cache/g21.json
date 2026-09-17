@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "omega_3",
+        "form_raw": null,
+        "form_id": "fish_unspecified",
+        "amount_per_serving": 1100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "total_oil",
+        "components": [
+          {
+            "name": "EPA",
+            "amount": 660.0,
+            "unit": "mg"
+          },
+          {
+            "name": "DHA",
+            "amount": 440.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "components.EPA": "EPA 660mg",
+          "components.DHA": "DHA 440mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "softgel",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.75,
+    "review_reasons": [
+      "amount_per_serving total derived by summing EPA+DHA, not explicitly stated as total oil amount"
+    ],
+    "evidence": {
+      "pack_units": "120 softgels",
+      "units_per_serving": "2 softgels provide"
+    }
+  }
+}

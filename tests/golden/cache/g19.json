@@ -1,0 +1,50 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "omega_3",
+        "form_raw": "Fish Oil",
+        "form_id": "fish_unspecified",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "total_oil",
+        "components": [
+          {
+            "name": "EPA",
+            "amount": 180.0,
+            "unit": "mg"
+          },
+          {
+            "name": "DHA",
+            "amount": 120.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Omega 3 Fish Oil 1000mg",
+          "EPA": "EPA 180mg",
+          "DHA": "DHA 120mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 180,
+    "pack_unit_type": "softgel",
+    "units_per_serving": 1.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "180 Softgels",
+      "units_per_serving": "per softgel"
+    }
+  }
+}

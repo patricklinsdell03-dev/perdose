@@ -1,0 +1,55 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "vitamin_c",
+        "form_raw": null,
+        "form_id": "unspecified",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin C 500mg"
+        }
+      },
+      {
+        "compound_id": "zinc",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 10.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Zinc 10mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [
+      "Rosehip"
+    ],
+    "pack_units": 120,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.75,
+    "review_reasons": [
+      "serving size not stated, amounts assumed per tablet",
+      "form of vitamin C and zinc not specified"
+    ],
+    "evidence": {
+      "pack_units": "120 Tablets"
+    }
+  }
+}
