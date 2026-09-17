@@ -26,9 +26,6 @@ from pipeline.settings import load_env, load_llm_config
 
 # subcommand -> (help text, phase in brief §17 that builds it)
 NOT_BUILT_YET = {
-    "ingest": ("pull feeds / read seed CSVs -> data/raw", 3),
-    "price": ("dedupe, per-dose prices, ranking flags", 3),
-    "export": ("write data/export/*.json for the site", 3),
     "content": ("draft a learn page + evidence.json", 9),
     "content-check": ("claim linter + frontmatter check on content/", 9),
     "review": ("export needs_review rows to data/review/<date>.csv", 5),
@@ -46,6 +43,11 @@ def build_parser() -> argparse.ArgumentParser:
     normalise = sub.add_parser("normalise", help="LLM extraction -> data/perdose.sqlite (cached)")
     normalise.add_argument("--force", action="store_true", help="re-extract cached listings")
     normalise.add_argument("--limit", type=int, default=None)
+    ingest = sub.add_parser("ingest", help="read seed CSVs / feeds -> data/raw -> listings")
+    ingest.add_argument("--retailer", default=None)
+    ingest.add_argument("--date", default=None, help="YYYY-MM-DD; default today")
+    sub.add_parser("price", help="dedupe, per-dose prices, ranking flags")
+    sub.add_parser("export", help="write data/export/*.json for the site")
     golden = sub.add_parser("golden", help="run the golden label set, print pass/fail table")
     golden.add_argument("--live", action="store_true", help="call the real LLM (costs pennies)")
     return parser
@@ -126,6 +128,49 @@ def run_normalise(force: bool, limit: int | None) -> int:
     return 0
 
 
+def run_ingest(retailer: str | None, run_date: str | None) -> int:
+    from datetime import date
+
+    from pipeline.db import connect
+    from pipeline.ingest.run import ingest, load_exclusions, load_retailers
+
+    when = date.fromisoformat(run_date) if run_date else date.today()
+    counts = ingest(
+        connect(), load_registry(), load_retailers(), load_exclusions(), when, only=retailer
+    )
+    for retailer_id, count in counts.items():
+        print(f"ingest: {retailer_id}: kept {count['kept']}, dropped {count['dropped']}")
+    if not counts:
+        print("ingest: no retailer data found")
+        return 1
+    return 0
+
+
+def run_price() -> int:
+    from pipeline.db import connect
+    from pipeline.price.build import build, load_overrides
+
+    stats = build(connect(), load_registry(), load_llm_config().prompt_version, load_overrides())
+    print("price: " + ", ".join(f"{key}={value}" for key, value in stats.items()))
+    return 0
+
+
+def run_export() -> int:
+    from pipeline.db import connect
+    from pipeline.export.run import ExportTooLarge, export
+    from pipeline.ingest.run import load_retailers
+
+    try:
+        stats = export(
+            connect(), load_registry(), load_retailers(), load_llm_config().prompt_version
+        )
+    except ExportTooLarge as error:
+        print(f"ABORTED: {error}")
+        return 1
+    print("export: " + ", ".join(f"{key}={value}" for key, value in stats.items()))
+    return 0
+
+
 def main(argv: list[str] | None = None) -> int:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows consoles
     args = build_parser().parse_args(argv)
@@ -134,6 +179,12 @@ def main(argv: list[str] | None = None) -> int:
             return run_golden(args.live)
         if args.command == "normalise":
             return run_normalise(args.force, args.limit)
+        if args.command == "ingest":
+            return run_ingest(args.retailer, args.date)
+        if args.command == "price":
+            return run_price()
+        if args.command == "export":
+            return run_export()
     except anthropic.AuthenticationError:
         print(
             "\nThe API rejected the key (401). Check .env: the whole key must be on one line, "

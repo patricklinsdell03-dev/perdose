@@ -227,17 +227,28 @@ RESOLVERS = {
 # --- the pipeline -----------------------------------------------------------------------
 
 
-def _resolve_form(active: ActiveExtraction, compound: Compound) -> Form | None:
-    # A branded extract decides the class (KSM-66, Sensoril…), then the mapped id, then the words.
+def _form_named_in(text: str, compound: Compound) -> Form | None:
+    """The form whose name appears in `text` — only if every match agrees on one class."""
+    matches = [f for f in compound.forms if any(find_term(n, text) is not None for n in f.names)]
+    return matches[0] if len({f.form_class for f in matches}) == 1 else None
+
+
+def _resolve_form(active: ActiveExtraction, compound: Compound, title: str) -> Form | None:
+    # A branded extract decides the class (KSM-66, Sensoril…), then the mapped id, then the
+    # words. If the model gave nothing usable, the title may still name exactly one class
+    # ("Vitamin D3 & K2" names d3, but no K2 form — so K2 stays unknown).
     return (
         compound.form_by_name(active.branded_extract)
         or compound.form(active.form_id)
         or compound.form_by_name(active.form_raw)
+        or _form_named_in(title, compound)
     )
 
 
-def _resolve_active(active: ActiveExtraction, compound: Compound, label_text: str | None):
-    form = _resolve_form(active, compound)
+def _resolve_active(
+    active: ActiveExtraction, compound: Compound, label_text: str | None, title: str
+):
+    form = _resolve_form(active, compound, title)
     reasons: list[str] = []
     if form is None:
         reasons.append("form_unknown")
@@ -333,7 +344,7 @@ def apply_rules(
         if compound is None or compound.id in compounds:
             continue
         compounds[compound.id] = compound
-        resolved, result = _resolve_active(active, compound, label_text)
+        resolved, result = _resolve_active(active, compound, label_text, title)
         confidence = min(confidence, result.confidence_cap) - result.confidence_penalty
         actives.append(resolved)
 

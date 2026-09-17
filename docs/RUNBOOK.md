@@ -19,7 +19,23 @@ See the command list in `CLAUDE.md`. So far `make setup`, `make golden`, `make s
 
 ## How to add a retailer
 
-_To be written in Phase 3 (seed CSV) and Phase 6 (live feeds)._
+Seed-CSV retailer (until live feeds, Phase 6):
+
+1. Create `data/seed/<retailer_id>.csv` with the columns in `data/seed/README.md`. Real product pages only; leave unknowns blank. Put the nutrition/ingredients text in `description` — that is what the AI reads.
+2. Add the retailer to `config/retailers.yml` (copy an existing entry; same `id` as the file name).
+3. Run `make all`. Check the `ingest:` line shows the rows kept, and `price:` shows how many ranked.
+4. Look at the new rows before trusting them (see "Checking a run" below).
+
+## Checking a run
+
+`make all` prints one line per step:
+
+- `ingest: <retailer>: kept N, dropped M` — dropped rows mention no compound, or hit the exclusion list in `config/ingest.yml`.
+- `normalise: pending=… extracted=… calls=… escalation_rate=…` — only new or changed listings cost API calls. Escalation above 15 % means the prompt needs attention.
+- `price: listings=… products=… ranked_offers=… needs_review=…` — `products` lower than `listings` means listings were matched as the same product (by barcode, or by brand + form + pack + amount + other ingredients). If two different products were merged, add the listing to `split:` in `config/product_overrides.yml`.
+- `export: files=… bytes=…` — what the site will read, in `data/export/`.
+
+The data the site shows lives in `data/export/compounds/<compound>.json`: each class has `ranked` (sorted cheapest first), `combinations` (multi-ingredient, hidden until Phase 8) and `unverified` (with the reason).
 
 ## How to add a compound
 

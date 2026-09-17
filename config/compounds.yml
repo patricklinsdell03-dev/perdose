@@ -125,7 +125,8 @@ compounds:
     normalisation_type: oil_components
     components_sum: [EPA, DHA]
     aliases: [omega 3, omega-3, fish oil, cod liver oil, krill oil, algae oil, algal oil, epa, dha]
-    accepted_cofactors: [vitamin e, vitamin d3, astaxanthin]
+    # Krill and fish oils list their natural constituents; those are not added actives.
+    accepted_cofactors: [vitamin e, vitamin d3, astaxanthin, phospholipids, choline, omega 6, omega-6, omega 9, omega-9]
     forms:
       - { id: fish_tg, names: [triglyceride, rtg, re-esterified], class: o3_fish, elemental_factor: null }
       - { id: fish_ee, names: [ethyl ester, ee],                  class: o3_fish, elemental_factor: null, note: "Same class as TG; form shown as badge." }
@@ -215,6 +216,6 @@ compounds:
     label_convention: elemental_default
     normalisation_type: simple_mass
     aliases: [l-theanine, theanine, suntheanine]
-    accepted_cofactors: []
+    accepted_cofactors: [green tea extract, green tea, egcg]  # theanine is sold as a standardised green tea extract
     forms:
       - { id: l_theanine, names: [l-theanine, theanine, suntheanine], class: thea, elemental_factor: null }

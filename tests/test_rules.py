@@ -383,3 +383,19 @@ def test_a_total_the_model_added_up_itself_is_discarded():
     del active["evidence"]["amount_per_serving"]
     resolved = run([active]).actives[0]
     assert (resolved.amount_per_serving, resolved.amount_basis) == (1100, "stated_component_sum")
+
+
+def test_form_falls_back_to_the_one_class_named_in_the_title():
+    d3 = fixture_active("vitamin_d3", None, 4000, "IU", "elemental")
+    k2 = fixture_active("vitamin_k2", None, 100, "mcg", "elemental")
+    product = run([d3, k2], title="Fixture Vitamin D3 & K2 Capsules")
+    by_compound = {a.compound_id: a for a in product.actives}
+    assert by_compound["vitamin_d3"].form_class == "d3"
+    assert by_compound["vitamin_k2"].form_class == "unknown"  # no MK-4 / MK-7 stated
+    assert not by_compound["vitamin_k2"].rank_eligible
+
+
+def test_title_naming_two_classes_does_not_pick_one():
+    active = fixture_active("magnesium", None, 200, "mg", "elemental")
+    product = run([active], title="Fixture Magnesium Citrate & Malate Complex")
+    assert "form_unknown" in product.review_reasons

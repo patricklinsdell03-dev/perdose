@@ -1,0 +1,6 @@
+merchant_pid,ean,brand,title,description,url,image_url,price_gbp,in_stock,captured_on
+fixture_zn_1,0000000000017,Fixture Brand,Fixture Zinc Picolinate 15mg 120 Capsules,,https://example.invalid/p/zn1,,5.99,1,2026-09-17
+fixture_mg_1,,Fixture Brand,Fixture Magnesium Citrate 120 Capsules,"Two capsules provide 200mg magnesium",https://example.invalid/p/mg1,,8.49,1,2026-09-17
+fixture_d3_1,,Fixture Brand,Fixture Vitamin D3 1000IU 90 Tablets,,https://example.invalid/p/d31,,3.00,0,2026-09-17
+fixture_neg_1,,Fixture Brand,Fixture Magnesium Bath Flakes 1kg,,https://example.invalid/p/neg1,,6.00,1,2026-09-17
+fixture_neg_2,,Fixture Brand,Fixture Yoga Mat 6mm,,https://example.invalid/p/neg2,,12.00,1,2026-09-17

@@ -1,0 +1,19 @@
+# Ingest filter (brief §7.4). A listing is kept only if it mentions a compound alias AND
+# none of these terms appears in its title. They catch things that share a compound's name
+# but are out of scope: topical products, multi-active-by-design products, protein (F.11).
+version: 1
+exclude_title_terms:
+  - bath flakes
+  - bath salts
+  - epsom
+  - oil spray
+  - body butter
+  - body lotion
+  - multivitamin
+  - multi-vitamin
+  - multi vitamin
+  - multivits
+  - a-z
+  - whey
+  - protein powder
+  - mass gainer
