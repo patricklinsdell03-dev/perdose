@@ -1,0 +1,165 @@
+---
+// Product detail (brief §12.1 Flow B): label facts, the arithmetic, every offer.
+import Base from '../../layouts/Base.astro';
+import type { ProductView } from '../../lib/data';
+import { compoundSlug, products, retailerName } from '../../lib/data';
+import { BASIS_TEXT, amount, days, doseLabel, isoToLong, money, pack, perDose, perServing } from '../../lib/format';
+import { site } from '../../lib/site';
+
+export function getStaticPaths() {
+  return products().map((product) => ({ params: { product: product.id }, props: { product } }));
+}
+
+interface Props {
+  product: ProductView;
+}
+
+const { product } = Astro.props;
+const first = product.actives[0].offers[0];
+const allOffers = product.actives[0].offers;
+const verified = product.actives.some((a) => a.status !== 'unverified');
+const cheapest = [...allOffers].sort((a, b) => a.price_gbp - b.price_gbp)[0];
+const absolute = (p: string) => (site.base_url ? new URL(p, site.base_url).href : p);
+
+// schema.org Product + Offer only where the data is complete (brief §12.5). No ratings.
+const jsonLd = verified
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'Product',
+      name: product.name,
+      ...(product.brand ? { brand: { '@type': 'Brand', name: product.brand } } : {}),
+      ...(product.image_url ? { image: product.image_url } : {}),
+      url: absolute(`/p/${product.id}/`),
+      offers: allOffers.map((offer) => ({
+        '@type': 'Offer',
+        price: offer.price_gbp.toFixed(2),
+        priceCurrency: 'GBP',
+        availability: `https://schema.org/${offer.in_stock ? 'InStock' : 'OutOfStock'}`,
+        seller: { '@type': 'Organization', name: retailerName(offer.retailer_id) },
+        url: offer.url,
+      })),
+    }
+  : undefined;
+
+const report = `mailto:${site.contact_email}?subject=${encodeURIComponent(`Error report: ${product.id}`)}&body=${encodeURIComponent(`Product: ${product.name}\nProduct id: ${product.id}\nWhat looks wrong:\n`)}`;
+---
+
+<Base
+  title={`${product.name} — price per dose`}
+  description={`${product.name}: ${money(cheapest.price_gbp)} at ${retailerName(cheapest.retailer_id)}. Price per standard dose and how we worked it out.`}
+  jsonLd={jsonLd}
+  searchWeight={0.3}
+>
+  <p class="breadcrumb">
+    <a href="/">Home</a> ›{' '}
+    <a href={`/c/${compoundSlug(product.actives[0].data.compound.id)}/`}>{product.actives[0].data.compound.name}</a>
+  </p>
+  <h1 data-pagefind-meta="title">{product.name}</h1>
+  {product.brand && <p class="muted">Brand: {product.brand}</p>}
+
+  {
+    !verified && (
+      <p class="unverified">
+        <strong>Unverified.</strong> We could not confirm this product's amounts from the retailer's listing, so it is not
+        ranked. {first.review_reasons.map((r) => r.text).join(' ')}
+      </p>
+    )
+  }
+  {
+    product.actives.some((a) => a.status === 'combination') && (
+      <p class="muted">
+        This product contains more than one active ingredient, so it is left out of the main ranked tables. Each price
+        below counts one ingredient only.
+      </p>
+    )
+  }
+
+  <h2>Label facts</h2>
+  <dl class="facts">
+    <dt>Pack</dt>
+    <dd>{pack(first)}</dd>
+    {first.pack.units_per_serving && (<><dt>Serving</dt><dd>{first.pack.units_per_serving} {first.pack.unit_type === 'gram' ? 'g' : first.pack.unit_type === 'ml' ? 'ml' : `${first.pack.unit_type}(s)`}</dd></>)}
+    {product.actives.map((a) => (
+      <>
+        <dt>{a.data.compound.name}</dt>
+        <dd>
+          {perServing(a.offers[0])} per serving — {BASIS_TEXT[a.offers[0].amount_basis] ?? a.offers[0].amount_basis}
+          {a.cls.id !== 'unknown' && <> · form: {a.cls.label}</>}
+        </dd>
+      </>
+    ))}
+    {first.claimed.length > 0 && (<><dt>Claimed on listing</dt><dd>{first.claimed.join(', ')}</dd></>)}
+    {first.tested_flag && (<><dt>Testing</dt><dd>Claimed on the label (not verified by us)</dd></>)}
+  </dl>
+
+  {
+    product.actives.map((a) => (
+      <section>
+        <h2>
+          Price {doseLabel(a.data.compound, a.cls.standard_dose)}
+          {a.cls.id !== 'unknown' && (
+            <small> — <a href={`/c/${compoundSlug(a.data.compound.id)}/${a.cls.slug}/`}>compare all {a.cls.label}</a></small>
+          )}
+        </h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Retailer</th>
+                <th scope="col" class="num">Pack price</th>
+                <th scope="col" class="num key">{doseLabel(a.data.compound, a.cls.standard_dose).replace(/^per/, 'Per')}</th>
+                <th scope="col" class="num">Per month</th>
+                <th scope="col" class="num">Lasts</th>
+                <th scope="col">Checked</th>
+                <th scope="col"><span class="sr-only">Buy</span></th>
+              </tr>
+            </thead>
+            <tbody>
+              {a.offers.map((offer) => (
+                <tr class="offer">
+                  <td data-label="Retailer">{retailerName(offer.retailer_id)}{!offer.in_stock && <span class="badge warn">Out of stock</span>}</td>
+                  <td data-label="Pack price" class="num">{money(offer.price_gbp)}</td>
+                  <td data-label="Per dose" class="num key">{perDose(offer.price_per_std_dose)}</td>
+                  <td data-label="Per month" class="num">{money(offer.cost_per_month)}</td>
+                  <td data-label="Lasts" class="num">{days(offer.days_supply)}</td>
+                  <td data-label="Checked"><time datetime={offer.price_date}>{isoToLong(offer.price_date)}</time></td>
+                  <td class="buy">
+                    <a href={offer.url} target="_blank" rel="sponsored nofollow noopener" class="button">View at {retailerName(offer.retailer_id)}</a>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        {a.status === 'unverified' && (
+          <p class="muted">
+            Not ranked for {a.data.compound.name.toLowerCase()}: {a.offers[0].review_reasons.map((r) => r.text).join(' ')}
+          </p>
+        )}
+        </div>
+        {a.offers[0].price_per_std_dose !== null && a.offers[0].amount_per_serving !== null && a.offers[0].pack.servings && (
+          <p class="muted">
+            Working: {+a.offers[0].pack.servings.toFixed(1)} servings × {amount(a.offers[0].amount_per_serving, a.offers[0].amount_unit)} ={' '}
+            {amount(a.offers[0].pack.servings * a.offers[0].amount_per_serving, a.offers[0].amount_unit)} in the pack;{' '}
+            {money(a.offers[0].price_gbp)} ÷ that × {amount(a.cls.standard_dose, a.data.compound.unit)} = {perDose(a.offers[0].price_per_std_dose)}.
+            The standard dose is a comparison unit, not a recommendation.
+          </p>
+        )}
+      </section>
+    ))
+  }
+
+  {
+    Object.keys(first.evidence).length > 0 && (
+      <section>
+        <h2>From the retailer's listing</h2>
+        <ul class="quotes">
+          {Object.entries(first.evidence).map(([field, quote]) => (
+            <li><span class="field">{field.replaceAll('_', ' ')}</span> “{quote}”</li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  {site.contact_email && <p><a href={report}>Report an error with this product</a></p>}
+</Base>

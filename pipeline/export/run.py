@@ -6,6 +6,7 @@ Every number here was computed in Python upstream; this module only arranges it.
 """
 
 import json
+import re
 import sqlite3
 from datetime import datetime
 from pathlib import Path
@@ -35,6 +36,29 @@ REVIEW_REASON_TEXT = {
 }
 
 
+CLAIM_PATTERNS = {
+    # "claimed" chips (§12.2): only what the listing itself says, never inferred.
+    "vegan": r"(?<!non-)(?<!non )\bvegans?\b",
+    "vegetarian": r"\bvegetarians?\b",
+    "gluten-free": r"\bgluten[- ]free\b",
+    "sugar-free": r"\bsugar[- ]free\b",
+}
+# "Not suitable for vegetarians", "not suitable for vegetarians or vegans"
+NEGATED = r"\b(not|unsuitable)\s+(\w+\s+){0,4}$"
+
+
+def claimed_flags(text: str) -> list[str]:
+    """Dietary claims made in the listing. "Not suitable for vegetarians" is not a claim."""
+    lowered = text.lower()
+    flags = []
+    for flag, pattern in CLAIM_PATTERNS.items():
+        for match in re.finditer(pattern, lowered):
+            if not re.search(NEGATED, lowered[: match.start()][-40:]):
+                flags.append(flag)
+                break
+    return flags
+
+
 class ExportTooLarge(Exception):
     pass
 
@@ -45,7 +69,13 @@ def _rules_view(compound: Compound) -> dict:
     for form in compound.forms:
         entry = classes.setdefault(
             form.form_class,
-            {"id": form.form_class, "standard_dose": compound.standard_dose_for(form), "forms": []},
+            {
+                "id": form.form_class,
+                "label": compound.classes[form.form_class].label,
+                "slug": compound.classes[form.form_class].slug,
+                "standard_dose": compound.standard_dose_for(form),
+                "forms": [],
+            },
         )
         entry["forms"].append(
             {"id": form.id, "names": form.names, "elemental_factor": form.elemental_factor}
@@ -70,7 +100,7 @@ def _rows_for(conn: sqlite3.Connection, compound_id: str, prompt_version: str) -
     rows = conn.execute(
         """
         SELECT o.listing_id, o.product_id, o.price_list_gbp, o.match_method,
-               l.retailer_id, l.url, l.image_url, l.in_stock, l.last_seen, l.title,
+               l.retailer_id, l.url, l.image_url, l.in_stock, l.last_seen, l.title, l.description,
                p.brand, p.name, p.pack_units, p.pack_unit_type, p.units_per_serving,
                p.multipack_count, p.servings, p.tested_flag, p.multi_ingredient,
                p.needs_review, p.review_reason,
@@ -132,6 +162,7 @@ def _offer(row: dict, compound_id: str) -> dict:
         "cost_per_month": row["cost_per_month"],
         "days_supply": row["days_supply"],
         "tested_flag": row["tested_flag"],
+        "claimed": claimed_flags(f"{row['title']} {row['description'] or ''}"),
         "other_actives": other_actives,
         "review_reasons": [
             {"code": code, "text": REVIEW_REASON_TEXT.get(code, code)} for code in reasons
@@ -182,6 +213,8 @@ def _compound_file(compound: Compound, rows: list[dict], generated_at: str) -> d
         classes.append(
             {
                 "id": cls["id"],
+                "label": cls.get("label", "Form not stated"),
+                "slug": cls.get("slug", "form-not-stated"),
                 "standard_dose": cls["standard_dose"],
                 "ranked": ranked,
                 "combinations": combinations,
@@ -235,6 +268,8 @@ def export(
             class_cards.append(
                 {
                     "id": cls["id"],
+                    "label": cls["label"],
+                    "slug": cls["slug"],
                     "standard_dose": cls["standard_dose"],
                     "ranked_count": len(ranked),
                     "unverified_count": len(cls["unverified"]),

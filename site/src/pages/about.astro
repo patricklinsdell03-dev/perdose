@@ -1,0 +1,31 @@
+---
+import Base from '../layouts/Base.astro';
+import { meta } from '../lib/data';
+import { site } from '../lib/site';
+---
+
+<Base title="About" description={`What ${site.name} is and is not.`}>
+  <div class="prose">
+    <h1 data-pagefind-meta="title">About {site.name}</h1>
+    <p>
+      {site.name} is a UK price comparison for supplements. It compares products by what they cost per standard dose,
+      form by form, instead of by the price on the tub. It currently covers {meta.counts.products} products from
+      {meta.retailers.map((r) => r.name).join(', ')}.
+    </p>
+    <h2>What we do</h2>
+    <ul>
+      <li>Work out the real cost per dose of each product, and show the working.</li>
+      <li>Keep different forms of an ingredient in separate tables.</li>
+      <li>Set aside any product whose listing we cannot read with confidence, rather than guess.</li>
+    </ul>
+    <h2>What we do not do</h2>
+    <ul>
+      <li>We do not recommend what to take, or how much. The standard dose is only a unit for comparing prices.</li>
+      <li>We do not make health claims or give medical advice. If you are under 18, pregnant, take medication or have a health condition, speak to a pharmacist or GP.</li>
+      <li>We do not rate quality. Where a label claims independent testing we repeat the claim, unverified.</li>
+      <li>We do not sell placement. See <a href="/methodology/">how we compare</a> and the <a href="/disclosure/">affiliate disclosure</a>.</li>
+    </ul>
+    <h2>Privacy</h2>
+    <p>This site has no accounts, no analytics and sets no cookies of its own. “Your dose” is kept in the page address, not stored.</p>
+  </div>
+</Base>

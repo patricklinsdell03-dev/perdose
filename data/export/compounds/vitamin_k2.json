@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:53:08+01:00",
+ "generated_at": "2026-09-17T18:28:57+01:00",
  "compound": {
   "id": "vitamin_k2",
   "name": "Vitamin K2",
@@ -23,6 +23,8 @@
   "classes": [
    {
     "id": "k2_mk7",
+    "label": "MK-7",
+    "slug": "mk-7",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -40,6 +42,8 @@
    },
    {
     "id": "k2_mk4",
+    "label": "MK-4",
+    "slug": "mk-4",
     "standard_dose": 5000.0,
     "forms": [
      {
@@ -58,11 +62,13 @@
  "classes": [
   {
    "id": "k2_mk7",
+   "label": "MK-7",
+   "slug": "mk-7",
    "standard_dose": 100.0,
    "ranked": [
     {
      "listing_id": "holland_barrett:110507",
-     "product_id": "supplement-place-supplement-place-vitamin-k2-mk7-200mcg-120-capsules-mk7-120capsule",
+     "product_id": "supplement-place-supplement-place-vitamin-k2-mk7-200mcg-120-capsules",
      "brand": "Supplement Place",
      "name": "Supplement Place Vitamin K2 MK7 200mcg 120 Capsules",
      "retailer_id": "holland_barrett",
@@ -88,6 +94,9 @@
      "cost_per_month": 4.49375,
      "days_supply": 240.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -100,7 +109,7 @@
     },
     {
      "listing_id": "holland_barrett:109239",
-     "product_id": "vitabright-vitabright-vitamin-k2-mk7-from-natto-extract-100mcg-120-capsules-mk7-120capsule",
+     "product_id": "vitabright-vitabright-vitamin-k2-mk7-from-natto-extract-100mcg-120-capsules",
      "brand": "VitaBright",
      "name": "VitaBright Vitamin K2 MK7 from Natto Extract 100mcg - 120 Capsules",
      "retailer_id": "holland_barrett",
@@ -126,6 +135,7 @@
      "cost_per_month": 4.997499999999999,
      "days_supply": 120.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -142,13 +152,15 @@
   },
   {
    "id": "unknown",
+   "label": "Form not stated",
+   "slug": "form-not-stated",
    "standard_dose": 100.0,
    "ranked": [],
    "combinations": [],
    "unverified": [
     {
      "listing_id": "myprotein:12513686",
-     "product_id": "myvitamins-vitamin-d3-k2-capsules-30-servings-d3-capsule",
+     "product_id": "myvitamins-vitamin-d3-k2-capsules-30-servings",
      "brand": "Myvitamins",
      "name": "Vitamin D3 & K2 Capsules - 30 Servings",
      "retailer_id": "myprotein",
@@ -174,6 +186,9 @@
      "cost_per_month": null,
      "days_supply": null,
      "tested_flag": null,
+     "claimed": [
+      "vegetarian"
+     ],
      "other_actives": [
       "vitamin_d3"
      ],
@@ -193,7 +208,7 @@
     },
     {
      "listing_id": "myprotein:12513687",
-     "product_id": "myvitamins-vitamin-d3-k2-capsules-90capsules-90servings-unknown-90capsule",
+     "product_id": "myvitamins-vitamin-d3-k2-capsules-90capsules-90servings",
      "brand": "Myvitamins",
      "name": "Vitamin D3 & K2 Capsules - 90CAPSULES, 90servings",
      "retailer_id": "myprotein",
@@ -219,6 +234,9 @@
      "cost_per_month": null,
      "days_supply": null,
      "tested_flag": null,
+     "claimed": [
+      "vegetarian"
+     ],
      "other_actives": [
       "vitamin_d3"
      ],

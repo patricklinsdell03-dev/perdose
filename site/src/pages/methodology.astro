@@ -1,0 +1,138 @@
+---
+import Base from '../layouts/Base.astro';
+import { meta, rules } from '../lib/data';
+import { amount, isoToLong } from '../lib/format';
+import { site } from '../lib/site';
+
+const withFactors = rules.filter((c) => c.classes.some((k) => k.forms.some((f) => f.elemental_factor)));
+---
+
+<Base title="How we compare prices" description="What we normalise, what we estimate, what we do not compare, and why no retailer can pay for position.">
+  <div class="prose">
+    <h1 data-pagefind-meta="title">How we compare prices</h1>
+    <p>
+      {site.name} answers one question: for a supplement you have already decided to buy, in the form you want, which
+      product is cheapest per dose? We do not recommend what to take and we do not score quality.
+    </p>
+
+    <h2>What we normalise</h2>
+    <p>
+      Pack prices are not comparable: packs differ in size, servings differ in size, and labels quote amounts in
+      different ways. For every product we work out the total amount of the ingredient in the pack and divide the price
+      by it:
+    </p>
+    <ul>
+      <li>servings = units in the pack × packs ÷ units per serving</li>
+      <li>amount in the pack = servings × amount per serving</li>
+      <li>price per standard dose = pack price ÷ amount in the pack × the standard dose</li>
+      <li>cost per month = price per standard dose × 30</li>
+    </ul>
+    <p>
+      Every ranked row has a “Show the working” panel with these numbers and the exact words from the retailer’s listing
+      that each one came from.
+    </p>
+
+    <h2>The standard dose is a comparison unit</h2>
+    <p>
+      Each ingredient has a fixed standard dose (for example {amount(100, 'mg')} of magnesium) so that every product is
+      measured on the same scale. It is <strong>not a recommendation</strong> of how much to take. You can type your own
+      daily amount into any table to see costs for that instead.
+    </p>
+
+    <h2>How listings are read</h2>
+    <p>
+      Retailer listings are read by software that includes an AI language model. The model’s only job is to copy facts
+      out of the listing — form, amount per serving, pack size, serving size — and quote the words each fact came from.
+      It never sees a price and never calculates anything. A number without a matching quote from the listing is thrown
+      away. All arithmetic is done by ordinary, tested code using the rules on this page.
+    </p>
+
+    <h2 id="factors">What we estimate</h2>
+    <p>
+      Minerals are sold as compounds (magnesium <em>bisglycinate</em>, zinc <em>picolinate</em>). What matters for
+      comparison is the amount of the mineral itself. If a label states it, we use it. If a label gives only the weight
+      of the compound, we estimate the mineral content using the fraction below and mark the figure “estimated”.
+      The fractions are calculated from each compound’s chemical formula and standard atomic weights. Real raw materials
+      often contain water or added buffers, so an estimate can be higher than the true figure — a stated amount always
+      wins.
+    </p>
+    {
+      withFactors.map((c) => (
+        <>
+          <h3>{c.name}</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Form</th><th scope="col" class="num">Fraction that is {c.name.toLowerCase()}</th></tr></thead>
+              <tbody>
+                {c.classes.flatMap((k) => k.forms).filter((f) => f.elemental_factor).map((f) => (
+                  <tr class="offer"><td>{f.names[0]}</td><td class="num">{(f.elemental_factor! * 100).toFixed(1)}%</td></tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </>
+      ))
+    }
+
+    <h2>What we do not compare</h2>
+    <p>
+      Products are ranked only against others of the same form. Magnesium citrate is never ranked against magnesium
+      bisglycinate, creatine monohydrate never against creatine HCl, MK-7 never against MK-4. Products with several
+      active ingredients are kept out of the main tables, because their price cannot fairly be assigned to one
+      ingredient. Delivery charges are not included, because they depend on the size of your basket; each retailer’s
+      delivery terms are listed below.
+    </p>
+
+    <h2 id="unverified">What “unverified” means</h2>
+    <p>
+      If a listing does not let us confirm the amount per serving, what that amount refers to, the pack size or the
+      form, we do not guess. The product is listed separately with the reason and is never ranked. A common example:
+      “Magnesium Citrate 200mg” could mean 200 mg of magnesium or 200 mg of magnesium citrate — a six-fold difference.
+    </p>
+
+    <h2>Testing claims and dietary labels</h2>
+    <p>
+      Badges such as “testing claimed on label” or “claimed: vegan” repeat what the retailer’s listing says. We have not
+      verified them.
+    </p>
+
+    <h2>Prices and updates</h2>
+    <p>
+      Prices were last checked on {isoToLong(meta.generated_at)}. Each table and product page shows the date its prices
+      were checked. The price shown is the retailer’s selling price on that date, including any sitewide promotion
+      running at the time; voucher codes are not applied. Always confirm the price on the retailer’s site.
+    </p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Retailer</th><th scope="col">Standard delivery</th></tr></thead>
+        <tbody>
+          {meta.retailers.map((r) => (
+            <tr class="offer">
+              <td>{r.name}</td>
+              <td>
+                {r.shipping.rule === 'free_over' && `Free over £${r.shipping.threshold_gbp}`}
+                {r.shipping.rule === 'free_over' && r.shipping.flat_gbp ? `, otherwise £${r.shipping.flat_gbp.toFixed(2)}` : ''}
+                {r.shipping.rule === 'flat' && `£${r.shipping.flat_gbp?.toFixed(2)}`}
+                {r.shipping.rule === 'unknown' && 'See retailer'}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+
+    <h2>No paid placement</h2>
+    <p>
+      We may earn a commission when you buy through our links. It never affects the order of a table: ranking is purely
+      price per dose, and no retailer or brand can pay for position. See the <a href="/disclosure/">affiliate disclosure</a>.
+    </p>
+
+    <h2>Report an error</h2>
+    <p>
+      Labels change and we make mistakes.
+      {site.contact_email
+        ? <>Every product has a “tell us” link, or email <a href={`mailto:${site.contact_email}`}>{site.contact_email}</a>.</>
+        : <>A contact address will be published here before launch.</>}
+    </p>
+  </div>
+</Base>

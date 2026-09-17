@@ -1,0 +1,59 @@
+---
+import ClassView from '../../../components/ClassView.astro';
+import CompoundExplainer from '../../../components/CompoundExplainer.astro';
+import Base from '../../../layouts/Base.astro';
+import type { CompoundData } from '../../../lib/data';
+import { CATEGORY_LABELS, compoundSlug, compounds, defaultClass, retailerName } from '../../../lib/data';
+import { doseLabel, money, monthYear, perDose } from '../../../lib/format';
+
+export function getStaticPaths() {
+  // Pages with no products are never built (brief §12.5).
+  return compounds
+    .filter((data) => defaultClass(data))
+    .map((data) => ({ params: { compound: compoundSlug(data.compound.id) }, props: { data } }));
+}
+
+interface Props {
+  data: CompoundData;
+}
+
+const { data } = Astro.props;
+const c = data.compound;
+const cls = defaultClass(data);
+const unknown = data.classes.find((k) => k.id === 'unknown');
+const ranked = data.classes.flatMap((k) => k.ranked);
+const retailerCount = new Set(ranked.map((o) => o.retailer_id)).size;
+const title = `Cheapest ${c.name} in the UK — price ${doseLabel(c, c.standard_dose)} (${monthYear(data.generated_at)})`;
+const description = cls.ranked.length
+  ? `${c.name} from ${perDose(cls.ranked[0].price_per_std_dose)} ${doseLabel(c, cls.standard_dose)} across ${retailerCount} retailers, ${ranked.length} products. Compared form by form.`
+  : `${c.name} prices compared form by form.`;
+---
+
+<Base title={title} description={description} image={`/og/${compoundSlug(c.id)}/${cls.slug}.png`} searchTerms={c.aliases}>
+  <p class="breadcrumb">
+    <a href="/">Home</a> › <a href={`/browse/${c.category}/`}>{CATEGORY_LABELS[c.category]}</a>
+  </p>
+  <h1 data-pagefind-meta="title">{c.name}: price {doseLabel(c, c.standard_dose)}</h1>
+  <CompoundExplainer data={data} cls={cls} />
+
+  <h2>{c.name} — {cls.label}</h2>
+  <ClassView data={data} cls={cls} />
+
+  {
+    unknown && unknown.unverified.length > 0 && (
+      <section class="unverified">
+        <h3>Form not stated ({unknown.unverified.length})</h3>
+        <p>These listings do not say which form they contain, so they cannot be placed in a table.</p>
+        <ul>
+          {unknown.unverified.map((offer) => (
+            <li>
+              <a href={`/p/${offer.product_id}/`}>{offer.name}</a> — {money(offer.price_gbp)} at {retailerName(offer.retailer_id)}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+
+  <CompoundExplainer data={data} cls={cls} faq />
+</Base>

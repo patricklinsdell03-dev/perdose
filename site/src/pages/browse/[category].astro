@@ -1,0 +1,45 @@
+---
+// Browse by ingredient class, never by health goal (brief §12.1).
+import Base from '../../layouts/Base.astro';
+import type { CompoundData } from '../../lib/data';
+import { CATEGORY_LABELS, compoundSlug, compounds, pageClasses } from '../../lib/data';
+import { doseLabel, perDose } from '../../lib/format';
+
+export function getStaticPaths() {
+  const categories = [...new Set(compounds.map((d) => d.compound.category))];
+  return categories.map((category) => ({
+    params: { category },
+    props: { items: compounds.filter((d) => d.compound.category === category) },
+  }));
+}
+
+interface Props {
+  items: CompoundData[];
+}
+
+const { items } = Astro.props;
+const { category } = Astro.params;
+const label = CATEGORY_LABELS[category ?? ''] ?? category;
+---
+
+<Base title={`${label}: UK prices per dose`} description={`${label} compared by price per standard dose across UK retailers.`}>
+  <p class="breadcrumb"><a href="/">Home</a></p>
+  <h1 data-pagefind-meta="title">{label}</h1>
+  <ul class="cards">
+    {
+      items.map((data) => (
+        <li class="card">
+          <h3><a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a></h3>
+          <ul>
+            {pageClasses(data).filter((cls) => cls.ranked.length > 0).map((cls) => (
+              <li>
+                <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>: from{' '}
+                <strong>{perDose(cls.ranked[0].price_per_std_dose)}</strong> {doseLabel(data.compound, cls.standard_dose)}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

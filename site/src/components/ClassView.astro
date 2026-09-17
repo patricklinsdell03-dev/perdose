@@ -1,0 +1,34 @@
+---
+// Tabs for a compound's classes plus the table for one of them. Used by the compound page
+// (default class) and by each class page.
+import type { ClassData, CompoundData } from '../lib/data';
+import { compoundSlug, pageClasses } from '../lib/data';
+import OfferTable from './OfferTable.astro';
+
+interface Props {
+  data: CompoundData;
+  cls: ClassData;
+}
+
+const { data, cls } = Astro.props;
+const base = `/c/${compoundSlug(data.compound.id)}`;
+const classes = pageClasses(data);
+---
+
+{
+  classes.length > 1 && (
+    <nav aria-label={`${data.compound.name} forms`}>
+      <ul class="tabs">
+        {classes.map((item) => (
+          <li>
+            <a href={`${base}/${item.slug}/`} aria-current={item.id === cls.id ? 'page' : undefined}>
+              {item.label} ({item.ranked.length + item.unverified.length})
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<OfferTable compound={data.compound} cls={cls} />

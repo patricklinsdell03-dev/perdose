@@ -1,0 +1,63 @@
+---
+import ClassView from '../../../components/ClassView.astro';
+import CompoundExplainer from '../../../components/CompoundExplainer.astro';
+import Base from '../../../layouts/Base.astro';
+import type { ClassData, CompoundData } from '../../../lib/data';
+import { CATEGORY_LABELS, compoundSlug, compounds, pageClasses, retailerName } from '../../../lib/data';
+import { doseLabel, monthYear, perDose } from '../../../lib/format';
+import { site } from '../../../lib/site';
+
+export function getStaticPaths() {
+  return compounds.flatMap((data) =>
+    pageClasses(data).map((cls) => ({
+      params: { compound: compoundSlug(data.compound.id), cls: cls.slug },
+      props: { data, cls },
+    })),
+  );
+}
+
+interface Props {
+  data: CompoundData;
+  cls: ClassData;
+}
+
+const { data, cls } = Astro.props;
+const c = data.compound;
+const heading = cls.label.toLowerCase().includes(c.name.toLowerCase()) ? cls.label : `${c.name} ${cls.label}`;
+const retailerCount = new Set(cls.ranked.map((o) => o.retailer_id)).size;
+const title = `Cheapest ${heading} in the UK — price ${doseLabel(c, cls.standard_dose)} (${monthYear(data.generated_at)})`;
+const description = cls.ranked.length
+  ? `From ${perDose(cls.ranked[0].price_per_std_dose)} ${doseLabel(c, cls.standard_dose)} across ${retailerCount} ${retailerCount === 1 ? 'retailer' : 'retailers'}, ${cls.ranked.length} products.`
+  : `${heading}: products we could not yet verify.`;
+
+const absolute = (p: string) => (site.base_url ? new URL(p, site.base_url).href : p);
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: `${heading} ranked by price ${doseLabel(c, cls.standard_dose)}`,
+  numberOfItems: cls.ranked.length,
+  itemListElement: cls.ranked.map((offer, index) => ({
+    '@type': 'ListItem',
+    position: index + 1,
+    name: `${offer.name} (${retailerName(offer.retailer_id)})`,
+    url: absolute(`/p/${offer.product_id}/`),
+  })),
+};
+---
+
+<Base
+  title={title}
+  description={description}
+  image={`/og/${compoundSlug(c.id)}/${cls.slug}.png`}
+  jsonLd={cls.ranked.length ? jsonLd : undefined}
+  searchTerms={c.aliases}
+>
+  <p class="breadcrumb">
+    <a href="/">Home</a> › <a href={`/browse/${c.category}/`}>{CATEGORY_LABELS[c.category]}</a> ›{' '}
+    <a href={`/c/${compoundSlug(c.id)}/`}>{c.name}</a>
+  </p>
+  <h1 data-pagefind-meta="title">{heading}: price {doseLabel(c, cls.standard_dose)}</h1>
+  <CompoundExplainer data={data} cls={cls} />
+  <ClassView data={data} cls={cls} />
+  <p class="muted"><a href="/methodology/">How we compare</a> · <a href={`/c/${compoundSlug(c.id)}/`}>All {c.name.toLowerCase()} forms</a></p>
+</Base>

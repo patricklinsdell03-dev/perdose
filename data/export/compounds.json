@@ -26,6 +26,8 @@
   "classes": [
    {
     "id": "mg_glycinate",
+    "label": "Bisglycinate (glycinate)",
+    "slug": "bisglycinate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -43,6 +45,8 @@
    },
    {
     "id": "mg_citrate",
+    "label": "Citrate",
+    "slug": "citrate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -56,6 +60,8 @@
    },
    {
     "id": "mg_malate",
+    "label": "Malate",
+    "slug": "malate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -71,6 +77,8 @@
    },
    {
     "id": "mg_taurate",
+    "label": "Taurate",
+    "slug": "taurate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -85,6 +93,8 @@
    },
    {
     "id": "mg_threonate",
+    "label": "L-threonate",
+    "slug": "l-threonate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -100,6 +110,8 @@
    },
    {
     "id": "mg_oxide",
+    "label": "Oxide",
+    "slug": "oxide",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -113,6 +125,8 @@
    },
    {
     "id": "mg_chloride",
+    "label": "Chloride",
+    "slug": "chloride",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -126,6 +140,8 @@
    },
    {
     "id": "mg_other",
+    "label": "Blends and other forms",
+    "slug": "other",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -171,6 +187,8 @@
   "classes": [
    {
     "id": "zn_picolinate",
+    "label": "Picolinate",
+    "slug": "picolinate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -184,6 +202,8 @@
    },
    {
     "id": "zn_citrate",
+    "label": "Citrate",
+    "slug": "citrate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -197,6 +217,8 @@
    },
    {
     "id": "zn_gluconate",
+    "label": "Gluconate",
+    "slug": "gluconate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -210,6 +232,8 @@
    },
    {
     "id": "zn_glycinate",
+    "label": "Bisglycinate",
+    "slug": "bisglycinate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -225,6 +249,8 @@
    },
    {
     "id": "zn_oxide",
+    "label": "Oxide",
+    "slug": "oxide",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -238,6 +264,8 @@
    },
    {
     "id": "zn_sulfate",
+    "label": "Sulphate",
+    "slug": "sulphate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -252,6 +280,8 @@
    },
    {
     "id": "zn_other",
+    "label": "Other forms",
+    "slug": "other",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -290,6 +320,8 @@
   "classes": [
    {
     "id": "d3",
+    "label": "Vitamin D3",
+    "slug": "d3",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -313,6 +345,8 @@
    },
    {
     "id": "d2",
+    "label": "Vitamin D2",
+    "slug": "d2",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -350,6 +384,8 @@
   "classes": [
    {
     "id": "k2_mk7",
+    "label": "MK-7",
+    "slug": "mk-7",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -367,6 +403,8 @@
    },
    {
     "id": "k2_mk4",
+    "label": "MK-4",
+    "slug": "mk-4",
     "standard_dose": 5000.0,
     "forms": [
      {
@@ -406,6 +444,8 @@
   "classes": [
    {
     "id": "o3_fish",
+    "label": "Fish oil",
+    "slug": "fish-oil",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -437,6 +477,8 @@
    },
    {
     "id": "o3_krill",
+    "label": "Krill oil",
+    "slug": "krill-oil",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -450,6 +492,8 @@
    },
    {
     "id": "o3_algae",
+    "label": "Algae oil (vegan)",
+    "slug": "algae-oil",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -465,6 +509,8 @@
    },
    {
     "id": "o3_cod_liver",
+    "label": "Cod liver oil",
+    "slug": "cod-liver-oil",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -500,6 +546,8 @@
   "classes": [
    {
     "id": "cr_mono",
+    "label": "Monohydrate",
+    "slug": "monohydrate",
     "standard_dose": 5000.0,
     "forms": [
      {
@@ -516,6 +564,8 @@
    },
    {
     "id": "cr_hcl",
+    "label": "HCl",
+    "slug": "hcl",
     "standard_dose": 1500.0,
     "forms": [
      {
@@ -530,6 +580,8 @@
    },
    {
     "id": "cr_other",
+    "label": "Other forms",
+    "slug": "other",
     "standard_dose": 5000.0,
     "forms": [
      {
@@ -569,6 +621,8 @@
   "classes": [
    {
     "id": "ash_ksm66",
+    "label": "KSM-66",
+    "slug": "ksm-66",
     "standard_dose": 600.0,
     "forms": [
      {
@@ -583,6 +637,8 @@
    },
    {
     "id": "ash_sensoril",
+    "label": "Sensoril",
+    "slug": "sensoril",
     "standard_dose": 600.0,
     "forms": [
      {
@@ -596,6 +652,8 @@
    },
    {
     "id": "ash_shoden",
+    "label": "Shoden",
+    "slug": "shoden",
     "standard_dose": 120.0,
     "forms": [
      {
@@ -609,6 +667,8 @@
    },
    {
     "id": "ash_generic",
+    "label": "Root extract (unbranded)",
+    "slug": "root-extract",
     "standard_dose": 600.0,
     "forms": [
      {
@@ -623,6 +683,8 @@
    },
    {
     "id": "ash_powder",
+    "label": "Root powder",
+    "slug": "root-powder",
     "standard_dose": 600.0,
     "forms": [
      {
@@ -660,6 +722,8 @@
   "classes": [
    {
     "id": "vc_standard",
+    "label": "Standard (ascorbic acid and ascorbates)",
+    "slug": "standard",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -701,6 +765,8 @@
    },
    {
     "id": "vc_liposomal",
+    "label": "Liposomal",
+    "slug": "liposomal",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -736,6 +802,8 @@
   "classes": [
    {
     "id": "b12_methyl",
+    "label": "Methylcobalamin",
+    "slug": "methylcobalamin",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -750,6 +818,8 @@
    },
    {
     "id": "b12_cyano",
+    "label": "Cyanocobalamin",
+    "slug": "cyanocobalamin",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -764,6 +834,8 @@
    },
    {
     "id": "b12_adenosyl",
+    "label": "Adenosylcobalamin",
+    "slug": "adenosylcobalamin",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -778,6 +850,8 @@
    },
    {
     "id": "b12_hydroxo",
+    "label": "Hydroxocobalamin",
+    "slug": "hydroxocobalamin",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -792,6 +866,8 @@
    },
    {
     "id": "b12_unspecified",
+    "label": "Form not stated",
+    "slug": "unspecified",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -823,6 +899,8 @@
   "classes": [
    {
     "id": "thea",
+    "label": "L-theanine",
+    "slug": "l-theanine",
     "standard_dose": 200.0,
     "forms": [
      {

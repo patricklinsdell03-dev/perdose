@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:53:08+01:00",
+ "generated_at": "2026-09-17T18:28:57+01:00",
  "compound": {
   "id": "creatine",
   "name": "Creatine",
@@ -22,6 +22,8 @@
   "classes": [
    {
     "id": "cr_mono",
+    "label": "Monohydrate",
+    "slug": "monohydrate",
     "standard_dose": 5000.0,
     "forms": [
      {
@@ -38,6 +40,8 @@
    },
    {
     "id": "cr_hcl",
+    "label": "HCl",
+    "slug": "hcl",
     "standard_dose": 1500.0,
     "forms": [
      {
@@ -52,6 +56,8 @@
    },
    {
     "id": "cr_other",
+    "label": "Other forms",
+    "slug": "other",
     "standard_dose": 5000.0,
     "forms": [
      {
@@ -72,11 +78,13 @@
  "classes": [
   {
    "id": "cr_mono",
+   "label": "Monohydrate",
+   "slug": "monohydrate",
    "standard_dose": 5000.0,
    "ranked": [
     {
      "listing_id": "bulk:BPB-CMON-0000-1000",
-     "product_id": "bulk-creatine-monohydrate-powder-unflavoured-1kg-monohydrate-1000gram",
+     "product_id": "bulk-creatine-monohydrate-powder-unflavoured-1kg",
      "brand": "Bulk",
      "name": "Creatine Monohydrate Powder - Unflavoured 1kg",
      "retailer_id": "bulk",
@@ -102,6 +110,10 @@
      "cost_per_month": 2.9985,
      "days_supply": 200.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -121,7 +133,7 @@
     },
     {
      "listing_id": "bulk:BPB-CMON-0000-0500",
-     "product_id": "bulk-creatine-monohydrate-powder-unflavoured-500g-monohydrate-500gram",
+     "product_id": "bulk-creatine-monohydrate-powder-unflavoured-500g",
      "brand": "Bulk",
      "name": "Creatine Monohydrate Powder - Unflavoured 500g",
      "retailer_id": "bulk",
@@ -147,6 +159,10 @@
      "cost_per_month": 3.2969999999999997,
      "days_supply": 100.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -166,7 +182,7 @@
     },
     {
      "listing_id": "myprotein:10530054",
-     "product_id": "myprotein-impact-creatine-500g-147servings-unflavoured-monohydrate-500gram",
+     "product_id": "myprotein-impact-creatine-500g-147servings-unflavoured",
      "brand": "Myprotein",
      "name": "Impact Creatine - 500g - 147servings Unflavoured",
      "retailer_id": "myprotein",
@@ -192,6 +208,10 @@
      "cost_per_month": 4.197,
      "days_supply": 100.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -212,7 +232,7 @@
     },
     {
      "listing_id": "myprotein:10530051",
-     "product_id": "myprotein-impact-creatine-294-servings-unflavoured-monohydrate",
+     "product_id": "myprotein-impact-creatine-294-servings-unflavoured",
      "brand": "Myprotein",
      "name": "Impact Creatine - 294 Servings Unflavoured",
      "retailer_id": "myprotein",
@@ -238,6 +258,10 @@
      "cost_per_month": 4.200180072028811,
      "days_supply": 199.92,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -257,7 +281,7 @@
     },
     {
      "listing_id": "bulk:BPB-CMON-0000-0250",
-     "product_id": "bulk-creatine-monohydrate-powder-unflavoured-250g-monohydrate-250gram",
+     "product_id": "bulk-creatine-monohydrate-powder-unflavoured-250g",
      "brand": "Bulk",
      "name": "Creatine Monohydrate Powder - Unflavoured 250g",
      "retailer_id": "bulk",
@@ -283,6 +307,10 @@
      "cost_per_month": 5.394,
      "days_supply": 50.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -302,7 +330,7 @@
     },
     {
      "listing_id": "myprotein:15010401",
-     "product_id": "myprotein-impact-creatine-100g-29servings-unflavoured-monohydrate-100gram",
+     "product_id": "myprotein-impact-creatine-100g-29servings-unflavoured",
      "brand": "Myprotein",
      "name": "Impact Creatine - 100g - 29servings Unflavoured",
      "retailer_id": "myprotein",
@@ -328,6 +356,10 @@
      "cost_per_month": 5.985,
      "days_supply": 20.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -348,7 +380,7 @@
     },
     {
      "listing_id": "myprotein:10530053",
-     "product_id": "myprotein-impact-creatine-250g-73servings-unflavoured-monohydrate-250gram",
+     "product_id": "myprotein-impact-creatine-250g-73servings-unflavoured",
      "brand": "Myprotein",
      "name": "Impact Creatine - 250g - 73servings Unflavoured",
      "retailer_id": "myprotein",
@@ -374,6 +406,10 @@
      "cost_per_month": 5.994,
      "days_supply": 50.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -394,7 +430,7 @@
     },
     {
      "listing_id": "bulk:BPB-CMON-0000-0100",
-     "product_id": "bulk-creatine-monohydrate-powder-unflavoured-100g-monohydrate-100gram",
+     "product_id": "bulk-creatine-monohydrate-powder-unflavoured-100g",
      "brand": "Bulk",
      "name": "Creatine Monohydrate Powder - Unflavoured 100g",
      "retailer_id": "bulk",
@@ -420,6 +456,10 @@
      "cost_per_month": 7.485,
      "days_supply": 20.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -439,7 +479,7 @@
     },
     {
      "listing_id": "holland_barrett:102743",
-     "product_id": "applied-nutrition-applied-nutrition-creatine-monohydrate-500g-monohydrate-500gram",
+     "product_id": "applied-nutrition-applied-nutrition-creatine-monohydrate-500g",
      "brand": "Applied Nutrition",
      "name": "Applied Nutrition Creatine Monohydrate 500g",
      "retailer_id": "holland_barrett",
@@ -465,6 +505,7 @@
      "cost_per_month": 7.5,
      "days_supply": 100.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -477,7 +518,7 @@
     },
     {
      "listing_id": "bulk:BPB-CMON-1000-0540",
-     "product_id": "bulk-creatine-monohydrate-tablets-540-tablets-monohydrate-540tablet",
+     "product_id": "bulk-creatine-monohydrate-tablets-540-tablets",
      "brand": "Bulk",
      "name": "Creatine Monohydrate Tablets - 540 Tablets",
      "retailer_id": "bulk",
@@ -503,6 +544,10 @@
      "cost_per_month": 9.719444444444447,
      "days_supply": 108.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -522,7 +567,7 @@
     },
     {
      "listing_id": "bulk:BPB-CMON-1000-0270",
-     "product_id": "bulk-creatine-monohydrate-tablets-270-tablets-monohydrate-270tablet",
+     "product_id": "bulk-creatine-monohydrate-tablets-270-tablets",
      "brand": "Bulk",
      "name": "Creatine Monohydrate Tablets - 270 Tablets",
      "retailer_id": "bulk",
@@ -548,6 +593,10 @@
      "cost_per_month": 11.105555555555554,
      "days_supply": 54.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -567,7 +616,7 @@
     },
     {
      "listing_id": "bulk:BPB-CMON-1000-0090",
-     "product_id": "bulk-creatine-monohydrate-tablets-90-tablets-monohydrate-90tablet",
+     "product_id": "bulk-creatine-monohydrate-tablets-90-tablets",
      "brand": "Bulk",
      "name": "Creatine Monohydrate Tablets - 90 Tablets",
      "retailer_id": "bulk",
@@ -593,6 +642,10 @@
      "cost_per_month": 11.649999999999999,
      "days_supply": 18.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {

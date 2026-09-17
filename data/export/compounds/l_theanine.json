@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:53:08+01:00",
+ "generated_at": "2026-09-17T18:28:57+01:00",
  "compound": {
   "id": "l_theanine",
   "name": "L-Theanine",
@@ -18,6 +18,8 @@
   "classes": [
    {
     "id": "thea",
+    "label": "L-theanine",
+    "slug": "l-theanine",
     "standard_dose": 200.0,
     "forms": [
      {
@@ -36,11 +38,13 @@
  "classes": [
   {
    "id": "thea",
+   "label": "L-theanine",
+   "slug": "l-theanine",
    "standard_dose": 200.0,
    "ranked": [
     {
      "listing_id": "holland_barrett:104905",
-     "product_id": "holland-barrett-holland-barrett-l-theanine-200mg-60-capsules-unknown-60capsule",
+     "product_id": "holland-barrett-holland-barrett-l-theanine-200mg-60-capsules",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett L-Theanine 200mg 60 Capsules",
      "retailer_id": "holland_barrett",
@@ -66,6 +70,7 @@
      "cost_per_month": 6.995000000000001,
      "days_supply": 60.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [
       "EGCG"
      ],
@@ -96,7 +101,7 @@
    "combinations": [
     {
      "listing_id": "holland_barrett:108496",
-     "product_id": "higher-nature-higher-nature-l-theanine-100mg-green-tea-extract-90-vegan-capsules-l-theanine-90capsule",
+     "product_id": "higher-nature-higher-nature-l-theanine-100mg-green-tea-extract-90-vegan-capsules",
      "brand": "Higher Nature",
      "name": "Higher Nature L-Theanine 100mg - Green Tea Extract - 90 Vegan Capsules",
      "retailer_id": "holland_barrett",
@@ -122,6 +127,9 @@
      "cost_per_month": 19.3,
      "days_supply": 45.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
      "other_actives": [
       "green tea extract",
       "vitamin B5",

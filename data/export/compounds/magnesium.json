@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:53:08+01:00",
+ "generated_at": "2026-09-17T18:28:57+01:00",
  "compound": {
   "id": "magnesium",
   "name": "Magnesium",
@@ -27,6 +27,8 @@
   "classes": [
    {
     "id": "mg_glycinate",
+    "label": "Bisglycinate (glycinate)",
+    "slug": "bisglycinate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -44,6 +46,8 @@
    },
    {
     "id": "mg_citrate",
+    "label": "Citrate",
+    "slug": "citrate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -57,6 +61,8 @@
    },
    {
     "id": "mg_malate",
+    "label": "Malate",
+    "slug": "malate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -72,6 +78,8 @@
    },
    {
     "id": "mg_taurate",
+    "label": "Taurate",
+    "slug": "taurate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -86,6 +94,8 @@
    },
    {
     "id": "mg_threonate",
+    "label": "L-threonate",
+    "slug": "l-threonate",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -101,6 +111,8 @@
    },
    {
     "id": "mg_oxide",
+    "label": "Oxide",
+    "slug": "oxide",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -114,6 +126,8 @@
    },
    {
     "id": "mg_chloride",
+    "label": "Chloride",
+    "slug": "chloride",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -127,6 +141,8 @@
    },
    {
     "id": "mg_other",
+    "label": "Blends and other forms",
+    "slug": "other",
     "standard_dose": 100.0,
     "forms": [
      {
@@ -151,11 +167,13 @@
  "classes": [
   {
    "id": "mg_glycinate",
+   "label": "Bisglycinate (glycinate)",
+   "slug": "bisglycinate",
    "standard_dose": 100.0,
    "ranked": [
     {
      "listing_id": "bulk:BPB-MAGB-500T-0180",
-     "product_id": "bulk-magnesium-bisglycinate-tablets-180-tablets-bisglycinate-180tablet",
+     "product_id": "bulk-magnesium-bisglycinate-tablets-180-tablets",
      "brand": "Bulk",
      "name": "Magnesium Bisglycinate Tablets - 180 Tablets",
      "retailer_id": "bulk",
@@ -181,6 +199,10 @@
      "cost_per_month": 2.4983333333333335,
      "days_supply": 180.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -200,7 +222,7 @@
     },
     {
      "listing_id": "bulk:BPB-MAGB-500T-0060",
-     "product_id": "bulk-magnesium-bisglycinate-tablets-60-tablets-bisglycinate-60tablet",
+     "product_id": "bulk-magnesium-bisglycinate-tablets-60-tablets",
      "brand": "Bulk",
      "name": "Magnesium Bisglycinate Tablets - 60 Tablets",
      "retailer_id": "bulk",
@@ -226,6 +248,10 @@
      "cost_per_month": 2.995,
      "days_supply": 60.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -245,7 +271,7 @@
     },
     {
      "listing_id": "holland_barrett:069878",
-     "product_id": "holland-barrett-holland-barrett-magnesium-glycinate-375mg-90-capsules-bisglycinate-90capsule",
+     "product_id": "holland-barrett-holland-barrett-magnesium-glycinate-375mg-90-capsules",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett Magnesium Glycinate 375mg 90 Capsules",
      "retailer_id": "holland_barrett",
@@ -271,6 +297,7 @@
      "cost_per_month": 3.7803921568627454,
      "days_supply": 76.5,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -290,7 +317,7 @@
     },
     {
      "listing_id": "myprotein:15736556",
-     "product_id": "myvitamins-1000mg-magnesium-bisglycinate-tablets-90servings-bisglycinate-90tablet",
+     "product_id": "myvitamins-1000mg-magnesium-bisglycinate-tablets-90servings",
      "brand": "Myvitamins",
      "name": "1000mg Magnesium Bisglycinate Tablets - 90servings",
      "retailer_id": "myprotein",
@@ -316,6 +343,10 @@
      "cost_per_month": 5.33037037037037,
      "days_supply": 101.25,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -340,11 +371,13 @@
   },
   {
    "id": "mg_citrate",
+   "label": "Citrate",
+   "slug": "citrate",
    "standard_dose": 100.0,
    "ranked": [
     {
      "listing_id": "holland_barrett:046951",
-     "product_id": "holland-barrett-holland-barrett-magnesium-citrate-90-tablets-citrate-90tablet",
+     "product_id": "holland-barrett-holland-barrett-magnesium-citrate-90-tablets",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett Magnesium Citrate 90 Tablets",
      "retailer_id": "holland_barrett",
@@ -370,6 +403,7 @@
      "cost_per_month": 3.0633333333333335,
      "days_supply": 90.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -384,7 +418,7 @@
    "combinations": [
     {
      "listing_id": "bulk:BPB-ZMAG-CAPS-0180",
-     "product_id": "bulk-zinc-magnesium-capsules-180-capsules-other-180capsule",
+     "product_id": "bulk-zinc-magnesium-capsules-180-capsules",
      "brand": "Bulk",
      "name": "Zinc & Magnesium Capsules - 180 Capsules",
      "retailer_id": "bulk",
@@ -410,6 +444,10 @@
      "cost_per_month": 2.2211111111111106,
      "days_supply": 270.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "zinc"
      ],
@@ -424,7 +462,7 @@
     },
     {
      "listing_id": "bulk:BPB-ZMAG-CAPS-0060",
-     "product_id": "bulk-zinc-magnesium-capsules-60-capsules-other-60capsule",
+     "product_id": "bulk-zinc-magnesium-capsules-60-capsules",
      "brand": "Bulk",
      "name": "Zinc & Magnesium Capsules - 60 Capsules",
      "retailer_id": "bulk",
@@ -450,6 +488,10 @@
      "cost_per_month": 2.663333333333333,
      "days_supply": 90.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "zinc"
      ],
@@ -468,11 +510,13 @@
   },
   {
    "id": "mg_oxide",
+   "label": "Oxide",
+   "slug": "oxide",
    "standard_dose": 100.0,
    "ranked": [
     {
      "listing_id": "myprotein:11338669",
-     "product_id": "myvitamins-essential-magnesium-tablets-3-months-270-tablets-oxide-270tablet",
+     "product_id": "myvitamins-essential-magnesium-tablets-3-months-270-tablets",
      "brand": "Myvitamins",
      "name": "Essential Magnesium Tablets - 3 Months (270 Tablets)",
      "retailer_id": "myprotein",
@@ -498,6 +542,9 @@
      "cost_per_month": 1.4988888888888887,
      "days_supply": 270.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -511,7 +558,7 @@
     },
     {
      "listing_id": "myprotein:11338668",
-     "product_id": "myvitamins-essential-magnesium-tablets-1-month-90-tablets-oxide-90tablet",
+     "product_id": "myvitamins-essential-magnesium-tablets-1-month-90-tablets",
      "brand": "Myvitamins",
      "name": "Essential Magnesium Tablets - 1 Month (90 Tablets)",
      "retailer_id": "myprotein",
@@ -537,6 +584,9 @@
      "cost_per_month": 1.83,
      "days_supply": 90.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -553,11 +603,13 @@
   },
   {
    "id": "mg_other",
+   "label": "Blends and other forms",
+   "slug": "other",
    "standard_dose": 100.0,
    "ranked": [
     {
      "listing_id": "bulk:BPB-MAGC-3IN1-0180",
-     "product_id": "bulk-magnesium-glycinate-3-in-1-180-capsules-other-180capsule",
+     "product_id": "bulk-magnesium-glycinate-3-in-1-180-capsules",
      "brand": "Bulk",
      "name": "Magnesium Glycinate 3 in 1 - 180 Capsules",
      "retailer_id": "bulk",
@@ -583,6 +635,10 @@
      "cost_per_month": 1.4748263888888888,
      "days_supply": 345.6,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -612,7 +668,7 @@
     },
     {
      "listing_id": "bulk:BPB-MAGC-3IN1-0090",
-     "product_id": "bulk-magnesium-glycinate-3-in-1-90-capsules-other-90capsule",
+     "product_id": "bulk-magnesium-glycinate-3-in-1-90-capsules",
      "brand": "Bulk",
      "name": "Magnesium Glycinate 3 in 1 - 90 Capsules",
      "retailer_id": "bulk",
@@ -638,6 +694,10 @@
      "cost_per_month": 1.5607638888888888,
      "days_supply": 172.8,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -671,7 +731,7 @@
    "combinations": [
     {
      "listing_id": "myprotein:10529514",
-     "product_id": "myvitamins-zinc-magnesium-capsules-270capsules-other-270capsule",
+     "product_id": "myvitamins-zinc-magnesium-capsules-270capsules",
      "brand": "Myvitamins",
      "name": "Zinc & Magnesium Capsules - 270Capsules",
      "retailer_id": "myprotein",
@@ -697,6 +757,10 @@
      "cost_per_month": 1.5548148148148149,
      "days_supply": 405.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "zinc",
       "Vitamin B6",
@@ -713,7 +777,7 @@
     },
     {
      "listing_id": "myprotein:10529515",
-     "product_id": "myvitamins-zinc-magnesium-capsules-90capsules-other-90capsule",
+     "product_id": "myvitamins-zinc-magnesium-capsules-90capsules",
      "brand": "Myvitamins",
      "name": "Zinc & Magnesium Capsules - 90Capsules",
      "retailer_id": "myprotein",
@@ -739,6 +803,10 @@
      "cost_per_month": 2.108888888888889,
      "days_supply": 135.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "zinc",
       "Vitamin B6",
@@ -755,7 +823,7 @@
     },
     {
      "listing_id": "myprotein:13528187",
-     "product_id": "myvitamins-zinc-magnesium-capsules-30capsules-other-30capsule",
+     "product_id": "myvitamins-zinc-magnesium-capsules-30capsules",
      "brand": "Myvitamins",
      "name": "Zinc & Magnesium Capsules - 30Capsules",
      "retailer_id": "myprotein",
@@ -781,6 +849,10 @@
      "cost_per_month": 2.993333333333333,
      "days_supply": 45.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "zinc",
       "Vitamin B6",
@@ -798,7 +870,7 @@
     },
     {
      "listing_id": "myprotein:17679860",
-     "product_id": "myprotein-magnesium-glycinate-3-in-1-capsules-2398mg-90capsules-30servings-other-90capsule",
+     "product_id": "myprotein-magnesium-glycinate-3-in-1-capsules-2398mg-90capsules-30servings",
      "brand": "Myprotein",
      "name": "Magnesium Glycinate 3-in-1 Capsules | 2398mg - 90CAPSULES, 30servings",
      "retailer_id": "myprotein",
@@ -824,6 +896,7 @@
      "cost_per_month": 3.596,
      "days_supply": 75.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [
       "vitamin_d3",
       "Vitamin B6"

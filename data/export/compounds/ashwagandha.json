@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:53:08+01:00",
+ "generated_at": "2026-09-17T18:28:57+01:00",
  "compound": {
   "id": "ashwagandha",
   "name": "Ashwagandha",
@@ -22,6 +22,8 @@
   "classes": [
    {
     "id": "ash_ksm66",
+    "label": "KSM-66",
+    "slug": "ksm-66",
     "standard_dose": 600.0,
     "forms": [
      {
@@ -36,6 +38,8 @@
    },
    {
     "id": "ash_sensoril",
+    "label": "Sensoril",
+    "slug": "sensoril",
     "standard_dose": 600.0,
     "forms": [
      {
@@ -49,6 +53,8 @@
    },
    {
     "id": "ash_shoden",
+    "label": "Shoden",
+    "slug": "shoden",
     "standard_dose": 120.0,
     "forms": [
      {
@@ -62,6 +68,8 @@
    },
    {
     "id": "ash_generic",
+    "label": "Root extract (unbranded)",
+    "slug": "root-extract",
     "standard_dose": 600.0,
     "forms": [
      {
@@ -76,6 +84,8 @@
    },
    {
     "id": "ash_powder",
+    "label": "Root powder",
+    "slug": "root-powder",
     "standard_dose": 600.0,
     "forms": [
      {
@@ -94,11 +104,13 @@
  "classes": [
   {
    "id": "ash_ksm66",
+   "label": "KSM-66",
+   "slug": "ksm-66",
    "standard_dose": 600.0,
    "ranked": [
     {
      "listing_id": "myprotein:12335320",
-     "product_id": "myvitamins-ashwagandha-ksm66-capsules-90capsules-ksm66-90capsule",
+     "product_id": "myvitamins-ashwagandha-ksm66-capsules-90capsules",
      "brand": "Myvitamins",
      "name": "Ashwagandha KSM66 Capsules - 90Capsules",
      "retailer_id": "myprotein",
@@ -124,6 +136,10 @@
      "cost_per_month": 5.196,
      "days_supply": 75.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -137,7 +153,7 @@
     },
     {
      "listing_id": "myprotein:13170775",
-     "product_id": "myvitamins-ashwagandha-ksm66-capsules-30capsules-ksm66-30capsule",
+     "product_id": "myvitamins-ashwagandha-ksm66-capsules-30capsules",
      "brand": "Myvitamins",
      "name": "Ashwagandha KSM66 Capsules - 30Capsules",
      "retailer_id": "myprotein",
@@ -163,6 +179,10 @@
      "cost_per_month": 6.588000000000001,
      "days_supply": 25.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -176,7 +196,7 @@
     },
     {
      "listing_id": "bulk:BPB-KS66-0500-0090",
-     "product_id": "bulk-ksm-ashwagandha-capsules-90-capsules-ksm66-90capsule",
+     "product_id": "bulk-ksm-ashwagandha-capsules-90-capsules",
      "brand": "Bulk",
      "name": "KSM Ashwagandha Capsules - 90 Capsules",
      "retailer_id": "bulk",
@@ -202,6 +222,10 @@
      "cost_per_month": 7.196,
      "days_supply": 75.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -221,7 +245,7 @@
     },
     {
      "listing_id": "holland_barrett:068147",
-     "product_id": "holland-barrett-holland-barrett-ashwagandha-ksm-66-600mg-30-capsules-ksm66-30capsule",
+     "product_id": "holland-barrett-holland-barrett-ashwagandha-ksm-66-600mg-30-capsules",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett Ashwagandha KSM-66 600mg 30 Capsules",
      "retailer_id": "holland_barrett",
@@ -247,6 +271,7 @@
      "cost_per_month": 8.14,
      "days_supply": 30.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -259,7 +284,7 @@
     },
     {
      "listing_id": "bulk:BPB-KS66-0500-0030",
-     "product_id": "bulk-ksm-ashwagandha-capsules-30-capsules-ksm66-30capsule",
+     "product_id": "bulk-ksm-ashwagandha-capsules-30-capsules",
      "brand": "Bulk",
      "name": "KSM Ashwagandha Capsules - 30 Capsules",
      "retailer_id": "bulk",
@@ -285,6 +310,10 @@
      "cost_per_month": 9.588,
      "days_supply": 25.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -308,12 +337,14 @@
   },
   {
    "id": "ash_generic",
+   "label": "Root extract (unbranded)",
+   "slug": "root-extract",
    "standard_dose": 600.0,
    "ranked": [],
    "combinations": [
     {
      "listing_id": "bulk:BPB-GUMY-ASAP-0120",
-     "product_id": "bulk-ashwagandha-gummies-apple-120-gummies-generic-extract-120gummy",
+     "product_id": "bulk-ashwagandha-gummies-apple-120-gummies",
      "brand": "Bulk",
      "name": "Ashwagandha Gummies - Apple 120 Gummies",
      "retailer_id": "bulk",
@@ -339,6 +370,10 @@
      "cost_per_month": 29.99,
      "days_supply": 30.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "Vitamin B6"
      ],
@@ -365,7 +400,7 @@
     },
     {
      "listing_id": "bulk:BPB-GUMY-ASAP-0060",
-     "product_id": "bulk-ashwagandha-gummies-apple-60-gummies-generic-extract-60gummy",
+     "product_id": "bulk-ashwagandha-gummies-apple-60-gummies",
      "brand": "Bulk",
      "name": "Ashwagandha Gummies - Apple 60 Gummies",
      "retailer_id": "bulk",
@@ -391,6 +426,10 @@
      "cost_per_month": 33.98,
      "days_supply": 15.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "Vitamin B6"
      ],

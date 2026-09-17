@@ -1,0 +1,83 @@
+---
+// Factual explainer + FAQ (brief §12.1, §16): what the forms are, how we compare, what the
+// standard dose means. Templated from the rules table — no health claims, nothing about
+// what a supplement does.
+import type { ClassData, CompoundData } from '../lib/data';
+import { pageClasses } from '../lib/data';
+import { amount, doseLabel, isoToLong } from '../lib/format';
+
+interface Props {
+  data: CompoundData;
+  cls: ClassData;
+  faq?: boolean;
+}
+
+const { data, cls, faq = false } = Astro.props;
+const c = data.compound;
+const what = c.comparison_quantity;
+const classes = pageClasses(data);
+const factors = cls.id === 'unknown' ? [] : (c.classes.find((r) => r.id === cls.id)?.forms ?? []).filter((f) => f.elemental_factor);
+const latest = data.classes.flatMap((k) => [...k.ranked, ...k.unverified]).map((o) => o.price_date).sort().at(-1);
+
+const HOW: Record<string, string> = {
+  mineral_elemental: `We count the ${what} a product provides, not the weight of the whole compound it comes in. If a label states the ${what.replace('elemental ', '')} amount, we use it. If it only gives the compound's weight, we estimate using a published conversion factor and mark the figure “estimated”. If we cannot tell which the number means, the product is listed as unverified and is not ranked.`,
+  vitamin_unit: `We count the amount of ${what} stated on the label, converting between units (for example micrograms and IU) so every product is on the same scale.`,
+  oil_components: `We count ${what} — the components stated on the label — not the weight of the oil. A 1,000 mg capsule of oil can contain very different amounts of ${what}. Products that state only the oil weight are listed as unverified and are not ranked.`,
+  extract_standardised: `We count the weight of extract per serving. Where a label quotes a “whole herb equivalent” (for example “5,000 mg from a 10:1 extract”), we use the actual extract weight. Branded, standardised extracts are compared separately from unbranded ones.`,
+  simple_mass: `We count the amount of ${what} per serving as stated on the label.`,
+};
+
+const questions = [
+  {
+    q: `What does “${doseLabel(c, cls.standard_dose)}” mean?`,
+    a: `It is the unit we use to put every product on the same scale: the price of ${amount(cls.standard_dose, c.unit)} of ${what}, whatever the pack size or serving size. It is a comparison unit, not a recommendation of how much to take. Use the “Your daily dose” box to see costs at the amount you actually take.`,
+  },
+  ...(classes.length > 1
+    ? [
+        {
+          q: `Why are the ${c.name.toLowerCase()} forms in separate tables?`,
+          a: `We only rank products against others of the same form, because someone buying one form would not usually see another as a like-for-like substitute on price. Forms we compare separately: ${classes.map((k) => k.label).join('; ')}.`,
+        },
+      ]
+    : []),
+  {
+    q: 'Why are some products “unverified”?',
+    a: 'If a retailer’s listing does not let us confirm the amount per serving, the pack size or the form, we do not guess. The product is shown separately with the reason, and never appears in the ranked table.',
+  },
+  {
+    q: 'How up to date are the prices?',
+    a: `${latest ? `Prices on this page were last checked on ${isoToLong(latest)}. ` : ''}Every table shows the date its prices were checked. Always confirm the price on the retailer’s site before buying.`,
+  },
+  {
+    q: 'Do retailers pay to appear higher?',
+    a: 'No. We may earn a commission if you buy through our links, but the order is set only by price per dose. No retailer or brand can pay for position.',
+  },
+];
+---
+
+<div class="prose">
+  {!faq && <p>{HOW[c.normalisation_type]}</p>}
+  {
+    !faq && factors.length > 0 && (
+      <p class="muted">
+        Conversion {factors.length > 1 ? 'factors' : 'factor'} used when only the compound weight is given:{' '}
+        {factors.map((f) => `${f.names[0]} ${(f.elemental_factor! * 100).toFixed(1)}%`).join(', ')}.{' '}
+        <a href="/methodology/#factors">How we chose these</a>.
+      </p>
+    )
+  }
+
+  {
+    faq && (
+      <section>
+        <h2>Questions</h2>
+        {questions.map((item) => (
+          <details>
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </section>
+    )
+  }
+</div>

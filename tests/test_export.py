@@ -97,3 +97,25 @@ def test_size_guard(exported, monkeypatch):
     conn = connect(":memory:")
     with pytest.raises(export_module.ExportTooLarge):
         export_module.export(conn, REGISTRY, RETAILERS, PROMPT)
+
+
+@pytest.mark.parametrize(
+    ("text", "expected"),
+    [
+        ("Suitable for: vegetarians and vegans.", ["vegan", "vegetarian"]),
+        ("Vitamin D3 Softgels - 180Softgels - Non-Vegan | Not suitable for vegetarians.", []),
+        ("Suitable For | Halal, Vegan, Vegetarian", ["vegan", "vegetarian"]),
+        ("Sugar Free Gummies, gluten-free", ["gluten-free", "sugar-free"]),
+        ("Vegetarian capsule. Not suitable for vegans.", ["vegetarian"]),
+        ("Magnesium Citrate 90 Tablets", []),
+    ],
+)
+def test_claimed_dietary_flags(text, expected):
+    assert export_module.claimed_flags(text) == expected
+
+
+def test_classes_carry_site_label_and_slug(exported):
+    files, _ = exported
+    glycinate = files["compounds/magnesium.json"]["classes"][0]
+    assert (glycinate["label"], glycinate["slug"]) == ("Bisglycinate (glycinate)", "bisglycinate")
+    assert files["index.json"][0]["classes"][0]["slug"] == "bisglycinate"

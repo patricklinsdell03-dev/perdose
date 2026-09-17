@@ -6,16 +6,20 @@
   "scripts": {
     "dev": "astro dev",
     "check": "astro check",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "astro build && pagefind --site dist",
+    "preview": "astro preview",
+    "smoke": "node scripts/smoke.mjs"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
     "astro": "^7.3.3",
+    "sharp": "^0.35.4",
     "yaml": "^2.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
     "@types/node": "^22.0.0",
+    "pagefind": "^1.5.2",
     "typescript": "^6.0.3"
   }
 }

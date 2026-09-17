@@ -1,10 +1,75 @@
 ---
 import Base from '../layouts/Base.astro';
+import { CATEGORY_LABELS, compoundSlug, compounds, meta, pageClasses } from '../lib/data';
+import { doseLabel, isoToLong, perDose } from '../lib/format';
 import { site } from '../lib/site';
+
+const categories = [...new Set(compounds.map((d) => d.compound.category))];
 ---
 
 <Base>
-  <h1>{site.name}</h1>
-  <p>{site.tagline}.</p>
-  <p>Placeholder page — the site is being built. No prices are shown yet.</p>
+  <h1>{site.tagline}</h1>
+  <p class="prose">
+    Supplement labels are hard to compare: different pack sizes, different serving sizes, and amounts quoted in
+    different ways. We work out what each product really costs per standard dose, form by form, across{' '}
+    {meta.retailers.length} UK retailers and {meta.counts.products} products. Prices last checked {isoToLong(meta.generated_at)}.
+  </p>
+
+  <section id="search" aria-label="Search">
+    <h2>Search</h2>
+    <div id="pagefind" data-pagefind-ignore>
+      <p class="muted">Search loads on the built site. You can also browse below or use the <a href="/a-z/">A–Z</a>.</p>
+    </div>
+  </section>
+
+  <h2>Compare prices</h2>
+  <ul class="cards">
+    {
+      compounds.map((data) => {
+        const classes = pageClasses(data).filter((cls) => cls.ranked.length > 0);
+        return (
+          <li class="card">
+            <h3><a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a></h3>
+            <p class="muted">
+              {new Set(data.classes.flatMap((c) => [...c.ranked, ...c.unverified].map((o) => o.product_id))).size} products ·{' '}
+              {new Set(data.classes.flatMap((c) => c.ranked.map((o) => o.retailer_id))).size} retailers
+            </p>
+            <ul>
+              {classes.map((cls) => (
+                <li>
+                  <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>: from{' '}
+                  <strong>{perDose(cls.ranked[0].price_per_std_dose)}</strong> {doseLabel(data.compound, cls.standard_dose)}
+                </li>
+              ))}
+            </ul>
+          </li>
+        );
+      })
+    }
+  </ul>
+
+  <h2>Browse by type</h2>
+  <ul>
+    {categories.map((id) => <li><a href={`/browse/${id}/`}>{CATEGORY_LABELS[id] ?? id}</a></li>)}
+  </ul>
 </Base>
+
+<script>
+  // Pagefind's index only exists after a production build (npm run build), so load it lazily
+  // and leave the fallback text in place if it is missing (e.g. in `astro dev`).
+  const target = document.getElementById('pagefind');
+  if (target) {
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = '/pagefind/pagefind-ui.css';
+    const script = document.createElement('script');
+    script.src = '/pagefind/pagefind-ui.js';
+    script.onload = () => {
+      target.textContent = '';
+      // @ts-expect-error PagefindUI is defined by the script loaded above
+      new PagefindUI({ element: '#pagefind', showSubResults: false, showImages: false, resetStyles: false });
+      document.head.append(css);
+    };
+    document.head.append(script);
+  }
+</script>

@@ -1,0 +1,382 @@
+/* Plain CSS on top of tokens.css (brief §12.4): fast, plain, readable. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--text-base);
+  line-height: 1.55;
+  color: var(--color-text);
+  background: var(--color-background);
+}
+
+a {
+  color: var(--color-accent);
+}
+
+h1 {
+  font-size: var(--text-xl);
+  line-height: 1.2;
+  margin: 0 0 var(--space-3);
+}
+h2 {
+  font-size: var(--text-lg);
+  margin: var(--space-5) 0 var(--space-2);
+}
+h3 {
+  font-size: var(--text-base);
+  margin: var(--space-4) 0 var(--space-2);
+}
+
+.wrap {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+.prose {
+  max-width: 44rem;
+}
+main {
+  padding: var(--space-4) 0 var(--space-5);
+}
+
+.disclosure {
+  margin: 0;
+  padding: var(--space-2) 0;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  background: var(--color-surface);
+}
+.site-header {
+  border-bottom: 1px solid var(--color-surface);
+}
+.site-header .wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-4);
+  align-items: baseline;
+  padding-top: var(--space-3);
+  padding-bottom: var(--space-3);
+}
+.site-name {
+  font-weight: 700;
+  font-size: var(--text-lg);
+  text-decoration: none;
+  color: var(--color-text);
+}
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+footer {
+  padding: var(--space-4) 0;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  background: var(--color-surface);
+}
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.muted,
+.table-meta,
+small {
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+.breadcrumb {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  margin: 0 0 var(--space-2);
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+.card {
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+}
+.card h3 {
+  margin: 0 0 var(--space-1);
+  font-size: var(--text-lg);
+}
+.card p {
+  margin: 0;
+}
+.card ul {
+  margin: var(--space-2) 0 0;
+  padding-left: 1.1rem;
+  font-size: var(--text-sm);
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+  margin: var(--space-3) 0;
+  list-style: none;
+}
+.tabs a {
+  display: block;
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-muted);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+.tabs a[aria-current='page'] {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-background);
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-4);
+  align-items: end;
+  margin: var(--space-3) 0;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  font-size: var(--text-sm);
+}
+.controls label {
+  display: grid;
+  gap: var(--space-1);
+  font-weight: 600;
+}
+.controls .check {
+  display: inline-flex;
+  gap: var(--space-1);
+  align-items: center;
+  margin-right: var(--space-3);
+  font-weight: 400;
+}
+.controls fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+.controls legend {
+  font-weight: 600;
+  padding: 0;
+  margin-bottom: var(--space-1);
+}
+.controls input[type='number'],
+.controls select {
+  font: inherit;
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius);
+  background: var(--color-background);
+  color: var(--color-text);
+}
+.controls input[type='number'] {
+  width: 6.5rem;
+}
+
+/* Table */
+.table-wrap {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+th,
+td {
+  padding: var(--space-2);
+  text-align: left;
+  vertical-align: top;
+}
+thead th {
+  border-bottom: 2px solid var(--color-muted);
+  white-space: nowrap;
+}
+.num {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.key {
+  font-weight: 700;
+}
+td.key {
+  font-size: var(--text-base);
+}
+tr.offer td {
+  border-top: 1px solid var(--color-surface);
+}
+tr.detail td {
+  padding-top: 0;
+}
+.name {
+  font-weight: 600;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-top: var(--space-1);
+}
+.badge,
+.chip {
+  display: inline-block;
+  padding: 0 var(--space-2);
+  border-radius: 999px;
+  font-size: 0.75rem;
+  border: 1px solid var(--color-muted);
+  color: var(--color-muted);
+}
+.badge.pick {
+  border-color: var(--color-success);
+  color: var(--color-success);
+  font-weight: 600;
+}
+.badge.warn {
+  border-color: var(--color-warning);
+  color: var(--color-warning);
+}
+.button {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-accent);
+  color: var(--color-background);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+details summary {
+  cursor: pointer;
+  color: var(--color-muted);
+}
+details ul {
+  margin: var(--space-2) 0;
+}
+.quotes .field {
+  color: var(--color-muted);
+}
+.unverified {
+  margin-top: var(--space-5);
+  padding: var(--space-3);
+  border: 1px dashed var(--color-muted);
+  border-radius: var(--radius);
+  color: var(--color-muted);
+}
+.unverified h3 {
+  margin-top: 0;
+}
+.unverified li {
+  margin-bottom: var(--space-2);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+[hidden] {
+  display: none !important;
+}
+
+dl.facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-3);
+}
+dl.facts dt {
+  color: var(--color-muted);
+}
+dl.facts dd {
+  margin: 0;
+}
+
+.az {
+  columns: 16rem;
+  padding: 0;
+  list-style: none;
+}
+.az li {
+  break-inside: avoid;
+  margin-bottom: var(--space-1);
+}
+
+/* Mobile: each row becomes a card; price per dose stays prominent (brief §12.2). */
+@media (max-width: 46rem) {
+  thead {
+    display: none;
+  }
+  table,
+  tbody,
+  tr,
+  td {
+    display: block;
+    width: 100%;
+  }
+  tr.offer {
+    margin-top: var(--space-3);
+    padding: var(--space-2);
+    background: var(--color-surface);
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+  tr.offer td {
+    border: 0;
+    padding: var(--space-1) var(--space-2);
+    text-align: left;
+  }
+  tr.offer td[data-label]:not([data-label='Product'])::before {
+    content: attr(data-label) ': ';
+    color: var(--color-muted);
+  }
+  tr.detail {
+    padding: 0 var(--space-2) var(--space-2);
+    background: var(--color-surface);
+    border-radius: 0 0 var(--radius) var(--radius);
+  }
+  td.key {
+    font-size: var(--text-lg);
+  }
+}
+
+/* Pagefind's search UI, matched to our tokens (it defaults to light colours). */
+#pagefind {
+  --pagefind-ui-scale: 0.9;
+  --pagefind-ui-primary: var(--color-accent);
+  --pagefind-ui-text: var(--color-text);
+  --pagefind-ui-background: var(--color-background);
+  --pagefind-ui-border: var(--color-muted);
+  --pagefind-ui-tag: var(--color-surface);
+  --pagefind-ui-border-width: 1px;
+  --pagefind-ui-font: inherit;
+}
+#pagefind mark {
+  background: none;
+  color: inherit;
+  font-weight: 700;
+}
+#pagefind input {
+  color: var(--color-text);
+}

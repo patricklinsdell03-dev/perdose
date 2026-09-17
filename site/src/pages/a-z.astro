@@ -1,0 +1,35 @@
+---
+// Every compound and every alias on one page (brief §12.1).
+import Base from '../layouts/Base.astro';
+import { compoundSlug, compounds } from '../lib/data';
+
+const entries = compounds
+  .flatMap((data) => {
+    const names = new Set([data.compound.name, ...data.compound.aliases.map((a) => a.replace(/\b\w/, (ch) => ch.toUpperCase()))]);
+    return [...names]
+      .filter((name) => name.length > 2)
+      .map((name) => ({ name, compound: data.compound.name, href: `/c/${compoundSlug(data.compound.id)}/` }));
+  })
+  .sort((a, b) => a.name.localeCompare(b.name, 'en-GB', { sensitivity: 'base' }));
+const letters = [...new Set(entries.map((e) => e.name[0].toUpperCase()))];
+---
+
+<Base title="A–Z of supplements we compare" description="Every supplement and alternative name we compare prices for, A to Z.">
+  <h1 data-pagefind-meta="title">A–Z</h1>
+  <p>{letters.map((letter) => <><a href={`#${letter}`}>{letter}</a>{' '}</>)}</p>
+  {
+    letters.map((letter) => (
+      <section>
+        <h2 id={letter}>{letter}</h2>
+        <ul class="az">
+          {entries.filter((e) => e.name[0].toUpperCase() === letter).map((e) => (
+            <li>
+              <a href={e.href}>{e.name}</a>
+              {e.name.toLowerCase() !== e.compound.toLowerCase() && <span class="muted"> — see {e.compound}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))
+  }
+</Base>

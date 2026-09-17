@@ -1,0 +1,295 @@
+---
+// The ranked table (brief §12.2). Rows are rendered at build time, already sorted by price
+// per standard dose. The script below only re-sorts, filters and re-scales them for "your
+// dose" using the per-unit price computed by the pipeline — it never reads a label.
+import type { ClassData, CompoundRule, Offer } from '../lib/data';
+import { compoundSlug, retailerName } from '../lib/data';
+import { BASIS_TEXT, amount, days, doseLabel, isoToLong, money, pack, perDose, perServing } from '../lib/format';
+import { site } from '../lib/site';
+
+interface Props {
+  compound: CompoundRule;
+  cls: ClassData;
+}
+
+const { compound, cls } = Astro.props;
+const dose = cls.standard_dose;
+const unitLabel = amount(1, compound.unit).replace(/^1\s*/, '');
+const retailers = [...new Set(cls.ranked.map((o) => o.retailer_id))];
+const latest = [...cls.ranked, ...cls.unverified].map((o) => o.price_date).sort().at(-1);
+const SIX_MONTHS = 183;
+const practical = cls.ranked.find((o) => (o.days_supply ?? Infinity) <= SIX_MONTHS);
+const cheapest = cls.ranked[0];
+
+function reportLink(offer: Offer): string {
+  const subject = `Error report: ${offer.product_id}`;
+  const body = `Product: ${offer.name}\nProduct id: ${offer.product_id}\nRetailer: ${retailerName(offer.retailer_id)}\nPage: /c/${compoundSlug(compound.id)}/${cls.slug}/\nWhat I saw:\n`;
+  return `mailto:${site.contact_email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function working(offer: Offer): string[] {
+  const lines: string[] = [];
+  const p = offer.pack;
+  if (p.units && p.units_per_serving && p.servings) {
+    const packs = p.multipack_count > 1 ? ` × ${p.multipack_count} packs` : '';
+    lines.push(`Servings: ${p.units}${packs} ÷ ${p.units_per_serving} per serving = ${+p.servings.toFixed(1)}`);
+  } else if (p.servings) {
+    lines.push(`Servings: ${+p.servings.toFixed(1)} (as stated on the label)`);
+  }
+  if (offer.amount_per_serving !== null && p.servings && offer.price_per_std_dose !== null) {
+    const total = offer.amount_per_serving * p.servings;
+    lines.push(`In the pack: ${+p.servings.toFixed(1)} × ${amount(offer.amount_per_serving, offer.amount_unit)} = ${amount(total, offer.amount_unit)}`);
+    lines.push(`${money(offer.price_gbp)} ÷ ${amount(total, offer.amount_unit)} × ${amount(dose, compound.unit)} = ${perDose(offer.price_per_std_dose)} ${doseLabel(compound, dose)}`);
+  }
+  return lines;
+}
+---
+
+<section class="offers" data-offers data-standard-dose={dose}>
+  <p class="table-meta">
+    {latest && <>Prices last checked: <time datetime={latest}>{isoToLong(latest)}</time>. </>}
+    Ranked purely by price {doseLabel(compound, dose)} — a comparison unit, not a recommendation.
+    We may earn commission from these links; it never affects the order.
+  </p>
+
+  {
+    cls.ranked.length > 0 && (
+      <>
+        <form class="controls" data-controls>
+          <label class="dose">
+            Your daily dose
+            <span>
+              <input type="number" name="dose" min="0" step="any" value={dose} data-dose inputmode="decimal" />
+              {unitLabel}
+            </span>
+          </label>
+          <label>
+            Sort by
+            <select name="sort" data-sort>
+              <option value="dose">Price per dose</option>
+              <option value="month">Cost per month</option>
+              <option value="pack">Pack price</option>
+              <option value="days">Days' supply (longest first)</option>
+            </select>
+          </label>
+          {retailers.length > 1 && (
+            <fieldset>
+              <legend>Retailers</legend>
+              {retailers.map((id) => (
+                <label class="check">
+                  <input type="checkbox" name="retailer" value={id} checked data-retailer-filter /> {retailerName(id)}
+                </label>
+              ))}
+            </fieldset>
+          )}
+          <fieldset>
+            <legend>Show only</legend>
+            <label class="check"><input type="checkbox" data-filter="stock" /> In stock</label>
+            <label class="check"><input type="checkbox" data-filter="tested" /> Testing claim on label</label>
+          </fieldset>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Retailer</th>
+                <th scope="col">Pack</th>
+                <th scope="col">Per serving</th>
+                <th scope="col" class="num key" data-dose-heading>{doseLabel(compound, dose).replace(/^per/, 'Per')}</th>
+                <th scope="col" class="num">Per month</th>
+                <th scope="col" class="num">Lasts</th>
+                <th scope="col"><span class="sr-only">Buy</span></th>
+              </tr>
+            </thead>
+            <tbody data-rows>
+              {cls.ranked.map((offer) => (
+                <>
+                  <tr
+                    class="offer"
+                    data-row
+                    data-id={offer.listing_id}
+                    data-ppu={offer.price_per_unit}
+                    data-total={(offer.days_supply ?? 0) * dose}
+                    data-price={offer.price_gbp}
+                    data-retailer={offer.retailer_id}
+                    data-stock={offer.in_stock ? '1' : '0'}
+                    data-tested={offer.tested_flag ? '1' : '0'}
+                  >
+                    <td data-label="Product">
+                      <a href={`/p/${offer.product_id}/`} class="name">{offer.name}</a>
+                      <span class="badges">
+                        <span class="badge pick" data-badge="cheapest" hidden={offer !== cheapest}>Cheapest per dose</span>
+                        <span class="badge pick" data-badge="practical" hidden={offer !== practical || offer === cheapest}>
+                          Best value under 6 months' supply
+                        </span>
+                        {offer.tested_flag && <span class="badge">Testing claimed on label</span>}
+                        {offer.claimed.map((flag) => <span class="chip">claimed: {flag}</span>)}
+                        {!offer.in_stock && <span class="badge warn">Out of stock</span>}
+                      </span>
+                    </td>
+                    <td data-label="Retailer">{retailerName(offer.retailer_id)}</td>
+                    <td data-label="Pack">{pack(offer)}</td>
+                    <td data-label="Per serving">{perServing(offer)}</td>
+                    <td data-label={doseLabel(compound, dose)} class="num key" data-cell="dose">{perDose(offer.price_per_std_dose)}</td>
+                    <td data-label="Per month" class="num" data-cell="month">{money(offer.cost_per_month)}</td>
+                    <td data-label="Lasts" class="num" data-cell="days">{days(offer.days_supply)}</td>
+                    <td class="buy">
+                      <a href={offer.url} target="_blank" rel="sponsored nofollow noopener" class="button">
+                        {money(offer.price_gbp)} at {retailerName(offer.retailer_id)}
+                      </a>
+                    </td>
+                  </tr>
+                  <tr class="detail" data-detail-for={offer.listing_id}>
+                    <td colspan="8">
+                      <details>
+                        <summary>Show the working</summary>
+                        <ul>
+                          {working(offer).map((line) => <li>{line}</li>)}
+                          <li>Amount per serving: {BASIS_TEXT[offer.amount_basis] ?? offer.amount_basis}.</li>
+                          {offer.other_actives.length > 0 && (
+                            <li>Also contains: {offer.other_actives.map((a) => a.replaceAll('_', ' ')).join(', ')}. The price counts the {compound.name.toLowerCase()} only.</li>
+                          )}
+                        </ul>
+                        {Object.keys(offer.evidence).length > 0 && (
+                          <>
+                            <p>From the retailer's listing:</p>
+                            <ul class="quotes">
+                              {Object.entries(offer.evidence).map(([field, quote]) => (
+                                <li><span class="field">{field.replaceAll('_', ' ').replace('components.', '')}</span> “{quote}”</li>
+                              ))}
+                            </ul>
+                          </>
+                        )}
+                        {site.contact_email && <p><a href={reportLink(offer)}>Is this wrong? Tell us</a></p>}
+                      </details>
+                    </td>
+                  </tr>
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="empty" data-empty hidden>No products match these filters.</p>
+      </>
+    )
+  }
+
+  {
+    cls.unverified.length > 0 && (
+      <section class="unverified">
+        <h3>Unverified ({cls.unverified.length})</h3>
+        <p>
+          We could not confirm the amounts for these from the retailer's listing, so they are <strong>not ranked</strong>.
+          <a href="/methodology/#unverified">What “unverified” means</a>.
+        </p>
+        <ul>
+          {cls.unverified.map((offer) => (
+            <li>
+              <a href={`/p/${offer.product_id}/`}>{offer.name}</a> — {money(offer.price_gbp)} at {retailerName(offer.retailer_id)}
+              <span class="badge warn">Unverified</span>
+              <br />
+              <small>{offer.review_reasons.map((r) => r.text).join(' ')}</small>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )
+  }
+</section>
+
+<script>
+  // "Your dose", sorting and filters (brief §12.2). State lives in the URL (?dose=400) so a
+  // view can be shared; nothing is stored. Prices scale from the pipeline's per-unit price.
+  const SIX_MONTHS = 183;
+
+  function perDose(value: number): string {
+    const decimals = Math.min(4, Math.max(2, 2 - Math.floor(Math.log10(value))));
+    return `£${value.toFixed(decimals)}`;
+  }
+
+  function days(value: number): string {
+    if (value >= 365) return `${Math.round((value / 365) * 10) / 10} years`;
+    if (value >= 60) return `${Math.round(value / 30.4)} months`;
+    return `${Math.round(value)} days`;
+  }
+
+  for (const section of document.querySelectorAll<HTMLElement>('[data-offers]')) {
+    const body = section.querySelector<HTMLElement>('[data-rows]');
+    const doseInput = section.querySelector<HTMLInputElement>('[data-dose]');
+    const sortSelect = section.querySelector<HTMLSelectElement>('[data-sort]');
+    if (!body || !doseInput || !sortSelect) continue;
+
+    const standardDose = Number(section.dataset.standardDose);
+    const rows = [...body.querySelectorAll<HTMLElement>('[data-row]')];
+    const detailFor = (row: HTMLElement) =>
+      body.querySelector<HTMLElement>(`[data-detail-for="${CSS.escape(row.dataset.id ?? '')}"]`);
+    const params = new URLSearchParams(location.search);
+    const fromUrl = Number(params.get('dose'));
+    if (fromUrl > 0) doseInput.value = String(fromUrl);
+    if (params.get('sort')) sortSelect.value = params.get('sort') ?? 'dose';
+
+    const update = () => {
+      const dose = Number(doseInput.value) > 0 ? Number(doseInput.value) : standardDose;
+      const retailers = new Set(
+        [...section.querySelectorAll<HTMLInputElement>('[data-retailer-filter]:checked')].map((i) => i.value),
+      );
+      const hasRetailerFilter = section.querySelector('[data-retailer-filter]') !== null;
+      const onlyStock = section.querySelector<HTMLInputElement>('[data-filter="stock"]')?.checked;
+      const onlyTested = section.querySelector<HTMLInputElement>('[data-filter="tested"]')?.checked;
+
+      const scored = rows.map((row) => {
+        const perUnit = Number(row.dataset.ppu);
+        const total = Number(row.dataset.total);
+        const value = { row, dose: perUnit * dose, days: total / dose, pack: Number(row.dataset.price) };
+        row.querySelector('[data-cell="dose"]')!.textContent = perDose(value.dose);
+        row.querySelector('[data-cell="month"]')!.textContent = `£${(value.dose * 30).toFixed(2)}`;
+        row.querySelector('[data-cell="days"]')!.textContent = days(value.days);
+        const visible =
+          (!hasRetailerFilter || retailers.has(row.dataset.retailer ?? '')) &&
+          (!onlyStock || row.dataset.stock === '1') &&
+          (!onlyTested || row.dataset.tested === '1');
+        row.hidden = !visible;
+        const detail = detailFor(row);
+        if (detail) detail.hidden = !visible;
+        return { ...value, visible };
+      });
+
+      const order = { dose: 1, month: 1, pack: 1, days: -1 }[sortSelect.value] ?? 1;
+      const key = sortSelect.value === 'pack' ? 'pack' : sortSelect.value === 'days' ? 'days' : 'dose';
+      scored.sort((a, b) => (a[key] - b[key]) * order);
+      for (const item of scored) {
+        body.append(item.row);
+        const detail = detailFor(item.row);
+        if (detail) body.append(detail);
+      }
+
+      // Practical pick: the cheapest row is often a two-year tub.
+      const byDose = scored.filter((s) => s.visible).sort((a, b) => a.dose - b.dose);
+      const cheapest = byDose[0]?.row;
+      const practical = byDose.find((s) => s.days <= SIX_MONTHS)?.row;
+      for (const row of rows) {
+        row.querySelector<HTMLElement>('[data-badge="cheapest"]')!.hidden = row !== cheapest;
+        row.querySelector<HTMLElement>('[data-badge="practical"]')!.hidden = row !== practical || row === cheapest;
+      }
+      section.querySelector<HTMLElement>('[data-empty]')!.hidden = byDose.length > 0;
+
+      const heading = section.querySelector<HTMLElement>('[data-dose-heading]');
+      if (heading) {
+        heading.dataset.standard ??= heading.textContent ?? '';
+        heading.textContent = dose === standardDose ? heading.dataset.standard : 'Per your dose';
+      }
+
+      const next = new URLSearchParams(location.search);
+      dose === standardDose ? next.delete('dose') : next.set('dose', String(dose));
+      sortSelect.value === 'dose' ? next.delete('sort') : next.set('sort', sortSelect.value);
+      const query = next.toString();
+      history.replaceState(null, '', query ? `?${query}` : location.pathname);
+    };
+
+    section.querySelector('[data-controls]')?.addEventListener('input', update);
+    section.querySelector('[data-controls]')?.addEventListener('submit', (event) => event.preventDefault());
+    if (fromUrl > 0 || params.get('sort')) update();
+  }
+</script>

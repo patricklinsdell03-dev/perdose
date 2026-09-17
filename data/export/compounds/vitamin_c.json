@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:53:08+01:00",
+ "generated_at": "2026-09-17T18:28:57+01:00",
  "compound": {
   "id": "vitamin_c",
   "name": "Vitamin C",
@@ -22,6 +22,8 @@
   "classes": [
    {
     "id": "vc_standard",
+    "label": "Standard (ascorbic acid and ascorbates)",
+    "slug": "standard",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -63,6 +65,8 @@
    },
    {
     "id": "vc_liposomal",
+    "label": "Liposomal",
+    "slug": "liposomal",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -79,11 +83,13 @@
  "classes": [
   {
    "id": "vc_standard",
+   "label": "Standard (ascorbic acid and ascorbates)",
+   "slug": "standard",
    "standard_dose": 1000.0,
    "ranked": [
     {
      "listing_id": "holland_barrett:069976",
-     "product_id": "holland-barrett-holland-barrett-vitamin-c-1000mg-240-tablets-ascorbic-acid-240tablet",
+     "product_id": "holland-barrett-holland-barrett-vitamin-c-1000mg-240-tablets",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett Vitamin C (1000mg) 240 Tablets",
      "retailer_id": "holland_barrett",
@@ -109,6 +115,7 @@
      "cost_per_month": 1.12375,
      "days_supply": 240.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -121,7 +128,7 @@
     },
     {
      "listing_id": "bulk:BPB-VITC-1000-0270",
-     "product_id": "bulk-vitamin-c-tablets-270-tablets-ascorbic-acid-270tablet",
+     "product_id": "bulk-vitamin-c-tablets-270-tablets",
      "brand": "Bulk",
      "name": "Vitamin C Tablets - 270 Tablets",
      "retailer_id": "bulk",
@@ -147,6 +154,10 @@
      "cost_per_month": 1.6655555555555557,
      "days_supply": 270.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -159,7 +170,7 @@
     },
     {
      "listing_id": "bulk:BPB-VITC-1000-0090",
-     "product_id": "bulk-vitamin-c-tablets-90-tablets-ascorbic-acid-90tablet",
+     "product_id": "bulk-vitamin-c-tablets-90-tablets",
      "brand": "Bulk",
      "name": "Vitamin C Tablets - 90 Tablets",
      "retailer_id": "bulk",
@@ -185,6 +196,10 @@
      "cost_per_month": 2.1633333333333336,
      "days_supply": 90.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -197,7 +212,7 @@
     },
     {
      "listing_id": "myprotein:14871341",
-     "product_id": "myvitamins-vitamin-c-capsules-180capsules-90servings-unspecified-180capsule",
+     "product_id": "myvitamins-vitamin-c-capsules-180capsules-90servings",
      "brand": "Myvitamins",
      "name": "Vitamin C Capsules - 180CAPSULES, 90servings",
      "retailer_id": "myprotein",
@@ -223,6 +238,10 @@
      "cost_per_month": 2.4966666666666666,
      "days_supply": 90.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -236,7 +255,7 @@
     },
     {
      "listing_id": "myprotein:14871340",
-     "product_id": "myvitamins-vitamin-c-capsules-30-servings-unspecified-capsule",
+     "product_id": "myvitamins-vitamin-c-capsules-30-servings",
      "brand": "Myvitamins",
      "name": "Vitamin C Capsules - 30 Servings",
      "retailer_id": "myprotein",
@@ -262,6 +281,10 @@
      "cost_per_month": 3.99,
      "days_supply": 30.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -276,7 +299,7 @@
    "combinations": [
     {
      "listing_id": "myprotein:10575263",
-     "product_id": "myvitamins-zinc-tablets-90tablets-citrate-90tablet",
+     "product_id": "myvitamins-zinc-tablets-90tablets",
      "brand": "Myvitamins",
      "name": "Zinc Tablets - 90Tablets",
      "retailer_id": "myprotein",
@@ -302,6 +325,10 @@
      "cost_per_month": 33.27777777777777,
      "days_supply": 5.4,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "zinc"
      ],
@@ -319,11 +346,13 @@
   },
   {
    "id": "vc_liposomal",
+   "label": "Liposomal",
+   "slug": "liposomal",
    "standard_dose": 1000.0,
    "ranked": [
     {
      "listing_id": "myprotein:17812379",
-     "product_id": "well-actually-well-actually-liposomal-vitamin-c-1000mg-strawberry-lychee-250ml-liposomal-250ml",
+     "product_id": "well-actually-well-actually-liposomal-vitamin-c-1000mg-strawberry-lychee-250ml",
      "brand": "Well.Actually.",
      "name": "Well.Actually. Liposomal Vitamin C 1000mg - Strawberry & Lychee (250ml)",
      "retailer_id": "myprotein",
@@ -349,6 +378,7 @@
      "cost_per_month": 19.793999999999997,
      "days_supply": 50.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {

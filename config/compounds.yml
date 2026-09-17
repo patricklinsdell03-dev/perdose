@@ -23,6 +23,15 @@ compounds:
         compound_if_at_least: 400   # no single serving delivers >= 400 mg elemental in these forms
         compound_forms: [bisglycinate, citrate, malate, taurate, l_threonate]
         elemental_if_at_most: 120
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      mg_glycinate: { label: "Bisglycinate (glycinate)", slug: bisglycinate }
+      mg_citrate: { label: "Citrate", slug: citrate }
+      mg_malate: { label: "Malate", slug: malate }
+      mg_taurate: { label: "Taurate", slug: taurate }
+      mg_threonate: { label: "L-threonate", slug: l-threonate }
+      mg_oxide: { label: "Oxide", slug: oxide }
+      mg_chloride: { label: "Chloride", slug: chloride }
+      mg_other: { label: "Blends and other forms", slug: other }
     forms:
       - id: bisglycinate
         names: [bisglycinate, glycinate, diglycinate, chelate, buffered chelate]
@@ -73,6 +82,14 @@ compounds:
     normalisation_type: mineral_elemental
     aliases: [zinc, zn, zinc picolinate, zinc citrate, zinc gluconate, zinc bisglycinate, zinc oxide, zinc sulphate, zinc sulfate]
     accepted_cofactors: [copper, vitamin c]
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      zn_picolinate: { label: "Picolinate", slug: picolinate }
+      zn_citrate: { label: "Citrate", slug: citrate }
+      zn_gluconate: { label: "Gluconate", slug: gluconate }
+      zn_glycinate: { label: "Bisglycinate", slug: bisglycinate }
+      zn_oxide: { label: "Oxide", slug: oxide }
+      zn_sulfate: { label: "Sulphate", slug: sulphate }
+      zn_other: { label: "Other forms", slug: other }
     forms:
       - { id: picolinate,   names: [picolinate],                 class: zn_picolinate,   elemental_factor: 0.211 }
       - { id: citrate,      names: [citrate],                    class: zn_citrate,      elemental_factor: 0.321, note: "Dihydrate (the commercial form) 32.1%; anhydrous 34.1%." }
@@ -94,6 +111,9 @@ compounds:
     normalisation_type: vitamin_unit
     aliases: [vitamin d, vitamin d3, vit d, d3, cholecalciferol, colecalciferol]
     accepted_cofactors: [vitamin k2, mk-7, mk7]
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      d3: { label: "Vitamin D3", slug: d3 }
+      d2: { label: "Vitamin D2", slug: d2 }
     forms:
       - { id: d3,        names: [d3, cholecalciferol, colecalciferol], class: d3,        elemental_factor: null }
       - { id: d3_vegan,  names: [vegan d3, lichen],                  class: d3,        elemental_factor: null, note: "Same class; source shown as a badge." }
@@ -110,6 +130,9 @@ compounds:
     normalisation_type: vitamin_unit
     aliases: [vitamin k2, k2, mk-7, mk7, menaquinone-7, mk-4, mk4, menaquinone-4]
     accepted_cofactors: [vitamin d3]
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      k2_mk7: { label: "MK-7", slug: mk-7 }
+      k2_mk4: { label: "MK-4", slug: mk-4 }
     forms:
       - { id: mk7, names: [mk-7, mk7, menaquinone-7, menaq7, k2vital], class: k2_mk7, elemental_factor: null }
       - { id: mk4, names: [mk-4, mk4, menaquinone-4],                  class: k2_mk4, elemental_factor: null, note: "Doses in mg; separate class, standard dose 5 mg.", standard_dose_override: 5000 }
@@ -127,6 +150,11 @@ compounds:
     aliases: [omega 3, omega-3, fish oil, cod liver oil, krill oil, algae oil, algal oil, epa, dha]
     # Krill and fish oils list their natural constituents; those are not added actives.
     accepted_cofactors: [vitamin e, vitamin d3, astaxanthin, phospholipids, choline, omega 6, omega-6, omega 9, omega-9]
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      o3_fish: { label: "Fish oil", slug: fish-oil }
+      o3_krill: { label: "Krill oil", slug: krill-oil }
+      o3_algae: { label: "Algae oil (vegan)", slug: algae-oil }
+      o3_cod_liver: { label: "Cod liver oil", slug: cod-liver-oil }
     forms:
       - { id: fish_tg, names: [triglyceride, rtg, re-esterified], class: o3_fish, elemental_factor: null }
       - { id: fish_ee, names: [ethyl ester, ee],                  class: o3_fish, elemental_factor: null, note: "Same class as TG; form shown as badge." }
@@ -146,6 +174,10 @@ compounds:
     normalisation_type: simple_mass
     aliases: [creatine, creatine monohydrate, creapure, micronised creatine, micronized creatine, creatine hcl, creatine hydrochloride]
     accepted_cofactors: []
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      cr_mono: { label: "Monohydrate", slug: monohydrate }
+      cr_hcl: { label: "HCl", slug: hcl }
+      cr_other: { label: "Other forms", slug: other }
     forms:
       - { id: monohydrate, names: [monohydrate, micronised, micronized, creapure], class: cr_mono, elemental_factor: null }
       - { id: hcl,         names: [hcl, hydrochloride],                       class: cr_hcl,  elemental_factor: null, standard_dose_override: 1500 }
@@ -163,6 +195,12 @@ compounds:
     standardisation_component: withanolides
     aliases: [ashwagandha, withania, withania somnifera, ksm-66, ksm66, sensoril, shoden]
     accepted_cofactors: [black pepper, piperine, bioperine]
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      ash_ksm66: { label: "KSM-66", slug: ksm-66 }
+      ash_sensoril: { label: "Sensoril", slug: sensoril }
+      ash_shoden: { label: "Shoden", slug: shoden }
+      ash_generic: { label: "Root extract (unbranded)", slug: root-extract }
+      ash_powder: { label: "Root powder", slug: root-powder }
     forms:
       - { id: ksm66,           names: [ksm-66, ksm66],            class: ash_ksm66,   elemental_factor: null, note: "5% withanolides (HPLC)." }
       - { id: sensoril,        names: [sensoril],                 class: ash_sensoril, elemental_factor: null, note: "10% withanolides; leaf+root." }
@@ -181,6 +219,9 @@ compounds:
     normalisation_type: simple_mass
     aliases: [vitamin c, vit c, ascorbic acid, sodium ascorbate, calcium ascorbate, ester-c, liposomal vitamin c]
     accepted_cofactors: [rosehip, bioflavonoids, citrus bioflavonoids, zinc]
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      vc_standard: { label: "Standard (ascorbic acid and ascorbates)", slug: standard }
+      vc_liposomal: { label: "Liposomal", slug: liposomal }
     forms:
       - { id: ascorbic_acid,   names: [ascorbic acid],            class: vc_standard, elemental_factor: null }
       - { id: unspecified,     names: [unspecified, vitamin c],   class: vc_standard, elemental_factor: null, note: "Label names no form. Plain vitamin C is ascorbic acid or an ascorbate; all state vitamin C content." }
@@ -199,6 +240,12 @@ compounds:
     normalisation_type: vitamin_unit
     aliases: [vitamin b12, b12, cobalamin, methylcobalamin, cyanocobalamin, adenosylcobalamin, hydroxocobalamin]
     accepted_cofactors: [folate, folic acid, methylfolate]
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      b12_methyl: { label: "Methylcobalamin", slug: methylcobalamin }
+      b12_cyano: { label: "Cyanocobalamin", slug: cyanocobalamin }
+      b12_adenosyl: { label: "Adenosylcobalamin", slug: adenosylcobalamin }
+      b12_hydroxo: { label: "Hydroxocobalamin", slug: hydroxocobalamin }
+      b12_unspecified: { label: "Form not stated", slug: unspecified }
     forms:
       - { id: methyl,   names: [methylcobalamin, methyl],   class: b12_methyl, elemental_factor: null }
       - { id: cyano,    names: [cyanocobalamin, cyano],     class: b12_cyano,  elemental_factor: null }
@@ -217,5 +264,7 @@ compounds:
     normalisation_type: simple_mass
     aliases: [l-theanine, theanine, suntheanine]
     accepted_cofactors: [green tea extract, green tea, egcg]  # theanine is sold as a standardised green tea extract
+    classes:   # comparison tables: label shown on the site, slug used in the URL
+      thea: { label: "L-theanine", slug: l-theanine }
     forms:
       - { id: l_theanine, names: [l-theanine, theanine, suntheanine], class: thea, elemental_factor: null }

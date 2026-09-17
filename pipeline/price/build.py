@@ -1,4 +1,4 @@
-"""`make price` (brief §8, §10, §11): extractions -> products, actives, offers, offer prices.
+"""`make price` (brief Â§8, Â§10, Â§11): extractions -> products, actives, offers, offer prices.
 
 Products keep their ids between runs; actives, offers and prices are rebuilt from scratch each
 time, so a rule change or a new extraction always flows through.
@@ -26,7 +26,7 @@ NEW_CONFIDENCE = 1.0  # a product matched only to itself
 
 @dataclass
 class Overrides:
-    """Manual corrections, applied last (§11 step 5)."""
+    """Manual corrections, applied last (Â§11 step 5)."""
 
     split: set[str]  # listing ids that must be their own product
     merge: dict[str, str]  # product id -> product id it should be folded into
@@ -44,7 +44,7 @@ def slugify(*parts: str | None) -> str:
 
 
 def match_key(brand: str | None, product: NormalisedProduct) -> str | None:
-    """§11 step 2. None when the product is too incomplete to be matched safely."""
+    """Â§11 step 2. None when the product is too incomplete to be matched safely."""
     primary = product.primary
     if not (brand and primary and product.pack_units and primary.amount_per_serving):
         return None
@@ -91,7 +91,7 @@ def build(conn: sqlite3.Connection, registry: Registry, prompt_version: str, ove
     ).fetchall()
 
     # Matching happens within the run, where each listing's full reading is available. The
-    # previous run's listing -> product links are only used to keep ids stable (§11 step 4).
+    # previous run's listing -> product links are only used to keep ids stable (Â§11 step 4).
     known_listing = dict(conn.execute("SELECT listing_id, product_id FROM offers"))
     by_ean: dict[str, str] = {}
     by_key: dict[str, str] = {}
@@ -111,10 +111,9 @@ def build(conn: sqlite3.Connection, registry: Registry, prompt_version: str, ove
             stats["no_active"] += 1
             continue
         stats["listings"] += 1
-        primary = product.primary
         key = match_key(brand, product)
 
-        # §11: EAN, then key, then a new product. A false merge is a wrong price, so when in
+        # Â§11: EAN, then key, then a new product. A false merge is a wrong price, so when in
         # doubt a listing stays separate (a duplicate row is only cosmetic).
         split = listing_id in overrides.split
         previous = known_listing.get(listing_id)
@@ -126,8 +125,7 @@ def build(conn: sqlite3.Connection, registry: Registry, prompt_version: str, ove
             if previous and previous not in touched:
                 product_id = previous  # same product as last run: keep its id
             else:
-                pack = f"{product.pack_units or ''}{product.pack_unit_type or ''}"
-                product_id = _unique_id(conn, slugify(brand, title, primary.form_id, pack))
+                product_id = _unique_id(conn, slugify(brand, title))
             method, confidence = "key", NEW_CONFIDENCE
         if product_id in overrides.merge:
             product_id, method, confidence = overrides.merge[product_id], "manual", 1.0

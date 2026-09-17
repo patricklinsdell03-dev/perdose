@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../lib/site';
+---
+
+<Base title="Affiliate disclosure" description="How this site earns money, and why it cannot affect the rankings.">
+  <div class="prose">
+    <h1 data-pagefind-meta="title">Affiliate disclosure</h1>
+    <p>
+      Links from {site.name} to retailers may be affiliate links. If you buy after following one, the retailer may pay
+      us a commission. It costs you nothing extra.
+    </p>
+    <h2>It does not affect the ranking</h2>
+    <ul>
+      <li>Tables are ordered purely by price per dose, calculated the same way for every product.</li>
+      <li>Retailers and brands cannot pay for placement, and there are no sponsored or “featured” rows.</li>
+      <li>Retailers that pay no commission are ranked exactly the same way as those that do.</li>
+    </ul>
+    <p>The full method is on the <a href="/methodology/">how we compare</a> page.</p>
+  </div>
+</Base>

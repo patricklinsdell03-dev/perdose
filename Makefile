@@ -48,5 +48,6 @@ check:
 	uv run pytest
 	npm --prefix site run check
 	npm --prefix site run build
+	npm --prefix site run smoke
 
 all: ingest normalise price site

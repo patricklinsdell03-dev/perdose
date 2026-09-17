@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:53:08+01:00",
+ "generated_at": "2026-09-17T18:28:57+01:00",
  "compound": {
   "id": "omega_3",
   "name": "Omega-3",
@@ -24,6 +24,8 @@
   "classes": [
    {
     "id": "o3_fish",
+    "label": "Fish oil",
+    "slug": "fish-oil",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -55,6 +57,8 @@
    },
    {
     "id": "o3_krill",
+    "label": "Krill oil",
+    "slug": "krill-oil",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -68,6 +72,8 @@
    },
    {
     "id": "o3_algae",
+    "label": "Algae oil (vegan)",
+    "slug": "algae-oil",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -83,6 +89,8 @@
    },
    {
     "id": "o3_cod_liver",
+    "label": "Cod liver oil",
+    "slug": "cod-liver-oil",
     "standard_dose": 1000.0,
     "forms": [
      {
@@ -99,11 +107,13 @@
  "classes": [
   {
    "id": "o3_fish",
+   "label": "Fish oil",
+   "slug": "fish-oil",
    "standard_dose": 1000.0,
    "ranked": [
     {
      "listing_id": "myprotein:10615611",
-     "product_id": "myvitamins-high-strength-omega-3-2340mg-250capsules-fish-unspecified-250capsule",
+     "product_id": "myvitamins-high-strength-omega-3-2340mg-250capsules",
      "brand": "Myvitamins",
      "name": "High Strength Omega 3 | 2340mg - 250Capsules",
      "retailer_id": "myprotein",
@@ -129,6 +139,7 @@
      "cost_per_month": 3.3583999999999996,
      "days_supply": 187.5,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -160,7 +171,7 @@
     },
     {
      "listing_id": "myprotein:10615612",
-     "product_id": "myvitamins-high-strength-omega-3-2340mg-90capsules-fish-unspecified-90capsule",
+     "product_id": "myvitamins-high-strength-omega-3-2340mg-90capsules",
      "brand": "Myvitamins",
      "name": "High Strength Omega 3 | 2340mg - 90Capsules",
      "retailer_id": "myprotein",
@@ -186,6 +197,7 @@
      "cost_per_month": 4.4399999999999995,
      "days_supply": 67.5,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -211,7 +223,7 @@
     },
     {
      "listing_id": "holland_barrett:076292",
-     "product_id": "holland-barrett-holland-barrett-omega-3-fish-oil-1000mg-240-capsules-fish-unspecified-240capsule",
+     "product_id": "holland-barrett-holland-barrett-omega-3-fish-oil-1000mg-240-capsules",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett Omega 3 Fish Oil 1000mg 240 Capsules",
      "retailer_id": "holland_barrett",
@@ -237,6 +249,7 @@
      "cost_per_month": 6.0375000000000005,
      "days_supply": 72.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -268,7 +281,7 @@
     },
     {
      "listing_id": "bulk:BPB-O3SS-1000-0270",
-     "product_id": "bulk-super-strength-omega-3-270-softgels-fish-unspecified-270softgel",
+     "product_id": "bulk-super-strength-omega-3-270-softgels",
      "brand": "Bulk",
      "name": "Super Strength Omega 3 - 270 Softgels",
      "retailer_id": "bulk",
@@ -294,6 +307,7 @@
      "cost_per_month": 6.664646464646465,
      "days_supply": 148.5,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -319,7 +333,7 @@
     },
     {
      "listing_id": "myprotein:10529333",
-     "product_id": "myvitamins-essential-omega-3-250softgels-fish-unspecified-250softgel",
+     "product_id": "myvitamins-essential-omega-3-250softgels",
      "brand": "Myvitamins",
      "name": "Essential Omega-3 - 250Softgels",
      "retailer_id": "myprotein",
@@ -345,6 +359,7 @@
      "cost_per_month": 7.196,
      "days_supply": 75.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -370,7 +385,7 @@
     },
     {
      "listing_id": "bulk:BPB-O3SS-1000-0090",
-     "product_id": "bulk-super-strength-omega-3-90-softgels-fish-unspecified-90softgel",
+     "product_id": "bulk-super-strength-omega-3-90-softgels",
      "brand": "Bulk",
      "name": "Super Strength Omega 3 - 90 Softgels",
      "retailer_id": "bulk",
@@ -396,6 +411,7 @@
      "cost_per_month": 7.266666666666667,
      "days_supply": 49.5,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -421,7 +437,7 @@
     },
     {
      "listing_id": "myprotein:10529335",
-     "product_id": "myvitamins-essential-omega-3-90softgels-fish-unspecified-90softgel",
+     "product_id": "myvitamins-essential-omega-3-90softgels",
      "brand": "Myvitamins",
      "name": "Essential Omega-3 - 90Softgels",
      "retailer_id": "myprotein",
@@ -447,6 +463,7 @@
      "cost_per_month": 8.877777777777778,
      "days_supply": 27.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -481,11 +498,13 @@
   },
   {
    "id": "o3_krill",
+   "label": "Krill oil",
+   "slug": "krill-oil",
    "standard_dose": 1000.0,
    "ranked": [
     {
      "listing_id": "myprotein:10530670",
-     "product_id": "myvitamins-krill-oil-capsules-250capsules-krill-250capsule",
+     "product_id": "myvitamins-krill-oil-capsules-250capsules",
      "brand": "Myvitamins",
      "name": "Krill Oil Capsules - 250Capsules",
      "retailer_id": "myprotein",
@@ -511,6 +530,7 @@
      "cost_per_month": 66.80454545454545,
      "days_supply": 22.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [
       "Phospholipids",
       "Total Omega 6",
@@ -546,7 +566,7 @@
     },
     {
      "listing_id": "myprotein:10530671",
-     "product_id": "myvitamins-krill-oil-capsules-90capsules-krill-90softgel",
+     "product_id": "myvitamins-krill-oil-capsules-90capsules",
      "brand": "Myvitamins",
      "name": "Krill Oil Capsules - 90Capsules",
      "retailer_id": "myprotein",
@@ -572,6 +592,7 @@
      "cost_per_month": 71.93181818181819,
      "days_supply": 7.92,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [
       "Choline",
       "Astaxanthin",
@@ -610,11 +631,13 @@
   },
   {
    "id": "o3_algae",
+   "label": "Algae oil (vegan)",
+   "slug": "algae-oil",
    "standard_dose": 1000.0,
    "ranked": [
     {
      "listing_id": "bulk:VSER-O3SS-0600-0060",
-     "product_id": "bulk-vegan-super-strength-omega-3-softgels-60-capsules-algae-60softgel",
+     "product_id": "bulk-vegan-super-strength-omega-3-softgels-60-capsules",
      "brand": "Bulk",
      "name": "Vegan Super Strength Omega 3 Softgels - 60 Capsules",
      "retailer_id": "bulk",
@@ -640,6 +663,10 @@
      "cost_per_month": 29.277343749999996,
      "days_supply": 15.36,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {

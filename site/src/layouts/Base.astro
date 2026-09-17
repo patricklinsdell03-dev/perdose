@@ -1,13 +1,26 @@
 ---
 import '../styles/tokens.css';
+import '../styles/global.css';
 import { site } from '../lib/site';
 
 interface Props {
   title?: string;
+  description?: string;
+  /** Path of a share image, e.g. /og/magnesium/bisglycinate.png */
+  image?: string;
+  noindex?: boolean;
+  /** schema.org JSON-LD for this page */
+  jsonLd?: object;
+  /** Extra text for the search index only (aliases, brief §13) */
+  searchTerms?: string[];
+  /** Relative importance in search results; product pages rank below compound pages. */
+  searchWeight?: number;
 }
 
-const { title } = Astro.props;
-const pageTitle = title ? `${title} — ${site.name}` : site.name;
+const { title, description = site.tagline, image, noindex = false, jsonLd, searchTerms = [], searchWeight } = Astro.props;
+const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
+const canonical = site.base_url ? new URL(Astro.url.pathname, site.base_url).href : undefined;
+const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : image;
 ---
 
 <!doctype html>
@@ -16,46 +29,50 @@ const pageTitle = title ? `${title} — ${site.name}` : site.name;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
-    <meta name="description" content={site.tagline} />
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:title" content={title ?? site.name} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    {imageUrl && <meta name="twitter:card" content="summary_large_image" />}
+    {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
-    <p class="disclosure">{site.disclosure}</p>
-    <main>
+    <p class="disclosure">
+      <span class="wrap" style="display:block">{site.disclosure} <a href="/disclosure/">Full disclosure</a>.</span>
+    </p>
+    <header class="site-header">
+      <div class="wrap">
+        <a href="/" class="site-name">{site.name}</a>
+        <nav aria-label="Main">
+          <a href="/#search">Search</a>
+          <a href="/a-z/">A–Z</a>
+          <a href="/methodology/">How we compare</a>
+          <a href="/about/">About</a>
+        </nav>
+      </div>
+    </header>
+    <main class="wrap" data-pagefind-body={noindex ? undefined : true} data-pagefind-weight={searchWeight}>
       <slot />
+      {searchTerms.length > 0 && <p class="sr-only" data-pagefind-weight="10">Also known as: {searchTerms.join(', ')}.</p>}
     </main>
     <footer>
-      <p>
-        Not medical advice. If you take medication, are pregnant, or have a health condition,
-        speak to a pharmacist or GP.
-      </p>
+      <div class="wrap">
+        <nav aria-label="Footer">
+          <a href="/methodology/">Methodology</a>
+          <a href="/disclosure/">Affiliate disclosure</a>
+          <a href="/about/">About</a>
+          <a href="/a-z/">A–Z</a>
+        </nav>
+        <p>
+          Not medical advice. We compare prices of supplements people have already decided to buy; we do not recommend
+          what to take. If you are under 18, pregnant, take medication or have a health condition, speak to a pharmacist
+          or GP.
+        </p>
+      </div>
     </footer>
   </body>
 </html>
-
-<style is:global>
-  body {
-    margin: 0;
-    font-family: system-ui, sans-serif;
-    font-size: var(--text-base);
-    line-height: 1.5;
-    color: var(--color-text);
-    background: var(--color-background);
-  }
-  main {
-    max-width: 44rem;
-    margin: 0 auto;
-    padding: var(--space-5) var(--space-3);
-  }
-  .disclosure,
-  footer {
-    margin: 0;
-    padding: var(--space-2) var(--space-3);
-    font-size: var(--text-sm);
-    color: var(--color-muted);
-    background: var(--color-surface);
-  }
-  footer p {
-    max-width: 44rem;
-    margin: 0 auto;
-  }
-</style>

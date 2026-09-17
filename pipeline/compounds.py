@@ -39,6 +39,13 @@ class Form(_Model):
     note: str | None = None
 
 
+class ClassInfo(_Model):
+    """One comparison table (§6.3): how it is named on the site and in URLs."""
+
+    label: str
+    slug: str = Field(pattern=r"^[a-z0-9]+(-[a-z0-9]+)*$")
+
+
 class UnclearAmountHeuristic(_Model):
     """What an unqualified amount most likely means (§9.5 step 3)."""
 
@@ -67,6 +74,7 @@ class Compound(_Model):
     aliases: list[str] = Field(min_length=1)
     accepted_cofactors: list[str] = []
     heuristics: Heuristics | None = None
+    classes: dict[str, ClassInfo]
     forms: list[Form] = Field(min_length=1)
 
     @model_validator(mode="after")
@@ -80,6 +88,11 @@ class Compound(_Model):
             previous = doses.setdefault(form.form_class, form.standard_dose_override)
             if previous != form.standard_dose_override:
                 raise ValueError(f"{self.id}: class {form.form_class} has conflicting doses")
+        if set(doses) != set(self.classes):
+            raise ValueError(f"{self.id}: `classes` must list exactly the classes its forms use")
+        slugs = [info.slug for info in self.classes.values()]
+        if len(slugs) != len(set(slugs)):
+            raise ValueError(f"{self.id}: duplicate class slugs")
         if self.normalisation_type == "oil_components" and not self.components_sum:
             raise ValueError(f"{self.id}: oil_components needs components_sum")
         if self.unit == "IU" and "mcg_to_IU" not in self.unit_conversions:

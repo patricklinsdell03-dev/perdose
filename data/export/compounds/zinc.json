@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T17:53:08+01:00",
+ "generated_at": "2026-09-17T18:28:57+01:00",
  "compound": {
   "id": "zinc",
   "name": "Zinc",
@@ -24,6 +24,8 @@
   "classes": [
    {
     "id": "zn_picolinate",
+    "label": "Picolinate",
+    "slug": "picolinate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -37,6 +39,8 @@
    },
    {
     "id": "zn_citrate",
+    "label": "Citrate",
+    "slug": "citrate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -50,6 +54,8 @@
    },
    {
     "id": "zn_gluconate",
+    "label": "Gluconate",
+    "slug": "gluconate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -63,6 +69,8 @@
    },
    {
     "id": "zn_glycinate",
+    "label": "Bisglycinate",
+    "slug": "bisglycinate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -78,6 +86,8 @@
    },
    {
     "id": "zn_oxide",
+    "label": "Oxide",
+    "slug": "oxide",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -91,6 +101,8 @@
    },
    {
     "id": "zn_sulfate",
+    "label": "Sulphate",
+    "slug": "sulphate",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -105,6 +117,8 @@
    },
    {
     "id": "zn_other",
+    "label": "Other forms",
+    "slug": "other",
     "standard_dose": 15.0,
     "forms": [
      {
@@ -125,11 +139,13 @@
  "classes": [
   {
    "id": "zn_citrate",
+   "label": "Citrate",
+   "slug": "citrate",
    "standard_dose": 15.0,
    "ranked": [
     {
      "listing_id": "myprotein:10575262",
-     "product_id": "myvitamins-zinc-tablets-270tablets-citrate-270tablet",
+     "product_id": "myvitamins-zinc-tablets-270tablets",
      "brand": "Myvitamins",
      "name": "Zinc Tablets - 270Tablets",
      "retailer_id": "myprotein",
@@ -155,6 +171,10 @@
      "cost_per_month": 1.5544444444444445,
      "days_supply": 270.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "Vitamin C"
      ],
@@ -169,7 +189,7 @@
     },
     {
      "listing_id": "myprotein:10575263",
-     "product_id": "myvitamins-zinc-tablets-90tablets-citrate-90tablet",
+     "product_id": "myvitamins-zinc-tablets-90tablets",
      "brand": "Myvitamins",
      "name": "Zinc Tablets - 90Tablets",
      "retailer_id": "myprotein",
@@ -195,6 +215,10 @@
      "cost_per_month": 1.9966666666666668,
      "days_supply": 90.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "vitamin_c"
      ],
@@ -213,11 +237,13 @@
   },
   {
    "id": "zn_gluconate",
+   "label": "Gluconate",
+   "slug": "gluconate",
    "standard_dose": 15.0,
    "ranked": [
     {
      "listing_id": "holland_barrett:069991",
-     "product_id": "holland-barrett-holland-barrett-zinc-25mg-120-tablets-gluconate-120tablet",
+     "product_id": "holland-barrett-holland-barrett-zinc-25mg-120-tablets",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett Zinc (25mg) 120 Tablets",
      "retailer_id": "holland_barrett",
@@ -243,6 +269,7 @@
      "cost_per_month": 1.4535,
      "days_supply": 200.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -256,7 +283,7 @@
     },
     {
      "listing_id": "holland_barrett:070136",
-     "product_id": "holland-barrett-holland-barrett-high-strength-chelated-zinc-copper-120-tablets-gluconate-120tablet",
+     "product_id": "holland-barrett-holland-barrett-high-strength-chelated-zinc-copper-120-tablets",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett High Strength Chelated Zinc & Copper 120 Tablets",
      "retailer_id": "holland_barrett",
@@ -282,6 +309,7 @@
      "cost_per_month": 2.3535,
      "days_supply": 200.0,
      "tested_flag": null,
+     "claimed": [],
      "other_actives": [
       "Copper Bisglycinate"
      ],
@@ -300,11 +328,13 @@
   },
   {
    "id": "zn_other",
+   "label": "Other forms",
+   "slug": "other",
    "standard_dose": 15.0,
    "ranked": [
     {
      "listing_id": "bulk:BPB-OZIN-0030-0270",
-     "product_id": "bulk-optizinc-tablets-270-tablets-other-270tablet",
+     "product_id": "bulk-optizinc-tablets-270-tablets",
      "brand": "Bulk",
      "name": "OptiZinc Tablets - 270 Tablets",
      "retailer_id": "bulk",
@@ -330,6 +360,10 @@
      "cost_per_month": 4.8583333333333325,
      "days_supply": 108.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -342,7 +376,7 @@
     },
     {
      "listing_id": "bulk:BPB-OZIN-0030-0090",
-     "product_id": "bulk-optizinc-tablets-90-tablets-other-90tablet",
+     "product_id": "bulk-optizinc-tablets-90-tablets",
      "brand": "Bulk",
      "name": "OptiZinc Tablets - 90 Tablets",
      "retailer_id": "bulk",
@@ -368,6 +402,10 @@
      "cost_per_month": 5.824999999999999,
      "days_supply": 36.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
@@ -383,7 +421,7 @@
    "combinations": [
     {
      "listing_id": "myprotein:10529514",
-     "product_id": "myvitamins-zinc-magnesium-capsules-270capsules-other-270capsule",
+     "product_id": "myvitamins-zinc-magnesium-capsules-270capsules",
      "brand": "Myvitamins",
      "name": "Zinc & Magnesium Capsules - 270Capsules",
      "retailer_id": "myprotein",
@@ -409,6 +447,10 @@
      "cost_per_month": 3.498333333333333,
      "days_supply": 180.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "magnesium",
       "Vitamin B6",
@@ -425,7 +467,7 @@
     },
     {
      "listing_id": "myprotein:10529515",
-     "product_id": "myvitamins-zinc-magnesium-capsules-90capsules-other-90capsule",
+     "product_id": "myvitamins-zinc-magnesium-capsules-90capsules",
      "brand": "Myvitamins",
      "name": "Zinc & Magnesium Capsules - 90Capsules",
      "retailer_id": "myprotein",
@@ -451,6 +493,10 @@
      "cost_per_month": 4.745,
      "days_supply": 60.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "magnesium",
       "Vitamin B6",
@@ -467,7 +513,7 @@
     },
     {
      "listing_id": "bulk:BPB-ZMAG-CAPS-0180",
-     "product_id": "bulk-zinc-magnesium-capsules-180-capsules-other-180capsule",
+     "product_id": "bulk-zinc-magnesium-capsules-180-capsules",
      "brand": "Bulk",
      "name": "Zinc & Magnesium Capsules - 180 Capsules",
      "retailer_id": "bulk",
@@ -493,6 +539,10 @@
      "cost_per_month": 4.997499999999999,
      "days_supply": 120.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "magnesium"
      ],
@@ -507,7 +557,7 @@
     },
     {
      "listing_id": "bulk:BPB-ZMAG-CAPS-0060",
-     "product_id": "bulk-zinc-magnesium-capsules-60-capsules-other-60capsule",
+     "product_id": "bulk-zinc-magnesium-capsules-60-capsules",
      "brand": "Bulk",
      "name": "Zinc & Magnesium Capsules - 60 Capsules",
      "retailer_id": "bulk",
@@ -533,6 +583,10 @@
      "cost_per_month": 5.992500000000001,
      "days_supply": 40.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "magnesium"
      ],
@@ -548,7 +602,7 @@
     },
     {
      "listing_id": "myprotein:13528187",
-     "product_id": "myvitamins-zinc-magnesium-capsules-30capsules-other-30capsule",
+     "product_id": "myvitamins-zinc-magnesium-capsules-30capsules",
      "brand": "Myvitamins",
      "name": "Zinc & Magnesium Capsules - 30Capsules",
      "retailer_id": "myprotein",
@@ -574,6 +628,10 @@
      "cost_per_month": 6.735000000000001,
      "days_supply": 20.0,
      "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
      "other_actives": [
       "magnesium",
       "Vitamin B6",
