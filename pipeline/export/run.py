@@ -60,6 +60,26 @@ def claimed_flags(text: str) -> list[str]:
     return flags
 
 
+PACK_SEGMENT = re.compile(
+    # "180 Tablets", "147servings", "90 Vegan Capsules", "500g"
+    r"\d\s*(?:[a-z]+\s+)?(tablets?|tabs?|capsules?|caps?|softgels?|gummies|servings?|months?"
+    r"|sachets?|g|kg|ml)\b",
+    re.IGNORECASE,
+)
+
+
+def display_name(title: str, brand: str | None) -> str:
+    """A product name for people: feed titles carry the pack size and often repeat the brand
+    ("Zinc Tablets - 270Tablets", "Holland & Barrett Zinc 25mg"). The pack is shown in its
+    own column, so " - <pack>" segments and a leading brand are dropped."""
+    first, *rest = (part.strip() for part in title.split(" - "))
+    kept = [part for part in rest if len(part) >= 3 and not PACK_SEGMENT.search(part)]
+    name = " - ".join([first, *kept])
+    if brand and name.lower().startswith(brand.lower() + " ") and len(name) > len(brand) + 4:
+        name = name[len(brand) :].strip()
+    return name or title
+
+
 class ExportTooLarge(Exception):
     pass
 
@@ -140,6 +160,7 @@ def _offer(row: dict, compound_id: str) -> dict:
         "product_id": row["product_id"],
         "brand": row["brand"],
         "name": row["name"],
+        "display_name": display_name(row["name"], row["brand"]),
         "retailer_id": row["retailer_id"],
         "url": row["url"],
         "image_url": row["image_url"],

@@ -135,3 +135,23 @@ def test_ops_export(exported):
     assert ops["escalation_rate"] == 0.0
     assert "zinc" in ops["zero_product_compounds"]
     assert "magnesium" not in ops["zero_product_compounds"]
+
+
+@pytest.mark.parametrize(
+    ("title", "brand", "expected"),
+    [
+        ("Magnesium Bisglycinate Tablets - 180 Tablets", "Bulk", "Magnesium Bisglycinate Tablets"),
+        ("Impact Creatine - 500g - 147servings Unflavoured", "Myprotein", "Impact Creatine"),
+        ("Vitamin C Capsules - 180CAPSULES, 90servings", "Myvitamins", "Vitamin C Capsules"),
+        ("Essential Magnesium Tablets - 1 Month (90 Tablets)", None, "Essential Magnesium Tablets"),
+        ("Holland & Barrett Zinc (25mg) 120 Tablets", "Holland & Barrett",
+         "Zinc (25mg) 120 Tablets"),
+        ("Higher Nature L-Theanine 100mg - Green Tea Extract - 90 Vegan Capsules", "Higher Nature",
+         "L-Theanine 100mg - Green Tea Extract"),
+        ("Vitamin D3 Softgels - 180Softgels - Non-Vegan", "Myvitamins",
+         "Vitamin D3 Softgels - Non-Vegan"),
+        ("Bulk", "Bulk", "Bulk"),
+    ],
+)  # fmt: skip
+def test_display_name(title, brand, expected):
+    assert export_module.display_name(title, brand) == expected

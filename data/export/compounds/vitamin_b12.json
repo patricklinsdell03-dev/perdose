@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T20:35:58+01:00",
+ "generated_at": "2026-09-17T20:55:07+01:00",
  "compound": {
   "id": "vitamin_b12",
   "name": "Vitamin B12",
@@ -113,6 +113,7 @@
      "product_id": "bulk-vitamin-b12-tablets-1000mcg-180-tablets",
      "brand": "Bulk",
      "name": "Vitamin B12 Tablets 1000mcg - 180 Tablets",
+     "display_name": "Vitamin B12 Tablets 1000mcg",
      "retailer_id": "bulk",
      "url": "https://www.bulk.com/uk/products/vitamin-b12-tablets-1000-mcg/bpb-vb12-0000",
      "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_VB12_1000_Main_Image_2c3b.jpg",
@@ -155,6 +156,7 @@
      "product_id": "bulk-vitamin-b12-tablets-1000mcg-60-tablets",
      "brand": "Bulk",
      "name": "Vitamin B12 Tablets 1000mcg - 60 Tablets",
+     "display_name": "Vitamin B12 Tablets 1000mcg",
      "retailer_id": "bulk",
      "url": "https://www.bulk.com/uk/products/vitamin-b12-tablets-1000-mcg/bpb-vb12-0000",
      "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_VB12_1000_Main_Image_2c3b.jpg",
@@ -208,6 +210,7 @@
      "product_id": "holland-barrett-holland-barrett-max-strength-slow-release-vitamin-b12-1000ug-120-tablets",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett Max Strength Slow Release Vitamin B12 1000ug 120 Tablets",
+     "display_name": "Max Strength Slow Release Vitamin B12 1000ug 120 Tablets",
      "retailer_id": "holland_barrett",
      "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-high-strength-slow-release-vitamin-b12-1000ug-120-tablets-6100011429",
      "image_url": null,
@@ -248,6 +251,7 @@
      "product_id": "holland-barrett-holland-barrett-vitamin-b12-cyanacobalamin-500ug-120-tablets",
      "brand": "Holland & Barrett",
      "name": "Holland & Barrett Vitamin B12 + Cyanacobalamin 500ug 120 Tablets",
+     "display_name": "Vitamin B12 + Cyanacobalamin 500ug 120 Tablets",
      "retailer_id": "holland_barrett",
      "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-vitamin-b12-cyanacobalamin-500ug-120-tablets-6100011428",
      "image_url": null,

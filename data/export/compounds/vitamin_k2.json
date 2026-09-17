@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T20:35:58+01:00",
+ "generated_at": "2026-09-17T20:55:07+01:00",
  "compound": {
   "id": "vitamin_k2",
   "name": "Vitamin K2",
@@ -71,6 +71,7 @@
      "product_id": "supplement-place-supplement-place-vitamin-k2-mk7-200mcg-120-capsules",
      "brand": "Supplement Place",
      "name": "Supplement Place Vitamin K2 MK7 200mcg 120 Capsules",
+     "display_name": "Vitamin K2 MK7 200mcg 120 Capsules",
      "retailer_id": "holland_barrett",
      "url": "https://www.hollandandbarrett.com/shop/product/supplement-place-vitamin-k2-mk7-200mcg-120-capsules-6100024975",
      "image_url": null,
@@ -112,6 +113,7 @@
      "product_id": "vitabright-vitabright-vitamin-k2-mk7-from-natto-extract-100mcg-120-capsules",
      "brand": "VitaBright",
      "name": "VitaBright Vitamin K2 MK7 from Natto Extract 100mcg - 120 Capsules",
+     "display_name": "Vitamin K2 MK7 from Natto Extract 100mcg",
      "retailer_id": "holland_barrett",
      "url": "https://www.hollandandbarrett.com/shop/product/vitabright-vitamin-k2-mk7-from-natto-extract-100mcg-120-capsules-6100026619",
      "image_url": null,
@@ -163,6 +165,7 @@
      "product_id": "myvitamins-vitamin-d3-k2-capsules-30-servings",
      "brand": "Myvitamins",
      "name": "Vitamin D3 & K2 Capsules - 30 Servings",
+     "display_name": "Vitamin D3 & K2 Capsules",
      "retailer_id": "myprotein",
      "url": "https://www.myprotein.com/p/vitamins/vitamin-d3-k2-capsules/12513685/",
      "image_url": "https://static.thcdn.com/productimg/original/12513687-1985335516903272.png",
@@ -211,6 +214,7 @@
      "product_id": "myvitamins-vitamin-d3-k2-capsules-90capsules-90servings",
      "brand": "Myvitamins",
      "name": "Vitamin D3 & K2 Capsules - 90CAPSULES, 90servings",
+     "display_name": "Vitamin D3 & K2 Capsules",
      "retailer_id": "myprotein",
      "url": "https://www.myprotein.com/p/vitamins/vitamin-d3-k2-capsules/12513685/",
      "image_url": "https://static.thcdn.com/productimg/original/12513687-1985335516903272.png",
