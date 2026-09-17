@@ -34,6 +34,9 @@ const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : i
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Impact.com site-ownership check (an identifier only; no script, no requests). -->
+    <meta name="impact-site-verification" content="b6cad2ff-e231-40ab-ad47-03b66249976d" />
+    <!-- Impact-Site-Verification: b6cad2ff-e231-40ab-ad47-03b66249976d -->
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex" />}
@@ -68,6 +71,7 @@ const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : i
       {searchTerms.length > 0 && <p class="sr-only" data-pagefind-weight="10">Also known as: {searchTerms.join(', ')}.</p>}
     </main>
     <footer>
+      <span hidden>Impact-Site-Verification: b6cad2ff-e231-40ab-ad47-03b66249976d</span>
       <div class="wrap">
         <nav aria-label="Footer">
           <a href="/methodology/">Methodology</a>
