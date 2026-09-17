@@ -104,10 +104,10 @@ function working(offer: Offer): string[] {
               </tr>
             </thead>
             <tbody data-rows>
-              {cls.ranked.map((offer) => (
+              {cls.ranked.map((offer, index) => (
                 <>
                   <tr
-                    class="offer"
+                    class:list={["offer", { "is-best": offer === cheapest }]}
                     data-row
                     data-id={offer.listing_id}
                     data-ppu={offer.price_per_unit}
@@ -117,27 +117,33 @@ function working(offer: Offer): string[] {
                     data-stock={offer.in_stock ? '1' : '0'}
                     data-tested={offer.tested_flag ? '1' : '0'}
                   >
-                    <td data-label="Product">
+                    <td data-label="Product" data-cell="product">
+                      <div class="product">
+                      <span class="rank" data-rank aria-label={`Rank ${index + 1}`}>{index + 1}</span>
+                      <div>
                       <a href={`/p/${offer.product_id}/`} class="name">{offer.name}</a>
                       <span class="badges">
                         <span class="badge pick" data-badge="cheapest" hidden={offer !== cheapest}>Cheapest per dose</span>
-                        <span class="badge pick" data-badge="practical" hidden={offer !== practical || offer === cheapest}>
+                        <span class="badge pick practical" data-badge="practical" hidden={offer !== practical || offer === cheapest}>
                           Best value under 6 months' supply
                         </span>
                         {offer.tested_flag && <span class="badge">Testing claimed on label</span>}
                         {offer.claimed.map((flag) => <span class="chip">claimed: {flag}</span>)}
                         {!offer.in_stock && <span class="badge warn">Out of stock</span>}
                       </span>
+                      </div>
+                      </div>
                     </td>
-                    <td data-label="Retailer">{retailerName(offer.retailer_id)}</td>
-                    <td data-label="Pack">{pack(offer)}</td>
-                    <td data-label="Per serving">{perServing(offer)}</td>
-                    <td data-label={doseLabel(compound, dose)} class="num key" data-cell="dose">{perDose(offer.price_per_std_dose)}</td>
+                    <td data-label="Retailer" data-cell="retailer">{retailerName(offer.retailer_id)}</td>
+                    <td data-label="Pack" data-cell="pack">{pack(offer)}</td>
+                    <td data-label="Per serving" data-cell="serving">{perServing(offer)}</td>
+                    <td data-label={doseLabel(compound, dose).replace(/^per/, "Per")} class="num key" data-cell="dose">{perDose(offer.price_per_std_dose)}</td>
                     <td data-label="Per month" class="num" data-cell="month">{money(offer.cost_per_month)}</td>
                     <td data-label="Lasts" class="num" data-cell="days">{days(offer.days_supply)}</td>
                     <td class="buy">
                       <a href={offer.url} target="_blank" rel="sponsored nofollow noopener" class="button">
-                        {money(offer.price_gbp)} at {retailerName(offer.retailer_id)}
+                        <span>{money(offer.price_gbp)}</span>
+                        <span>View at {retailerName(offer.retailer_id)}</span>
                       </a>
                     </td>
                   </tr>
@@ -243,7 +249,10 @@ function working(offer: Offer): string[] {
         const perUnit = Number(row.dataset.ppu);
         const total = Number(row.dataset.total);
         const value = { row, dose: perUnit * dose, days: total / dose, pack: Number(row.dataset.price) };
-        row.querySelector('[data-cell="dose"]')!.textContent = perDose(value.dose);
+        const doseCell = row.querySelector<HTMLElement>('[data-cell="dose"]')!;
+        doseCell.textContent = perDose(value.dose);
+        doseCell.dataset.standardLabel ??= doseCell.dataset.label ?? "";
+        doseCell.dataset.label = dose === standardDose ? doseCell.dataset.standardLabel : "Per your dose";
         row.querySelector('[data-cell="month"]')!.textContent = `£${(value.dose * 30).toFixed(2)}`;
         row.querySelector('[data-cell="days"]')!.textContent = days(value.days);
         const visible =
@@ -259,7 +268,10 @@ function working(offer: Offer): string[] {
       const order = { dose: 1, month: 1, pack: 1, days: -1 }[sortSelect.value] ?? 1;
       const key = sortSelect.value === 'pack' ? 'pack' : sortSelect.value === 'days' ? 'days' : 'dose';
       scored.sort((a, b) => (a[key] - b[key]) * order);
+      let position = 0;
       for (const item of scored) {
+        const rank = item.row.querySelector("[data-rank]");
+        if (rank && item.visible) rank.textContent = String(++position);
         body.append(item.row);
         const detail = detailFor(item.row);
         if (detail) body.append(detail);
@@ -270,6 +282,7 @@ function working(offer: Offer): string[] {
       const cheapest = byDose[0]?.row;
       const practical = byDose.find((s) => s.days <= SIX_MONTHS)?.row;
       for (const row of rows) {
+        row.classList.toggle("is-best", row === cheapest);
         row.querySelector<HTMLElement>('[data-badge="cheapest"]')!.hidden = row !== cheapest;
         row.querySelector<HTMLElement>('[data-badge="practical"]')!.hidden = row !== practical || row === cheapest;
       }

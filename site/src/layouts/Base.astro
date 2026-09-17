@@ -1,4 +1,7 @@
 ---
+import '@fontsource-variable/red-hat-display';
+import '@fontsource-variable/red-hat-text';
+import '@fontsource-variable/red-hat-mono';
 import '../styles/tokens.css';
 import '../styles/global.css';
 import { site } from '../lib/site';
@@ -46,7 +49,7 @@ const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : i
     </p>
     <header class="site-header">
       <div class="wrap">
-        <a href="/" class="site-name">{site.name}</a>
+        <a href="/" class="site-name"><span class="capsule" aria-hidden="true"></span>{site.name.toLowerCase()}</a>
         <nav aria-label="Main">
           <a href="/#search">Search</a>
           <a href="/a-z/">A–Z</a>

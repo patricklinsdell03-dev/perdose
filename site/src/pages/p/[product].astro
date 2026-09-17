@@ -116,7 +116,7 @@ const report = `mailto:${site.contact_email}?subject=${encodeURIComponent(`Error
             </thead>
             <tbody>
               {a.offers.map((offer) => (
-                <tr class="offer">
+                <tr class="offer plain">
                   <td data-label="Retailer">{retailerName(offer.retailer_id)}{!offer.in_stock && <span class="badge warn">Out of stock</span>}</td>
                   <td data-label="Pack price" class="num">{money(offer.price_gbp)}</td>
                   <td data-label="Per dose" class="num key">{perDose(offer.price_per_std_dose)}</td>
@@ -124,7 +124,7 @@ const report = `mailto:${site.contact_email}?subject=${encodeURIComponent(`Error
                   <td data-label="Lasts" class="num">{days(offer.days_supply)}</td>
                   <td data-label="Checked"><time datetime={offer.price_date}>{isoToLong(offer.price_date)}</time></td>
                   <td class="buy">
-                    <a href={offer.url} target="_blank" rel="sponsored nofollow noopener" class="button">View at {retailerName(offer.retailer_id)}</a>
+                    <a href={offer.url} target="_blank" rel="sponsored nofollow noopener" class="button"><span>{money(offer.price_gbp)}</span><span>View at {retailerName(offer.retailer_id)}</span></a>
                   </td>
                 </tr>
               ))}

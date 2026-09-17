@@ -1,12 +1,29 @@
-/* Design tokens (brief §12.4). Placeholder values; refined in Phase 4. */
+/* Design tokens (brief §12.4) — the "Capsule" direction chosen by Patrick (DECISIONS.md).
+   One recurring motif: the two-tone coral-and-teal capsule (logo, rank marker, buy button).
+   Coral is decorative or carries dark text; white text only ever sits on teal or ink. */
 :root {
-  --color-background: #ffffff;
-  --color-surface: #f5f6f7;
-  --color-text: #1a1d21;
-  --color-muted: #5c6670;
-  --color-accent: #0b6e4f;
-  --color-success: #1d7a3e;
-  --color-warning: #9a5b00;
+  --color-background: #f4f5f8;
+  --color-surface: #ffffff;
+  --color-sunken: #eceef3;
+  --color-text: #1c1b29;
+  --color-muted: #5f5e70;
+  --color-line: #dcdfe8;
+  --color-accent: #0e5e6f;
+  --color-link: #0e5e6f;
+  --color-accent-tint: #e3f1f3;
+  --color-on-accent: #ffffff;
+  --color-coral: #ff5c4d;
+  --color-on-coral: #1c1b29;
+  --color-coral-text: #c2372a;
+  --color-success: #0e5e6f;
+  --color-warning: #8a5a00;
+  --color-warning-tint: #fdf3dc;
+  --color-rank-off-top: #c9ccd6;
+  --color-rank-off-bottom: #9498a8;
+
+  --font-display: 'Red Hat Display Variable', 'Red Hat Display', system-ui, sans-serif;
+  --font-body: 'Red Hat Text Variable', 'Red Hat Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Red Hat Mono Variable', 'Red Hat Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -17,19 +34,32 @@
   --text-sm: 0.875rem;
   --text-base: 1rem;
   --text-lg: 1.25rem;
-  --text-xl: 1.75rem;
+  --text-xl: 2rem;
 
-  --radius: 6px;
+  --radius: 12px;
+  --radius-card: 18px;
+  --radius-pill: 999px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: #14171a;
-    --color-surface: #1e2327;
-    --color-text: #e8eaed;
-    --color-muted: #9aa4ae;
-    --color-accent: #4fc39a;
-    --color-success: #5cc97f;
-    --color-warning: #e0a44a;
+    --color-background: #14141c;
+    --color-surface: #1e1e2a;
+    --color-sunken: #282836;
+    --color-text: #eeedf5;
+    --color-muted: #a6a5b8;
+    --color-line: #34344a;
+    --color-accent: #1a8296;
+    --color-link: #5fd0e0;
+    --color-accent-tint: #173239;
+    --color-on-accent: #ffffff;
+    --color-coral: #ff6b5e;
+    --color-on-coral: #1c1b29;
+    --color-coral-text: #ff8d82;
+    --color-success: #5fd0e0;
+    --color-warning: #f0c05a;
+    --color-warning-tint: #33290f;
+    --color-rank-off-top: #4a4a60;
+    --color-rank-off-bottom: #34344a;
   }
 }

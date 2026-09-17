@@ -65,7 +65,7 @@ const withFactors = rules.filter((c) => c.classes.some((k) => k.forms.some((f) =
               <thead><tr><th scope="col">Form</th><th scope="col" class="num">Fraction that is {c.name.toLowerCase()}</th></tr></thead>
               <tbody>
                 {c.classes.flatMap((k) => k.forms).filter((f) => f.elemental_factor).map((f) => (
-                  <tr class="offer"><td>{f.names[0]}</td><td class="num">{(f.elemental_factor! * 100).toFixed(1)}%</td></tr>
+                  <tr class="offer plain"><td>{f.names[0]}</td><td class="num">{(f.elemental_factor! * 100).toFixed(1)}%</td></tr>
                 ))}
               </tbody>
             </table>
@@ -107,7 +107,7 @@ const withFactors = rules.filter((c) => c.classes.some((k) => k.forms.some((f) =
         <thead><tr><th scope="col">Retailer</th><th scope="col">Standard delivery</th></tr></thead>
         <tbody>
           {meta.retailers.map((r) => (
-            <tr class="offer">
+            <tr class="offer plain">
               <td>{r.name}</td>
               <td>
                 {r.shipping.rule === 'free_over' && `Free over £${r.shipping.threshold_gbp}`}
