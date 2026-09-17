@@ -255,7 +255,7 @@ def _clear_compound_files(out_dir: Path) -> None:
 def _write(path: Path, data) -> int:
     path.parent.mkdir(parents=True, exist_ok=True)
     text = json.dumps(data, indent=1, ensure_ascii=False, sort_keys=False) + "\n"
-    path.write_text(text, encoding="utf-8")
+    path.write_text(text, encoding="utf-8", newline="\n")
     return len(text.encode("utf-8"))
 
 
