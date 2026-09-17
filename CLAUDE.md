@@ -26,7 +26,7 @@ UK supplement price comparison, normalised to **price per standard dose**. Stati
 ## Stack (details in brief §4)
 
 - Pipeline: Python 3.12, `uv`, `pydantic` v2, `httpx`, `pyyaml`, stdlib `sqlite3`, `anthropic` SDK. Lint `ruff`, tests `pytest`.
-- Site: Astro (static output), TypeScript, plain CSS with a small token file. Search: Pagefind.
+- Site: Astro (static output), TypeScript, plain CSS with a small token file. Search: Pagefind. **Design language: "Capsule" (brief §12.4)** — refine within it, never change direction without asking.
 - Hosting: Cloudflare Pages (free). Scheduling: GitHub Actions cron.
 - LLM: **Patrick chooses the models** (DECISIONS.md 2026-09-17) — never pick or change them without asking. Model ids live in `config/llm.yml` — verify current ids at https://docs.claude.com before first use and record the check in DECISIONS.md.
 

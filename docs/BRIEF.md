@@ -1,12 +1,14 @@
 # PerDose — Build Brief
 
-Version 1.4 · 2026-09-17 · Owner: Patrick · Builder: Claude Code
+Version 1.5 · 2026-09-17 · Owner: Patrick · Builder: Claude Code
 
 **Changelog v1.1 (applied before any code exists):** amounts are stored in each compound's base unit (no `_mg` columns); a product carries a **list of actives** (many-to-many) so combination products index under every active from day one; **generic normalisation types** replace per-compound special cases; export is **one JSON file per compound**; new **§20 overview content layer** and **§21 scaling to hundreds of compounds**; phases 7–10 restructured; every new compound must ship with ≥ 3 golden labels.
 
 **Changelog v1.2:** scope raised. The **prototype** stays at 10 compounds (it proves the normaliser). The **first public build ("Launch")** is the full registry in **Appendix F** — ~150 compounds across vitamins, minerals, amino acids, fatty acids, sports & performance, botanicals, nootropic and general-health ingredients — added in category batches once live feeds are in. New launch gate in §17, browse/A–Z routes in §12, retailer coverage targets in §7, synthetic golden labels allowed (§15), exclusion list (Appendix F.11).
 
 **Changelog v1.3:** core/bolt-on boundary made explicit (§22): the core is a static site with **no accounts and no server-side code**; Learn (§20), Alerts, Stack Calculator and the N=1 experiment engine are separate bolt-ons. Core QoL additions in §12.2 ("your dose" recalculation, practical pick, per-pack sort, claimed dietary flags, share cards). Operator tooling (§12.3 `/ops/`, `make review`). LLM-assisted dedupe moved out of v1 (§11). Revenue options consolidated in §23 with what is deliberately excluded.
+
+**Changelog v1.5 (2026-09-17):** user-facing design language adopted — "Capsule" (§12.4), chosen by Patrick from two rounds of mock-ups; flagged as needing a refinement pass before launch. Build-time decisions that changed earlier sections (Astro 7, Sonnet 5 as the model, 37-label golden set, seed data collected by Claude) are recorded in DECISIONS.md rather than rewritten here.
 
 **Changelog v1.4:** competitive check recorded in §24 — the concept is not unique; the UK implementation is. Positioning rules added so the build defends the actual moat (automated per-dose normalisation across many retailers, updated daily) rather than the idea.
 
@@ -493,8 +495,28 @@ Mobile: stack to card rows; **per standard dose** always visible.
 - `/ops/` — `noindex`, unlinked, rendered from `meta.json` and a small `ops.json` export: last run time and status, counts per retailer, needs_review count by reason, escalation rate, classes that lost products since yesterday, zero-product compounds, feed staleness (days since a retailer's feed last changed).
 - `make review` — writes `data/review/<date>.csv` of every needs_review product with its evidence quotes and a blank `decision` column; Patrick fills `decision` (approve-with-values / reject / merge-into:<id>) and `make review-apply` turns it into `config/product_overrides.yml` entries. This is how the unverified queue gets worked down without touching code.
 
-### 12.4 Design tokens
-`site/src/styles/tokens.css`: colour (background, surface, text, muted, accent, success, warning), spacing scale, type scale, radius. Keep light and dark via `prefers-color-scheme`. Fast, plain, readable; no hero imagery.
+### 12.4 Design language — "Capsule" (adopted 2026-09-17, v1.5)
+
+**Status: this is the direction to aim for. It needs a refinement pass when we get to polish (before the launch gate) — treat what is built today as a faithful first application, not the finished design.** Refine *within* this language; do not change direction without Patrick's say-so.
+
+**The idea.** Clean, calm and professional, with exactly one recurring motif taken from the subject: a **two-tone coral-and-teal capsule**. It appears in three places and nowhere else — the logo mark, the rank marker on each row (coloured for the cheapest, grey otherwise), and the buy button (price in the coral half, retailer in the teal half). Everything around it stays quiet. The promise a first-time visitor should feel: *"I can trust these numbers"* — friendly, not clinical.
+
+**Tokens** live in `site/src/styles/tokens.css` (the single source; bolt-ons copy it, §22):
+- Colour (light): ground `#f4f5f8`, surface `#ffffff`, sunken `#eceef3`, ink `#1c1b29`, muted `#5f5e70`, teal `#0e5e6f` (accent, links, the per-dose figure), teal tint `#e3f1f3`, coral `#ff5c4d`. A designed dark palette sits alongside via `prefers-color-scheme`.
+- Type: the **Red Hat** family — Display (headings, the per-dose price; weights 700–900), Text (reading), Mono (every other figure, the working panel). **Self-hosted** (`@fontsource-variable/*`); the site makes no third-party requests (§16).
+- Shape: cards radius 18px, controls 12px, pills/capsules fully round. Cards are borderless white on the grey ground.
+
+**Rules.**
+1. The capsule is the only decoration. No other gradients, illustrations, icons-as-ornament or hero imagery.
+2. White text only on teal or ink. Coral carries dark text (white on coral fails contrast) or is purely decorative.
+3. The per-dose price is always the largest figure in a row. On phones: a card per product with three figure tiles (per dose — tinted and biggest — per month, lasts) and a full-width buy capsule. On wide screens: a table for side-by-side scanning, same capsule buttons.
+4. Status is said in words, quietly: "Cheapest per dose" (teal text), "Best value under 6 months' supply" (coral text), claimed dietary chips (grey). Semantic colour stays separate from the motif. Unverified sections use a quiet hatch, never an alarm colour.
+5. Labels in sentence case; no tiny uppercase eyebrow labels; British English.
+6. Both themes are designed, contrast AA or better, visible keyboard focus, reduced motion respected.
+
+**Known refinement list (to do at the polish pass):** home page needs a proper opening (headline, search as the hero, "from £X" figures on the cards); product names should be split into name + pack size rather than shown as one feed title; decide whether claimed chips belong in the row or only in the expanded panel; best-row emphasis on phones; share-card typography (currently system fonts at build time); search results ranking and styling; an identity for the methodology/learn pages' long-form text.
+
+Rejected directions, for the record: "Shelf Edge" (supermarket price ticket — too loud), "Receipt" (till-receipt working), "Graduated" (measuring-ruler rows), "Label" (printed dispensing label). Mock-ups are linked from DECISIONS.md.
 
 ### 12.5 SEO
 - Titles: `Cheapest {Compound} {Class} in the UK — price per {standard dose} ({Month YYYY})`.
