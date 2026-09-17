@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "taurine",
+        "form_raw": null,
+        "form_id": "taurine",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Taurine 500mg"
+        }
+      },
+      {
+        "compound_id": "magnesium",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Magnesium 100mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No serving size stated; amounts assumed to be totals as listed in title",
+      "Magnesium form not specified, so amount_refers_to is unclear"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "coq10",
+        "form_raw": null,
+        "form_id": "ubiquinone",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "CoQ10 100mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [
+      "Vitamin E"
+    ],
+    "pack_units": 90,
+    "pack_unit_type": "softgel",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Softgels"
+    }
+  }
+}

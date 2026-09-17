@@ -1,0 +1,52 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "beta_alanine",
+        "form_raw": null,
+        "form_id": "beta_alanine",
+        "amount_per_serving": 2000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Beta Alanine 2000mg"
+        }
+      },
+      {
+        "compound_id": "creatine",
+        "form_raw": "Monohydrate",
+        "form_id": "monohydrate",
+        "amount_per_serving": 3000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Creatine Monohydrate 3000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "units per serving not stated"
+    ],
+    "evidence": {
+      "pack_units": "120 Tablets"
+    }
+  }
+}

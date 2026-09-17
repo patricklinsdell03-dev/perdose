@@ -1,0 +1,52 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "vitamin_b9",
+        "form_raw": "Folic Acid",
+        "form_id": "folic_acid",
+        "amount_per_serving": 400.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Folic Acid 400µg"
+        }
+      },
+      {
+        "compound_id": "vitamin_b12",
+        "form_raw": "Vitamin B12",
+        "form_id": "unspecified",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin B12 500µg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Tablets"
+    }
+  }
+}

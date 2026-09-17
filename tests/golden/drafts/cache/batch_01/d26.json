@@ -1,0 +1,45 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "potassium",
+        "form_raw": "Gluconate",
+        "form_id": "gluconate",
+        "amount_per_serving": 99.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "elemental",
+        "components": [
+          {
+            "name": "compound_mass",
+            "amount": 595.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "providing 99mg potassium",
+          "compound_mass": "Potassium Gluconate 595mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 250,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [
+      "serving size (units per serving) not stated"
+    ],
+    "evidence": {
+      "pack_units": "250 Tablets"
+    }
+  }
+}

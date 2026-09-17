@@ -361,7 +361,8 @@ def test_tested_flag_from_label_claims():
 
 
 def test_unknown_form_needs_review():
-    product = run([fixture_active("magnesium", None, 100, "mg", "elemental")])
+    # creatine has no catch-all form, so a label that names none cannot be placed
+    product = run([fixture_active("creatine", None, 3000, "mg", "compound")])
     assert "form_unknown" in product.review_reasons
 
 
@@ -398,4 +399,12 @@ def test_form_falls_back_to_the_one_class_named_in_the_title():
 def test_title_naming_two_classes_does_not_pick_one():
     active = fixture_active("magnesium", None, 200, "mg", "elemental")
     product = run([active], title="Fixture Magnesium Citrate & Malate Complex")
-    assert "form_unknown" in product.review_reasons
+    assert product.actives[0].form_class == "mg_other"  # a blend, not citrate or malate
+
+
+def test_no_form_on_the_label_falls_back_to_the_unspecified_form():
+    product = run([fixture_active("vitamin_c", None, 500, "mg", "elemental")], title="Fixture C")
+    assert product.actives[0].form_id == "unspecified" and not product.needs_review
+    # ...but a form the label names and we cannot place stays unknown.
+    named = fixture_active("vitamin_c", None, 500, "mg", "elemental", form_raw="Fixture-form")
+    assert "form_unknown" in run([named], title="Fixture C").review_reasons

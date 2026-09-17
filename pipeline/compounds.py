@@ -134,5 +134,11 @@ class Registry(_Model):
         return next((c for c in self.compounds if c.id == compound_id), None)
 
 
-def load_registry(path: Path = COMPOUNDS_PATH) -> Registry:
-    return Registry.model_validate(yaml.safe_load(path.read_text(encoding="utf-8")))
+def load_registry(path: Path = COMPOUNDS_PATH, draft: Path | None = None) -> Registry:
+    """The live rules; with `draft`, the live rules plus a drafted batch (never used by the
+    site pipeline - only to test a batch before it is approved)."""
+    data = yaml.safe_load(path.read_text(encoding="utf-8"))
+    if draft is not None:
+        extra = yaml.safe_load(draft.read_text(encoding="utf-8"))
+        data = {**data, "compounds": data["compounds"] + extra["compounds"]}
+    return Registry.model_validate(data)

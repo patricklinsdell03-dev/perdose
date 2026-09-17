@@ -242,6 +242,8 @@ def _resolve_form(active: ActiveExtraction, compound: Compound, title: str) -> F
         or compound.form(active.form_id)
         or compound.form_by_name(active.form_raw)
         or _form_named_in(title, compound)
+        # The label names no form at all: fall back to the compound's catch-all, if it has one.
+        or (None if active.form_raw else compound.form_by_name("unspecified"))
     )
 
 

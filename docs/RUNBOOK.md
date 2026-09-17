@@ -116,3 +116,15 @@ Our field names are: `merchant_pid`, `ean`, `brand`, `title`, `description`, `ur
    - leave blank to decide later.
 3. Save as CSV, then `make review-apply`. It updates `config/product_overrides.yml` (commit that file) and tells you how many of each it applied. A typo in a decision is refused with a message naming the listing.
 4. `make all`. Approved listings now rank; their "show the working" is based on your confirmed values.
+
+## Approving a drafted batch of supplements
+
+Claude drafts new supplements in `config/drafts/batch_NN.yml` (rules), `batch_NN_factor_sources.yml` (the chemistry behind each factor) and `tests/golden/drafts/batch_NN.yml` (three test labels each). Drafts are fully tested but **never reach the site** until you approve them.
+
+To review a batch:
+
+1. Open `config/drafts/batch_NN.yml`. For each supplement check the things only a person can judge: is the **standard dose** a sensible comparison unit, are the **forms grouped** the way a buyer would compare them, do the **labels and URL slugs** read well. Notes in the file explain anything unusual.
+2. Spot-check about one in ten test labels in `tests/golden/drafts/batch_NN.yml` against a real product page: does a real label look like that?
+3. `make golden DRAFT=batch_NN` shows the batch's results (rules must be 100 %, saved AI readings at least 90 %). It costs nothing. `make golden-live DRAFT=batch_NN` re-reads every label with the real AI (about 1p per label).
+
+To approve: tell Claude "approve batch NN" (or do it by hand: move the compounds into `config/compounds.yml`, the formulas into `config/factor_sources.yml`, the labels into `tests/golden/labels.yml` and the saved readings into `tests/golden/cache/`, then `make check`). New supplements only get pages once a retailer's data contains products for them.

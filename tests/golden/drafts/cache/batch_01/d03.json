@@ -1,0 +1,68 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "vitamin_b6",
+        "form_raw": null,
+        "form_id": "pyridoxine_hcl",
+        "amount_per_serving": 10.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin B6 10mg"
+        }
+      },
+      {
+        "compound_id": "zinc",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 15.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Zinc 15mg"
+        }
+      },
+      {
+        "compound_id": "magnesium",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Magnesium 100mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No form specified for any active ingredient",
+      "No serving size stated (units per serving unknown)",
+      "Amounts given without cue words indicating elemental vs compound basis"
+    ],
+    "evidence": {
+      "pack_units": "90 Tablets"
+    }
+  }
+}

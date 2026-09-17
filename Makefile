@@ -21,11 +21,11 @@ price:
 	$(PIPELINE) export
 
 golden:
-	$(PIPELINE) golden
+	$(PIPELINE) golden $(if $(DRAFT),--draft $(DRAFT))
 
 # Calls the real LLM for every golden label (costs pennies) and saves the results for replay.
 golden-live:
-	$(PIPELINE) golden --live
+	$(PIPELINE) golden --live $(if $(DRAFT),--draft $(DRAFT))
 
 content:
 	$(PIPELINE) content --compound "$(COMPOUND)"

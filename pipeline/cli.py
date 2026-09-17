@@ -13,6 +13,7 @@ import anthropic
 
 from pipeline.compounds import load_registry
 from pipeline.golden import (
+    CACHE_DIR,
     GOLDEN_PATH,
     MIN_LABELS_PER_COMPOUND,
     PASS_THRESHOLD,
@@ -53,17 +54,18 @@ def build_parser() -> argparse.ArgumentParser:
     guard.add_argument("--before", required=True, help="the previous meta.json")
     golden = sub.add_parser("golden", help="run the golden label set, print pass/fail table")
     golden.add_argument("--live", action="store_true", help="call the real LLM (costs pennies)")
+    golden.add_argument("--draft", default=None, help="test a drafted batch, e.g. batch_01")
     return parser
 
 
-def _make_extractor():
+def _make_extractor(registry=None):
     from pipeline.normalise.llm import Extractor
 
     load_env()
     if not os.environ.get("ANTHROPIC_API_KEY"):
         print("No ANTHROPIC_API_KEY found. Copy .env.example to .env and add your key.")
         return None
-    return Extractor(load_llm_config(), load_registry())
+    return Extractor(load_llm_config(), registry or load_registry())
 
 
 def _print_results(heading: str, labels: list[dict], results: dict[str, list[str]]) -> float:
@@ -81,10 +83,17 @@ def _print_results(heading: str, labels: list[dict], results: dict[str, list[str
     return rate
 
 
-def run_golden(live: bool) -> int:
-    registry = load_registry()
-    labels = load_golden_labels()
-    print(f"Golden set: {len(labels)} labels in {GOLDEN_PATH.as_posix()}")
+def run_golden(live: bool, draft: str | None = None) -> int:
+    from pathlib import Path
+
+    labels_path, cache_dir, draft_path = GOLDEN_PATH, CACHE_DIR, None
+    if draft:
+        draft_path = Path("config/drafts") / f"{draft}.yml"
+        labels_path = Path("tests/golden/drafts") / f"{draft}.yml"
+        cache_dir = Path("tests/golden/drafts/cache") / draft
+    registry = load_registry(draft=draft_path)
+    labels = load_golden_labels(labels_path)
+    print(f"Golden set: {len(labels)} labels in {labels_path.as_posix()}")
 
     calc_rate = _print_results(
         "Calc-only (hand-written readings -> rules -> calculator; must be 100%)",
@@ -94,22 +103,22 @@ def run_golden(live: bool) -> int:
     ok = calc_rate == 1.0
 
     if live or os.environ.get("PERDOSE_LIVE_LLM") == "1":
-        extractor = _make_extractor()
+        extractor = _make_extractor(registry)
         if extractor is None:
             return 1
-        results = run_live(registry, labels, extractor)
+        results = run_live(registry, labels, extractor, cache_dir)
         heading = f"Live LLM ({extractor.config.models.default.id}; threshold {PASS_THRESHOLD:.0%})"
         ok &= _print_results(heading, labels, results) >= PASS_THRESHOLD
         print(f"  API calls: {extractor.calls}; escalation rate: {extractor.escalation_rate:.0%}")
     else:
-        results = run_replay(registry, labels, load_llm_config().prompt_version)
+        results = run_replay(registry, labels, load_llm_config().prompt_version, cache_dir)
         if results:
             heading = f"Replay of saved LLM extractions (threshold {PASS_THRESHOLD:.0%})"
             ok &= _print_results(heading, labels, results) >= PASS_THRESHOLD
         else:
             print("\nNo saved LLM extractions yet - run `make golden-live` once a key is set.")
 
-    gaps = coverage_gaps(registry, labels)
+    gaps = {} if draft else coverage_gaps(registry, labels)
     for compound_id, count in gaps.items():
         print(f"  {compound_id}: only {count} golden labels (needs {MIN_LABELS_PER_COMPOUND})")
     return 0 if ok and not gaps else 1
@@ -251,7 +260,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         if args.command == "golden":
-            return run_golden(args.live)
+            return run_golden(args.live, args.draft)
         if args.command == "normalise":
             return run_normalise(args.force, args.limit)
         if args.command == "ingest":

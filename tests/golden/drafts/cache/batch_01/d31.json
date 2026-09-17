@@ -1,0 +1,39 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "glutamine",
+        "form_raw": "L-Glutamine",
+        "form_id": "l_glutamine",
+        "amount_per_serving": 5.0,
+        "amount_unit": "g",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "5g serving"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 1000,
+    "pack_unit_type": "gram",
+    "units_per_serving": 5.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "amount_refers_to inferred as compound mass, no elemental cue"
+    ],
+    "evidence": {
+      "pack_units": "1kg",
+      "units_per_serving": "5g serving"
+    }
+  }
+}

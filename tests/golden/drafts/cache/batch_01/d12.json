@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "calcium",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 800.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "elemental",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "2 tablets provide 800mg calcium"
+        }
+      },
+      {
+        "compound_id": "vitamin_d3",
+        "form_raw": "Vitamin D3",
+        "form_id": "d3",
+        "amount_per_serving": 10.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "elemental",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "10µg vitamin D3"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "tablet",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "2 tablets provide"
+    }
+  }
+}

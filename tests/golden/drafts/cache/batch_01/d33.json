@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "glutamine",
+        "form_raw": null,
+        "form_id": "l_glutamine",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "L-Glutamine 1000mg"
+        }
+      },
+      {
+        "compound_id": "zinc",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 5.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Zinc 5mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "no form specified for zinc",
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}
