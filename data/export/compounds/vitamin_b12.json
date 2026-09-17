@@ -1,0 +1,266 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "compound": {
+  "id": "vitamin_b12",
+  "name": "Vitamin B12",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "cobalamin",
+  "unit": "mcg",
+  "standard_dose": 1000.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin b12",
+   "b12",
+   "cobalamin",
+   "methylcobalamin",
+   "cyanocobalamin",
+   "adenosylcobalamin",
+   "hydroxocobalamin"
+  ],
+  "classes": [
+   {
+    "id": "b12_methyl",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "methyl",
+      "names": [
+       "methylcobalamin",
+       "methyl"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b12_cyano",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "cyano",
+      "names": [
+       "cyanocobalamin",
+       "cyano"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b12_adenosyl",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "adenosyl",
+      "names": [
+       "adenosylcobalamin",
+       "dibencozide"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b12_hydroxo",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "hydroxo",
+      "names": [
+       "hydroxocobalamin",
+       "hydroxo"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b12_unspecified",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "unspecified",
+      "names": [
+       "b12"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "b12_methyl",
+   "standard_dose": 1000.0,
+   "ranked": [
+    {
+     "listing_id": "bulk:BPB-VB12-1000-0180",
+     "product_id": "bulk-vitamin-b12-tablets-1000mcg-180-tablets-methyl-180tablet",
+     "brand": "Bulk",
+     "name": "Vitamin B12 Tablets 1000mcg - 180 Tablets",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/vitamin-b12-tablets-1000-mcg/bpb-vb12-0000",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_VB12_1000_Main_Image_2c3b.jpg",
+     "price_gbp": 4.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 180.0
+     },
+     "form_id": "methyl",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 2.7722222222222225e-05,
+     "price_per_std_dose": 0.027722222222222224,
+     "cost_per_month": 0.8316666666666668,
+     "days_supply": 180.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Per Serving (1 Tablet)",
+      "amount_per_serving": "Vitamin B12 ; 1000μg (Methylcobalamin) ; 40000"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-VB12-1000-0060",
+     "product_id": "bulk-vitamin-b12-tablets-1000mcg-60-tablets-methyl-60tablet",
+     "brand": "Bulk",
+     "name": "Vitamin B12 Tablets 1000mcg - 60 Tablets",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/vitamin-b12-tablets-1000-mcg/bpb-vb12-0000",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_VB12_1000_Main_Image_2c3b.jpg",
+     "price_gbp": 2.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "methyl",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 4.1500000000000006e-05,
+     "price_per_std_dose": 0.04150000000000001,
+     "cost_per_month": 1.2450000000000003,
+     "days_supply": 60.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Tablets",
+      "units_per_serving": "Per Serving (1 Tablet)",
+      "servings_stated": "60 Tablets",
+      "amount_per_serving": "1000μg (Methylcobalamin)"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "b12_cyano",
+   "standard_dose": 1000.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:074846",
+     "product_id": "holland-barrett-holland-barrett-max-strength-slow-release-vitamin-b12-1000ug-120-tablets-cyano-120tablet",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Max Strength Slow Release Vitamin B12 1000ug 120 Tablets",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-high-strength-slow-release-vitamin-b12-1000ug-120-tablets-6100011429",
+     "image_url": null,
+     "price_gbp": 8.35,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "cyano",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 6.958333333333334e-05,
+     "price_per_std_dose": 0.06958333333333333,
+     "cost_per_month": 2.0875,
+     "days_supply": 120.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Each tablet contains",
+      "amount_per_serving": "Vitamin B12 ; 1000ug 40,000%",
+      "form_raw": "Vitamin B12 (Cyanocobalamin)"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:074844",
+     "product_id": "holland-barrett-holland-barrett-vitamin-b12-cyanacobalamin-500ug-120-tablets-cyano-120tablet",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Vitamin B12 + Cyanacobalamin 500ug 120 Tablets",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-vitamin-b12-cyanacobalamin-500ug-120-tablets-6100011428",
+     "image_url": null,
+     "price_gbp": 5.25,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "cyano",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 8.75e-05,
+     "price_per_std_dose": 0.0875,
+     "cost_per_month": 2.625,
+     "days_supply": 60.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Take 1 Tablet/tablets per day",
+      "amount_per_serving": "Vitamin B12 ; 500µg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  }
+ ]
+}

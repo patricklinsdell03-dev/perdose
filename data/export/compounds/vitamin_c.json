@@ -1,0 +1,367 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "compound": {
+  "id": "vitamin_c",
+  "name": "Vitamin C",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "vitamin C (ascorbate equivalent)",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "vitamin c",
+   "vit c",
+   "ascorbic acid",
+   "sodium ascorbate",
+   "calcium ascorbate",
+   "ester-c",
+   "liposomal vitamin c"
+  ],
+  "classes": [
+   {
+    "id": "vc_standard",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "ascorbic_acid",
+      "names": [
+       "ascorbic acid"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "unspecified",
+      "names": [
+       "unspecified",
+       "vitamin c"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "buffered",
+      "names": [
+       "sodium ascorbate",
+       "calcium ascorbate",
+       "magnesium ascorbate",
+       "ester-c",
+       "buffered"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "timed_release",
+      "names": [
+       "timed release",
+       "time release",
+       "slow release"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "vc_liposomal",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "liposomal",
+      "names": [
+       "liposomal"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "vc_standard",
+   "standard_dose": 1000.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:069976",
+     "product_id": "holland-barrett-holland-barrett-vitamin-c-1000mg-240-tablets-ascorbic-acid-240tablet",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Vitamin C (1000mg) 240 Tablets",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-vitamin-c-1000mg-240-tablets-6100006588",
+     "image_url": null,
+     "price_gbp": 8.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 240,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 240.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 3.7458333333333334e-05,
+     "price_per_std_dose": 0.03745833333333334,
+     "cost_per_month": 1.12375,
+     "days_supply": 240.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "240 Tablets",
+      "units_per_serving": "Take 1 tablet per day",
+      "amount_per_serving": "Vitamin C ; 1,000mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-VITC-1000-0270",
+     "product_id": "bulk-vitamin-c-tablets-270-tablets-ascorbic-acid-270tablet",
+     "brand": "Bulk",
+     "name": "Vitamin C Tablets - 270 Tablets",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/vitamin-c-tablets-1000mg/bpb-vitc-t000",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_VITC_T000_Main_Image_65c7.jpg",
+     "price_gbp": 14.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 270.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 5.551851851851852e-05,
+     "price_per_std_dose": 0.05551851851851852,
+     "cost_per_month": 1.6655555555555557,
+     "days_supply": 270.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270 Tablets",
+      "units_per_serving": "Per Serving (1 Tablet)",
+      "amount_per_serving": "Vitamin C ; 1000 mg ; 1250"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-VITC-1000-0090",
+     "product_id": "bulk-vitamin-c-tablets-90-tablets-ascorbic-acid-90tablet",
+     "brand": "Bulk",
+     "name": "Vitamin C Tablets - 90 Tablets",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/vitamin-c-tablets-1000mg/bpb-vitc-t000",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_VITC_T000_Main_Image_65c7.jpg",
+     "price_gbp": 6.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 7.211111111111112e-05,
+     "price_per_std_dose": 0.07211111111111111,
+     "cost_per_month": 2.1633333333333336,
+     "days_supply": 90.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Per Serving (1 Tablet)",
+      "amount_per_serving": "Vitamin C ; 1000 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:14871341",
+     "product_id": "myvitamins-vitamin-c-capsules-180capsules-90servings-unspecified-180capsule",
+     "brand": "Myvitamins",
+     "name": "Vitamin C Capsules - 180CAPSULES, 90servings",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/vitamin-c-capsules/14871339/",
+     "image_url": "https://static.thcdn.com/productimg/original/14871341-1545186715736848.jpg",
+     "price_gbp": 7.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 180,
+      "unit_type": "capsule",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "unspecified",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 8.322222222222223e-05,
+     "price_per_std_dose": 0.08322222222222223,
+     "cost_per_month": 2.4966666666666666,
+     "days_supply": 90.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180CAPSULES",
+      "units_per_serving": "Consume 2 capsules as a daily serving.",
+      "servings_stated": "90servings",
+      "amount_per_serving": "Vitamin C ; 1000mg ; 1250"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:14871340",
+     "product_id": "myvitamins-vitamin-c-capsules-30-servings-unspecified-capsule",
+     "brand": "Myvitamins",
+     "name": "Vitamin C Capsules - 30 Servings",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/vitamin-c-capsules/14871339/",
+     "image_url": "https://static.thcdn.com/productimg/original/14871341-1545186715736848.jpg",
+     "price_gbp": 3.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": null,
+      "unit_type": "capsule",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "unspecified",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.000133,
+     "price_per_std_dose": 0.133,
+     "cost_per_month": 3.99,
+     "days_supply": 30.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "units_per_serving": "Consume 2 capsules as a daily serving",
+      "servings_stated": "30 Servings",
+      "amount_per_serving": "Vitamin C ; 1000mg ; 1250"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [
+    {
+     "listing_id": "myprotein:10575263",
+     "product_id": "myvitamins-zinc-tablets-90tablets-citrate-90tablet",
+     "brand": "Myvitamins",
+     "name": "Zinc Tablets - 90Tablets",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-tablets/10575261/",
+     "image_url": "https://static.thcdn.com/productimg/original/10575261-1645326904154192.jpg",
+     "price_gbp": 5.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "unspecified",
+     "amount_per_serving": 60.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0011092592592592593,
+     "price_per_std_dose": 1.1092592592592592,
+     "cost_per_month": 33.27777777777777,
+     "days_supply": 5.4,
+     "tested_flag": null,
+     "other_actives": [
+      "zinc"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Tablets",
+      "units_per_serving": "Consume 1 tablet daily",
+      "amount_per_serving": "Vitamin C ; 75 ; 60mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  },
+  {
+   "id": "vc_liposomal",
+   "standard_dose": 1000.0,
+   "ranked": [
+    {
+     "listing_id": "myprotein:17812379",
+     "product_id": "well-actually-well-actually-liposomal-vitamin-c-1000mg-strawberry-lychee-250ml-liposomal-250ml",
+     "brand": "Well.Actually.",
+     "name": "Well.Actually. Liposomal Vitamin C 1000mg - Strawberry & Lychee (250ml)",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/well.actually.-liposomal-vitamin-c-1000mg-strawberry-lychee-250ml/17812379/",
+     "image_url": "https://static.thcdn.com/productimg/original/17812379-8985334164054736.png",
+     "price_gbp": 32.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 250,
+      "unit_type": "ml",
+      "units_per_serving": 5.0,
+      "multipack_count": 1,
+      "servings": 50.0
+     },
+     "form_id": "liposomal",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0006598,
+     "price_per_std_dose": 0.6597999999999999,
+     "cost_per_month": 19.793999999999997,
+     "days_supply": 50.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "250ml",
+      "units_per_serving": "Take 5ml* (1000mg) per day",
+      "amount_per_serving": "Take 5ml* (1000mg) per day"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  }
+ ]
+}

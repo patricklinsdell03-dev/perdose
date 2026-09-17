@@ -1,0 +1,862 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "compound": {
+  "id": "magnesium",
+  "name": "Magnesium",
+  "category": "minerals",
+  "tier": 1,
+  "comparison_quantity": "elemental magnesium",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "magnesium",
+   "mag",
+   "mg glycinate",
+   "mag glycinate",
+   "magnesium bisglycinate",
+   "magnesium citrate",
+   "magnesium malate",
+   "magnesium taurate",
+   "magnesium threonate",
+   "magtein",
+   "magnesium oxide",
+   "magnesium chloride"
+  ],
+  "classes": [
+   {
+    "id": "mg_glycinate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "bisglycinate",
+      "names": [
+       "bisglycinate",
+       "glycinate",
+       "diglycinate",
+       "chelate",
+       "buffered chelate"
+      ],
+      "elemental_factor": 0.141
+     }
+    ]
+   },
+   {
+    "id": "mg_citrate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "citrate",
+      "names": [
+       "citrate"
+      ],
+      "elemental_factor": 0.16
+     }
+    ]
+   },
+   {
+    "id": "mg_malate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "malate",
+      "names": [
+       "malate",
+       "di-magnesium malate",
+       "dimagnesium malate"
+      ],
+      "elemental_factor": 0.155
+     }
+    ]
+   },
+   {
+    "id": "mg_taurate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "taurate",
+      "names": [
+       "taurate",
+       "taurinate"
+      ],
+      "elemental_factor": 0.089
+     }
+    ]
+   },
+   {
+    "id": "mg_threonate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "l_threonate",
+      "names": [
+       "l-threonate",
+       "threonate",
+       "magtein"
+      ],
+      "elemental_factor": 0.083
+     }
+    ]
+   },
+   {
+    "id": "mg_oxide",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "oxide",
+      "names": [
+       "oxide"
+      ],
+      "elemental_factor": 0.603
+     }
+    ]
+   },
+   {
+    "id": "mg_chloride",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "chloride",
+      "names": [
+       "chloride"
+      ],
+      "elemental_factor": 0.12
+     }
+    ]
+   },
+   {
+    "id": "mg_other",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "orotate",
+       "lactate",
+       "aspartate",
+       "carbonate",
+       "sulfate",
+       "sulphate",
+       "blend",
+       "complex",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "mg_glycinate",
+   "standard_dose": 100.0,
+   "ranked": [
+    {
+     "listing_id": "bulk:BPB-MAGB-500T-0180",
+     "product_id": "bulk-magnesium-bisglycinate-tablets-180-tablets-bisglycinate-180tablet",
+     "brand": "Bulk",
+     "name": "Magnesium Bisglycinate Tablets - 180 Tablets",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/magnesium-bisglycinate-tablets/bpb-magb-0000",
+     "image_url": "https://www.bulk.com/media/catalog/product/m/a/magnesium_bisglycinate_main_image_1_UK_17cd.jpg",
+     "price_gbp": 14.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 200.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0008327777777777778,
+     "price_per_std_dose": 0.08327777777777778,
+     "cost_per_month": 2.4983333333333335,
+     "days_supply": 180.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Per Serving (2 Tablets)",
+      "amount_per_serving": "of which Magnesium ; 200 mg",
+      "compound_mass": "Magnesium Bisglycinate ; 1000 mg"
+     },
+     "components": [
+      {
+       "name": "compound_mass",
+       "amount": 1000.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-MAGB-500T-0060",
+     "product_id": "bulk-magnesium-bisglycinate-tablets-60-tablets-bisglycinate-60tablet",
+     "brand": "Bulk",
+     "name": "Magnesium Bisglycinate Tablets - 60 Tablets",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/magnesium-bisglycinate-tablets/bpb-magb-0000",
+     "image_url": "https://www.bulk.com/media/catalog/product/m/a/magnesium_bisglycinate_main_image_1_UK_17cd.jpg",
+     "price_gbp": 5.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "tablet",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 200.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0009983333333333333,
+     "price_per_std_dose": 0.09983333333333333,
+     "cost_per_month": 2.995,
+     "days_supply": 60.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Tablets",
+      "units_per_serving": "Per Serving (2 Tablets)",
+      "amount_per_serving": "of which Magnesium ; 200 mg ; 53",
+      "compound_mass": "Magnesium Bisglycinate ; 1000 mg"
+     },
+     "components": [
+      {
+       "name": "compound_mass",
+       "amount": 1000.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:069878",
+     "product_id": "holland-barrett-holland-barrett-magnesium-glycinate-375mg-90-capsules-bisglycinate-90capsule",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Magnesium Glycinate 375mg 90 Capsules",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-magnesium-biglycinate-375mg-90-capsules-6100006564",
+     "image_url": null,
+     "price_gbp": 9.64,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 85.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0012601307189542485,
+     "price_per_std_dose": 0.12601307189542485,
+     "cost_per_month": 3.7803921568627454,
+     "days_supply": 76.5,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Capsules",
+      "units_per_serving": "Take 1 capsule per day",
+      "amount_per_serving": "Elemental Magnesium ; 85mg",
+      "compound_mass": "Magnesium Bisglycinate ; 375mg"
+     },
+     "components": [
+      {
+       "name": "compound_mass",
+       "amount": 375.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:15736556",
+     "product_id": "myvitamins-1000mg-magnesium-bisglycinate-tablets-90servings-bisglycinate-90tablet",
+     "brand": "Myvitamins",
+     "name": "1000mg Magnesium Bisglycinate Tablets - 90servings",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/1000mg-magnesium-bisglycinate-tablets/15736555/",
+     "image_url": "https://static.thcdn.com/productimg/original/15736555-1175326924097268.jpg",
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 112.5,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.00177679012345679,
+     "price_per_std_dose": 0.177679012345679,
+     "cost_per_month": 5.33037037037037,
+     "days_supply": 101.25,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "units_per_serving": "Consume 1 tablet, daily",
+      "servings_stated": "Contains 90 servings",
+      "pack_units": "90servings",
+      "amount_per_serving": "of which Magnesium ; 112.5mg",
+      "compound_mass": "Magnesium Bisglycinate ; 1000.0mg"
+     },
+     "components": [
+      {
+       "name": "compound_mass",
+       "amount": 1000.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": "CoreChelate"
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "mg_citrate",
+   "standard_dose": 100.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:046951",
+     "product_id": "holland-barrett-holland-barrett-magnesium-citrate-90-tablets-citrate-90tablet",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Magnesium Citrate 90 Tablets",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-magnesium-citrate-tablets-100mg-60006390",
+     "image_url": null,
+     "price_gbp": 9.19,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "citrate",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.001021111111111111,
+     "price_per_std_dose": 0.10211111111111111,
+     "cost_per_month": 3.0633333333333335,
+     "days_supply": 90.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Take three tablets daily",
+      "amount_per_serving": "Magnesium ; 300mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [
+    {
+     "listing_id": "bulk:BPB-ZMAG-CAPS-0180",
+     "product_id": "bulk-zinc-magnesium-capsules-180-capsules-other-180capsule",
+     "brand": "Bulk",
+     "name": "Zinc & Magnesium Capsules - 180 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/zinc-magnesium-capsules/bpb-zmag-caps",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_ZMAG_CAPS_Main_Image_464f.jpg",
+     "price_gbp": 19.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 180,
+      "unit_type": "capsule",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "citrate",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0007403703703703703,
+     "price_per_std_dose": 0.07403703703703703,
+     "cost_per_month": 2.2211111111111106,
+     "days_supply": 270.0,
+     "tested_flag": null,
+     "other_actives": [
+      "zinc"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Capsules",
+      "units_per_serving": "Take 2 capsules once per day",
+      "amount_per_serving": "Magnesium ; 300 mg ; 80"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-ZMAG-CAPS-0060",
+     "product_id": "bulk-zinc-magnesium-capsules-60-capsules-other-60capsule",
+     "brand": "Bulk",
+     "name": "Zinc & Magnesium Capsules - 60 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/zinc-magnesium-capsules/bpb-zmag-caps",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_ZMAG_CAPS_Main_Image_464f.jpg",
+     "price_gbp": 7.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "citrate",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0008877777777777778,
+     "price_per_std_dose": 0.08877777777777777,
+     "cost_per_month": 2.663333333333333,
+     "days_supply": 90.0,
+     "tested_flag": null,
+     "other_actives": [
+      "zinc"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Take 2 capsules once per day",
+      "amount_per_serving": "Magnesium ; 300 mg ; 80",
+      "form_raw": "Magnesium Salt of Citric Acid"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  },
+  {
+   "id": "mg_oxide",
+   "standard_dose": 100.0,
+   "ranked": [
+    {
+     "listing_id": "myprotein:11338669",
+     "product_id": "myvitamins-essential-magnesium-tablets-3-months-270-tablets-oxide-270tablet",
+     "brand": "Myvitamins",
+     "name": "Essential Magnesium Tablets - 3 Months (270 Tablets)",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/vitamins/magnesium-tablets/11338667/",
+     "image_url": "https://static.thcdn.com/productimg/original/11338667-7915326712982402.jpg",
+     "price_gbp": 13.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "oxide",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0004996296296296296,
+     "price_per_std_dose": 0.04996296296296296,
+     "cost_per_month": 1.4988888888888887,
+     "days_supply": 270.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270 Tablets",
+      "units_per_serving": "Consume 3 tablets daily",
+      "amount_per_serving": "Magnesium ; 300mg ; 80",
+      "form_raw": "Magnesium Oxide"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:11338668",
+     "product_id": "myvitamins-essential-magnesium-tablets-1-month-90-tablets-oxide-90tablet",
+     "brand": "Myvitamins",
+     "name": "Essential Magnesium Tablets - 1 Month (90 Tablets)",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/vitamins/magnesium-tablets/11338667/",
+     "image_url": "https://static.thcdn.com/productimg/original/11338667-7915326712982402.jpg",
+     "price_gbp": 5.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "oxide",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.00061,
+     "price_per_std_dose": 0.061,
+     "cost_per_month": 1.83,
+     "days_supply": 90.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Consume 3 tablets daily",
+      "amount_per_serving": "Magnesium ; 300mg ; 80"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "mg_other",
+   "standard_dose": 100.0,
+   "ranked": [
+    {
+     "listing_id": "bulk:BPB-MAGC-3IN1-0180",
+     "product_id": "bulk-magnesium-glycinate-3-in-1-180-capsules-other-180capsule",
+     "brand": "Bulk",
+     "name": "Magnesium Glycinate 3 in 1 - 180 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/magnesium-3-in-1/bpb-magc-3in1",
+     "image_url": "https://www.bulk.com/media/catalog/product/M/A/MAG_3_IN_1_MAIN_IMAGE_5443.jpg",
+     "price_gbp": 16.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 180,
+      "unit_type": "capsule",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 384.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0004916087962962963,
+     "price_per_std_dose": 0.04916087962962963,
+     "cost_per_month": 1.4748263888888888,
+     "days_supply": 345.6,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Capsules",
+      "units_per_serving": "Per Serving (2 capsules)",
+      "amount_per_serving": "of which Magnesium ; 384 mg",
+      "compound_mass": "Magnesium Malate ; 400 mg"
+     },
+     "components": [
+      {
+       "name": "compound_mass",
+       "amount": 1000.0,
+       "unit": "mg"
+      },
+      {
+       "name": "compound_mass",
+       "amount": 414.0,
+       "unit": "mg"
+      },
+      {
+       "name": "compound_mass",
+       "amount": 400.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-MAGC-3IN1-0090",
+     "product_id": "bulk-magnesium-glycinate-3-in-1-90-capsules-other-90capsule",
+     "brand": "Bulk",
+     "name": "Magnesium Glycinate 3 in 1 - 90 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/magnesium-3-in-1/bpb-magc-3in1",
+     "image_url": "https://www.bulk.com/media/catalog/product/M/A/MAG_3_IN_1_MAIN_IMAGE_5443.jpg",
+     "price_gbp": 8.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 45.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 384.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0005202546296296296,
+     "price_per_std_dose": 0.05202546296296296,
+     "cost_per_month": 1.5607638888888888,
+     "days_supply": 172.8,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Capsules",
+      "units_per_serving": "Per Serving (2 capsules)",
+      "amount_per_serving": "of which Magnesium ; 384 mg ; 102",
+      "Magnesium Bisglycinate": "Magnesium Bisglycinate ; 1000 mg",
+      "Magnesium Citrate": "Magnesium Citrate ; 414 mg",
+      "Magnesium Malate": "Magnesium Malate ; 400 mg"
+     },
+     "components": [
+      {
+       "name": "Magnesium Bisglycinate",
+       "amount": 1000.0,
+       "unit": "mg"
+      },
+      {
+       "name": "Magnesium Citrate",
+       "amount": 414.0,
+       "unit": "mg"
+      },
+      {
+       "name": "Magnesium Malate",
+       "amount": 400.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [
+    {
+     "listing_id": "myprotein:10529514",
+     "product_id": "myvitamins-zinc-magnesium-capsules-270capsules-other-270capsule",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 270Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 20.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 270.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 150.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0005182716049382716,
+     "price_per_std_dose": 0.051827160493827164,
+     "cost_per_month": 1.5548148148148149,
+     "days_supply": 405.0,
+     "tested_flag": null,
+     "other_actives": [
+      "zinc",
+      "Vitamin B6",
+      "Copper Glycinate"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Magnesium ; 40 ; 150mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10529515",
+     "product_id": "myvitamins-zinc-magnesium-capsules-90capsules-other-90capsule",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 90Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 9.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 150.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.000702962962962963,
+     "price_per_std_dose": 0.0702962962962963,
+     "cost_per_month": 2.108888888888889,
+     "days_supply": 135.0,
+     "tested_flag": null,
+     "other_actives": [
+      "zinc",
+      "Vitamin B6",
+      "Copper Glycinate"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Magnesium ; 40 ; 150mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:13528187",
+     "product_id": "myvitamins-zinc-magnesium-capsules-30capsules-other-30capsule",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 30Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 4.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 30,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 150.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0009977777777777778,
+     "price_per_std_dose": 0.09977777777777777,
+     "cost_per_month": 2.993333333333333,
+     "days_supply": 45.0,
+     "tested_flag": null,
+     "other_actives": [
+      "zinc",
+      "Vitamin B6",
+      "Copper Glycinate"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "30Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "servings_stated": "30Capsules",
+      "amount_per_serving": "Magnesium ; 40 ; 150mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:17679860",
+     "product_id": "myprotein-magnesium-glycinate-3-in-1-capsules-2398mg-90capsules-30servings-other-90capsule",
+     "brand": "Myprotein",
+     "name": "Magnesium Glycinate 3-in-1 Capsules | 2398mg - 90CAPSULES, 30servings",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/tri-magnesium-capsules/17679856/",
+     "image_url": "https://static.thcdn.com/productimg/original/17679860-5165326950066531.jpg",
+     "price_gbp": 8.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 250.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0011986666666666667,
+     "price_per_std_dose": 0.11986666666666666,
+     "cost_per_month": 3.596,
+     "days_supply": 75.0,
+     "tested_flag": null,
+     "other_actives": [
+      "vitamin_d3",
+      "Vitamin B6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90CAPSULES",
+      "units_per_serving": "3 Capsules",
+      "servings_stated": "Servings Per Container: | 30",
+      "amount_per_serving": "Total Magnesium ; 250mg (67%*)",
+      "components": "provided from Malate (14.7% Mg) ; 340mg"
+     },
+     "components": [
+      {
+       "name": "compound_mass",
+       "amount": 1364.0,
+       "unit": "mg"
+      },
+      {
+       "name": "compound_mass",
+       "amount": 694.0,
+       "unit": "mg"
+      },
+      {
+       "name": "compound_mass",
+       "amount": 340.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

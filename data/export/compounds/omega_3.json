@@ -1,0 +1,671 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "compound": {
+  "id": "omega_3",
+  "name": "Omega-3",
+  "category": "fatty-acids",
+  "tier": 1,
+  "comparison_quantity": "EPA + DHA",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "oil_components",
+  "aliases": [
+   "omega 3",
+   "omega-3",
+   "fish oil",
+   "cod liver oil",
+   "krill oil",
+   "algae oil",
+   "algal oil",
+   "epa",
+   "dha"
+  ],
+  "classes": [
+   {
+    "id": "o3_fish",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "fish_tg",
+      "names": [
+       "triglyceride",
+       "rtg",
+       "re-esterified"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "fish_ee",
+      "names": [
+       "ethyl ester",
+       "ee"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "fish_unspecified",
+      "names": [
+       "fish oil",
+       "omega 3"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "o3_krill",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "krill",
+      "names": [
+       "krill"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "o3_algae",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "algae",
+      "names": [
+       "algae",
+       "algal",
+       "vegan omega"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "o3_cod_liver",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "cod_liver",
+      "names": [
+       "cod liver"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "o3_fish",
+   "standard_dose": 1000.0,
+   "ranked": [
+    {
+     "listing_id": "myprotein:10615611",
+     "product_id": "myvitamins-high-strength-omega-3-2340mg-250capsules-fish-unspecified-250capsule",
+     "brand": "Myvitamins",
+     "name": "High Strength Omega 3 | 2340mg - 250Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/high-strength-omega-3-2340mg/10615610/",
+     "image_url": "https://static.thcdn.com/productimg/original/10615611-1135345619964617.png",
+     "price_gbp": 20.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 250,
+      "unit_type": "capsule",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 83.33333333333333
+     },
+     "form_id": "fish_unspecified",
+     "amount_per_serving": 2250.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.00011194666666666666,
+     "price_per_std_dose": 0.11194666666666665,
+     "cost_per_month": 3.3583999999999996,
+     "days_supply": 187.5,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "250Capsules",
+      "units_per_serving": "Consume 3 softgels daily",
+      "amount_per_serving": "Omega 3 Fatty Acids ; 2340.0mg",
+      "EPA": "EPA ; 1800mg",
+      "DHA": "DHA ; 450mg",
+      "compound_mass": "Fish Oil ; 3000.0mg"
+     },
+     "components": [
+      {
+       "name": "EPA",
+       "amount": 1800.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 450.0,
+       "unit": "mg"
+      },
+      {
+       "name": "compound_mass",
+       "amount": 3000.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10615612",
+     "product_id": "myvitamins-high-strength-omega-3-2340mg-90capsules-fish-unspecified-90capsule",
+     "brand": "Myvitamins",
+     "name": "High Strength Omega 3 | 2340mg - 90Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/high-strength-omega-3-2340mg/10615610/",
+     "image_url": "https://static.thcdn.com/productimg/original/10615611-1135345619964617.png",
+     "price_gbp": 9.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "fish_unspecified",
+     "amount_per_serving": 2250.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.000148,
+     "price_per_std_dose": 0.148,
+     "cost_per_month": 4.4399999999999995,
+     "days_supply": 67.5,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Capsules",
+      "units_per_serving": "3 Softgels",
+      "amount_per_serving": "Omega 3 Fatty Acids ; 2340.0mg",
+      "EPA": "EPA ; 1800mg",
+      "DHA": "DHA ; 450mg"
+     },
+     "components": [
+      {
+       "name": "EPA",
+       "amount": 1800.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 450.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:076292",
+     "product_id": "holland-barrett-holland-barrett-omega-3-fish-oil-1000mg-240-capsules-fish-unspecified-240capsule",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Omega 3 Fish Oil 1000mg 240 Capsules",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-omega-3-fish-oil-1000mg-240-capsules-6100012757",
+     "image_url": null,
+     "price_gbp": 14.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 240,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 240.0
+     },
+     "form_id": "fish_unspecified",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.00020125,
+     "price_per_std_dose": 0.20125,
+     "cost_per_month": 6.0375000000000005,
+     "days_supply": 72.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "240 Capsules",
+      "units_per_serving": "One softgel capsules contain",
+      "amount_per_serving": "Fish Oil ; 1000mg **",
+      "EPA": "EPA ; 180mg",
+      "DHA": "DHA ; 120mg",
+      "total_omega_3": "Total omega-3 fatty acids ; 350mg"
+     },
+     "components": [
+      {
+       "name": "EPA",
+       "amount": 180.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 120.0,
+       "unit": "mg"
+      },
+      {
+       "name": "total_omega_3",
+       "amount": 350.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-O3SS-1000-0270",
+     "product_id": "bulk-super-strength-omega-3-270-softgels-fish-unspecified-270softgel",
+     "brand": "Bulk",
+     "name": "Super Strength Omega 3 - 270 Softgels",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/super-strength-omega-3-softgels/bpb-o3ss-0000",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_O3SS_1000_Main_Image_de10.jpg",
+     "price_gbp": 32.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "softgel",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "fish_unspecified",
+     "amount_per_serving": 1650.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.00022215488215488217,
+     "price_per_std_dose": 0.22215488215488216,
+     "cost_per_month": 6.664646464646465,
+     "days_supply": 148.5,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270 Softgels",
+      "units_per_serving": "Per Serving (3 SOFTGELS)",
+      "amount_per_serving": "Omega 3 Fish Oil ; 3000 mg",
+      "EPA": "providing EPA 990 mg",
+      "DHA": "DHA 660 mg"
+     },
+     "components": [
+      {
+       "name": "EPA",
+       "amount": 990.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 660.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10529333",
+     "product_id": "myvitamins-essential-omega-3-250softgels-fish-unspecified-250softgel",
+     "brand": "Myvitamins",
+     "name": "Essential Omega-3 - 250Softgels",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/essential-omega-3/10529329/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529329-1835277415351287.jpg",
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 250,
+      "unit_type": "softgel",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 250.0
+     },
+     "form_id": "fish_unspecified",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.00023986666666666665,
+     "price_per_std_dose": 0.23986666666666664,
+     "cost_per_month": 7.196,
+     "days_supply": 75.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "250Softgels",
+      "units_per_serving": "Serving Size | - 1 Softgel",
+      "amount_per_serving": "Total Omega 3 Fatty Acids ; 300 mg",
+      "EPA": "EPA (Eicosapentaenoic Acid) ; 180 mg",
+      "DHA": "DHA (Docosahexaenoic Acid) ; 120 mg"
+     },
+     "components": [
+      {
+       "name": "EPA",
+       "amount": 180.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 120.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-O3SS-1000-0090",
+     "product_id": "bulk-super-strength-omega-3-90-softgels-fish-unspecified-90softgel",
+     "brand": "Bulk",
+     "name": "Super Strength Omega 3 - 90 Softgels",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/super-strength-omega-3-softgels/bpb-o3ss-0000",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_O3SS_1000_Main_Image_de10.jpg",
+     "price_gbp": 11.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "softgel",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "fish_unspecified",
+     "amount_per_serving": 1650.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.00024222222222222223,
+     "price_per_std_dose": 0.24222222222222223,
+     "cost_per_month": 7.266666666666667,
+     "days_supply": 49.5,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Softgels",
+      "units_per_serving": "Per Serving (3 SOFTGELS)",
+      "amount_per_serving": "Omega 3 Fish Oil ; 3000 mg",
+      "EPA": "providing EPA 990 mg",
+      "DHA": "DHA 660 mg"
+     },
+     "components": [
+      {
+       "name": "EPA",
+       "amount": 990.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 660.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10529335",
+     "product_id": "myvitamins-essential-omega-3-90softgels-fish-unspecified-90softgel",
+     "brand": "Myvitamins",
+     "name": "Essential Omega-3 - 90Softgels",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/essential-omega-3/10529329/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529329-1835277415351287.jpg",
+     "price_gbp": 7.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "softgel",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "fish_unspecified",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.00029592592592592594,
+     "price_per_std_dose": 0.2959259259259259,
+     "cost_per_month": 8.877777777777778,
+     "days_supply": 27.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Softgels",
+      "units_per_serving": "Serving Size | - 1 Softgel",
+      "amount_per_serving": "Total Omega 3 Fatty Acids ; 300 mg",
+      "EPA": "EPA (Eicosapentaenoic Acid) ; 180 mg",
+      "DHA": "DHA (Docosahexaenoic Acid) ; 120 mg"
+     },
+     "components": [
+      {
+       "name": "EPA",
+       "amount": 180.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 120.0,
+       "unit": "mg"
+      },
+      {
+       "name": "total_omega_3",
+       "amount": 300.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "o3_krill",
+   "standard_dose": 1000.0,
+   "ranked": [
+    {
+     "listing_id": "myprotein:10530670",
+     "product_id": "myvitamins-krill-oil-capsules-250capsules-krill-250capsule",
+     "brand": "Myvitamins",
+     "name": "Krill Oil Capsules - 250Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/krill-oil-capsules/10530669/",
+     "image_url": "https://static.thcdn.com/productimg/original/10530669-7625031001357362.jpg",
+     "price_gbp": 48.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 250,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 250.0
+     },
+     "form_id": "krill",
+     "amount_per_serving": 88.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.002226818181818182,
+     "price_per_std_dose": 2.2268181818181816,
+     "cost_per_month": 66.80454545454545,
+     "days_supply": 22.0,
+     "tested_flag": null,
+     "other_actives": [
+      "Phospholipids",
+      "Total Omega 6",
+      "Choline",
+      "Astaxanthin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "250Capsules",
+      "units_per_serving": "Consume 1 softgel daily",
+      "amount_per_serving": "Total Omega 3 ; 110 mg",
+      "EPA": "EPA (Eicosapentaenoic Acid) ; 60 mg",
+      "DHA": "DHA (Docosahexaenoic Acid) ; 28 mg"
+     },
+     "components": [
+      {
+       "name": "total_omega_3",
+       "amount": 110.0,
+       "unit": "mg"
+      },
+      {
+       "name": "EPA",
+       "amount": 60.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 28.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10530671",
+     "product_id": "myvitamins-krill-oil-capsules-90capsules-krill-90softgel",
+     "brand": "Myvitamins",
+     "name": "Krill Oil Capsules - 90Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/krill-oil-capsules/10530669/",
+     "image_url": "https://static.thcdn.com/productimg/original/10530669-7625031001357362.jpg",
+     "price_gbp": 18.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "softgel",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "krill",
+     "amount_per_serving": 88.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.0023977272727272727,
+     "price_per_std_dose": 2.397727272727273,
+     "cost_per_month": 71.93181818181819,
+     "days_supply": 7.92,
+     "tested_flag": null,
+     "other_actives": [
+      "Choline",
+      "Astaxanthin",
+      "Phospholipids"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Capsules",
+      "units_per_serving": "Serving Size | - 1 Softgels",
+      "amount_per_serving": "Total Omega 3 ; 110 mg",
+      "EPA": "EPA (Eicosapentaenoic Acid) ; 60 mg",
+      "DHA": "DHA (Docosahexaenoic Acid) ; 28 mg"
+     },
+     "components": [
+      {
+       "name": "total_omega_3",
+       "amount": 110.0,
+       "unit": "mg"
+      },
+      {
+       "name": "EPA",
+       "amount": 60.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 28.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "o3_algae",
+   "standard_dose": 1000.0,
+   "ranked": [
+    {
+     "listing_id": "bulk:VSER-O3SS-0600-0060",
+     "product_id": "bulk-vegan-super-strength-omega-3-softgels-60-capsules-algae-60softgel",
+     "brand": "Bulk",
+     "name": "Vegan Super Strength Omega 3 Softgels - 60 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/vegan-super-strength-omega-3-softgels/vser-o3ss",
+     "image_url": "https://www.bulk.com/media/catalog/product/V/S/VSER_O3SS_0600_Main_Image_c904.jpg",
+     "price_gbp": 14.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "softgel",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "algae",
+     "amount_per_serving": 512.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.0009759114583333333,
+     "price_per_std_dose": 0.9759114583333333,
+     "cost_per_month": 29.277343749999996,
+     "days_supply": 15.36,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Per Serving (2 Softgels)",
+      "amount_per_serving": "Algal Oil ; 1200 mg",
+      "DHA": "providing DHA 384 mg",
+      "EPA": "EPA 128 mg"
+     },
+     "components": [
+      {
+       "name": "DHA",
+       "amount": 384.0,
+       "unit": "mg"
+      },
+      {
+       "name": "EPA",
+       "amount": 128.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  }
+ ]
+}

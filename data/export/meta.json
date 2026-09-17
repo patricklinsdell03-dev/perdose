@@ -1,0 +1,68 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "retailers": [
+  {
+   "id": "bulk",
+   "name": "Bulk",
+   "shipping": {
+    "rule": "free_over",
+    "threshold_gbp": 49.0,
+    "flat_gbp": 3.95
+   }
+  },
+  {
+   "id": "myprotein",
+   "name": "Myprotein",
+   "shipping": {
+    "rule": "free_over",
+    "threshold_gbp": 55.0
+   }
+  },
+  {
+   "id": "holland_barrett",
+   "name": "Holland & Barrett",
+   "shipping": {
+    "rule": "free_over",
+    "threshold_gbp": 30.0
+   }
+  }
+ ],
+ "counts": {
+  "products": 71,
+  "compounds": {
+   "magnesium": 15,
+   "zinc": 11,
+   "vitamin_d3": 8,
+   "vitamin_k2": 4,
+   "omega_3": 10,
+   "creatine": 12,
+   "ashwagandha": 7,
+   "vitamin_c": 7,
+   "vitamin_b12": 4,
+   "l_theanine": 2
+  },
+  "classes": {
+   "mg_glycinate": 4,
+   "mg_citrate": 1,
+   "mg_oxide": 2,
+   "mg_other": 2,
+   "zn_citrate": 2,
+   "zn_gluconate": 2,
+   "zn_other": 2,
+   "d3": 7,
+   "k2_mk7": 2,
+   "unknown": 0,
+   "o3_fish": 7,
+   "o3_krill": 2,
+   "o3_algae": 1,
+   "cr_mono": 12,
+   "ash_ksm66": 5,
+   "ash_generic": 0,
+   "vc_standard": 5,
+   "vc_liposomal": 1,
+   "b12_methyl": 2,
+   "b12_cyano": 2,
+   "thea": 1
+  }
+ }
+}

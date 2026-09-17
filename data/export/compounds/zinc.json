@@ -1,0 +1,596 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "compound": {
+  "id": "zinc",
+  "name": "Zinc",
+  "category": "minerals",
+  "tier": 1,
+  "comparison_quantity": "elemental zinc",
+  "unit": "mg",
+  "standard_dose": 15.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "zinc",
+   "zn",
+   "zinc picolinate",
+   "zinc citrate",
+   "zinc gluconate",
+   "zinc bisglycinate",
+   "zinc oxide",
+   "zinc sulphate",
+   "zinc sulfate"
+  ],
+  "classes": [
+   {
+    "id": "zn_picolinate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "picolinate",
+      "names": [
+       "picolinate"
+      ],
+      "elemental_factor": 0.211
+     }
+    ]
+   },
+   {
+    "id": "zn_citrate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "citrate",
+      "names": [
+       "citrate"
+      ],
+      "elemental_factor": 0.321
+     }
+    ]
+   },
+   {
+    "id": "zn_gluconate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "gluconate",
+      "names": [
+       "gluconate"
+      ],
+      "elemental_factor": 0.143
+     }
+    ]
+   },
+   {
+    "id": "zn_glycinate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "bisglycinate",
+      "names": [
+       "bisglycinate",
+       "glycinate",
+       "chelate"
+      ],
+      "elemental_factor": 0.306
+     }
+    ]
+   },
+   {
+    "id": "zn_oxide",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "oxide",
+      "names": [
+       "oxide"
+      ],
+      "elemental_factor": 0.803
+     }
+    ]
+   },
+   {
+    "id": "zn_sulfate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "sulfate",
+      "names": [
+       "sulfate",
+       "sulphate"
+      ],
+      "elemental_factor": 0.364
+     }
+    ]
+   },
+   {
+    "id": "zn_other",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "acetate",
+       "methionine",
+       "orotate",
+       "blend",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "zn_citrate",
+   "standard_dose": 15.0,
+   "ranked": [
+    {
+     "listing_id": "myprotein:10575262",
+     "product_id": "myvitamins-zinc-tablets-270tablets-citrate-270tablet",
+     "brand": "Myvitamins",
+     "name": "Zinc Tablets - 270Tablets",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-tablets/10575261/",
+     "image_url": "https://static.thcdn.com/productimg/original/10575261-1645326904154192.jpg",
+     "price_gbp": 13.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 270.0
+     },
+     "form_id": "citrate",
+     "amount_per_serving": 15.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.003454320987654321,
+     "price_per_std_dose": 0.051814814814814814,
+     "cost_per_month": 1.5544444444444445,
+     "days_supply": 270.0,
+     "tested_flag": null,
+     "other_actives": [
+      "Vitamin C"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270Tablets",
+      "units_per_serving": "Consume 1 tablet daily",
+      "amount_per_serving": "Zinc ; 150 ; 15mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10575263",
+     "product_id": "myvitamins-zinc-tablets-90tablets-citrate-90tablet",
+     "brand": "Myvitamins",
+     "name": "Zinc Tablets - 90Tablets",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-tablets/10575261/",
+     "image_url": "https://static.thcdn.com/productimg/original/10575261-1645326904154192.jpg",
+     "price_gbp": 5.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "citrate",
+     "amount_per_serving": 15.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.004437037037037037,
+     "price_per_std_dose": 0.06655555555555556,
+     "cost_per_month": 1.9966666666666668,
+     "days_supply": 90.0,
+     "tested_flag": null,
+     "other_actives": [
+      "vitamin_c"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Tablets",
+      "units_per_serving": "Consume 1 tablet daily",
+      "amount_per_serving": "Zinc ; 150 ; 15mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "zn_gluconate",
+   "standard_dose": 15.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:069991",
+     "product_id": "holland-barrett-holland-barrett-zinc-25mg-120-tablets-gluconate-120tablet",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Zinc (25mg) 120 Tablets",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-zinc-25mg-120-tablets-6100006797",
+     "image_url": null,
+     "price_gbp": 9.69,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "gluconate",
+     "amount_per_serving": 25.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.00323,
+     "price_per_std_dose": 0.04845,
+     "cost_per_month": 1.4535,
+     "days_supply": 200.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Take 1 tablet per day",
+      "servings_stated": "120 Tablets",
+      "amount_per_serving": "Zinc ; 25mg 250%"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:070136",
+     "product_id": "holland-barrett-holland-barrett-high-strength-chelated-zinc-copper-120-tablets-gluconate-120tablet",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett High Strength Chelated Zinc & Copper 120 Tablets",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-high-strength-chelated-zinc-copper-120-tablets-6100006557",
+     "image_url": null,
+     "price_gbp": 15.69,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "gluconate",
+     "amount_per_serving": 25.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.005229999999999999,
+     "price_per_std_dose": 0.07844999999999999,
+     "cost_per_month": 2.3535,
+     "days_supply": 200.0,
+     "tested_flag": null,
+     "other_actives": [
+      "Copper Bisglycinate"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Take 1 tablet per day",
+      "amount_per_serving": "Zinc ; 25.00mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "zn_other",
+   "standard_dose": 15.0,
+   "ranked": [
+    {
+     "listing_id": "bulk:BPB-OZIN-0030-0270",
+     "product_id": "bulk-optizinc-tablets-270-tablets-other-270tablet",
+     "brand": "Bulk",
+     "name": "OptiZinc Tablets - 270 Tablets",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/optizinc-tablets/bpb-ozin-0000",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_OZIN_0030_Main_Image_fbfa.jpg",
+     "price_gbp": 17.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 270.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 6.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.010796296296296295,
+     "price_per_std_dose": 0.16194444444444442,
+     "cost_per_month": 4.8583333333333325,
+     "days_supply": 108.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270 Tablets",
+      "units_per_serving": "Per Serving (1 Tablet)",
+      "amount_per_serving": "Zinc ; 6 mg ; 60"
+     },
+     "components": [],
+     "branded_extract": "OptiZinc"
+    },
+    {
+     "listing_id": "bulk:BPB-OZIN-0030-0090",
+     "product_id": "bulk-optizinc-tablets-90-tablets-other-90tablet",
+     "brand": "Bulk",
+     "name": "OptiZinc Tablets - 90 Tablets",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/optizinc-tablets/bpb-ozin-0000",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_OZIN_0030_Main_Image_fbfa.jpg",
+     "price_gbp": 6.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 6.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.012944444444444444,
+     "price_per_std_dose": 0.19416666666666665,
+     "cost_per_month": 5.824999999999999,
+     "days_supply": 36.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Per Serving (1 Tablet)",
+      "amount_per_serving": "Zinc ; 6 mg ; 60",
+      "form_raw": "Zinc Monomethionine (OptiZinc®)"
+     },
+     "components": [],
+     "branded_extract": "OptiZinc"
+    }
+   ],
+   "combinations": [
+    {
+     "listing_id": "myprotein:10529514",
+     "product_id": "myvitamins-zinc-magnesium-capsules-270capsules-other-270capsule",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 270Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 20.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 270.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 10.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.007774074074074074,
+     "price_per_std_dose": 0.11661111111111111,
+     "cost_per_month": 3.498333333333333,
+     "days_supply": 180.0,
+     "tested_flag": null,
+     "other_actives": [
+      "magnesium",
+      "Vitamin B6",
+      "Copper Glycinate"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Zinc ; 100 ; 10mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10529515",
+     "product_id": "myvitamins-zinc-magnesium-capsules-90capsules-other-90capsule",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 90Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 9.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 10.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.010544444444444445,
+     "price_per_std_dose": 0.15816666666666668,
+     "cost_per_month": 4.745,
+     "days_supply": 60.0,
+     "tested_flag": null,
+     "other_actives": [
+      "magnesium",
+      "Vitamin B6",
+      "Copper Glycinate"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Zinc ; 100 ; 10mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-ZMAG-CAPS-0180",
+     "product_id": "bulk-zinc-magnesium-capsules-180-capsules-other-180capsule",
+     "brand": "Bulk",
+     "name": "Zinc & Magnesium Capsules - 180 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/zinc-magnesium-capsules/bpb-zmag-caps",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_ZMAG_CAPS_Main_Image_464f.jpg",
+     "price_gbp": 19.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 180,
+      "unit_type": "capsule",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 20.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.011105555555555554,
+     "price_per_std_dose": 0.1665833333333333,
+     "cost_per_month": 4.997499999999999,
+     "days_supply": 120.0,
+     "tested_flag": null,
+     "other_actives": [
+      "magnesium"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Capsules",
+      "units_per_serving": "Take 2 capsules once per day",
+      "amount_per_serving": "Zinc ; 20 mg ; 200"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-ZMAG-CAPS-0060",
+     "product_id": "bulk-zinc-magnesium-capsules-60-capsules-other-60capsule",
+     "brand": "Bulk",
+     "name": "Zinc & Magnesium Capsules - 60 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/zinc-magnesium-capsules/bpb-zmag-caps",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_ZMAG_CAPS_Main_Image_464f.jpg",
+     "price_gbp": 7.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 20.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.013316666666666668,
+     "price_per_std_dose": 0.19975,
+     "cost_per_month": 5.992500000000001,
+     "days_supply": 40.0,
+     "tested_flag": null,
+     "other_actives": [
+      "magnesium"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Take 2 capsules once per day",
+      "amount_per_serving": "Zinc ; 20 mg ; 200",
+      "form_raw": "Zinc Mono-L-Methionine Sulphate"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:13528187",
+     "product_id": "myvitamins-zinc-magnesium-capsules-30capsules-other-30capsule",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 30Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 4.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 30,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 10.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.014966666666666668,
+     "price_per_std_dose": 0.22450000000000003,
+     "cost_per_month": 6.735000000000001,
+     "days_supply": 20.0,
+     "tested_flag": null,
+     "other_actives": [
+      "magnesium",
+      "Vitamin B6",
+      "Copper Glycinate"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "30Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "servings_stated": "30Capsules",
+      "amount_per_serving": "Zinc ; 100 ; 10mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

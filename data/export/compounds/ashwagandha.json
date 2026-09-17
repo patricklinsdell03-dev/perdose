@@ -1,0 +1,422 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "compound": {
+  "id": "ashwagandha",
+  "name": "Ashwagandha",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "root extract",
+  "unit": "mg",
+  "standard_dose": 600.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "ashwagandha",
+   "withania",
+   "withania somnifera",
+   "ksm-66",
+   "ksm66",
+   "sensoril",
+   "shoden"
+  ],
+  "classes": [
+   {
+    "id": "ash_ksm66",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "ksm66",
+      "names": [
+       "ksm-66",
+       "ksm66"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ash_sensoril",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "sensoril",
+      "names": [
+       "sensoril"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ash_shoden",
+    "standard_dose": 120.0,
+    "forms": [
+     {
+      "id": "shoden",
+      "names": [
+       "shoden"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ash_generic",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "generic_extract",
+      "names": [
+       "root extract",
+       "extract"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ash_powder",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "root_powder",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "ash_ksm66",
+   "standard_dose": 600.0,
+   "ranked": [
+    {
+     "listing_id": "myprotein:12335320",
+     "product_id": "myvitamins-ashwagandha-ksm66-capsules-90capsules-ksm66-90capsule",
+     "brand": "Myvitamins",
+     "name": "Ashwagandha KSM66 Capsules - 90Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/ashwagandha-ksm66-capsules/12335319/",
+     "image_url": "https://static.thcdn.com/productimg/original/12335319-5105277417039567.jpg",
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "ksm66",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": true,
+     "price_per_unit": 0.00028866666666666667,
+     "price_per_std_dose": 0.1732,
+     "cost_per_month": 5.196,
+     "days_supply": 75.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Capsules",
+      "units_per_serving": "1 Capsule",
+      "amount_per_serving": "Ashwagandha KSM-66® ; 500mg",
+      "extract_ratio": "Ashwagandha Root 10-15:1 Extract"
+     },
+     "components": [],
+     "branded_extract": "KSM-66"
+    },
+    {
+     "listing_id": "myprotein:13170775",
+     "product_id": "myvitamins-ashwagandha-ksm66-capsules-30capsules-ksm66-30capsule",
+     "brand": "Myvitamins",
+     "name": "Ashwagandha KSM66 Capsules - 30Capsules",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/sports-nutrition/ashwagandha-ksm66-capsules/12335319/",
+     "image_url": "https://static.thcdn.com/productimg/original/12335319-5105277417039567.jpg",
+     "price_gbp": 5.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 30,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "ksm66",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": true,
+     "price_per_unit": 0.000366,
+     "price_per_std_dose": 0.21960000000000002,
+     "cost_per_month": 6.588000000000001,
+     "days_supply": 25.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "30Capsules",
+      "units_per_serving": "1 Capsule",
+      "amount_per_serving": "Ashwagandha KSM-66® ; 500mg",
+      "extract_ratio": "Ashwagandha Root 10-15:1 Extract"
+     },
+     "components": [],
+     "branded_extract": "KSM-66"
+    },
+    {
+     "listing_id": "bulk:BPB-KS66-0500-0090",
+     "product_id": "bulk-ksm-ashwagandha-capsules-90-capsules-ksm66-90capsule",
+     "brand": "Bulk",
+     "name": "KSM Ashwagandha Capsules - 90 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/ashwagandha-capsules/bpb-ks66-0500",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_KS66_0500__1__93f2.jpg",
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "ksm66",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": true,
+     "price_per_unit": 0.00039977777777777776,
+     "price_per_std_dose": 0.23986666666666664,
+     "cost_per_month": 7.196,
+     "days_supply": 75.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Capsules",
+      "units_per_serving": "Per Serving (1 Capsule)",
+      "amount_per_serving": "KSM-66® Ashwagandha ; 500mg (5% Withanolides)",
+      "withanolides": "5% Withanolides"
+     },
+     "components": [
+      {
+       "name": "withanolides",
+       "amount": 5.0,
+       "unit": "percent"
+      }
+     ],
+     "branded_extract": "KSM-66"
+    },
+    {
+     "listing_id": "holland_barrett:068147",
+     "product_id": "holland-barrett-holland-barrett-ashwagandha-ksm-66-600mg-30-capsules-ksm66-30capsule",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Ashwagandha KSM-66 600mg 30 Capsules",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-ashwagandha-ksm-66-600mg-30-capsules-6100005944",
+     "image_url": null,
+     "price_gbp": 8.14,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 30,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "ksm66",
+     "amount_per_serving": 600.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": true,
+     "price_per_unit": 0.00045222222222222224,
+     "price_per_std_dose": 0.27133333333333337,
+     "cost_per_month": 8.14,
+     "days_supply": 30.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "30 Capsules",
+      "units_per_serving": "Each 1 Capsule/capsules contains",
+      "amount_per_serving": "KSM-66® Ashwagandha Root Extract (Withania somnifera) ; 600mg"
+     },
+     "components": [],
+     "branded_extract": "KSM-66"
+    },
+    {
+     "listing_id": "bulk:BPB-KS66-0500-0030",
+     "product_id": "bulk-ksm-ashwagandha-capsules-30-capsules-ksm66-30capsule",
+     "brand": "Bulk",
+     "name": "KSM Ashwagandha Capsules - 30 Capsules",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/ashwagandha-capsules/bpb-ks66-0500",
+     "image_url": "https://www.bulk.com/media/catalog/product/B/P/BPB_KS66_0500__1__93f2.jpg",
+     "price_gbp": 7.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 30,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "ksm66",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": true,
+     "price_per_unit": 0.0005326666666666666,
+     "price_per_std_dose": 0.3196,
+     "cost_per_month": 9.588,
+     "days_supply": 25.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "30 Capsules",
+      "units_per_serving": "Per Serving (1 Capsule)",
+      "amount_per_serving": "KSM-66® Ashwagandha ; 500mg (5% Withanolides)",
+      "withanolides": "5% Withanolides"
+     },
+     "components": [
+      {
+       "name": "withanolides",
+       "amount": 5.0,
+       "unit": "percent"
+      }
+     ],
+     "branded_extract": "KSM-66"
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "ash_generic",
+   "standard_dose": 600.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "bulk:BPB-GUMY-ASAP-0120",
+     "product_id": "bulk-ashwagandha-gummies-apple-120-gummies-generic-extract-120gummy",
+     "brand": "Bulk",
+     "name": "Ashwagandha Gummies - Apple 120 Gummies",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/ashwagandha-gummies/bpb-gumy-as",
+     "image_url": "https://www.bulk.com/media/catalog/product/A/S/ASHWAGANDHA_GUMMIES_MAIN_IMAGE_2000X2000_JPEG_bba6.jpg",
+     "price_gbp": 29.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "gummy",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "generic_extract",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": true,
+     "price_per_unit": 0.001666111111111111,
+     "price_per_std_dose": 0.9996666666666666,
+     "cost_per_month": 29.99,
+     "days_supply": 30.0,
+     "tested_flag": null,
+     "other_actives": [
+      "Vitamin B6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Gummies",
+      "units_per_serving": "Per Serving (2 gummies)",
+      "amount_per_serving": "300 mg (3000 mg Ashwagandha equivalent)",
+      "extract_ratio": "Ashwagandha Extract 10:1"
+     },
+     "components": [
+      {
+       "name": "extract_mass",
+       "amount": 300.0,
+       "unit": "mg"
+      },
+      {
+       "name": "herb_equivalent",
+       "amount": 3000.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-GUMY-ASAP-0060",
+     "product_id": "bulk-ashwagandha-gummies-apple-60-gummies-generic-extract-60gummy",
+     "brand": "Bulk",
+     "name": "Ashwagandha Gummies - Apple 60 Gummies",
+     "retailer_id": "bulk",
+     "url": "https://www.bulk.com/uk/products/ashwagandha-gummies/bpb-gumy-as",
+     "image_url": "https://www.bulk.com/media/catalog/product/A/S/ASHWAGANDHA_GUMMIES_MAIN_IMAGE_2000X2000_JPEG_bba6.jpg",
+     "price_gbp": 16.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "gummy",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "generic_extract",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": true,
+     "price_per_unit": 0.0018877777777777775,
+     "price_per_std_dose": 1.1326666666666665,
+     "cost_per_month": 33.98,
+     "days_supply": 15.0,
+     "tested_flag": null,
+     "other_actives": [
+      "Vitamin B6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Gummies",
+      "units_per_serving": "Simply take two gummies per day",
+      "amount_per_serving": "Ashwagandha Extract 10:1 ; 300 mg (3000 mg Ashwagandha equivalent)",
+      "herb_equivalent": "3000 mg Ashwagandha equivalent"
+     },
+     "components": [
+      {
+       "name": "extract_mass",
+       "amount": 300.0,
+       "unit": "mg"
+      },
+      {
+       "name": "herb_equivalent",
+       "amount": 3000.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

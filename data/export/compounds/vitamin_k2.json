@@ -1,0 +1,243 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "compound": {
+  "id": "vitamin_k2",
+  "name": "Vitamin K2",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "menaquinone",
+  "unit": "mcg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin k2",
+   "k2",
+   "mk-7",
+   "mk7",
+   "menaquinone-7",
+   "mk-4",
+   "mk4",
+   "menaquinone-4"
+  ],
+  "classes": [
+   {
+    "id": "k2_mk7",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "mk7",
+      "names": [
+       "mk-7",
+       "mk7",
+       "menaquinone-7",
+       "menaq7",
+       "k2vital"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "k2_mk4",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "mk4",
+      "names": [
+       "mk-4",
+       "mk4",
+       "menaquinone-4"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "k2_mk7",
+   "standard_dose": 100.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:110507",
+     "product_id": "supplement-place-supplement-place-vitamin-k2-mk7-200mcg-120-capsules-mk7-120capsule",
+     "brand": "Supplement Place",
+     "name": "Supplement Place Vitamin K2 MK7 200mcg 120 Capsules",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/supplement-place-vitamin-k2-mk7-200mcg-120-capsules-6100024975",
+     "image_url": null,
+     "price_gbp": 35.95,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "mk7",
+     "amount_per_serving": 200.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0014979166666666667,
+     "price_per_std_dose": 0.14979166666666668,
+     "cost_per_month": 4.49375,
+     "days_supply": 240.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Capsules",
+      "units_per_serving": "Take 1 capsule daily with food",
+      "amount_per_serving": "Each capsule supplies 200mcg K2"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:109239",
+     "product_id": "vitabright-vitabright-vitamin-k2-mk7-from-natto-extract-100mcg-120-capsules-mk7-120capsule",
+     "brand": "VitaBright",
+     "name": "VitaBright Vitamin K2 MK7 from Natto Extract 100mcg - 120 Capsules",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/vitabright-vitamin-k2-mk7-from-natto-extract-100mcg-120-capsules-6100026619",
+     "image_url": null,
+     "price_gbp": 19.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "mk7",
+     "amount_per_serving": 100.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0016658333333333332,
+     "price_per_std_dose": 0.1665833333333333,
+     "cost_per_month": 4.997499999999999,
+     "days_supply": 120.0,
+     "tested_flag": null,
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Capsules",
+      "units_per_serving": "Take one capsule daily",
+      "amount_per_serving": "100mcg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "unknown",
+   "standard_dose": 100.0,
+   "ranked": [],
+   "combinations": [],
+   "unverified": [
+    {
+     "listing_id": "myprotein:12513686",
+     "product_id": "myvitamins-vitamin-d3-k2-capsules-30-servings-d3-capsule",
+     "brand": "Myvitamins",
+     "name": "Vitamin D3 & K2 Capsules - 30 Servings",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/vitamins/vitamin-d3-k2-capsules/12513685/",
+     "image_url": "https://static.thcdn.com/productimg/original/12513687-1985335516903272.png",
+     "price_gbp": 5.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": null,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "unknown",
+     "amount_per_serving": 100.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": null,
+     "price_per_std_dose": null,
+     "cost_per_month": null,
+     "days_supply": null,
+     "tested_flag": null,
+     "other_actives": [
+      "vitamin_d3"
+     ],
+     "review_reasons": [
+      {
+       "code": "form_unknown",
+       "text": "The listing does not make clear which form this is."
+      }
+     ],
+     "evidence": {
+      "units_per_serving": "Consume 1 capsule daily",
+      "servings_stated": "30 Servings",
+      "amount_per_serving": "Vitamin K2 ; 100.0μg ; 133"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:12513687",
+     "product_id": "myvitamins-vitamin-d3-k2-capsules-90capsules-90servings-unknown-90capsule",
+     "brand": "Myvitamins",
+     "name": "Vitamin D3 & K2 Capsules - 90CAPSULES, 90servings",
+     "retailer_id": "myprotein",
+     "url": "https://www.myprotein.com/p/vitamins/vitamin-d3-k2-capsules/12513685/",
+     "image_url": "https://static.thcdn.com/productimg/original/12513687-1985335516903272.png",
+     "price_gbp": 13.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "unknown",
+     "amount_per_serving": 100.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": null,
+     "price_per_std_dose": null,
+     "cost_per_month": null,
+     "days_supply": null,
+     "tested_flag": null,
+     "other_actives": [
+      "vitamin_d3"
+     ],
+     "review_reasons": [
+      {
+       "code": "form_unknown",
+       "text": "The listing does not make clear which form this is."
+      }
+     ],
+     "evidence": {
+      "pack_units": "90CAPSULES",
+      "servings_stated": "90servings",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Vitamin K2 ; 100.0μg ; 133"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ]
+  }
+ ]
+}

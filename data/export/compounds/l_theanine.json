@@ -1,0 +1,142 @@
+{
+ "generated_at": "2026-09-17T17:53:08+01:00",
+ "compound": {
+  "id": "l_theanine",
+  "name": "L-Theanine",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "L-theanine",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "l-theanine",
+   "theanine",
+   "suntheanine"
+  ],
+  "classes": [
+   {
+    "id": "thea",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "l_theanine",
+      "names": [
+       "l-theanine",
+       "theanine",
+       "suntheanine"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "thea",
+   "standard_dose": 200.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:104905",
+     "product_id": "holland-barrett-holland-barrett-l-theanine-200mg-60-capsules-unknown-60capsule",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett L-Theanine 200mg 60 Capsules",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-l-theanine-200mg-60-capsules-6100028792",
+     "image_url": null,
+     "price_gbp": 13.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "l_theanine",
+     "amount_per_serving": 200.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0011658333333333334,
+     "price_per_std_dose": 0.2331666666666667,
+     "cost_per_month": 6.995000000000001,
+     "days_supply": 60.0,
+     "tested_flag": null,
+     "other_actives": [
+      "EGCG"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Take 1 capsule per day",
+      "amount_per_serving": "200mg L-theanine per capsule",
+      "extract_ratio": "50:1 extract, equivalent to 25000.00mg Green Tea",
+      "extract_mass": "Green Tea Extract (Camellia Sinensis, Leaf) (50:1 extract, equivalent to 25000.00mg Green Tea) ; 500mg",
+      "herb_equivalent": "equivalent to 25000.00mg Green Tea"
+     },
+     "components": [
+      {
+       "name": "extract_mass",
+       "amount": 500.0,
+       "unit": "mg"
+      },
+      {
+       "name": "herb_equivalent",
+       "amount": 25000.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [
+    {
+     "listing_id": "holland_barrett:108496",
+     "product_id": "higher-nature-higher-nature-l-theanine-100mg-green-tea-extract-90-vegan-capsules-l-theanine-90capsule",
+     "brand": "Higher Nature",
+     "name": "Higher Nature L-Theanine 100mg - Green Tea Extract - 90 Vegan Capsules",
+     "retailer_id": "holland_barrett",
+     "url": "https://www.hollandandbarrett.com/shop/product/higher-nature-l-theanine-100mg-green-tea-extract-90-vegan-capsules-6100023557",
+     "image_url": null,
+     "price_gbp": 28.95,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "l_theanine",
+     "amount_per_serving": 100.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0032166666666666667,
+     "price_per_std_dose": 0.6433333333333333,
+     "cost_per_month": 19.3,
+     "days_supply": 45.0,
+     "tested_flag": null,
+     "other_actives": [
+      "green tea extract",
+      "vitamin B5",
+      "vitamin B6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Vegan Capsules",
+      "amount_per_serving": "L-Theanine 100mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

@@ -1,0 +1,270 @@
+[
+ {
+  "id": "magnesium",
+  "name": "Magnesium",
+  "category": "minerals",
+  "unit": "mg",
+  "product_count": 15,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "mg_glycinate",
+    "standard_dose": 100.0,
+    "ranked_count": 4,
+    "unverified_count": 0,
+    "retailer_count": 3,
+    "from_price_per_std_dose": 0.08327777777777778
+   },
+   {
+    "id": "mg_citrate",
+    "standard_dose": 100.0,
+    "ranked_count": 1,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.10211111111111111
+   },
+   {
+    "id": "mg_oxide",
+    "standard_dose": 100.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.04996296296296296
+   },
+   {
+    "id": "mg_other",
+    "standard_dose": 100.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.04916087962962963
+   }
+  ]
+ },
+ {
+  "id": "zinc",
+  "name": "Zinc",
+  "category": "minerals",
+  "unit": "mg",
+  "product_count": 11,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "zn_citrate",
+    "standard_dose": 15.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.051814814814814814
+   },
+   {
+    "id": "zn_gluconate",
+    "standard_dose": 15.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.04845
+   },
+   {
+    "id": "zn_other",
+    "standard_dose": 15.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.16194444444444442
+   }
+  ]
+ },
+ {
+  "id": "vitamin_d3",
+  "name": "Vitamin D3",
+  "category": "vitamins",
+  "unit": "IU",
+  "product_count": 8,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "d3",
+    "standard_dose": 1000.0,
+    "ranked_count": 7,
+    "unverified_count": 0,
+    "retailer_count": 3,
+    "from_price_per_std_dose": 0.012665343915343916
+   }
+  ]
+ },
+ {
+  "id": "vitamin_k2",
+  "name": "Vitamin K2",
+  "category": "vitamins",
+  "unit": "mcg",
+  "product_count": 4,
+  "retailer_count": 2,
+  "classes": [
+   {
+    "id": "k2_mk7",
+    "standard_dose": 100.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.14979166666666668
+   },
+   {
+    "id": "unknown",
+    "standard_dose": 100.0,
+    "ranked_count": 0,
+    "unverified_count": 2,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "omega_3",
+  "name": "Omega-3",
+  "category": "fatty-acids",
+  "unit": "mg",
+  "product_count": 10,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "o3_fish",
+    "standard_dose": 1000.0,
+    "ranked_count": 7,
+    "unverified_count": 0,
+    "retailer_count": 3,
+    "from_price_per_std_dose": 0.11194666666666665
+   },
+   {
+    "id": "o3_krill",
+    "standard_dose": 1000.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 2.2268181818181816
+   },
+   {
+    "id": "o3_algae",
+    "standard_dose": 1000.0,
+    "ranked_count": 1,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.9759114583333333
+   }
+  ]
+ },
+ {
+  "id": "creatine",
+  "name": "Creatine",
+  "category": "amino-acids",
+  "unit": "mg",
+  "product_count": 12,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "cr_mono",
+    "standard_dose": 5000.0,
+    "ranked_count": 12,
+    "unverified_count": 0,
+    "retailer_count": 3,
+    "from_price_per_std_dose": 0.09995
+   }
+  ]
+ },
+ {
+  "id": "ashwagandha",
+  "name": "Ashwagandha",
+  "category": "botanicals",
+  "unit": "mg",
+  "product_count": 7,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "ash_ksm66",
+    "standard_dose": 600.0,
+    "ranked_count": 5,
+    "unverified_count": 0,
+    "retailer_count": 3,
+    "from_price_per_std_dose": 0.1732
+   },
+   {
+    "id": "ash_generic",
+    "standard_dose": 600.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "vitamin_c",
+  "name": "Vitamin C",
+  "category": "vitamins",
+  "unit": "mg",
+  "product_count": 7,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "vc_standard",
+    "standard_dose": 1000.0,
+    "ranked_count": 5,
+    "unverified_count": 0,
+    "retailer_count": 3,
+    "from_price_per_std_dose": 0.03745833333333334
+   },
+   {
+    "id": "vc_liposomal",
+    "standard_dose": 1000.0,
+    "ranked_count": 1,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.6597999999999999
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b12",
+  "name": "Vitamin B12",
+  "category": "vitamins",
+  "unit": "mcg",
+  "product_count": 4,
+  "retailer_count": 2,
+  "classes": [
+   {
+    "id": "b12_methyl",
+    "standard_dose": 1000.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.027722222222222224
+   },
+   {
+    "id": "b12_cyano",
+    "standard_dose": 1000.0,
+    "ranked_count": 2,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.06958333333333333
+   }
+  ]
+ },
+ {
+  "id": "l_theanine",
+  "name": "L-Theanine",
+  "category": "amino-acids",
+  "unit": "mg",
+  "product_count": 2,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "thea",
+    "standard_dose": 200.0,
+    "ranked_count": 1,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.2331666666666667
+   }
+  ]
+ }
+]

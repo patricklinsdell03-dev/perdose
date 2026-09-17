@@ -1,0 +1,841 @@
+[
+ {
+  "id": "magnesium",
+  "name": "Magnesium",
+  "category": "minerals",
+  "tier": 1,
+  "comparison_quantity": "elemental magnesium",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "magnesium",
+   "mag",
+   "mg glycinate",
+   "mag glycinate",
+   "magnesium bisglycinate",
+   "magnesium citrate",
+   "magnesium malate",
+   "magnesium taurate",
+   "magnesium threonate",
+   "magtein",
+   "magnesium oxide",
+   "magnesium chloride"
+  ],
+  "classes": [
+   {
+    "id": "mg_glycinate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "bisglycinate",
+      "names": [
+       "bisglycinate",
+       "glycinate",
+       "diglycinate",
+       "chelate",
+       "buffered chelate"
+      ],
+      "elemental_factor": 0.141
+     }
+    ]
+   },
+   {
+    "id": "mg_citrate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "citrate",
+      "names": [
+       "citrate"
+      ],
+      "elemental_factor": 0.16
+     }
+    ]
+   },
+   {
+    "id": "mg_malate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "malate",
+      "names": [
+       "malate",
+       "di-magnesium malate",
+       "dimagnesium malate"
+      ],
+      "elemental_factor": 0.155
+     }
+    ]
+   },
+   {
+    "id": "mg_taurate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "taurate",
+      "names": [
+       "taurate",
+       "taurinate"
+      ],
+      "elemental_factor": 0.089
+     }
+    ]
+   },
+   {
+    "id": "mg_threonate",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "l_threonate",
+      "names": [
+       "l-threonate",
+       "threonate",
+       "magtein"
+      ],
+      "elemental_factor": 0.083
+     }
+    ]
+   },
+   {
+    "id": "mg_oxide",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "oxide",
+      "names": [
+       "oxide"
+      ],
+      "elemental_factor": 0.603
+     }
+    ]
+   },
+   {
+    "id": "mg_chloride",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "chloride",
+      "names": [
+       "chloride"
+      ],
+      "elemental_factor": 0.12
+     }
+    ]
+   },
+   {
+    "id": "mg_other",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "orotate",
+       "lactate",
+       "aspartate",
+       "carbonate",
+       "sulfate",
+       "sulphate",
+       "blend",
+       "complex",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "zinc",
+  "name": "Zinc",
+  "category": "minerals",
+  "tier": 1,
+  "comparison_quantity": "elemental zinc",
+  "unit": "mg",
+  "standard_dose": 15.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "zinc",
+   "zn",
+   "zinc picolinate",
+   "zinc citrate",
+   "zinc gluconate",
+   "zinc bisglycinate",
+   "zinc oxide",
+   "zinc sulphate",
+   "zinc sulfate"
+  ],
+  "classes": [
+   {
+    "id": "zn_picolinate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "picolinate",
+      "names": [
+       "picolinate"
+      ],
+      "elemental_factor": 0.211
+     }
+    ]
+   },
+   {
+    "id": "zn_citrate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "citrate",
+      "names": [
+       "citrate"
+      ],
+      "elemental_factor": 0.321
+     }
+    ]
+   },
+   {
+    "id": "zn_gluconate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "gluconate",
+      "names": [
+       "gluconate"
+      ],
+      "elemental_factor": 0.143
+     }
+    ]
+   },
+   {
+    "id": "zn_glycinate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "bisglycinate",
+      "names": [
+       "bisglycinate",
+       "glycinate",
+       "chelate"
+      ],
+      "elemental_factor": 0.306
+     }
+    ]
+   },
+   {
+    "id": "zn_oxide",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "oxide",
+      "names": [
+       "oxide"
+      ],
+      "elemental_factor": 0.803
+     }
+    ]
+   },
+   {
+    "id": "zn_sulfate",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "sulfate",
+      "names": [
+       "sulfate",
+       "sulphate"
+      ],
+      "elemental_factor": 0.364
+     }
+    ]
+   },
+   {
+    "id": "zn_other",
+    "standard_dose": 15.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "acetate",
+       "methionine",
+       "orotate",
+       "blend",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_d3",
+  "name": "Vitamin D3",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "cholecalciferol",
+  "unit": "IU",
+  "standard_dose": 1000.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin d",
+   "vitamin d3",
+   "vit d",
+   "d3",
+   "cholecalciferol",
+   "colecalciferol"
+  ],
+  "classes": [
+   {
+    "id": "d3",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "d3",
+      "names": [
+       "d3",
+       "cholecalciferol",
+       "colecalciferol"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "d3_vegan",
+      "names": [
+       "vegan d3",
+       "lichen"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "d2",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "d2",
+      "names": [
+       "d2",
+       "ergocalciferol"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_k2",
+  "name": "Vitamin K2",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "menaquinone",
+  "unit": "mcg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin k2",
+   "k2",
+   "mk-7",
+   "mk7",
+   "menaquinone-7",
+   "mk-4",
+   "mk4",
+   "menaquinone-4"
+  ],
+  "classes": [
+   {
+    "id": "k2_mk7",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "mk7",
+      "names": [
+       "mk-7",
+       "mk7",
+       "menaquinone-7",
+       "menaq7",
+       "k2vital"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "k2_mk4",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "mk4",
+      "names": [
+       "mk-4",
+       "mk4",
+       "menaquinone-4"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "omega_3",
+  "name": "Omega-3",
+  "category": "fatty-acids",
+  "tier": 1,
+  "comparison_quantity": "EPA + DHA",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "oil_components",
+  "aliases": [
+   "omega 3",
+   "omega-3",
+   "fish oil",
+   "cod liver oil",
+   "krill oil",
+   "algae oil",
+   "algal oil",
+   "epa",
+   "dha"
+  ],
+  "classes": [
+   {
+    "id": "o3_fish",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "fish_tg",
+      "names": [
+       "triglyceride",
+       "rtg",
+       "re-esterified"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "fish_ee",
+      "names": [
+       "ethyl ester",
+       "ee"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "fish_unspecified",
+      "names": [
+       "fish oil",
+       "omega 3"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "o3_krill",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "krill",
+      "names": [
+       "krill"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "o3_algae",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "algae",
+      "names": [
+       "algae",
+       "algal",
+       "vegan omega"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "o3_cod_liver",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "cod_liver",
+      "names": [
+       "cod liver"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "creatine",
+  "name": "Creatine",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "creatine monohydrate",
+  "unit": "mg",
+  "standard_dose": 5000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "creatine",
+   "creatine monohydrate",
+   "creapure",
+   "micronised creatine",
+   "micronized creatine",
+   "creatine hcl",
+   "creatine hydrochloride"
+  ],
+  "classes": [
+   {
+    "id": "cr_mono",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "monohydrate",
+      "names": [
+       "monohydrate",
+       "micronised",
+       "micronized",
+       "creapure"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cr_hcl",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "hcl",
+      "names": [
+       "hcl",
+       "hydrochloride"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cr_other",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "buffered",
+       "kre-alkalyn",
+       "nitrate",
+       "ethyl ester",
+       "blend"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ashwagandha",
+  "name": "Ashwagandha",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "root extract",
+  "unit": "mg",
+  "standard_dose": 600.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "ashwagandha",
+   "withania",
+   "withania somnifera",
+   "ksm-66",
+   "ksm66",
+   "sensoril",
+   "shoden"
+  ],
+  "classes": [
+   {
+    "id": "ash_ksm66",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "ksm66",
+      "names": [
+       "ksm-66",
+       "ksm66"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ash_sensoril",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "sensoril",
+      "names": [
+       "sensoril"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ash_shoden",
+    "standard_dose": 120.0,
+    "forms": [
+     {
+      "id": "shoden",
+      "names": [
+       "shoden"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ash_generic",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "generic_extract",
+      "names": [
+       "root extract",
+       "extract"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ash_powder",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "root_powder",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_c",
+  "name": "Vitamin C",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "vitamin C (ascorbate equivalent)",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "vitamin c",
+   "vit c",
+   "ascorbic acid",
+   "sodium ascorbate",
+   "calcium ascorbate",
+   "ester-c",
+   "liposomal vitamin c"
+  ],
+  "classes": [
+   {
+    "id": "vc_standard",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "ascorbic_acid",
+      "names": [
+       "ascorbic acid"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "unspecified",
+      "names": [
+       "unspecified",
+       "vitamin c"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "buffered",
+      "names": [
+       "sodium ascorbate",
+       "calcium ascorbate",
+       "magnesium ascorbate",
+       "ester-c",
+       "buffered"
+      ],
+      "elemental_factor": null
+     },
+     {
+      "id": "timed_release",
+      "names": [
+       "timed release",
+       "time release",
+       "slow release"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "vc_liposomal",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "liposomal",
+      "names": [
+       "liposomal"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b12",
+  "name": "Vitamin B12",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "cobalamin",
+  "unit": "mcg",
+  "standard_dose": 1000.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin b12",
+   "b12",
+   "cobalamin",
+   "methylcobalamin",
+   "cyanocobalamin",
+   "adenosylcobalamin",
+   "hydroxocobalamin"
+  ],
+  "classes": [
+   {
+    "id": "b12_methyl",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "methyl",
+      "names": [
+       "methylcobalamin",
+       "methyl"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b12_cyano",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "cyano",
+      "names": [
+       "cyanocobalamin",
+       "cyano"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b12_adenosyl",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "adenosyl",
+      "names": [
+       "adenosylcobalamin",
+       "dibencozide"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b12_hydroxo",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "hydroxo",
+      "names": [
+       "hydroxocobalamin",
+       "hydroxo"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b12_unspecified",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "unspecified",
+      "names": [
+       "b12"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "l_theanine",
+  "name": "L-Theanine",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "L-theanine",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "l-theanine",
+   "theanine",
+   "suntheanine"
+  ],
+  "classes": [
+   {
+    "id": "thea",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "l_theanine",
+      "names": [
+       "l-theanine",
+       "theanine",
+       "suntheanine"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ }
+]
