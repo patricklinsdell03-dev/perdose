@@ -5,4 +5,4 @@ tagline: UK supplement prices compared per standard dose
 disclosure: >-
   We earn commission on purchases made through our links. It never affects ranking:
   tables are ordered purely by price per dose, and no retailer or brand can pay for position.
-contact_email: ""   # TODO Patrick: address for "report an error" links
+contact_email: "hello@perdose.co.uk"   # forwards to Patrick via Cloudflare Email Routing
