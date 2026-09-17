@@ -17,6 +17,17 @@ Nothing is invented. Where a page did not show something, the field is blank.
 1. **Bulk Creatine Monohydrate Powder**: the page lists sizes 100g / 250g / 500g / 1kg and four product codes ending `-0100`, `-0250`, `-0500`, `-1000`. The 500g ↔ `-0500` ↔ £10.99 pairing was confirmed on the page; the other three are paired by the same code pattern (which holds for every other Bulk product, e.g. `-0180` = 180 Tablets).
 2. **Myprotein** lists some variants' prices without size labels next to them. Paired by: the variant shown as selected (its id appears in the image URL) and, where only two sizes exist, the cheaper price belongs to the smaller pack. Affects: Essential Magnesium, Essential Omega-3, Vitamin D3 & K2, Vitamin C Capsules, Vitamin D3 Softgels (non-vegan sizes only — the three vegan sizes could not be paired, so they are **not included**), Impact Creatine (largest size recorded by its stated "294 Servings", not by weight).
 
+## Healthspan (added later the same day)
+
+`healthspan.csv` (28 rows), read from healthspan.co.uk product pages on 2026-09-17. Own-brand retailer (Healthspan and Healthspan Elite ranges). This brings the total to 99 rows.
+
+- **price_gbp** — the "One-Time Purchase" price (the reduced price where one was showing). Never the "Subscribe & Save" price. Each price was cross-checked against the per-tablet price printed beside it.
+- **merchant_pid** — Healthspan pages show no product code or barcode, so the page's URL slug is used as the id; `ean` is blank.
+- **Pack size** — where a page offers two sizes, only the size shown as selected when the page opens is recorded (its price is the one displayed). Affects: Super Strength Vitamin D3 (240), Vitamin C 1000mg (320), Super Strength Omega 3 (120), High Strength Omega 3 (240). The other size is **not included**.
+- **description** — directions, ingredients and the "Information table". Table rows are written `nutrient ; amount ; NN% NRV`; the page prints the NRV figure as a bare number under a "% NRV" heading. ® symbols and the allergen-advice sentence were dropped.
+- **in_stock** — every page showed a live buy box with a price; none was marked out of stock.
+- **Delivery** — a "free UK delivery on all orders, this week only" banner was showing. The standing rule shown is free over £30; the under-£30 charge was not displayed, so it is left out of `config/retailers.yml`.
+
 ## Refreshing
 
 Prices go stale. To refresh, re-read the same URLs and update `price_gbp`, `in_stock`, `captured_on`. Live affiliate feeds replace these files in Phase 6.

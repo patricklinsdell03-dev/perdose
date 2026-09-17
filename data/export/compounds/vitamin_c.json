@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T21:45:21+01:00",
+ "generated_at": "2026-09-17T21:56:21+01:00",
  "compound": {
   "id": "vitamin_c",
   "name": "Vitamin C",
@@ -258,6 +258,46 @@
      "branded_extract": null
     },
     {
+     "listing_id": "healthspan:vitamin-c-1000mg",
+     "product_id": "healthspan-healthspan-vitamin-c-1000mg-320-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Vitamin C 1000mg 320 Tablets",
+     "display_name": "Vitamin C 1000mg 320 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/vitamin-c-1000mg/",
+     "image_url": null,
+     "price_gbp": 36.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 320,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 320.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.00011559375,
+     "price_per_std_dose": 0.11559375,
+     "cost_per_month": 3.4678125,
+     "days_supply": 320.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "320 Tablets",
+      "units_per_serving": "Swallow one tablet daily",
+      "amount_per_serving": "Vitamin C ; 1000 mg ; 1250% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
      "listing_id": "myprotein:14871340",
      "product_id": "myvitamins-vitamin-c-capsules-30-servings",
      "brand": "Myvitamins",
@@ -299,9 +339,220 @@
      },
      "components": [],
      "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:vitamin-c-500mg-citrus",
+     "product_id": "healthspan-healthspan-vitamin-c-500mg-160-chewable-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Vitamin C 500mg 160 Chewable Tablets",
+     "display_name": "Vitamin C 500mg 160 Chewable Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/vitamin-c-500mg-citrus/",
+     "image_url": null,
+     "price_gbp": 14.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 160,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 160.0
+     },
+     "form_id": "buffered",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.00018737500000000001,
+     "price_per_std_dose": 0.187375,
+     "cost_per_month": 5.621250000000001,
+     "days_supply": 80.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "Mixed Citrus Bioflavonoids"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "160 Chewable Tablets",
+      "amount_per_serving": "Vitamin C ; 500 mg ; 625% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-vitamin-c-500mg-orange",
+     "product_id": "healthspan-elite-healthspan-elite-vitamin-c-500mg-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Vitamin C 500mg 120 Tablets",
+     "display_name": "Vitamin C 500mg 120 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/elite-vitamin-c-500mg-orange/",
+     "image_url": null,
+     "price_gbp": 14.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "buffered",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.00024983333333333335,
+     "price_per_std_dose": 0.24983333333333335,
+     "cost_per_month": 7.495000000000001,
+     "days_supply": 60.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "Citrus Bioflavonoids"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "amount_per_serving": "Vitamin C ; 500 mg ; 625% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:vitamin-c-sustained-release",
+     "product_id": "healthspan-healthspan-vitamin-c-sustained-release-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Vitamin C Sustained Release 90 Tablets",
+     "display_name": "Vitamin C Sustained Release 90 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/vitamin-c-sustained-release/",
+     "image_url": null,
+     "price_gbp": 11.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "timed_release",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0002664444444444445,
+     "price_per_std_dose": 0.2664444444444445,
+     "cost_per_month": 7.993333333333334,
+     "days_supply": 45.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "zinc"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "amount_per_serving": "Vitamin C ; 500 mg ; 625% NRV",
+      "form_raw": "Vitamin C Sustained Release"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-zinc-plus-vitamin-c",
+     "product_id": "healthspan-elite-healthspan-elite-zinc-vitamin-c-180-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Zinc + Vitamin C 180 Tablets",
+     "display_name": "Zinc + Vitamin C 180 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/elite-zinc-plus-vitamin-c/",
+     "image_url": null,
+     "price_gbp": 13.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 180.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 80.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0009715277777777778,
+     "price_per_std_dose": 0.9715277777777778,
+     "cost_per_month": 29.145833333333332,
+     "days_supply": 14.4,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "zinc"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "amount_per_serving": "Vitamin C ; 80 mg ; 100% NRV",
+      "form_raw": "Ascorbic Acid"
+     },
+     "components": [],
+     "branded_extract": null
     }
    ],
    "combinations": [
+    {
+     "listing_id": "healthspan:zinc-with-vitamin-c",
+     "product_id": "healthspan-healthspan-zinc-complex-360-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Zinc Complex 360 Tablets",
+     "display_name": "Zinc Complex 360 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/zinc-with-vitamin-c/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 360,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 360.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 80.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.00045104166666666665,
+     "price_per_std_dose": 0.4510416666666667,
+     "cost_per_month": 13.53125,
+     "days_supply": 28.8,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "zinc",
+      "Copper"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "360 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "servings_stated": "Per tablet",
+      "amount_per_serving": "Vitamin C ; 80 mg ; 100% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
     {
      "listing_id": "myprotein:10575263",
      "product_id": "myvitamins-zinc-tablets-90tablets",
@@ -343,6 +594,107 @@
       "pack_units": "90Tablets",
       "units_per_serving": "Consume 1 tablet daily",
       "amount_per_serving": "Vitamin C ; 75 ; 60mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:magnesium-375mg",
+     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium 375mg 90 Tablets",
+     "display_name": "Magnesium 375mg 90 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 40.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.003608333333333333,
+     "price_per_std_dose": 3.6083333333333334,
+     "cost_per_month": 108.25,
+     "days_supply": 3.6,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_b12",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "servings_stated": "90 Tablets",
+      "amount_per_serving": "Vitamin C ; 40 mg ; 50% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-magnesium-plus",
+     "product_id": "healthspan-elite-healthspan-elite-magnesium-plus-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Magnesium Plus 120 Tablets",
+     "display_name": "Magnesium Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/elite-magnesium-plus/",
+     "image_url": null,
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 40.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0037479166666666663,
+     "price_per_std_dose": 3.7479166666666663,
+     "cost_per_month": 112.43749999999999,
+     "days_supply": 4.8,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_b12",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Vitamin C ; 40 mg ; 50% NRV"
      },
      "components": [],
      "branded_extract": null

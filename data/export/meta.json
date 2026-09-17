@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T21:45:21+01:00",
+ "generated_at": "2026-09-17T21:56:21+01:00",
  "retailers": [
   {
    "id": "bulk",
@@ -25,42 +25,51 @@
     "rule": "free_over",
     "threshold_gbp": 30.0
    }
+  },
+  {
+   "id": "healthspan",
+   "name": "Healthspan",
+   "shipping": {
+    "rule": "free_over",
+    "threshold_gbp": 30.0
+   }
   }
  ],
  "counts": {
-  "products": 71,
+  "products": 99,
   "compounds": {
-   "magnesium": 15,
-   "zinc": 11,
-   "vitamin_d3": 8,
-   "vitamin_k2": 4,
-   "omega_3": 10,
+   "magnesium": 19,
+   "zinc": 14,
+   "vitamin_d3": 16,
+   "vitamin_k2": 5,
+   "omega_3": 18,
    "creatine": 12,
-   "ashwagandha": 7,
-   "vitamin_c": 7,
-   "vitamin_b12": 4,
+   "ashwagandha": 8,
+   "vitamin_c": 15,
+   "vitamin_b12": 9,
    "l_theanine": 2
   },
   "classes": {
-   "mg_glycinate": 4,
+   "mg_glycinate": 5,
    "mg_citrate": 1,
    "mg_oxide": 2,
    "mg_other": 2,
-   "zn_citrate": 2,
+   "zn_citrate": 3,
    "zn_gluconate": 2,
-   "zn_other": 2,
-   "d3": 7,
-   "k2_mk7": 2,
+   "zn_oxide": 0,
+   "zn_other": 3,
+   "d3": 14,
+   "k2_mk7": 3,
    "unknown": 0,
-   "o3_fish": 7,
-   "o3_krill": 2,
-   "o3_algae": 1,
+   "o3_fish": 12,
+   "o3_krill": 3,
+   "o3_algae": 3,
    "cr_mono": 12,
    "ash_ksm66": 5,
    "ash_generic": 0,
-   "vc_standard": 5,
+   "vc_standard": 10,
    "vc_liposomal": 1,
-   "b12_methyl": 2,
+   "b12_methyl": 4,
    "b12_cyano": 2,
    "thea": 1
   }

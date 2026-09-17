@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T21:45:21+01:00",
+ "generated_at": "2026-09-17T21:56:21+01:00",
  "compound": {
   "id": "zinc",
   "name": "Zinc",
@@ -232,6 +232,49 @@
      },
      "components": [],
      "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-zinc-plus-vitamin-c",
+     "product_id": "healthspan-elite-healthspan-elite-zinc-vitamin-c-180-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Zinc + Vitamin C 180 Tablets",
+     "display_name": "Zinc + Vitamin C 180 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/elite-zinc-plus-vitamin-c/",
+     "image_url": null,
+     "price_gbp": 13.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 180.0
+     },
+     "form_id": "citrate",
+     "amount_per_serving": 15.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.005181481481481481,
+     "price_per_std_dose": 0.07772222222222222,
+     "cost_per_month": 2.3316666666666666,
+     "days_supply": 180.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_c"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "amount_per_serving": "Zinc ; 15 mg ; 150% NRV",
+      "form_raw": "Zinc Citrate"
+     },
+     "components": [],
+     "branded_extract": null
     }
    ],
    "combinations": [],
@@ -331,11 +374,107 @@
    "unverified": []
   },
   {
+   "id": "zn_oxide",
+   "label": "Oxide",
+   "slug": "oxide",
+   "standard_dose": 15.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:vitamin-c-sustained-release",
+     "product_id": "healthspan-healthspan-vitamin-c-sustained-release-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Vitamin C Sustained Release 90 Tablets",
+     "display_name": "Vitamin C Sustained Release 90 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/vitamin-c-sustained-release/",
+     "image_url": null,
+     "price_gbp": 11.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "oxide",
+     "amount_per_serving": 5.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.026644444444444446,
+     "price_per_std_dose": 0.39966666666666667,
+     "cost_per_month": 11.99,
+     "days_supply": 30.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_c"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "amount_per_serving": "Zinc ; 5 mg ; 50% NRV",
+      "form_raw": "Zinc Oxide"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  },
+  {
    "id": "zn_other",
    "label": "Other forms",
    "slug": "other",
    "standard_dose": 15.0,
    "ranked": [
+    {
+     "listing_id": "healthspan:zinc-with-vitamin-c",
+     "product_id": "healthspan-healthspan-zinc-complex-360-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Zinc Complex 360 Tablets",
+     "display_name": "Zinc Complex 360 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/zinc-with-vitamin-c/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 360,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 360.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 15.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0024055555555555557,
+     "price_per_std_dose": 0.036083333333333335,
+     "cost_per_month": 1.0825,
+     "days_supply": 360.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_c",
+      "Copper"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "360 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "servings_stated": "Per tablet",
+      "amount_per_serving": "Triple-Source Zinc (Zinc Picolinate, Zinc Bisglycinate and Zinc Citrate) providing Total Elemental Zinc ; 15 mg ; 150% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
     {
      "listing_id": "bulk:BPB-OZIN-0030-0270",
      "product_id": "bulk-optizinc-tablets-270-tablets",

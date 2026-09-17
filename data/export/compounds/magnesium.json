@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T21:45:21+01:00",
+ "generated_at": "2026-09-17T21:56:21+01:00",
  "compound": {
   "id": "magnesium",
   "name": "Magnesium",
@@ -171,6 +171,52 @@
    "slug": "bisglycinate",
    "standard_dose": 100.0,
    "ranked": [
+    {
+     "listing_id": "healthspan:magnesium-glycinate",
+     "product_id": "healthspan-healthspan-magnesium-glycinate-120-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium Glycinate 120 Tablets",
+     "display_name": "Magnesium Glycinate 120 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/magnesium-glycinate/",
+     "image_url": null,
+     "price_gbp": 8.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 100.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0007491666666666666,
+     "price_per_std_dose": 0.07491666666666666,
+     "cost_per_month": 2.2474999999999996,
+     "days_supply": 120.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "amount_per_serving": "providing Magnesium ; 100 mg ; 27% NRV",
+      "compound_mass": "Magnesium Glycinate ; 500 mg"
+     },
+     "components": [
+      {
+       "name": "compound_mass",
+       "amount": 500.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
     {
      "listing_id": "bulk:BPB-MAGB-500T-0180",
      "product_id": "bulk-magnesium-bisglycinate-tablets-180-tablets",
@@ -607,7 +653,109 @@
      "branded_extract": null
     }
    ],
-   "combinations": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:magnesium-375mg",
+     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium 375mg 90 Tablets",
+     "display_name": "Magnesium 375mg 90 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "oxide",
+     "amount_per_serving": 375.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0003848888888888889,
+     "price_per_std_dose": 0.038488888888888885,
+     "cost_per_month": 1.1546666666666665,
+     "days_supply": 337.5,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_c",
+      "vitamin_b12",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "servings_stated": "90 Tablets",
+      "amount_per_serving": "Magnesium ; 375 mg ; 100% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-magnesium-plus",
+     "product_id": "healthspan-elite-healthspan-elite-magnesium-plus-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Magnesium Plus 120 Tablets",
+     "display_name": "Magnesium Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/elite-magnesium-plus/",
+     "image_url": null,
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "oxide",
+     "amount_per_serving": 375.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.00039977777777777776,
+     "price_per_std_dose": 0.03997777777777778,
+     "cost_per_month": 1.1993333333333334,
+     "days_supply": 450.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_c",
+      "vitamin_b12",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Magnesium ; 375 mg ; 100% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
    "unverified": []
   },
   {
@@ -830,6 +978,50 @@
       "pack_units": "90Capsules",
       "units_per_serving": "Consume 1 capsule daily",
       "amount_per_serving": "Magnesium ; 40 ; 150mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:opti-magnesium",
+     "product_id": "healthspan-healthspan-opti-magnesium-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Opti-Magnesium 90 Tablets",
+     "display_name": "Opti-Magnesium 90 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/opti-magnesium/",
+     "image_url": null,
+     "price_gbp": 15.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 45.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 375.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.0009475555555555555,
+     "price_per_std_dose": 0.09475555555555555,
+     "cost_per_month": 2.8426666666666667,
+     "days_supply": 168.75,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_d3",
+      "Vitamin B6 (Pyridoxine 5 Phosphate)",
+      "Inulin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "units_per_serving": "Swallow 2 tablets daily with water",
+      "pack_units": "90 Tablets",
+      "amount_per_serving": "Triple-Source Magnesium (Magnesium Glycinate [20%], Magnesium Citrate and Magnesium Malate) providing Total Elemental Magnesium ; 187.5 mg"
      },
      "components": [],
      "branded_extract": null

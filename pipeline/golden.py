@@ -138,7 +138,8 @@ def run_live(registry: Registry, labels: list[dict], extractor, cache_dir: Path 
             "extraction": result.extraction.model_dump(),
         }
         path = cache_dir / f"{label['id']}.json"
-        path.write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        text = json.dumps(record, indent=2, ensure_ascii=False) + "\n"
+        path.write_text(text, encoding="utf-8", newline="\n")
         results[label["id"]] = _check(label, result.extraction, registry)
     return results
 

@@ -26,3 +26,11 @@ retailers:
     link: { template: "{url}" }
     shipping: { rule: free_over, threshold_gbp: 30 }
     notes: "No barcodes on product pages. Hosts marketplace sellers ('Sold by ...') alongside own brand."
+
+  - id: healthspan
+    name: Healthspan
+    enabled: true
+    feed: { type: seed_csv }
+    link: { template: "{url}" }
+    shipping: { rule: free_over, threshold_gbp: 30 }
+    notes: "Own brand only (Healthspan, Healthspan Elite). No barcodes or product codes on pages. On 2026-09-17 a 'free delivery on all orders this week' promotion was running; the standing rule shown is free over £30, and the under-£30 charge was not displayed. Seed prices are one-time-purchase prices, never subscription prices."

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T21:45:21+01:00",
+ "generated_at": "2026-09-17T21:56:21+01:00",
  "compound": {
   "id": "ashwagandha",
   "name": "Ashwagandha",
@@ -337,7 +337,59 @@
      "branded_extract": "KSM-66"
     }
    ],
-   "combinations": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:ashwagandha-relaxation-support",
+     "product_id": "healthspan-healthspan-ashwagandha-relaxation-support-60-capsules",
+     "brand": "Healthspan",
+     "name": "Healthspan Ashwagandha Relaxation Support 60 Capsules",
+     "display_name": "Ashwagandha Relaxation Support 60 Capsules",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/ashwagandha-relaxation-support/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "ksm66",
+     "amount_per_serving": 500.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": true,
+     "price_per_unit": 0.000433,
+     "price_per_std_dose": 0.25980000000000003,
+     "cost_per_month": 7.7940000000000005,
+     "days_supply": 50.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_b12",
+      "Vitamin B6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Swallow 1 capsule daily",
+      "servings_stated": "Per capsule",
+      "amount_per_serving": "KSM-66 Ashwagandha Root Extract ; 500 mg",
+      "withanolides": "providing Withanolides ; 25 mg"
+     },
+     "components": [
+      {
+       "name": "withanolides",
+       "amount": 25.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": "KSM-66"
+    }
+   ],
    "unverified": []
   },
   {

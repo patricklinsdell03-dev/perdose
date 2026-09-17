@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T21:45:21+01:00",
+ "generated_at": "2026-09-17T21:56:21+01:00",
  "compound": {
   "id": "vitamin_k2",
   "name": "Vitamin K2",
@@ -66,6 +66,48 @@
    "slug": "mk-7",
    "standard_dose": 100.0,
    "ranked": [
+    {
+     "listing_id": "healthspan:vitamin-d3-and-k2",
+     "product_id": "healthspan-healthspan-vitamin-d3-k2-60-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Vitamin D3 & K2 60 Tablets",
+     "display_name": "Vitamin D3 & K2 60 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/vitamin-d3-and-k2/",
+     "image_url": null,
+     "price_gbp": 6.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "mk7",
+     "amount_per_serving": 100.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.001165,
+     "price_per_std_dose": 0.1165,
+     "cost_per_month": 3.495,
+     "days_supply": 60.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_d3"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Vitamin K2 ; 100 µg ; 133% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
     {
      "listing_id": "holland_barrett:110507",
      "product_id": "supplement-place-supplement-place-vitamin-k2-mk7-200mcg-120-capsules",

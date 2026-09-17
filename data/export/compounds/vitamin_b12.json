@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T21:45:21+01:00",
+ "generated_at": "2026-09-17T21:56:21+01:00",
  "compound": {
   "id": "vitamin_b12",
   "name": "Vitamin B12",
@@ -194,9 +194,186 @@
      },
      "components": [],
      "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:vitamin-b12",
+     "product_id": "healthspan-healthspan-vitamin-b12-240-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Vitamin B12 240 Tablets",
+     "display_name": "Vitamin B12 240 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/vitamin-b12/",
+     "image_url": null,
+     "price_gbp": 16.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 240,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 240.0
+     },
+     "form_id": "methyl",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 7.079166666666666e-05,
+     "price_per_std_dose": 0.07079166666666666,
+     "cost_per_month": 2.12375,
+     "days_supply": 240.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "Healthspan Vitamin B12 240 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Vitamin B12 ; 1000 µg ; 40000% NRV",
+      "form_raw": "Methylcobalamin"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-vitamin-b12",
+     "product_id": "healthspan-elite-healthspan-elite-vitamin-b12-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Vitamin B12 120 Tablets",
+     "display_name": "Vitamin B12 120 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/elite-vitamin-b12/",
+     "image_url": null,
+     "price_gbp": 13.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "methyl",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": true,
+     "price_per_unit": 0.00011658333333333334,
+     "price_per_std_dose": 0.11658333333333334,
+     "cost_per_month": 3.4975000000000005,
+     "days_supply": 120.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "amount_per_serving": "Vitamin B12 ; 1000 µg ; 40000% NRV",
+      "form_raw": "Methylcobalamin"
+     },
+     "components": [],
+     "branded_extract": null
     }
    ],
-   "combinations": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:ashwagandha-relaxation-support",
+     "product_id": "healthspan-healthspan-ashwagandha-relaxation-support-60-capsules",
+     "brand": "Healthspan",
+     "name": "Healthspan Ashwagandha Relaxation Support 60 Capsules",
+     "display_name": "Ashwagandha Relaxation Support 60 Capsules",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/ashwagandha-relaxation-support/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "methyl",
+     "amount_per_serving": 2.5,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0866,
+     "price_per_std_dose": 86.6,
+     "cost_per_month": 2598.0,
+     "days_supply": 0.15,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "ashwagandha",
+      "Vitamin B6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Swallow 1 capsule daily",
+      "servings_stated": "Per capsule",
+      "amount_per_serving": "Vitamin B12 ; 2.5 µg ; 100% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-magnesium-plus",
+     "product_id": "healthspan-elite-healthspan-elite-magnesium-plus-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Magnesium Plus 120 Tablets",
+     "display_name": "Magnesium Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/elite-magnesium-plus/",
+     "image_url": null,
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "methyl",
+     "amount_per_serving": 0.63,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.23796296296296296,
+     "price_per_std_dose": 237.96296296296296,
+     "cost_per_month": 7138.888888888889,
+     "days_supply": 0.0756,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Vitamin B12 ; 0.63 µg ; 25% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
    "unverified": []
   },
   {
@@ -287,7 +464,59 @@
      "branded_extract": null
     }
    ],
-   "combinations": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:magnesium-375mg",
+     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium 375mg 90 Tablets",
+     "display_name": "Magnesium 375mg 90 Tablets",
+     "retailer_id": "healthspan",
+     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "cyano",
+     "amount_per_serving": 0.625,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.23093333333333332,
+     "price_per_std_dose": 230.93333333333334,
+     "cost_per_month": 6928.0,
+     "days_supply": 0.05625,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "servings_stated": "90 Tablets",
+      "amount_per_serving": "Vitamin B12 ; 0.625 µg ; 25% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
    "unverified": []
   }
  ]
