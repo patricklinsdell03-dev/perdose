@@ -9,6 +9,8 @@ import argparse
 import os
 import sys
 
+import anthropic
+
 from pipeline.compounds import load_registry
 from pipeline.golden import (
     GOLDEN_PATH,
@@ -127,10 +129,20 @@ def run_normalise(force: bool, limit: int | None) -> int:
 def main(argv: list[str] | None = None) -> int:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows consoles
     args = build_parser().parse_args(argv)
-    if args.command == "golden":
-        return run_golden(args.live)
-    if args.command == "normalise":
-        return run_normalise(args.force, args.limit)
+    try:
+        if args.command == "golden":
+            return run_golden(args.live)
+        if args.command == "normalise":
+            return run_normalise(args.force, args.limit)
+    except anthropic.AuthenticationError:
+        print(
+            "\nThe API rejected the key (401). Check .env: the whole key must be on one line, "
+            "as ANTHROPIC_API_KEY=sk-ant-..., and must not have been deleted on the console."
+        )
+        return 1
+    except anthropic.PermissionDeniedError as error:
+        print(f"\nThe API refused the request (403): {error.message}")
+        return 1
     _help, phase = NOT_BUILT_YET[args.command]
     print(f"'{args.command}' is not built yet - it arrives in Phase {phase} (docs/BRIEF.md §17).")
     return 1
