@@ -35,9 +35,19 @@ If the file has a mistake (duplicate id, factor outside 0–1, a form without a 
 
 _To be written in Phase 5._
 
+## The AI label-reader (`make normalise`, `make golden-live`)
+
+- The model and effort levels are in `config/llm.yml`. Patrick chooses the model.
+- The key lives in `.env` (`ANTHROPIC_API_KEY=...`), which is never committed.
+- `make normalise` only sends listings it has not read before. Results are stored in the database keyed by the listing text and the `prompt_version`. `--force` re-reads everything; the run aborts before spending anything if more than `max_calls_per_run` listings are waiting.
+- If the prompt in `pipeline/normalise/prompt.py` changes, bump `prompt_version` in `config/llm.yml`, then run `make golden-live` and commit the refreshed files in `tests/golden/cache/`.
+- If the API is down, the run stops early with a warning and keeps what it has. A wrong key or no credit fails loudly.
+
 ## How to rotate a key
 
-_To be written in Phase 5._
+1. On https://platform.claude.com create a new API key, then delete the old one.
+2. Replace the value in your local `.env`.
+3. (From Phase 5) replace the `ANTHROPIC_API_KEY` secret in the GitHub repository settings.
 
 ## What to do when a feed column name changes
 

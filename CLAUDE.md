@@ -37,7 +37,8 @@ make setup      # uv sync + npm install
 make ingest     # pull feeds / read seed CSVs -> data/raw
 make normalise  # LLM extraction -> data/perdose.sqlite (cached)
 make price      # compute per-dose prices, dedupe, export site JSON
-make golden     # run the golden label set, print pass/fail table
+make golden     # run the golden label set, print pass/fail table (no LLM calls: calc-only + replay)
+make golden-live  # same, but calls the real LLM and saves results to tests/golden/cache/
 make content COMPOUND=<id>   # draft a learn page + evidence.json (Phase 9)
 make content-check           # claim linter + frontmatter check on content/
 make review                  # export needs_review rows to data/review/<date>.csv

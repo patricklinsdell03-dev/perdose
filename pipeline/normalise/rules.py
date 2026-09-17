@@ -90,7 +90,7 @@ def _evidenced(evidence: dict[str, str], key: str, label_text: str | None) -> bo
     return label_text is None or _squash(quote) in _squash(label_text)
 
 
-def _find_term(term: str, text: str) -> int | None:
+def find_term(term: str, text: str) -> int | None:
     """Position of `term` in `text` as a whole word/phrase, else None."""
     match = re.search(rf"(?<![a-z0-9]){re.escape(term.lower())}(?![a-z0-9])", text.lower())
     return match.start() if match else None
@@ -266,13 +266,13 @@ def _resolve_active(active: ActiveExtraction, compound: Compound, label_text: st
 
 
 def _title_position(compound: Compound, title: str) -> int:
-    found = (_find_term(term, title) for term in [compound.name, *compound.aliases])
+    found = (find_term(term, title) for term in [compound.name, *compound.aliases])
     return min((pos for pos in found if pos is not None), default=len(title) + 1)
 
 
 def _is_accepted_cofactor(primary: Compound, other_names: list[str]) -> bool:
     return any(
-        _find_term(cofactor, name) is not None
+        find_term(cofactor, name) is not None
         for cofactor in primary.accepted_cofactors
         for name in other_names
     )

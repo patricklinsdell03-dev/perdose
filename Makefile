@@ -4,7 +4,7 @@
 PIPELINE = uv run python -m pipeline.cli
 COMPOUND ?=
 
-.PHONY: setup ingest normalise price golden content content-check review review-apply site check all
+.PHONY: setup ingest normalise price golden golden-live content content-check review review-apply site check all
 
 setup:
 	uv sync
@@ -22,6 +22,10 @@ price:
 
 golden:
 	$(PIPELINE) golden
+
+# Calls the real LLM for every golden label (costs pennies) and saves the results for replay.
+golden-live:
+	$(PIPELINE) golden --live
 
 content:
 	$(PIPELINE) content --compound "$(COMPOUND)"

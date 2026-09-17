@@ -8,6 +8,7 @@ dependencies = [
     "httpx",
     "pydantic>=2",
     "pyyaml",
+    "tzdata",
 ]
 
 [dependency-groups]

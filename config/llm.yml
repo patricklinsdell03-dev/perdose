@@ -1,13 +1,18 @@
-# LLM settings for the normaliser (brief §9.2). The client that reads this is Phase 2.
-# PATRICK CHOOSES THE MODELS (docs/DECISIONS.md 2026-09-17). The ids below are the brief's
-# originals, kept only as placeholders — both were valid on https://docs.claude.com on
-# 2026-09-17. Set your own choice here before Phase 2.
+# LLM settings for the normaliser (brief §9.2).
+# PATRICK CHOOSES THE MODELS (docs/DECISIONS.md 2026-09-17): Sonnet 5 for everything.
+# Id checked against https://docs.claude.com on 2026-09-17.
+#
+# With a single model, "escalation" means a second attempt at a higher thinking effort,
+# not a bigger model. Sonnet 5 does not accept a temperature setting, so there is none.
 models:
-  default: claude-haiku-4-5-20251001
-  escalation: claude-sonnet-5
-temperature: 0
-max_tokens: 1500
+  default:
+    id: claude-sonnet-5
+    effort: low
+  escalation:
+    id: claude-sonnet-5
+    effort: high
+max_tokens: 8000
 escalation_confidence_threshold: 0.7
 prompt_version: "1.0.0"
 max_calls_per_run: 5000
-cache_dir: data/llm_cache
+description_max_chars: 3000

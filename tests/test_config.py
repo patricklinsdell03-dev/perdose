@@ -5,6 +5,8 @@ from pathlib import Path
 import pytest
 import yaml
 
+from pipeline.settings import load_llm_config, parse_env
+
 CONFIG_FILES = [
     "compounds.yml",
     "retailers.yml",
@@ -22,8 +24,13 @@ def test_config_file_parses(name):
     assert isinstance(data, dict)
 
 
-def test_llm_model_ids_present():
-    llm = yaml.safe_load(Path("config/llm.yml").read_text(encoding="utf-8"))
-    assert llm["models"]["default"]
-    assert llm["models"]["escalation"]
-    assert llm["temperature"] == 0
+def test_llm_config_loads():
+    config = load_llm_config()
+    assert config.models.default.id
+    assert config.models.escalation.id
+    assert config.prompt_version
+
+
+def test_env_file_parsing():
+    text = "# comment\nFIXTURE_A=plain\nFIXTURE_B='quoted'\nFIXTURE_EMPTY=\n\nnot a pair\n"
+    assert parse_env(text) == {"FIXTURE_A": "plain", "FIXTURE_B": "quoted"}

@@ -1,10 +1,12 @@
 """The golden label set (brief §15, Appendix B). Test inputs, never site data.
 
-Calc-only mode (Phase 1): each label's reference `extraction` goes through the real rules
-and calculator and the result is compared with `expect`. From Phase 2 the live LLM
-extraction takes the reference's place; the comparison stays the same.
+Three modes, all judged against the same `expect` block:
+- calc-only: each label's hand-written reference `extraction` -> rules -> calculator.
+- live: the real LLM reads the label; results are saved to tests/golden/cache/.
+- replay: those saved LLM results, so CI can check them without calling the API.
 """
 
+import json
 from pathlib import Path
 
 import yaml
@@ -15,6 +17,7 @@ from pipeline.normalise.schema import Extraction
 from pipeline.price import calc
 
 GOLDEN_PATH = Path("tests/golden/labels.yml")
+CACHE_DIR = Path("tests/golden/cache")
 PASS_THRESHOLD = 0.9
 MIN_LABELS_PER_COMPOUND = 3
 TOLERANCE = 0.01
@@ -107,13 +110,53 @@ def check_label(label: dict, product: NormalisedProduct) -> list[str]:
     return problems
 
 
+def _check(label: dict, extraction: Extraction, registry: Registry) -> list[str]:
+    product = apply_rules(extraction, registry, label["title"], label.get("description", ""))
+    return check_label(label, product)
+
+
 def run_calc_only(registry: Registry, labels: list[dict] | None = None) -> dict[str, list[str]]:
-    """label id -> problems, using each label's reference extraction."""
+    """label id -> problems, using each label's hand-written reference extraction.
+    Tests the rules and the calculator only."""
+    labels = load_golden_labels() if labels is None else labels
+    return {
+        label["id"]: _check(label, Extraction.model_validate(label["extraction"]), registry)
+        for label in labels
+    }
+
+
+def run_live(registry: Registry, labels: list[dict], extractor, cache_dir: Path = CACHE_DIR):
+    """Real LLM extraction for every label; each result is saved for replay (§15)."""
     results = {}
-    for label in load_golden_labels() if labels is None else labels:
-        extraction = Extraction.model_validate(label["extraction"])
-        product = apply_rules(extraction, registry, label["title"], label.get("description", ""))
-        results[label["id"]] = check_label(label, product)
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    for label in labels:
+        result = extractor.extract(label["title"], label.get("description", ""))
+        record = {
+            "prompt_version": extractor.config.prompt_version,
+            "model_id": result.model_id,
+            "escalated": result.escalated,
+            "extraction": result.extraction.model_dump(),
+        }
+        path = cache_dir / f"{label['id']}.json"
+        path.write_text(json.dumps(record, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        results[label["id"]] = _check(label, result.extraction, registry)
+    return results
+
+
+def run_replay(
+    registry: Registry, labels: list[dict], prompt_version: str, cache_dir: Path = CACHE_DIR
+) -> dict[str, list[str]]:
+    """Saved LLM extractions for the current prompt version. Labels with no saved
+    extraction are left out — run `make golden-live` to create them."""
+    results = {}
+    for label in labels:
+        path = cache_dir / f"{label['id']}.json"
+        if not path.exists():
+            continue
+        record = json.loads(path.read_text(encoding="utf-8"))
+        if record["prompt_version"] == prompt_version:
+            extraction = Extraction.model_validate(record["extraction"])
+            results[label["id"]] = _check(label, extraction, registry)
     return results
 
 
