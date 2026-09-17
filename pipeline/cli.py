@@ -49,6 +49,9 @@ def build_parser() -> argparse.ArgumentParser:
     sub.add_parser("review", help="export unverified listings to data/review/<date>.csv")
     apply = sub.add_parser("review-apply", help="fold a filled-in review CSV into the overrides")
     apply.add_argument("--file", default=None, help="default: the newest CSV in data/review")
+    sub.add_parser("seed-refresh", help="write a price-check list for the seed listings")
+    seed_apply = sub.add_parser("seed-refresh-apply", help="write checked prices into data/seed")
+    seed_apply.add_argument("--file", default=None, help="default: the newest checklist")
     sub.add_parser("content-check", help="claim linter + structure check on content/*/learn.md")
     guard = sub.add_parser("guard", help="fail if the export lost tables since the last run")
     guard.add_argument("--before", required=True, help="the previous meta.json")
@@ -217,6 +220,52 @@ def run_review_apply(file: str | None) -> int:
     return 0
 
 
+def run_seed_refresh() -> int:
+    from datetime import date
+
+    from pipeline import seed_refresh
+
+    seeds = seed_refresh.load_seeds()
+    today = date.today()
+    path = seed_refresh.REVIEW_DIR / f"{seed_refresh.PREFIX}{today.isoformat()}.csv"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(seed_refresh.checklist(seeds), encoding="utf-8", newline="\n")
+    for retailer_id, stale in seed_refresh.stale_counts(seeds, today).items():
+        print(f"  {retailer_id}: {stale} rows older than {seed_refresh.STALE_AFTER_DAYS} days")
+    print(f"seed-refresh: checklist -> {path.as_posix()}")
+    print("Open each url, fill in new_price_gbp / new_in_stock, then `make seed-refresh-apply`.")
+    return 0
+
+
+def run_seed_refresh_apply(file: str | None) -> int:
+    from datetime import date
+    from pathlib import Path
+
+    from pipeline import seed_refresh
+
+    path = Path(file) if file else seed_refresh.latest_checklist()
+    if path is None or not path.exists():
+        print("seed-refresh-apply: no checklist found; run `make seed-refresh` first")
+        return 1
+    try:
+        checked_on = date.fromisoformat(path.stem.removeprefix(seed_refresh.PREFIX))
+    except ValueError:
+        checked_on = date.today()
+    try:
+        changed, counts = seed_refresh.apply(
+            path.read_text(encoding="utf-8"), seed_refresh.load_seeds(), checked_on
+        )
+    except seed_refresh.SeedRefreshError as error:
+        print(f"seed-refresh-apply: {error} (nothing was changed)")
+        return 1
+    for retailer_id, text in changed.items():
+        target = seed_refresh.SEED_DIR / f"{retailer_id}.csv"
+        target.write_text(text, encoding="utf-8", newline="\n")
+    print(f"seed-refresh-apply: updated={counts['updated']}, left blank={counts['blank']}")
+    print("Run `make all` to rebuild the site with the new prices (no AI calls needed).")
+    return 0
+
+
 def run_content_check() -> int:
     import json
 
@@ -273,6 +322,10 @@ def main(argv: list[str] | None = None) -> int:
             return run_review()
         if args.command == "review-apply":
             return run_review_apply(args.file)
+        if args.command == "seed-refresh":
+            return run_seed_refresh()
+        if args.command == "seed-refresh-apply":
+            return run_seed_refresh_apply(args.file)
         if args.command == "content-check":
             return run_content_check()
         if args.command == "guard":

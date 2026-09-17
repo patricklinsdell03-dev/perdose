@@ -128,3 +128,14 @@ To review a batch:
 3. `make golden DRAFT=batch_NN` shows the batch's results (rules must be 100 %, saved AI readings at least 90 %). It costs nothing. `make golden-live DRAFT=batch_NN` re-reads every label with the real AI (about 1p per label).
 
 To approve: tell Claude "approve batch NN" (or do it by hand: move the compounds into `config/compounds.yml`, the formulas into `config/factor_sources.yml`, the labels into `tests/golden/labels.yml` and the saved readings into `tests/golden/cache/`, then `make check`). New supplements only get pages once a retailer's data contains products for them.
+
+## Refreshing the hand-collected prices (`make seed-refresh` / `make seed-refresh-apply`)
+
+Until live feeds are connected, the prices on the site are the ones read by hand on the date shown beside each offer. They go stale. Aim to refresh every two weeks; `/ops/` shows how old each retailer's prices are, and `make seed-refresh` counts the rows older than 14 days.
+
+1. `make seed-refresh` writes `data/review/seed_refresh_<date>.csv` — every seed listing, oldest first.
+2. Open it in Excel or Google Sheets. For each row, open the `url` and type today's price into `new_price_gbp` (the normal one-off price — not a subscription price, not the crossed-out price). If it is out of stock, put `0` in `new_in_stock`. Leave rows you did not check blank.
+3. `make seed-refresh-apply` writes those values into `data/seed/*.csv` and stamps the rows with the checklist's date. If anything looks like a typo (not a number, or more than 3× away from the old price) it stops and changes nothing.
+4. `make all`, then `make check`, then commit. A refresh makes **no AI calls** — label text is untouched.
+
+If a product's label has changed (new strength, new pack size), edit that row in the seed CSV by hand instead; that one listing will be re-read by the AI on the next run.

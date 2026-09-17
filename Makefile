@@ -4,7 +4,7 @@
 PIPELINE = uv run python -m pipeline.cli
 COMPOUND ?=
 
-.PHONY: setup ingest normalise price golden golden-live content content-check review review-apply site check all
+.PHONY: setup ingest normalise price golden golden-live content content-check review review-apply seed-refresh seed-refresh-apply site check all
 
 setup:
 	uv sync
@@ -38,6 +38,12 @@ review:
 
 review-apply:
 	$(PIPELINE) review-apply
+
+seed-refresh:
+	$(PIPELINE) seed-refresh
+
+seed-refresh-apply:
+	$(PIPELINE) seed-refresh-apply
 
 site:
 	npm --prefix site run build

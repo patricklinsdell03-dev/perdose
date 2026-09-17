@@ -43,6 +43,8 @@ make content COMPOUND=<id>   # draft a learn page + evidence.json (Phase 9)
 make content-check           # claim linter + frontmatter check on content/
 make review                  # export needs_review rows to data/review/<date>.csv
 make review-apply            # turn filled-in review CSV into config/product_overrides.yml
+make seed-refresh            # checklist of seed listings to re-price -> data/review/seed_refresh_<date>.csv
+make seed-refresh-apply      # write the checked prices back into data/seed/*.csv (no AI calls)
 make site       # astro build -> site/dist
 make check      # ruff + pytest + astro check + build
 make all        # ingest -> normalise -> price -> site

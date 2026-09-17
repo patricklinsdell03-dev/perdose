@@ -131,7 +131,7 @@ def parse_values(text: str) -> dict:
 
 
 def latest_review_file(review_dir: Path = REVIEW_DIR) -> Path | None:
-    files = sorted(review_dir.glob("*.csv")) if review_dir.exists() else []
+    files = sorted(review_dir.glob("[0-9]*.csv")) if review_dir.exists() else []
     return files[-1] if files else None
 
 
