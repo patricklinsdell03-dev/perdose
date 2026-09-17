@@ -1,6 +1,6 @@
 # Runbook — how to operate the pipeline and site
 
-Stub. Each section is filled in by the phase that builds the thing it describes (brief §14).
+How to run and look after the pipeline and site, in plain steps (brief §14).
 
 ## First-time setup
 
@@ -13,9 +13,9 @@ Preview the site locally: `npm --prefix site run dev`.
 
 ## Daily commands
 
-See the command list in `CLAUDE.md`. So far `make setup`, `make golden`, `make site` and `make check` work; the rest report which phase builds them.
+See the command list in `CLAUDE.md`. `make all` runs the whole chain; `make check` is the safety net before any commit. Only `make content` / `make content-check` (learn pages, Phase 9) are not built yet.
 
-`make golden` prints a pass/fail line per golden label. Until Phase 2 it runs in calc-only mode: no AI involved, it checks the rules and the price maths against hand-written readings of each label.
+`make golden` prints a pass/fail line per golden label, twice: once for the rules and price maths against hand-written readings (must be 100 %), once replaying the saved AI readings (must be at least 90 %). It makes no API calls. `make golden-live` calls the real model.
 
 ## How to add a retailer
 
@@ -49,7 +49,17 @@ If the file has a mistake (duplicate id, factor outside 0–1, a form without a 
 
 ## How to re-run a failed day
 
-_To be written in Phase 5._
+On GitHub: **Actions → daily → Run workflow**. It is safe to run twice: ingest overwrites that day's raw file, listings the AI has already read are not re-sent, and nothing is committed if the data did not change.
+
+On your PC: `make all`, then look at `/ops/` on the local site (`npm --prefix site run dev`, then http://localhost:4321/ops/).
+
+If the run stopped at **"guard: BLOCKED"**, a comparison table that had products yesterday has none today. That usually means a feed broke or a column was renamed, not that every product vanished. Nothing was committed or deployed. Fix the cause and re-run. If the loss is real (a retailer genuinely dropped the range), commit `data/export` by hand to accept it.
+
+The daily schedule itself is switched off until live feeds exist (seed CSVs do not change on their own). To switch it on, uncomment the two `schedule` lines in `.github/workflows/daily.yml`.
+
+## The operator page (`/ops/`)
+
+Not linked from anywhere and hidden from search engines. It shows when the pipeline last ran, how many listings each retailer has and how old their prices are, how many products are unverified and why, how often the AI needed a second attempt, and a "needs attention" list (a table that lost its products, a compound with none, prices more than 3 days old, second-attempt rate over 15 %, unverified over 20 %).
 
 ## The AI label-reader (`make normalise`, `make golden-live`)
 
@@ -71,4 +81,11 @@ _To be written in Phase 6._
 
 ## Working down the unverified queue (`make review` / `make review-apply`)
 
-_To be written in Phase 5._
+1. `make review` writes `data/review/<today>.csv`: one row per unverified listing, with what the AI read, the label quotes, and the reason it was not ranked. (If nothing is unverified it says so and writes nothing.)
+2. Open the CSV in Excel. Open the product `url`, look at the real label, and fill in **decision**:
+   - `approve-with-values` and put the facts you confirmed in **values**, e.g. `amount_refers_to=elemental` or `form_id=citrate; amount_per_serving=200; amount_unit=mg`. Allowed keys: `form_id`, `amount_per_serving`, `amount_unit`, `amount_refers_to`, `pack_units`, `pack_unit_type`, `units_per_serving`, `multipack_count`.
+   - `reject` to hide the listing completely.
+   - `merge-into:<product_id>` if it is the same product as another one.
+   - leave blank to decide later.
+3. Save as CSV, then `make review-apply`. It updates `config/product_overrides.yml` (commit that file) and tells you how many of each it applied. A typo in a decision is refused with a message naming the listing.
+4. `make all`. Approved listings now rank; their "show the working" is based on your confirmed values.

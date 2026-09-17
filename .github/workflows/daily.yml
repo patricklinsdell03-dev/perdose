@@ -1,7 +1,11 @@
 name: daily
 
-# Daily refresh (brief §14). The cron is switched on in Phase 5, once `make all`
-# works end to end — see docs/DECISIONS.md 2026-09-17. Until then: manual runs only.
+# Daily refresh (brief §14): ingest -> read new listings -> price -> export -> build, then
+# commit the refreshed data. Cloudflare Pages deploys from main when the commit lands.
+#
+# The cron is OFF until live feeds exist (Phase 6): seed CSVs do not change by themselves, so
+# a daily run would do nothing. To switch it on, uncomment the two `schedule` lines.
+# API cost: only new or changed listings are sent to the model; an unchanged day costs nothing.
 on:
   workflow_dispatch:
   # schedule:
@@ -10,9 +14,14 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     env:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       TZ: Europe/London
@@ -25,11 +34,42 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
       - run: make setup
+
+      # The database is not in git. Bring back yesterday's so cached AI readings and product
+      # ids carry over; without it every listing would be re-read (and paid for) daily.
+      - name: Restore the database
+        uses: actions/cache/restore@v4
+        with:
+          path: data/perdose.sqlite
+          key: perdose-sqlite-${{ github.run_id }}
+          restore-keys: perdose-sqlite-
+
+      - name: Remember the previous counts
+        run: cp data/export/meta.json /tmp/meta.before.json 2>/dev/null || true
+
       - run: make all
+
+      - name: Regression guard - block the deploy if a table lost all its products
+        run: uv run python -m pipeline.cli guard --before /tmp/meta.before.json
+
+      - name: Save the database for tomorrow
+        uses: actions/cache/save@v4
+        with:
+          path: data/perdose.sqlite
+          key: perdose-sqlite-${{ github.run_id }}
+
+      - name: Back up the database (30 days)
+        uses: actions/upload-artifact@v4
+        with:
+          name: perdose-sqlite-${{ github.run_id }}
+          path: data/perdose.sqlite
+          retention-days: 30
+
       - name: Commit refreshed export data if it changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/export
-          git diff --cached --quiet || git commit -m "data: refresh $(date +%F)"
+          git diff --cached --quiet && echo "No data changes." && exit 0
+          git commit -m "data: refresh $(date +%F)"
           git push

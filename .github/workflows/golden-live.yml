@@ -1,0 +1,19 @@
+name: golden-live
+
+# Runs the golden label set against the REAL model (~40-50 API calls, well under £1).
+# Manual only, to protect the API budget (DECISIONS.md). Run it after changing the prompt,
+# the model in config/llm.yml, or the rules - or now and then to catch model drift.
+on:
+  workflow_dispatch:
+
+jobs:
+  golden-live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - run: uv sync
+      - run: make golden-live

@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # the regression guard compares with the previous commit
       - uses: astral-sh/setup-uv@v5
       - uses: actions/setup-node@v4
         with:
@@ -16,6 +18,10 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
       - run: make setup
-      # ruff + pytest (golden set in replay mode) + astro check + build.
-      # The golden threshold and the meta.json regression guard are added in Phases 2 and 5.
+      # ruff + pytest (golden set: rules at 100 %, saved AI readings at >= 90 %) + astro check
+      # + build + smoke test. No API calls and no secrets needed.
       - run: make check
+      - name: Regression guard - no comparison table may lose all its products
+        run: |
+          git show HEAD~1:data/export/meta.json > /tmp/meta.before.json 2>/dev/null || true
+          uv run python -m pipeline.cli guard --before /tmp/meta.before.json
