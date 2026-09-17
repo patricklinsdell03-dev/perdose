@@ -1,3 +1,219 @@
-# The rules table (brief §6, Appendix A). Empty in Phase 0 — filled in Phase 1.
+# The rules table (brief §6, Appendix A). Prototype: 10 compounds.
+# Factors are elemental mass fractions; every non-null factor is recomputed from its chemical
+# formula by tests/test_factors.py using config/factor_sources.yml. Labels that state the
+# elemental amount always win over a factor.
+# Do NOT change a compound or form id once products exist (CLAUDE.md rule 7).
 version: 1
-compounds: []
+compounds:
+
+  - id: magnesium
+    name: Magnesium
+    category: minerals
+    tier: 1
+    comparison_quantity: elemental magnesium
+    unit: mg
+    standard_dose: 100
+    label_convention: ambiguous
+    normalisation_type: mineral_elemental
+    aliases: [magnesium, mag, mg glycinate, mag glycinate, magnesium bisglycinate, magnesium citrate, magnesium malate, magnesium taurate, magnesium threonate, magtein, magnesium oxide, magnesium chloride]
+    accepted_cofactors: [vitamin b6, pyridoxine, p5p]
+    heuristics:
+      # Brief §9.5 step 3: what an unqualified number most likely means.
+      unclear_amount:
+        compound_if_at_least: 400   # no single serving delivers >= 400 mg elemental in these forms
+        compound_forms: [bisglycinate, citrate, malate, taurate, l_threonate]
+        elemental_if_at_most: 120
+    forms:
+      - id: bisglycinate
+        names: [bisglycinate, glycinate, diglycinate, chelate, buffered chelate]
+        class: mg_glycinate
+        elemental_factor: 0.141
+        note: "Anhydrous magnesium bisglycinate ~14% Mg. 'Buffered' chelates include oxide and run higher — treat as unclear if 'buffered' and no elemental stated."
+      - id: citrate
+        names: [citrate]
+        class: mg_citrate
+        elemental_factor: 0.16
+        note: "Trimagnesium dicitrate anhydrous ~16%; hydrated/dimagnesium forms 11–15%. Prefer stated elemental."
+      - id: malate
+        names: [malate, di-magnesium malate, dimagnesium malate]
+        class: mg_malate
+        elemental_factor: 0.155
+        note: "Anhydrous 1:1 magnesium malate 15.5%. Trihydrate is ~11.6% and dimagnesium malate ~19%, so estimates here are rough. Prefer stated elemental."
+      - id: taurate
+        names: [taurate, taurinate]
+        class: mg_taurate
+        elemental_factor: 0.089
+      - id: l_threonate
+        names: [l-threonate, threonate, magtein]
+        class: mg_threonate
+        elemental_factor: 0.083
+      - id: oxide
+        names: [oxide]
+        class: mg_oxide
+        elemental_factor: 0.603
+      - id: chloride
+        names: [chloride]
+        class: mg_chloride
+        elemental_factor: 0.12
+        note: "Hexahydrate ~12%."
+      - id: other
+        names: [orotate, lactate, aspartate, carbonate, sulfate, sulphate, blend, complex]
+        class: mg_other
+        elemental_factor: null
+        note: "No factor -> requires stated elemental or needs_review."
+
+  - id: zinc
+    name: Zinc
+    category: minerals
+    tier: 1
+    comparison_quantity: elemental zinc
+    unit: mg
+    standard_dose: 15
+    label_convention: elemental_default
+    normalisation_type: mineral_elemental
+    aliases: [zinc, zn, zinc picolinate, zinc citrate, zinc gluconate, zinc bisglycinate, zinc oxide, zinc sulphate, zinc sulfate]
+    accepted_cofactors: [copper, vitamin c]
+    forms:
+      - { id: picolinate,   names: [picolinate],                 class: zn_picolinate,   elemental_factor: 0.211 }
+      - { id: citrate,      names: [citrate],                    class: zn_citrate,      elemental_factor: 0.321, note: "Dihydrate (the commercial form) 32.1%; anhydrous 34.1%." }
+      - { id: gluconate,    names: [gluconate],                  class: zn_gluconate,    elemental_factor: 0.143 }
+      - { id: bisglycinate, names: [bisglycinate, glycinate, chelate], class: zn_glycinate, elemental_factor: 0.306 }
+      - { id: oxide,        names: [oxide],                      class: zn_oxide,        elemental_factor: 0.803 }
+      - { id: sulfate,      names: [sulfate, sulphate],          class: zn_sulfate,      elemental_factor: 0.364, note: "Monohydrate ~36%; heptahydrate ~23%." }
+      - { id: other,        names: [acetate, methionine, orotate, blend], class: zn_other, elemental_factor: null }
+
+  - id: vitamin_d3
+    name: Vitamin D3
+    category: vitamins
+    tier: 1
+    comparison_quantity: cholecalciferol
+    unit: IU
+    standard_dose: 1000
+    unit_conversions: { mcg_to_IU: 40 }
+    label_convention: elemental_default
+    normalisation_type: vitamin_unit
+    aliases: [vitamin d, vitamin d3, vit d, d3, cholecalciferol, colecalciferol]
+    accepted_cofactors: [vitamin k2, mk-7, mk7]
+    forms:
+      - { id: d3,        names: [d3, cholecalciferol, colecalciferol], class: d3,        elemental_factor: null }
+      - { id: d3_vegan,  names: [vegan d3, lichen],                  class: d3,        elemental_factor: null, note: "Same class; source shown as a badge." }
+      - { id: d2,        names: [d2, ergocalciferol],                class: d2,        elemental_factor: null, note: "Separate class." }
+
+  - id: vitamin_k2
+    name: Vitamin K2
+    category: vitamins
+    tier: 1
+    comparison_quantity: menaquinone
+    unit: mcg
+    standard_dose: 100
+    label_convention: elemental_default
+    normalisation_type: vitamin_unit
+    aliases: [vitamin k2, k2, mk-7, mk7, menaquinone-7, mk-4, mk4, menaquinone-4]
+    accepted_cofactors: [vitamin d3]
+    forms:
+      - { id: mk7, names: [mk-7, mk7, menaquinone-7, menaq7, k2vital], class: k2_mk7, elemental_factor: null }
+      - { id: mk4, names: [mk-4, mk4, menaquinone-4],                  class: k2_mk4, elemental_factor: null, note: "Doses in mg; separate class, standard dose 5 mg.", standard_dose_override: 5000 }
+
+  - id: omega_3
+    name: Omega-3
+    category: fatty-acids
+    tier: 1
+    comparison_quantity: EPA + DHA
+    unit: mg
+    standard_dose: 1000
+    label_convention: compound_default
+    normalisation_type: oil_components
+    components_sum: [EPA, DHA]
+    aliases: [omega 3, omega-3, fish oil, cod liver oil, krill oil, algae oil, algal oil, epa, dha]
+    accepted_cofactors: [vitamin e, vitamin d3, astaxanthin]
+    forms:
+      - { id: fish_tg, names: [triglyceride, rtg, re-esterified], class: o3_fish, elemental_factor: null }
+      - { id: fish_ee, names: [ethyl ester, ee],                  class: o3_fish, elemental_factor: null, note: "Same class as TG; form shown as badge." }
+      - { id: fish_unspecified, names: [fish oil, omega 3],       class: o3_fish, elemental_factor: null }
+      - { id: krill,   names: [krill],                            class: o3_krill, elemental_factor: null }
+      - { id: algae,   names: [algae, algal, vegan omega],        class: o3_algae, elemental_factor: null }
+      - { id: cod_liver, names: [cod liver],                      class: o3_cod_liver, elemental_factor: null, note: "Contains vitamins A/D; separate class." }
+
+  - id: creatine
+    name: Creatine
+    category: amino-acids
+    tier: 1
+    comparison_quantity: creatine monohydrate
+    unit: mg
+    standard_dose: 5000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [creatine, creatine monohydrate, creapure, micronised creatine, micronized creatine, creatine hcl, creatine hydrochloride]
+    accepted_cofactors: []
+    forms:
+      - { id: monohydrate, names: [monohydrate, micronised, micronized, creapure], class: cr_mono, elemental_factor: null }
+      - { id: hcl,         names: [hcl, hydrochloride],                       class: cr_hcl,  elemental_factor: null, standard_dose_override: 1500 }
+      - { id: other,       names: [buffered, kre-alkalyn, nitrate, ethyl ester, blend], class: cr_other, elemental_factor: null }
+
+  - id: ashwagandha
+    name: Ashwagandha
+    category: botanicals
+    tier: 1
+    comparison_quantity: root extract
+    unit: mg
+    standard_dose: 600
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: withanolides
+    aliases: [ashwagandha, withania, withania somnifera, ksm-66, ksm66, sensoril, shoden]
+    accepted_cofactors: [black pepper, piperine, bioperine]
+    forms:
+      - { id: ksm66,           names: [ksm-66, ksm66],            class: ash_ksm66,   elemental_factor: null, note: "5% withanolides (HPLC)." }
+      - { id: sensoril,        names: [sensoril],                 class: ash_sensoril, elemental_factor: null, note: "10% withanolides; leaf+root." }
+      - { id: shoden,          names: [shoden],                   class: ash_shoden,  elemental_factor: null, note: "35% withanolides; standard dose 120 mg.", standard_dose_override: 120 }
+      - { id: generic_extract, names: [root extract, extract],    class: ash_generic, elemental_factor: null, note: "Withanolide % varies; store as component." }
+      - { id: root_powder,     names: [root powder, powder, whole root], class: ash_powder, elemental_factor: null }
+
+  - id: vitamin_c
+    name: Vitamin C
+    category: vitamins
+    tier: 1
+    comparison_quantity: vitamin C (ascorbate equivalent)
+    unit: mg
+    standard_dose: 1000
+    label_convention: elemental_default
+    normalisation_type: simple_mass
+    aliases: [vitamin c, vit c, ascorbic acid, sodium ascorbate, calcium ascorbate, ester-c, liposomal vitamin c]
+    accepted_cofactors: [rosehip, bioflavonoids, citrus bioflavonoids, zinc]
+    forms:
+      - { id: ascorbic_acid,   names: [ascorbic acid],            class: vc_standard, elemental_factor: null }
+      - { id: buffered,        names: [sodium ascorbate, calcium ascorbate, magnesium ascorbate, ester-c, buffered], class: vc_standard, elemental_factor: null, note: "Labels state vitamin C content; use stated." }
+      - { id: liposomal,       names: [liposomal],                class: vc_liposomal, elemental_factor: null }
+      - { id: timed_release,   names: [timed release, time release, slow release], class: vc_standard, elemental_factor: null }
+
+  - id: vitamin_b12
+    name: Vitamin B12
+    category: vitamins
+    tier: 1
+    comparison_quantity: cobalamin
+    unit: mcg
+    standard_dose: 1000
+    label_convention: elemental_default
+    normalisation_type: vitamin_unit
+    aliases: [vitamin b12, b12, cobalamin, methylcobalamin, cyanocobalamin, adenosylcobalamin, hydroxocobalamin]
+    accepted_cofactors: [folate, folic acid, methylfolate]
+    forms:
+      - { id: methyl,   names: [methylcobalamin, methyl],   class: b12_methyl, elemental_factor: null }
+      - { id: cyano,    names: [cyanocobalamin, cyano],     class: b12_cyano,  elemental_factor: null }
+      - { id: adenosyl, names: [adenosylcobalamin, dibencozide], class: b12_adenosyl, elemental_factor: null }
+      - { id: hydroxo,  names: [hydroxocobalamin, hydroxo], class: b12_hydroxo, elemental_factor: null }
+      - { id: unspecified, names: [b12],                    class: b12_unspecified, elemental_factor: null }
+
+  - id: l_theanine
+    name: L-Theanine
+    category: amino-acids
+    tier: 1
+    comparison_quantity: L-theanine
+    unit: mg
+    standard_dose: 200
+    label_convention: elemental_default
+    normalisation_type: simple_mass
+    aliases: [l-theanine, theanine, suntheanine]
+    accepted_cofactors: []
+    forms:
+      - { id: l_theanine, names: [l-theanine, theanine, suntheanine], class: thea, elemental_factor: null }

@@ -1,3 +1,22 @@
-# Source URL + date checked for every elemental factor in compounds.yml (brief §21.1).
+# Where every elemental factor in compounds.yml comes from (brief §21.1).
+# Method: factor = (count x atomic weight of the element) / molecular weight of the formula,
+# using IUPAC abridged standard atomic weights (https://iupac.qmul.ac.uk/AtWt/).
+# tests/test_factors.py recomputes each entry and fails if compounds.yml drifts by > 1.5 %.
+# NIH ODS fact sheets could not be machine-read on 2026-09-17 (HTTP 403), so they are not cited.
 version: 1
-sources: []
+atomic_weights_source: "IUPAC abridged standard atomic weights, https://iupac.qmul.ac.uk/AtWt/"
+checked_on: 2026-09-17
+sources:
+  - { compound: magnesium, form: bisglycinate, element: Mg, substance: "magnesium bisglycinate, anhydrous", atoms: { Mg: 1, C: 4, H: 8, N: 2, O: 4 } }
+  - { compound: magnesium, form: citrate,      element: Mg, substance: "trimagnesium dicitrate, anhydrous", atoms: { Mg: 3, C: 12, H: 10, O: 14 } }
+  - { compound: magnesium, form: malate,       element: Mg, substance: "magnesium malate (1:1), anhydrous", atoms: { Mg: 1, C: 4, H: 4, O: 5 } }
+  - { compound: magnesium, form: taurate,      element: Mg, substance: "magnesium taurate (ditaurinate)", atoms: { Mg: 1, C: 4, H: 12, N: 2, O: 6, S: 2 } }
+  - { compound: magnesium, form: l_threonate,  element: Mg, substance: "magnesium L-threonate, anhydrous", atoms: { Mg: 1, C: 8, H: 14, O: 10 } }
+  - { compound: magnesium, form: oxide,        element: Mg, substance: "magnesium oxide", atoms: { Mg: 1, O: 1 } }
+  - { compound: magnesium, form: chloride,     element: Mg, substance: "magnesium chloride hexahydrate", atoms: { Mg: 1, Cl: 2, H: 12, O: 6 } }
+  - { compound: zinc, form: picolinate,   element: Zn, substance: "zinc picolinate", atoms: { Zn: 1, C: 12, H: 8, N: 2, O: 4 } }
+  - { compound: zinc, form: citrate,      element: Zn, substance: "trizinc dicitrate dihydrate", atoms: { Zn: 3, C: 12, H: 14, O: 16 } }
+  - { compound: zinc, form: gluconate,    element: Zn, substance: "zinc gluconate, anhydrous", atoms: { Zn: 1, C: 12, H: 22, O: 14 } }
+  - { compound: zinc, form: bisglycinate, element: Zn, substance: "zinc bisglycinate, anhydrous", atoms: { Zn: 1, C: 4, H: 8, N: 2, O: 4 } }
+  - { compound: zinc, form: oxide,        element: Zn, substance: "zinc oxide", atoms: { Zn: 1, O: 1 } }
+  - { compound: zinc, form: sulfate,      element: Zn, substance: "zinc sulfate monohydrate", atoms: { Zn: 1, S: 1, H: 2, O: 5 } }
