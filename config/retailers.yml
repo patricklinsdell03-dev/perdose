@@ -1,4 +1,28 @@
-# One entry per retailer (brief §7.3). Empty until Patrick supplies seed CSVs (Phase 3).
-# Never add a retailer here that we do not have real data for.
+# One entry per retailer (brief §7.3). Only retailers we hold real data for.
+# Seed phase: data/seed/<id>.csv. Feed details (url_env, column_map) arrive in Phase 6.
+# Shipping rules as shown on each retailer's site on 2026-09-17; not used in ranking (§10).
 version: 1
-retailers: []
+retailers:
+  - id: bulk
+    name: Bulk
+    enabled: true
+    feed: { type: seed_csv }
+    link: { template: "{url}" }
+    shipping: { rule: free_over, threshold_gbp: 49, flat_gbp: 3.95 }
+    notes: "Near-permanent sitewide promotions; seed prices are the promoted price. Effective price is v1.1."
+
+  - id: myprotein
+    name: Myprotein
+    enabled: true
+    feed: { type: seed_csv }
+    link: { template: "{url}" }
+    shipping: { rule: free_over, threshold_gbp: 55 }
+    notes: "Near-permanent sitewide promotions. Sells Myvitamins and some third-party brands."
+
+  - id: holland_barrett
+    name: Holland & Barrett
+    enabled: true
+    feed: { type: seed_csv }
+    link: { template: "{url}" }
+    shipping: { rule: free_over, threshold_gbp: 30 }
+    notes: "No barcodes on product pages. Hosts marketplace sellers ('Sold by ...') alongside own brand."
