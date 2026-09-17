@@ -13,6 +13,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from pipeline.compounds import Compound, Registry
+from pipeline.guard import classes_lost
 from pipeline.ingest.run import Retailer
 from pipeline.normalise.rules import find_term
 
@@ -237,6 +238,57 @@ def _write(path: Path, data) -> int:
     return len(text.encode("utf-8"))
 
 
+def _read_previous_meta(out_dir: Path) -> dict:
+    path = out_dir / "meta.json"
+    try:
+        return json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    except json.JSONDecodeError:
+        return {}
+
+
+def _ops(conn, registry, retailers, prompt_version, generated_at, previous_meta, meta) -> dict:
+    """Operator view for /ops/ (brief §12.3): is the machine healthy?"""
+    today = datetime.fromisoformat(generated_at).date()
+    names = {r.id: r.name for r in retailers}
+    per_retailer = []
+    for retailer_id, listings, in_stock, last_seen in conn.execute(
+        "SELECT retailer_id, COUNT(*), SUM(in_stock), MAX(last_seen) FROM listings"
+        " GROUP BY retailer_id"
+    ):
+        stale = (today - datetime.fromisoformat(last_seen).date()).days
+        per_retailer.append(
+            {
+                "id": retailer_id,
+                "name": names.get(retailer_id, retailer_id),
+                "listings": listings,
+                "in_stock": in_stock or 0,
+                "last_seen": last_seen,
+                "days_stale": stale,
+            }
+        )
+    reasons: dict[str, int] = {}
+    for (reason_text,) in conn.execute("SELECT review_reason FROM products WHERE needs_review = 1"):
+        for reason in (reason_text or "unknown").split(", "):
+            reasons[reason] = reasons.get(reason, 0) + 1
+    extractions, escalated = conn.execute(
+        "SELECT COUNT(*), COALESCE(SUM(escalated), 0) FROM extractions WHERE prompt_version = ?",
+        (prompt_version,),
+    ).fetchone()
+    with_products = set(meta["counts"]["compounds"])
+    return {
+        "generated_at": generated_at,
+        "prompt_version": prompt_version,
+        "retailers": per_retailer,
+        "products": meta["counts"]["products"],
+        "needs_review_total": sum(reasons.values()),
+        "needs_review_by_reason": reasons,
+        "extractions": extractions,
+        "escalation_rate": round(escalated / extractions, 3) if extractions else 0.0,
+        "classes_lost": classes_lost(previous_meta, meta),
+        "zero_product_compounds": [c.id for c in registry.compounds if c.id not in with_products],
+    }
+
+
 def export(
     conn: sqlite3.Connection,
     registry: Registry,
@@ -245,6 +297,7 @@ def export(
     out_dir: Path = EXPORT_DIR,
 ) -> dict:
     generated_at = datetime.now(ZoneInfo("Europe/London")).isoformat(timespec="seconds")
+    previous_meta = _read_previous_meta(out_dir)
     total = _write(out_dir / "compounds.json", [_rules_view(c) for c in registry.compounds])
 
     _clear_compound_files(out_dir)
@@ -305,6 +358,8 @@ def export(
         "counts": {"products": len(seen_products), **counts},
     }
     total += _write(out_dir / "meta.json", meta)
+    ops = _ops(conn, registry, retailers, prompt_version, generated_at, previous_meta, meta)
+    total += _write(out_dir / "ops.json", ops)
     if total > MAX_TOTAL_BYTES:
         raise ExportTooLarge(f"export is {total:,} bytes in total (limit 5 MB)")
-    return {"files": 3 + len(index), "bytes": total, "products": len(seen_products)}
+    return {"files": 4 + len(index), "bytes": total, "products": len(seen_products)}

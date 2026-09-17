@@ -28,8 +28,6 @@ from pipeline.settings import load_env, load_llm_config
 NOT_BUILT_YET = {
     "content": ("draft a learn page + evidence.json", 9),
     "content-check": ("claim linter + frontmatter check on content/", 9),
-    "review": ("export needs_review rows to data/review/<date>.csv", 5),
-    "review-apply": ("turn a filled-in review CSV into product overrides", 5),
 }
 
 
@@ -48,6 +46,11 @@ def build_parser() -> argparse.ArgumentParser:
     ingest.add_argument("--date", default=None, help="YYYY-MM-DD; default today")
     sub.add_parser("price", help="dedupe, per-dose prices, ranking flags")
     sub.add_parser("export", help="write data/export/*.json for the site")
+    sub.add_parser("review", help="export unverified listings to data/review/<date>.csv")
+    apply = sub.add_parser("review-apply", help="fold a filled-in review CSV into the overrides")
+    apply.add_argument("--file", default=None, help="default: the newest CSV in data/review")
+    guard = sub.add_parser("guard", help="fail if the export lost tables since the last run")
+    guard.add_argument("--before", required=True, help="the previous meta.json")
     golden = sub.add_parser("golden", help="run the golden label set, print pass/fail table")
     golden.add_argument("--live", action="store_true", help="call the real LLM (costs pennies)")
     return parser
@@ -171,6 +174,53 @@ def run_export() -> int:
     return 0
 
 
+def run_review() -> int:
+    from datetime import date
+
+    from pipeline.db import connect
+    from pipeline.review import export_review
+
+    path, count = export_review(connect(), load_llm_config().prompt_version, date.today())
+    if path is None:
+        print("review: nothing is unverified - no file written")
+        return 0
+    print(f"review: {count} unverified listings -> {path.as_posix()}")
+    print("Fill in the `decision` (and `values`) columns, then run `make review-apply`.")
+    return 0
+
+
+def run_review_apply(file: str | None) -> int:
+    from pathlib import Path
+
+    from pipeline.review import ReviewError, apply_review, latest_review_file
+
+    path = Path(file) if file else latest_review_file()
+    if path is None or not path.exists():
+        print("review-apply: no review CSV found; run `make review` first")
+        return 1
+    try:
+        counts = apply_review(path)
+    except ReviewError as error:
+        print(f"review-apply: {error}")
+        return 1
+    print(f"review-apply: {path.as_posix()}: " + ", ".join(f"{k}={v}" for k, v in counts.items()))
+    print("Run `make price` to apply them.")
+    return 0
+
+
+def run_guard(before: str) -> int:
+    from pathlib import Path
+
+    from pipeline.export.run import EXPORT_DIR
+    from pipeline.guard import check_files
+
+    problems = check_files(Path(before), EXPORT_DIR / "meta.json")
+    for problem in problems:
+        print(f"guard: {problem}")
+    print("guard: BLOCKED - do not deploy" if problems else "guard: ok")
+    return 1 if problems else 0
+
+
 def main(argv: list[str] | None = None) -> int:
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # Windows consoles
     args = build_parser().parse_args(argv)
@@ -185,6 +235,12 @@ def main(argv: list[str] | None = None) -> int:
             return run_price()
         if args.command == "export":
             return run_export()
+        if args.command == "review":
+            return run_review()
+        if args.command == "review-apply":
+            return run_review_apply(args.file)
+        if args.command == "guard":
+            return run_guard(args.before)
     except anthropic.AuthenticationError:
         print(
             "\nThe API rejected the key (401). Check .env: the whole key must be on one line, "

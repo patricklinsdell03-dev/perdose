@@ -1,0 +1,37 @@
+{
+ "generated_at": "2026-09-17T20:35:58+01:00",
+ "prompt_version": "1.1.0",
+ "retailers": [
+  {
+   "id": "bulk",
+   "name": "Bulk",
+   "listings": 28,
+   "in_stock": 28,
+   "last_seen": "2026-09-17",
+   "days_stale": 0
+  },
+  {
+   "id": "holland_barrett",
+   "name": "Holland & Barrett",
+   "listings": 15,
+   "in_stock": 15,
+   "last_seen": "2026-09-17",
+   "days_stale": 0
+  },
+  {
+   "id": "myprotein",
+   "name": "Myprotein",
+   "listings": 28,
+   "in_stock": 28,
+   "last_seen": "2026-09-17",
+   "days_stale": 0
+  }
+ ],
+ "products": 71,
+ "needs_review_total": 0,
+ "needs_review_by_reason": {},
+ "extractions": 71,
+ "escalation_rate": 0.028,
+ "classes_lost": [],
+ "zero_product_compounds": []
+}

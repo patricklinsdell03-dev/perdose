@@ -1,0 +1,77 @@
+---
+// Operator page (brief §12.3): for Patrick, not for users. Unlinked, noindex, excluded from
+// search, the sitemap and robots. Is the machine healthy?
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import Base from '../layouts/Base.astro';
+import { isoToLong } from '../lib/format';
+
+interface Ops {
+  generated_at: string;
+  prompt_version: string;
+  retailers: { id: string; name: string; listings: number; in_stock: number; last_seen: string; days_stale: number }[];
+  products: number;
+  needs_review_total: number;
+  needs_review_by_reason: Record<string, number>;
+  extractions: number;
+  escalation_rate: number;
+  classes_lost: string[];
+  zero_product_compounds: string[];
+}
+
+const path = resolve(process.cwd(), '../data/export/ops.json');
+const ops: Ops | null = existsSync(path) ? JSON.parse(readFileSync(path, 'utf8')) : null;
+const reviewRate = ops && ops.products ? ops.needs_review_total / ops.products : 0;
+const warnings = ops
+  ? [
+      ...ops.classes_lost.map((cls) => `Table ${cls} had products on the previous run and has none now.`),
+      ...ops.zero_product_compounds.map((id) => `Compound ${id} has no products.`),
+      ...ops.retailers.filter((r) => r.days_stale > 3).map((r) => `${r.name}: prices are ${r.days_stale} days old.`),
+      ...(ops.escalation_rate > 0.15 ? [`Second-attempt rate is ${(ops.escalation_rate * 100).toFixed(0)}% (target under 15%).`] : []),
+      ...(reviewRate > 0.2 ? [`${(reviewRate * 100).toFixed(0)}% of products are unverified (target under 20%).`] : []),
+    ]
+  : [];
+---
+
+<Base title="Operations" noindex>
+  <h1>Operations</h1>
+  {
+    !ops ? (
+      <p>No ops.json yet. Run <code>make all</code>.</p>
+    ) : (
+      <>
+        <p class="muted">Last run: {isoToLong(ops.generated_at)} at {ops.generated_at.slice(11, 16)} · prompt version {ops.prompt_version}</p>
+
+        <h2>{warnings.length ? `Needs attention (${warnings.length})` : 'All clear'}</h2>
+        {warnings.length ? <ul>{warnings.map((w) => <li>{w}</li>)}</ul> : <p>Nothing needs attention.</p>}
+
+        <h2>Retailers</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th scope="col">Retailer</th><th scope="col" class="num">Listings</th><th scope="col" class="num">In stock</th><th scope="col">Prices from</th><th scope="col" class="num">Days old</th></tr></thead>
+            <tbody>
+              {ops.retailers.map((r) => (
+                <tr class="offer plain">
+                  <td data-label="Retailer">{r.name}</td>
+                  <td data-label="Listings" class="num">{r.listings}</td>
+                  <td data-label="In stock" class="num">{r.in_stock}</td>
+                  <td data-label="Prices from">{r.last_seen}</td>
+                  <td data-label="Days old" class="num">{r.days_stale}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Reading quality</h2>
+        <dl class="facts">
+          <dt>Products</dt><dd>{ops.products}</dd>
+          <dt>Unverified</dt><dd>{ops.needs_review_total} ({(reviewRate * 100).toFixed(0)}%) — run <code>make review</code> to work through them</dd>
+          {Object.entries(ops.needs_review_by_reason).map(([reason, count]) => (<><dt>&nbsp;&nbsp;{reason}</dt><dd>{count}</dd></>))}
+          <dt>Listings read by the AI</dt><dd>{ops.extractions}</dd>
+          <dt>Needed a second attempt</dt><dd>{(ops.escalation_rate * 100).toFixed(0)}%</dd>
+        </dl>
+      </>
+    )
+  }
+</Base>

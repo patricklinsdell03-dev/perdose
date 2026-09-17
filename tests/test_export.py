@@ -48,7 +48,13 @@ def exported(monkeypatch):
 
 def test_files_written(exported):
     files, stats = exported
-    assert set(files) == {"compounds.json", "compounds/magnesium.json", "index.json", "meta.json"}
+    assert set(files) == {
+        "compounds.json",
+        "compounds/magnesium.json",
+        "index.json",
+        "meta.json",
+        "ops.json",
+    }
     assert stats["products"] == 3
 
 
@@ -119,3 +125,13 @@ def test_classes_carry_site_label_and_slug(exported):
     glycinate = files["compounds/magnesium.json"]["classes"][0]
     assert (glycinate["label"], glycinate["slug"]) == ("Bisglycinate (glycinate)", "bisglycinate")
     assert files["index.json"][0]["classes"][0]["slug"] == "bisglycinate"
+
+
+def test_ops_export(exported):
+    files, _ = exported
+    ops = files["ops.json"]
+    assert {r["id"]: r["listings"] for r in ops["retailers"]} == {"fixture_a": 1, "fixture_b": 2}
+    assert ops["needs_review_by_reason"] == {"ambiguous_basis": 1}
+    assert ops["escalation_rate"] == 0.0
+    assert "zinc" in ops["zero_product_compounds"]
+    assert "magnesium" not in ops["zero_product_compounds"]
