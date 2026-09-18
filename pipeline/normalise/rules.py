@@ -266,7 +266,14 @@ def _extract_standardised(active, amount, compound: Compound, form, label_text):
     return out
 
 
+def _per_serving(active, amount, compound: Compound, form, label_text):
+    """Multivitamins and other multi-nutrient products: the comparison unit is one serving,
+    so the amount is always 1 and the price per standard dose is the price per serving."""
+    return _Amount(value=1.0, basis="per_serving")
+
+
 RESOLVERS = {
+    "per_serving": _per_serving,
     "mineral_elemental": _mineral_elemental,
     "vitamin_unit": _stated_amount,
     "simple_mass": _stated_amount,
@@ -311,7 +318,9 @@ def _resolve_active(
         reasons.append("form_unknown")
 
     amount = None
-    if active.amount_per_serving is not None and active.amount_unit:
+    if compound.normalisation_type == "per_serving":
+        pass  # the serving itself is the dose; a headline amount, if any, is not used
+    elif active.amount_per_serving is not None and active.amount_unit:
         if manual or _evidenced(active.evidence, "amount_per_serving", label_text):
             amount = convert_amount(active.amount_per_serving, active.amount_unit, compound)
             if amount is None:
@@ -423,7 +432,10 @@ def apply_rules(
             for a in actives
             if a is not primary
         ] + [[name] for name in extraction.other_actives]
-        multi_ingredient = any(not _is_accepted_cofactor(primary_compound, o) for o in others)
+        # A multi-nutrient product (per_serving) is many ingredients by design, not a combination.
+        multi_ingredient = primary_compound.normalisation_type != "per_serving" and any(
+            not _is_accepted_cofactor(primary_compound, o) for o in others
+        )
     else:
         reasons.append("no_active")
 

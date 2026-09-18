@@ -981,7 +981,7 @@ Every entry becomes one `compounds.yml` record with `category` set to the sectio
 | zinc_carnosine | Zinc carnosine | mg | simple_mass | 75 | own id (not zinc): stated PepZin GI mass | 3 |
 | digestive_enzymes | Digestive enzymes | — | — | — | activity units differ per enzyme; **excluded until a type exists** | — |
 | probiotics | Probiotics | CFU | cfu_count | 10 billion | Phase 10; strain list as components | 3 |
-| multivitamin | Multivitamins | — | per_serving | 1 serving | Phase 10 | 3 |
+| multivitamin | Multivitamins | serving | per_serving | 1 serving | **live since 2026-09-18** (DECISIONS.md); nutrient grid per serving is a follow-up | 2 |
 | fibre_phgg | PHGG | mg | simple_mass | 5000 | one class | 3 |
 | melatonin | — | | | | **excluded (prescription-only in UK)** | — |
 | dhea | — | | | | **excluded (not legally sold as a supplement in UK)** | — |

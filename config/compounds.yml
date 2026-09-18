@@ -1728,3 +1728,21 @@ compounds:
       tc: { label: "Tart cherry (capsules & powder)", slug: tart-cherry }
     forms:
       - { id: extract, names: [extract, powder, concentrate powder, capsules, unspecified], class: tc, note: "Juices and liquid concentrates (ml) are excluded from ranking (brief F.6)." }
+
+  # ---- Multivitamins (Patrick, 2026-09-18): compared per serving, contents shown alongside ----
+  - id: multivitamin
+    name: Multivitamin
+    category: general-health
+    tier: 2
+    comparison_quantity: daily serving
+    unit: serving
+    standard_dose: 1
+    label_convention: compound_default
+    normalisation_type: per_serving
+    aliases: [multivitamin, multi-vitamin, multi vitamin, multivitamins, multivits, a-z, a to z, multinutrient, multi-nutrient, wellman, wellwoman, centrum, one a day]
+    alias_exclusions: [with multivitamin]
+    accepted_cofactors: []
+    classes:
+      mv: { label: "Multivitamins (per serving)", slug: multivitamins }
+    forms:
+      - { id: multivitamin, names: [tablets, capsules, gummies, effervescent, liquid, men, women, kids, 50+, unspecified], class: mv, note: "One table; men's/women's/kids' are shown in the product name. Price per daily serving; the other actives list shows what a serving contains." }

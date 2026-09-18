@@ -1,0 +1,36 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "multivitamin",
+        "form_raw": "Gummies",
+        "form_id": "gummies",
+        "amount_per_serving": null,
+        "amount_unit": null,
+        "amount_refers_to": null,
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {}
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "gummy",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No serving size or amount per serving stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Gummies"
+    }
+  }
+}

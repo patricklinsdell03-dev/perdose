@@ -1,0 +1,138 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "multivitamin",
+        "form_raw": "Tablets",
+        "form_id": "tablets",
+        "amount_per_serving": null,
+        "amount_unit": null,
+        "amount_refers_to": null,
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "form_raw": "180 Tablets"
+        }
+      },
+      {
+        "compound_id": "vitamin_c",
+        "form_raw": null,
+        "form_id": "unspecified",
+        "amount_per_serving": 80.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin C 80mg"
+        }
+      },
+      {
+        "compound_id": "vitamin_d3",
+        "form_raw": "D3",
+        "form_id": "d3",
+        "amount_per_serving": 10.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin D3 10µg"
+        }
+      },
+      {
+        "compound_id": "zinc",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 10.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Zinc 10mg"
+        }
+      },
+      {
+        "compound_id": "magnesium",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Magnesium 100mg"
+        }
+      },
+      {
+        "compound_id": "vitamin_b12",
+        "form_raw": null,
+        "form_id": "unspecified",
+        "amount_per_serving": 2.5,
+        "amount_unit": "mcg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin B12 2.5µg"
+        }
+      },
+      {
+        "compound_id": "vitamin_b9",
+        "form_raw": "Folic Acid",
+        "form_id": "folic_acid",
+        "amount_per_serving": 200.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Folic Acid 200µg"
+        }
+      },
+      {
+        "compound_id": "iron",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 14.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Iron 14mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 180,
+    "pack_unit_type": "tablet",
+    "units_per_serving": 1.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "mineral amounts (zinc, magnesium, iron) lack cue words to determine elemental vs compound basis",
+      "no forms specified for zinc, magnesium, B12, iron, vitamin C - defaulted to unspecified/other"
+    ],
+    "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "1 tablet daily"
+    }
+  }
+}

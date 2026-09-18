@@ -25,7 +25,7 @@ export interface CompoundRule {
   category: string;
   tier: number;
   comparison_quantity: string;
-  unit: 'mg' | 'mcg' | 'IU';
+  unit: 'mg' | 'mcg' | 'IU' | 'serving';
   standard_dose: number;
   label_convention: 'elemental_default' | 'ambiguous' | 'compound_default';
   normalisation_type: string;

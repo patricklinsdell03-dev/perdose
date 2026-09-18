@@ -4975,5 +4975,57 @@
     ]
    }
   ]
+ },
+ {
+  "id": "multivitamin",
+  "name": "Multivitamin",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "daily serving",
+  "unit": "serving",
+  "standard_dose": 1.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "per_serving",
+  "aliases": [
+   "multivitamin",
+   "multi-vitamin",
+   "multi vitamin",
+   "multivitamins",
+   "multivits",
+   "a-z",
+   "a to z",
+   "multinutrient",
+   "multi-nutrient",
+   "wellman",
+   "wellwoman",
+   "centrum",
+   "one a day"
+  ],
+  "classes": [
+   {
+    "id": "mv",
+    "label": "Multivitamins (per serving)",
+    "slug": "multivitamins",
+    "standard_dose": 1.0,
+    "forms": [
+     {
+      "id": "multivitamin",
+      "names": [
+       "tablets",
+       "capsules",
+       "gummies",
+       "effervescent",
+       "liquid",
+       "men",
+       "women",
+       "kids",
+       "50+",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
  }
 ]

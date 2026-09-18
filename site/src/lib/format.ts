@@ -1,7 +1,7 @@
 // Display formatting only (brief §10: store full precision, round at display time).
 import type { CompoundRule, Offer } from './data';
 
-const UNIT_LABEL: Record<string, string> = { mg: 'mg', mcg: 'µg', IU: 'IU' };
+const UNIT_LABEL: Record<string, string> = { mg: 'mg', mcg: 'µg', IU: 'IU', serving: 'serving' };
 
 /** 5000 mg -> "5 g"; 100 mcg -> "100 µg"; 1000 IU -> "1,000 IU". */
 export function amount(value: number, unit: string): string {
@@ -16,6 +16,7 @@ function trim(value: number): string {
 
 /** "per 100 mg magnesium", "per 1,000 IU", "per 5 g". */
 export function doseLabel(compound: CompoundRule, dose: number): string {
+  if (compound.unit === 'serving') return dose === 1 ? 'per serving' : `per ${trim(dose)} servings`;
   const what = compound.comparison_quantity.replace(/^elemental /, '');
   const short = ['mineral_elemental', 'oil_components'].includes(compound.normalisation_type) ? ` ${what}` : '';
   return `per ${amount(dose, compound.unit)}${short}`;
@@ -65,6 +66,7 @@ export const BASIS_TEXT: Record<string, string> = {
   stated_compound: 'stated on the label',
   stated_extract: 'extract weight stated on the label',
   stated_constituent: 'active constituent content stated on the label (or its stated percentage of the extract)',
+  per_serving: 'priced per serving — compare what each serving contains before choosing',
   stated_component_sum: 'added up from the components stated on the label',
   stated_total: 'label gives only a total, not the individual components',
   estimated_from_compound: 'estimated from the compound weight using our conversion factor',

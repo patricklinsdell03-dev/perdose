@@ -8,11 +8,17 @@ from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 COMPOUNDS_PATH = Path("config/compounds.yml")
 
-Unit = Literal["mg", "mcg", "IU"]
+Unit = Literal["mg", "mcg", "IU", "serving"]
 LabelConvention = Literal["elemental_default", "ambiguous", "compound_default"]
-# Later types (per_serving, cfu_count, per_gram_macro) are added when they are built (§6.5).
+# Later types (cfu_count, per_gram_macro) are added when they are built (§6.5).
+# per_serving (multivitamins, 2026-09-18): the dose is one serving; contents are shown alongside.
 NormalisationType = Literal[
-    "mineral_elemental", "vitamin_unit", "oil_components", "extract_standardised", "simple_mass"
+    "mineral_elemental",
+    "vitamin_unit",
+    "oil_components",
+    "extract_standardised",
+    "simple_mass",
+    "per_serving",
 ]
 Category = Literal[
     "vitamins",

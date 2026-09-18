@@ -8100,9 +8100,74 @@ labels:
       multi_ingredient: true
       needs_review: false
 
+
+  # ---- Multivitamins (per serving; added 2026-09-18) ----
+  - id: mv01
+    compounds: [multivitamin]
+    title: "A-Z Multivitamin & Minerals 180 Tablets"
+    description: "Directions: 1 tablet daily. Per tablet: Vitamin C 80mg, Vitamin D3 10µg, Zinc 10mg, Magnesium 100mg, Vitamin B12 2.5µg, Folic Acid 200µg, Iron 14mg."
+    extraction:
+      actives:
+        - { compound_id: multivitamin, form_raw: null, form_id: multivitamin, amount_per_serving: null, amount_unit: null, amount_refers_to: unclear, evidence: {} }
+        - { compound_id: vitamin_c, form_raw: null, form_id: ascorbic_acid, amount_per_serving: 80, amount_unit: mg, amount_refers_to: elemental, evidence: { amount_per_serving: "Vitamin C 80mg" } }
+        - { compound_id: zinc, form_raw: null, form_id: other, amount_per_serving: 10, amount_unit: mg, amount_refers_to: elemental, evidence: { amount_per_serving: "Zinc 10mg" } }
+      is_single_ingredient: false
+      other_actives: [Vitamin D3, Magnesium, Vitamin B12, Folic Acid, Iron]
+      pack_units: 180
+      pack_unit_type: tablet
+      units_per_serving: 1
+      confidence: 0.9
+      evidence: { pack_units: "180 Tablets", units_per_serving: "1 tablet daily" }
+    expect:
+      compound: multivitamin
+      amount: 1
+      amount_unit: serving
+      basis: per_serving
+      servings: 180
+      multi_ingredient: false
+      needs_review: false
+      price_per_std_dose: 0.05
+    price_gbp: 9.00
+  - id: mv02
+    compounds: [multivitamin]
+    title: "Wellman Original — 2 tablets daily — 60 Tablets"
+    extraction:
+      actives:
+        - { compound_id: multivitamin, form_raw: Wellman, form_id: multivitamin, amount_per_serving: null, amount_unit: null, amount_refers_to: unclear, evidence: {} }
+      is_single_ingredient: false
+      other_actives: [Vitamin C, Zinc, Ginseng]
+      pack_units: 60
+      pack_unit_type: tablet
+      units_per_serving: 2
+      confidence: 0.9
+      evidence: { pack_units: "60 Tablets", units_per_serving: "2 tablets daily" }
+    expect:
+      compound: multivitamin
+      amount: 1
+      basis: per_serving
+      servings: 30
+      multi_ingredient: false
+      needs_review: false
+  - id: mv03
+    compounds: [multivitamin]
+    title: "Kids Multivitamin Gummies 60 Gummies"
+    extraction:
+      actives:
+        - { compound_id: multivitamin, form_raw: Gummies, form_id: multivitamin, amount_per_serving: null, amount_unit: null, amount_refers_to: unclear, evidence: {} }
+      is_single_ingredient: false
+      other_actives: [Vitamin D, Vitamin C]
+      pack_units: 60
+      pack_unit_type: gummy
+      confidence: 0.85
+      evidence: { pack_units: "60 Gummies" }
+    expect:
+      compound: multivitamin
+      amount: 1
+      servings: 60
+      needs_review: false
+
 # Must be dropped at ingest, never extracted (Appendix B). Checked from Phase 3, when the
 # ingest alias filter exists. Synthetic titles.
 negatives:
   - { id: n01, title: "Whey Protein Concentrate 1kg Chocolate" }
   - { id: n02, title: "Magnesium Bath Flakes 1kg" }
-  - { id: n03, title: "A-Z Multivitamin & Minerals 180 Tablets" }
