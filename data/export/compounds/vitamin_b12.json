@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T17:21:34+01:00",
+ "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
   "id": "vitamin_b12",
   "name": "Vitamin B12",
@@ -146,7 +146,7 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "180 Tablets",
-      "units_per_serving": "Per Serving (1 Tablet)",
+      "units_per_serving": "Take 1 tablet per day",
       "amount_per_serving": "Vitamin B12 ; 1000μg (Methylcobalamin) ; 40000"
      },
      "components": [],
@@ -191,7 +191,6 @@
      "evidence": {
       "pack_units": "60 Tablets",
       "units_per_serving": "Per Serving (1 Tablet)",
-      "servings_stated": "60 Tablets",
       "amount_per_serving": "1000μg (Methylcobalamin)"
      },
      "components": [],
@@ -228,10 +227,12 @@
      "days_supply": 240.0,
      "tested_flag": null,
      "claimed": [],
-     "other_actives": [],
+     "other_actives": [
+      "mct_oil"
+     ],
      "review_reasons": [],
      "evidence": {
-      "pack_units": "Healthspan Vitamin B12 240 Tablets",
+      "pack_units": "240 Tablets",
       "units_per_serving": "Swallow 1 tablet daily with water",
       "amount_per_serving": "Vitamin B12 ; 1000 µg ; 40000% NRV",
       "form_raw": "Methylcobalamin"
@@ -316,65 +317,13 @@
      "claimed": [],
      "other_actives": [
       "ashwagandha",
-      "Vitamin B6"
+      "vitamin_b6"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "60 Capsules",
       "units_per_serving": "Swallow 1 capsule daily",
-      "servings_stated": "Per capsule",
       "amount_per_serving": "Vitamin B12 ; 2.5 µg ; 100% NRV"
-     },
-     "components": [],
-     "branded_extract": null
-    },
-    {
-     "listing_id": "healthspan:elite-magnesium-plus",
-     "product_id": "healthspan-elite-healthspan-elite-magnesium-plus-120-tablets",
-     "brand": "Healthspan Elite",
-     "name": "Healthspan Elite Magnesium Plus 120 Tablets",
-     "display_name": "Magnesium Plus 120 Tablets",
-     "retailer_id": "healthspan",
-     "ships_from": "GB",
-     "url": "https://www.healthspan.co.uk/elite-magnesium-plus/",
-     "image_url": null,
-     "price_gbp": 17.99,
-     "in_stock": true,
-     "price_date": "2026-09-17",
-     "pack": {
-      "units": 120,
-      "unit_type": "tablet",
-      "units_per_serving": 1.0,
-      "multipack_count": 1,
-      "servings": 120.0
-     },
-     "form_id": "methyl",
-     "amount_per_serving": 0.63,
-     "amount_unit": "mcg",
-     "amount_basis": "stated_elemental",
-     "is_primary": false,
-     "price_per_unit": 0.23796296296296296,
-     "price_per_std_dose": 237.96296296296296,
-     "cost_per_month": 7138.888888888889,
-     "days_supply": 0.0756,
-     "tested_flag": null,
-     "claimed": [],
-     "other_actives": [
-      "magnesium",
-      "vitamin_c",
-      "Vitamin B1",
-      "Vitamin B2",
-      "Niacin",
-      "Pantothenic Acid",
-      "Vitamin B6",
-      "Folic Acid",
-      "Biotin"
-     ],
-     "review_reasons": [],
-     "evidence": {
-      "pack_units": "120 Tablets",
-      "units_per_serving": "Swallow 1 tablet daily with water",
-      "amount_per_serving": "Vitamin B12 ; 0.63 µg ; 25% NRV"
      },
      "components": [],
      "branded_extract": null
@@ -472,60 +421,7 @@
      "branded_extract": null
     }
    ],
-   "combinations": [
-    {
-     "listing_id": "healthspan:magnesium-375mg",
-     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
-     "brand": "Healthspan",
-     "name": "Healthspan Magnesium 375mg 90 Tablets",
-     "display_name": "Magnesium 375mg 90 Tablets",
-     "retailer_id": "healthspan",
-     "ships_from": "GB",
-     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
-     "image_url": null,
-     "price_gbp": 12.99,
-     "in_stock": true,
-     "price_date": "2026-09-17",
-     "pack": {
-      "units": 90,
-      "unit_type": "tablet",
-      "units_per_serving": 1.0,
-      "multipack_count": 1,
-      "servings": 90.0
-     },
-     "form_id": "cyano",
-     "amount_per_serving": 0.625,
-     "amount_unit": "mcg",
-     "amount_basis": "stated_elemental",
-     "is_primary": false,
-     "price_per_unit": 0.23093333333333332,
-     "price_per_std_dose": 230.93333333333334,
-     "cost_per_month": 6928.0,
-     "days_supply": 0.05625,
-     "tested_flag": null,
-     "claimed": [],
-     "other_actives": [
-      "magnesium",
-      "vitamin_c",
-      "Vitamin B1",
-      "Vitamin B2",
-      "Niacin",
-      "Pantothenic Acid",
-      "Vitamin B6",
-      "Folic Acid",
-      "Biotin"
-     ],
-     "review_reasons": [],
-     "evidence": {
-      "pack_units": "90 Tablets",
-      "units_per_serving": "Swallow 1 tablet daily",
-      "servings_stated": "90 Tablets",
-      "amount_per_serving": "Vitamin B12 ; 0.625 µg ; 25% NRV"
-     },
-     "components": [],
-     "branded_extract": null
-    }
-   ],
+   "combinations": [],
    "unverified": []
   }
  ]

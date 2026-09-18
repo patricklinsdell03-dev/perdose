@@ -150,7 +150,7 @@ compounds:
     components_sum: [EPA, DHA]
     aliases: [omega 3, omega-3, fish oil, cod liver oil, krill oil, algae oil, algal oil, epa, dha]
     # Krill and fish oils list their natural constituents; those are not added actives.
-    accepted_cofactors: [vitamin e, vitamin d3, astaxanthin, phospholipids, choline, omega 6, omega-6, omega 9, omega-9]
+    accepted_cofactors: [vitamin e, tocopherol, tocopherols, mixed tocopherols, vitamin d3, astaxanthin, phospholipids, choline, omega 6, omega-6, omega 9, omega-9]
     classes:   # comparison tables: label shown on the site, slug used in the URL
       o3_fish: { label: "Fish oil", slug: fish-oil }
       o3_krill: { label: "Krill oil", slug: krill-oil }

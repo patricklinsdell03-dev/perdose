@@ -1,0 +1,211 @@
+{
+ "generated_at": "2026-09-18T19:16:59+01:00",
+ "compound": {
+  "id": "choline",
+  "name": "Choline",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "choline",
+  "unit": "mg",
+  "standard_dose": 250.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "choline",
+   "choline bitartrate",
+   "choline chloride",
+   "phosphatidylcholine"
+  ],
+  "classes": [
+   {
+    "id": "cho_other",
+    "label": "Other forms",
+    "slug": "choline-other",
+    "standard_dose": 250.0,
+    "forms": [
+     {
+      "id": "choline",
+      "names": [
+       "choline",
+       "unspecified"
+      ],
+      "elemental_factor": 1.0
+     },
+     {
+      "id": "other",
+      "names": [
+       "chloride",
+       "phosphatidylcholine",
+       "lecithin",
+       "choline chloride"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cho_bitartrate",
+    "label": "Choline bitartrate",
+    "slug": "choline-bitartrate",
+    "standard_dose": 250.0,
+    "forms": [
+     {
+      "id": "bitartrate",
+      "names": [
+       "bitartrate",
+       "choline bitartrate"
+      ],
+      "elemental_factor": 0.411
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "cho_other",
+   "label": "Other forms",
+   "slug": "choline-other",
+   "standard_dose": 250.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "myprotein:10530670",
+     "product_id": "myvitamins-krill-oil-capsules-250capsules",
+     "brand": "Myvitamins",
+     "name": "Krill Oil Capsules - 250Capsules",
+     "display_name": "Krill Oil Capsules",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/krill-oil-capsules/10530669/",
+     "image_url": "https://static.thcdn.com/productimg/original/10530669-7625031001357362.jpg",
+     "price_gbp": 48.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 250,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 250.0
+     },
+     "form_id": "choline",
+     "amount_per_serving": 25.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0078384,
+     "price_per_std_dose": 1.9596000000000002,
+     "cost_per_month": 58.788000000000004,
+     "days_supply": 25.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "omega_3",
+      "astaxanthin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "250Capsules",
+      "units_per_serving": "Consume 1 softgel daily",
+      "amount_per_serving": "Choline ; 25 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10530671",
+     "product_id": "myvitamins-krill-oil-capsules-90capsules",
+     "brand": "Myvitamins",
+     "name": "Krill Oil Capsules - 90Capsules",
+     "display_name": "Krill Oil Capsules",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/krill-oil-capsules/10530669/",
+     "image_url": "https://static.thcdn.com/productimg/original/10530669-7625031001357362.jpg",
+     "price_gbp": 18.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "softgel",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "choline",
+     "amount_per_serving": 25.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.00844,
+     "price_per_std_dose": 2.11,
+     "cost_per_month": 63.3,
+     "days_supply": 9.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "omega_3",
+      "astaxanthin",
+      "Phospholipids",
+      "Total Omega 6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Capsules",
+      "units_per_serving": "Consume 1 softgel daily",
+      "amount_per_serving": "Choline ; 25 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:super-strength-krill-oil-1200mg",
+     "product_id": "healthspan-healthspan-super-strength-krill-oil-1200mg-60-capsules",
+     "brand": "Healthspan",
+     "name": "Healthspan Super Strength Krill Oil 1200mg 60 Capsules",
+     "display_name": "Super Strength Krill Oil 1200mg 60 Capsules",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/super-strength-krill-oil-1200mg/",
+     "image_url": null,
+     "price_gbp": 46.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "choline",
+     "amount_per_serving": 54.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.014503086419753087,
+     "price_per_std_dose": 3.6257716049382718,
+     "cost_per_month": 108.77314814814815,
+     "days_supply": 12.96,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "omega_3",
+      "astaxanthin",
+      "Marine Phospholipids"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Per capsule",
+      "amount_per_serving": "Choline ; 54 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

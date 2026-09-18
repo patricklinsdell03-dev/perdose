@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T17:21:34+01:00",
+ "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
   "id": "creatine",
   "name": "Creatine",
@@ -171,14 +171,14 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "500g",
-      "units_per_serving": "Mix 2 scoops (approximately 5g) with 200ml water in a shaker",
-      "amount_per_serving": "of which Creatine ; 4.4 g",
-      "compound_mass": "Creatine Monohydrate ; 5 g"
+      "units_per_serving": "Mix 2 scoops (approximately 5g)",
+      "amount_per_serving": "Creatine Monohydrate ; 5 g",
+      "Creatine": "of which Creatine ; 4.4 g"
      },
      "components": [
       {
-       "name": "compound_mass",
-       "amount": 5.0,
+       "name": "Creatine",
+       "amount": 4.4,
        "unit": "g"
       }
      ],
@@ -224,7 +224,7 @@
       "pack_units": "500g",
       "units_per_serving": "Mix 3.4g (approx. 1 scoop)",
       "servings_stated": "147servings",
-      "amount_per_serving": "Creatine Monohydrate ; 3.4g",
+      "amount_per_serving": "Creatine ; 3.0g",
       "compound_mass": "Creatine Monohydrate ; 3.4g"
      },
      "components": [
@@ -251,8 +251,8 @@
      "price_date": "2026-09-17",
      "pack": {
       "units": null,
-      "unit_type": null,
-      "units_per_serving": 3.4,
+      "unit_type": "sachet",
+      "units_per_serving": 1.0,
       "multipack_count": 1,
       "servings": 294.0
      },
@@ -273,8 +273,8 @@
      "other_actives": [],
      "review_reasons": [],
      "evidence": {
-      "units_per_serving": "Mix 3.4g (approx. 1 scoop) with 250ml of water",
       "servings_stated": "294 Servings",
+      "units_per_serving": "approx. 1 scoop",
       "amount_per_serving": "Creatine ; 3.0g",
       "compound_mass": "Creatine Monohydrate ; 3.4g"
      },
@@ -428,7 +428,7 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "250g",
-      "units_per_serving": "Mix 3.4g (approx. 1 scoop)",
+      "units_per_serving": "3.4g",
       "servings_stated": "73servings",
       "amount_per_serving": "Creatine ; 3.0g",
       "compound_mass": "Creatine Monohydrate ; 3.4g"
@@ -480,7 +480,7 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "100g",
-      "units_per_serving": "Mix 2 scoops (approximately 5g)",
+      "units_per_serving": "Mix 2 scoops (approximately 5g) with 200ml water in a shaker",
       "amount_per_serving": "of which Creatine ; 4.4 g",
       "compound_mass": "Creatine Monohydrate ; 5 g"
      },
@@ -573,7 +573,7 @@
      "evidence": {
       "pack_units": "540 Tablets",
       "units_per_serving": "Per Serving (5 Tablets)",
-      "amount_per_serving": "Creatine Monohydrate ; 5 g",
+      "amount_per_serving": "of which Creatine ; 4.4 g",
       "compound_mass": "Creatine Monohydrate ; 5 g"
      },
      "components": [
@@ -624,7 +624,7 @@
      "evidence": {
       "pack_units": "270 Tablets",
       "units_per_serving": "Per Serving (5 Tablets)",
-      "amount_per_serving": "Creatine Monohydrate ; 5 g",
+      "amount_per_serving": "of which Creatine ; 4.4 g",
       "compound_mass": "Creatine Monohydrate ; 5 g"
      },
      "components": [

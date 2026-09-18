@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T17:21:34+01:00",
+ "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
   "id": "zinc",
   "name": "Zinc",
@@ -178,7 +178,7 @@
       "vegetarian"
      ],
      "other_actives": [
-      "Vitamin C"
+      "vitamin_c"
      ],
      "review_reasons": [],
      "evidence": {
@@ -230,7 +230,8 @@
      "evidence": {
       "pack_units": "90Tablets",
       "units_per_serving": "Consume 1 tablet daily",
-      "amount_per_serving": "Zinc ; 150 ; 15mg"
+      "amount_per_serving": "Zinc ; 150 ; 15mg",
+      "form_raw": "Zinc Citrate"
      },
      "components": [],
      "branded_extract": null
@@ -325,7 +326,6 @@
      "evidence": {
       "pack_units": "120 Tablets",
       "units_per_serving": "Take 1 tablet per day",
-      "servings_stated": "120 Tablets",
       "amount_per_serving": "Zinc ; 25mg 250%"
      },
      "components": [],
@@ -363,7 +363,7 @@
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
-      "Copper Bisglycinate"
+      "copper"
      ],
      "review_reasons": [],
      "evidence": {
@@ -422,8 +422,7 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "90 Tablets",
-      "amount_per_serving": "Zinc ; 5 mg ; 50% NRV",
-      "form_raw": "Zinc Oxide"
+      "amount_per_serving": "Zinc ; 5 mg ; 50% NRV"
      },
      "components": [],
      "branded_extract": null
@@ -470,13 +469,12 @@
      "claimed": [],
      "other_actives": [
       "vitamin_c",
-      "Copper"
+      "copper"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "360 Tablets",
       "units_per_serving": "Swallow 1 tablet daily with water",
-      "servings_stated": "Per tablet",
       "amount_per_serving": "Triple-Source Zinc (Zinc Picolinate, Zinc Bisglycinate and Zinc Citrate) providing Total Elemental Zinc ; 15 mg ; 150% NRV"
      },
      "components": [],
@@ -565,8 +563,8 @@
      "evidence": {
       "pack_units": "90 Tablets",
       "units_per_serving": "Per Serving (1 Tablet)",
-      "amount_per_serving": "Zinc ; 6 mg ; 60",
-      "form_raw": "Zinc Monomethionine (OptiZinc®)"
+      "servings_stated": "90 Tablets",
+      "amount_per_serving": "Zinc ; 6 mg ; 60"
      },
      "components": [],
      "branded_extract": "OptiZinc"
@@ -609,14 +607,15 @@
      ],
      "other_actives": [
       "magnesium",
-      "Vitamin B6",
-      "Copper Glycinate"
+      "vitamin_b6",
+      "copper"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "270Capsules",
       "units_per_serving": "Consume 1 capsule daily",
-      "amount_per_serving": "Zinc ; 100 ; 10mg"
+      "amount_per_serving": "Zinc ; 100 ; 10mg",
+      "form_raw": "Zinc Mono-L-Methionine Sulphate"
      },
      "components": [],
      "branded_extract": null
@@ -657,14 +656,15 @@
      ],
      "other_actives": [
       "magnesium",
-      "Vitamin B6",
-      "Copper Glycinate"
+      "vitamin_b6",
+      "copper"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "90Capsules",
       "units_per_serving": "Consume 1 capsule daily",
-      "amount_per_serving": "Zinc ; 100 ; 10mg"
+      "amount_per_serving": "Zinc ; 100 ; 10mg",
+      "form_raw": "Zinc Mono-L-Methionine Sulphate"
      },
      "components": [],
      "branded_extract": null
@@ -798,14 +798,13 @@
      ],
      "other_actives": [
       "magnesium",
-      "Vitamin B6",
-      "Copper Glycinate"
+      "vitamin_b6",
+      "copper"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "30Capsules",
       "units_per_serving": "Consume 1 capsule daily",
-      "servings_stated": "30Capsules",
       "amount_per_serving": "Zinc ; 100 ; 10mg"
      },
      "components": [],

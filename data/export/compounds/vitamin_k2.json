@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T17:21:34+01:00",
+ "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
   "id": "vitamin_k2",
   "name": "Vitamin K2",
@@ -188,7 +188,7 @@
      "evidence": {
       "pack_units": "120 Capsules",
       "units_per_serving": "Take one capsule daily",
-      "amount_per_serving": "100mcg"
+      "amount_per_serving": "Vitamin K2 MK7 from Natto Extract 100mcg"
      },
      "components": [],
      "branded_extract": null
@@ -219,7 +219,7 @@
      "in_stock": true,
      "price_date": "2026-09-17",
      "pack": {
-      "units": null,
+      "units": 30,
       "unit_type": "capsule",
       "units_per_serving": 1.0,
       "multipack_count": 1,
@@ -248,6 +248,7 @@
       }
      ],
      "evidence": {
+      "pack_units": "30 Servings",
       "units_per_serving": "Consume 1 capsule daily",
       "servings_stated": "30 Servings",
       "amount_per_serving": "Vitamin K2 ; 100.0μg ; 133"
@@ -299,9 +300,9 @@
      ],
      "evidence": {
       "pack_units": "90CAPSULES",
-      "servings_stated": "90servings",
       "units_per_serving": "Consume 1 capsule daily",
-      "amount_per_serving": "Vitamin K2 ; 100.0μg ; 133"
+      "servings_stated": "90servings",
+      "amount_per_serving": "Vitamin K2 ; 100.0μg"
      },
      "components": [],
      "branded_extract": null

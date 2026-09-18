@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T17:21:34+01:00",
+ "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
   "id": "magnesium",
   "name": "Magnesium",
@@ -308,7 +308,7 @@
      "evidence": {
       "pack_units": "60 Tablets",
       "units_per_serving": "Per Serving (2 Tablets)",
-      "amount_per_serving": "of which Magnesium ; 200 mg ; 53",
+      "amount_per_serving": "of which Magnesium ; 200 mg",
       "compound_mass": "Magnesium Bisglycinate ; 1000 mg"
      },
      "components": [
@@ -418,7 +418,7 @@
        "unit": "mg"
       }
      ],
-     "branded_extract": "CoreChelate"
+     "branded_extract": "CoreChelate™"
     }
    ],
    "combinations": [],
@@ -613,8 +613,7 @@
      "evidence": {
       "pack_units": "270 Tablets",
       "units_per_serving": "Consume 3 tablets daily",
-      "amount_per_serving": "Magnesium ; 300mg ; 80",
-      "form_raw": "Magnesium Oxide"
+      "amount_per_serving": "Magnesium ; 300mg ; 80"
      },
      "components": [],
      "branded_extract": null
@@ -697,20 +696,19 @@
      "claimed": [],
      "other_actives": [
       "vitamin_c",
-      "vitamin_b12",
-      "Vitamin B1",
-      "Vitamin B2",
-      "Niacin",
+      "vitamin_b3",
+      "vitamin_b6",
+      "vitamin_b2",
+      "vitamin_b1",
+      "vitamin_b7",
       "Pantothenic Acid",
-      "Vitamin B6",
       "Folic Acid",
-      "Biotin"
+      "Vitamin B12"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "90 Tablets",
       "units_per_serving": "Swallow 1 tablet daily",
-      "servings_stated": "90 Tablets",
       "amount_per_serving": "Magnesium ; 375 mg ; 100% NRV"
      },
      "components": [],
@@ -749,20 +747,21 @@
      "claimed": [],
      "other_actives": [
       "vitamin_c",
-      "vitamin_b12",
-      "Vitamin B1",
-      "Vitamin B2",
-      "Niacin",
+      "vitamin_b3",
+      "vitamin_b6",
+      "vitamin_b2",
+      "vitamin_b1",
       "Pantothenic Acid",
-      "Vitamin B6",
       "Folic Acid",
+      "Vitamin B12",
       "Biotin"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "120 Tablets",
       "units_per_serving": "Swallow 1 tablet daily with water",
-      "amount_per_serving": "Magnesium ; 375 mg ; 100% NRV"
+      "amount_per_serving": "Magnesium ; 375 mg ; 100% NRV",
+      "form_raw": "Magnesium Oxide"
      },
      "components": [],
      "branded_extract": null
@@ -814,8 +813,8 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "180 Capsules",
-      "units_per_serving": "Per Serving (2 capsules)",
-      "amount_per_serving": "of which Magnesium ; 384 mg",
+      "units_per_serving": "Take 2 capsules per day",
+      "amount_per_serving": "of which Magnesium ; 384 mg ; 102",
       "compound_mass": "Magnesium Malate ; 400 mg"
      },
      "components": [
@@ -938,14 +937,15 @@
      ],
      "other_actives": [
       "zinc",
-      "Vitamin B6",
-      "Copper Glycinate"
+      "vitamin_b6",
+      "copper"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "270Capsules",
       "units_per_serving": "Consume 1 capsule daily",
-      "amount_per_serving": "Magnesium ; 40 ; 150mg"
+      "amount_per_serving": "Magnesium ; 40 ; 150mg",
+      "form_raw": "Magnesium Citrate"
      },
      "components": [],
      "branded_extract": null
@@ -986,14 +986,15 @@
      ],
      "other_actives": [
       "zinc",
-      "Vitamin B6",
-      "Copper Glycinate"
+      "vitamin_b6",
+      "copper"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "90Capsules",
       "units_per_serving": "Consume 1 capsule daily",
-      "amount_per_serving": "Magnesium ; 40 ; 150mg"
+      "amount_per_serving": "Magnesium ; 40 ; 150mg",
+      "form_raw": "Magnesium Citrate"
      },
      "components": [],
      "branded_extract": null
@@ -1031,14 +1032,14 @@
      "claimed": [],
      "other_actives": [
       "vitamin_d3",
-      "Vitamin B6 (Pyridoxine 5 Phosphate)",
+      "vitamin_b6",
       "Inulin"
      ],
      "review_reasons": [],
      "evidence": {
-      "units_per_serving": "Swallow 2 tablets daily with water",
       "pack_units": "90 Tablets",
-      "amount_per_serving": "Triple-Source Magnesium (Magnesium Glycinate [20%], Magnesium Citrate and Magnesium Malate) providing Total Elemental Magnesium ; 187.5 mg"
+      "units_per_serving": "Swallow 2 tablets daily",
+      "amount_per_serving": "Adults: Swallow 2 tablets daily"
      },
      "components": [],
      "branded_extract": null
@@ -1079,14 +1080,13 @@
      ],
      "other_actives": [
       "zinc",
-      "Vitamin B6",
-      "Copper Glycinate"
+      "vitamin_b6",
+      "copper"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "30Capsules",
       "units_per_serving": "Consume 1 capsule daily",
-      "servings_stated": "30Capsules",
       "amount_per_serving": "Magnesium ; 40 ; 150mg"
      },
      "components": [],
@@ -1124,8 +1124,8 @@
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
-      "vitamin_d3",
-      "Vitamin B6"
+      "vitamin_b6",
+      "vitamin_d3"
      ],
      "review_reasons": [],
      "evidence": {
@@ -1133,7 +1133,7 @@
       "units_per_serving": "3 Capsules",
       "servings_stated": "Servings Per Container: | 30",
       "amount_per_serving": "Total Magnesium ; 250mg (67%*)",
-      "components": "provided from Malate (14.7% Mg) ; 340mg"
+      "compound_mass": "provided from Malate (14.7% Mg) ; 340mg"
      },
      "components": [
       {

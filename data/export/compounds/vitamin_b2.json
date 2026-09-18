@@ -1,0 +1,171 @@
+{
+ "generated_at": "2026-09-18T19:16:59+01:00",
+ "compound": {
+  "id": "vitamin_b2",
+  "name": "Riboflavin (vitamin B2)",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "riboflavin",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "riboflavin",
+   "vitamin b2",
+   "riboflavin-5-phosphate",
+   "r5p"
+  ],
+  "classes": [
+   {
+    "id": "b2_riboflavin",
+    "label": "Riboflavin",
+    "slug": "riboflavin",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "riboflavin",
+      "names": [
+       "riboflavin",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b2_r5p",
+    "label": "Riboflavin-5-phosphate",
+    "slug": "r5p",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "r5p",
+      "names": [
+       "riboflavin-5-phosphate",
+       "riboflavin 5 phosphate",
+       "r5p",
+       "r-5-p"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "b2_riboflavin",
+   "label": "Riboflavin",
+   "slug": "riboflavin",
+   "standard_dose": 100.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:magnesium-375mg",
+     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium 375mg 90 Tablets",
+     "display_name": "Magnesium 375mg 90 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "riboflavin",
+     "amount_per_serving": 0.35,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.41238095238095246,
+     "price_per_std_dose": 41.23809523809525,
+     "cost_per_month": 1237.1428571428573,
+     "days_supply": 0.31499999999999995,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b3",
+      "vitamin_b6",
+      "vitamin_b1",
+      "vitamin_b7",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "amount_per_serving": "Vitamin B2 ; 0.35 mg ; 25% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-magnesium-plus",
+     "product_id": "healthspan-elite-healthspan-elite-magnesium-plus-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Magnesium Plus 120 Tablets",
+     "display_name": "Magnesium Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/elite-magnesium-plus/",
+     "image_url": null,
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "riboflavin",
+     "amount_per_serving": 0.35,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.4283333333333333,
+     "price_per_std_dose": 42.83333333333333,
+     "cost_per_month": 1284.9999999999998,
+     "days_supply": 0.42,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b3",
+      "vitamin_b6",
+      "vitamin_b1",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Vitamin B2 ; 0.35 mg ; 25% NRV",
+      "form_raw": "Riboflavin"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

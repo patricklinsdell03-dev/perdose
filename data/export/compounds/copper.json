@@ -1,0 +1,303 @@
+{
+ "generated_at": "2026-09-18T19:16:59+01:00",
+ "compound": {
+  "id": "copper",
+  "name": "Copper",
+  "category": "minerals",
+  "tier": 3,
+  "comparison_quantity": "elemental copper",
+  "unit": "mg",
+  "standard_dose": 1.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "copper",
+   "copper gluconate",
+   "copper bisglycinate",
+   "copper citrate"
+  ],
+  "classes": [
+   {
+    "id": "cu_all",
+    "label": "Copper",
+    "slug": "copper",
+    "standard_dose": 1.0,
+    "forms": [
+     {
+      "id": "gluconate",
+      "names": [
+       "gluconate"
+      ],
+      "elemental_factor": 0.14
+     },
+     {
+      "id": "bisglycinate",
+      "names": [
+       "bisglycinate",
+       "glycinate",
+       "chelate"
+      ],
+      "elemental_factor": 0.3
+     },
+     {
+      "id": "other",
+      "names": [
+       "citrate",
+       "sulphate",
+       "sulfate",
+       "oxide",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "cu_all",
+   "label": "Copper",
+   "slug": "copper",
+   "standard_dose": 1.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:070136",
+     "product_id": "holland-barrett-holland-barrett-high-strength-chelated-zinc-copper-120-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett High Strength Chelated Zinc & Copper 120 Tablets",
+     "display_name": "High Strength Chelated Zinc & Copper 120 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-high-strength-chelated-zinc-copper-120-tablets-6100006557",
+     "image_url": null,
+     "price_gbp": 15.69,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 1.25,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.1046,
+     "price_per_std_dose": 0.1046,
+     "cost_per_month": 3.138,
+     "days_supply": 150.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "zinc"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Take 1 tablet per day",
+      "amount_per_serving": "Copper ; 1250.00µg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [
+    {
+     "listing_id": "healthspan:zinc-with-vitamin-c",
+     "product_id": "healthspan-healthspan-zinc-complex-360-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Zinc Complex 360 Tablets",
+     "display_name": "Zinc Complex 360 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/zinc-with-vitamin-c/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 360,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 360.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 1.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.036083333333333335,
+     "price_per_std_dose": 0.036083333333333335,
+     "cost_per_month": 1.0825,
+     "days_supply": 360.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "zinc",
+      "vitamin_c"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "360 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Copper ; 1 mg ; 100% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10529514",
+     "product_id": "myvitamins-zinc-magnesium-capsules-270capsules",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 270Capsules",
+     "display_name": "Zinc & Magnesium Capsules",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 20.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 270.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 0.2,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.38870370370370366,
+     "price_per_std_dose": 0.38870370370370366,
+     "cost_per_month": 11.66111111111111,
+     "days_supply": 54.0,
+     "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
+     "other_actives": [
+      "zinc",
+      "magnesium",
+      "vitamin_b6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Copper ; 20 ; 0.20mg",
+      "form_raw": "Copper Glycinate"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10529515",
+     "product_id": "myvitamins-zinc-magnesium-capsules-90capsules",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 90Capsules",
+     "display_name": "Zinc & Magnesium Capsules",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 9.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 0.2,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.5272222222222223,
+     "price_per_std_dose": 0.5272222222222223,
+     "cost_per_month": 15.816666666666668,
+     "days_supply": 18.0,
+     "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
+     "other_actives": [
+      "zinc",
+      "magnesium",
+      "vitamin_b6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Copper ; 20 ; 0.20mg",
+      "form_raw": "Copper Glycinate"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:13528187",
+     "product_id": "myvitamins-zinc-magnesium-capsules-30capsules",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 30Capsules",
+     "display_name": "Zinc & Magnesium Capsules",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 4.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 30,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "bisglycinate",
+     "amount_per_serving": 0.2,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.7483333333333334,
+     "price_per_std_dose": 0.7483333333333334,
+     "cost_per_month": 22.450000000000003,
+     "days_supply": 6.0,
+     "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
+     "other_actives": [
+      "zinc",
+      "magnesium",
+      "vitamin_b6"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "30Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Copper ; 20 ; 0.20mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

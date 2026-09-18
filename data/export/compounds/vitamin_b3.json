@@ -1,0 +1,192 @@
+{
+ "generated_at": "2026-09-18T19:16:59+01:00",
+ "compound": {
+  "id": "vitamin_b3",
+  "name": "Niacin (vitamin B3)",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "vitamin B3",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "niacin",
+   "vitamin b3",
+   "niacinamide",
+   "nicotinamide",
+   "nicotinic acid",
+   "inositol hexanicotinate",
+   "no-flush niacin"
+  ],
+  "classes": [
+   {
+    "id": "b3_niacin",
+    "label": "Niacin (nicotinic acid)",
+    "slug": "niacin",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "niacin",
+      "names": [
+       "niacin",
+       "nicotinic acid",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b3_niacinamide",
+    "label": "Niacinamide",
+    "slug": "niacinamide",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "niacinamide",
+      "names": [
+       "niacinamide",
+       "nicotinamide"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b3_ihn",
+    "label": "Inositol hexanicotinate (no-flush)",
+    "slug": "inositol-hexanicotinate",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "ihn",
+      "names": [
+       "inositol hexanicotinate",
+       "inositol hexaniacinate",
+       "no-flush niacin",
+       "no flush niacin",
+       "flush-free niacin"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "b3_niacinamide",
+   "label": "Niacinamide",
+   "slug": "niacinamide",
+   "standard_dose": 500.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:magnesium-375mg",
+     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium 375mg 90 Tablets",
+     "display_name": "Magnesium 375mg 90 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "niacinamide",
+     "amount_per_serving": 4.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.036083333333333335,
+     "price_per_std_dose": 18.041666666666668,
+     "cost_per_month": 541.25,
+     "days_supply": 0.72,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b6",
+      "vitamin_b2",
+      "vitamin_b1",
+      "vitamin_b7",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "amount_per_serving": "Niacin ; 4 mg NE ; 25% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-magnesium-plus",
+     "product_id": "healthspan-elite-healthspan-elite-magnesium-plus-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Magnesium Plus 120 Tablets",
+     "display_name": "Magnesium Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/elite-magnesium-plus/",
+     "image_url": null,
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "niacinamide",
+     "amount_per_serving": 4.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.03747916666666666,
+     "price_per_std_dose": 18.73958333333333,
+     "cost_per_month": 562.1874999999999,
+     "days_supply": 0.96,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b6",
+      "vitamin_b2",
+      "vitamin_b1",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Niacin ; 4 mg NE ; 25% NRV",
+      "form_raw": "Nicotinamide"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

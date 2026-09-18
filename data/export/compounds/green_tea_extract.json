@@ -1,33 +1,38 @@
 {
  "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
-  "id": "l_theanine",
-  "name": "L-Theanine",
-  "category": "amino-acids",
+  "id": "green_tea_extract",
+  "name": "Green tea extract",
+  "category": "botanicals",
   "tier": 1,
-  "comparison_quantity": "L-theanine",
+  "comparison_quantity": "EGCG",
   "unit": "mg",
-  "standard_dose": 200.0,
-  "label_convention": "elemental_default",
-  "normalisation_type": "simple_mass",
+  "standard_dose": 400.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
   "aliases": [
-   "l-theanine",
-   "theanine",
-   "suntheanine"
+   "green tea extract",
+   "green tea",
+   "egcg",
+   "camellia sinensis",
+   "epigallocatechin gallate"
   ],
   "classes": [
    {
-    "id": "thea",
-    "label": "L-theanine",
-    "slug": "l-theanine",
-    "standard_dose": 200.0,
+    "id": "gte",
+    "label": "Green tea extract (by EGCG)",
+    "slug": "green-tea-extract",
+    "standard_dose": 400.0,
     "forms": [
      {
-      "id": "l_theanine",
+      "id": "extract",
       "names": [
-       "l-theanine",
-       "theanine",
-       "suntheanine"
+       "extract",
+       "decaffeinated",
+       "standardised",
+       "50% egcg",
+       "98% polyphenols",
+       "unspecified"
       ],
       "elemental_factor": null
      }
@@ -37,11 +42,12 @@
  },
  "classes": [
   {
-   "id": "thea",
-   "label": "L-theanine",
-   "slug": "l-theanine",
-   "standard_dose": 200.0,
-   "ranked": [
+   "id": "gte",
+   "label": "Green tea extract (by EGCG)",
+   "slug": "green-tea-extract",
+   "standard_dose": 400.0,
+   "ranked": [],
+   "combinations": [
     {
      "listing_id": "holland_barrett:104905",
      "product_id": "holland-barrett-holland-barrett-l-theanine-200mg-60-capsules",
@@ -62,31 +68,49 @@
       "multipack_count": 1,
       "servings": 60.0
      },
-     "form_id": "l_theanine",
-     "amount_per_serving": 200.0,
+     "form_id": "extract",
+     "amount_per_serving": 15.0,
      "amount_unit": "mg",
-     "amount_basis": "stated_elemental",
-     "is_primary": true,
-     "price_per_unit": 0.0011658333333333334,
-     "price_per_std_dose": 0.2331666666666667,
-     "cost_per_month": 6.995000000000001,
-     "days_supply": 60.0,
+     "amount_basis": "stated_constituent",
+     "is_primary": false,
+     "price_per_unit": 0.015544444444444444,
+     "price_per_std_dose": 6.217777777777778,
+     "cost_per_month": 186.53333333333333,
+     "days_supply": 2.25,
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
-      "green_tea_extract"
+      "l_theanine"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "60 Capsules",
       "units_per_serving": "Each 1 Capsule(s) contains",
-      "amount_per_serving": "200mg L-theanine per capsule"
+      "amount_per_serving": "Green Tea Extract (Camellia Sinensis, Leaf) (50:1 extract, equivalent to 25000.00mg Green Tea) ; 500mg",
+      "EGCG": "15mg EGCG from green tea extract",
+      "herb_equivalent": "Equivalent to 25,000mg green tea leaf"
      },
-     "components": [],
+     "components": [
+      {
+       "name": "EGCG",
+       "amount": 15.0,
+       "unit": "mg"
+      },
+      {
+       "name": "herb_equivalent",
+       "amount": 25000.0,
+       "unit": "mg"
+      },
+      {
+       "name": "extract_mass",
+       "amount": 500.0,
+       "unit": "mg"
+      }
+     ],
      "branded_extract": null
     }
    ],
-   "combinations": [
+   "unverified": [
     {
      "listing_id": "holland_barrett:108496",
      "product_id": "higher-nature-higher-nature-l-theanine-100mg-green-tea-extract-90-vegan-capsules",
@@ -107,34 +131,38 @@
       "multipack_count": 1,
       "servings": 90.0
      },
-     "form_id": "l_theanine",
-     "amount_per_serving": 100.0,
+     "form_id": "extract",
+     "amount_per_serving": null,
      "amount_unit": "mg",
-     "amount_basis": "stated_elemental",
-     "is_primary": true,
-     "price_per_unit": 0.0032166666666666667,
-     "price_per_std_dose": 0.6433333333333333,
-     "cost_per_month": 19.3,
-     "days_supply": 45.0,
+     "amount_basis": "stated_extract",
+     "is_primary": false,
+     "price_per_unit": null,
+     "price_per_std_dose": null,
+     "cost_per_month": null,
+     "days_supply": null,
      "tested_flag": null,
      "claimed": [
       "vegan"
      ],
      "other_actives": [
-      "green_tea_extract",
+      "l_theanine",
       "vitamin_b6",
       "vitamin B5 (calcium d-pantothenate)"
      ],
-     "review_reasons": [],
+     "review_reasons": [
+      {
+       "code": "amount_missing",
+       "text": "We could not find the amount per serving in the listing."
+      }
+     ],
      "evidence": {
       "pack_units": "90 Vegan Capsules",
-      "amount_per_serving": "L-Theanine 100mg"
+      "form_raw": "green tea (camellia sinensis) extract"
      },
      "components": [],
      "branded_extract": null
     }
-   ],
-   "unverified": []
+   ]
   }
  ]
 }

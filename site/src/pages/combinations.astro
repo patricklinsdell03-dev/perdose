@@ -9,7 +9,7 @@ const compounds = rules.filter((c) => c.id !== 'multivitamin').sort((a, b) => a.
 const presets = [
   // The ten most common combinations on UK shelves, then a few more. Amounts are starting
   // filters ("a serving has at least this much"), editable, never recommendations.
-  { id: 'zma', label: 'ZMA', needs: { zinc: 10, magnesium: 300, vitamin_b6: 5 } },
+  { id: 'zma', label: 'ZMA (zinc, magnesium, B6)', needs: { zinc: 5, magnesium: 100, vitamin_b6: 1 } },
   { id: 'd3k2', label: 'Vitamin D3 + K2', needs: { vitamin_d3: 1000, vitamin_k2: 75 } },
   { id: 'calmagzinc', label: 'Calcium, magnesium & zinc', needs: { calcium: 300, magnesium: 150, zinc: 5 } },
   { id: 'joint', label: 'Glucosamine & chondroitin', needs: { glucosamine: 500, chondroitin: 100 } },

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T17:21:34+01:00",
+ "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
   "id": "omega_3",
   "name": "Omega-3",
@@ -150,7 +150,7 @@
       "amount_per_serving": "Omega 3 Fatty Acids ; 2340.0mg",
       "EPA": "EPA ; 1800mg",
       "DHA": "DHA ; 450mg",
-      "compound_mass": "Fish Oil ; 3000.0mg"
+      "total_omega_3": "Omega 3 Fatty Acids ; 2340.0mg"
      },
      "components": [
       {
@@ -164,8 +164,8 @@
        "unit": "mg"
       },
       {
-       "name": "compound_mass",
-       "amount": 3000.0,
+       "name": "total_omega_3",
+       "amount": 2340.0,
        "unit": "mg"
       }
      ],
@@ -206,7 +206,7 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "90Capsules",
-      "units_per_serving": "3 Softgels",
+      "units_per_serving": "Per Daily Serving ; 3 Softgels",
       "amount_per_serving": "Omega 3 Fatty Acids ; 2340.0mg",
       "EPA": "EPA ; 1800mg",
       "DHA": "DHA ; 450mg"
@@ -260,8 +260,8 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "240 Capsules",
-      "units_per_serving": "One softgel capsules contain",
-      "amount_per_serving": "Fish Oil ; 1000mg **",
+      "units_per_serving": "Take 1 Capsule/capsules per day",
+      "amount_per_serving": "Fish Oil ; 1000mg",
       "EPA": "EPA ; 180mg",
       "DHA": "DHA ; 120mg",
       "total_omega_3": "Total omega-3 fatty acids ; 350mg"
@@ -430,7 +430,7 @@
       "pack_units": "90 Softgels",
       "units_per_serving": "Per Serving (3 SOFTGELS)",
       "amount_per_serving": "Omega 3 Fish Oil ; 3000 mg",
-      "EPA": "providing EPA 990 mg",
+      "EPA": "EPA 990 mg",
       "DHA": "DHA 660 mg"
      },
      "components": [
@@ -548,6 +548,11 @@
      },
      "components": [
       {
+       "name": "total_omega_3",
+       "amount": 300.0,
+       "unit": "mg"
+      },
+      {
        "name": "EPA",
        "amount": 180.0,
        "unit": "mg"
@@ -555,11 +560,6 @@
       {
        "name": "DHA",
        "amount": 120.0,
-       "unit": "mg"
-      },
-      {
-       "name": "total_omega_3",
-       "amount": 300.0,
        "unit": "mg"
       }
      ],
@@ -716,7 +716,7 @@
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
-      "Vitamin E"
+      "vitamin_e"
      ],
      "review_reasons": [],
      "evidence": {
@@ -780,15 +780,15 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "60 Capsules",
-      "amount_per_serving": "providing Total Omega 3 Fatty Acids ; 1215 mg",
-      "compound_mass": "Omega 3 Marine Oil Concentrate ; 1352 mg",
+      "amount_per_serving": "Omega 3 Marine Oil Concentrate ; 1352 mg",
+      "total_omega_3": "providing Total Omega 3 Fatty Acids ; 1215 mg",
       "EPA": "of which EPA ; 1000 mg",
       "DHA": "and DHA ; 100 mg"
      },
      "components": [
       {
-       "name": "compound_mass",
-       "amount": 1352.0,
+       "name": "total_omega_3",
+       "amount": 1215.0,
        "unit": "mg"
       },
       {
@@ -846,10 +846,8 @@
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
-      "Phospholipids",
-      "Total Omega 6",
-      "Choline",
-      "Astaxanthin"
+      "choline",
+      "astaxanthin"
      ],
      "review_reasons": [],
      "evidence": {
@@ -857,14 +855,10 @@
       "units_per_serving": "Consume 1 softgel daily",
       "amount_per_serving": "Total Omega 3 ; 110 mg",
       "EPA": "EPA (Eicosapentaenoic Acid) ; 60 mg",
-      "DHA": "DHA (Docosahexaenoic Acid) ; 28 mg"
+      "DHA": "DHA (Docosahexaenoic Acid) ; 28 mg",
+      "total_omega_3": "Total Omega 3 ; 110 mg"
      },
      "components": [
-      {
-       "name": "total_omega_3",
-       "amount": 110.0,
-       "unit": "mg"
-      },
       {
        "name": "EPA",
        "amount": 60.0,
@@ -873,6 +867,11 @@
       {
        "name": "DHA",
        "amount": 28.0,
+       "unit": "mg"
+      },
+      {
+       "name": "total_omega_3",
+       "amount": 110.0,
        "unit": "mg"
       }
      ],
@@ -910,15 +909,16 @@
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
-      "Choline",
-      "Astaxanthin",
-      "Phospholipids"
+      "choline",
+      "astaxanthin",
+      "Phospholipids",
+      "Total Omega 6"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "90Capsules",
-      "units_per_serving": "Serving Size | - 1 Softgels",
-      "amount_per_serving": "Total Omega 3 ; 110 mg",
+      "units_per_serving": "Consume 1 softgel daily",
+      "total_omega_3": "Total Omega 3 ; 110 mg",
       "EPA": "EPA (Eicosapentaenoic Acid) ; 60 mg",
       "DHA": "DHA (Docosahexaenoic Acid) ; 28 mg"
      },
@@ -973,8 +973,9 @@
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
-      "Choline",
-      "Astaxanthin"
+      "choline",
+      "astaxanthin",
+      "Marine Phospholipids"
      ],
      "review_reasons": [],
      "evidence": {
@@ -982,8 +983,8 @@
       "units_per_serving": "Per capsule",
       "amount_per_serving": "Pure Antarctic Krill Oil ; 1200 mg",
       "total_omega_3": "Total Omega 3 Fatty Acids ; 276 mg",
-      "DHA": "of which DHA ; 77 mg",
-      "EPA": "and EPA ; 149 mg"
+      "EPA": "and EPA ; 149 mg",
+      "DHA": "of which DHA ; 77 mg"
      },
      "components": [
       {
@@ -992,13 +993,13 @@
        "unit": "mg"
       },
       {
-       "name": "DHA",
-       "amount": 77.0,
+       "name": "EPA",
+       "amount": 149.0,
        "unit": "mg"
       },
       {
-       "name": "EPA",
-       "amount": 149.0,
+       "name": "DHA",
+       "amount": 77.0,
        "unit": "mg"
       }
      ],
@@ -1102,11 +1103,14 @@
      "days_supply": 30.6,
      "tested_flag": null,
      "claimed": [],
-     "other_actives": [],
+     "other_actives": [
+      "Mixed Tocopherols"
+     ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "60 Capsules",
-      "units_per_serving": "Swallow one capsule daily",
+      "units_per_serving": "Swallow one capsule daily with water",
+      "servings_stated": "Per capsule",
       "amount_per_serving": "Algal Omega 3 Oil ; 1000 mg",
       "total_omega_3": "providing Total Omega 3 Fatty Acids ; 560 mg",
       "DHA": "of which DHA ; 340 mg",
@@ -1166,7 +1170,7 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "60 Capsules",
-      "units_per_serving": "Swallow one capsule daily with water",
+      "units_per_serving": "Swallow one capsule daily",
       "amount_per_serving": "Algal Omega 3 Oil ; 1,000mg",
       "total_omega_3": "providing Total Omega 3 Fatty Acids ; 560mg",
       "DHA": "of which DHA ; 340mg",

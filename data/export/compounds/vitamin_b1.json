@@ -1,0 +1,172 @@
+{
+ "generated_at": "2026-09-18T19:16:59+01:00",
+ "compound": {
+  "id": "vitamin_b1",
+  "name": "Thiamine (vitamin B1)",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "thiamine",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "thiamine",
+   "thiamin",
+   "vitamin b1",
+   "benfotiamine"
+  ],
+  "classes": [
+   {
+    "id": "b1_thiamine",
+    "label": "Thiamine",
+    "slug": "thiamine",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "thiamine",
+      "names": [
+       "thiamine",
+       "thiamin",
+       "thiamine hcl",
+       "thiamine hydrochloride",
+       "thiamine mononitrate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b1_benfotiamine",
+    "label": "Benfotiamine",
+    "slug": "benfotiamine",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "benfotiamine",
+      "names": [
+       "benfotiamine"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "b1_thiamine",
+   "label": "Thiamine",
+   "slug": "thiamine",
+   "standard_dose": 100.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:magnesium-375mg",
+     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium 375mg 90 Tablets",
+     "display_name": "Magnesium 375mg 90 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "thiamine",
+     "amount_per_serving": 0.275,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.5248484848484848,
+     "price_per_std_dose": 52.48484848484848,
+     "cost_per_month": 1574.5454545454543,
+     "days_supply": 0.24750000000000003,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b3",
+      "vitamin_b6",
+      "vitamin_b2",
+      "vitamin_b7",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "amount_per_serving": "Vitamin B1 ; 0.275 mg ; 25% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-magnesium-plus",
+     "product_id": "healthspan-elite-healthspan-elite-magnesium-plus-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Magnesium Plus 120 Tablets",
+     "display_name": "Magnesium Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/elite-magnesium-plus/",
+     "image_url": null,
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "thiamine",
+     "amount_per_serving": 0.275,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.545151515151515,
+     "price_per_std_dose": 54.51515151515151,
+     "cost_per_month": 1635.4545454545453,
+     "days_supply": 0.33,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b3",
+      "vitamin_b6",
+      "vitamin_b2",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Vitamin B1 ; 0.275 mg ; 25% NRV",
+      "form_raw": "Thiamin Hydrochloride"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

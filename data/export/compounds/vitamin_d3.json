@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T17:21:34+01:00",
+ "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
   "id": "vitamin_d3",
   "name": "Vitamin D3",
@@ -143,12 +143,14 @@
      "claimed": [
       "vegetarian"
      ],
-     "other_actives": [],
+     "other_actives": [
+      "calcium"
+     ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "270 Tablets",
       "units_per_serving": "Per Serving (1 Tablet)",
-      "amount_per_serving": "Vitamin D3 (Cholecalciferol) ; 100μg"
+      "amount_per_serving": "Vitamin D3 (Cholecalciferol) ; 100μg ; 2000"
      },
      "components": [],
      "branded_extract": null
@@ -186,7 +188,9 @@
      "claimed": [
       "vegetarian"
      ],
-     "other_actives": [],
+     "other_actives": [
+      "calcium"
+     ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "90 Tablets",
@@ -232,7 +236,7 @@
      "evidence": {
       "pack_units": "180Softgels",
       "units_per_serving": "Consume 1 softgel daily",
-      "amount_per_serving": "63μg"
+      "amount_per_serving": "Vitamin D ; 63μg ; 1260"
      },
      "components": [],
      "branded_extract": null
@@ -270,12 +274,15 @@
      "claimed": [
       "vegan"
      ],
-     "other_actives": [],
+     "other_actives": [
+      "mct_oil",
+      "vitamin_e"
+     ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "180 Capsules",
-      "units_per_serving": "Swallow one capsule daily with water",
-      "amount_per_serving": "Vitamin D3 (Vegan) ; 50 µg ; 1000% NRV"
+      "units_per_serving": "Swallow one capsule daily",
+      "amount_per_serving": "Vitamin D3 (Vegan) ; 50 µg"
      },
      "components": [],
      "branded_extract": null
@@ -359,7 +366,8 @@
      "evidence": {
       "pack_units": "120 Tablets",
       "units_per_serving": "Each 1 Tablet(s) Contains",
-      "amount_per_serving": "Vitamin D3 ; 25µg (1000 I.U.) ; 500%"
+      "amount_per_serving": "Vitamin D3 ; 25µg (1000 I.U.) ; 500%",
+      "form_raw": "Vitamin D (Cholecalciferol)"
      },
      "components": [],
      "branded_extract": null
@@ -403,9 +411,9 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "90CAPSULES",
-      "servings_stated": "90servings",
       "units_per_serving": "Consume 1 capsule daily",
-      "amount_per_serving": "Vitamin D3 ; 100.0μg ; 2000"
+      "servings_stated": "90servings",
+      "amount_per_serving": "Vitamin D3 ; 100.0μg"
      },
      "components": [],
      "branded_extract": null
@@ -424,7 +432,7 @@
      "in_stock": true,
      "price_date": "2026-09-17",
      "pack": {
-      "units": null,
+      "units": 30,
       "unit_type": "capsule",
       "units_per_serving": 1.0,
       "multipack_count": 1,
@@ -448,6 +456,7 @@
      ],
      "review_reasons": [],
      "evidence": {
+      "pack_units": "30 Servings",
       "units_per_serving": "Consume 1 capsule daily",
       "servings_stated": "30 Servings",
       "amount_per_serving": "Vitamin D3 ; 100.0μg ; 2000"
@@ -490,11 +499,17 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "120 Capsules",
-      "units_per_serving": "Swallow 1 capsule daily with water",
-      "servings_stated": "120 Capsules",
-      "amount_per_serving": "Vitamin D3 ; 100 µg ; 2000% NRV | equivalent to ; 4000 iu"
+      "units_per_serving": "Swallow 1 capsule daily",
+      "amount_per_serving": "Vitamin D3 ; 100 µg",
+      "compound_mass": "equivalent to ; 4000 iu"
      },
-     "components": [],
+     "components": [
+      {
+       "name": "compound_mass",
+       "amount": 4000.0,
+       "unit": "IU"
+      }
+     ],
      "branded_extract": null
     },
     {
@@ -696,7 +711,7 @@
      "claimed": [],
      "other_actives": [
       "magnesium",
-      "Vitamin B6"
+      "vitamin_b6"
      ],
      "review_reasons": [],
      "evidence": {
@@ -741,14 +756,14 @@
      "claimed": [],
      "other_actives": [
       "magnesium",
-      "Vitamin B6 (Pyridoxine 5 Phosphate)",
+      "vitamin_b6",
       "Inulin"
      ],
      "review_reasons": [],
      "evidence": {
-      "units_per_serving": "Swallow 2 tablets daily with water",
       "pack_units": "90 Tablets",
-      "amount_per_serving": "Vitamin D3 ; 2.5 µg ; 50% NRV"
+      "units_per_serving": "Swallow 2 tablets daily",
+      "amount_per_serving": "Adults: Swallow 2 tablets daily"
      },
      "components": [],
      "branded_extract": null

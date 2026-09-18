@@ -1,0 +1,134 @@
+{
+ "generated_at": "2026-09-18T19:16:59+01:00",
+ "compound": {
+  "id": "vitamin_e",
+  "name": "Vitamin E",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "vitamin E",
+  "unit": "mg",
+  "standard_dose": 268.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin e",
+   "d-alpha tocopherol",
+   "dl-alpha tocopherol",
+   "tocopherol",
+   "tocopherols",
+   "tocotrienols",
+   "alpha-te"
+  ],
+  "classes": [
+   {
+    "id": "ve_natural",
+    "label": "Natural (d-alpha)",
+    "slug": "d-alpha",
+    "standard_dose": 268.0,
+    "forms": [
+     {
+      "id": "d_alpha",
+      "names": [
+       "d-alpha",
+       "d-alpha tocopherol",
+       "d-alpha tocopheryl",
+       "natural",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ve_synthetic",
+    "label": "Synthetic (dl-alpha)",
+    "slug": "dl-alpha",
+    "standard_dose": 268.0,
+    "forms": [
+     {
+      "id": "dl_alpha",
+      "names": [
+       "dl-alpha",
+       "dl-alpha tocopherol",
+       "dl-alpha tocopheryl",
+       "synthetic"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ve_mixed",
+    "label": "Mixed tocopherols / tocotrienols",
+    "slug": "mixed-tocopherols",
+    "standard_dose": 268.0,
+    "forms": [
+     {
+      "id": "mixed",
+      "names": [
+       "mixed tocopherols",
+       "tocotrienols",
+       "full spectrum",
+       "gamma tocopherol"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "ve_natural",
+   "label": "Natural (d-alpha)",
+   "slug": "d-alpha",
+   "standard_dose": 268.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:opti-omega-3",
+     "product_id": "healthspan-healthspan-opti-omega-3-with-anti-reflux-technology-60-capsules",
+     "brand": "Healthspan",
+     "name": "Healthspan Opti-Omega 3 with Anti-Reflux Technology 60 Capsules",
+     "display_name": "Opti-Omega 3 with Anti-Reflux Technology 60 Capsules",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/opti-omega-3/",
+     "image_url": null,
+     "price_gbp": 19.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "d_alpha",
+     "amount_per_serving": 3.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.11105555555555555,
+     "price_per_std_dose": 29.762888888888888,
+     "cost_per_month": 892.8866666666667,
+     "days_supply": 0.6716417910447762,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "omega_3"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "amount_per_serving": "Vitamin E ; 3 mg α-TE ; 25% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

@@ -414,6 +414,16 @@ def apply_rules(
         compound = registry.get(active.compound_id)
         if compound is None or compound.id in compounds:
             continue
+        # An ingredient-list mention with no amount and no mention in the title is an
+        # excipient or carrier (MCT glazing agent, calcium phosphate filler, tocopherol
+        # antioxidant, lecithin liposomes), not an active (prompt rule 8; DECISIONS 2026-09-18).
+        if (
+            active.amount_per_serving is None
+            and compound.normalisation_type != "per_serving"
+            and len(extraction.actives) > 1
+            and _title_position(compound, title) > len(title)
+        ):
+            continue
         compounds[compound.id] = compound
         manual = bool(manual_fields) and active is extraction.actives[0]
         resolved, result = _resolve_active(active, compound, label_text, title, manual)

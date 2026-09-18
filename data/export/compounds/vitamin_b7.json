@@ -1,0 +1,102 @@
+{
+ "generated_at": "2026-09-18T19:16:59+01:00",
+ "compound": {
+  "id": "vitamin_b7",
+  "name": "Biotin",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "biotin",
+  "unit": "mcg",
+  "standard_dose": 5000.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "biotin",
+   "vitamin b7",
+   "vitamin h",
+   "d-biotin"
+  ],
+  "classes": [
+   {
+    "id": "biotin",
+    "label": "Biotin",
+    "slug": "biotin",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "biotin",
+      "names": [
+       "biotin",
+       "d-biotin",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "biotin",
+   "label": "Biotin",
+   "slug": "biotin",
+   "standard_dose": 5000.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:magnesium-375mg",
+     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium 375mg 90 Tablets",
+     "display_name": "Magnesium 375mg 90 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "biotin",
+     "amount_per_serving": 25.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0057733333333333334,
+     "price_per_std_dose": 28.866666666666667,
+     "cost_per_month": 866.0,
+     "days_supply": 0.45,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b3",
+      "vitamin_b6",
+      "vitamin_b2",
+      "vitamin_b1",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "amount_per_serving": "Biotin ; 25 µg ; 50% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

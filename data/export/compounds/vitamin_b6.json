@@ -1,0 +1,510 @@
+{
+ "generated_at": "2026-09-18T19:16:59+01:00",
+ "compound": {
+  "id": "vitamin_b6",
+  "name": "Vitamin B6",
+  "category": "vitamins",
+  "tier": 1,
+  "comparison_quantity": "vitamin B6",
+  "unit": "mg",
+  "standard_dose": 50.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "vitamin b6",
+   "b6",
+   "pyridoxine",
+   "pyridoxal-5-phosphate",
+   "pyridoxal 5 phosphate",
+   "p5p",
+   "p-5-p"
+  ],
+  "classes": [
+   {
+    "id": "b6_pyridoxine",
+    "label": "Pyridoxine HCl",
+    "slug": "pyridoxine",
+    "standard_dose": 50.0,
+    "forms": [
+     {
+      "id": "pyridoxine_hcl",
+      "names": [
+       "pyridoxine",
+       "pyridoxine hcl",
+       "pyridoxine hydrochloride",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b6_p5p",
+    "label": "P-5-P (active form)",
+    "slug": "p5p",
+    "standard_dose": 50.0,
+    "forms": [
+     {
+      "id": "p5p",
+      "names": [
+       "p5p",
+       "p-5-p",
+       "pyridoxal-5-phosphate",
+       "pyridoxal 5 phosphate"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "b6_pyridoxine",
+   "label": "Pyridoxine HCl",
+   "slug": "pyridoxine",
+   "standard_dose": 50.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "myprotein:10529514",
+     "product_id": "myvitamins-zinc-magnesium-capsules-270capsules",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 270Capsules",
+     "display_name": "Zinc & Magnesium Capsules",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 20.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 270,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 270.0
+     },
+     "form_id": "pyridoxine_hcl",
+     "amount_per_serving": 3.7,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.02101101101101101,
+     "price_per_std_dose": 1.0505505505505506,
+     "cost_per_month": 31.516516516516518,
+     "days_supply": 19.98,
+     "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
+     "other_actives": [
+      "zinc",
+      "magnesium",
+      "copper"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Vitamin B6 ; 264 ; 3.7mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:10529515",
+     "product_id": "myvitamins-zinc-magnesium-capsules-90capsules",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 90Capsules",
+     "display_name": "Zinc & Magnesium Capsules",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 9.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "pyridoxine_hcl",
+     "amount_per_serving": 3.7,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0284984984984985,
+     "price_per_std_dose": 1.424924924924925,
+     "cost_per_month": 42.74774774774775,
+     "days_supply": 6.66,
+     "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
+     "other_actives": [
+      "zinc",
+      "magnesium",
+      "copper"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Vitamin B6 ; 264 ; 3.7mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:13528187",
+     "product_id": "myvitamins-zinc-magnesium-capsules-30capsules",
+     "brand": "Myvitamins",
+     "name": "Zinc & Magnesium Capsules - 30Capsules",
+     "display_name": "Zinc & Magnesium Capsules",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/zinc-magnesium-capsules/10529513/",
+     "image_url": "https://static.thcdn.com/productimg/original/10529513-4055277415666044.jpg",
+     "price_gbp": 4.49,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 30,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "pyridoxine_hcl",
+     "amount_per_serving": 3.7,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.040450450450450454,
+     "price_per_std_dose": 2.0225225225225225,
+     "cost_per_month": 60.67567567567568,
+     "days_supply": 2.22,
+     "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
+     "other_actives": [
+      "zinc",
+      "magnesium",
+      "copper"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "30Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Vitamin B6 ; 264 ; 3.7mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "myprotein:17679860",
+     "product_id": "myprotein-magnesium-glycinate-3-in-1-capsules-2398mg-90capsules-30servings",
+     "brand": "Myprotein",
+     "name": "Magnesium Glycinate 3-in-1 Capsules | 2398mg - 90CAPSULES, 30servings",
+     "display_name": "Magnesium Glycinate 3-in-1 Capsules | 2398mg",
+     "retailer_id": "myprotein",
+     "ships_from": "GB",
+     "url": "https://www.myprotein.com/p/sports-nutrition/tri-magnesium-capsules/17679856/",
+     "image_url": "https://static.thcdn.com/productimg/original/17679860-5165326950066531.jpg",
+     "price_gbp": 8.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "pyridoxine_hcl",
+     "amount_per_serving": 5.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.05993333333333333,
+     "price_per_std_dose": 2.9966666666666666,
+     "cost_per_month": 89.89999999999999,
+     "days_supply": 3.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_d3"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90CAPSULES",
+      "units_per_serving": "3 Capsules",
+      "servings_stated": "Servings Per Container: | 30",
+      "amount_per_serving": "Vitamin B6 ; 5.0mg (357%*)"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:ashwagandha-relaxation-support",
+     "product_id": "healthspan-healthspan-ashwagandha-relaxation-support-60-capsules",
+     "brand": "Healthspan",
+     "name": "Healthspan Ashwagandha Relaxation Support 60 Capsules",
+     "display_name": "Ashwagandha Relaxation Support 60 Capsules",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/ashwagandha-relaxation-support/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "pyridoxine_hcl",
+     "amount_per_serving": 1.4,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.15464285714285714,
+     "price_per_std_dose": 7.732142857142857,
+     "cost_per_month": 231.9642857142857,
+     "days_supply": 1.68,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "ashwagandha",
+      "vitamin_b12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Swallow 1 capsule daily",
+      "amount_per_serving": "Vitamin B6 ; 1.4 mg ; 100% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-GUMY-ASAP-0120",
+     "product_id": "bulk-ashwagandha-gummies-apple-120-gummies",
+     "brand": "Bulk",
+     "name": "Ashwagandha Gummies - Apple 120 Gummies",
+     "display_name": "Ashwagandha Gummies",
+     "retailer_id": "bulk",
+     "ships_from": "GB",
+     "url": "https://www.bulk.com/uk/products/ashwagandha-gummies/bpb-gumy-as",
+     "image_url": "https://www.bulk.com/media/catalog/product/A/S/ASHWAGANDHA_GUMMIES_MAIN_IMAGE_2000X2000_JPEG_bba6.jpg",
+     "price_gbp": 29.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "gummy",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "pyridoxine_hcl",
+     "amount_per_serving": 2.8,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.17851190476190476,
+     "price_per_std_dose": 8.925595238095237,
+     "cost_per_month": 267.7678571428571,
+     "days_supply": 3.36,
+     "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
+     "other_actives": [
+      "ashwagandha"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Gummies",
+      "units_per_serving": "Per Serving (2 gummies)",
+      "amount_per_serving": "2.8 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:magnesium-375mg",
+     "product_id": "healthspan-healthspan-magnesium-375mg-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Magnesium 375mg 90 Tablets",
+     "display_name": "Magnesium 375mg 90 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/magnesium-375mg/",
+     "image_url": null,
+     "price_gbp": 12.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "pyridoxine_hcl",
+     "amount_per_serving": 0.7,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.20619047619047623,
+     "price_per_std_dose": 10.309523809523812,
+     "cost_per_month": 309.28571428571433,
+     "days_supply": 1.2599999999999998,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b3",
+      "vitamin_b2",
+      "vitamin_b1",
+      "vitamin_b7",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily",
+      "amount_per_serving": "Vitamin B6 ; 0.7 mg ; 50% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-magnesium-plus",
+     "product_id": "healthspan-elite-healthspan-elite-magnesium-plus-120-tablets",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite Magnesium Plus 120 Tablets",
+     "display_name": "Magnesium Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/elite-magnesium-plus/",
+     "image_url": null,
+     "price_gbp": 17.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "pyridoxine_hcl",
+     "amount_per_serving": 0.7,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.21416666666666664,
+     "price_per_std_dose": 10.708333333333332,
+     "cost_per_month": 321.24999999999994,
+     "days_supply": 1.68,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_c",
+      "vitamin_b3",
+      "vitamin_b2",
+      "vitamin_b1",
+      "Pantothenic Acid",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Vitamin B6 ; 0.7 mg ; 50% NRV",
+      "form_raw": "Pyridoxine Hydrochloride"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  },
+  {
+   "id": "b6_p5p",
+   "label": "P-5-P (active form)",
+   "slug": "p5p",
+   "standard_dose": 50.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:opti-magnesium",
+     "product_id": "healthspan-healthspan-opti-magnesium-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan Opti-Magnesium 90 Tablets",
+     "display_name": "Opti-Magnesium 90 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/opti-magnesium/",
+     "image_url": null,
+     "price_gbp": 15.99,
+     "in_stock": true,
+     "price_date": "2026-09-17",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 45.0
+     },
+     "form_id": "p5p",
+     "amount_per_serving": 1.4,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.2538095238095238,
+     "price_per_std_dose": 12.690476190476192,
+     "cost_per_month": 380.7142857142857,
+     "days_supply": 1.2599999999999998,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "magnesium",
+      "vitamin_d3",
+      "Inulin"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 2 tablets daily",
+      "amount_per_serving": "Adults: Swallow 2 tablets daily"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

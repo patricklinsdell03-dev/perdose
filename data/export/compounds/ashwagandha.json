@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T17:21:34+01:00",
+ "generated_at": "2026-09-18T19:16:59+01:00",
  "compound": {
   "id": "ashwagandha",
   "name": "Ashwagandha",
@@ -191,7 +191,7 @@
      "review_reasons": [],
      "evidence": {
       "pack_units": "30Capsules",
-      "units_per_serving": "1 Capsule",
+      "units_per_serving": "Serving Size | - 1 Capsule",
       "amount_per_serving": "Ashwagandha KSM-66® ; 500mg",
       "extract_ratio": "Ashwagandha Root 10-15:1 Extract"
      },
@@ -375,14 +375,13 @@
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
-      "vitamin_b12",
-      "Vitamin B6"
+      "vitamin_b6",
+      "vitamin_b12"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "60 Capsules",
       "units_per_serving": "Swallow 1 capsule daily",
-      "servings_stated": "Per capsule",
       "amount_per_serving": "KSM-66 Ashwagandha Root Extract ; 500 mg",
       "withanolides": "providing Withanolides ; 25 mg"
      },
@@ -440,14 +439,15 @@
       "vegetarian"
      ],
      "other_actives": [
-      "Vitamin B6"
+      "vitamin_b6"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "120 Gummies",
       "units_per_serving": "Per Serving (2 gummies)",
       "amount_per_serving": "300 mg (3000 mg Ashwagandha equivalent)",
-      "extract_ratio": "Ashwagandha Extract 10:1"
+      "extract_mass": "300 mg (3000 mg Ashwagandha equivalent)",
+      "herb_equivalent": "300 mg (3000 mg Ashwagandha equivalent)"
      },
      "components": [
       {
@@ -498,13 +498,14 @@
       "vegetarian"
      ],
      "other_actives": [
-      "Vitamin B6"
+      "Vitamin B6 (Pyridoxine Hydrochloride)"
      ],
      "review_reasons": [],
      "evidence": {
       "pack_units": "60 Gummies",
-      "units_per_serving": "Simply take two gummies per day",
-      "amount_per_serving": "Ashwagandha Extract 10:1 ; 300 mg (3000 mg Ashwagandha equivalent)",
+      "units_per_serving": "Per Serving (2 gummies)",
+      "amount_per_serving": "300 mg (3000 mg Ashwagandha equivalent)",
+      "extract_mass": "300 mg",
       "herb_equivalent": "3000 mg Ashwagandha equivalent"
      },
      "components": [

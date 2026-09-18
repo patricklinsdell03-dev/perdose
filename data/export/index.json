@@ -244,7 +244,7 @@
   "name": "Vitamin C",
   "category": "vitamins",
   "unit": "mg",
-  "product_count": 15,
+  "product_count": 16,
   "retailer_count": 4,
   "classes": [
    {
@@ -274,7 +274,7 @@
   "name": "Vitamin B12",
   "category": "vitamins",
   "unit": "mcg",
-  "product_count": 9,
+  "product_count": 7,
   "retailer_count": 3,
   "classes": [
    {
@@ -316,6 +316,216 @@
     "unverified_count": 0,
     "retailer_count": 1,
     "from_price_per_std_dose": 0.2331666666666667
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b6",
+  "name": "Vitamin B6",
+  "category": "vitamins",
+  "unit": "mg",
+  "product_count": 9,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "b6_pyridoxine",
+    "label": "Pyridoxine HCl",
+    "slug": "pyridoxine",
+    "standard_dose": 50.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
+    "id": "b6_p5p",
+    "label": "P-5-P (active form)",
+    "slug": "p5p",
+    "standard_dose": 50.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b7",
+  "name": "Biotin",
+  "category": "vitamins",
+  "unit": "mcg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "biotin",
+    "label": "Biotin",
+    "slug": "biotin",
+    "standard_dose": 5000.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b1",
+  "name": "Thiamine (vitamin B1)",
+  "category": "vitamins",
+  "unit": "mg",
+  "product_count": 2,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "b1_thiamine",
+    "label": "Thiamine",
+    "slug": "thiamine",
+    "standard_dose": 100.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b2",
+  "name": "Riboflavin (vitamin B2)",
+  "category": "vitamins",
+  "unit": "mg",
+  "product_count": 2,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "b2_riboflavin",
+    "label": "Riboflavin",
+    "slug": "riboflavin",
+    "standard_dose": 100.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b3",
+  "name": "Niacin (vitamin B3)",
+  "category": "vitamins",
+  "unit": "mg",
+  "product_count": 2,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "b3_niacinamide",
+    "label": "Niacinamide",
+    "slug": "niacinamide",
+    "standard_dose": 500.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "copper",
+  "name": "Copper",
+  "category": "minerals",
+  "unit": "mg",
+  "product_count": 5,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "cu_all",
+    "label": "Copper",
+    "slug": "copper",
+    "standard_dose": 1.0,
+    "ranked_count": 1,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.1046
+   }
+  ]
+ },
+ {
+  "id": "astaxanthin",
+  "name": "Astaxanthin",
+  "category": "fatty-acids",
+  "unit": "mg",
+  "product_count": 3,
+  "retailer_count": 2,
+  "classes": [
+   {
+    "id": "asta",
+    "label": "Astaxanthin",
+    "slug": "astaxanthin",
+    "standard_dose": 4.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "vitamin_e",
+  "name": "Vitamin E",
+  "category": "vitamins",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "ve_natural",
+    "label": "Natural (d-alpha)",
+    "slug": "d-alpha",
+    "standard_dose": 268.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "choline",
+  "name": "Choline",
+  "category": "vitamins",
+  "unit": "mg",
+  "product_count": 3,
+  "retailer_count": 2,
+  "classes": [
+   {
+    "id": "cho_other",
+    "label": "Other forms",
+    "slug": "choline-other",
+    "standard_dose": 250.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "green_tea_extract",
+  "name": "Green tea extract",
+  "category": "botanicals",
+  "unit": "mg",
+  "product_count": 2,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "gte",
+    "label": "Green tea extract (by EGCG)",
+    "slug": "green-tea-extract",
+    "standard_dose": 400.0,
+    "ranked_count": 0,
+    "unverified_count": 1,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
    }
   ]
  }
