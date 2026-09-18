@@ -33,3 +33,6 @@ select = ["E", "F", "I", "UP", "B"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["."]
+# Test scratch folders inside the repo (git-ignored, emptied on each run): the system temp
+# folder is not always writable on Patrick's PC.
+addopts = "--basetemp=.pytest_tmp"

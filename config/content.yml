@@ -1,0 +1,47 @@
+# Learn-page drafting (brief §20, Phase 9), read by `make content COMPOUND=<id>`.
+# The model and its prices are in config/llm.yml (Patrick chooses the model).
+version: 1
+
+# Bump on any change to the reading or writing prompts in pipeline/content/llm.py, so saved
+# AI readings are not reused for a different prompt.
+prompt_version: "content-1.0.0"
+
+literature:
+  # Europe PMC mirrors PubMed; free, no key (DECISIONS.md 2026-09-18).
+  years: 15             # studies published in the last 15 years (brief §20.3)
+  max_reviews: 20       # meta-analyses and systematic reviews sent to the AI
+  max_trials: 12        # randomised trials sent to the AI
+  max_background: 6     # narrative reviews, used only for "What it is" / "How it works"
+  # A title containing any of these words is not about taking a supplement by mouth.
+  title_exclusions: [intravenous, infusion, parenteral, injection, injected, topical,
+                     rats, mice, murine, rodent, rodents, "in vitro", "cell line",
+                     implant, implants, crop, crops, soil, fertilization, fertilisation]
+  # Search words, where the compound's own name is a poor search term. Each is matched as a
+  # phrase in study titles. Everything else searches for its name ("Thiamine (B1)" -> thiamine).
+  terms:
+    vitamin_d3: ["vitamin D", "cholecalciferol"]
+    vitamin_k2: ["vitamin K2", "menaquinone"]
+    omega_3: ["omega-3", "fish oil", "n-3 fatty acids", "eicosapentaenoic", "docosahexaenoic"]
+    ashwagandha: ["ashwagandha", "Withania somnifera"]
+    vitamin_c: ["vitamin C", "ascorbic acid"]
+    vitamin_b12: ["vitamin B12", "cobalamin", "methylcobalamin", "cyanocobalamin"]
+    l_theanine: ["theanine"]
+  # Compounds whose studies rarely use the word "supplement" (the herb is the product), so
+  # the "supplement / oral" filter is not applied to them.
+  no_supplement_filter: []
+
+# How a group of studies becomes an evidence grade (brief §20.3: the AI reads each study,
+# these rules decide). PROPOSED by Claude on 2026-09-18 - Patrick approves before any learn
+# page may be approved (content/REVIEW.md).
+grading:
+  status: proposed
+  review_weight: 3        # a meta-analysis or systematic review counts as 3 trials
+  trial_weight: 1
+  agree_share: 0.666      # two-thirds; below this the studies disagree -> Mixed
+  strong: { reviews: 2, participants: 1000, agree_share: 0.8 }
+  moderate: { reviews: 1, trials_instead: 3, participants: 300 }
+  insufficient_below: { reviews: 1, trials: 2 }  # no review and fewer than 2 trials
+
+budget:
+  # `make content` stops before calling the AI if its estimate for one page is higher.
+  max_gbp_per_page: 0.50

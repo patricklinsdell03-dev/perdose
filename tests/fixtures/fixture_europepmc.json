@@ -1,0 +1,85 @@
+{
+  "_note": "Invented test records in the shape of Europe PMC search results. Not real studies.",
+  "reviews_cited": [
+    {
+      "pmid": "90000001",
+      "doi": "10.0000/fixture.1",
+      "title": "Fixture meta-analysis of compound supplementation and outcome A.",
+      "pubYear": "2016",
+      "citedByCount": 160,
+      "pubTypeList": {"pubType": ["Meta-Analysis", "Journal Article"]},
+      "journalInfo": {"journal": {"title": "Fixture Journal"}},
+      "abstractText": "<h4>Background</h4>Fixture background sentence. <h4>Results</h4>A total of 1,200 participants from 14 trials were pooled. Supplementation lowered outcome A compared with placebo (p &lt; 0.01)."
+    },
+    {
+      "pmid": "90000002",
+      "title": "Fixture systematic review of compound supplementation and outcome B.",
+      "pubYear": "2024",
+      "citedByCount": 30,
+      "pubTypeList": {"pubType": "Systematic Review"},
+      "journalInfo": {"journal": {"title": "Fixture Reviews"}},
+      "abstractText": "Nine trials with 480 participants were included. No clear difference in outcome B was found."
+    },
+    {
+      "pmid": "90000003",
+      "title": "Fixture meta-analysis of compound given to rats.",
+      "pubYear": "2020",
+      "citedByCount": 500,
+      "pubTypeList": {"pubType": ["Meta-Analysis"]},
+      "abstractText": "An animal fixture that the title filter removes."
+    },
+    {
+      "pmid": "90000004",
+      "title": "Fixture review with no abstract.",
+      "pubYear": "2021",
+      "citedByCount": 40,
+      "pubTypeList": {"pubType": ["Meta-Analysis"]}
+    }
+  ],
+  "reviews_recent": [
+    {
+      "pmid": "90000005",
+      "title": "Fixture meta-analysis published this year.",
+      "pubYear": "2026",
+      "citedByCount": 0,
+      "pubTypeList": {"pubType": ["Meta-Analysis"]},
+      "abstractText": "Six trials with 300 participants. Supplementation lowered outcome A."
+    },
+    {
+      "pmid": "90000002",
+      "title": "Fixture systematic review of compound supplementation and outcome B.",
+      "pubYear": "2024",
+      "citedByCount": 30,
+      "pubTypeList": {"pubType": "Systematic Review"},
+      "abstractText": "Nine trials with 480 participants were included. No clear difference in outcome B was found."
+    }
+  ],
+  "trials": [
+    {
+      "pmid": "90000011",
+      "title": "Fixture randomised trial of compound and outcome A.",
+      "pubYear": "2019",
+      "citedByCount": 70,
+      "pubTypeList": {"pubType": ["Randomized Controlled Trial", "Journal Article"]},
+      "abstractText": "In this trial 120 adults were randomised to compound or placebo for 8 weeks. Outcome A fell in the compound group."
+    },
+    {
+      "pmid": "90000012",
+      "title": "Fixture randomised trial of a combination product.",
+      "pubYear": "2022",
+      "citedByCount": 10,
+      "pubTypeList": {"pubType": ["Randomized Controlled Trial"]},
+      "abstractText": "Sixty adults took a fixture combination product. Outcome C was unchanged."
+    }
+  ],
+  "background": [
+    {
+      "pmid": "90000021",
+      "title": "Fixture narrative review of how the compound is handled in the body.",
+      "pubYear": "2015",
+      "citedByCount": 900,
+      "pubTypeList": {"pubType": ["Review", "Journal Article"]},
+      "abstractText": "The compound is absorbed in the small intestine and excreted by the kidneys."
+    }
+  ]
+}
