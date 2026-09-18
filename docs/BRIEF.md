@@ -862,7 +862,7 @@ Every entry becomes one `compounds.yml` record with `category` set to the sectio
 | hmb | HMB | mg | mineral_elemental | 3000 | calcium_hmb (~80% HMB) vs free_acid; `label_convention: compound_default` | 2 |
 | betaine | Betaine (TMG) | mg | simple_mass | 2500 | anhydrous; betaine HCl is a **different product** (digestive) → own id `betaine_hcl` (650) | 2 |
 | betaine_hcl | Betaine HCl | mg | simple_mass | 650 | one class | 3 |
-| collagen | Collagen | mg | per_gram_macro | 10000 | bovine / marine / chicken type II (own class, 40) / vegan "builder" (exclude) — hydrolysed peptides; grams per serving | 1 |
+| collagen | Collagen | mg | simple_mass (live 2026-09-18, DECISIONS) | 10000 | bovine / marine / chicken type II (own class, 40) / vegan "builder" (exclude) — hydrolysed peptides; grams per serving | 1 |
 | agmatine | Agmatine | mg | simple_mass | 500 | one class | 3 |
 
 ### F.4 Sports & performance (`category: sports`) — ingredients not already above

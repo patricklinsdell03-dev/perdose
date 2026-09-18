@@ -5032,5 +5032,106 @@
     ]
    }
   ]
+ },
+ {
+  "id": "collagen",
+  "name": "Collagen",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "collagen",
+  "unit": "mg",
+  "standard_dose": 10000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "collagen",
+   "collagen peptides",
+   "collagen peptide",
+   "hydrolysed collagen",
+   "hydrolyzed collagen",
+   "marine collagen",
+   "bovine collagen",
+   "fish collagen",
+   "uc-ii",
+   "peptan",
+   "verisol"
+  ],
+  "classes": [
+   {
+    "id": "col_bovine",
+    "label": "Bovine",
+    "slug": "bovine",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "bovine",
+      "names": [
+       "bovine",
+       "beef",
+       "grass-fed",
+       "grass fed",
+       "hydrolysed bovine collagen"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "col_marine",
+    "label": "Marine",
+    "slug": "marine",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "marine",
+      "names": [
+       "marine",
+       "fish",
+       "hydrolysed marine collagen",
+       "fish collagen"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "col_other",
+    "label": "Unspecified source",
+    "slug": "collagen-peptides",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "peptides",
+      "names": [
+       "collagen peptides",
+       "peptides",
+       "hydrolysed collagen",
+       "hydrolyzed collagen",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "col_type2",
+    "label": "Type II (UC-II)",
+    "slug": "type-ii",
+    "standard_dose": 40.0,
+    "forms": [
+     {
+      "id": "type_ii",
+      "names": [
+       "uc-ii",
+       "type ii",
+       "undenatured",
+       "chicken",
+       "undenatured type ii"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
  }
 ]

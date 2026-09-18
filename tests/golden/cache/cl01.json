@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "collagen",
+        "form_raw": "Fish Collagen",
+        "form_id": "marine",
+        "amount_per_serving": 3000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Fish Collagen 3,000mg"
+        }
+      },
+      {
+        "compound_id": "vitamin_c",
+        "form_raw": "Vitamin C",
+        "form_id": "unspecified",
+        "amount_per_serving": 60.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin C 60mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 180,
+    "pack_unit_type": "tablet",
+    "units_per_serving": 3.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.95,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 tablets per day"
+    }
+  }
+}

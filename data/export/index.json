@@ -264,7 +264,7 @@
   "name": "Vitamin C",
   "category": "vitamins",
   "unit": "mg",
-  "product_count": 32,
+  "product_count": 36,
   "retailer_count": 4,
   "classes": [
    {
@@ -272,8 +272,8 @@
     "label": "Standard (ascorbic acid and ascorbates)",
     "slug": "standard",
     "standard_dose": 1000.0,
-    "ranked_count": 10,
-    "unverified_count": 0,
+    "ranked_count": 11,
+    "unverified_count": 1,
     "retailer_count": 4,
     "from_price_per_std_dose": 0.03745833333333334
    },
@@ -584,7 +584,7 @@
   "name": "Copper",
   "category": "minerals",
   "unit": "mg",
-  "product_count": 6,
+  "product_count": 7,
   "retailer_count": 3,
   "classes": [
    {
@@ -604,7 +604,7 @@
   "name": "Manganese",
   "category": "minerals",
   "unit": "mg",
-  "product_count": 1,
+  "product_count": 2,
   "retailer_count": 1,
   "classes": [
    {
@@ -876,6 +876,56 @@
     "unverified_count": 0,
     "retailer_count": 3,
     "from_price_per_std_dose": 0.03370833333333333
+   }
+  ]
+ },
+ {
+  "id": "collagen",
+  "name": "Collagen",
+  "category": "amino-acids",
+  "unit": "mg",
+  "product_count": 6,
+  "retailer_count": 2,
+  "classes": [
+   {
+    "id": "col_bovine",
+    "label": "Bovine",
+    "slug": "bovine",
+    "standard_dose": 10000.0,
+    "ranked_count": 3,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.4
+   },
+   {
+    "id": "col_marine",
+    "label": "Marine",
+    "slug": "marine",
+    "standard_dose": 10000.0,
+    "ranked_count": 1,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 1.3888888888888888
+   },
+   {
+    "id": "col_other",
+    "label": "Unspecified source",
+    "slug": "collagen-peptides",
+    "standard_dose": 10000.0,
+    "ranked_count": 0,
+    "unverified_count": 1,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
+    "id": "col_type2",
+    "label": "Type II (UC-II)",
+    "slug": "type-ii",
+    "standard_dose": 40.0,
+    "ranked_count": 1,
+    "unverified_count": 0,
+    "retailer_count": 1,
+    "from_price_per_std_dose": 0.4998333333333333
    }
   ]
  }

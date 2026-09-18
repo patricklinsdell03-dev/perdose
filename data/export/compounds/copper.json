@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T20:29:46+01:00",
+ "generated_at": "2026-09-18T21:55:00+01:00",
  "compound": {
   "id": "copper",
   "name": "Copper",
@@ -361,6 +361,53 @@
       "pack_units": "30Capsules",
       "units_per_serving": "Consume 1 capsule daily",
       "amount_per_serving": "Copper ; 20 ; 0.20mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-uc-ii-collagen",
+     "product_id": "healthspan-elite-healthspan-elite-uc-ii-collagen-60-capsules",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite UC-II Collagen 60 Capsules",
+     "display_name": "UC-II Collagen 60 Capsules",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/elite-uc-ii-collagen/",
+     "image_url": null,
+     "price_gbp": 29.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "other",
+     "amount_per_serving": 0.3,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 1.666111111111111,
+     "price_per_std_dose": 1.666111111111111,
+     "cost_per_month": 49.983333333333334,
+     "days_supply": 18.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "collagen",
+      "manganese",
+      "vitamin_c",
+      "Acerola Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Swallow 1 capsule daily with water",
+      "servings_stated": "Per capsule",
+      "amount_per_serving": "Copper ; 0.3 mg ; 30% NRV"
      },
      "components": [],
      "branded_extract": null

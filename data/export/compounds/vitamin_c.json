@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T20:29:46+01:00",
+ "generated_at": "2026-09-18T21:55:00+01:00",
  "compound": {
   "id": "vitamin_c",
   "name": "Vitamin C",
@@ -516,6 +516,49 @@
       "units_per_serving": "Swallow 1 tablet daily",
       "amount_per_serving": "Vitamin C ; 80 mg ; 100% NRV",
       "form_raw": "Ascorbic Acid"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:068153",
+     "product_id": "holland-barrett-holland-barrett-marine-collagen-with-vitamin-c-180-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Marine Collagen with Vitamin C 180 Tablets",
+     "display_name": "Marine Collagen with Vitamin C 180 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-marine-collagen-with-vitamin-c-180-tablets-6100005877",
+     "image_url": null,
+     "price_gbp": 25.0,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 60.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.006944444444444444,
+     "price_per_std_dose": 6.944444444444444,
+     "cost_per_month": 208.33333333333331,
+     "days_supply": 3.6,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "collagen"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 Tablet/tablets per day",
+      "amount_per_serving": "Vitamin C ; 60mg ; 75% NRV"
      },
      "components": [],
      "branded_extract": null
@@ -1814,9 +1857,148 @@
      },
      "components": [],
      "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:068159",
+     "product_id": "holland-barrett-holland-barrett-bovine-collagen-3000mg-180-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Bovine Collagen 3000mg 180 Tablets",
+     "display_name": "Bovine Collagen 3000mg 180 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-bovine-collagen-180-tablets-6100005781",
+     "image_url": null,
+     "price_gbp": 16.5,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "ascorbic_acid",
+     "amount_per_serving": 30.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.009166666666666667,
+     "price_per_std_dose": 9.166666666666666,
+     "cost_per_month": 275.0,
+     "days_supply": 1.8,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "collagen",
+      "L-Ornithine Hydrochloride"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 Tablet/tablets per day",
+      "amount_per_serving": "Vitamin C ; 30 mg ; 13% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "healthspan:elite-uc-ii-collagen",
+     "product_id": "healthspan-elite-healthspan-elite-uc-ii-collagen-60-capsules",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite UC-II Collagen 60 Capsules",
+     "display_name": "UC-II Collagen 60 Capsules",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/elite-uc-ii-collagen/",
+     "image_url": null,
+     "price_gbp": 29.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "unspecified",
+     "amount_per_serving": 40.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.012495833333333333,
+     "price_per_std_dose": 12.495833333333334,
+     "cost_per_month": 374.875,
+     "days_supply": 2.4,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "collagen",
+      "manganese",
+      "copper",
+      "Acerola Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Swallow 1 capsule daily with water",
+      "servings_stated": "Per capsule",
+      "amount_per_serving": "Vitamin C ; 40 mg ; 50% NRV"
+     },
+     "components": [],
+     "branded_extract": null
     }
    ],
-   "unverified": []
+   "unverified": [
+    {
+     "listing_id": "holland_barrett:084916",
+     "product_id": "optimum-nutrition-optimum-nutrition-collagen-unflavoured-320g",
+     "brand": "Optimum Nutrition",
+     "name": "Optimum Nutrition Collagen Unflavoured 320g",
+     "display_name": "Collagen Unflavoured 320g",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/optimum-nutrition-collagen-unflavoured-320g-6100012805",
+     "image_url": null,
+     "price_gbp": 13.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 320,
+      "unit_type": "gram",
+      "units_per_serving": null,
+      "multipack_count": 1,
+      "servings": null
+     },
+     "form_id": "unspecified",
+     "amount_per_serving": 80.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": null,
+     "price_per_std_dose": null,
+     "cost_per_month": null,
+     "days_supply": null,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "collagen"
+     ],
+     "review_reasons": [
+      {
+       "code": "servings_unknown",
+       "text": "We could not work out how many servings are in the pack."
+      }
+     ],
+     "evidence": {
+      "pack_units": "320g",
+      "amount_per_serving": "Vitamin C ; 400mg / 80mg (100% RI)"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ]
   },
   {
    "id": "vc_liposomal",

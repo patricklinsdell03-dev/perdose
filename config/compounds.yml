@@ -1746,3 +1746,27 @@ compounds:
       mv: { label: "Multivitamins (per serving)", slug: multivitamins }
     forms:
       - { id: multivitamin, names: [tablets, capsules, gummies, effervescent, liquid, men, women, kids, 50+, unspecified], class: mv, note: "One table; men's/women's/kids' are shown in the product name. Price per daily serving; the other actives list shows what a serving contains." }
+
+  # ---- Collagen (Patrick, 2026-09-18): compared per 10 g of collagen as simple_mass ----
+  - id: collagen
+    name: Collagen
+    category: amino-acids
+    tier: 2
+    comparison_quantity: collagen
+    unit: mg
+    standard_dose: 10000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [collagen, collagen peptides, collagen peptide, hydrolysed collagen, hydrolyzed collagen, marine collagen, bovine collagen, fish collagen, uc-ii, peptan, verisol]
+    alias_exclusions: [collagen builder, collagen booster, vegan collagen, collagen support]   # not collagen (brief F.3)
+    accepted_cofactors: [vitamin c, hyaluronic acid, biotin, zinc, copper, manganese, ornithine, l-ornithine, acerola]
+    classes:
+      col_bovine: { label: "Bovine", slug: bovine }
+      col_marine: { label: "Marine", slug: marine }
+      col_other: { label: "Unspecified source", slug: collagen-peptides }
+      col_type2: { label: "Type II (UC-II)", slug: type-ii }
+    forms:
+      - { id: bovine, names: [bovine, beef, grass-fed, grass fed, hydrolysed bovine collagen], class: col_bovine }
+      - { id: marine, names: [marine, fish, hydrolysed marine collagen, fish collagen], class: col_marine }
+      - { id: peptides, names: [collagen peptides, peptides, hydrolysed collagen, hydrolyzed collagen, unspecified], class: col_other }
+      - { id: type_ii, names: [uc-ii, type ii, undenatured, chicken, undenatured type ii], class: col_type2, standard_dose_override: 40, note: "Undenatured type II is sold at ~40 mg; own table, standard dose 40 mg." }

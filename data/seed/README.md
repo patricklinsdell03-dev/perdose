@@ -32,6 +32,10 @@ Nothing is invented. Where a page did not show something, the field is blank.
 
 19 rows read from product pages on 2026-09-18, same conventions as above: Healthspan 6 (MultiVitality Gold / 50 Plus / 70 Plus / Vegetarians & Vegans / Pro, Elite Gold A-Z), Holland & Barrett 7 (ABC-Z Multivits, Ultra Man, Multivitamin Gummies, Vitabiotics Wellwoman 50+ sold by H&B, plus Calcium Magnesium Vitamin D & Zinc, High Strength Glucosamine & Chondroitin Complex, Omega 3 Fish Oil + D3), Bulk 6 (Multivitamin & Multimineral, Complete Multivitamin Complex 90 and 270, Vegan Multivitamin Complex, Multivitamin Gummies 60 and 120). Bulk pack sizes come from each variant's product code (`-0090` = 90), as before; Healthspan records the size selected when the page opens. Marketing and health-claim text on the pages was left out. Myprotein multivitamins were not collected. H&B's product pages publish their standard delivery charge (£3.49, 1–3 days) in their structured data, now in `config/retailers.yml`.
 
+## Collagen (added 2026-09-18)
+
+6 rows: Holland & Barrett 5 (its own Marine Collagen with Vitamin C 180 and Bovine Collagen 3000mg 180 tablets, plus Myprotein Hydrolysed Collagen Peptide 1kg, Optimum Nutrition Collagen 320g and Myvitamins Collagen 90 capsules as sold by H&B), Healthspan 1 (Elite UC-II Collagen 60 capsules). The powders' nutrition panels give protein per serving; only the Myprotein powder says it is 100% collagen peptide.
+
 ## Refreshing
 
 Prices go stale. To refresh, re-read the same URLs and update `price_gbp`, `in_stock`, `captured_on`. Live affiliate feeds replace these files in Phase 6.

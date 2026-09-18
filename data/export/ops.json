@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T20:29:46+01:00",
+ "generated_at": "2026-09-18T21:55:00+01:00",
  "prompt_version": "1.1.0",
  "retailers": [
   {
@@ -13,16 +13,16 @@
   {
    "id": "healthspan",
    "name": "Healthspan",
-   "listings": 34,
-   "in_stock": 34,
+   "listings": 35,
+   "in_stock": 35,
    "last_seen": "2026-09-18",
    "days_stale": 0
   },
   {
    "id": "holland_barrett",
    "name": "Holland & Barrett",
-   "listings": 22,
-   "in_stock": 22,
+   "listings": 27,
+   "in_stock": 27,
    "last_seen": "2026-09-18",
    "days_stale": 0
   },
@@ -35,11 +35,13 @@
    "days_stale": 1
   }
  ],
- "products": 118,
- "needs_review_total": 0,
- "needs_review_by_reason": {},
- "extractions": 118,
- "escalation_rate": 0.025,
+ "products": 124,
+ "needs_review_total": 1,
+ "needs_review_by_reason": {
+  "servings_unknown": 1
+ },
+ "extractions": 124,
+ "escalation_rate": 0.024,
  "classes_lost": [],
  "zero_product_compounds": [
   "vitamin_b9",

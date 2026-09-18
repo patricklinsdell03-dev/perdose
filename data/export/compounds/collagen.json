@@ -1,0 +1,410 @@
+{
+ "generated_at": "2026-09-18T21:55:00+01:00",
+ "compound": {
+  "id": "collagen",
+  "name": "Collagen",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "collagen",
+  "unit": "mg",
+  "standard_dose": 10000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "collagen",
+   "collagen peptides",
+   "collagen peptide",
+   "hydrolysed collagen",
+   "hydrolyzed collagen",
+   "marine collagen",
+   "bovine collagen",
+   "fish collagen",
+   "uc-ii",
+   "peptan",
+   "verisol"
+  ],
+  "classes": [
+   {
+    "id": "col_bovine",
+    "label": "Bovine",
+    "slug": "bovine",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "bovine",
+      "names": [
+       "bovine",
+       "beef",
+       "grass-fed",
+       "grass fed",
+       "hydrolysed bovine collagen"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "col_marine",
+    "label": "Marine",
+    "slug": "marine",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "marine",
+      "names": [
+       "marine",
+       "fish",
+       "hydrolysed marine collagen",
+       "fish collagen"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "col_other",
+    "label": "Unspecified source",
+    "slug": "collagen-peptides",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "peptides",
+      "names": [
+       "collagen peptides",
+       "peptides",
+       "hydrolysed collagen",
+       "hydrolyzed collagen",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "col_type2",
+    "label": "Type II (UC-II)",
+    "slug": "type-ii",
+    "standard_dose": 40.0,
+    "forms": [
+     {
+      "id": "type_ii",
+      "names": [
+       "uc-ii",
+       "type ii",
+       "undenatured",
+       "chicken",
+       "undenatured type ii"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "col_bovine",
+   "label": "Bovine",
+   "slug": "bovine",
+   "standard_dose": 10000.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:072156",
+     "product_id": "myprotein-myprotein-hydrolysed-collagen-peptide-1kg",
+     "brand": "Myprotein",
+     "name": "Myprotein Hydrolysed Collagen Peptide 1kg",
+     "display_name": "Hydrolysed Collagen Peptide 1kg",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/hydrolysed-collagen-peptide-1kg-6100004995",
+     "image_url": null,
+     "price_gbp": 40.0,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 1000,
+      "unit_type": "gram",
+      "units_per_serving": 25.0,
+      "multipack_count": 1,
+      "servings": 40.0
+     },
+     "form_id": "bovine",
+     "amount_per_serving": 25000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": true,
+     "price_per_unit": 4e-05,
+     "price_per_std_dose": 0.4,
+     "cost_per_month": 12.0,
+     "days_supply": 100.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "1kg",
+      "units_per_serving": "Mix 25g (approx. 1 scoop) with 250ml of water or milk",
+      "amount_per_serving": "Per 25g Serving"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:068159",
+     "product_id": "holland-barrett-holland-barrett-bovine-collagen-3000mg-180-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Bovine Collagen 3000mg 180 Tablets",
+     "display_name": "Bovine Collagen 3000mg 180 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-bovine-collagen-180-tablets-6100005781",
+     "image_url": null,
+     "price_gbp": 16.5,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "bovine",
+     "amount_per_serving": 3000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": true,
+     "price_per_unit": 9.166666666666667e-05,
+     "price_per_std_dose": 0.9166666666666666,
+     "cost_per_month": 27.5,
+     "days_supply": 18.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_c",
+      "L-Ornithine Hydrochloride"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 Tablet/tablets per day",
+      "amount_per_serving": "Hydrolysed Collagen ; 3,000mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:072193",
+     "product_id": "myprotein-myvitamins-collagen-90-capsules",
+     "brand": "Myprotein",
+     "name": "Myvitamins Collagen 90 Capsules",
+     "display_name": "Myvitamins Collagen 90 Capsules",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/myvitamins-collagen-90-capsules-6100004983",
+     "image_url": null,
+     "price_gbp": 12.0,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "bovine",
+     "amount_per_serving": 400.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": true,
+     "price_per_unit": 0.0003333333333333333,
+     "price_per_std_dose": 3.333333333333333,
+     "cost_per_month": 99.99999999999999,
+     "days_supply": 3.6,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Capsules",
+      "units_per_serving": "Consume 1 capsule daily",
+      "amount_per_serving": "Collagen ; 400mg",
+      "form_raw": "Hydrolysed Bovine Collagen Peptide"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "col_marine",
+   "label": "Marine",
+   "slug": "marine",
+   "standard_dose": 10000.0,
+   "ranked": [
+    {
+     "listing_id": "holland_barrett:068153",
+     "product_id": "holland-barrett-holland-barrett-marine-collagen-with-vitamin-c-180-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Marine Collagen with Vitamin C 180 Tablets",
+     "display_name": "Marine Collagen with Vitamin C 180 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-marine-collagen-with-vitamin-c-180-tablets-6100005877",
+     "image_url": null,
+     "price_gbp": 25.0,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "marine",
+     "amount_per_serving": 3000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": true,
+     "price_per_unit": 0.0001388888888888889,
+     "price_per_std_dose": 1.3888888888888888,
+     "cost_per_month": 41.666666666666664,
+     "days_supply": 18.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_c"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 Tablet/tablets per day",
+      "amount_per_serving": "Fish Collagen ; 3,000mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  },
+  {
+   "id": "col_other",
+   "label": "Unspecified source",
+   "slug": "collagen-peptides",
+   "standard_dose": 10000.0,
+   "ranked": [],
+   "combinations": [],
+   "unverified": [
+    {
+     "listing_id": "holland_barrett:084916",
+     "product_id": "optimum-nutrition-optimum-nutrition-collagen-unflavoured-320g",
+     "brand": "Optimum Nutrition",
+     "name": "Optimum Nutrition Collagen Unflavoured 320g",
+     "display_name": "Collagen Unflavoured 320g",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/optimum-nutrition-collagen-unflavoured-320g-6100012805",
+     "image_url": null,
+     "price_gbp": 13.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 320,
+      "unit_type": "gram",
+      "units_per_serving": null,
+      "multipack_count": 1,
+      "servings": null
+     },
+     "form_id": "peptides",
+     "amount_per_serving": 18000.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": true,
+     "price_per_unit": null,
+     "price_per_std_dose": null,
+     "cost_per_month": null,
+     "days_supply": null,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_c"
+     ],
+     "review_reasons": [
+      {
+       "code": "servings_unknown",
+       "text": "We could not work out how many servings are in the pack."
+      }
+     ],
+     "evidence": {
+      "pack_units": "320g",
+      "amount_per_serving": "Protein ; 89g / 18g"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ]
+  },
+  {
+   "id": "col_type2",
+   "label": "Type II (UC-II)",
+   "slug": "type-ii",
+   "standard_dose": 40.0,
+   "ranked": [
+    {
+     "listing_id": "healthspan:elite-uc-ii-collagen",
+     "product_id": "healthspan-elite-healthspan-elite-uc-ii-collagen-60-capsules",
+     "brand": "Healthspan Elite",
+     "name": "Healthspan Elite UC-II Collagen 60 Capsules",
+     "display_name": "UC-II Collagen 60 Capsules",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/elite-uc-ii-collagen/",
+     "image_url": null,
+     "price_gbp": 29.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 60,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "type_ii",
+     "amount_per_serving": 40.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": true,
+     "price_per_unit": 0.012495833333333333,
+     "price_per_std_dose": 0.4998333333333333,
+     "cost_per_month": 14.995,
+     "days_supply": 60.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "manganese",
+      "vitamin_c",
+      "copper",
+      "Acerola Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "Swallow 1 capsule daily with water",
+      "servings_stated": "Per capsule",
+      "amount_per_serving": "UC-II Collagen ; 40 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "combinations": [],
+   "unverified": []
+  }
+ ]
+}

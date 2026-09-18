@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T20:29:46+01:00",
+ "generated_at": "2026-09-18T21:55:00+01:00",
  "retailers": [
   {
    "id": "bulk",
@@ -41,7 +41,7 @@
   }
  ],
  "counts": {
-  "products": 118,
+  "products": 124,
   "compounds": {
    "magnesium": 33,
    "zinc": 27,
@@ -50,7 +50,7 @@
    "omega_3": 19,
    "creatine": 12,
    "ashwagandha": 8,
-   "vitamin_c": 32,
+   "vitamin_c": 36,
    "vitamin_b12": 7,
    "l_theanine": 2,
    "vitamin_b6": 11,
@@ -63,8 +63,8 @@
    "vitamin_b1": 2,
    "vitamin_b2": 2,
    "vitamin_b3": 14,
-   "copper": 6,
-   "manganese": 1,
+   "copper": 7,
+   "manganese": 2,
    "astaxanthin": 3,
    "chondroitin": 1,
    "ginkgo": 1,
@@ -76,7 +76,8 @@
    "carnitine": 1,
    "green_tea_extract": 4,
    "ginger": 1,
-   "multivitamin": 16
+   "multivitamin": 16,
+   "collagen": 6
   },
   "classes": {
    "mg_glycinate": 5,
@@ -98,7 +99,7 @@
    "cr_mono": 12,
    "ash_ksm66": 5,
    "ash_generic": 0,
-   "vc_standard": 10,
+   "vc_standard": 11,
    "vc_liposomal": 1,
    "b12_methyl": 4,
    "b12_cyano": 2,
@@ -132,7 +133,11 @@
    "car_alcar": 0,
    "gte": 0,
    "gin_extract": 0,
-   "mv": 16
+   "mv": 16,
+   "col_bovine": 3,
+   "col_marine": 1,
+   "col_other": 0,
+   "col_type2": 1
   }
  }
 }

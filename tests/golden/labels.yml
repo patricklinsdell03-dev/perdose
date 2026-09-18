@@ -8166,6 +8166,69 @@ labels:
       servings: 60
       needs_review: false
 
+
+  # ---- Collagen (simple_mass per 10 g; added 2026-09-18) ----
+  - id: cl01
+    compounds: [collagen]
+    title: "Marine Collagen with Vitamin C 180 Tablets"
+    description: "Directions: Take 3 tablets per day. || Nutritional Information: 3 Tablets Contain: Fish Collagen 3,000mg | Vitamin C 60mg"
+    extraction:
+      actives:
+        - { compound_id: collagen, form_raw: Marine, form_id: marine, amount_per_serving: 3000, amount_unit: mg, amount_refers_to: compound, evidence: { amount_per_serving: "Fish Collagen 3,000mg" } }
+      is_single_ingredient: false
+      other_actives: [Vitamin C]
+      pack_units: 180
+      pack_unit_type: tablet
+      units_per_serving: 3
+      confidence: 0.95
+      evidence: { pack_units: "180 Tablets", units_per_serving: "Take 3 tablets per day" }
+    expect:
+      compound: collagen
+      form_class: col_marine
+      amount: 3000
+      servings: 60
+      multi_ingredient: false
+      needs_review: false
+  - id: cl02
+    compounds: [collagen]
+    title: "Hydrolysed Bovine Collagen Peptide Powder 1kg"
+    description: "Directions: Mix 25g (approx. 1 scoop) with 250ml of water. || Ingredients: Hydrolysed Bovine Collagen Peptide -100%"
+    extraction:
+      actives:
+        - { compound_id: collagen, form_raw: Bovine, form_id: bovine, amount_per_serving: 25, amount_unit: g, amount_refers_to: compound, evidence: { amount_per_serving: "Mix 25g" } }
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 1000
+      pack_unit_type: gram
+      units_per_serving: 25
+      confidence: 0.9
+      evidence: { pack_units: "1kg", units_per_serving: "Mix 25g" }
+    expect:
+      compound: collagen
+      form_class: col_bovine
+      amount: 25000
+      servings: 40
+      needs_review: false
+  - id: cl03
+    compounds: [collagen]
+    title: "UC-II Collagen 40mg with Vitamin C 60 Capsules"
+    extraction:
+      actives:
+        - { compound_id: collagen, form_raw: UC-II, form_id: type_ii, amount_per_serving: 40, amount_unit: mg, amount_refers_to: compound, evidence: { amount_per_serving: "40mg" } }
+      is_single_ingredient: false
+      other_actives: [Vitamin C]
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence: { pack_units: "60 Capsules" }
+    expect:
+      compound: collagen
+      form_class: col_type2
+      amount: 40
+      standard_dose: 40
+      servings: 60
+      needs_review: false
+
 # Must be dropped at ingest, never extracted (Appendix B). Checked from Phase 3, when the
 # ingest alias filter exists. Synthetic titles.
 negatives:
