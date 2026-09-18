@@ -4,6 +4,8 @@ Any change to SYSTEM_PROMPT or to how the user message is built must bump `promp
 in config/llm.yml, so cached extractions are redone (brief §9.4).
 """
 
+import re
+
 from pipeline.compounds import Compound, Registry
 from pipeline.normalise.rules import find_term
 
@@ -83,10 +85,13 @@ def find_candidates(registry: Registry, title: str, description: str = "") -> li
     text = f"{title}\n{description}".lower()
     found = []
     for compound in registry.compounds:
+        visible = text
+        for phrase in compound.alias_exclusions:  # "calcium hmb", "magnesium stearate"
+            visible = re.sub(re.escape(phrase.lower()), " " * len(phrase), visible)
         positions = [
             pos
             for term in [compound.name, *compound.aliases]
-            if (pos := find_term(term, text)) is not None
+            if (pos := find_term(term, visible)) is not None
         ]
         if positions:
             found.append((min(positions), compound))

@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "copper",
+        "form_raw": "copper gluconate",
+        "form_id": "gluconate",
+        "amount_per_serving": 2.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "elemental",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Copper 2mg (as copper gluconate)"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not explicitly stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Tablets"
+    }
+  }
+}

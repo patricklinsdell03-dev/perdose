@@ -1,0 +1,54 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "arginine",
+        "form_raw": null,
+        "form_id": "base",
+        "amount_per_serving": 1500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "L-Arginine 1500mg"
+        }
+      },
+      {
+        "compound_id": "citrulline",
+        "form_raw": null,
+        "form_id": "base",
+        "amount_per_serving": 1500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "L-Citrulline 1500mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": 3.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No explicit form stated for either amino acid",
+      "No cue words indicating whether amount refers to elemental or compound mass"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules",
+      "units_per_serving": "3 capsules"
+    }
+  }
+}

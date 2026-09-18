@@ -1,0 +1,14 @@
+# DRAFT — formulas behind every factor in batch_02.yml. Same method as
+# config/factor_sources.yml: factor = active mass / molecular mass, IUPAC atomic weights.
+# `element` sources are elemental factors; `active_atoms` + `active_count` sources are for
+# actives that are molecules rather than elements (citrulline, HMB). tests/test_drafts.py
+# recomputes each one (tolerance 1.5 %).
+version: 1
+checked_on: 2026-09-18
+sources:
+  - { compound: copper, form: gluconate,    element: Cu, substance: "copper(II) gluconate", atoms: { Cu: 1, C: 12, H: 22, O: 14 } }
+  - { compound: copper, form: bisglycinate, element: Cu, substance: "copper bisglycinate, anhydrous", atoms: { Cu: 1, C: 4, H: 8, N: 2, O: 4 } }
+  - { compound: citrulline, form: base, substance: "L-citrulline", atoms: { C: 6, H: 13, N: 3, O: 3 }, active_atoms: { C: 6, H: 13, N: 3, O: 3 }, active_count: 1 }
+  - { compound: citrulline, form: malate_2_1, substance: "citrulline malate 2:1", atoms: { C: 16, H: 32, N: 6, O: 11 }, active_atoms: { C: 6, H: 13, N: 3, O: 3 }, active_count: 2 }
+  - { compound: citrulline, form: malate_1_1, substance: "citrulline malate 1:1", atoms: { C: 10, H: 19, N: 3, O: 8 }, active_atoms: { C: 6, H: 13, N: 3, O: 3 }, active_count: 1 }
+  - { compound: hmb, form: calcium_hmb, substance: "calcium beta-hydroxy-beta-methylbutyrate monohydrate", atoms: { Ca: 1, C: 10, H: 20, O: 7 }, active_atoms: { C: 5, H: 10, O: 3 }, active_count: 2 }

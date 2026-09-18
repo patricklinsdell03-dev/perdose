@@ -9,14 +9,10 @@ import yaml
 
 from pipeline.compounds import COMPOUNDS_PATH, Registry
 from pipeline.golden import MIN_LABELS_PER_COMPOUND, run_calc_only
+from tests.test_factors import computed_factor
 
 DRAFTS = sorted(Path("config/drafts").glob("batch_*.yml"))
 DRAFTS = [path for path in DRAFTS if not path.stem.endswith("_factor_sources")]
-
-ATOMIC_WEIGHT = {
-    "H": 1.008, "C": 12.011, "N": 14.007, "O": 15.999, "S": 32.06, "Cl": 35.45, "K": 39.098,
-    "Ca": 40.078, "Cr": 51.996, "Fe": 55.845, "I": 126.904, "Mg": 24.305, "Zn": 65.38,
-}  # fmt: skip
 
 
 def load_yaml(path):
@@ -43,9 +39,7 @@ def test_draft_factors_match_their_formulas(draft):
     sources = load_yaml(draft.with_name(f"{draft.stem}_factor_sources.yml"))["sources"]
     draft_ids = {c["id"] for c in load_yaml(draft)["compounds"]}
     for source in sources:
-        atoms = source["atoms"]
-        weight = sum(ATOMIC_WEIGHT[el] * n for el, n in atoms.items())
-        computed = ATOMIC_WEIGHT[source["element"]] * atoms[source["element"]] / weight
+        computed = computed_factor(source)
         configured = registry.get(source["compound"]).form(source["form"]).elemental_factor
         assert configured == pytest.approx(computed, rel=0.015), source["substance"]
     sourced = {(s["compound"], s["form"]) for s in sources}

@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "alpha_lipoic_acid",
+        "form_raw": null,
+        "form_id": "racemic",
+        "amount_per_serving": 200.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Alpha Lipoic Acid 200mg"
+        }
+      },
+      {
+        "compound_id": "coq10",
+        "form_raw": null,
+        "form_id": "ubiquinone",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "CoQ10 100mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated, units_per_serving unknown",
+      "amount_refers_to unclear for both actives due to no cue words"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

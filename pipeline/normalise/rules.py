@@ -133,6 +133,9 @@ def _mineral_elemental(active, amount, compound: Compound, form: Form | None, la
     def estimate():
         if form is None or form.elemental_factor is None:
             out.reasons.append("no_elemental_factor")
+        elif form.elemental_factor == 1:
+            # The substance is the active itself (pure L-citrulline): nothing to estimate.
+            out.value = amount
         else:
             out.value, out.basis = amount * form.elemental_factor, "estimated_from_compound"
 

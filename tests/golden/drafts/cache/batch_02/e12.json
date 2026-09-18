@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "inositol",
+        "form_raw": "Myo-Inositol",
+        "form_id": "myo",
+        "amount_per_serving": 2000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Myo-Inositol 2000mg"
+        }
+      },
+      {
+        "compound_id": "vitamin_b9",
+        "form_raw": "Folic Acid",
+        "form_id": "folic_acid",
+        "amount_per_serving": 200.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Folic Acid 200µg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "capsule",
+    "units_per_serving": 4.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "120 Capsules",
+      "units_per_serving": "4 capsules"
+    }
+  }
+}

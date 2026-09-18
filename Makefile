@@ -25,7 +25,7 @@ golden:
 
 # Calls the real LLM for every golden label (costs pennies) and saves the results for replay.
 golden-live:
-	$(PIPELINE) golden --live $(if $(DRAFT),--draft $(DRAFT))
+	$(PIPELINE) golden --live $(if $(DRAFT),--draft $(DRAFT)) $(if $(ONLY),--only $(ONLY))
 
 content:
 	$(PIPELINE) content --compound "$(COMPOUND)"

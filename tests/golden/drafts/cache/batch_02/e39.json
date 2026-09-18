@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "betaine",
+        "form_raw": "TMG",
+        "form_id": "anhydrous",
+        "amount_per_serving": 1500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "TMG 1500mg"
+        }
+      },
+      {
+        "compound_id": "creatine",
+        "form_raw": "Monohydrate",
+        "form_id": "monohydrate",
+        "amount_per_serving": 3000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Creatine Monohydrate 3000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 180,
+    "pack_unit_type": "capsule",
+    "units_per_serving": 6.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "180 Capsules",
+      "units_per_serving": "6 capsules"
+    }
+  }
+}

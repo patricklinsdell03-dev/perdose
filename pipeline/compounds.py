@@ -72,6 +72,9 @@ class Compound(_Model):
     components_sum: list[str] = []
     standardisation_component: str | None = None
     aliases: list[str] = Field(min_length=1)
+    # Phrases in which an alias hit does not count: "calcium HMB" is not a calcium product,
+    # "magnesium stearate" is an excipient. Blanked out before candidates are found.
+    alias_exclusions: list[str] = []
     accepted_cofactors: list[str] = []
     heuristics: Heuristics | None = None
     classes: dict[str, ClassInfo]

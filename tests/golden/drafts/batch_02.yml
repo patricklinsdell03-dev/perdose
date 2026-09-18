@@ -1,0 +1,1723 @@
+# DRAFT golden labels for config/drafts/batch_02.yml — synthetic test inputs (brief §15),
+# three per compound: straightforward, awkward, combination. Patrick spot-checks ~10 %
+# against real product pages before the batch goes live. Same format as ../labels.yml.
+version: 1
+labels:
+- id: e01
+  compounds:
+  - vitamin_b1
+  title: Vitamin B1 Thiamine 100mg 120 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_b1
+      form_raw: null
+      form_id: thiamine
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 100mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    compound: vitamin_b1
+    form_class: b1_thiamine
+    amount: 100
+    servings: 120
+    needs_review: false
+- id: e02
+  compounds:
+  - vitamin_b1
+  title: Benfotiamine 300mg — 2 capsules daily — 60 Capsules
+  extraction:
+    actives:
+    - compound_id: vitamin_b1
+      form_raw: Benfotiamine
+      form_id: benfotiamine
+      amount_per_serving: 300
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 300mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 60 Capsules
+      units_per_serving: 2 capsules daily
+  expect:
+    form: benfotiamine
+    form_class: b1_benfotiamine
+    amount: 300
+    servings: 30
+    needs_review: false
+- id: e03
+  compounds:
+  - vitamin_b1
+  - magnesium
+  title: Thiamine 50mg with Magnesium 100mg 90 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_b1
+      form_raw: null
+      form_id: thiamine
+      amount_per_serving: 50
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Thiamine 50mg
+    - compound_id: magnesium
+      form_raw: null
+      form_id: other
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Magnesium 100mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Tablets
+  expect:
+    compound: vitamin_b1
+    amount: 50
+    multi_ingredient: true
+    needs_review: false
+- id: e04
+  compounds:
+  - vitamin_b2
+  title: Riboflavin 100mg 90 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_b2
+      form_raw: null
+      form_id: riboflavin
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 100mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Tablets
+  expect:
+    compound: vitamin_b2
+    form_class: b2_riboflavin
+    amount: 100
+    servings: 90
+    needs_review: false
+- id: e05
+  compounds:
+  - vitamin_b2
+  title: Riboflavin-5-Phosphate 50mg (active B2) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: vitamin_b2
+      form_raw: Riboflavin-5-Phosphate
+      form_id: r5p
+      amount_per_serving: 50
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 50mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    form_class: b2_r5p
+    amount: 50
+    needs_review: false
+- id: e06
+  compounds:
+  - vitamin_b2
+  - vitamin_b6
+  title: Vitamin B2 25mg & Vitamin B6 25mg 120 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_b2
+      form_raw: null
+      form_id: riboflavin
+      amount_per_serving: 25
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: B2 25mg
+    - compound_id: vitamin_b6
+      form_raw: null
+      form_id: pyridoxine_hcl
+      amount_per_serving: 25
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: B6 25mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    compound: vitamin_b2
+    amount: 25
+    multi_ingredient: true
+    needs_review: false
+- id: e07
+  compounds:
+  - vitamin_b3
+  title: Niacin 500mg 100 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_b3
+      form_raw: null
+      form_id: niacin
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Tablets
+  expect:
+    compound: vitamin_b3
+    form_class: b3_niacin
+    amount: 500
+    servings: 100
+    needs_review: false
+- id: e08
+  compounds:
+  - vitamin_b3
+  title: Niacinamide 500mg (Vitamin B3, non-flush) 120 Capsules
+  extraction:
+    actives:
+    - compound_id: vitamin_b3
+      form_raw: Niacinamide
+      form_id: niacinamide
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    form_class: b3_niacinamide
+    amount: 500
+    needs_review: false
+- id: e09
+  compounds:
+  - vitamin_b3
+  title: No-Flush Niacin 500mg (Inositol Hexanicotinate) 90 Capsules
+  extraction:
+    actives:
+    - compound_id: vitamin_b3
+      form_raw: Inositol Hexanicotinate
+      form_id: ihn
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    form_class: b3_ihn
+    amount: 500
+    servings: 90
+    needs_review: false
+- id: e10
+  compounds:
+  - inositol
+  title: Myo-Inositol Powder 500g — 2g scoop
+  extraction:
+    actives:
+    - compound_id: inositol
+      form_raw: null
+      form_id: myo
+      amount_per_serving: 2
+      amount_unit: g
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 2g scoop
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 500
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 500g
+      units_per_serving: 2g scoop
+  expect:
+    compound: inositol
+    form_class: ino_myo
+    amount: 2000
+    servings: 250
+    needs_review: false
+- id: e11
+  compounds:
+  - inositol
+  title: D-Chiro-Inositol 600mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: inositol
+      form_raw: D-Chiro-Inositol
+      form_id: d_chiro
+      amount_per_serving: 600
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 600mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    form_class: ino_dchiro
+    amount: 600
+    standard_dose: 600
+    needs_review: false
+- id: e12
+  compounds:
+  - inositol
+  - vitamin_b9
+  title: Myo-Inositol 2000mg & Folic Acid 200µg — 4 capsules — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: inositol
+      form_raw: null
+      form_id: myo
+      amount_per_serving: 2000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Myo-Inositol 2000mg
+    - compound_id: vitamin_b9
+      form_raw: null
+      form_id: folic_acid
+      amount_per_serving: 200
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Folic Acid 200µg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 4
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 4 capsules
+  expect:
+    compound: inositol
+    amount: 2000
+    servings: 30
+    multi_ingredient: false
+    needs_review: false
+- id: e13
+  compounds:
+  - copper
+  title: Copper 2mg (as copper gluconate) 90 Tablets
+  extraction:
+    actives:
+    - compound_id: copper
+      form_raw: gluconate
+      form_id: gluconate
+      amount_per_serving: 2
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Tablets
+  expect:
+    compound: copper
+    form: gluconate
+    amount: 2
+    basis: stated_elemental
+    servings: 90
+    needs_review: false
+- id: e14
+  compounds:
+  - copper
+  title: Copper 1000µg (as copper bisglycinate) 90 Capsules
+  extraction:
+    actives:
+    - compound_id: copper
+      form_raw: copper bisglycinate
+      form_id: bisglycinate
+      amount_per_serving: 1000
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 1000µg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    form: bisglycinate
+    amount: 1.0
+    amount_unit: mg
+    basis: stated_elemental
+    needs_review: false
+- id: e15
+  compounds:
+  - copper
+  - zinc
+  title: Zinc 15mg & Copper 1mg 180 Tablets
+  extraction:
+    actives:
+    - compound_id: zinc
+      form_raw: null
+      form_id: other
+      amount_per_serving: 15
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Zinc 15mg
+    - compound_id: copper
+      form_raw: null
+      form_id: other
+      amount_per_serving: 1
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Copper 1mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 180
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 180 Tablets
+  expect:
+    compound: zinc
+    actives:
+    - compound: copper
+      amount: 1
+    needs_review: false
+- id: e16
+  compounds:
+  - manganese
+  title: Manganese 4mg 100 Tablets
+  extraction:
+    actives:
+    - compound_id: manganese
+      form_raw: null
+      form_id: manganese
+      amount_per_serving: 4
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 4mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Tablets
+  expect:
+    compound: manganese
+    amount: 4
+    servings: 100
+    needs_review: false
+- id: e17
+  compounds:
+  - manganese
+  title: Manganese Bisglycinate — 2mg elemental manganese per capsule — 90 Capsules
+  extraction:
+    actives:
+    - compound_id: manganese
+      form_raw: Bisglycinate
+      form_id: manganese
+      amount_per_serving: 2
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2mg elemental manganese
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    amount: 2
+    basis: stated_elemental
+    needs_review: false
+- id: e18
+  compounds:
+  - manganese
+  - zinc
+  title: Manganese 2mg with Zinc 10mg 120 Tablets
+  extraction:
+    actives:
+    - compound_id: manganese
+      form_raw: null
+      form_id: manganese
+      amount_per_serving: 2
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Manganese 2mg
+    - compound_id: zinc
+      form_raw: null
+      form_id: other
+      amount_per_serving: 10
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Zinc 10mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    compound: manganese
+    multi_ingredient: true
+    needs_review: false
+- id: e19
+  compounds:
+  - boron
+  title: Boron 3mg 120 Tablets
+  extraction:
+    actives:
+    - compound_id: boron
+      form_raw: null
+      form_id: salts
+      amount_per_serving: 3
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 3mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    compound: boron
+    form_class: b_all
+    amount: 3
+    servings: 120
+    needs_review: false
+- id: e20
+  compounds:
+  - boron
+  title: Boron 3mg (as boron citrate) — 2 tablets provide 6mg — 180 Tablets
+  extraction:
+    actives:
+    - compound_id: boron
+      form_raw: boron citrate
+      form_id: salts
+      amount_per_serving: 6
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2 tablets provide 6mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 180
+    pack_unit_type: tablet
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 180 Tablets
+      units_per_serving: 2 tablets provide
+  expect:
+    form_class: b_all
+    amount: 6
+    servings: 90
+    basis: stated_elemental
+    needs_review: false
+- id: e21
+  compounds:
+  - boron
+  - magnesium
+  title: Boron 3mg & Magnesium 200mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: boron
+      form_raw: null
+      form_id: salts
+      amount_per_serving: 3
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Boron 3mg
+    - compound_id: magnesium
+      form_raw: null
+      form_id: other
+      amount_per_serving: 200
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Magnesium 200mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: boron
+    multi_ingredient: true
+    needs_review: false
+- id: e22
+  compounds:
+  - citrulline
+  title: L-Citrulline Powder 250g — 3g serving
+  extraction:
+    actives:
+    - compound_id: citrulline
+      form_raw: L-Citrulline
+      form_id: base
+      amount_per_serving: 3
+      amount_unit: g
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: 3g serving
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 250
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 3
+    evidence:
+      pack_units: 250g
+      units_per_serving: 3g serving
+  expect:
+    compound: citrulline
+    form_class: cit_base
+    amount: 3000
+    basis: stated_elemental
+    servings: 83.33
+    needs_review: false
+- id: e23
+  compounds:
+  - citrulline
+  title: Citrulline Malate 2:1 Powder 500g — 8g serving
+  extraction:
+    actives:
+    - compound_id: citrulline
+      form_raw: Citrulline Malate 2:1
+      form_id: malate_2_1
+      amount_per_serving: 8
+      amount_unit: g
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 8g serving
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 500
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 8
+    evidence:
+      pack_units: 500g
+      units_per_serving: 8g serving
+  expect:
+    form: malate_2_1
+    form_class: cit_malate
+    amount: 5784
+    basis: estimated_from_compound
+    servings: 62.5
+    needs_review: false
+- id: e24
+  compounds:
+  - citrulline
+  title: Citrulline Malate 1000mg 120 Capsules
+  extraction:
+    actives:
+    - compound_id: citrulline
+      form_raw: Citrulline Malate
+      form_id: malate_unknown
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: 1000mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    form: malate_unknown
+    needs_review: true
+    review_reason: no_elemental_factor
+- id: e25
+  compounds:
+  - arginine
+  title: L-Arginine 1000mg 120 Tablets
+  extraction:
+    actives:
+    - compound_id: arginine
+      form_raw: null
+      form_id: base
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 1000mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    compound: arginine
+    form_class: arg_base
+    amount: 1000
+    servings: 120
+    needs_review: false
+- id: e26
+  compounds:
+  - arginine
+  title: AAKG Powder 250g (arginine alpha-ketoglutarate)
+  extraction:
+    actives:
+    - compound_id: arginine
+      form_raw: AAKG
+      form_id: akg
+      amount_per_serving: 3
+      amount_unit: g
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 'Serving size: 3g'
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 250
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 3
+    evidence:
+      pack_units: 250g
+      units_per_serving: 'Serving size: 3g'
+  expect:
+    form_class: arg_akg
+    amount: 3000
+    servings: 83.33
+    needs_review: false
+  description: 'Serving size: 3g (one level scoop). Servings per container: 83. Per serving: Arginine alpha-ketoglutarate 3g.'
+- id: e27
+  compounds:
+  - arginine
+  - citrulline
+  title: L-Arginine 1500mg & L-Citrulline 1500mg — 3 capsules — 90 Capsules
+  extraction:
+    actives:
+    - compound_id: arginine
+      form_raw: null
+      form_id: base
+      amount_per_serving: 1500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: L-Arginine 1500mg
+    - compound_id: citrulline
+      form_raw: null
+      form_id: base
+      amount_per_serving: 1500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: L-Citrulline 1500mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 3
+    evidence:
+      pack_units: 90 Capsules
+      units_per_serving: 3 capsules
+  expect:
+    compound: arginine
+    amount: 1500
+    servings: 30
+    multi_ingredient: true
+    needs_review: false
+- id: e28
+  compounds:
+  - lysine
+  title: L-Lysine 1000mg 120 Tablets
+  extraction:
+    actives:
+    - compound_id: lysine
+      form_raw: null
+      form_id: l_lysine
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 1000mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    compound: lysine
+    amount: 1000
+    servings: 120
+    needs_review: false
+- id: e29
+  compounds:
+  - lysine
+  title: L-Lysine HCl 500mg — 2 tablets provide 1000mg — 180 Tablets
+  extraction:
+    actives:
+    - compound_id: lysine
+      form_raw: L-Lysine HCl
+      form_id: l_lysine
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 2 tablets provide 1000mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 180
+    pack_unit_type: tablet
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 180 Tablets
+      units_per_serving: 2 tablets provide
+  expect:
+    amount: 1000
+    servings: 90
+    needs_review: false
+- id: e30
+  compounds:
+  - lysine
+  title: L-Lysine 1000mg with Vitamin C 100mg 90 Tablets
+  extraction:
+    actives:
+    - compound_id: lysine
+      form_raw: null
+      form_id: l_lysine
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: L-Lysine 1000mg
+    is_single_ingredient: false
+    other_actives:
+    - Vitamin C
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Tablets
+  expect:
+    compound: lysine
+    multi_ingredient: false
+    needs_review: false
+- id: e31
+  compounds:
+  - tryptophan
+  title: L-Tryptophan 500mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: tryptophan
+      form_raw: null
+      form_id: l_tryptophan
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: tryptophan
+    amount: 500
+    servings: 90
+    needs_review: false
+- id: e32
+  compounds:
+  - tryptophan
+  title: L-Tryptophan 220mg per capsule — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: tryptophan
+      form_raw: L-Tryptophan
+      form_id: l_tryptophan
+      amount_per_serving: 440
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 2 capsules provide 440mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules provide
+  expect:
+    amount: 440
+    servings: 60
+    needs_review: false
+  description: 'Directions: take 2 capsules daily. 2 capsules provide 440mg L-Tryptophan.'
+- id: e33
+  compounds:
+  - tryptophan
+  title: L-Tryptophan 500mg & Vitamin B6 5mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: tryptophan
+      form_raw: null
+      form_id: l_tryptophan
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: L-Tryptophan 500mg
+    is_single_ingredient: false
+    other_actives:
+    - Vitamin B6
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: tryptophan
+    multi_ingredient: false
+    needs_review: false
+- id: e34
+  compounds:
+  - gaba
+  title: GABA 500mg 100 Capsules
+  extraction:
+    actives:
+    - compound_id: gaba
+      form_raw: null
+      form_id: gaba
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Capsules
+  expect:
+    compound: gaba
+    amount: 500
+    servings: 100
+    needs_review: false
+- id: e35
+  compounds:
+  - gaba
+  title: PharmaGABA 100mg Chewable — 60 Tablets
+  extraction:
+    actives:
+    - compound_id: gaba
+      form_raw: PharmaGABA
+      form_id: gaba
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 100mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Tablets
+  expect:
+    amount: 100
+    servings: 60
+    needs_review: false
+- id: e36
+  compounds:
+  - gaba
+  - l_theanine
+  title: GABA 250mg & L-Theanine 100mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: gaba
+      form_raw: null
+      form_id: gaba
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: GABA 250mg
+    - compound_id: l_theanine
+      form_raw: null
+      form_id: l_theanine
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: L-Theanine 100mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: gaba
+    multi_ingredient: true
+    needs_review: false
+- id: e37
+  compounds:
+  - betaine
+  title: Betaine Anhydrous (TMG) Powder 250g — 2.5g serving
+  extraction:
+    actives:
+    - compound_id: betaine
+      form_raw: Betaine Anhydrous (TMG)
+      form_id: anhydrous
+      amount_per_serving: 2.5
+      amount_unit: g
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 2.5g serving
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 250
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 2.5
+    evidence:
+      pack_units: 250g
+      units_per_serving: 2.5g serving
+  expect:
+    compound: betaine
+    amount: 2500
+    servings: 100
+    needs_review: false
+- id: e38
+  compounds:
+  - betaine
+  title: TMG 1000mg 120 Capsules
+  extraction:
+    actives:
+    - compound_id: betaine
+      form_raw: TMG
+      form_id: anhydrous
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 1000mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    amount: 1000
+    servings: 120
+    needs_review: false
+- id: e39
+  compounds:
+  - betaine
+  - creatine
+  title: TMG 1500mg with Creatine Monohydrate 3000mg — 6 capsules — 180 Capsules
+  extraction:
+    actives:
+    - compound_id: betaine
+      form_raw: null
+      form_id: anhydrous
+      amount_per_serving: 1500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: TMG 1500mg
+    - compound_id: creatine
+      form_raw: null
+      form_id: monohydrate
+      amount_per_serving: 3000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Creatine Monohydrate 3000mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 180
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 6
+    evidence:
+      pack_units: 180 Capsules
+      units_per_serving: 6 capsules
+  expect:
+    compound: betaine
+    amount: 1500
+    servings: 30
+    multi_ingredient: true
+    needs_review: false
+- id: e40
+  compounds:
+  - hmb
+  title: HMB 1000mg (calcium HMB) 90 Capsules
+  extraction:
+    actives:
+    - compound_id: hmb
+      form_raw: calcium HMB
+      form_id: calcium_hmb
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: HMB 1000mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: hmb
+    form_class: hmb_ca
+    amount: 808
+    basis: estimated_from_compound
+    servings: 90
+    needs_review: false
+- id: e41
+  compounds:
+  - hmb
+  title: Calcium HMB Powder 250g
+  extraction:
+    actives:
+    - compound_id: hmb
+      form_raw: Calcium HMB
+      form_id: calcium_hmb
+      amount_per_serving: 3
+      amount_unit: g
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 'Serving size: 3g'
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 250
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 3
+    evidence:
+      pack_units: 250g
+      units_per_serving: 'Serving size: 3g'
+  expect:
+    amount: 2424
+    basis: estimated_from_compound
+    servings: 83.33
+    needs_review: false
+  description: 'Serving size: 3g (one scoop). Servings per container: 83. Per serving: Calcium HMB 3g.'
+- id: e42
+  compounds:
+  - hmb
+  - vitamin_d3
+  title: HMB 3000mg & Vitamin D3 2000IU — 3 tablets — 90 Tablets
+  extraction:
+    actives:
+    - compound_id: hmb
+      form_raw: null
+      form_id: calcium_hmb
+      amount_per_serving: 3000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: HMB 3000mg
+    - compound_id: vitamin_d3
+      form_raw: null
+      form_id: d3
+      amount_per_serving: 2000
+      amount_unit: IU
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Vitamin D3 2000IU
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    units_per_serving: 3
+    evidence:
+      pack_units: 90 Tablets
+      units_per_serving: 3 tablets
+  expect:
+    compound: hmb
+    amount: 2424
+    servings: 30
+    multi_ingredient: false
+    needs_review: false
+- id: e43
+  compounds:
+  - astaxanthin
+  title: Astaxanthin 4mg 90 Softgels
+  extraction:
+    actives:
+    - compound_id: astaxanthin
+      form_raw: null
+      form_id: astaxanthin
+      amount_per_serving: 4
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 4mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Softgels
+  expect:
+    compound: astaxanthin
+    amount: 4
+    servings: 90
+    needs_review: false
+- id: e44
+  compounds:
+  - astaxanthin
+  title: AstaReal Astaxanthin 12mg (from 120mg Haematococcus algae oil) 60 Softgels
+  extraction:
+    actives:
+    - compound_id: astaxanthin
+      form_raw: AstaReal
+      form_id: astaxanthin
+      amount_per_serving: 12
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 12mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Softgels
+  expect:
+    amount: 12
+    servings: 60
+    needs_review: false
+- id: e45
+  compounds:
+  - astaxanthin
+  title: Astaxanthin 6mg with Vitamin E 10mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: astaxanthin
+      form_raw: null
+      form_id: astaxanthin
+      amount_per_serving: 6
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Astaxanthin 6mg
+    is_single_ingredient: false
+    other_actives:
+    - Vitamin E
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: astaxanthin
+    multi_ingredient: false
+    needs_review: false
+- id: e46
+  compounds:
+  - berberine
+  title: Berberine HCl 500mg 120 Capsules
+  extraction:
+    actives:
+    - compound_id: berberine
+      form_raw: Berberine HCl
+      form_id: hcl
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    compound: berberine
+    form_class: berb_hcl
+    amount: 500
+    servings: 120
+    needs_review: false
+- id: e47
+  compounds:
+  - berberine
+  title: Dihydroberberine 100mg (GlucoVantage) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: berberine
+      form_raw: Dihydroberberine
+      form_id: dihydroberberine
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 100mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    form_class: berb_dihydro
+    amount: 100
+    needs_review: false
+- id: e48
+  compounds:
+  - berberine
+  - chromium
+  title: Berberine 500mg with Chromium 200µg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: berberine
+      form_raw: null
+      form_id: hcl
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Berberine 500mg
+    - compound_id: chromium
+      form_raw: null
+      form_id: picolinate
+      amount_per_serving: 200
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Chromium 200µg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: berberine
+    amount: 500
+    multi_ingredient: false
+    needs_review: false
+- id: e49
+  compounds:
+  - quercetin
+  title: Quercetin 500mg 120 Capsules
+  extraction:
+    actives:
+    - compound_id: quercetin
+      form_raw: null
+      form_id: quercetin
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    compound: quercetin
+    form_class: quer
+    amount: 500
+    servings: 120
+    needs_review: false
+- id: e50
+  compounds:
+  - quercetin
+  title: Quercetin Phytosome 250mg (Quercefit) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: quercetin
+      form_raw: Quercetin Phytosome
+      form_id: phytosome
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 250mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    form_class: quer_phytosome
+    amount: 250
+    needs_review: false
+- id: e51
+  compounds:
+  - quercetin
+  title: Quercetin 500mg with Bromelain 100mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: quercetin
+      form_raw: null
+      form_id: quercetin
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Quercetin 500mg
+    is_single_ingredient: false
+    other_actives:
+    - Bromelain
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: quercetin
+    multi_ingredient: false
+    needs_review: false
+- id: e52
+  compounds:
+  - alpha_lipoic_acid
+  title: Alpha Lipoic Acid 300mg 120 Capsules
+  extraction:
+    actives:
+    - compound_id: alpha_lipoic_acid
+      form_raw: null
+      form_id: racemic
+      amount_per_serving: 300
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 300mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    compound: alpha_lipoic_acid
+    form_class: ala_racemic
+    amount: 300
+    servings: 120
+    needs_review: false
+- id: e53
+  compounds:
+  - alpha_lipoic_acid
+  title: R-Lipoic Acid 100mg (Na-R-ALA) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: alpha_lipoic_acid
+      form_raw: R-Lipoic Acid
+      form_id: r_ala
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 100mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    form_class: ala_r
+    amount: 100
+    needs_review: false
+- id: e54
+  compounds:
+  - alpha_lipoic_acid
+  - coq10
+  title: Alpha Lipoic Acid 200mg & CoQ10 100mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: alpha_lipoic_acid
+      form_raw: null
+      form_id: racemic
+      amount_per_serving: 200
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Alpha Lipoic Acid 200mg
+    - compound_id: coq10
+      form_raw: null
+      form_id: ubiquinone
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: CoQ10 100mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: alpha_lipoic_acid
+    multi_ingredient: true
+    needs_review: false
+- id: e55
+  compounds:
+  - chondroitin
+  title: Chondroitin Sulphate 400mg — 2 capsules provide 800mg — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: chondroitin
+      form_raw: Chondroitin Sulphate
+      form_id: sulfate
+      amount_per_serving: 800
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 2 capsules provide 800mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules provide
+  expect:
+    compound: chondroitin
+    amount: 800
+    servings: 60
+    needs_review: false
+- id: e56
+  compounds:
+  - chondroitin
+  title: Chondroitin 1200mg 60 Tablets
+  extraction:
+    actives:
+    - compound_id: chondroitin
+      form_raw: null
+      form_id: sulfate
+      amount_per_serving: 1200
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 1200mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Tablets
+  expect:
+    amount: 1200
+    servings: 60
+    needs_review: false
+- id: e57
+  compounds:
+  - chondroitin
+  - glucosamine
+  title: Glucosamine Sulphate 1500mg & Chondroitin 500mg 90 Tablets
+  extraction:
+    actives:
+    - compound_id: glucosamine
+      form_raw: null
+      form_id: sulfate_2kcl
+      amount_per_serving: 1500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Glucosamine Sulphate 1500mg
+    - compound_id: chondroitin
+      form_raw: null
+      form_id: sulfate
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Chondroitin 500mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Tablets
+  expect:
+    compound: glucosamine
+    actives:
+    - compound: chondroitin
+      amount: 500
+    needs_review: false
+- id: e58
+  compounds:
+  - hyaluronic_acid
+  title: Hyaluronic Acid 100mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: hyaluronic_acid
+      form_raw: null
+      form_id: hyaluronic_acid
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 100mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: hyaluronic_acid
+    amount: 100
+    servings: 90
+    needs_review: false
+- id: e59
+  compounds:
+  - hyaluronic_acid
+  title: Sodium Hyaluronate 200mg High Strength — 60 Capsules
+  extraction:
+    actives:
+    - compound_id: hyaluronic_acid
+      form_raw: Sodium Hyaluronate
+      form_id: hyaluronic_acid
+      amount_per_serving: 200
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 200mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    amount: 200
+    servings: 60
+    needs_review: false
+- id: e60
+  compounds:
+  - hyaluronic_acid
+  title: Hyaluronic Acid 100mg with Vitamin C 80mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: hyaluronic_acid
+      form_raw: null
+      form_id: hyaluronic_acid
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Hyaluronic Acid 100mg
+    is_single_ingredient: false
+    other_actives:
+    - Vitamin C
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: hyaluronic_acid
+    multi_ingredient: false
+    needs_review: false

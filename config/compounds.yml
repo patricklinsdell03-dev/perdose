@@ -16,6 +16,7 @@ compounds:
     label_convention: ambiguous
     normalisation_type: mineral_elemental
     aliases: [magnesium, mag, mg glycinate, mag glycinate, magnesium bisglycinate, magnesium citrate, magnesium malate, magnesium taurate, magnesium threonate, magtein, magnesium oxide, magnesium chloride]
+    alias_exclusions: [magnesium stearate, magnesium salts of fatty acids, magnesium silicate]   # excipients
     accepted_cofactors: [vitamin b6, pyridoxine, p5p]
     heuristics:
       # Brief §9.5 step 3: what an unqualified number most likely means.
@@ -333,6 +334,7 @@ compounds:
     label_convention: ambiguous
     normalisation_type: mineral_elemental
     aliases: [calcium, calcium carbonate, calcium citrate]
+    alias_exclusions: [calcium hmb, calcium fructoborate, calcium pantothenate, calcium ascorbate, calcium d-glucarate, dicalcium phosphate, tricalcium phosphate, calcium phosphate, calcium stearate, calcium salts of fatty acids]   # other actives' salts and excipients
     accepted_cofactors: [vitamin d3, vitamin d, vitamin k2]
     classes:
       ca_carbonate: { label: "Carbonate", slug: carbonate }
@@ -431,6 +433,7 @@ compounds:
     label_convention: elemental_default
     normalisation_type: mineral_elemental
     aliases: [potassium, potassium citrate, potassium chloride, potassium gluconate]
+    alias_exclusions: [potassium iodide, potassium sorbate, acesulfame potassium, acesulfame-k]
     accepted_cofactors: []
     classes:
       k_citrate: { label: "Citrate", slug: citrate }

@@ -58,6 +58,7 @@ def build_parser() -> argparse.ArgumentParser:
     golden = sub.add_parser("golden", help="run the golden label set, print pass/fail table")
     golden.add_argument("--live", action="store_true", help="call the real LLM (costs pennies)")
     golden.add_argument("--draft", default=None, help="test a drafted batch, e.g. batch_01")
+    golden.add_argument("--only", default=None, help="comma-separated label ids (live re-runs)")
     return parser
 
 
@@ -86,7 +87,7 @@ def _print_results(heading: str, labels: list[dict], results: dict[str, list[str
     return rate
 
 
-def run_golden(live: bool, draft: str | None = None) -> int:
+def run_golden(live: bool, draft: str | None = None, only: str | None = None) -> int:
     from pathlib import Path
 
     labels_path, cache_dir, draft_path = GOLDEN_PATH, CACHE_DIR, None
@@ -96,6 +97,9 @@ def run_golden(live: bool, draft: str | None = None) -> int:
         cache_dir = Path("tests/golden/drafts/cache") / draft
     registry = load_registry(draft=draft_path)
     labels = load_golden_labels(labels_path)
+    if only:
+        wanted = {item.strip() for item in only.split(",")}
+        labels = [label for label in labels if label["id"] in wanted]
     print(f"Golden set: {len(labels)} labels in {labels_path.as_posix()}")
 
     calc_rate = _print_results(
@@ -310,7 +314,7 @@ def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         if args.command == "golden":
-            return run_golden(args.live, args.draft)
+            return run_golden(args.live, args.draft, args.only)
         if args.command == "normalise":
             return run_normalise(args.force, args.limit)
         if args.command == "ingest":

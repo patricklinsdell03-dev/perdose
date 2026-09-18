@@ -22,16 +22,30 @@ ATOMIC_WEIGHT = {
     "Cr": 51.996,
     "Fe": 55.845,
     "I": 126.904,
+    "Cu": 63.546,
 }
+
+
+def molecular_weight(atoms: dict[str, int]) -> float:
+    return sum(ATOMIC_WEIGHT[el] * n for el, n in atoms.items())
+
+
+def computed_factor(source: dict) -> float:
+    """An elemental factor (`element`) or, for actives that are molecules such as citrulline
+    or HMB, the active's share of the salt (`active_atoms` x `active_count`)."""
+    total = molecular_weight(source["atoms"])
+    if "element" in source:
+        return ATOMIC_WEIGHT[source["element"]] * source["atoms"][source["element"]] / total
+    return molecular_weight(source["active_atoms"]) * source["active_count"] / total
+
+
 SOURCES = yaml.safe_load(Path("config/factor_sources.yml").read_text(encoding="utf-8"))["sources"]
 REGISTRY = load_registry()
 
 
 @pytest.mark.parametrize("source", SOURCES, ids=lambda s: f"{s['compound']}/{s['form']}")
 def test_factor_matches_formula(source):
-    atoms = source["atoms"]
-    molecular_weight = sum(ATOMIC_WEIGHT[el] * n for el, n in atoms.items())
-    computed = ATOMIC_WEIGHT[source["element"]] * atoms[source["element"]] / molecular_weight
+    computed = computed_factor(source)
     configured = REGISTRY.get(source["compound"]).form(source["form"]).elemental_factor
     assert configured == pytest.approx(computed, rel=0.015)
 

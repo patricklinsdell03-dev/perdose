@@ -46,3 +46,9 @@ def test_long_description_keeps_the_nutrition_section():
 
 def test_short_description_is_untouched():
     assert trim_description("short", 3000) == "short"
+
+
+def test_alias_exclusions_stop_excipients_and_other_salts_becoming_candidates():
+    assert "calcium" not in ids("Calcium HMB Powder 250g")  # hmb itself is still a draft
+    assert ids("Zinc Picolinate 50mg — contains magnesium stearate") == ["zinc"]
+    assert ids("Calcium Citrate 1000mg 90 Tablets") == ["calcium"]

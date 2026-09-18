@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "vitamin_b1",
+        "form_raw": null,
+        "form_id": "thiamine",
+        "amount_per_serving": 50.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Thiamine 50mg"
+        }
+      },
+      {
+        "compound_id": "magnesium",
+        "form_raw": null,
+        "form_id": "other",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Magnesium 100mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No form specified for either active",
+      "No serving size stated, amount_refers_to unclear for both actives"
+    ],
+    "evidence": {
+      "pack_units": "90 Tablets"
+    }
+  }
+}
