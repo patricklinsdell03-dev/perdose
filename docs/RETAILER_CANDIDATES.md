@@ -21,6 +21,8 @@ Lamberts Healthcare (Nature's Best), Lola Health UK, PER4M, Higher Nature, Vitam
 Wild Nutrition, Together Health, Known Nutrition, Sealions, VitaBright UK, Natures Zest, Bio-Synergy,
 Bodybuilding Warehouse, Scimx.
 
+**Rejected 2026-09-18 (reapply after the profile fix):** Pharmacy2U Shop ("No URL given" — the Awin profile had no website; reapply at once), Lloyds Pharmacy UK, Healthspan, Healthspan UK Elite ("site does not complement advertiser brand" — reviewed while the profile had no URL; reapply in 1–2 weeks with a note).
+
 **Not on Awin (UK):** Holland & Barrett (only BE/IE/NL programmes), Protein Works, Dolphin Fitness, Discount Supplements,
 Applied Nutrition, PhD, USN, Solgar, Seven Seas, BetterYou, Viridian, Cytoplan, BioCare, Nutri Advanced, Nutravita,
 Nu U, Bare Biology, Just Vitamins, Victoria Health, Planet Organic, Revital, Natures Healthbox, Chemist Direct,
