@@ -1,6 +1,6 @@
 # PerDose — Build Brief
 
-Version 1.7 · 2026-09-18 · Owner: Patrick · Builder: Claude Code
+Version 1.8 · 2026-09-18 · Owner: Patrick · Builder: Claude Code
 
 **Changelog v1.1 (applied before any code exists):** amounts are stored in each compound's base unit (no `_mg` columns); a product carries a **list of actives** (many-to-many) so combination products index under every active from day one; **generic normalisation types** replace per-compound special cases; export is **one JSON file per compound**; new **§20 overview content layer** and **§21 scaling to hundreds of compounds**; phases 7–10 restructured; every new compound must ship with ≥ 3 golden labels.
 
@@ -11,6 +11,8 @@ Version 1.7 · 2026-09-18 · Owner: Patrick · Builder: Claude Code
 **Changelog v1.6 (2026-09-17):** end-state scope stated by Patrick and recorded in §0: **every reliable, reputable UK retailer covered, and hundreds of supplements listed.** The launch gate (§17) is a milestone on the way, not the destination. Coverage at that scale comes only from official affiliate feeds (§7.2, §16) — never from scraping.
 
 **Changelog v1.7 (2026-09-18):** retailers dispatching from outside the UK may be listed if they ship to the UK and price in GBP, marked with their origin and hidden behind an "Include sellers shipping from outside the UK" toggle; every headline figure uses UK-based sellers only (DECISIONS.md 2026-09-18). Hosting is a Cloudflare Worker serving static files rather than Cloudflare Pages.
+
+**Changelog v1.8 (2026-09-18):** Patrick's two corrections. (1) **Completeness is the point**: the target is every reputable UK seller of each product; a retailer that refuses affiliate access is named on the methodology page as not listed, never silently omitted, and reapplied to on a schedule. (2) **Amazon is a core source, not a v1.1 extra**: it enters every table at the Buy Box price through the Product Advertising API (refreshed daily per Amazon's terms) as soon as the Associates account qualifies (3 sales in 180 days); until then affiliate search links on product pages earn those sales. Marketplace listings are held to the same unverified-if-ambiguous rule, and a "reliable and reputable" line for third-party sellers is a pending decision. §19 item 4 is superseded.
 
 **Changelog v1.5 (2026-09-17):** user-facing design language adopted — "Capsule" (§12.4), chosen by Patrick from two rounds of mock-ups; flagged as needing a refinement pass before launch. Build-time decisions that changed earlier sections (Astro 7, Sonnet 5 as the model, 37-label golden set, seed data collected by Claude) are recorded in DECISIONS.md rather than rewritten here.
 
