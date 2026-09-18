@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T01:58:17+01:00",
+ "generated_at": "2026-09-18T09:31:32+01:00",
  "prompt_version": "1.1.0",
  "retailers": [
   {
@@ -81,6 +81,26 @@
   "quercetin",
   "alpha_lipoic_acid",
   "chondroitin",
-  "hyaluronic_acid"
+  "hyaluronic_acid",
+  "rhodiola",
+  "lions_mane",
+  "bacopa",
+  "maca",
+  "ginkgo",
+  "panax_ginseng",
+  "saw_palmetto",
+  "tongkat_ali",
+  "elderberry",
+  "valerian",
+  "resveratrol",
+  "apple_cider_vinegar",
+  "psyllium",
+  "spirulina",
+  "chlorella",
+  "alpha_gpc",
+  "citicoline",
+  "huperzine_a",
+  "lutein",
+  "leucine"
  ]
 }

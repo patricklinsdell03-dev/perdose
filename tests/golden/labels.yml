@@ -4415,6 +4415,1851 @@ labels:
       multi_ingredient: false
       needs_review: false
 
+
+  # ---- Batch 3 labels (synthetic; approved 2026-09-18) ----
+  - id: f01
+    compounds:
+    - rhodiola
+    title: Rhodiola Rosea Extract 400mg (3% rosavins, 1% salidroside) 60 Capsules
+    extraction:
+      actives:
+      - compound_id: rhodiola
+        form_raw: Extract
+        form_id: standardised
+        amount_per_serving: 400
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 400mg
+        components:
+        - name: rosavins
+          amount: 3
+          unit: percent
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: rhodiola
+      form_class: rho_std
+      amount: 400
+      servings: 60
+      basis: stated_extract
+      needs_review: false
+  - id: f02
+    compounds:
+    - rhodiola
+    title: Rhodiola 3000mg (from 300mg 10:1 root extract) 90 Tablets
+    extraction:
+      actives:
+      - compound_id: rhodiola
+        form_raw: root extract
+        form_id: standardised
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 300mg 10:1 root extract
+          extract_mass: 300mg
+        components:
+        - name: extract_mass
+          amount: 300
+          unit: mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Tablets
+    expect:
+      amount: 300
+      servings: 90
+      basis: stated_extract
+      needs_review: false
+  - id: f03
+    compounds:
+    - rhodiola
+    - ashwagandha
+    title: Rhodiola 200mg & Ashwagandha KSM-66 300mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: rhodiola
+        form_raw: null
+        form_id: standardised
+        amount_per_serving: 200
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Rhodiola 200mg
+        components: []
+      - compound_id: ashwagandha
+        form_raw: KSM-66
+        form_id: ksm66
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Ashwagandha KSM-66 300mg
+        components: []
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: rhodiola
+      amount: 200
+      multi_ingredient: true
+      needs_review: false
+  - id: f04
+    compounds:
+    - lions_mane
+    title: Lion's Mane Fruiting Body Extract 1000mg — 2 capsules — 120 Capsules
+    extraction:
+      actives:
+      - compound_id: lions_mane
+        form_raw: Fruiting Body Extract
+        form_id: fruiting_body
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 1000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 120 Capsules
+        units_per_serving: 2 capsules
+    expect:
+      compound: lions_mane
+      form_class: lm_fruit
+      amount: 1000
+      servings: 60
+      basis: stated_extract
+      needs_review: false
+  - id: f05
+    compounds:
+    - lions_mane
+    title: Lion's Mane Mushroom Powder 200g
+    extraction:
+      actives:
+      - compound_id: lions_mane
+        form_raw: Mushroom Powder
+        form_id: powder
+        amount_per_serving: 3000
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 'Serving size: 3g'
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 200
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 3
+      evidence:
+        pack_units: 200g
+        units_per_serving: 'Serving size: 3g'
+    expect:
+      form_class: lm_powder
+      amount: 3000
+      servings: 66.67
+      basis: stated_extract
+      needs_review: false
+    description: 'Serving size: 3g (one teaspoon). Servings per pack: 66. Per serving: Lion''s Mane (Hericium erinaceus) whole mushroom powder 3g.'
+  - id: f06
+    compounds:
+    - lions_mane
+    title: Lion's Mane 500mg Mycelium with Vitamin B12 2.5µg 90 Capsules
+    extraction:
+      actives:
+      - compound_id: lions_mane
+        form_raw: Mycelium
+        form_id: mycelium
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Lion's Mane 500mg
+        components: []
+      is_single_ingredient: false
+      other_actives:
+      - Vitamin B12
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      compound: lions_mane
+      form_class: lm_mycelium
+      multi_ingredient: true
+      needs_review: false
+  - id: f07
+    compounds:
+    - bacopa
+    title: Bacopa Monnieri Extract 300mg (50% bacosides) 90 Capsules
+    extraction:
+      actives:
+      - compound_id: bacopa
+        form_raw: Extract
+        form_id: generic
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 300mg
+        components:
+        - name: bacosides
+          amount: 50
+          unit: percent
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      compound: bacopa
+      form_class: bac_generic
+      amount: 300
+      servings: 90
+      basis: stated_extract
+      needs_review: false
+  - id: f08
+    compounds:
+    - bacopa
+    title: Bacognize Bacopa 300mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: bacopa
+        form_raw: Bacognize
+        form_id: bacognize
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 300mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      form_class: bac_bacognize
+      amount: 300
+      basis: stated_extract
+      needs_review: false
+  - id: f09
+    compounds:
+    - bacopa
+    - l_theanine
+    title: Bacopa 250mg & L-Theanine 100mg Focus 60 Capsules
+    extraction:
+      actives:
+      - compound_id: bacopa
+        form_raw: null
+        form_id: generic
+        amount_per_serving: 250
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Bacopa 250mg
+        components: []
+      - compound_id: l_theanine
+        form_raw: null
+        form_id: l_theanine
+        amount_per_serving: 100
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: L-Theanine 100mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: bacopa
+      multi_ingredient: true
+      needs_review: false
+  - id: f10
+    compounds:
+    - maca
+    title: Maca Root Powder 500g
+    extraction:
+      actives:
+      - compound_id: maca
+        form_raw: Root Powder
+        form_id: raw
+        amount_per_serving: 5000
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 'Serving size: 5g'
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 500
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 5
+      evidence:
+        pack_units: 500g
+        units_per_serving: 'Serving size: 5g'
+    expect:
+      compound: maca
+      form_class: maca_raw
+      amount: 5000
+      servings: 100
+      basis: stated_extract
+      needs_review: false
+    description: 'Serving size: 5g (one heaped teaspoon). Servings per pack: 100. Per serving: Organic maca root powder 5g.'
+  - id: f11
+    compounds:
+    - maca
+    title: Gelatinised Maca 750mg — 2 capsules provide 1500mg — 120 Capsules
+    extraction:
+      actives:
+      - compound_id: maca
+        form_raw: Gelatinised
+        form_id: gelatinised
+        amount_per_serving: 1500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 2 capsules provide 1500mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 120 Capsules
+        units_per_serving: 2 capsules provide
+    expect:
+      form_class: maca_gel
+      amount: 1500
+      servings: 60
+      basis: stated_extract
+      needs_review: false
+  - id: f12
+    compounds:
+    - maca
+    title: Maca 5000mg (from 500mg 10:1 extract) 90 Tablets
+    extraction:
+      actives:
+      - compound_id: maca
+        form_raw: extract
+        form_id: extract
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 500mg 10:1 extract
+          extract_mass: 500mg
+        components:
+        - name: extract_mass
+          amount: 500
+          unit: mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Tablets
+    expect:
+      form_class: maca_extract
+      amount: 500
+      servings: 90
+      basis: stated_extract
+      needs_review: false
+  - id: f13
+    compounds:
+    - ginkgo
+    title: Ginkgo Biloba Extract 120mg (24% flavone glycosides, 6% terpene lactones) 90 Tablets
+    extraction:
+      actives:
+      - compound_id: ginkgo
+        form_raw: Extract
+        form_id: standardised
+        amount_per_serving: 120
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 120mg
+        components:
+        - name: flavone glycosides
+          amount: 24
+          unit: percent
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Tablets
+    expect:
+      compound: ginkgo
+      form_class: gink_std
+      amount: 120
+      servings: 90
+      basis: stated_extract
+      needs_review: false
+  - id: f14
+    compounds:
+    - ginkgo
+    title: Ginkgo Biloba 6000mg (from 120mg 50:1 leaf extract) 120 Tablets
+    extraction:
+      actives:
+      - compound_id: ginkgo
+        form_raw: leaf extract
+        form_id: standardised
+        amount_per_serving: 120
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 120mg 50:1 leaf extract
+          extract_mass: 120mg
+        components:
+        - name: extract_mass
+          amount: 120
+          unit: mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 120 Tablets
+    expect:
+      amount: 120
+      servings: 120
+      basis: stated_extract
+      needs_review: false
+  - id: f15
+    compounds:
+    - ginkgo
+    - panax_ginseng
+    title: Ginkgo Biloba 60mg with Ginseng 100mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: ginkgo
+        form_raw: null
+        form_id: standardised
+        amount_per_serving: 60
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Ginkgo Biloba 60mg
+        components: []
+      - compound_id: panax_ginseng
+        form_raw: null
+        form_id: extract
+        amount_per_serving: 100
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Ginseng 100mg
+        components: []
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: ginkgo
+      multi_ingredient: true
+      needs_review: false
+  - id: f16
+    compounds:
+    - panax_ginseng
+    title: Korean Red Ginseng Extract 200mg (5% ginsenosides) 90 Capsules
+    extraction:
+      actives:
+      - compound_id: panax_ginseng
+        form_raw: Korean Red Ginseng Extract
+        form_id: extract
+        amount_per_serving: 200
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 200mg
+        components:
+        - name: ginsenosides
+          amount: 5
+          unit: percent
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      compound: panax_ginseng
+      form_class: png_extract
+      amount: 200
+      servings: 90
+      basis: stated_extract
+      needs_review: false
+  - id: f17
+    compounds:
+    - panax_ginseng
+    title: Panax Ginseng Root Powder 500mg 100 Capsules
+    extraction:
+      actives:
+      - compound_id: panax_ginseng
+        form_raw: Root Powder
+        form_id: powder
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 2 capsules daily (1000mg)
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 100
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 100 Capsules
+        units_per_serving: take 2 capsules daily
+    expect:
+      form_class: png_powder
+      amount: 1000
+      servings: 50
+      basis: stated_extract
+      needs_review: false
+    description: 'Each capsule contains 500mg Panax ginseng root powder. Directions: take 2 capsules daily (1000mg).'
+  - id: f18
+    compounds:
+    - panax_ginseng
+    - vitamin_b12
+    title: Ginseng 100mg & Vitamin B12 10µg Energy 60 Tablets
+    extraction:
+      actives:
+      - compound_id: panax_ginseng
+        form_raw: null
+        form_id: extract
+        amount_per_serving: 100
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Ginseng 100mg
+        components: []
+      - compound_id: vitamin_b12
+        form_raw: null
+        form_id: unspecified
+        amount_per_serving: 10
+        amount_unit: mcg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin B12 10µg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Tablets
+    expect:
+      compound: panax_ginseng
+      multi_ingredient: true
+      needs_review: false
+  - id: f19
+    compounds:
+    - saw_palmetto
+    title: Saw Palmetto Extract 320mg (85-95% fatty acids) 60 Softgels
+    extraction:
+      actives:
+      - compound_id: saw_palmetto
+        form_raw: Extract
+        form_id: extract
+        amount_per_serving: 320
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 320mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Softgels
+    expect:
+      compound: saw_palmetto
+      form_class: sp_extract
+      amount: 320
+      servings: 60
+      basis: stated_extract
+      needs_review: false
+  - id: f20
+    compounds:
+    - saw_palmetto
+    title: Saw Palmetto Berry Powder 500mg 100 Capsules
+    extraction:
+      actives:
+      - compound_id: saw_palmetto
+        form_raw: Berry Powder
+        form_id: berry
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 500mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 100
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 100 Capsules
+    expect:
+      form_class: sp_berry
+      amount: 500
+      basis: stated_extract
+      needs_review: false
+  - id: f21
+    compounds:
+    - saw_palmetto
+    - zinc
+    title: Saw Palmetto 320mg with Zinc 15mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: saw_palmetto
+        form_raw: null
+        form_id: extract
+        amount_per_serving: 320
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Saw Palmetto 320mg
+        components: []
+      - compound_id: zinc
+        form_raw: null
+        form_id: other
+        amount_per_serving: 15
+        amount_unit: mg
+        amount_refers_to: unclear
+        evidence:
+          amount_per_serving: Zinc 15mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: saw_palmetto
+      amount: 320
+      multi_ingredient: false
+      needs_review: false
+  - id: f22
+    compounds:
+    - tongkat_ali
+    title: Tongkat Ali Extract 200mg (2% eurycomanone) 60 Capsules
+    extraction:
+      actives:
+      - compound_id: tongkat_ali
+        form_raw: Extract
+        form_id: standardised
+        amount_per_serving: 200
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 200mg
+        components:
+        - name: eurycomanone
+          amount: 2
+          unit: percent
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: tongkat_ali
+      form_class: tk_std
+      amount: 200
+      servings: 60
+      basis: stated_extract
+      needs_review: false
+  - id: f23
+    compounds:
+    - tongkat_ali
+    title: Tongkat Ali 200:1 Extract 400mg 90 Capsules
+    extraction:
+      actives:
+      - compound_id: tongkat_ali
+        form_raw: 200:1 Extract
+        form_id: standardised
+        amount_per_serving: 400
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 400mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      form_class: tk_std
+      amount: 400
+      servings: 90
+      basis: stated_extract
+      needs_review: false
+  - id: f24
+    compounds:
+    - tongkat_ali
+    - zinc
+    - maca
+    title: Tongkat Ali 200mg & Zinc 10mg & Maca 500mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: tongkat_ali
+        form_raw: null
+        form_id: standardised
+        amount_per_serving: 200
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Tongkat Ali 200mg
+        components: []
+      - compound_id: zinc
+        form_raw: null
+        form_id: other
+        amount_per_serving: 10
+        amount_unit: mg
+        amount_refers_to: unclear
+        evidence:
+          amount_per_serving: Zinc 10mg
+      - compound_id: maca
+        form_raw: null
+        form_id: raw
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Maca 500mg
+        components: []
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: tongkat_ali
+      multi_ingredient: true
+      needs_review: false
+  - id: f25
+    compounds:
+    - elderberry
+    title: Black Elderberry Extract 500mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: elderberry
+        form_raw: Extract
+        form_id: extract
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 500mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: elderberry
+      amount: 500
+      servings: 60
+      basis: stated_extract
+      needs_review: false
+  - id: f26
+    compounds:
+    - elderberry
+    title: Elderberry 3200mg (from 320mg 10:1 extract) — 2 gummies — 60 Gummies
+    extraction:
+      actives:
+      - compound_id: elderberry
+        form_raw: extract
+        form_id: extract
+        amount_per_serving: 320
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 320mg 10:1 extract
+          extract_mass: 320mg
+        components:
+        - name: extract_mass
+          amount: 320
+          unit: mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: gummy
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 60 Gummies
+        units_per_serving: 2 gummies
+    expect:
+      amount: 320
+      servings: 30
+      basis: stated_extract
+      needs_review: false
+  - id: f27
+    compounds:
+    - elderberry
+    - zinc
+    title: Elderberry 500mg with Vitamin C 80mg & Zinc 10mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: elderberry
+        form_raw: null
+        form_id: extract
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Elderberry 500mg
+        components: []
+      - compound_id: zinc
+        form_raw: null
+        form_id: other
+        amount_per_serving: 10
+        amount_unit: mg
+        amount_refers_to: unclear
+        evidence:
+          amount_per_serving: Zinc 10mg
+      is_single_ingredient: false
+      other_actives:
+      - Vitamin C
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: elderberry
+      amount: 500
+      multi_ingredient: false
+      needs_review: false
+  - id: f28
+    compounds:
+    - valerian
+    title: Valerian Root Extract 500mg 90 Capsules
+    extraction:
+      actives:
+      - compound_id: valerian
+        form_raw: Root Extract
+        form_id: root
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 500mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      compound: valerian
+      amount: 500
+      servings: 90
+      basis: stated_extract
+      needs_review: false
+  - id: f29
+    compounds:
+    - valerian
+    title: Valerian 1000mg (from 250mg 4:1 root extract) — 2 tablets — 60 Tablets
+    extraction:
+      actives:
+      - compound_id: valerian
+        form_raw: root extract
+        form_id: root
+        amount_per_serving: 250
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 250mg 4:1 root extract
+          extract_mass: 250mg
+        components:
+        - name: extract_mass
+          amount: 250
+          unit: mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: tablet
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 60 Tablets
+        units_per_serving: 2 tablets
+    expect:
+      amount: 250
+      servings: 30
+      basis: stated_extract
+      needs_review: false
+  - id: f30
+    compounds:
+    - valerian
+    title: Valerian 300mg & Hops 100mg Night 60 Tablets
+    extraction:
+      actives:
+      - compound_id: valerian
+        form_raw: null
+        form_id: root
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Valerian 300mg
+        components: []
+      is_single_ingredient: false
+      other_actives:
+      - Hops
+      pack_units: 60
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Tablets
+    expect:
+      compound: valerian
+      amount: 300
+      multi_ingredient: false
+      needs_review: false
+  - id: f31
+    compounds:
+    - resveratrol
+    title: Trans-Resveratrol 250mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: resveratrol
+        form_raw: Trans-Resveratrol
+        form_id: trans
+        amount_per_serving: 250
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 250mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: resveratrol
+      amount: 250
+      servings: 60
+      needs_review: false
+  - id: f32
+    compounds:
+    - resveratrol
+    title: Resveratrol 500mg Japanese Knotweed Extract (50% trans-resveratrol, 250mg) 60 Capsules
+    extraction:
+      actives:
+      - compound_id: resveratrol
+        form_raw: Japanese Knotweed Extract
+        form_id: trans
+        amount_per_serving: 250
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 50% trans-resveratrol, 250mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      amount: 250
+      servings: 60
+      needs_review: false
+  - id: f33
+    compounds:
+    - resveratrol
+    - quercetin
+    title: Resveratrol 150mg & Quercetin 250mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: resveratrol
+        form_raw: null
+        form_id: trans
+        amount_per_serving: 150
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Resveratrol 150mg
+      - compound_id: quercetin
+        form_raw: null
+        form_id: quercetin
+        amount_per_serving: 250
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Quercetin 250mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: resveratrol
+      amount: 150
+      multi_ingredient: false
+      needs_review: false
+  - id: f34
+    compounds:
+    - apple_cider_vinegar
+    title: Apple Cider Vinegar 500mg 120 Capsules
+    extraction:
+      actives:
+      - compound_id: apple_cider_vinegar
+        form_raw: null
+        form_id: powder
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 500mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 120 Capsules
+    expect:
+      compound: apple_cider_vinegar
+      amount: 500
+      servings: 120
+      needs_review: false
+  - id: f35
+    compounds:
+    - apple_cider_vinegar
+    title: ACV Gummies 500mg — 2 gummies provide 1000mg — 60 Gummies
+    extraction:
+      actives:
+      - compound_id: apple_cider_vinegar
+        form_raw: Gummies
+        form_id: powder
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 2 gummies provide 1000mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: gummy
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 60 Gummies
+        units_per_serving: 2 gummies provide
+    expect:
+      amount: 1000
+      servings: 30
+      needs_review: false
+  - id: f36
+    compounds:
+    - apple_cider_vinegar
+    - chromium
+    title: Apple Cider Vinegar 1000mg with Chromium 40µg 90 Capsules
+    extraction:
+      actives:
+      - compound_id: apple_cider_vinegar
+        form_raw: null
+        form_id: powder
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Apple Cider Vinegar 1000mg
+      - compound_id: chromium
+        form_raw: null
+        form_id: picolinate
+        amount_per_serving: 40
+        amount_unit: mcg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Chromium 40µg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      compound: apple_cider_vinegar
+      amount: 1000
+      multi_ingredient: false
+      needs_review: false
+  - id: f37
+    compounds:
+    - psyllium
+    title: Psyllium Husk Powder 500g
+    extraction:
+      actives:
+      - compound_id: psyllium
+        form_raw: Powder
+        form_id: powder
+        amount_per_serving: 5
+        amount_unit: g
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 'Serving size: 5g'
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 500
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 5
+      evidence:
+        pack_units: 500g
+        units_per_serving: 'Serving size: 5g'
+    expect:
+      compound: psyllium
+      form_class: psy_powder
+      amount: 5000
+      servings: 100
+      needs_review: false
+    description: 'Serving size: 5g (one heaped teaspoon). Servings per pack: 100. Per serving: Psyllium husk 5g.'
+  - id: f38
+    compounds:
+    - psyllium
+    title: Psyllium Husk 500mg Capsules — 4 capsules provide 2000mg — 200 Capsules
+    extraction:
+      actives:
+      - compound_id: psyllium
+        form_raw: Capsules
+        form_id: capsules
+        amount_per_serving: 2000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 4 capsules provide 2000mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 200
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 4
+      evidence:
+        pack_units: 200 Capsules
+        units_per_serving: 4 capsules provide
+    expect:
+      form_class: psy_caps
+      amount: 2000
+      servings: 50
+      needs_review: false
+  - id: f39
+    compounds:
+    - psyllium
+    title: Psyllium 3g & Inulin 2g Fibre Blend 300g — 5g serving
+    extraction:
+      actives:
+      - compound_id: psyllium
+        form_raw: null
+        form_id: powder
+        amount_per_serving: 3
+        amount_unit: g
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Psyllium 3g
+      is_single_ingredient: false
+      other_actives:
+      - Inulin
+      pack_units: 300
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 5
+      evidence:
+        pack_units: 300g
+        units_per_serving: 5g serving
+    expect:
+      compound: psyllium
+      amount: 3000
+      servings: 60
+      multi_ingredient: true
+      needs_review: false
+  - id: f40
+    compounds:
+    - spirulina
+    title: Spirulina 500mg Tablets — 6 tablets provide 3000mg — 300 Tablets
+    extraction:
+      actives:
+      - compound_id: spirulina
+        form_raw: Tablets
+        form_id: tablets
+        amount_per_serving: 3000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 6 tablets provide 3000mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 300
+      pack_unit_type: tablet
+      confidence: 0.95
+      units_per_serving: 6
+      evidence:
+        pack_units: 300 Tablets
+        units_per_serving: 6 tablets provide
+    expect:
+      compound: spirulina
+      form_class: spi_tab
+      amount: 3000
+      servings: 50
+      needs_review: false
+  - id: f41
+    compounds:
+    - spirulina
+    title: Organic Spirulina Powder 250g
+    extraction:
+      actives:
+      - compound_id: spirulina
+        form_raw: Powder
+        form_id: powder
+        amount_per_serving: 3
+        amount_unit: g
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 'Serving size: 3g'
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 250
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 3
+      evidence:
+        pack_units: 250g
+        units_per_serving: 'Serving size: 3g'
+    expect:
+      form_class: spi_powder
+      amount: 3000
+      servings: 83.33
+      needs_review: false
+    description: 'Serving size: 3g (one teaspoon). Servings per pack: 83. Per serving: Organic spirulina powder 3g.'
+  - id: f42
+    compounds:
+    - spirulina
+    - chlorella
+    title: Spirulina 1500mg & Chlorella 1500mg — 6 tablets — 180 Tablets
+    extraction:
+      actives:
+      - compound_id: spirulina
+        form_raw: null
+        form_id: tablets
+        amount_per_serving: 1500
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Spirulina 1500mg
+      - compound_id: chlorella
+        form_raw: null
+        form_id: chlorella
+        amount_per_serving: 1500
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Chlorella 1500mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 180
+      pack_unit_type: tablet
+      confidence: 0.95
+      units_per_serving: 6
+      evidence:
+        pack_units: 180 Tablets
+        units_per_serving: 6 tablets
+    expect:
+      compound: spirulina
+      amount: 1500
+      servings: 30
+      multi_ingredient: true
+      needs_review: false
+  - id: f43
+    compounds:
+    - chlorella
+    title: Chlorella 500mg Tablets — 6 tablets provide 3000mg — 300 Tablets
+    extraction:
+      actives:
+      - compound_id: chlorella
+        form_raw: Tablets
+        form_id: chlorella
+        amount_per_serving: 3000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 6 tablets provide 3000mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 300
+      pack_unit_type: tablet
+      confidence: 0.95
+      units_per_serving: 6
+      evidence:
+        pack_units: 300 Tablets
+        units_per_serving: 6 tablets provide
+    expect:
+      compound: chlorella
+      amount: 3000
+      servings: 50
+      needs_review: false
+  - id: f44
+    compounds:
+    - chlorella
+    title: Broken Cell Wall Chlorella Powder 200g
+    extraction:
+      actives:
+      - compound_id: chlorella
+        form_raw: Broken Cell Wall
+        form_id: chlorella
+        amount_per_serving: 3
+        amount_unit: g
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 'Serving size: 3g'
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 200
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 3
+      evidence:
+        pack_units: 200g
+        units_per_serving: 'Serving size: 3g'
+    expect:
+      amount: 3000
+      servings: 66.67
+      needs_review: false
+    description: 'Serving size: 3g. Servings per pack: 66. Per serving: Chlorella vulgaris (broken cell wall) powder 3g.'
+  - id: f45
+    compounds:
+    - chlorella
+    title: Chlorella 1000mg with Vitamin C 40mg 120 Tablets
+    extraction:
+      actives:
+      - compound_id: chlorella
+        form_raw: null
+        form_id: chlorella
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Chlorella 1000mg
+      is_single_ingredient: false
+      other_actives:
+      - Vitamin C
+      pack_units: 120
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 120 Tablets
+    expect:
+      compound: chlorella
+      multi_ingredient: true
+      needs_review: false
+  - id: f46
+    compounds:
+    - alpha_gpc
+    title: Alpha-GPC 300mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: alpha_gpc
+        form_raw: null
+        form_id: alpha_gpc
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 300mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: alpha_gpc
+      amount: 300
+      servings: 60
+      needs_review: false
+  - id: f47
+    compounds:
+    - alpha_gpc
+    title: Alpha GPC 600mg (50% Alpha-GPC providing 300mg) 90 Capsules
+    extraction:
+      actives:
+      - compound_id: alpha_gpc
+        form_raw: 50% Alpha-GPC
+        form_id: alpha_gpc
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: providing 300mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      amount: 300
+      servings: 90
+      needs_review: false
+  - id: f48
+    compounds:
+    - alpha_gpc
+    - huperzine_a
+    title: Alpha-GPC 300mg & Huperzine A 200µg Focus 60 Capsules
+    extraction:
+      actives:
+      - compound_id: alpha_gpc
+        form_raw: null
+        form_id: alpha_gpc
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Alpha-GPC 300mg
+      - compound_id: huperzine_a
+        form_raw: null
+        form_id: huperzine_a
+        amount_per_serving: 200
+        amount_unit: mcg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Huperzine A 200µg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: alpha_gpc
+      amount: 300
+      multi_ingredient: true
+      needs_review: false
+  - id: f49
+    compounds:
+    - citicoline
+    title: Citicoline 250mg (Cognizin) 60 Capsules
+    extraction:
+      actives:
+      - compound_id: citicoline
+        form_raw: Cognizin
+        form_id: citicoline
+        amount_per_serving: 250
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 250mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: citicoline
+      amount: 250
+      servings: 60
+      needs_review: false
+  - id: f50
+    compounds:
+    - citicoline
+    title: CDP-Choline 500mg 30 Capsules
+    extraction:
+      actives:
+      - compound_id: citicoline
+        form_raw: CDP-Choline
+        form_id: citicoline
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 500mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 30
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 30 Capsules
+    expect:
+      amount: 500
+      servings: 30
+      needs_review: false
+  - id: f51
+    compounds:
+    - citicoline
+    - alpha_gpc
+    title: Citicoline 250mg & Alpha-GPC 150mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: citicoline
+        form_raw: null
+        form_id: citicoline
+        amount_per_serving: 250
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Citicoline 250mg
+      - compound_id: alpha_gpc
+        form_raw: null
+        form_id: alpha_gpc
+        amount_per_serving: 150
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Alpha-GPC 150mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: citicoline
+      multi_ingredient: true
+      needs_review: false
+  - id: f52
+    compounds:
+    - huperzine_a
+    title: Huperzine A 200mcg 120 Tablets
+    extraction:
+      actives:
+      - compound_id: huperzine_a
+        form_raw: null
+        form_id: huperzine_a
+        amount_per_serving: 200
+        amount_unit: mcg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 200mcg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 120 Tablets
+    expect:
+      compound: huperzine_a
+      amount: 200
+      amount_unit: mcg
+      servings: 120
+      needs_review: false
+  - id: f53
+    compounds:
+    - huperzine_a
+    title: Huperzia Serrata Extract 20mg (1% Huperzine A, 200µg) 90 Capsules
+    extraction:
+      actives:
+      - compound_id: huperzine_a
+        form_raw: Huperzia Serrata Extract
+        form_id: huperzine_a
+        amount_per_serving: 200
+        amount_unit: mcg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 1% Huperzine A, 200µg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      amount: 200
+      servings: 90
+      needs_review: false
+  - id: f54
+    compounds:
+    - huperzine_a
+    - bacopa
+    title: Huperzine A 100µg & Bacopa 300mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: huperzine_a
+        form_raw: null
+        form_id: huperzine_a
+        amount_per_serving: 100
+        amount_unit: mcg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Huperzine A 100µg
+      - compound_id: bacopa
+        form_raw: null
+        form_id: generic
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Bacopa 300mg
+        components: []
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: huperzine_a
+      amount: 100
+      multi_ingredient: true
+      needs_review: false
+  - id: f55
+    compounds:
+    - lutein
+    title: Lutein 20mg 90 Softgels
+    extraction:
+      actives:
+      - compound_id: lutein
+        form_raw: null
+        form_id: lutein
+        amount_per_serving: 20
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 20mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Softgels
+    expect:
+      compound: lutein
+      amount: 20
+      servings: 90
+      needs_review: false
+  - id: f56
+    compounds:
+    - lutein
+    title: Lutein 10mg with Zeaxanthin 2mg (FloraGLO) 60 Softgels
+    extraction:
+      actives:
+      - compound_id: lutein
+        form_raw: FloraGLO
+        form_id: lutein
+        amount_per_serving: 10
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Lutein 10mg
+      is_single_ingredient: false
+      other_actives:
+      - Zeaxanthin
+      pack_units: 60
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Softgels
+    expect:
+      amount: 10
+      servings: 60
+      multi_ingredient: false
+      needs_review: false
+  - id: f57
+    compounds:
+    - lutein
+    - zinc
+    title: Lutein 10mg, Zeaxanthin 2mg, Zinc 10mg & Bilberry 40mg Eye Health 60 Capsules
+    extraction:
+      actives:
+      - compound_id: lutein
+        form_raw: null
+        form_id: lutein
+        amount_per_serving: 10
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Lutein 10mg
+      - compound_id: zinc
+        form_raw: null
+        form_id: other
+        amount_per_serving: 10
+        amount_unit: mg
+        amount_refers_to: unclear
+        evidence:
+          amount_per_serving: Zinc 10mg
+      is_single_ingredient: false
+      other_actives:
+      - Zeaxanthin
+      - Bilberry
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: lutein
+      amount: 10
+      multi_ingredient: false
+      needs_review: false
+  - id: f58
+    compounds:
+    - leucine
+    title: L-Leucine Powder 250g
+    extraction:
+      actives:
+      - compound_id: leucine
+        form_raw: null
+        form_id: l_leucine
+        amount_per_serving: 3
+        amount_unit: g
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 'Serving size: 3g'
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 250
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 3
+      evidence:
+        pack_units: 250g
+        units_per_serving: 'Serving size: 3g'
+    expect:
+      compound: leucine
+      amount: 3000
+      servings: 83.33
+      needs_review: false
+    description: 'Serving size: 3g (one scoop). Servings per pack: 83. Per serving: L-Leucine 3g.'
+  - id: f59
+    compounds:
+    - leucine
+    title: L-Leucine 1000mg — 3 capsules provide 3000mg — 180 Capsules
+    extraction:
+      actives:
+      - compound_id: leucine
+        form_raw: null
+        form_id: l_leucine
+        amount_per_serving: 3000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 3 capsules provide 3000mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 180
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 3
+      evidence:
+        pack_units: 180 Capsules
+        units_per_serving: 3 capsules provide
+    expect:
+      amount: 3000
+      servings: 60
+      needs_review: false
+  - id: f60
+    compounds:
+    - leucine
+    - glutamine
+    title: L-Leucine 2500mg & L-Glutamine 2500mg — 5g serving — 300g
+    extraction:
+      actives:
+      - compound_id: leucine
+        form_raw: null
+        form_id: l_leucine
+        amount_per_serving: 2500
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: L-Leucine 2500mg
+      - compound_id: glutamine
+        form_raw: null
+        form_id: l_glutamine
+        amount_per_serving: 2500
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: L-Glutamine 2500mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 300
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 5
+      evidence:
+        pack_units: 300g
+        units_per_serving: 5g serving
+    expect:
+      compound: leucine
+      amount: 2500
+      servings: 60
+      multi_ingredient: true
+      needs_review: false
+
 # Must be dropped at ingest, never extracted (Appendix B). Checked from Phase 3, when the
 # ingest alias filter exists. Synthetic titles.
 negatives:

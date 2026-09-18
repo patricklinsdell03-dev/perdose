@@ -2899,5 +2899,983 @@
     ]
    }
   ]
+ },
+ {
+  "id": "rhodiola",
+  "name": "Rhodiola rosea",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "root extract",
+  "unit": "mg",
+  "standard_dose": 400.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "rhodiola",
+   "rhodiola rosea",
+   "golden root",
+   "arctic root"
+  ],
+  "classes": [
+   {
+    "id": "rho_std",
+    "label": "Standardised extract (3% rosavins)",
+    "slug": "rhodiola",
+    "standard_dose": 400.0,
+    "forms": [
+     {
+      "id": "standardised",
+      "names": [
+       "standardised",
+       "standardized",
+       "extract",
+       "3% rosavins",
+       "rosavins",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "rho_unstd",
+    "label": "Unstandardised / root powder",
+    "slug": "rhodiola-powder",
+    "standard_dose": 400.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root",
+       "unstandardised"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "lions_mane",
+  "name": "Lion's mane",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "mushroom extract or powder",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "lion's mane",
+   "lions mane",
+   "hericium erinaceus",
+   "hericium"
+  ],
+  "classes": [
+   {
+    "id": "lm_fruit",
+    "label": "Fruiting body extract",
+    "slug": "fruiting-body",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "fruiting_body",
+      "names": [
+       "fruiting body",
+       "fruiting body extract",
+       "fruit body",
+       "extract"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "lm_mycelium",
+    "label": "Mycelium",
+    "slug": "mycelium",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "mycelium",
+      "names": [
+       "mycelium",
+       "mycelia",
+       "mycelial biomass"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "lm_powder",
+    "label": "Whole mushroom powder",
+    "slug": "powder",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder",
+       "mushroom powder",
+       "whole mushroom"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bacopa",
+  "name": "Bacopa monnieri",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "extract",
+  "unit": "mg",
+  "standard_dose": 300.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "bacopa",
+   "bacopa monnieri",
+   "brahmi",
+   "bacognize",
+   "synapsa"
+  ],
+  "classes": [
+   {
+    "id": "bac_generic",
+    "label": "Bacopa extract",
+    "slug": "bacopa",
+    "standard_dose": 300.0,
+    "forms": [
+     {
+      "id": "generic",
+      "names": [
+       "extract",
+       "standardised",
+       "50% bacosides",
+       "20% bacosides",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "bac_bacognize",
+    "label": "Bacognize",
+    "slug": "bacognize",
+    "standard_dose": 300.0,
+    "forms": [
+     {
+      "id": "bacognize",
+      "names": [
+       "bacognize"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "bac_synapsa",
+    "label": "Synapsa",
+    "slug": "synapsa",
+    "standard_dose": 300.0,
+    "forms": [
+     {
+      "id": "synapsa",
+      "names": [
+       "synapsa"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "maca",
+  "name": "Maca",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "maca root",
+  "unit": "mg",
+  "standard_dose": 1500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "maca",
+   "maca root",
+   "lepidium meyenii",
+   "peruvian ginseng"
+  ],
+  "classes": [
+   {
+    "id": "maca_raw",
+    "label": "Raw powder",
+    "slug": "maca-powder",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "raw",
+      "names": [
+       "raw",
+       "raw powder",
+       "root powder",
+       "powder",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "maca_gel",
+    "label": "Gelatinised",
+    "slug": "gelatinised",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "gelatinised",
+      "names": [
+       "gelatinised",
+       "gelatinized",
+       "gelatinised powder"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "maca_extract",
+    "label": "Extract",
+    "slug": "maca-extract",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "4:1 extract",
+       "10:1 extract"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ginkgo",
+  "name": "Ginkgo biloba",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "leaf extract",
+  "unit": "mg",
+  "standard_dose": 120.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "ginkgo",
+   "ginkgo biloba",
+   "gingko"
+  ],
+  "classes": [
+   {
+    "id": "gink_std",
+    "label": "Standardised extract (24/6)",
+    "slug": "ginkgo",
+    "standard_dose": 120.0,
+    "forms": [
+     {
+      "id": "standardised",
+      "names": [
+       "standardised",
+       "standardized",
+       "extract",
+       "24/6",
+       "24% flavone glycosides",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "gink_unstd",
+    "label": "Unstandardised leaf",
+    "slug": "ginkgo-leaf",
+    "standard_dose": 120.0,
+    "forms": [
+     {
+      "id": "leaf",
+      "names": [
+       "leaf powder",
+       "leaf",
+       "powder",
+       "unstandardised"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "panax_ginseng",
+  "name": "Panax ginseng",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "root extract",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "panax ginseng",
+   "korean ginseng",
+   "red ginseng",
+   "korean red ginseng",
+   "asian ginseng",
+   "ginseng"
+  ],
+  "classes": [
+   {
+    "id": "png_extract",
+    "label": "Root extract",
+    "slug": "panax-ginseng",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "standardised",
+       "korean red",
+       "red ginseng",
+       "ginsenosides",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "png_powder",
+    "label": "Root powder",
+    "slug": "panax-ginseng-powder",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "saw_palmetto",
+  "name": "Saw palmetto",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "berry extract",
+  "unit": "mg",
+  "standard_dose": 320.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "saw palmetto",
+   "serenoa repens",
+   "serenoa"
+  ],
+  "classes": [
+   {
+    "id": "sp_extract",
+    "label": "Extract (85–95% fatty acids)",
+    "slug": "saw-palmetto",
+    "standard_dose": 320.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "standardised",
+       "85% fatty acids",
+       "90% fatty acids",
+       "95% fatty acids",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "sp_berry",
+    "label": "Berry powder",
+    "slug": "saw-palmetto-berry",
+    "standard_dose": 320.0,
+    "forms": [
+     {
+      "id": "berry",
+      "names": [
+       "berry powder",
+       "berries",
+       "powder",
+       "whole berry"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tongkat_ali",
+  "name": "Tongkat ali",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "root extract",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "tongkat ali",
+   "eurycoma longifolia",
+   "longjack",
+   "long jack"
+  ],
+  "classes": [
+   {
+    "id": "tk_std",
+    "label": "Standardised extract",
+    "slug": "tongkat-ali",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "standardised",
+      "names": [
+       "standardised",
+       "standardized",
+       "eurycomanone",
+       "2% eurycomanone",
+       "200:1",
+       "100:1",
+       "extract",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "tk_unstd",
+    "label": "Unstandardised",
+    "slug": "tongkat-ali-unstandardised",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "unstandardised",
+      "names": [
+       "root powder",
+       "powder",
+       "unstandardised"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "elderberry",
+  "name": "Elderberry",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "elderberry extract",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "elderberry",
+   "sambucus",
+   "sambucus nigra",
+   "black elderberry"
+  ],
+  "classes": [
+   {
+    "id": "eld",
+    "label": "Elderberry extract",
+    "slug": "elderberry",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "standardised",
+       "fruit extract",
+       "berry extract",
+       "powder",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "valerian",
+  "name": "Valerian",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "root extract",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "valerian",
+   "valeriana officinalis",
+   "valerian root"
+  ],
+  "classes": [
+   {
+    "id": "val",
+    "label": "Valerian root",
+    "slug": "valerian",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "root",
+      "names": [
+       "root extract",
+       "extract",
+       "root powder",
+       "powder",
+       "0.8% valerenic acid",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "resveratrol",
+  "name": "Resveratrol",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "trans-resveratrol",
+  "unit": "mg",
+  "standard_dose": 250.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "resveratrol",
+   "trans-resveratrol",
+   "trans resveratrol",
+   "japanese knotweed"
+  ],
+  "classes": [
+   {
+    "id": "resv",
+    "label": "Trans-resveratrol",
+    "slug": "resveratrol",
+    "standard_dose": 250.0,
+    "forms": [
+     {
+      "id": "trans",
+      "names": [
+       "trans-resveratrol",
+       "trans resveratrol",
+       "resveratrol",
+       "98%",
+       "50%",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "apple_cider_vinegar",
+  "name": "Apple cider vinegar",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "apple cider vinegar powder",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "apple cider vinegar",
+   "acv",
+   "cider vinegar"
+  ],
+  "classes": [
+   {
+    "id": "acv",
+    "label": "ACV powder (capsules & gummies)",
+    "slug": "apple-cider-vinegar",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder",
+       "capsules",
+       "gummies",
+       "gummy",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "psyllium",
+  "name": "Psyllium husk",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "psyllium husk",
+  "unit": "mg",
+  "standard_dose": 5000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "psyllium",
+   "psyllium husk",
+   "ispaghula",
+   "plantago ovata"
+  ],
+  "classes": [
+   {
+    "id": "psy_powder",
+    "label": "Powder",
+    "slug": "psyllium-powder",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder",
+       "husk powder",
+       "whole husk",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "psy_caps",
+    "label": "Capsules",
+    "slug": "psyllium-capsules",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "capsules",
+      "names": [
+       "capsules",
+       "capsule"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "spirulina",
+  "name": "Spirulina",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "spirulina",
+  "unit": "mg",
+  "standard_dose": 3000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "spirulina",
+   "arthrospira platensis"
+  ],
+  "classes": [
+   {
+    "id": "spi_tab",
+    "label": "Tablets",
+    "slug": "spirulina-tablets",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "tablets",
+      "names": [
+       "tablets",
+       "tablet",
+       "capsules",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "spi_powder",
+    "label": "Powder",
+    "slug": "spirulina-powder",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "chlorella",
+  "name": "Chlorella",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "chlorella",
+  "unit": "mg",
+  "standard_dose": 3000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "chlorella",
+   "chlorella vulgaris",
+   "chlorella pyrenoidosa",
+   "broken cell wall chlorella"
+  ],
+  "classes": [
+   {
+    "id": "chl",
+    "label": "Chlorella",
+    "slug": "chlorella",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "chlorella",
+      "names": [
+       "tablets",
+       "powder",
+       "broken cell wall",
+       "cracked cell wall",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "alpha_gpc",
+  "name": "Alpha-GPC",
+  "category": "nootropics",
+  "tier": 1,
+  "comparison_quantity": "alpha-GPC",
+  "unit": "mg",
+  "standard_dose": 300.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "alpha-gpc",
+   "alpha gpc",
+   "alphagpc",
+   "glycerophosphocholine",
+   "l-alpha glycerylphosphorylcholine"
+  ],
+  "classes": [
+   {
+    "id": "agpc",
+    "label": "Alpha-GPC",
+    "slug": "alpha-gpc",
+    "standard_dose": 300.0,
+    "forms": [
+     {
+      "id": "alpha_gpc",
+      "names": [
+       "alpha-gpc",
+       "50%",
+       "99%",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "citicoline",
+  "name": "Citicoline (CDP-choline)",
+  "category": "nootropics",
+  "tier": 1,
+  "comparison_quantity": "citicoline",
+  "unit": "mg",
+  "standard_dose": 250.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "citicoline",
+   "cdp-choline",
+   "cdp choline",
+   "cognizin",
+   "cytidine diphosphate choline"
+  ],
+  "classes": [
+   {
+    "id": "cdp",
+    "label": "Citicoline",
+    "slug": "citicoline",
+    "standard_dose": 250.0,
+    "forms": [
+     {
+      "id": "citicoline",
+      "names": [
+       "citicoline",
+       "cognizin",
+       "cdp-choline",
+       "sodium",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "huperzine_a",
+  "name": "Huperzine A",
+  "category": "nootropics",
+  "tier": 2,
+  "comparison_quantity": "huperzine A",
+  "unit": "mcg",
+  "standard_dose": 200.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "huperzine a",
+   "huperzine",
+   "huperzia serrata",
+   "toothed clubmoss"
+  ],
+  "classes": [
+   {
+    "id": "hup",
+    "label": "Huperzine A",
+    "slug": "huperzine-a",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "huperzine_a",
+      "names": [
+       "huperzine a",
+       "huperzia serrata extract",
+       "1% huperzine a",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "lutein",
+  "name": "Lutein",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "lutein",
+  "unit": "mg",
+  "standard_dose": 10.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "lutein",
+   "floraglo",
+   "lutemax",
+   "marigold extract"
+  ],
+  "classes": [
+   {
+    "id": "lut",
+    "label": "Lutein",
+    "slug": "lutein",
+    "standard_dose": 10.0,
+    "forms": [
+     {
+      "id": "lutein",
+      "names": [
+       "lutein",
+       "floraglo",
+       "lutemax",
+       "free lutein",
+       "lutein esters",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "leucine",
+  "name": "L-Leucine",
+  "category": "amino-acids",
+  "tier": 3,
+  "comparison_quantity": "L-leucine",
+  "unit": "mg",
+  "standard_dose": 3000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "leucine",
+   "l-leucine"
+  ],
+  "classes": [
+   {
+    "id": "leu",
+    "label": "L-Leucine",
+    "slug": "l-leucine",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "l_leucine",
+      "names": [
+       "l-leucine",
+       "leucine",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
  }
 ]
