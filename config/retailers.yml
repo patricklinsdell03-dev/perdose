@@ -30,10 +30,12 @@ retailers:
   - id: optimum_nutrition
     name: Optimum Nutrition
     enabled: true
-    feed: { type: awin_google_csv, url_env: AWIN_FEED_URL_OPTIMUM_NUTRITION, gzip: true }
+    # Awin advertiser id 19863. Shares the one Awin feed (AWIN_FEED_URL) with every other
+    # Awin retailer; each entry keeps only its own advertiser's rows.
+    feed: { type: awin_google_csv, url_env: AWIN_FEED_URL, gzip: true, advertiser_id: "19863" }
     link: { template: "{url}" }   # Awin feeds supply tracked links (aw_deep_link)
     shipping: { rule: unknown }
-    notes: "First live Awin feed (programme joined 2026-09-18). Own-brand sports nutrition; UK store."
+    notes: "First live Awin feed (programme joined 2026-09-18). Own-brand sports nutrition. Feed priced in EUR on 2026-09-18, so nothing is kept until the advertiser supplies GBP."
 
   - id: healthspan
     name: Healthspan

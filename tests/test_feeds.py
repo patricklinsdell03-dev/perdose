@@ -143,3 +143,24 @@ def test_google_format_feed_splits_price_and_currency():
 )
 def test_split_price(price, currency, expected):
     assert feeds._split_price(price, currency) == expected
+
+
+def test_shared_feed_is_split_by_advertiser_id():
+    text = (
+        "advertiser_id,id,title,aw_deep_link,price,availability\n"
+        "11,a1,Fixture Zinc 15mg,https://example.invalid/a1,4.00 GBP,in_stock\n"
+        "22,b1,Fixture Iron 14mg,https://example.invalid/b1,5.00 GBP,in_stock\n"
+    )
+    column_map = feeds.column_map_for("awin_google_csv", {})
+    mine = [
+        x for x, _ in feeds.read_feed(text, column_map, RUN_DATE, RawListing, advertiser_id="22")
+    ]
+    assert [x.merchant_pid for x in mine] == ["b1"]
+    everyone = [x for x, _ in feeds.read_feed(text, column_map, RUN_DATE, RawListing)]
+    assert len(everyone) == 2
+    with pytest.raises(feeds.FeedError, match="split on"):
+        list(
+            feeds.read_feed(
+                "id,title,aw_deep_link,price\n", column_map, RUN_DATE, RawListing, advertiser_id="1"
+            )
+        )

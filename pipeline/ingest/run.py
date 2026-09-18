@@ -38,6 +38,9 @@ class Feed(_Model):
     path: str | None = None  # a local copy of the feed (tests, manual downloads)
     gzip: bool = False
     column_map: dict[str, str] = {}
+    # Several retailers can share one downloaded feed (Awin lets a publisher build a single
+    # feed covering many advertisers); each keeps only the rows with its advertiser id.
+    advertiser_id: str | None = None
 
 
 class Shipping(_Model):
@@ -155,12 +158,19 @@ def upsert_listing(conn: sqlite3.Connection, retailer: Retailer, listing: RawLis
     )
 
 
-def _read_live_feed(retailer: Retailer, run_date: date, rejected: dict[str, int]) -> list:
+def _read_live_feed(
+    retailer: Retailer, run_date: date, rejected: dict[str, int], downloaded: dict[str, str]
+) -> list:
     feed = retailer.feed
-    text = feeds.fetch_feed_text(feed.url_env, feed.path, feed.gzip)
+    key = feed.path or feed.url_env or ""
+    if key not in downloaded:  # one download per shared feed, however many retailers use it
+        downloaded[key] = feeds.fetch_feed_text(feed.url_env, feed.path, feed.gzip)
     column_map = feeds.column_map_for(feed.type, feed.column_map)
     listings = []
-    for listing, problem in feeds.read_feed(text, column_map, run_date, RawListing):
+    rows = feeds.read_feed(
+        downloaded[key], column_map, run_date, RawListing, advertiser_id=feed.advertiser_id
+    )
+    for listing, problem in rows:
         if listing is not None:
             listings.append(listing)
         else:
@@ -180,6 +190,7 @@ def ingest(
 ) -> dict[str, dict[str, int]]:
     """Returns kept/dropped counts per retailer. A failing retailer is skipped, not fatal."""
     counts: dict[str, dict[str, int]] = {}
+    downloaded: dict[str, str] = {}
     for retailer in retailers:
         if not retailer.enabled or (only and retailer.id != only):
             continue
@@ -192,7 +203,7 @@ def ingest(
             listings = list(read_seed_csv(source))
         else:
             try:
-                listings = _read_live_feed(retailer, run_date, rejected)
+                listings = _read_live_feed(retailer, run_date, rejected, downloaded)
             except feeds.FeedError as error:
                 # One broken feed must not stop the others (brief §18).
                 print(f"WARNING: {retailer.id}: {error}; skipped")

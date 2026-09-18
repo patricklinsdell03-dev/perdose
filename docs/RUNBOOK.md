@@ -77,6 +77,16 @@ Not linked from anywhere and hidden from search engines. It shows when the pipel
 
 ## Connecting a live affiliate feed (once a programme approves you)
 
+**Awin — one shared feed for every retailer (preferred).** In Toolbox → Create-a-Feed, tick every advertiser you care about (approved or not — the download only ever contains the ones that have approved you, and fills up as approvals land), choose CSV + gzip + all columns, and copy the link **once** into `.env` as `AWIN_FEED_URL=<link>`. Then each Awin retailer in `config/retailers.yml` gets:
+
+```yaml
+feed: { type: awin_google_csv, url_env: AWIN_FEED_URL, gzip: true, advertiser_id: "19863" }
+```
+
+with its own Awin advertiser id (shown in the Create-a-Feed advertiser list and in the feed's `advertiser_id` column). The feed is downloaded once per run and split by that id. Prices in a currency other than GBP are dropped and counted as `not_gbp`.
+
+**One link per retailer (older Awin feeds, Impact):**
+
 1. In the network's dashboard (Awin: "Create-a-Feed"; Impact: the catalogue export) generate the product feed **download link** for that retailer. It contains your API key, so treat it like a password.
 2. Put it in `.env` on a new line: `AWIN_FEED_URL_MYPROTEIN=<the link>` (and later as a GitHub secret with the same name). Never paste it into chat or any committed file.
 3. In `config/retailers.yml` change that retailer's feed from `{ type: seed_csv }` to:

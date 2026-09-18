@@ -33,6 +33,7 @@ DEFAULT_COLUMN_MAPS = {
         "price_gbp": "search_price",
         "in_stock": "in_stock",
         "currency": "currency",
+        "advertiser_id": "merchant_id",
     },
     # Awin's newer advertiser-based feeds use Google Shopping column names. `price` carries
     # the currency in the same cell ("22.00 EUR"), so it is read for both fields and split.
@@ -47,6 +48,7 @@ DEFAULT_COLUMN_MAPS = {
         "price_gbp": "price",
         "in_stock": "availability",
         "currency": "price",
+        "advertiser_id": "advertiser_id",
     },
     "impact_csv": {
         "merchant_pid": "CatalogItemId",
@@ -113,21 +115,33 @@ def _split_price(price: str, currency: str) -> tuple[str, str]:
     return price, currency.upper()
 
 
-def read_feed(text: str, column_map: dict[str, str], run_date: date, listing_model) -> Iterator:
+def read_feed(
+    text: str,
+    column_map: dict[str, str],
+    run_date: date,
+    listing_model,
+    advertiser_id: str | None = None,
+) -> Iterator:
     """Yields (listing | None, problem | None) per row. `listing_model` is RawListing, passed
-    in to avoid a circular import."""
+    in to avoid a circular import. With `advertiser_id`, rows for other advertisers in a
+    shared feed are skipped silently (they belong to another retailer entry)."""
     reader = csv.DictReader(io.StringIO(text))
     columns = set(reader.fieldnames or [])
     missing = [f"{ours} (their column '{column_map[ours]}')" for ours in REQUIRED_FIELDS
                if column_map.get(ours) not in columns]  # fmt: skip
     if missing:
         raise FeedError("required columns missing: " + ", ".join(missing))
+    if advertiser_id and column_map.get("advertiser_id") not in columns:
+        raise FeedError(f"feed has no '{column_map.get('advertiser_id')}' column to split on")
 
     for row in reader:
 
         def get(field, row=row):
             column = column_map.get(field)
             return (row.get(column) or "").strip() if column in columns else ""
+
+        if advertiser_id and get("advertiser_id") != str(advertiser_id):
+            continue
 
         same_cell = column_map.get("currency") == column_map.get("price_gbp")
         price_text, currency = _split_price(get("price_gbp"), "" if same_cell else get("currency"))
