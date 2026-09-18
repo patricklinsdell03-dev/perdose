@@ -39,8 +39,8 @@ make normalise  # LLM extraction -> data/perdose.sqlite (cached)
 make price      # compute per-dose prices, dedupe, export site JSON
 make golden     # run the golden label set, print pass/fail table (no LLM calls: calc-only + replay)
 make golden-live  # same, but calls the real LLM and saves results to tests/golden/cache/
-make content COMPOUND=<id>   # draft a learn page + evidence.json (Phase 9)
-make content-check           # claim linter + frontmatter check on content/
+make content COMPOUND=<id>   # draft a learn page + evidence.json (Phase 9; DRY=1 = studies + cost, free)
+make content-check           # claim linter + frontmatter check on content/; writes data/export/learn.json
 make review                  # export needs_review rows to data/review/<date>.csv
 make review-apply            # turn filled-in review CSV into config/product_overrides.yml
 make seed-refresh            # checklist of seed listings to re-price -> data/review/seed_refresh_<date>.csv

@@ -13,7 +13,7 @@ Preview the site locally: `npm --prefix site run dev`.
 
 ## Daily commands
 
-See the command list in `CLAUDE.md`. `make all` runs the whole chain; `make check` is the safety net before any commit. Only `make content` / `make content-check` (learn pages, Phase 9) are not built yet.
+See the command list in `CLAUDE.md`. `make all` runs the whole chain; `make check` is the safety net before any commit. Learn pages have their own section below.
 
 `make golden` prints a pass/fail line per golden label, twice: once for the rules and price maths against hand-written readings (must be 100 %), once replaying the saved AI readings (must be at least 90 %). It makes no API calls. `make golden-live` calls the real model.
 
@@ -140,6 +140,30 @@ To review a batch:
 Batches 01–04 were approved and made live (2026-09-17/18), so `config/drafts/` is empty until the next batch is drafted.
 
 Label ids must not collide with the live set (g = prototype, d/e/f/h = batches 1–4). To approve: tell Claude "approve batch NN" (or do it by hand: move the compounds into `config/compounds.yml`, the formulas into `config/factor_sources.yml`, the labels into `tests/golden/labels.yml` and the saved readings into `tests/golden/cache/`, then `make check`). New supplements only get pages once a retailer's data contains products for them.
+
+## Learn pages (`make content` / `make content-check`)
+
+A learn page is a plain-English overview of one supplement: what it is, its forms, what
+published research measured, and a link to the price tables (brief §20). Pages are drafted by
+the AI and published only after a person approves them.
+
+1. **See what it would use, free:** `make content COMPOUND=magnesium DRY=1` lists the studies
+   it found in Europe PMC (a free database of published research) and estimates the AI cost.
+   Nothing is spent. If the list looks off-topic, add better search words for that supplement
+   under `literature.terms` in `config/content.yml`.
+2. **Draft it:** `make content COMPOUND=magnesium` (needs `ANTHROPIC_API_KEY` in `.env`). It reads
+   every study, grades each topic by the rules in `config/content.yml`, writes the page and
+   saves `content/magnesium/learn.md` (as a draft) and `content/magnesium/evidence.json` (what
+   was searched, read and graded — abstracts themselves are never saved in the repo). It prints
+   the cost (about 10–25p a page) and a list of things to fix. It stops **before** spending
+   anything if its estimate is over `budget.max_gbp_per_page` (50p). Running it again the same
+   day reuses the saved AI answers, so it costs nothing unless something changed. It never
+   overwrites an approved page.
+3. **Review and approve:** follow `content/REVIEW.md`.
+4. `make content-check` (also part of `make check`) lists every page as PASS, DRAFT (has
+   problems, not published — fine while you work on it) or FAIL (approved but has problems:
+   blocks `make check`). It writes `data/export/learn.json`, the list of pages the site may
+   publish; commit it with the page.
 
 ## Refreshing the hand-collected prices (`make seed-refresh` / `make seed-refresh-apply`)
 
