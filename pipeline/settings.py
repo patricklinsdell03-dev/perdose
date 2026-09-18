@@ -24,6 +24,11 @@ class Models(_Model):
     escalation: ModelChoice
 
 
+class Price(_Model):
+    input: float = Field(ge=0)  # US dollars per million tokens
+    output: float = Field(ge=0)
+
+
 class LlmConfig(_Model):
     models: Models
     max_tokens: int = Field(gt=0)
@@ -31,6 +36,17 @@ class LlmConfig(_Model):
     prompt_version: str
     max_calls_per_run: int = Field(gt=0)
     description_max_chars: int = Field(gt=0)
+    # Learn-page drafting (`make content`, Phase 9) and the prices used for its cost line.
+    content: ModelChoice | None = None
+    pricing_usd_per_mtok: dict[str, Price] = {}
+    gbp_per_usd: float = Field(default=0.75, gt=0)
+
+    def cost_gbp(self, model_id: str, input_tokens: int, output_tokens: int) -> float | None:
+        price = self.pricing_usd_per_mtok.get(model_id)
+        if price is None:
+            return None
+        usd = (input_tokens * price.input + output_tokens * price.output) / 1_000_000
+        return usd * self.gbp_per_usd
 
 
 def load_llm_config(path: Path = LLM_CONFIG_PATH) -> LlmConfig:

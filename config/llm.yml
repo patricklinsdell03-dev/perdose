@@ -16,3 +16,15 @@ escalation_confidence_threshold: 0.7
 prompt_version: "1.1.0"
 max_calls_per_run: 5000
 description_max_chars: 3000
+
+# Learn-page drafting (`make content`, brief §20.3): two calls per page (read the studies,
+# write the draft). Same model as everything else. "high" is the API's default thinking effort.
+content:
+  id: claude-sonnet-5
+  effort: high
+
+# For the cost line `make content` prints and its spending cap (config/content.yml).
+# US dollars per million tokens, from Anthropic's published prices (checked 2026-09-18).
+pricing_usd_per_mtok:
+  claude-sonnet-5: { input: 2.00, output: 10.00 }
+gbp_per_usd: 0.75   # approximate; estimates only

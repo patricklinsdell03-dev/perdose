@@ -27,8 +27,10 @@ golden:
 golden-live:
 	$(PIPELINE) golden --live $(if $(DRAFT),--draft $(DRAFT)) $(if $(ONLY),--only $(ONLY))
 
+# Drafts a learn page with the AI (about 10-25p a page; stops above the cap in config/content.yml).
+# DRY=1 lists the studies it would use and the estimated cost, and spends nothing.
 content:
-	$(PIPELINE) content --compound "$(COMPOUND)"
+	$(PIPELINE) content --compound "$(COMPOUND)" $(if $(DRY),--dry-run)
 
 content-check:
 	$(PIPELINE) content-check
@@ -52,6 +54,7 @@ check:
 	uv run ruff check .
 	uv run ruff format --check .
 	uv run pytest
+	$(PIPELINE) content-check
 	npm --prefix site run check
 	npm --prefix site run build
 	npm --prefix site run smoke

@@ -191,9 +191,7 @@ def find_studies(
             for name, (query, sort, size) in queries.items():
                 role = "background" if name == "background" else "research"
                 parsed = (parse_study(record, role) for record in fetch(client, query, sort, size))
-                groups[name] = [
-                    s for s in parsed if s and not excluded(s.title, config.title_exclusions)
-                ]
+                groups[name] = [s for s in parsed if s]
         finally:
             if owns_client:
                 client.close()
@@ -209,4 +207,9 @@ def find_studies(
             ),
             encoding="utf-8",
         )
-    return select(groups, config, today), {name: q for name, (q, _, _) in queries.items()}
+    # Applied after the cache, so a word added to the list takes effect the same day.
+    kept = {
+        name: [s for s in studies if not excluded(s.title, config.title_exclusions)]
+        for name, studies in groups.items()
+    }
+    return select(kept, config, today), {name: q for name, (q, _, _) in queries.items()}

@@ -35,6 +35,7 @@ class Grade:
     reviews: int
     trials: int
     participants: int | None  # the largest review, or all trials added up, if stated
+    participants_from: str | None = None  # "largest review" | "trials together"
 
 
 def grade(readings: list[Reading], rules: GradingConfig) -> Grade:
@@ -43,8 +44,12 @@ def grade(readings: list[Reading], rules: GradingConfig) -> Grade:
     trials = len(counted) - reviews
     in_reviews = [r.participants for r in counted if r.is_review and r.participants]
     in_trials = [r.participants for r in counted if not r.is_review and r.participants]
-    sizes = [max(in_reviews, default=0), sum(in_trials)]
-    participants = max(sizes) if any(sizes) else None
+    largest_review, all_trials = max(in_reviews, default=0), sum(in_trials)
+    participants = max(largest_review, all_trials) or None
+    if participants is None:
+        participants_from = None
+    else:
+        participants_from = "largest review" if largest_review >= all_trials else "trials together"
 
     weights = dict.fromkeys(DIRECTIONS, 0.0)
     total = 0.0
@@ -58,7 +63,9 @@ def grade(readings: list[Reading], rules: GradingConfig) -> Grade:
 
     def result(name: str) -> Grade:
         direction = leading if share else None
-        return Grade(name, direction, round(share, 3), reviews, trials, participants)
+        return Grade(
+            name, direction, round(share, 3), reviews, trials, participants, participants_from
+        )
 
     low = rules.insufficient_below
     if reviews < low.reviews and trials < low.trials:

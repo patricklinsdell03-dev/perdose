@@ -1,13 +1,10 @@
-import pytest
-
-from pipeline.cli import NOT_BUILT_YET, main
+from pipeline.cli import main
 
 
 def test_golden_runs_on_empty_set():
     assert main(["golden"]) == 0
 
 
-@pytest.mark.parametrize("command", sorted(NOT_BUILT_YET))
-def test_unbuilt_commands_fail_loudly(command, capsys):
-    assert main([command]) == 1
-    assert "not built yet" in capsys.readouterr().out
+def test_content_needs_a_compound(capsys):
+    assert main(["content"]) == 1
+    assert "make content COMPOUND=" in capsys.readouterr().out

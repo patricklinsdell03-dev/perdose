@@ -1,9 +1,4 @@
-"""Command-line entry point for the pipeline (brief §8). Used by the Makefile.
-
-Subcommands whose phase has not arrived yet exist so the Makefile targets are wired up,
-but they report that and exit non-zero — a command that silently does nothing would look
-like a successful run.
-"""
+"""Command-line entry point for the pipeline (brief §8). Used by the Makefile."""
 
 import argparse
 import os
@@ -25,19 +20,15 @@ from pipeline.golden import (
 )
 from pipeline.settings import load_env, load_llm_config
 
-# subcommand -> (help text, phase in brief §17 that builds it)
-NOT_BUILT_YET = {
-    "content": ("draft a learn page + evidence.json", 9),
-}
-
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="pipeline")
     sub = parser.add_subparsers(dest="command", required=True)
-    for name, (help_text, _phase) in NOT_BUILT_YET.items():
-        cmd = sub.add_parser(name, help=help_text)
-        if name == "content":
-            cmd.add_argument("--compound", default="")
+    content = sub.add_parser("content", help="draft a learn page + evidence.json (AI, pennies)")
+    content.add_argument("--compound", default="")
+    content.add_argument(
+        "--dry-run", action="store_true", help="find the studies and estimate the cost only"
+    )
     normalise = sub.add_parser("normalise", help="LLM extraction -> data/perdose.sqlite (cached)")
     normalise.add_argument("--force", action="store_true", help="re-extract cached listings")
     normalise.add_argument("--limit", type=int, default=None)
@@ -271,28 +262,104 @@ def run_seed_refresh_apply(file: str | None) -> int:
     return 0
 
 
-def run_content_check() -> int:
-    import json
-
-    from pipeline.content_check import check_all
+def _brand_names() -> list[str]:
+    from pipeline.content_check import brand_names
     from pipeline.export.run import EXPORT_DIR
     from pipeline.ingest.run import load_retailers
 
-    names = {r.name for r in load_retailers()}
-    for path in (EXPORT_DIR / "compounds").glob("*.json"):
-        for cls in json.loads(path.read_text(encoding="utf-8"))["classes"]:
-            for group in ("ranked", "combinations", "unverified"):
-                names |= {offer["brand"] for offer in cls[group] if offer["brand"]}
-    results = check_all(sorted(names))
+    return brand_names(EXPORT_DIR, {r.name for r in load_retailers()})
+
+
+def run_content(compound_id: str, dry_run: bool) -> int:
+    from datetime import date
+
+    from pipeline.content.config import load_content_config
+    from pipeline.content.run import ContentError, draft
+
+    if not compound_id:
+        print("Usage: make content COMPOUND=<id>  (ids are in config/compounds.yml)")
+        return 1
+    load_env()
+    if not dry_run and not os.environ.get("ANTHROPIC_API_KEY"):
+        print("No ANTHROPIC_API_KEY found. Copy .env.example to .env and add your key.")
+        return 1
+    try:
+        report = draft(
+            compound_id,
+            today=date.today(),
+            registry=load_registry(),
+            config=load_content_config(),
+            llm=load_llm_config(),
+            brand_names=_brand_names(),
+            dry_run=dry_run,
+        )
+    except ContentError as error:
+        print(f"content: {error}")
+        return 1
+
+    research = [s for s in report.studies if s.role == "research"]
+    print(
+        f"content: {report.compound_id}: {len(report.studies)} studies from Europe PMC "
+        f"({len(research)} reviews and trials, {len(report.studies) - len(research)} background)"
+    )
+    if dry_run:
+        for s in report.studies:
+            print(f"  {s.design:18} {s.year} cited {s.cited_by:>4}  PMID {s.pmid}  {s.title[:70]}")
+        estimate = "unknown" if report.estimate_gbp is None else f"about £{report.estimate_gbp:.2f}"
+        print(f"Estimated AI cost to draft this page: {estimate}. Nothing was spent.")
+        return 0
+    print(f"  relevant to taking it as a supplement: {report.relevant} of {len(research)}")
+    for label, grade, on_page in report.topics:
+        print(f"  topic: {label} - {grade}" + ("" if on_page else " (not on the page)"))
+    cost = "unknown" if report.cost_gbp is None else f"about £{report.cost_gbp:.2f}"
+    print(f"  AI calls: {report.calls} new, {report.reused} reused; cost {cost}")
+    print("  wrote " + " and ".join(report.written) + " (review_status: draft)")
+    if report.problems:
+        print(f"  to fix before approval ({len(report.problems)}):")
+        for problem in report.problems:
+            print(f"    - {problem}")
+    print("Next: review the draft with content/REVIEW.md. Nothing is published until approved.")
+    return 0
+
+
+def run_content_check() -> int:
+    import json
+    from pathlib import Path
+
+    from pipeline.content.config import load_content_config
+    from pipeline.content.grade import describe, weighting_note
+    from pipeline.content_check import MANIFEST_PATH, build_manifest, check_all, split_page
+
+    grading = load_content_config().grading
+    results = check_all(_brand_names(), rubric_approved=grading.status == "approved")
+    rubric = {
+        "status": grading.status,
+        "grades": describe(grading),
+        "weighting": weighting_note(grading),
+    }
+    manifest = build_manifest(results, rubric)
+    MANIFEST_PATH.parent.mkdir(parents=True, exist_ok=True)
+    MANIFEST_PATH.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n"
+    )
     if not results:
         print("content-check: no learn pages yet (content/<compound>/learn.md)")
         return 0
+    failed = 0
     for compound_id, problems in results.items():
-        print(f"  {compound_id}  {'PASS' if not problems else 'FAIL'}")
+        page = Path("content") / compound_id / "learn.md"
+        meta = split_page(page.read_text(encoding="utf-8"))[0]
+        approved = meta.get("review_status") == "approved"
+        if problems and approved:
+            failed += 1
+        state = "PASS" if not problems else ("FAIL" if approved else "DRAFT")
+        print(f"  {compound_id}  {state}{' (approved)' if approved and not problems else ''}")
         for problem in problems:
             print(f"         - {problem}")
-    failed = sum(1 for problems in results.values() if problems)
-    print(f"content-check: {len(results) - failed}/{len(results)} pages pass")
+    publishable = len(manifest["pages"])
+    print(f"content-check: {len(results)} pages, {publishable} approved and publishable")
+    if failed:
+        print(f"content-check: {failed} APPROVED page(s) fail the checks and will not be published")
     return 1 if failed else 0
 
 
@@ -331,6 +398,8 @@ def main(argv: list[str] | None = None) -> int:
             return run_seed_refresh()
         if args.command == "seed-refresh-apply":
             return run_seed_refresh_apply(args.file)
+        if args.command == "content":
+            return run_content(args.compound, args.dry_run)
         if args.command == "content-check":
             return run_content_check()
         if args.command == "guard":
@@ -344,9 +413,7 @@ def main(argv: list[str] | None = None) -> int:
     except anthropic.PermissionDeniedError as error:
         print(f"\nThe API refused the request (403): {error.message}")
         return 1
-    _help, phase = NOT_BUILT_YET[args.command]
-    print(f"'{args.command}' is not built yet - it arrives in Phase {phase} (docs/BRIEF.md §17).")
-    return 1
+    raise AssertionError(f"unhandled command {args.command!r}")
 
 
 if __name__ == "__main__":

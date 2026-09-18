@@ -1,0 +1,14 @@
+{
+ "rubric": {
+  "status": "proposed",
+  "grades": {
+   "Strong": "At least 2 meta-analyses or systematic reviews, the largest (or all the trials together) covering at least 1,000 participants, and at least 80 % of the evidence pointing the same way.",
+   "Moderate": "At least 1 meta-analysis or systematic review, or at least 3 randomised trials, covering at least 300 participants, with at least two-thirds of the evidence pointing the same way.",
+   "Limited": "At least two-thirds of the evidence points the same way, but there are too few or too small studies for Moderate.",
+   "Mixed": "The studies point different ways: no finding carries two-thirds of the evidence.",
+   "Insufficient": "No meta-analysis or systematic review and fewer than 2 randomised trials, or the studies do not say clearly what they found."
+  },
+  "weighting": "Each meta-analysis or systematic review counts as 3 trials when we weigh which way the evidence points. Studies whose abstract does not say clearly what they found are left out. A grade says how settled a finding is, whichever way it points: consistent reviews that found no clear difference can grade Strong."
+ },
+ "pages": []
+}

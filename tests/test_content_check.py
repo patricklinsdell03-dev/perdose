@@ -3,7 +3,16 @@ content — its "findings" are placeholders and it is never published."""
 
 import pytest
 
-from pipeline.content_check import ANECDOTE_HEADER, GP_LINE, SECTIONS, check_page, load_banned
+from pipeline.content_check import (
+    ANECDOTE_HEADER,
+    GP_LINE,
+    SECTIONS,
+    build_manifest,
+    check_page,
+    fingerprint,
+    load_banned,
+    word_count,
+)
 
 BANNED = load_banned()
 BRANDS = ["Fixture Brand", "Holland & Barrett"]
@@ -109,3 +118,49 @@ def test_length_is_checked():
     assert any(
         "words" in p for p in problems(**{"What it is": "Short."}, **{"Forms, explained": "Short."})
     )
+
+
+APPROVED = {"review_status": "approved", "reviewed_by": "Patrick", "reviewed_on": "2026-09-17"}
+
+
+def test_no_page_is_approved_before_the_grading_rules_are():
+    page = fixture_page(frontmatter=APPROVED)
+    found = check_page(page, "magnesium", BANNED, BRANDS, rubric_approved=False)
+    assert any("grading rules" in p for p in found)
+    assert check_page(fixture_page(), "magnesium", BANNED, BRANDS, rubric_approved=False) == []
+
+
+def test_the_at_a_glance_excerpt_is_checked_too():
+    glance = " ".join(["Fixture words describe forms and label amounts only."] * 14)  # 112
+    assert problems(frontmatter={"at_a_glance": glance}) == []
+    assert any(
+        "at_a_glance is 2 words" in p for p in problems(frontmatter={"at_a_glance": "Too short."})
+    )
+    found = problems(frontmatter={"at_a_glance": glance + " It boosts energy."})
+    assert any("in at_a_glance" in p for p in found)
+
+
+def test_citations_must_be_studies_in_the_evidence_file():
+    found = check_page(fixture_page(), "magnesium", BANNED, BRANDS, known_pmids={"111", "222"})
+    assert found == ["cites studies that are not in evidence.json: 12345"]
+    known = {"111", "222", "12345"}
+    assert check_page(fixture_page(), "magnesium", BANNED, BRANDS, known_pmids=known) == []
+
+
+def test_link_addresses_are_not_counted_as_words():
+    assert word_count("See [PMID 1](https://pubmed.ncbi.nlm.nih.gov/1/) and **this**.") == 5
+
+
+def test_the_manifest_lists_only_approved_pages_that_pass(tmp_path):
+    for compound, frontmatter in (("magnesium", APPROVED), ("zinc", APPROVED), ("creatine", {})):
+        (tmp_path / compound).mkdir()
+        text = fixture_page(frontmatter={**frontmatter, "compound_id": compound})
+        # Saved with Windows line endings: the fingerprint must not change.
+        (tmp_path / compound / "learn.md").write_bytes(text.replace("\n", "\r\n").encode())
+    results = {"magnesium": [], "zinc": ["a problem"], "creatine": []}
+    manifest = build_manifest(results, {"status": "approved"}, content_dir=tmp_path)
+    assert [page["compound_id"] for page in manifest["pages"]] == ["magnesium"]
+    expected = fixture_page(frontmatter={**APPROVED, "compound_id": "magnesium"})
+    assert manifest["pages"][0]["sha256"] == fingerprint(expected)
+    assert fingerprint("﻿a\r\nb") == fingerprint("a\nb")
+    assert manifest["rubric"] == {"status": "approved"}
