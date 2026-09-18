@@ -41,6 +41,8 @@ export interface Offer {
   /** The name without pack size or a repeated brand; `name` is the raw feed title. */
   display_name: string;
   retailer_id: string;
+  /** ISO country the retailer dispatches from; anything but GB sits behind a toggle. */
+  ships_from: string;
   url: string;
   image_url: string | null;
   price_gbp: number;
@@ -89,7 +91,7 @@ export interface CompoundData {
 
 export interface Meta {
   generated_at: string;
-  retailers: { id: string; name: string; shipping: { rule: string; threshold_gbp?: number; flat_gbp?: number } }[];
+  retailers: { id: string; name: string; ships_from: string; shipping: { rule: string; threshold_gbp?: number; flat_gbp?: number } }[];
   counts: { products: number; compounds: Record<string, number>; classes: Record<string, number> };
 }
 
@@ -118,6 +120,11 @@ export const pageClasses = (data: CompoundData) =>
 /** The class shown first on a compound page: the one with the most ranked products. */
 export const defaultClass = (data: CompoundData) =>
   [...pageClasses(data)].sort((a, b) => b.ranked.length - a.ranked.length)[0];
+
+/** Ranked offers from retailers dispatching within the UK — what every headline figure uses.
+ * Sellers shipping from abroad are shown only when the visitor ticks the toggle. */
+export const ukRanked = (cls: ClassData) => cls.ranked.filter((o) => o.ships_from === 'GB');
+export const isInternational = (o: Offer) => o.ships_from !== 'GB';
 
 export const retailerName = (id: string) => meta.retailers.find((r) => r.id === id)?.name ?? id;
 

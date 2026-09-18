@@ -1,6 +1,6 @@
 # PerDose — Build Brief
 
-Version 1.6 · 2026-09-17 · Owner: Patrick · Builder: Claude Code
+Version 1.7 · 2026-09-18 · Owner: Patrick · Builder: Claude Code
 
 **Changelog v1.1 (applied before any code exists):** amounts are stored in each compound's base unit (no `_mg` columns); a product carries a **list of actives** (many-to-many) so combination products index under every active from day one; **generic normalisation types** replace per-compound special cases; export is **one JSON file per compound**; new **§20 overview content layer** and **§21 scaling to hundreds of compounds**; phases 7–10 restructured; every new compound must ship with ≥ 3 golden labels.
 
@@ -9,6 +9,8 @@ Version 1.6 · 2026-09-17 · Owner: Patrick · Builder: Claude Code
 **Changelog v1.3:** core/bolt-on boundary made explicit (§22): the core is a static site with **no accounts and no server-side code**; Learn (§20), Alerts, Stack Calculator and the N=1 experiment engine are separate bolt-ons. Core QoL additions in §12.2 ("your dose" recalculation, practical pick, per-pack sort, claimed dietary flags, share cards). Operator tooling (§12.3 `/ops/`, `make review`). LLM-assisted dedupe moved out of v1 (§11). Revenue options consolidated in §23 with what is deliberately excluded.
 
 **Changelog v1.6 (2026-09-17):** end-state scope stated by Patrick and recorded in §0: **every reliable, reputable UK retailer covered, and hundreds of supplements listed.** The launch gate (§17) is a milestone on the way, not the destination. Coverage at that scale comes only from official affiliate feeds (§7.2, §16) — never from scraping.
+
+**Changelog v1.7 (2026-09-18):** retailers dispatching from outside the UK may be listed if they ship to the UK and price in GBP, marked with their origin and hidden behind an "Include sellers shipping from outside the UK" toggle; every headline figure uses UK-based sellers only (DECISIONS.md 2026-09-18). Hosting is a Cloudflare Worker serving static files rather than Cloudflare Pages.
 
 **Changelog v1.5 (2026-09-17):** user-facing design language adopted — "Capsule" (§12.4), chosen by Patrick from two rounds of mock-ups; flagged as needing a refinement pass before launch. Build-time decisions that changed earlier sections (Astro 7, Sonnet 5 as the model, 37-label golden set, seed data collected by Claude) are recorded in DECISIONS.md rather than rewritten here.
 

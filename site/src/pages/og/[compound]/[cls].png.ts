@@ -5,7 +5,7 @@ import type { APIRoute, GetStaticPaths } from 'astro';
 import opentype from 'opentype.js';
 import sharp from 'sharp';
 import type { ClassData, CompoundData } from '../../../lib/data';
-import { compoundSlug, compounds, pageClasses } from '../../../lib/data';
+import { compoundSlug, compounds, pageClasses, ukRanked } from '../../../lib/data';
 import { doseLabel, isoToLong, perDose } from '../../../lib/format';
 import { site } from '../../../lib/site';
 
@@ -43,7 +43,7 @@ export const GET: APIRoute = async ({ props }) => {
   const { data, cls } = props as { data: CompoundData; cls: ClassData };
   const c = data.compound;
   const heading = cls.label.toLowerCase().includes(c.name.toLowerCase()) ? cls.label : `${c.name} — ${cls.label}`;
-  const from = cls.ranked[0]?.price_per_std_dose ?? null;
+  const from = ukRanked(cls)[0]?.price_per_std_dose ?? null;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#f4f5f8"/>
   <defs><clipPath id="pill"><rect x="960" y="85" width="160" height="70" rx="35"/></clipPath></defs>

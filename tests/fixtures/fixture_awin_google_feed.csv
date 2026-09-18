@@ -1,0 +1,4 @@
+advertiser_id,advertiser_name,id,title,description,link,image_link,aw_deep_link,gtin,brand,availability,price,sale_price,ships_from_country
+1,Fixture Shop,g1,Fixture Creatine Monohydrate Powder 500g,Directions: 5g daily,https://example.invalid/g1,https://example.invalid/g1.jpg,https://example.invalid/aw/g1,0000000000031,Fixture,in_stock,12.50 GBP,,GB
+1,Fixture Shop,g2,Fixture Glutamine Powder 250g,Directions: 5g daily,https://example.invalid/g2,,https://example.invalid/aw/g2,,Fixture,out_of_stock,9.00 EUR,,
+1,Fixture Shop,g3,Fixture Zinc 15mg 90 tablets,Directions: 1 daily,https://example.invalid/g3,,https://example.invalid/aw/g3,,Fixture,out_of_stock,£4.99,,GB

@@ -34,6 +34,20 @@ DEFAULT_COLUMN_MAPS = {
         "in_stock": "in_stock",
         "currency": "currency",
     },
+    # Awin's newer advertiser-based feeds use Google Shopping column names. `price` carries
+    # the currency in the same cell ("22.00 EUR"), so it is read for both fields and split.
+    "awin_google_csv": {
+        "merchant_pid": "id",
+        "ean": "gtin",
+        "brand": "brand",
+        "title": "title",
+        "description": "description",
+        "url": "aw_deep_link",
+        "image_url": "image_link",
+        "price_gbp": "price",
+        "in_stock": "availability",
+        "currency": "price",
+    },
     "impact_csv": {
         "merchant_pid": "CatalogItemId",
         "ean": "Gtin",
@@ -86,6 +100,19 @@ def _in_stock(value: str | None) -> bool:
     return True if text in IN_STOCK_WORDS or text == "" else text.isdigit() and int(text) > 0
 
 
+def _split_price(price: str, currency: str) -> tuple[str, str]:
+    """ "22.00 EUR" / "£9.99" / "9.99" + "GBP" -> ("22.00", "EUR"). A sale price is not
+    handled here: feeds give the current selling price in `price` unless told otherwise."""
+    parts = price.replace(",", "").split()
+    if len(parts) == 2 and parts[1].isalpha():
+        price, currency = parts[0], parts[1]
+    elif len(parts) == 2 and parts[0].isalpha():
+        price, currency = parts[1], parts[0]
+    if price.startswith("£"):
+        price, currency = price[1:], currency or "GBP"
+    return price, currency.upper()
+
+
 def read_feed(text: str, column_map: dict[str, str], run_date: date, listing_model) -> Iterator:
     """Yields (listing | None, problem | None) per row. `listing_model` is RawListing, passed
     in to avoid a circular import."""
@@ -102,7 +129,8 @@ def read_feed(text: str, column_map: dict[str, str], run_date: date, listing_mod
             column = column_map.get(field)
             return (row.get(column) or "").strip() if column in columns else ""
 
-        currency = get("currency").upper()
+        same_cell = column_map.get("currency") == column_map.get("price_gbp")
+        price_text, currency = _split_price(get("price_gbp"), "" if same_cell else get("currency"))
         if currency and currency != "GBP":
             yield None, "not_gbp"
             continue
@@ -117,7 +145,7 @@ def read_feed(text: str, column_map: dict[str, str], run_date: date, listing_mod
                         "description": get("description"),
                         "url": get("url"),
                         "image_url": get("image_url"),
-                        "price_gbp": get("price_gbp").replace("£", "").replace(",", ""),
+                        "price_gbp": price_text,
                         "in_stock": _in_stock(get("in_stock")),
                         "captured_on": run_date,
                     }

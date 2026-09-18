@@ -149,6 +149,7 @@ def run_ingest(retailer: str | None, run_date: str | None) -> int:
     from pipeline.db import connect
     from pipeline.ingest.run import ingest, load_exclusions, load_retailers
 
+    load_env()  # feed URLs live in .env
     when = date.fromisoformat(run_date) if run_date else date.today()
     counts = ingest(
         connect(), load_registry(), load_retailers(), load_exclusions(), when, only=retailer

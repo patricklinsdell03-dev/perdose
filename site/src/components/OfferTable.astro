@@ -5,7 +5,7 @@
 // Combination products (Phase 8) are rendered too, but hidden until the toggle is on, and
 // can never win a "cheapest" badge.
 import type { ClassData, CompoundRule, Offer } from '../lib/data';
-import { compoundSlug, retailerName } from '../lib/data';
+import { compoundSlug, isInternational, retailerName, ukRanked } from '../lib/data';
 import { BASIS_TEXT, amount, days, doseLabel, isoToLong, money, pack, perDose, perServing } from '../lib/format';
 import { site } from '../lib/site';
 
@@ -20,8 +20,9 @@ const unitLabel = amount(1, compound.unit).replace(/^1\s*/, '');
 const retailers = [...new Set([...cls.ranked, ...cls.combinations].map((o) => o.retailer_id))];
 const latest = [...cls.ranked, ...cls.combinations, ...cls.unverified].map((o) => o.price_date).sort().at(-1);
 const SIX_MONTHS = 183;
-const practical = cls.ranked.find((o) => (o.days_supply ?? Infinity) <= SIX_MONTHS);
-const cheapest = cls.ranked[0];
+const practical = ukRanked(cls).find((o) => (o.days_supply ?? Infinity) <= SIX_MONTHS);
+const cheapest = ukRanked(cls)[0];
+const international = cls.ranked.filter(isInternational).length;
 const rows = [
   ...cls.ranked.map((offer) => ({ offer, combo: false })),
   ...cls.combinations.map((offer) => ({ offer, combo: true })),
@@ -98,10 +99,15 @@ function working(offer: Offer): string[] {
                 <input type="checkbox" data-filter="combos" /> Include combination products ({cls.combinations.length})
               </label>
             )}
+            {international > 0 && (
+              <label class="check">
+                <input type="checkbox" data-filter="intl" /> Include sellers shipping from outside the UK ({international})
+              </label>
+            )}
           </fieldset>
         </form>
 
-        <div class="table-wrap" data-table hidden={cls.ranked.length === 0}>
+        <div class="table-wrap" data-table hidden={ukRanked(cls).length === 0}>
           <table>
             <thead>
               <tr>
@@ -128,7 +134,8 @@ function working(offer: Offer): string[] {
                     data-stock={offer.in_stock ? '1' : '0'}
                     data-tested={offer.tested_flag ? '1' : '0'}
                     data-combo={combo ? '1' : '0'}
-                    hidden={combo}
+                    data-intl={isInternational(offer) ? '1' : '0'}
+                    hidden={combo || isInternational(offer)}
                   >
                     <td data-label="Product" data-cell="product">
                       <div class="product">
@@ -143,6 +150,7 @@ function working(offer: Offer): string[] {
                             </span>
                             {combo && <span class="badge combo">Combination: price counts the {compound.name.toLowerCase()} only</span>}
                             {others(offer).length > 0 && <span class="chip">also contains {others(offer).slice(0, 3).join(', ')}{others(offer).length > 3 ? '…' : ''}</span>}
+                            {isInternational(offer) && <span class="chip">ships from {offer.ships_from === 'US' ? 'the US' : offer.ships_from} — check delivery and duties</span>}
                             {offer.tested_flag && <span class="badge">Testing claimed on label</span>}
                             {offer.claimed.map((flag) => <span class="chip">claimed: {flag}</span>)}
                             {!offer.in_stock && <span class="badge warn">Out of stock</span>}
@@ -162,7 +170,7 @@ function working(offer: Offer): string[] {
                       </a>
                     </td>
                   </tr>
-                  <tr class="detail" data-detail-for={offer.listing_id} hidden={combo}>
+                  <tr class="detail" data-detail-for={offer.listing_id} hidden={combo || isInternational(offer)}>
                     <td colspan="7">
                       <details>
                         <summary>Show the working</summary>
@@ -192,9 +200,9 @@ function working(offer: Offer): string[] {
             </tbody>
           </table>
         </div>
-        <p class="empty muted" data-empty hidden={cls.ranked.length > 0}>
-          {cls.ranked.length === 0
-            ? 'Only combination products here so far. Tick “Include combination products” to see them.'
+        <p class="empty muted" data-empty hidden={ukRanked(cls).length > 0}>
+          {ukRanked(cls).length === 0
+            ? 'Nothing from UK-based sellers here yet. Tick the boxes under “Show” to include combination products or sellers shipping from abroad.'
             : 'No products match these filters.'}
         </p>
       </>
@@ -261,6 +269,8 @@ function working(offer: Offer): string[] {
     if (params.get('sort')) sortSelect.value = params.get('sort') ?? 'dose';
     const combosBox = filter('combos');
     if (combosBox && params.get('combos') === '1') combosBox.checked = true;
+    const intlBox = filter('intl');
+    if (intlBox && params.get('intl') === '1') intlBox.checked = true;
 
     const update = () => {
       const dose = Number(doseInput.value) > 0 ? Number(doseInput.value) : standardDose;
@@ -271,11 +281,13 @@ function working(offer: Offer): string[] {
       const onlyStock = filter('stock')?.checked;
       const onlyTested = filter('tested')?.checked;
       const showCombos = combosBox?.checked ?? false;
+      const showIntl = intlBox?.checked ?? false;
 
       const scored = rows.map((row) => {
         const perUnit = Number(row.dataset.ppu);
         const total = Number(row.dataset.total);
         const combo = row.dataset.combo === '1';
+        const intl = row.dataset.intl === '1';
         const value = { row, combo, dose: perUnit * dose, days: total / dose, pack: Number(row.dataset.price) };
         const doseCell = row.querySelector<HTMLElement>('[data-cell="dose"]')!;
         doseCell.textContent = perDose(value.dose);
@@ -285,6 +297,7 @@ function working(offer: Offer): string[] {
         row.querySelector('[data-cell="days"]')!.textContent = days(value.days);
         const visible =
           (!combo || showCombos) &&
+          (!intl || showIntl) &&
           (!hasRetailerFilter || retailers.has(row.dataset.retailer ?? '')) &&
           (!onlyStock || row.dataset.stock === '1') &&
           (!onlyTested || row.dataset.tested === '1');
@@ -320,7 +333,7 @@ function working(offer: Offer): string[] {
       section.querySelector<HTMLElement>('[data-table]')!.hidden = !anyVisible;
       if (emptyText) {
         emptyText.hidden = anyVisible;
-        emptyText.textContent = showCombos || eligible.length ? 'No products match these filters.' : emptyDefault;
+        emptyText.textContent = showCombos || showIntl || eligible.length ? 'No products match these filters.' : emptyDefault;
       }
 
       const heading = section.querySelector<HTMLElement>('[data-dose-heading]');
@@ -333,12 +346,13 @@ function working(offer: Offer): string[] {
       dose === standardDose ? next.delete('dose') : next.set('dose', String(dose));
       sortSelect.value === 'dose' ? next.delete('sort') : next.set('sort', sortSelect.value);
       showCombos ? next.set('combos', '1') : next.delete('combos');
+      showIntl ? next.set('intl', '1') : next.delete('intl');
       const query = next.toString();
       history.replaceState(null, '', query ? `?${query}` : location.pathname);
     };
 
     section.querySelector('[data-controls]')?.addEventListener('input', update);
     section.querySelector('[data-controls]')?.addEventListener('submit', (event) => event.preventDefault());
-    if (fromUrl > 0 || params.get('sort') || combosBox?.checked) update();
+    if (fromUrl > 0 || params.get('sort') || combosBox?.checked || intlBox?.checked) update();
   }
 </script>

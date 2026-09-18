@@ -33,7 +33,7 @@ class _Model(BaseModel):
 
 
 class Feed(_Model):
-    type: Literal["seed_csv", "awin_csv", "impact_csv"]
+    type: Literal["seed_csv", "awin_csv", "awin_google_csv", "impact_csv"]
     url_env: str | None = None
     path: str | None = None  # a local copy of the feed (tests, manual downloads)
     gzip: bool = False
@@ -57,6 +57,9 @@ class Retailer(_Model):
     feed: Feed
     link: Link = Link()
     shipping: Shipping
+    # ISO country the retailer dispatches from. Anything but GB is shown behind the
+    # "sellers shipping from outside the UK" toggle (DECISIONS.md 2026-09-18).
+    ships_from: str = "GB"
     notes: str | None = None
 
 

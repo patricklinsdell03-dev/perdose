@@ -1,12 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
-import { CATEGORY_LABELS, compoundSlug, compounds, defaultClass, meta, pageClasses } from '../lib/data';
+import { CATEGORY_LABELS, compoundSlug, compounds, defaultClass, meta, pageClasses, ukRanked } from '../lib/data';
 import { doseLabel, isoToLong, perDose } from '../lib/format';
 
 const categories = [...new Set(compounds.map((d) => d.compound.category))];
 const cards = compounds
   .map((data) => {
-    const priced = pageClasses(data).filter((cls) => cls.ranked.length > 0);
+    const priced = pageClasses(data).filter((cls) => ukRanked(cls).length > 0);
     const lead = priced.includes(defaultClass(data)) ? defaultClass(data) : priced[0];
     const products = new Set(data.classes.flatMap((c) => [...c.ranked, ...c.combinations, ...c.unverified].map((o) => o.product_id)));
     return { data, lead, rest: priced.filter((cls) => cls !== lead), products: products.size };
@@ -51,7 +51,7 @@ const cards = compounds
           <h3><a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a></h3>
           <a class="lead" href={`/c/${compoundSlug(data.compound.id)}/${lead.slug}/`}>
             <span class="from">{rest.length ? `${lead.label} from` : 'from'}</span>
-            <span class="figure">{perDose(lead.ranked[0].price_per_std_dose)}</span>
+            <span class="figure">{perDose(ukRanked(lead)[0].price_per_std_dose)}</span>
             <span class="unit">{doseLabel(data.compound, lead.standard_dose)}</span>
           </a>
           {rest.length > 0 && (
@@ -59,7 +59,7 @@ const cards = compounds
               {rest.map((cls) => (
                 <li>
                   <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>
-                  <strong>{perDose(cls.ranked[0].price_per_std_dose)}</strong>
+                  <strong>{perDose(ukRanked(cls)[0].price_per_std_dose)}</strong>
                 </li>
               ))}
             </ul>

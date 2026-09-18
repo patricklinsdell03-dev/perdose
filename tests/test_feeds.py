@@ -1,4 +1,4 @@
-"""Brief §7.2: affiliate feeds are mapped by column name, reject non-GBP rows, and a broken
+"""Brief Â§7.2: affiliate feeds are mapped by column name, reject non-GBP rows, and a broken
 feed stops only its own retailer."""
 
 import gzip
@@ -116,3 +116,30 @@ def test_feed_listings_unseen_for_14_days_are_hidden():
     gone = retailers[0].model_copy(update={"feed": Feed(type="awin_csv", url_env="FIXTURE_UNSET")})
     ingest(conn, load_registry(), [gone], load_exclusions(), date(2026, 9, 20), raw_dir=None)
     assert conn.execute("SELECT SUM(in_stock) FROM listings").fetchone()[0] == 0
+
+
+def test_google_format_feed_splits_price_and_currency():
+    text = Path("tests/fixtures/fixture_awin_google_feed.csv").read_text(encoding="utf-8")
+    results = read(text, feeds.column_map_for("awin_google_csv", {}))
+    listings = [listing for listing, _ in results if listing]
+    problems = [problem for _, problem in results if problem]
+    assert problems == ["not_gbp"]  # the 9.00 EUR row
+    assert [(x.merchant_pid, x.price_gbp, x.in_stock) for x in listings] == [
+        ("g1", 12.5, True),
+        ("g3", 4.99, False),
+    ]
+    assert listings[0].ean == "0000000000031" and listings[0].url == "https://example.invalid/aw/g1"
+
+
+@pytest.mark.parametrize(
+    ("price", "currency", "expected"),
+    [
+        ("22.00 EUR", "", ("22.00", "EUR")),
+        ("GBP 1,299.00", "", ("1299.00", "GBP")),
+        ("£9.99", "", ("9.99", "GBP")),
+        ("9.99", "gbp", ("9.99", "GBP")),
+        ("9.99", "", ("9.99", "")),
+    ],
+)
+def test_split_price(price, currency, expected):
+    assert feeds._split_price(price, currency) == expected

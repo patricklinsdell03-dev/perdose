@@ -143,7 +143,7 @@ def _rows_for(conn: sqlite3.Connection, compound_id: str, prompt_version: str) -
     return [dict(row) for row in rows]
 
 
-def _offer(row: dict, compound_id: str) -> dict:
+def _offer(row: dict, compound_id: str, ships_from: dict[str, str]) -> dict:
     extraction = json.loads(row["extracted_json"]) if row["extracted_json"] else {}
     active = next((a for a in extraction.get("actives", []) if a["compound_id"] == compound_id), {})
     other_actives = [
@@ -162,6 +162,7 @@ def _offer(row: dict, compound_id: str) -> dict:
         "name": row["name"],
         "display_name": display_name(row["name"], row["brand"]),
         "retailer_id": row["retailer_id"],
+        "ships_from": ships_from.get(row["retailer_id"], "GB"),
         "url": row["url"],
         "image_url": row["image_url"],
         "price_gbp": row["price_list_gbp"],
@@ -201,7 +202,9 @@ def _named_in_title(compound: Compound, row: dict) -> bool:
     return any(find_term(term, row["name"]) is not None for term in terms)
 
 
-def _compound_file(compound: Compound, rows: list[dict], generated_at: str) -> dict:
+def _compound_file(
+    compound: Compound, rows: list[dict], generated_at: str, ships_from: dict[str, str]
+) -> dict:
     view = _rules_view(compound)
     classes = []
     for cls in [*view["classes"], {"id": "unknown", "standard_dose": compound.standard_dose}]:
@@ -210,7 +213,7 @@ def _compound_file(compound: Compound, rows: list[dict], generated_at: str) -> d
             continue
         ranked, combinations, unverified = [], [], []
         for row in in_class:
-            offer = _offer(row, compound.id)
+            offer = _offer(row, compound.id, ships_from)
             if (
                 row["needs_review"]
                 or not row["rank_eligible"]
@@ -325,11 +328,12 @@ def export(
 
     index, counts = [], {"compounds": {}, "classes": {}}
     seen_products, seen_retailers = set(), set()
+    ships_from = {r.id: r.ships_from for r in retailers}
     for compound in registry.compounds:
         rows = _rows_for(conn, compound.id, prompt_version)
         if not rows:
             continue
-        data = _compound_file(compound, rows, generated_at)
+        data = _compound_file(compound, rows, generated_at, ships_from)
         size = _write(out_dir / "compounds" / f"{compound.id}.json", data)
         if size > MAX_COMPOUND_FILE_BYTES:
             raise ExportTooLarge(f"{compound.id}.json is {size:,} bytes (limit 2 MB)")
@@ -372,7 +376,12 @@ def export(
     meta = {
         "generated_at": generated_at,
         "retailers": [
-            {"id": r.id, "name": r.name, "shipping": r.shipping.model_dump(exclude_none=True)}
+            {
+                "id": r.id,
+                "name": r.name,
+                "ships_from": r.ships_from,
+                "shipping": r.shipping.model_dump(exclude_none=True),
+            }
             for r in retailers
             if r.id in seen_retailers
         ],

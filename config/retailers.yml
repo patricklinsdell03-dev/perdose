@@ -27,6 +27,14 @@ retailers:
     shipping: { rule: free_over, threshold_gbp: 30 }
     notes: "No barcodes on product pages. Hosts marketplace sellers ('Sold by ...') alongside own brand."
 
+  - id: optimum_nutrition
+    name: Optimum Nutrition
+    enabled: true
+    feed: { type: awin_google_csv, url_env: AWIN_FEED_URL_OPTIMUM_NUTRITION, gzip: true }
+    link: { template: "{url}" }   # Awin feeds supply tracked links (aw_deep_link)
+    shipping: { rule: unknown }
+    notes: "First live Awin feed (programme joined 2026-09-18). Own-brand sports nutrition; UK store."
+
   - id: healthspan
     name: Healthspan
     enabled: true

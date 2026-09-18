@@ -2,7 +2,7 @@
 // Browse by ingredient class, never by health goal (brief §12.1).
 import Base from '../../layouts/Base.astro';
 import type { CompoundData } from '../../lib/data';
-import { CATEGORY_LABELS, compoundSlug, compounds, pageClasses } from '../../lib/data';
+import { CATEGORY_LABELS, compoundSlug, compounds, pageClasses, ukRanked } from '../../lib/data';
 import { doseLabel, perDose } from '../../lib/format';
 
 export function getStaticPaths() {
@@ -31,10 +31,10 @@ const label = CATEGORY_LABELS[category ?? ''] ?? category;
         <li class="card">
           <h3><a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a></h3>
           <ul>
-            {pageClasses(data).filter((cls) => cls.ranked.length > 0).map((cls) => (
+            {pageClasses(data).filter((cls) => ukRanked(cls).length > 0).map((cls) => (
               <li>
                 <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>: from{' '}
-                <strong>{perDose(cls.ranked[0].price_per_std_dose)}</strong> {doseLabel(data.compound, cls.standard_dose)}
+                <strong>{perDose(ukRanked(cls)[0].price_per_std_dose)}</strong> {doseLabel(data.compound, cls.standard_dose)}
               </li>
             ))}
           </ul>
