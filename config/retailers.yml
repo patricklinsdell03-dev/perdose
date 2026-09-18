@@ -44,3 +44,11 @@ retailers:
     link: { template: "{url}" }
     shipping: { rule: free_over, threshold_gbp: 30 }
     notes: "Own brand only (Healthspan, Healthspan Elite). No barcodes or product codes on pages. On 2026-09-17 a 'free delivery on all orders this week' promotion was running; the standing rule shown is free over £30, and the under-£30 charge was not displayed. Seed prices are one-time-purchase prices, never subscription prices."
+
+  - id: amazon
+    name: Amazon
+    enabled: false   # switch on when AMAZON_ACCESS_KEY / AMAZON_SECRET_KEY / AMAZON_PARTNER_TAG are in .env
+    feed: { type: amazon_paapi }
+    link: { template: "{url}" }   # DetailPageURL carries the partner tag
+    shipping: { rule: free_over, threshold_gbp: 35 }
+    notes: "Core source (brief v1.8). Product Advertising API, one row per product at the Buy Box price, refreshed daily. Third-party sellers pass only if Amazon-fulfilled or rated >= 4.5 with >= 100 ratings (pending Patrick's line). Free delivery over £35 for non-Prime; Prime varies."

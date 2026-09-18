@@ -101,6 +101,13 @@ with its own Awin advertiser id (shown in the Create-a-Feed advertiser list and 
 
 A feed listing that disappears for 14 days is hidden automatically.
 
+## Connecting Amazon (once the Associates account has 3 qualifying sales)
+
+1. In Amazon Associates → Tools → Product Advertising API, request access; when granted, create credentials. Put the three values in `.env` as `AMAZON_ACCESS_KEY=`, `AMAZON_SECRET_KEY=`, `AMAZON_PARTNER_TAG=` (the tag looks like `perdose-21`). Never paste them in chat.
+2. In `config/retailers.yml` set the `amazon` entry to `enabled: true`.
+3. `make ingest --retailer amazon` is not needed — plain `make ingest` runs it. It searches Amazon once per compound name (about 90 searches, 3 pages each, one request a second: ~5 minutes) and keeps one listing per product at the Buy Box price in GBP. `seller_rule` in the counts is products dropped because the seller is not Amazon-fulfilled and has a low rating.
+4. `make all`. Amazon's terms need prices refreshed daily, so switch the daily cron on at the same time if it is not already.
+
 ## What to do when a feed column name changes
 
 The symptom is `WARNING: <retailer>: required columns missing: price_gbp (their column 'search_price'); skipped` - that retailer keeps yesterday's data and everything else carries on.

@@ -118,7 +118,9 @@ Steps, in order:
   Patrick.
 - Launch gate (brief §17): ≥ 5 live feeds, the registry, ≥ 10 approved learn pages.
 
-### Phase 7: v1.1 items (brief §19, in order) — only after Phase 6 has two live retailers
+### Phase 7 (re-ordered by Patrick, brief v1.8)
+0. **Amazon live**: the adapter exists; when Associates grants API access, credentials go in `.env`, `amazon` is enabled in `retailers.yml`, and the first run is supervised (label text is thinner than retailer feeds). Before that: "Also on Amazon" affiliate search links on product pages once Patrick has an Associates tag, to earn the 3 qualifying sales.
+0b. **Basket builder** with "one retailer" and "delivered within N days" filters, once several live feeds exist (needs `delivery_days` per retailer).
 1. Effective price with retailer sitewide codes (`config/promos.yml`, toggle on tables).
 2. Price history (`data/history.sqlite`, sparklines, "lowest in 90 days").
 3. Alerts via a Cloudflare Worker + KV (bolt-on; core stays static).

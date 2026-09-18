@@ -1,0 +1,50 @@
+{
+  "SearchResult": {
+    "TotalResultCount": 4,
+    "Items": [
+      {
+        "ASIN": "B0FIXTURE01",
+        "DetailPageURL": "https://www.amazon.co.uk/dp/B0FIXTURE01?tag=fixture-21",
+        "Images": {"Primary": {"Large": {"URL": "https://example.invalid/a1.jpg"}}},
+        "ItemInfo": {
+          "Title": {"DisplayValue": "Fixture Magnesium Bisglycinate 2000mg 180 Capsules"},
+          "ByLineInfo": {"Brand": {"DisplayValue": "Fixture"}},
+          "Features": {"DisplayValues": ["2 capsules provide 200mg elemental magnesium", "180 capsules"]},
+          "ExternalIds": {"EANs": {"DisplayValues": ["0000000000048"]}}
+        },
+        "Offers": {"Listings": [{
+          "Price": {"Amount": 14.99, "Currency": "GBP", "DisplayAmount": "£14.99"},
+          "Availability": {"Type": "Now"},
+          "MerchantInfo": {"Name": "Fixture Supplements Ltd", "FeedbackRating": 4.8, "FeedbackCount": 1200},
+          "DeliveryInfo": {"IsAmazonFulfilled": false, "IsPrimeEligible": false}
+        }]}
+      },
+      {
+        "ASIN": "B0FIXTURE02",
+        "DetailPageURL": "https://www.amazon.co.uk/dp/B0FIXTURE02?tag=fixture-21",
+        "ItemInfo": {"Title": {"DisplayValue": "Fixture Zinc 15mg 90 Tablets"}, "Features": {"DisplayValues": ["Zinc picolinate 15mg"]}},
+        "Offers": {"Listings": [{
+          "Price": {"Amount": 4.99, "Currency": "GBP"},
+          "Availability": {"Type": "Now"},
+          "MerchantInfo": {"Name": "Unknown Seller", "FeedbackRating": 3.9, "FeedbackCount": 12},
+          "DeliveryInfo": {"IsAmazonFulfilled": false}
+        }]}
+      },
+      {
+        "ASIN": "B0FIXTURE03",
+        "DetailPageURL": "https://www.amazon.co.uk/dp/B0FIXTURE03?tag=fixture-21",
+        "ItemInfo": {"Title": {"DisplayValue": "Fixture Vitamin D3 4000IU 365 Softgels"}, "Features": {"DisplayValues": []}},
+        "Offers": {"Listings": [{
+          "Price": {"Amount": 8.50, "Currency": "EUR"},
+          "MerchantInfo": {"Name": "Amazon"}
+        }]}
+      },
+      {
+        "ASIN": "B0FIXTURE04",
+        "DetailPageURL": "https://www.amazon.co.uk/dp/B0FIXTURE04?tag=fixture-21",
+        "ItemInfo": {"Title": {"DisplayValue": "Fixture Creatine Monohydrate 500g"}},
+        "Offers": {"Listings": []}
+      }
+    ]
+  }
+}

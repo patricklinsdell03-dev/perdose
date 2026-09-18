@@ -33,7 +33,7 @@ class _Model(BaseModel):
 
 
 class Feed(_Model):
-    type: Literal["seed_csv", "awin_csv", "awin_google_csv", "impact_csv"]
+    type: Literal["seed_csv", "awin_csv", "awin_google_csv", "impact_csv", "amazon_paapi"]
     url_env: str | None = None
     path: str | None = None  # a local copy of the feed (tests, manual downloads)
     gzip: bool = False
@@ -158,6 +158,18 @@ def upsert_listing(conn: sqlite3.Connection, retailer: Retailer, listing: RawLis
     )
 
 
+def _read_amazon(registry, run_date: date, rejected: dict[str, int]) -> list:
+    from pipeline.ingest import amazon
+
+    listings = []
+    for listing, problem in amazon.fetch_all(registry, run_date, RawListing):
+        if listing is not None:
+            listings.append(listing)
+        else:
+            rejected[problem] = rejected.get(problem, 0) + 1
+    return listings
+
+
 def _read_live_feed(
     retailer: Retailer, run_date: date, rejected: dict[str, int], downloaded: dict[str, str]
 ) -> list:
@@ -203,7 +215,10 @@ def ingest(
             listings = list(read_seed_csv(source))
         else:
             try:
-                listings = _read_live_feed(retailer, run_date, rejected, downloaded)
+                if retailer.feed.type == "amazon_paapi":
+                    listings = _read_amazon(registry, run_date, rejected)
+                else:
+                    listings = _read_live_feed(retailer, run_date, rejected, downloaded)
             except feeds.FeedError as error:
                 # One broken feed must not stop the others (brief §18).
                 print(f"WARNING: {retailer.id}: {error}; skipped")
