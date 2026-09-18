@@ -8,6 +8,29 @@ Status codes: `joined` / `applied` / `not on awin` / `no feed` / `rejected` / `e
 Nothing goes live without a feed, a UK programme and a pass on the "reliable and reputable"
 standard (brief §7.3.5).
 
+## Awin status on 2026-09-18 (publisher ID 3098456)
+
+Searched the Awin directory by name and by keyword (vitamin, supplements, pharmacy, nutrition, chemist).
+Only UK programmes paying GBP with a product feed count.
+
+**Joined:** Optimum Nutrition UK.
+
+**Pending (29):** Boots.com, Superdrug UK, Lloyds Pharmacy UK, Pharmacy2U Shop, Express Chemist, Clear Chemist,
+Chemist4U, Myprotein UK, Bulk UK, Healthspan, Healthspan UK Elite, Simply Supplements, Vitabiotics,
+Lamberts Healthcare (Nature's Best), Lola Health UK, PER4M, Higher Nature, Vitamin Planet, ZipVit, WeightWorld UK,
+Wild Nutrition, Together Health, Known Nutrition, Sealions, VitaBright UK, Natures Zest, Bio-Synergy,
+Bodybuilding Warehouse, Scimx.
+
+**Not on Awin (UK):** Holland & Barrett (only BE/IE/NL programmes), Protein Works, Dolphin Fitness, Discount Supplements,
+Applied Nutrition, PhD, USN, Solgar, Seven Seas, BetterYou, Viridian, Cytoplan, BioCare, Nutri Advanced, Nutravita,
+Nu U, Bare Biology, Just Vitamins, Victoria Health, Planet Organic, Revital, Natures Healthbox, Chemist Direct,
+Weldricks, Huel. Check their site footers for the network they use.
+
+**On Awin but not applied (judged not a fit):** iHerb GBP (ships from US), Grenade (bars), WHOLE SUPP (meal shakes),
+VITL (personalised multis), Revive Active (multi sachets), Dose & Co / Gold Collagen / Kollo / Rejuvenated (collagen),
+Nuzest UK (protein/greens), Humantra (electrolytes), Lyfespan (pharmacy; could not open its row), 4x4 Predator
+(unclear whether this is Predator Nutrition).
+
 | Retailer / brand | Type | Priority | Awin status | Notes |
 |---|---|---|---|---|
 | Holland & Barrett | high-street + online | 1 | not on awin (only BE/IE/NL) | find their UK network |
