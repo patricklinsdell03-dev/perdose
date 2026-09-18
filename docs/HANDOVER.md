@@ -36,7 +36,7 @@ asking). Under the current £5 grant about £3.75 is used, itemised in DECISIONS
 batch of 20 compounds costs ~65p to validate; a first feed of ~N relevant products costs ~1p
 per product, once (readings are cached).
 
-**Learn pages (Phase 9) — tooling built 2026-09-18, second session; no page drafted yet.**
+**Learn pages (Phase 9) — tooling built 2026-09-18, second session; no page drafted yet. Patrick's decision: draft pages inside Claude Code sessions (his subscription), not via `make content` API calls — see DECISIONS.md.**
 `make content COMPOUND=<id>` drafts a page from Europe PMC research (estimate ~19p for
 magnesium; hard cap 50p a page; `DRY=1` is free). `make content-check` is part of `make check`
 and writes `data/export/learn.json`; the site publishes only approved pages listed there with a

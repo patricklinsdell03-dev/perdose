@@ -2,7 +2,7 @@
 
 Working list for the brief v1.6 end state ("every reliable and reputable UK retailer"). Patrick
 searches each name in the Awin advertiser directory (UK programme, GBP, Product Feed = Yes) and
-records the result here. Anything not on Awin is checked on the other networks later.
+records the result here. Anything not on Awin is checked on the other UK networks: Webgains, Rakuten Advertising, CJ, Partnerize, Tradedoubler.
 
 Status codes: `joined` / `applied` / `not on awin` / `no feed` / `rejected` / `excluded (reason)`.
 Nothing goes live without a feed, a UK programme and a pass on the "reliable and reputable"
@@ -94,7 +94,7 @@ Nuzest UK (protein/greens), Humantra (electrolytes), Lyfespan (pharmacy; could n
 | Natures Healthbox | multi-brand online | 2 | | |
 | Big Green Smile | multi-brand online | 3 | | |
 | Ethical Superstore | multi-brand online | 3 | | |
-| Amazon UK | marketplace | — | excluded (marketplace, no label control) | |
+| Amazon UK | marketplace | 2 | via Product Advertising API once Associates has 3 sales (brief §19) | listings held to the unverified-if-ambiguous rule |
 | eBay UK | marketplace | — | excluded (marketplace) | |
 | iHerb (UK site) | international | 3 | | ships from US — check duties/returns |
 | Vitacost / Swanson | international | — | excluded (non-UK) | |
