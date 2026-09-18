@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS product_actives (
   form_class      TEXT NOT NULL,      -- comparability class (§6.3)
   amount_per_serving REAL,            -- in the compound's base unit (mg, mcg or IU)
   amount_unit     TEXT NOT NULL,      -- always equal to the compound's declared unit
-  amount_basis    TEXT NOT NULL,      -- 'stated_elemental'|'estimated_from_compound'|'stated_total'|'stated_component_sum'|'stated_extract'|'stated_compound'
+  amount_basis    TEXT NOT NULL,      -- 'stated_elemental'|'estimated_from_compound'|'stated_total'|'stated_component_sum'|'stated_extract'|'stated_compound'|'stated_constituent'
   is_primary      INTEGER NOT NULL,   -- 1 for the headline active (title order decides)
   rank_eligible   INTEGER NOT NULL,   -- 0 if needs_review, amount null, or class has no standard dose
   PRIMARY KEY (product_id, compound_id)

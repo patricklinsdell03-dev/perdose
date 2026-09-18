@@ -1,0 +1,50 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "tart_cherry",
+        "form_raw": "10:1 concentrate",
+        "form_id": "extract",
+        "amount_per_serving": 300.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "extract_mass",
+            "amount": 300.0,
+            "unit": "mg"
+          },
+          {
+            "name": "herb_equivalent",
+            "amount": 3000.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "10:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Tart Cherry 3000mg (from 300mg 10:1 concentrate)",
+          "herb_equivalent": "Tart Cherry 3000mg (from 300mg 10:1 concentrate)",
+          "extract_mass": "300mg 10:1 concentrate"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "capsule",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "120 Capsules",
+      "units_per_serving": "2 capsules"
+    }
+  }
+}

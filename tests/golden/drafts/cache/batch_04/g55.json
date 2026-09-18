@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "garlic",
+        "form_raw": "Aged Garlic Extract (Kyolic)",
+        "form_id": "aged",
+        "amount_per_serving": 600.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": "Kyolic",
+        "evidence": {
+          "amount_per_serving": "Aged Garlic Extract 600mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 100,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "100 Capsules"
+    }
+  }
+}

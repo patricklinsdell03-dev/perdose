@@ -1,0 +1,397 @@
+# DRAFT — NOT LIVE. Batch 4 of the registry expansion (brief §17 Phase 6b, Appendix F).
+# Nothing here reaches the site until Patrick approves it and the entries are moved into
+# config/compounds.yml (see docs/RUNBOOK.md, "Approving a drafted batch").
+#
+# The batch that needed small rule additions: compounds compared on a stated constituent
+# (curcuminoids, EGCG, silymarin, cranberry PACs — `constituent_required`), vitamins A and E
+# with ONE IU conversion each (Patrick, 2026-09-18: no per-form conversion; forms still get
+# their own tables), choline and carnitine with formula-checked factors, MCT oil as an
+# oil_components compound. Standard doses are Appendix F's comparison units, never
+# recommendations. Still left out: collagen/colostrum (per-gram type), probiotics (CFU),
+# electrolytes/multivitamins (per-serving), beetroot nitrate, silica (expect review),
+# lithium orotate, sodium bicarbonate (tier 3 sport).
+version: 1
+compounds:
+
+  - id: vitamin_a
+    name: Vitamin A
+    category: vitamins
+    tier: 2
+    comparison_quantity: vitamin A
+    unit: mcg
+    standard_dose: 800
+    unit_conversions: { mcg_to_IU: 3.333 }   # retinol: 1 IU = 0.3 mcg; the one conversion used for every form
+    label_convention: elemental_default
+    normalisation_type: vitamin_unit
+    aliases: [vitamin a, retinol, retinyl palmitate, retinyl acetate, beta-carotene, beta carotene, betacarotene]
+    accepted_cofactors: [vitamin d3, vitamin d]
+    classes:
+      va_retinol: { label: "Retinol (palmitate / acetate)", slug: retinol }
+      va_carotene: { label: "Beta-carotene", slug: beta-carotene }
+    forms:
+      - { id: retinol, names: [retinol, retinyl palmitate, retinyl acetate, palmitate, acetate, unspecified], class: va_retinol }
+      - { id: beta_carotene, names: [beta-carotene, beta carotene, betacarotene, mixed carotenoids], class: va_carotene, note: "Labels state beta-carotene mg or mcg; not converted to retinol equivalents (Patrick 2026-09-18)." }
+
+  - id: vitamin_e
+    name: Vitamin E
+    category: vitamins
+    tier: 2
+    comparison_quantity: vitamin E
+    unit: mg
+    standard_dose: 268
+    unit_conversions: { mcg_to_IU: 0.00149 }   # d-alpha: 1 mg = 1.49 IU; the one conversion used for every form
+    label_convention: elemental_default
+    normalisation_type: vitamin_unit
+    aliases: [vitamin e, d-alpha tocopherol, dl-alpha tocopherol, tocopherol, tocopherols, tocotrienols, alpha-te]
+    accepted_cofactors: [selenium, vitamin c]
+    classes:
+      ve_natural: { label: "Natural (d-alpha)", slug: d-alpha }
+      ve_synthetic: { label: "Synthetic (dl-alpha)", slug: dl-alpha }
+      ve_mixed: { label: "Mixed tocopherols / tocotrienols", slug: mixed-tocopherols }
+    forms:
+      - { id: d_alpha, names: [d-alpha, d-alpha tocopherol, d-alpha tocopheryl, natural, unspecified], class: ve_natural }
+      - { id: dl_alpha, names: [dl-alpha, dl-alpha tocopherol, dl-alpha tocopheryl, synthetic], class: ve_synthetic }
+      - { id: mixed, names: [mixed tocopherols, tocotrienols, full spectrum, gamma tocopherol], class: ve_mixed }
+
+  - id: vitamin_k1
+    name: Vitamin K1
+    category: vitamins
+    tier: 3
+    comparison_quantity: vitamin K1
+    unit: mcg
+    standard_dose: 100
+    label_convention: elemental_default
+    normalisation_type: vitamin_unit
+    aliases: [vitamin k1, k1, phylloquinone, phytonadione, phytomenadione]
+    accepted_cofactors: [vitamin d3, vitamin d, vitamin k2]
+    classes:
+      k1: { label: "Vitamin K1", slug: vitamin-k1 }
+    forms:
+      - { id: phylloquinone, names: [phylloquinone, phytonadione, phytomenadione, k1, unspecified], class: k1 }
+
+  - id: choline
+    name: Choline
+    category: vitamins
+    tier: 2
+    comparison_quantity: choline
+    unit: mg
+    standard_dose: 250
+    label_convention: ambiguous
+    normalisation_type: mineral_elemental
+    aliases: [choline, choline bitartrate, choline chloride, phosphatidylcholine]
+    accepted_cofactors: [inositol]
+    heuristics:
+      # "Choline bitartrate 500mg" is the salt; "Choline 250mg" is choline.
+      unclear_amount:
+        compound_if_at_least: 0
+        compound_forms: [bitartrate, other]
+        elemental_if_at_most: 100000
+    classes:
+      cho_bitartrate: { label: "Choline bitartrate", slug: choline-bitartrate }
+      cho_other: { label: "Other forms", slug: choline-other }
+    forms:
+      - { id: choline, names: [choline, unspecified], class: cho_other, elemental_factor: 1.0, note: "A plain 'choline' figure is choline itself." }
+      - { id: bitartrate, names: [bitartrate, choline bitartrate], class: cho_bitartrate, elemental_factor: 0.411 }
+      - { id: other, names: [chloride, phosphatidylcholine, lecithin, choline chloride], class: cho_other, note: "No factor: needs the choline amount stated. Alpha-GPC and citicoline are their own compounds." }
+
+  - id: carnitine
+    name: L-Carnitine
+    category: amino-acids
+    tier: 2
+    comparison_quantity: L-carnitine
+    unit: mg
+    standard_dose: 1000
+    label_convention: ambiguous
+    normalisation_type: mineral_elemental
+    aliases: [carnitine, l-carnitine, l-carnitine tartrate, l-carnitine l-tartrate, lclt, carnipure, acetyl-l-carnitine, acetyl l-carnitine, alcar]
+    accepted_cofactors: []
+    heuristics:
+      # "L-Carnitine Tartrate 1000mg" is the salt; "L-Carnitine 1000mg" is carnitine itself.
+      unclear_amount:
+        compound_if_at_least: 0
+        compound_forms: [tartrate]
+        elemental_if_at_most: 100000
+    classes:
+      car_base: { label: "L-Carnitine", slug: l-carnitine }
+      car_tartrate: { label: "L-Carnitine tartrate", slug: l-carnitine-tartrate }
+      car_alcar: { label: "Acetyl-L-carnitine (ALCAR)", slug: alcar }
+    forms:
+      - { id: base, names: [l-carnitine, carnitine, base, liquid, unspecified], class: car_base, elemental_factor: 1.0 }
+      - { id: tartrate, names: [tartrate, l-tartrate, lclt, carnipure], class: car_tartrate, elemental_factor: 0.682, note: "L-carnitine L-tartrate (2:1) by formula." }
+      - { id: alcar, names: [acetyl-l-carnitine, acetyl l-carnitine, alcar, acetyl], class: car_alcar, elemental_factor: 1.0, note: "Own class compared on the stated ALCAR mass (brief F.3)." }
+
+  - id: curcumin
+    name: Turmeric / curcumin
+    category: botanicals
+    tier: 1
+    comparison_quantity: curcuminoids
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: curcuminoids
+    constituent_required: true
+    aliases: [curcumin, turmeric, curcuminoids, curcuma longa, meriva, longvida, theracurmin, bcm-95, curcumin c3, novasol, curcuwin]
+    accepted_cofactors: [black pepper, piperine, bioperine, ginger]
+    classes:
+      cur_95: { label: "Curcumin extract (95% curcuminoids)", slug: curcumin }
+      cur_branded: { label: "Branded bioavailable forms", slug: curcumin-branded }
+      cur_powder: { label: "Turmeric root powder", slug: turmeric-powder }
+    forms:
+      - { id: extract_95, names: [extract, 95% curcuminoids, 95%, standardised, curcumin, unspecified], class: cur_95 }
+      - { id: branded, names: [meriva, longvida, theracurmin, bcm-95, curcumin c3, c3 complex, novasol, curcuwin, cavacurmin, phytosome], class: cur_branded, constituent_optional: true, note: "Compared on the stated formulation mass; curcuminoid content differs by design." }
+      - { id: root_powder, names: [root powder, powder, whole root, turmeric powder], class: cur_powder, constituent_optional: true, standard_dose_override: 1500, note: "Powder is ~3% curcuminoids; own table on powder mass." }
+
+  - id: green_tea_extract
+    name: Green tea extract
+    category: botanicals
+    tier: 1
+    comparison_quantity: EGCG
+    unit: mg
+    standard_dose: 400
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: egcg
+    constituent_required: true
+    aliases: [green tea extract, green tea, egcg, camellia sinensis, epigallocatechin gallate]
+    accepted_cofactors: [caffeine, vitamin c]
+    classes:
+      gte: { label: "Green tea extract (by EGCG)", slug: green-tea-extract }
+    forms:
+      - { id: extract, names: [extract, decaffeinated, standardised, 50% egcg, 98% polyphenols, unspecified], class: gte, note: "Dose = EGCG mg; a label without EGCG goes to review (brief F.6)." }
+
+  - id: milk_thistle
+    name: Milk thistle
+    category: botanicals
+    tier: 2
+    comparison_quantity: silymarin
+    unit: mg
+    standard_dose: 150
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: silymarin
+    constituent_required: true
+    aliases: [milk thistle, silymarin, silybum marianum, silybin, silibinin]
+    accepted_cofactors: [artichoke, dandelion, choline]
+    classes:
+      mt: { label: "Milk thistle (by silymarin)", slug: milk-thistle }
+    forms:
+      - { id: extract, names: [extract, seed extract, 80% silymarin, standardised, unspecified], class: mt, note: "Dose = silymarin mg; a label without it goes to review." }
+
+  - id: cranberry
+    name: Cranberry
+    category: botanicals
+    tier: 2
+    comparison_quantity: proanthocyanidins (PACs)
+    unit: mg
+    standard_dose: 36
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: pac
+    constituent_required: true
+    aliases: [cranberry, vaccinium macrocarpon, cran-max, pacran, proanthocyanidins]
+    accepted_cofactors: [vitamin c, d-mannose, hibiscus]
+    classes:
+      cran_pac: { label: "By PAC content", slug: cranberry }
+      cran_extract: { label: "Extract mass (PACs not stated)", slug: cranberry-extract }
+    forms:
+      - { id: pac_stated, names: [pac, pacs, proanthocyanidins, 36mg pac, standardised, unspecified], class: cran_pac }
+      - { id: extract, names: [extract, cran-max, pacran, fruit powder, powder, juice powder], class: cran_extract, constituent_optional: true, standard_dose_override: 500, note: "Own table on extract mass when PACs are not stated." }
+
+  - id: molybdenum
+    name: Molybdenum
+    category: minerals
+    tier: 3
+    comparison_quantity: elemental molybdenum
+    unit: mcg
+    standard_dose: 100
+    label_convention: elemental_default
+    normalisation_type: mineral_elemental
+    aliases: [molybdenum, sodium molybdate, molybdenum glycinate]
+    accepted_cofactors: []
+    classes:
+      mo: { label: "Molybdenum", slug: molybdenum }
+    forms:
+      - { id: molybdenum, names: [sodium molybdate, molybdate, glycinate, chelate, unspecified], class: mo, note: "Labels state elemental molybdenum; no factors." }
+
+  - id: pqq
+    name: PQQ
+    category: general-health
+    tier: 3
+    comparison_quantity: PQQ
+    unit: mg
+    standard_dose: 20
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [pqq, pyrroloquinoline quinone, bioqq, mgcpqq]
+    accepted_cofactors: [coq10]
+    classes:
+      pqq: { label: "PQQ", slug: pqq }
+    forms:
+      - { id: pqq, names: [pqq, disodium salt, bioqq, mgcpqq, unspecified], class: pqq }
+
+  - id: nr
+    name: Nicotinamide riboside
+    category: general-health
+    tier: 3
+    comparison_quantity: nicotinamide riboside
+    unit: mg
+    standard_dose: 300
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [nicotinamide riboside, niagen, nr, nr chloride, tru niagen]
+    accepted_cofactors: [pterostilbene, resveratrol]
+    classes:
+      nr: { label: "Nicotinamide riboside", slug: nicotinamide-riboside }
+    forms:
+      - { id: nr, names: [nicotinamide riboside, niagen, chloride, unspecified], class: nr }
+
+  - id: lycopene
+    name: Lycopene
+    category: general-health
+    tier: 3
+    comparison_quantity: lycopene
+    unit: mg
+    standard_dose: 10
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    standardisation_component: lycopene
+    aliases: [lycopene, lyc-o-mato, tomato extract]
+    accepted_cofactors: [lutein, vitamin e, selenium]
+    classes:
+      lyc: { label: "Lycopene", slug: lycopene }
+    forms:
+      - { id: lycopene, names: [lycopene, tomato extract, lyc-o-mato, unspecified], class: lyc, note: "Dose = lycopene mg; '100mg tomato extract (10% lycopene, 10mg)' is 10 mg." }
+
+  - id: phosphatidylserine
+    name: Phosphatidylserine
+    category: fatty-acids
+    tier: 2
+    comparison_quantity: phosphatidylserine
+    unit: mg
+    standard_dose: 100
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    standardisation_component: phosphatidylserine
+    aliases: [phosphatidylserine, phosphatidyl serine, sharp-ps, sharp ps]
+    accepted_cofactors: [omega 3, dha, ginkgo]
+    classes:
+      ps: { label: "Phosphatidylserine", slug: phosphatidylserine }
+    forms:
+      - { id: ps, names: [phosphatidylserine, sunflower, soy, sharp-ps, unspecified], class: ps, note: "Dose = PS mg; '500mg complex providing 100mg phosphatidylserine' is 100 mg. Sunflower vs soy is a badge." }
+
+  - id: mct_oil
+    name: MCT oil
+    category: fatty-acids
+    tier: 2
+    comparison_quantity: MCT (C8 + C10)
+    unit: mg
+    standard_dose: 10000
+    label_convention: compound_default
+    normalisation_type: oil_components
+    components_sum: [C8, C10]
+    aliases: [mct oil, mct, medium chain triglycerides, caprylic acid, c8 oil, c8 mct]
+    accepted_cofactors: []
+    classes:
+      mct: { label: "MCT oil (C8 + C10)", slug: mct-oil }
+      mct_c8: { label: "Pure C8 (caprylic)", slug: c8-mct }
+    forms:
+      - { id: mct, names: [mct, c8/c10, 60/40, 70/30, medium chain triglycerides, unspecified], class: mct }
+      - { id: c8, names: [c8, pure c8, caprylic acid, 100% c8], class: mct_c8, total_is_dose: true, note: "Own table; the C8 mg per serving is the dose." }
+
+  - id: cordyceps
+    name: Cordyceps
+    category: botanicals
+    tier: 2
+    comparison_quantity: mushroom extract or powder
+    unit: mg
+    standard_dose: 1000
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: beta-glucans
+    aliases: [cordyceps, cordyceps sinensis, cordyceps militaris, cs-4]
+    accepted_cofactors: []
+    classes:
+      cor_fruit: { label: "Fruiting body extract", slug: cordyceps }
+      cor_mycelium: { label: "Mycelium (incl. CS-4)", slug: cordyceps-mycelium }
+      cor_powder: { label: "Whole mushroom powder", slug: cordyceps-powder }
+    forms:
+      - { id: fruiting_body, names: [fruiting body, fruiting body extract, extract, militaris], class: cor_fruit }
+      - { id: mycelium, names: [mycelium, mycelia, cs-4, cs4], class: cor_mycelium }
+      - { id: powder, names: [powder, mushroom powder, whole mushroom], class: cor_powder }
+
+  - id: reishi
+    name: Reishi
+    category: botanicals
+    tier: 2
+    comparison_quantity: mushroom extract or powder
+    unit: mg
+    standard_dose: 1000
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: beta-glucans
+    aliases: [reishi, ganoderma lucidum, ganoderma, lingzhi]
+    accepted_cofactors: []
+    classes:
+      rei_fruit: { label: "Fruiting body extract", slug: reishi }
+      rei_mycelium: { label: "Mycelium", slug: reishi-mycelium }
+      rei_powder: { label: "Whole mushroom powder", slug: reishi-powder }
+    forms:
+      - { id: fruiting_body, names: [fruiting body, fruiting body extract, extract, dual extract], class: rei_fruit }
+      - { id: mycelium, names: [mycelium, mycelia], class: rei_mycelium }
+      - { id: powder, names: [powder, mushroom powder, whole mushroom], class: rei_powder }
+
+  - id: ginger
+    name: Ginger
+    category: botanicals
+    tier: 3
+    comparison_quantity: ginger extract or root
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: gingerols
+    aliases: [ginger, zingiber officinale, ginger root]
+    accepted_cofactors: [turmeric, curcumin, black pepper]
+    classes:
+      gin_extract: { label: "Extract", slug: ginger-extract }
+      gin_root: { label: "Root powder", slug: ginger-root }
+    forms:
+      - { id: extract, names: [extract, standardised, 5% gingerols, unspecified], class: gin_extract }
+      - { id: root, names: [root powder, powder, whole root], class: gin_root }
+
+  - id: garlic
+    name: Garlic
+    category: botanicals
+    tier: 3
+    comparison_quantity: garlic preparation
+    unit: mg
+    standard_dose: 600
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [garlic, allium sativum, aged garlic, kyolic, allicin]
+    accepted_cofactors: [parsley]
+    classes:
+      gar_aged: { label: "Aged garlic extract", slug: aged-garlic }
+      gar_allicin: { label: "Allicin-standardised", slug: garlic-allicin }
+      gar_powder: { label: "Garlic powder", slug: garlic-powder }
+    forms:
+      - { id: aged, names: [aged garlic, aged garlic extract, kyolic, age], class: gar_aged }
+      - { id: allicin_std, names: [allicin, standardised, allicin yield, allicin potential], class: gar_allicin, note: "Compared on preparation mass; allicin mg stored as a component." }
+      - { id: powder, names: [powder, garlic powder, odourless, oil, unspecified], class: gar_powder }
+
+  - id: tart_cherry
+    name: Tart cherry
+    category: botanicals
+    tier: 2
+    comparison_quantity: tart cherry extract
+    unit: mg
+    standard_dose: 480
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [tart cherry, montmorency cherry, montmorency, sour cherry, cherryactive]
+    accepted_cofactors: []
+    classes:
+      tc: { label: "Tart cherry (capsules & powder)", slug: tart-cherry }
+    forms:
+      - { id: extract, names: [extract, powder, concentrate powder, capsules, unspecified], class: tc, note: "Juices and liquid concentrates (ml) are excluded from ranking (brief F.6)." }

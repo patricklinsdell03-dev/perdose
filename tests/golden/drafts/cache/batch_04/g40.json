@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "phosphatidylserine",
+        "form_raw": null,
+        "form_id": "ps - unspecified",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Phosphatidylserine 100mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size (units per serving) not stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

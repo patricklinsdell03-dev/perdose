@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "reishi",
+        "form_raw": "whole mushroom powder",
+        "form_id": "powder",
+        "amount_per_serving": 2.0,
+        "amount_unit": "g",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Organic reishi (Ganoderma lucidum) whole mushroom powder 2g"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 100,
+    "pack_unit_type": "gram",
+    "units_per_serving": 2.0,
+    "servings_stated": 50,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "Organic Reishi Mushroom Powder 100g",
+      "units_per_serving": "Serving size: 2g (one teaspoon)",
+      "servings_stated": "Servings per pack: 50"
+    }
+  }
+}

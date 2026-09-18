@@ -36,6 +36,12 @@ class Form(_Model):
     form_class: str = Field(alias="class")
     elemental_factor: float | None = Field(default=None, gt=0, le=1)
     standard_dose_override: float | None = Field(default=None, gt=0)
+    # With `constituent_required` on the compound: this form is compared on extract mass
+    # instead (cranberry "extract" class next to the PAC class).
+    constituent_optional: bool = False
+    # oil_components / extract_standardised: the stated total IS the dose for this form
+    # (pure C8 MCT oil has nothing to add up).
+    total_is_dose: bool = False
     note: str | None = None
 
 
@@ -79,6 +85,9 @@ class Compound(_Model):
     # (creatine: 5 g monohydrate is the dose, not the 4.4 g creatine it provides). Off by
     # default, because "600 mg (50% alpha-GPC, providing 300 mg)" must keep the 300.
     compound_mass_is_dose: bool = False
+    # extract_standardised only: the dose is the stated mass of the standardisation
+    # component (EGCG, silymarin, curcuminoids); a label that does not state it goes to review.
+    constituent_required: bool = False
     accepted_cofactors: list[str] = []
     heuristics: Heuristics | None = None
     classes: dict[str, ClassInfo]

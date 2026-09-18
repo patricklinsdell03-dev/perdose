@@ -1,0 +1,52 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "nr",
+        "form_raw": null,
+        "form_id": "nr",
+        "amount_per_serving": 250.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "NR 250mg"
+        }
+      },
+      {
+        "compound_id": "resveratrol",
+        "form_raw": "Trans-Resveratrol",
+        "form_id": "trans",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Trans-Resveratrol 100mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "units_per_serving not stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

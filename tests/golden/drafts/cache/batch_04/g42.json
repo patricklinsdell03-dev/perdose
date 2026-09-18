@@ -1,0 +1,64 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "phosphatidylserine",
+        "form_raw": null,
+        "form_id": "ps - unspecified",
+        "amount_per_serving": 100.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Phosphatidylserine 100mg"
+        }
+      },
+      {
+        "compound_id": "omega_3",
+        "form_raw": null,
+        "form_id": "fish_unspecified",
+        "amount_per_serving": 150.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "total_oil",
+        "components": [
+          {
+            "name": "EPA",
+            "amount": 90.0,
+            "unit": "mg"
+          },
+          {
+            "name": "DHA",
+            "amount": 60.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "EPA": "EPA 90mg",
+          "DHA": "DHA 60mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "softgel",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.75,
+    "review_reasons": [
+      "omega-3 total amount not stated explicitly, summed from EPA+DHA; amount_refers_to for omega-3 unclear whether total_oil or total_omega_3"
+    ],
+    "evidence": {
+      "pack_units": "60 Softgels"
+    }
+  }
+}

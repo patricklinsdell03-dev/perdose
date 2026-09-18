@@ -1,0 +1,54 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "choline",
+        "form_raw": null,
+        "form_id": "choline",
+        "amount_per_serving": 250.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Choline 250mg"
+        }
+      },
+      {
+        "compound_id": "inositol",
+        "form_raw": null,
+        "form_id": "myo",
+        "amount_per_serving": 250.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Inositol 250mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 100,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No serving size stated",
+      "Form of choline and inositol not specified",
+      "Amount basis unclear (compound vs elemental)"
+    ],
+    "evidence": {
+      "pack_units": "100 Tablets"
+    }
+  }
+}

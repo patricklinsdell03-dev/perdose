@@ -64,6 +64,7 @@ export const BASIS_TEXT: Record<string, string> = {
   stated_elemental: 'stated on the label',
   stated_compound: 'stated on the label',
   stated_extract: 'extract weight stated on the label',
+  stated_constituent: 'active constituent content stated on the label (or its stated percentage of the extract)',
   stated_component_sum: 'added up from the components stated on the label',
   stated_total: 'label gives only a total, not the individual components',
   estimated_from_compound: 'estimated from the compound weight using our conversion factor',

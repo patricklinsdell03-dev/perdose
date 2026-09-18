@@ -1,0 +1,46 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "reishi",
+        "form_raw": "Extract",
+        "form_id": "fruiting_body",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "beta-glucans",
+            "amount": 30.0,
+            "unit": "percent"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Reishi Mushroom Extract 1000mg",
+          "beta-glucans": "30% beta-glucans"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "capsule",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "form not explicitly stated as fruiting body, extract type assumed"
+    ],
+    "evidence": {
+      "pack_units": "120 Capsules",
+      "units_per_serving": "2 capsules"
+    }
+  }
+}

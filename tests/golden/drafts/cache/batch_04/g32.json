@@ -1,0 +1,39 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "pqq",
+        "form_raw": "disodium salt",
+        "form_id": "disodium salt",
+        "amount_per_serving": 10.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "PQQ 10mg",
+          "form_raw": "pyrroloquinoline quinone disodium salt"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 30,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated, unclear if 10mg is per capsule or per serving"
+    ],
+    "evidence": {
+      "pack_units": "30 Capsules"
+    }
+  }
+}

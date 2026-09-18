@@ -1,0 +1,43 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "choline",
+        "form_raw": "choline bitartrate",
+        "form_id": "bitartrate",
+        "amount_per_serving": 250.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "elemental",
+        "components": [
+          {
+            "name": "compound_mass",
+            "amount": 608.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Choline 250mg",
+          "compound_mass": "as choline bitartrate 608mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}

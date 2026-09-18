@@ -1,0 +1,46 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "garlic",
+        "form_raw": "Odourless Garlic oil",
+        "form_id": "powder",
+        "amount_per_serving": 2.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "herb_equivalent",
+            "amount": 1000.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Odourless Garlic 2mg oil",
+          "herb_equivalent": "equivalent to 1000mg fresh garlic"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 180,
+    "pack_unit_type": "softgel",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.7,
+    "review_reasons": [
+      "No serving size stated",
+      "Very low headline amount (2mg) unusual for garlic oil, may be mistyped"
+    ],
+    "evidence": {
+      "pack_units": "180 Softgels"
+    }
+  }
+}

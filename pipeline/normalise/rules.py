@@ -196,6 +196,9 @@ def _stated_amount(active, amount, compound: Compound, form, label_text):
 
 def _oil_components(active, amount, compound: Compound, form, label_text):
     out = _Amount(basis="stated_component_sum")
+    if form and form.total_is_dose and amount is not None:
+        out.value, out.basis = amount, "stated_compound"  # pure C8 oil: the oil is the component
+        return out
     parts = [_component(active, name, compound, label_text) for name in compound.components_sum]
     stated = [p for p in parts if p is not None]
     if stated:
@@ -211,10 +214,44 @@ def _oil_components(active, amount, compound: Compound, form, label_text):
     return out
 
 
+def _constituent_from_label(active, amount, extract_mass, compound: Compound, label_text):
+    """Two other ways a label states the constituent: as a percentage of a stated extract
+    mass ("500 mg extract, 95% curcuminoids" -> 475), or as a smaller "providing" headline
+    next to the extract mass ("36 mg PACs from 500 mg extract" -> 36). Only for compounds
+    compared on their constituent."""
+    if not compound.constituent_required:
+        return None
+    mass = extract_mass if extract_mass is not None else amount
+    name = compound.standardisation_component.lower()
+    for comp in active.components:
+        if comp.name.lower() == name and comp.unit == "percent" and mass is not None:
+            keys = (comp.name, f"components.{comp.name}")
+            if any(_evidenced(active.evidence, key, label_text) for key in keys):
+                return mass * comp.amount / 100
+    if extract_mass is not None and amount is not None and amount < extract_mass:
+        return amount
+    return None
+
+
 def _extract_standardised(active, amount, compound: Compound, form, label_text):
     out = _Amount(basis="stated_extract")
-    # "5000 mg (from 500 mg 10:1 extract)": the extract mass wins over the herb equivalent.
+    # "500 mg extract providing 475 mg curcuminoids": the constituent is the dose when the
+    # compound is compared on it (curcumin, green tea, milk thistle, cranberry PACs).
     extract_mass = _component(active, "extract_mass", compound, label_text)
+    if compound.standardisation_component:
+        content = _component(active, compound.standardisation_component, compound, label_text)
+        if content is None:
+            content = _constituent_from_label(active, amount, extract_mass, compound, label_text)
+        if content is not None:
+            out.value, out.basis = content, "stated_constituent"
+            return out
+        if compound.constituent_required and not (form and form.constituent_optional):
+            out.reasons.append("constituent_not_stated")
+            return out
+    if form and form.total_is_dose and amount is not None:
+        out.value = amount  # e.g. pure C8 oil: the oil is the component
+        return out
+    # "5000 mg (from 500 mg 10:1 extract)": the extract mass wins over the herb equivalent.
     if extract_mass is not None:
         out.value = extract_mass
     elif amount is not None and active.amount_refers_to in ("extract", "compound"):

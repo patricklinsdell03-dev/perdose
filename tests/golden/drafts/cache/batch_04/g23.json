@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "milk_thistle",
+        "form_raw": "seed extract",
+        "form_id": "extract",
+        "amount_per_serving": 250.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "extract_mass",
+            "amount": 250.0,
+            "unit": "mg"
+          },
+          {
+            "name": "herb_equivalent",
+            "amount": 5000.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "20:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "5000mg (from 250mg 20:1 seed extract)",
+          "extract_mass": "250mg 20:1 seed extract",
+          "herb_equivalent": "5000mg (from 250mg 20:1 seed extract)"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [
+      "serving size (units per serving) not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Tablets"
+    }
+  }
+}

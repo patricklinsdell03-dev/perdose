@@ -34,6 +34,9 @@ REVIEW_REASON_TEXT = {
     "extract_basis_unclear": "It is not clear whether the amount is extract or whole herb.",
     "low_confidence": "The listing was hard to read reliably.",
     "no_epa_dha": "Only the oil weight is given, not the EPA and DHA content.",
+    "no_c8_c10": "Only the oil weight is given, not the C8 and C10 content.",
+    "constituent_not_stated": "The label does not state the active constituent this ingredient "
+    "is compared on (for example EGCG or silymarin).",
 }
 
 

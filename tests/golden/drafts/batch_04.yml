@@ -1,0 +1,1842 @@
+# DRAFT golden labels for config/drafts/batch_04.yml — synthetic test inputs (brief §15),
+# three per compound: straightforward, awkward, combination. Patrick spot-checks ~10 %
+# against real product pages before the batch goes live. Same format as ../labels.yml.
+version: 1
+labels:
+- id: g01
+  compounds:
+  - vitamin_a
+  title: Vitamin A 800µg (as retinyl palmitate) 120 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_a
+      form_raw: retinyl palmitate
+      form_id: retinol
+      amount_per_serving: 800
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 800µg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    compound: vitamin_a
+    form_class: va_retinol
+    amount: 800
+    amount_unit: mcg
+    servings: 120
+    needs_review: false
+- id: g02
+  compounds:
+  - vitamin_a
+  title: Vitamin A 5000IU Softgels — 100 Softgels
+  extraction:
+    actives:
+    - compound_id: vitamin_a
+      form_raw: null
+      form_id: retinol
+      amount_per_serving: 5000
+      amount_unit: IU
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 5000IU
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Softgels
+  expect:
+    amount: 1500
+    amount_unit: mcg
+    servings: 100
+    needs_review: false
+- id: g03
+  compounds:
+  - vitamin_a
+  title: Beta-Carotene 15mg (natural mixed carotenoids) 90 Softgels
+  extraction:
+    actives:
+    - compound_id: vitamin_a
+      form_raw: Beta-Carotene
+      form_id: beta_carotene
+      amount_per_serving: 15
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 15mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Softgels
+  expect:
+    form_class: va_carotene
+    amount: 15000
+    amount_unit: mcg
+    needs_review: false
+- id: g04
+  compounds:
+  - vitamin_e
+  title: Vitamin E 268mg (400IU) d-alpha tocopherol 60 Softgels
+  extraction:
+    actives:
+    - compound_id: vitamin_e
+      form_raw: d-alpha tocopherol
+      form_id: d_alpha
+      amount_per_serving: 268
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 268mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Softgels
+  expect:
+    compound: vitamin_e
+    form_class: ve_natural
+    amount: 268
+    servings: 60
+    needs_review: false
+- id: g05
+  compounds:
+  - vitamin_e
+  title: Vitamin E 400IU dl-alpha tocopheryl acetate 100 Softgels
+  extraction:
+    actives:
+    - compound_id: vitamin_e
+      form_raw: dl-alpha tocopheryl acetate
+      form_id: dl_alpha
+      amount_per_serving: 400
+      amount_unit: IU
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 400IU
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Softgels
+  expect:
+    form_class: ve_synthetic
+    amount: 268.5
+    amount_unit: mg
+    servings: 100
+    needs_review: false
+- id: g06
+  compounds:
+  - vitamin_e
+  - selenium
+  title: Vitamin E 100mg Mixed Tocopherols with Selenium 100µg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: vitamin_e
+      form_raw: Mixed Tocopherols
+      form_id: mixed
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Vitamin E 100mg
+    - compound_id: selenium
+      form_raw: null
+      form_id: selenomethionine
+      amount_per_serving: 100
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Selenium 100µg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: vitamin_e
+    form_class: ve_mixed
+    amount: 100
+    multi_ingredient: false
+    needs_review: false
+- id: g07
+  compounds:
+  - vitamin_k1
+  title: Vitamin K1 100µg (phylloquinone) 120 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_k1
+      form_raw: null
+      form_id: phylloquinone
+      amount_per_serving: 100
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 100µg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    compound: vitamin_k1
+    amount: 100
+    amount_unit: mcg
+    servings: 120
+    needs_review: false
+- id: g08
+  compounds:
+  - vitamin_k1
+  title: Vitamin K1 1mg High Strength 60 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_k1
+      form_raw: null
+      form_id: phylloquinone
+      amount_per_serving: 1
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 1mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Tablets
+  expect:
+    amount: 1000
+    amount_unit: mcg
+    needs_review: false
+- id: g09
+  compounds:
+  - vitamin_k1
+  - vitamin_d3
+  title: Vitamin D3 1000IU & K1 50µg 90 Tablets
+  extraction:
+    actives:
+    - compound_id: vitamin_d3
+      form_raw: null
+      form_id: d3
+      amount_per_serving: 1000
+      amount_unit: IU
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Vitamin D3 1000IU
+    - compound_id: vitamin_k1
+      form_raw: null
+      form_id: phylloquinone
+      amount_per_serving: 50
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: K1 50µg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Tablets
+  expect:
+    compound: vitamin_d3
+    actives:
+    - compound: vitamin_k1
+      amount: 50
+    needs_review: false
+- id: g10
+  compounds:
+  - choline
+  title: Choline Bitartrate 500mg 100 Capsules
+  extraction:
+    actives:
+    - compound_id: choline
+      form_raw: Bitartrate
+      form_id: bitartrate
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Capsules
+  expect:
+    compound: choline
+    form_class: cho_bitartrate
+    amount: 205.5
+    basis: estimated_from_compound
+    servings: 100
+    needs_review: false
+- id: g11
+  compounds:
+  - choline
+  title: Choline 250mg (as choline bitartrate 608mg) 90 Capsules
+  extraction:
+    actives:
+    - compound_id: choline
+      form_raw: choline bitartrate
+      form_id: bitartrate
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Choline 250mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    form_class: cho_bitartrate
+    amount: 250
+    basis: stated_elemental
+    needs_review: false
+- id: g12
+  compounds:
+  - choline
+  - inositol
+  title: Choline 250mg & Inositol 250mg 100 Tablets
+  extraction:
+    actives:
+    - compound_id: choline
+      form_raw: null
+      form_id: choline
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Choline 250mg
+    - compound_id: inositol
+      form_raw: null
+      form_id: myo
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Inositol 250mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Tablets
+  expect:
+    compound: choline
+    form_class: cho_other
+    amount: 250
+    multi_ingredient: false
+    needs_review: false
+- id: g13
+  compounds:
+  - carnitine
+  title: L-Carnitine Tartrate 1000mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: carnitine
+      form_raw: Tartrate
+      form_id: tartrate
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: 1000mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: carnitine
+    form_class: car_tartrate
+    amount: 682
+    basis: estimated_from_compound
+    servings: 90
+    needs_review: false
+- id: g14
+  compounds:
+  - carnitine
+  title: L-Carnitine 500mg — 2 tablets provide 1000mg — 180 Tablets
+  extraction:
+    actives:
+    - compound_id: carnitine
+      form_raw: L-Carnitine
+      form_id: base
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: 2 tablets provide 1000mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 180
+    pack_unit_type: tablet
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 180 Tablets
+      units_per_serving: 2 tablets provide
+  expect:
+    form_class: car_base
+    amount: 1000
+    basis: stated_elemental
+    servings: 90
+    needs_review: false
+- id: g15
+  compounds:
+  - carnitine
+  title: Acetyl-L-Carnitine (ALCAR) 500mg 120 Capsules
+  extraction:
+    actives:
+    - compound_id: carnitine
+      form_raw: Acetyl-L-Carnitine
+      form_id: alcar
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 500mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    form_class: car_alcar
+    amount: 500
+    servings: 120
+    needs_review: false
+- id: g16
+  compounds:
+  - curcumin
+  title: Turmeric Extract 500mg (95% curcuminoids, providing 475mg) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: curcumin
+      form_raw: Extract
+      form_id: extract_95
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+        curcuminoids: providing 475mg
+      components:
+      - name: curcuminoids
+        amount: 475
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: curcumin
+    form_class: cur_95
+    amount: 475
+    servings: 60
+    basis: stated_constituent
+    needs_review: false
+- id: g17
+  compounds:
+  - curcumin
+  title: Turmeric Extract 500mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: curcumin
+      form_raw: Extract
+      form_id: extract_95
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    needs_review: true
+    review_reason: constituent_not_stated
+- id: g18
+  compounds:
+  - curcumin
+  title: Meriva Curcumin Phytosome 500mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: curcumin
+      form_raw: Meriva
+      form_id: branded
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    form_class: cur_branded
+    amount: 500
+    servings: 60
+    basis: stated_extract
+    needs_review: false
+- id: g19
+  compounds:
+  - green_tea_extract
+  title: Green Tea Extract 500mg (50% EGCG, 250mg) 90 Capsules
+  extraction:
+    actives:
+    - compound_id: green_tea_extract
+      form_raw: Extract
+      form_id: extract
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+        egcg: 50% EGCG, 250mg
+      components:
+      - name: egcg
+        amount: 250
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: green_tea_extract
+    amount: 250
+    servings: 90
+    basis: stated_constituent
+    needs_review: false
+- id: g20
+  compounds:
+  - green_tea_extract
+  title: Green Tea Extract 500mg 100 Capsules
+  extraction:
+    actives:
+    - compound_id: green_tea_extract
+      form_raw: Extract
+      form_id: extract
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Capsules
+  expect:
+    needs_review: true
+    review_reason: constituent_not_stated
+- id: g21
+  compounds:
+  - green_tea_extract
+  - caffeine
+  title: Green Tea Extract 400mg (200mg EGCG) with Caffeine 50mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: green_tea_extract
+      form_raw: Extract
+      form_id: extract
+      amount_per_serving: 400
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Green Tea Extract 400mg
+        egcg: 200mg EGCG
+      components:
+      - name: egcg
+        amount: 200
+        unit: mg
+    - compound_id: caffeine
+      form_raw: null
+      form_id: caffeine
+      amount_per_serving: 50
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Caffeine 50mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: green_tea_extract
+    amount: 200
+    multi_ingredient: false
+    basis: stated_constituent
+    needs_review: false
+- id: g22
+  compounds:
+  - milk_thistle
+  title: Milk Thistle Extract 250mg (80% silymarin, 200mg) 120 Capsules
+  extraction:
+    actives:
+    - compound_id: milk_thistle
+      form_raw: Extract
+      form_id: extract
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 250mg
+        silymarin: 80% silymarin, 200mg
+      components:
+      - name: silymarin
+        amount: 200
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    compound: milk_thistle
+    amount: 200
+    servings: 120
+    basis: stated_constituent
+    needs_review: false
+- id: g23
+  compounds:
+  - milk_thistle
+  title: Milk Thistle 5000mg (from 250mg 20:1 seed extract) 90 Tablets
+  extraction:
+    actives:
+    - compound_id: milk_thistle
+      form_raw: seed extract
+      form_id: extract
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 250mg 20:1 seed extract
+        extract_mass: 250mg
+      components:
+      - name: extract_mass
+        amount: 250
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Tablets
+  expect:
+    needs_review: true
+    review_reason: constituent_not_stated
+- id: g24
+  compounds:
+  - milk_thistle
+  title: Milk Thistle Extract 250mg (providing 175mg silymarin) & Artichoke 100mg Liver Support 60 Capsules
+  extraction:
+    actives:
+    - compound_id: milk_thistle
+      form_raw: Extract
+      form_id: extract
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 250mg
+        silymarin: providing 175mg silymarin
+      components:
+      - name: silymarin
+        amount: 175
+        unit: mg
+    is_single_ingredient: false
+    other_actives:
+    - Artichoke
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: milk_thistle
+    amount: 175
+    multi_ingredient: false
+    basis: stated_constituent
+    needs_review: false
+- id: g25
+  compounds:
+  - cranberry
+  title: Cranberry 36mg PACs (from 500mg extract) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: cranberry
+      form_raw: extract
+      form_id: pac_stated
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg extract
+        pac: 36mg PACs
+      components:
+      - name: pac
+        amount: 36
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: cranberry
+    form_class: cran_pac
+    amount: 36
+    servings: 60
+    basis: stated_constituent
+    needs_review: false
+- id: g26
+  compounds:
+  - cranberry
+  title: Cranberry Extract 500mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: cranberry
+      form_raw: Extract
+      form_id: extract
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    form_class: cran_extract
+    amount: 500
+    standard_dose: 500
+    basis: stated_extract
+    needs_review: false
+- id: g27
+  compounds:
+  - cranberry
+  title: Cranberry 500mg with Vitamin C 40mg 60 Tablets
+  extraction:
+    actives:
+    - compound_id: cranberry
+      form_raw: null
+      form_id: pac_stated
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Cranberry 500mg
+      components: []
+    is_single_ingredient: false
+    other_actives:
+    - Vitamin C
+    pack_units: 60
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Tablets
+  expect:
+    compound: cranberry
+    needs_review: true
+    review_reason: constituent_not_stated
+- id: g28
+  compounds:
+  - molybdenum
+  title: Molybdenum 100µg 100 Tablets
+  extraction:
+    actives:
+    - compound_id: molybdenum
+      form_raw: null
+      form_id: molybdenum
+      amount_per_serving: 100
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 100µg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Tablets
+  expect:
+    compound: molybdenum
+    amount: 100
+    amount_unit: mcg
+    servings: 100
+    needs_review: false
+- id: g29
+  compounds:
+  - molybdenum
+  title: Molybdenum 150µg (as sodium molybdate) 120 Tablets
+  extraction:
+    actives:
+    - compound_id: molybdenum
+      form_raw: sodium molybdate
+      form_id: molybdenum
+      amount_per_serving: 150
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 150µg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    amount: 150
+    basis: stated_elemental
+    needs_review: false
+- id: g30
+  compounds:
+  - molybdenum
+  - selenium
+  title: Molybdenum 100µg & Selenium 100µg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: molybdenum
+      form_raw: null
+      form_id: molybdenum
+      amount_per_serving: 100
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Molybdenum 100µg
+    - compound_id: selenium
+      form_raw: null
+      form_id: selenomethionine
+      amount_per_serving: 100
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Selenium 100µg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: molybdenum
+    multi_ingredient: true
+    needs_review: false
+- id: g31
+  compounds:
+  - pqq
+  title: PQQ 20mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: pqq
+      form_raw: null
+      form_id: pqq
+      amount_per_serving: 20
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 20mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: pqq
+    amount: 20
+    servings: 60
+    needs_review: false
+- id: g32
+  compounds:
+  - pqq
+  title: PQQ 10mg (pyrroloquinoline quinone disodium salt) 30 Capsules
+  extraction:
+    actives:
+    - compound_id: pqq
+      form_raw: disodium salt
+      form_id: pqq
+      amount_per_serving: 10
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 10mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 30
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 30 Capsules
+  expect:
+    amount: 10
+    servings: 30
+    needs_review: false
+- id: g33
+  compounds:
+  - pqq
+  - coq10
+  title: PQQ 10mg & CoQ10 100mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: pqq
+      form_raw: null
+      form_id: pqq
+      amount_per_serving: 10
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: PQQ 10mg
+    - compound_id: coq10
+      form_raw: null
+      form_id: ubiquinone
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: CoQ10 100mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: pqq
+    amount: 10
+    multi_ingredient: false
+    needs_review: false
+- id: g34
+  compounds:
+  - nr
+  title: Nicotinamide Riboside 300mg 30 Capsules
+  extraction:
+    actives:
+    - compound_id: nr
+      form_raw: null
+      form_id: nr
+      amount_per_serving: 300
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 300mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 30
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 30 Capsules
+  expect:
+    compound: nr
+    amount: 300
+    servings: 30
+    needs_review: false
+- id: g35
+  compounds:
+  - nr
+  title: Niagen NR 300mg — 2 capsules provide 300mg — 60 Capsules
+  extraction:
+    actives:
+    - compound_id: nr
+      form_raw: Niagen
+      form_id: nr
+      amount_per_serving: 300
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 2 capsules provide 300mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 60 Capsules
+      units_per_serving: 2 capsules provide
+  expect:
+    amount: 300
+    servings: 30
+    needs_review: false
+- id: g36
+  compounds:
+  - nr
+  - resveratrol
+  title: NR 250mg & Trans-Resveratrol 100mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: nr
+      form_raw: null
+      form_id: nr
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: NR 250mg
+    - compound_id: resveratrol
+      form_raw: null
+      form_id: trans
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Trans-Resveratrol 100mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: nr
+    amount: 250
+    multi_ingredient: false
+    needs_review: false
+- id: g37
+  compounds:
+  - lycopene
+  title: Lycopene 10mg 60 Softgels
+  extraction:
+    actives:
+    - compound_id: lycopene
+      form_raw: null
+      form_id: lycopene
+      amount_per_serving: 10
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 10mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Softgels
+  expect:
+    compound: lycopene
+    amount: 10
+    servings: 60
+    needs_review: false
+- id: g38
+  compounds:
+  - lycopene
+  title: Tomato Extract 100mg (10% lycopene, 10mg) 90 Softgels
+  extraction:
+    actives:
+    - compound_id: lycopene
+      form_raw: Tomato Extract
+      form_id: lycopene
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 100mg
+        lycopene: 10% lycopene, 10mg
+      components:
+      - name: lycopene
+        amount: 10
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Softgels
+  expect:
+    amount: 10
+    servings: 90
+    needs_review: false
+- id: g39
+  compounds:
+  - lycopene
+  - lutein
+  title: Lycopene 10mg & Lutein 10mg 60 Softgels
+  extraction:
+    actives:
+    - compound_id: lycopene
+      form_raw: null
+      form_id: lycopene
+      amount_per_serving: 10
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Lycopene 10mg
+      components: []
+    - compound_id: lutein
+      form_raw: null
+      form_id: lutein
+      amount_per_serving: 10
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Lutein 10mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Softgels
+  expect:
+    compound: lycopene
+    amount: 10
+    multi_ingredient: false
+    needs_review: false
+- id: g40
+  compounds:
+  - phosphatidylserine
+  title: Phosphatidylserine 100mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: phosphatidylserine
+      form_raw: null
+      form_id: ps
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 100mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: phosphatidylserine
+    amount: 100
+    servings: 60
+    needs_review: false
+- id: g41
+  compounds:
+  - phosphatidylserine
+  title: Phosphatidylserine Complex 500mg (providing 100mg phosphatidylserine) 90 Capsules
+  extraction:
+    actives:
+    - compound_id: phosphatidylserine
+      form_raw: Complex
+      form_id: ps
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 500mg
+        phosphatidylserine: providing 100mg phosphatidylserine
+      components:
+      - name: phosphatidylserine
+        amount: 100
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    amount: 100
+    servings: 90
+    needs_review: false
+- id: g42
+  compounds:
+  - phosphatidylserine
+  - omega_3
+  title: Phosphatidylserine 100mg with Omega-3 (EPA 90mg, DHA 60mg) 60 Softgels
+  extraction:
+    actives:
+    - compound_id: phosphatidylserine
+      form_raw: null
+      form_id: ps
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Phosphatidylserine 100mg
+      components: []
+    - compound_id: omega_3
+      form_raw: null
+      form_id: fish_unspecified
+      amount_per_serving: 300
+      amount_unit: mg
+      amount_refers_to: total_oil
+      evidence:
+        amount_per_serving: Omega-3
+        EPA: EPA 90mg
+        DHA: DHA 60mg
+      components:
+      - name: EPA
+        amount: 90
+        unit: mg
+      - name: DHA
+        amount: 60
+        unit: mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Softgels
+  expect:
+    compound: phosphatidylserine
+    amount: 100
+    multi_ingredient: false
+    needs_review: false
+- id: g43
+  compounds:
+  - mct_oil
+  title: MCT Oil Powder 250g — 10g serving (C8 6g, C10 4g)
+  extraction:
+    actives:
+    - compound_id: mct_oil
+      form_raw: null
+      form_id: mct
+      amount_per_serving: 10
+      amount_unit: g
+      amount_refers_to: total_oil
+      evidence:
+        amount_per_serving: 10g serving
+        C8: C8 6g
+        C10: C10 4g
+      components:
+      - name: C8
+        amount: 6
+        unit: g
+      - name: C10
+        amount: 4
+        unit: g
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 250
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 10
+    evidence:
+      pack_units: 250g
+      units_per_serving: 10g serving
+  expect:
+    compound: mct_oil
+    form_class: mct
+    amount: 10000
+    basis: stated_component_sum
+    servings: 25
+    needs_review: false
+- id: g44
+  compounds:
+  - mct_oil
+  title: Pure C8 MCT Oil 500ml — 15ml serving provides 14g caprylic acid (C8)
+  extraction:
+    actives:
+    - compound_id: mct_oil
+      form_raw: Pure C8
+      form_id: c8
+      amount_per_serving: 14
+      amount_unit: g
+      amount_refers_to: total_oil
+      evidence:
+        amount_per_serving: 14g caprylic acid
+        C8: 14g caprylic acid
+      components:
+      - name: C8
+        amount: 14
+        unit: g
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 500
+    pack_unit_type: ml
+    confidence: 0.95
+    units_per_serving: 15
+    evidence:
+      pack_units: 500ml
+      units_per_serving: 15ml serving
+  expect:
+    form_class: mct_c8
+    amount: 14000
+    basis: stated_compound
+    servings: 33.33
+    needs_review: false
+- id: g45
+  compounds:
+  - mct_oil
+  title: MCT Oil 1 Litre — 15ml serving provides 14g MCT
+  extraction:
+    actives:
+    - compound_id: mct_oil
+      form_raw: null
+      form_id: mct
+      amount_per_serving: 14
+      amount_unit: g
+      amount_refers_to: total_oil
+      evidence:
+        amount_per_serving: 14g MCT
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 1000
+    pack_unit_type: ml
+    confidence: 0.95
+    units_per_serving: 15
+    evidence:
+      pack_units: 1 Litre
+      units_per_serving: 15ml serving
+  expect:
+    compound: mct_oil
+    needs_review: true
+    review_reason: no_c8_c10
+- id: g46
+  compounds:
+  - cordyceps
+  title: Cordyceps Militaris Fruiting Body Extract 1000mg — 2 capsules — 60 Capsules
+  extraction:
+    actives:
+    - compound_id: cordyceps
+      form_raw: Fruiting Body Extract
+      form_id: fruiting_body
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 1000mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 60 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    compound: cordyceps
+    form_class: cor_fruit
+    amount: 1000
+    servings: 30
+    basis: stated_extract
+    needs_review: false
+- id: g47
+  compounds:
+  - cordyceps
+  title: Cordyceps CS-4 Mycelium 500mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: cordyceps
+      form_raw: CS-4 Mycelium
+      form_id: mycelium
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    form_class: cor_mycelium
+    amount: 500
+    servings: 90
+    basis: stated_extract
+    needs_review: false
+- id: g48
+  compounds:
+  - cordyceps
+  - reishi
+  title: Cordyceps 500mg & Reishi 500mg Mushroom Blend 60 Capsules
+  extraction:
+    actives:
+    - compound_id: cordyceps
+      form_raw: null
+      form_id: null
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Cordyceps 500mg
+      components: []
+    - compound_id: reishi
+      form_raw: null
+      form_id: null
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Reishi 500mg
+      components: []
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: cordyceps
+    needs_review: true
+    review_reason: form_unknown
+- id: g49
+  compounds:
+  - reishi
+  title: Reishi Mushroom Extract 1000mg (30% beta-glucans) — 2 capsules — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: reishi
+      form_raw: Extract
+      form_id: fruiting_body
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 1000mg
+      components:
+      - name: beta-glucans
+        amount: 30
+        unit: percent
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    compound: reishi
+    form_class: rei_fruit
+    amount: 1000
+    servings: 60
+    basis: stated_extract
+    needs_review: false
+- id: g50
+  compounds:
+  - reishi
+  title: Organic Reishi Mushroom Powder 100g
+  extraction:
+    actives:
+    - compound_id: reishi
+      form_raw: Mushroom Powder
+      form_id: powder
+      amount_per_serving: 2000
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 'Serving size: 2g'
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 100g
+      units_per_serving: 'Serving size: 2g'
+  expect:
+    form_class: rei_powder
+    amount: 2000
+    servings: 50
+    basis: stated_extract
+    needs_review: false
+  description: 'Serving size: 2g (one teaspoon). Servings per pack: 50. Per serving: Organic reishi (Ganoderma lucidum) whole mushroom powder 2g.'
+- id: g51
+  compounds:
+  - reishi
+  - lions_mane
+  title: Reishi 400mg & Lion's Mane 400mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: reishi
+      form_raw: null
+      form_id: null
+      amount_per_serving: 400
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Reishi 400mg
+      components: []
+    - compound_id: lions_mane
+      form_raw: null
+      form_id: null
+      amount_per_serving: 400
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Lion's Mane 400mg
+      components: []
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: reishi
+    needs_review: true
+    review_reason: form_unknown
+- id: g52
+  compounds:
+  - ginger
+  title: Ginger Root Extract 500mg (5% gingerols) 90 Capsules
+  extraction:
+    actives:
+    - compound_id: ginger
+      form_raw: Root Extract
+      form_id: extract
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+      components:
+      - name: gingerols
+        amount: 5
+        unit: percent
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: ginger
+    form_class: gin_extract
+    amount: 500
+    servings: 90
+    basis: stated_extract
+    needs_review: false
+- id: g53
+  compounds:
+  - ginger
+  title: Ginger Root Powder 550mg 100 Capsules
+  extraction:
+    actives:
+    - compound_id: ginger
+      form_raw: Root Powder
+      form_id: root
+      amount_per_serving: 550
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 550mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Capsules
+  expect:
+    form_class: gin_root
+    amount: 550
+    basis: stated_extract
+    needs_review: false
+- id: g54
+  compounds:
+  - ginger
+  - curcumin
+  title: Ginger 200mg & Turmeric 500mg (475mg curcuminoids) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: ginger
+      form_raw: null
+      form_id: extract
+      amount_per_serving: 200
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Ginger 200mg
+      components: []
+    - compound_id: curcumin
+      form_raw: null
+      form_id: extract_95
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Turmeric 500mg
+        curcuminoids: 475mg curcuminoids
+      components:
+      - name: curcuminoids
+        amount: 475
+        unit: mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: ginger
+    amount: 200
+    multi_ingredient: false
+    needs_review: false
+- id: g55
+  compounds:
+  - garlic
+  title: Aged Garlic Extract 600mg (Kyolic) 100 Capsules
+  extraction:
+    actives:
+    - compound_id: garlic
+      form_raw: Aged Garlic Extract
+      form_id: aged
+      amount_per_serving: 600
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 600mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 100
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 100 Capsules
+  expect:
+    compound: garlic
+    form_class: gar_aged
+    amount: 600
+    servings: 100
+    basis: stated_extract
+    needs_review: false
+- id: g56
+  compounds:
+  - garlic
+  title: Garlic 6000mg (from 15mg 400:1 extract, allicin yield 1.5mg) 90 Tablets
+  extraction:
+    actives:
+    - compound_id: garlic
+      form_raw: extract
+      form_id: allicin_std
+      amount_per_serving: 15
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 15mg 400:1 extract
+        extract_mass: 15mg
+      components:
+      - name: allicin
+        amount: 1.5
+        unit: mg
+      - name: extract_mass
+        amount: 15
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Tablets
+  expect:
+    form_class: gar_allicin
+    amount: 15
+    servings: 90
+    basis: stated_extract
+    needs_review: false
+- id: g57
+  compounds:
+  - garlic
+  title: Odourless Garlic 2mg oil (equivalent to 1000mg fresh garlic) 180 Softgels
+  extraction:
+    actives:
+    - compound_id: garlic
+      form_raw: oil
+      form_id: powder
+      amount_per_serving: 2
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 2mg oil
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 180
+    pack_unit_type: softgel
+    confidence: 0.95
+    evidence:
+      pack_units: 180 Softgels
+  expect:
+    form_class: gar_powder
+    amount: 2
+    servings: 180
+    basis: stated_extract
+    needs_review: false
+- id: g58
+  compounds:
+  - tart_cherry
+  title: Montmorency Tart Cherry Extract 480mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: tart_cherry
+      form_raw: Extract
+      form_id: extract
+      amount_per_serving: 480
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 480mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: tart_cherry
+    amount: 480
+    servings: 60
+    basis: stated_extract
+    needs_review: false
+- id: g59
+  compounds:
+  - tart_cherry
+  title: Tart Cherry 3000mg (from 300mg 10:1 concentrate) — 2 capsules — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: tart_cherry
+      form_raw: concentrate
+      form_id: extract
+      amount_per_serving: 300
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 300mg 10:1 concentrate
+        extract_mass: 300mg
+      components:
+      - name: extract_mass
+        amount: 300
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    amount: 300
+    servings: 60
+    basis: stated_extract
+    needs_review: false
+- id: g60
+  compounds:
+  - tart_cherry
+  - magnesium
+  title: Tart Cherry 500mg & Magnesium 100mg Sleep 60 Capsules
+  extraction:
+    actives:
+    - compound_id: tart_cherry
+      form_raw: null
+      form_id: extract
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Tart Cherry 500mg
+      components: []
+    - compound_id: magnesium
+      form_raw: null
+      form_id: other
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Magnesium 100mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: tart_cherry
+    amount: 500
+    multi_ingredient: true
+    needs_review: false

@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "vitamin_e",
+        "form_raw": "dl-alpha tocopheryl acetate",
+        "form_id": "dl_alpha",
+        "amount_per_serving": 400.0,
+        "amount_unit": "IU",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "400IU"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 100,
+    "pack_unit_type": "softgel",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "100 Softgels"
+    }
+  }
+}

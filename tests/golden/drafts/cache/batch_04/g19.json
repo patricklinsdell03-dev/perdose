@@ -1,0 +1,45 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "green_tea_extract",
+        "form_raw": "50% EGCG",
+        "form_id": "50% egcg",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "EGCG",
+            "amount": 250.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Green Tea Extract 500mg",
+          "EGCG": "50% EGCG, 250mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [
+      "serving size (units per serving) not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}

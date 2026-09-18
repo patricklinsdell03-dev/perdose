@@ -1,0 +1,39 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "cordyceps",
+        "form_raw": "Fruiting Body Extract",
+        "form_id": "fruiting_body",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Cordyceps Militaris Fruiting Body Extract 1000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "title states 1000mg but unclear if this is per 2-capsule serving or per capsule"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "2 capsules"
+    }
+  }
+}

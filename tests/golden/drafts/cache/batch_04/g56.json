@@ -1,0 +1,52 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "garlic",
+        "form_raw": "allicin yield",
+        "form_id": "allicin_std",
+        "amount_per_serving": 15.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "herb_equivalent",
+            "amount": 6000.0,
+            "unit": "mg"
+          },
+          {
+            "name": "allicin",
+            "amount": 1.5,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "400:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "15mg 400:1 extract",
+          "herb_equivalent": "6000mg",
+          "allicin": "allicin yield 1.5mg",
+          "extract_ratio": "400:1"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size (number of tablets per serving) not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Tablets"
+    }
+  }
+}

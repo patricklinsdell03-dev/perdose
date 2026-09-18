@@ -1,0 +1,39 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "curcumin",
+        "form_raw": "Meriva Curcumin Phytosome",
+        "form_id": "branded",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": "Meriva",
+        "evidence": {
+          "amount_per_serving": "Meriva Curcumin Phytosome 500mg",
+          "branded_extract": "Meriva Curcumin Phytosome"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated, amount per capsule assumed"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}
