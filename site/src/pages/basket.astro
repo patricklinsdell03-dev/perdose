@@ -1,0 +1,292 @@
+---
+// Build a basket (brief v1.9): several supplements, your doses, at most X websites — the
+// cheapest split including delivery. Client-side only; state lives in the URL.
+import Base from '../layouts/Base.astro';
+import { compounds, meta, pageClasses } from '../lib/data';
+
+const choices = compounds
+  .map((d) => ({
+    id: d.compound.id,
+    name: d.compound.name,
+    classes: pageClasses(d).filter((c) => c.ranked.length > 0).map((c) => ({ id: c.id, label: c.label })),
+  }))
+  .filter((c) => c.classes.length > 0)
+  .sort((a, b) => a.name.localeCompare(b.name));
+const retailerCount = meta.retailers.length;
+---
+
+<Base
+  title="Build a basket — cheapest way to buy several supplements"
+  description="Add the supplements and doses you take, choose how many websites you are willing to order from, and see the cheapest split including delivery."
+  searchKind="Guide"
+  searchSummary="Cheapest way to buy several supplements from one or more retailers, delivery included."
+>
+  <h1 data-pagefind-meta="title">Build a basket</h1>
+  <p class="lede">
+    Add what you take, set how many websites you'd order from, and we find the cheapest split — whole packs,
+    delivery included. Prices per dose, so a bigger tub only wins if it's cheaper for the amount you actually take.
+  </p>
+
+  <section class="basket" data-basket data-retailers={retailerCount}>
+    <form class="controls basket-items" data-items>
+      <table class="basket-table">
+        <thead>
+          <tr><th>Supplement</th><th>Form</th><th>Daily dose</th><th>Days</th><th><span class="sr-only">Remove</span></th></tr>
+        </thead>
+        <tbody data-rows></tbody>
+      </table>
+      <template data-row-template>
+        <tr>
+          <td>
+            <select data-compound aria-label="Supplement">
+              <option value="">Choose…</option>
+              {choices.map((c) => <option value={c.id}>{c.name}</option>)}
+            </select>
+          </td>
+          <td><select data-class aria-label="Form"></select></td>
+          <td class="dose-cell"><input type="number" min="0" step="any" inputmode="decimal" data-dose aria-label="Daily dose" /> <span data-unit></span></td>
+          <td><input type="number" min="1" step="1" value="30" data-days aria-label="Days" /></td>
+          <td><button type="button" class="link-button" data-remove aria-label="Remove">×</button></td>
+        </tr>
+      </template>
+      <p><button type="button" class="button-plain" data-add>+ Add another supplement</button></p>
+
+      <div class="basket-options">
+        <label>
+          Order from at most
+          <select data-max-sites>
+            {Array.from({ length: Math.max(1, Math.min(retailerCount, 4)) }, (_, i) => i + 1).map((n) => (
+              <option value={n} selected={n === 1}>{n} {n === 1 ? 'website' : 'websites'}</option>
+            ))}
+          </select>
+        </label>
+        <label class="check"><input type="checkbox" data-opt="stock" checked /> In stock only</label>
+        <label class="check"><input type="checkbox" data-opt="intl" /> Include sellers shipping from outside the UK</label>
+      </div>
+    </form>
+
+    <div class="basket-result" data-result aria-live="polite">
+      <p class="muted">Add at least one supplement to see the cheapest basket.</p>
+    </div>
+    <p class="muted small">
+      Delivery charges use each retailer's standard rule as shown on its site (free over a threshold, otherwise a flat
+      fee); where a retailer does not publish one, delivery is shown as “not known”. We may earn commission from these
+      links; it never affects which basket wins. Ranked purely by total cost for your doses.
+    </p>
+  </section>
+</Base>
+
+<script is:inline type="module">
+  const section = document.querySelector('[data-basket]');
+  const rows = section.querySelector('[data-rows]');
+  const template = section.querySelector('[data-row-template]');
+  const result = section.querySelector('[data-result]');
+  const maxSites = section.querySelector('[data-max-sites]');
+  const opt = (name) => section.querySelector(`[data-opt="${name}"]`);
+  let data = null;
+
+  const money = (v) => `£${v.toFixed(2)}`;
+  const byId = (list, id) => list.find((x) => x.id === id);
+
+  function addRow(preset) {
+    const row = template.content.firstElementChild.cloneNode(true);
+    rows.append(row);
+    const compound = row.querySelector('[data-compound]');
+    const cls = row.querySelector('[data-class]');
+    const dose = row.querySelector('[data-dose]');
+    const unit = row.querySelector('[data-unit]');
+    const days = row.querySelector('[data-days]');
+    const fillClasses = () => {
+      const c = data && byId(data.compounds, compound.value);
+      cls.replaceChildren();
+      if (!c) return;
+      for (const k of c.classes) {
+        const o = document.createElement('option');
+        o.value = k.id;
+        o.textContent = k.label;
+        cls.append(o);
+      }
+      unit.textContent = c.unit;
+      if (!dose.value) dose.value = String(c.standard_dose);
+    };
+    compound.addEventListener('change', () => { dose.value = ''; fillClasses(); update(); });
+    row.querySelector('[data-remove]').addEventListener('click', () => { row.remove(); update(); });
+    if (preset) {
+      compound.value = preset.compound;
+      fillClasses();
+      if (preset.cls) cls.value = preset.cls;
+      if (preset.dose) dose.value = String(preset.dose);
+      if (preset.days) days.value = String(preset.days);
+    }
+    return row;
+  }
+
+  function items() {
+    return [...rows.querySelectorAll('tr')]
+      .map((row) => ({
+        compound: row.querySelector('[data-compound]').value,
+        cls: row.querySelector('[data-class]').value,
+        dose: Number(row.querySelector('[data-dose]').value),
+        days: Number(row.querySelector('[data-days]').value) || 30,
+      }))
+      .filter((it) => it.compound && it.cls && it.dose > 0);
+  }
+
+  // Whole packs bought to cover dose × days at this offer.
+  function priceOffer(offer, item) {
+    const perPack = offer.amount_per_serving * offer.servings;
+    const packs = Math.max(1, Math.ceil((item.dose * item.days) / perPack));
+    return { offer, packs, cost: packs * offer.price_gbp, lastsDays: Math.floor((packs * perPack) / item.dose) };
+  }
+
+  function delivery(retailerId, subtotal) {
+    const r = byId(data.retailers, retailerId);
+    const s = r?.shipping ?? { rule: 'unknown' };
+    if (s.rule === 'free_over') {
+      if (subtotal >= (s.threshold_gbp ?? 0)) return { cost: 0, note: 'free delivery' };
+      if (s.flat_gbp != null) return { cost: s.flat_gbp, note: `delivery ${money(s.flat_gbp)} (free over ${money(s.threshold_gbp)})` };
+      return { cost: 0, note: `delivery not known below ${money(s.threshold_gbp)}` };
+    }
+    if (s.rule === 'flat' && s.flat_gbp != null) return { cost: s.flat_gbp, note: `delivery ${money(s.flat_gbp)}` };
+    return { cost: 0, note: 'delivery not known' };
+  }
+
+  function subsets(list, k) {
+    const out = [];
+    const rec = (start, chosen) => {
+      if (chosen.length) out.push([...chosen]);
+      if (chosen.length === k) return;
+      for (let i = start; i < list.length; i++) rec(i + 1, [...chosen, list[i]]);
+    };
+    rec(0, []);
+    return out;
+  }
+
+  function solve(list, k, onlyStock, intl) {
+    const candidates = list.map((item) => {
+      const c = byId(data.compounds, item.compound);
+      const cls = c && byId(c.classes, item.cls);
+      const offers = (cls?.offers ?? []).filter((o) => (!onlyStock || o.in_stock) && (intl || o.ships_from === 'GB'));
+      return { item, compound: c, cls, priced: offers.map((o) => priceOffer(o, item)) };
+    });
+    const retailers = [...new Set(candidates.flatMap((c) => c.priced.map((p) => p.offer.retailer_id)))];
+    let best = null;
+    for (const subset of subsets(retailers, k)) {
+      const picks = [];
+      let feasible = true;
+      for (const cand of candidates) {
+        const options = cand.priced.filter((p) => subset.includes(p.offer.retailer_id));
+        if (!options.length) { feasible = false; break; }
+        picks.push({ cand, pick: options.sort((a, b) => a.cost - b.cost)[0] });
+      }
+      if (!feasible) continue;
+      const perRetailer = {};
+      for (const { cand, pick } of picks) (perRetailer[pick.offer.retailer_id] ??= { lines: [], subtotal: 0 }).lines.push({ cand, pick }), (perRetailer[pick.offer.retailer_id].subtotal += pick.cost);
+      let total = 0;
+      for (const [rid, group] of Object.entries(perRetailer)) {
+        group.delivery = delivery(rid, group.subtotal);
+        total += group.subtotal + group.delivery.cost;
+      }
+      if (!best || total < best.total) best = { total, perRetailer, sites: Object.keys(perRetailer).length };
+    }
+    return { best, candidates };
+  }
+
+  function render(list) {
+    result.replaceChildren();
+    if (!list.length) {
+      result.innerHTML = '<p class="muted">Add at least one supplement to see the cheapest basket.</p>';
+      return;
+    }
+    const k = Number(maxSites.value) || 1;
+    const { best, candidates } = solve(list, k, opt('stock').checked, opt('intl').checked);
+    const missing = candidates.filter((c) => !c.priced.length).map((c) => c.compound?.name ?? c.item.compound);
+    if (!best) {
+      const p = document.createElement('p');
+      p.className = 'muted';
+      p.textContent = missing.length
+        ? `No priced products for: ${missing.join(', ')} with these filters.`
+        : `No single set of ${k} ${k === 1 ? 'website' : 'websites'} stocks everything. Allow more websites.`;
+      result.append(p);
+      return;
+    }
+    const head = document.createElement('div');
+    head.className = 'basket-total';
+    head.innerHTML = `<span class="figure">${money(best.total)}</span><span class="unit">cheapest total from ${best.sites} ${best.sites === 1 ? 'website' : 'websites'}, delivery included</span>`;
+    result.append(head);
+
+    // What ordering from more or fewer sites would cost.
+    const alts = [];
+    for (let n = 1; n <= Number(maxSites.options[maxSites.options.length - 1].value); n++) {
+      if (n === k) continue;
+      const alt = solve(list, n, opt('stock').checked, opt('intl').checked).best;
+      if (alt && Math.abs(alt.total - best.total) > 0.005) alts.push(`${n} ${n === 1 ? 'website' : 'websites'}: ${money(alt.total)}`);
+    }
+    if (alts.length) {
+      const p = document.createElement('p');
+      p.className = 'muted small';
+      p.textContent = `Other splits — ${alts.join(' · ')}`;
+      result.append(p);
+    }
+
+    for (const [rid, group] of Object.entries(best.perRetailer)) {
+      const r = byId(data.retailers, rid);
+      const card = document.createElement('section');
+      card.className = 'card basket-card';
+      const h = document.createElement('h3');
+      h.textContent = r?.name ?? rid;
+      card.append(h);
+      const ul = document.createElement('ul');
+      for (const { cand, pick } of group.lines) {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = pick.offer.url;
+        a.target = '_blank';
+        a.rel = 'sponsored nofollow noopener';
+        a.className = 'button';
+        a.innerHTML = `<span>${money(pick.cost)}</span><span>${pick.packs > 1 ? `${pick.packs} × ` : ''}${pick.offer.name}</span>`;
+        const meta = document.createElement('span');
+        meta.className = 'muted small';
+        meta.textContent = ` ${cand.compound.name} · ${cand.item.dose} ${cand.compound.unit} a day · lasts ${pick.lastsDays} days`;
+        li.append(a, meta);
+        ul.append(li);
+      }
+      card.append(ul);
+      const foot = document.createElement('p');
+      foot.className = 'muted';
+      foot.textContent = `Items ${money(group.subtotal)} · ${group.delivery.note} · ${money(group.subtotal + group.delivery.cost)}`;
+      card.append(foot);
+      result.append(card);
+    }
+  }
+
+  function update() {
+    const list = items();
+    const params = new URLSearchParams();
+    if (list.length) params.set('items', list.map((i) => `${i.compound}:${i.cls}:${i.dose}:${i.days}`).join(','));
+    if (maxSites.value !== '1') params.set('x', maxSites.value);
+    if (!opt('stock').checked) params.set('stock', '0');
+    if (opt('intl').checked) params.set('intl', '1');
+    const q = params.toString();
+    history.replaceState(null, '', q ? `?${q}` : location.pathname);
+    if (data) render(list);
+  }
+
+  section.querySelector('[data-add]').addEventListener('click', () => { addRow(); update(); });
+  section.querySelector('[data-items]').addEventListener('input', update);
+  section.querySelector('[data-items]').addEventListener('submit', (e) => e.preventDefault());
+
+  const response = await fetch('/basket-data.json');
+  data = await response.json();
+  const params = new URLSearchParams(location.search);
+  const presets = (params.get('items') ?? '')
+    .split(',')
+    .filter(Boolean)
+    .map((s) => { const [compound, cls, dose, days] = s.split(':'); return { compound, cls, dose: Number(dose), days: Number(days) }; });
+  if (params.get('x')) maxSites.value = params.get('x');
+  if (params.get('stock') === '0') opt('stock').checked = false;
+  if (params.get('intl') === '1') opt('intl').checked = true;
+  if (presets.length) presets.forEach(addRow);
+  else addRow();
+  update();
+</script>

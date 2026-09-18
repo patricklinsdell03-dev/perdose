@@ -271,6 +271,15 @@ function working(offer: Offer): string[] {
     if (combosBox && params.get('combos') === '1') combosBox.checked = true;
     const intlBox = filter('intl');
     if (intlBox && params.get('intl') === '1') intlBox.checked = true;
+    // Home page's quick-compare (brief v1.9) sets these too: ?r=bulk,myprotein&stock=1&tested=1
+    const wantedRetailers = params.get('r')?.split(',').filter(Boolean);
+    if (wantedRetailers?.length) {
+      for (const box of section.querySelectorAll<HTMLInputElement>('[data-retailer-filter]')) {
+        box.checked = wantedRetailers.includes(box.value);
+      }
+    }
+    if (params.get('stock') === '1' && filter('stock')) filter('stock')!.checked = true;
+    if (params.get('tested') === '1' && filter('tested')) filter('tested')!.checked = true;
 
     const update = () => {
       const dose = Number(doseInput.value) > 0 ? Number(doseInput.value) : standardDose;
@@ -347,12 +356,17 @@ function working(offer: Offer): string[] {
       sortSelect.value === 'dose' ? next.delete('sort') : next.set('sort', sortSelect.value);
       showCombos ? next.set('combos', '1') : next.delete('combos');
       showIntl ? next.set('intl', '1') : next.delete('intl');
+      const allBoxes = [...section.querySelectorAll<HTMLInputElement>('[data-retailer-filter]')];
+      const allChecked = allBoxes.every((b) => b.checked);
+      allChecked || !allBoxes.length ? next.delete('r') : next.set('r', allBoxes.filter((b) => b.checked).map((b) => b.value).join(','));
+      onlyStock ? next.set('stock', '1') : next.delete('stock');
+      onlyTested ? next.set('tested', '1') : next.delete('tested');
       const query = next.toString();
       history.replaceState(null, '', query ? `?${query}` : location.pathname);
     };
 
     section.querySelector('[data-controls]')?.addEventListener('input', update);
     section.querySelector('[data-controls]')?.addEventListener('submit', (event) => event.preventDefault());
-    if (fromUrl > 0 || params.get('sort') || combosBox?.checked || intlBox?.checked) update();
+    if (fromUrl > 0 || params.get('sort') || combosBox?.checked || intlBox?.checked || wantedRetailers?.length || params.get('stock') || params.get('tested')) update();
   }
 </script>

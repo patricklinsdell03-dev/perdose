@@ -1,9 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
 import { CATEGORY_LABELS, compoundSlug, compounds, defaultClass, meta, pageClasses, ukRanked } from '../lib/data';
-import { doseLabel, isoToLong, perDose } from '../lib/format';
+import { amount, doseLabel, isoToLong, perDose } from '../lib/format';
 
 const categories = [...new Set(compounds.map((d) => d.compound.category))];
+// Quick compare (brief v1.9): pick supplement → form → dose → retailers, land on the table filtered.
+const quick = compounds
+  .map((d) => ({
+    id: d.compound.id,
+    slug: compoundSlug(d.compound.id),
+    name: d.compound.name,
+    unit: amount(1, d.compound.unit).replace(/^1\s*/, ''),
+    classes: pageClasses(d)
+      .filter((cls) => ukRanked(cls).length > 0)
+      .map((cls) => ({ slug: cls.slug, label: cls.label, dose: cls.standard_dose })),
+  }))
+  .filter((c) => c.classes.length > 0)
+  .sort((a, b) => a.name.localeCompare(b.name));
 const cards = compounds
   .map((data) => {
     const priced = pageClasses(data).filter((cls) => ukRanked(cls).length > 0);
@@ -38,6 +51,32 @@ const cards = compounds
       </p>
       <ul class="search-results" id="search-results"></ul>
     </div>
+    <form class="quick" data-quick data-quick-choices={JSON.stringify(quick)} action="/c/" method="get">
+      <label>
+        Supplement
+        <select name="compound" data-q-compound required>
+          <option value="">Choose…</option>
+          {quick.map((c) => <option value={c.id}>{c.name}</option>)}
+        </select>
+      </label>
+      <label>
+        Form
+        <select name="cls" data-q-class></select>
+      </label>
+      <label>
+        Your daily dose
+        <span class="dose-wrap"><input type="number" name="dose" min="0" step="any" inputmode="decimal" data-q-dose /> <span data-q-unit></span></span>
+      </label>
+      <fieldset>
+        <legend>Retailers</legend>
+        {meta.retailers.map((r) => (
+          <label class="check"><input type="checkbox" name="r" value={r.id} checked data-q-retailer /> {r.name}</label>
+        ))}
+        <label class="check"><input type="checkbox" name="intl" value="1" data-q-intl /> Include sellers shipping from outside the UK</label>
+        <label class="check"><input type="checkbox" name="stock" value="1" data-q-stock /> In stock only</label>
+      </fieldset>
+      <button type="submit" class="button quick-go"><span>Compare</span><span>Show the table</span></button>
+    </form>
     <p class="muted">
       {meta.counts.products} products · {meta.retailers.map((r) => r.name).join(', ')} · prices checked {isoToLong(meta.generated_at)}
     </p>
@@ -166,6 +205,45 @@ const cards = compounds
     if (search === null) return; // a newer keystroke took over
     const hits = await Promise.all(search.results.slice(0, 40).map((r) => r.data()));
     render(hits, search.results.length, query);
+  }
+
+  // Quick compare: build the table URL with its filters as URL state.
+  const quick = document.querySelector('[data-quick]');
+  if (quick) {
+    const choices = JSON.parse(quick.dataset.quickChoices);
+    const compoundSel = quick.querySelector('[data-q-compound]');
+    const classSel = quick.querySelector('[data-q-class]');
+    const doseInput = quick.querySelector('[data-q-dose]');
+    const unit = quick.querySelector('[data-q-unit]');
+    const fill = () => {
+      const c = choices.find((x) => x.id === compoundSel.value);
+      classSel.replaceChildren();
+      if (!c) { unit.textContent = ''; doseInput.value = ''; return; }
+      for (const k of c.classes) {
+        const o = document.createElement('option');
+        o.value = k.slug; o.textContent = k.label; o.dataset.dose = k.dose;
+        classSel.append(o);
+      }
+      unit.textContent = c.unit;
+      doseInput.value = classSel.selectedOptions[0]?.dataset.dose ?? '';
+    };
+    compoundSel.addEventListener('change', fill);
+    classSel.addEventListener('change', () => { doseInput.value = classSel.selectedOptions[0]?.dataset.dose ?? ''; });
+    quick.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const c = choices.find((x) => x.id === compoundSel.value);
+      if (!c) { compoundSel.focus(); return; }
+      const cls = classSel.value || c.classes[0].slug;
+      const params = new URLSearchParams();
+      const standard = Number(classSel.selectedOptions[0]?.dataset.dose);
+      if (Number(doseInput.value) > 0 && Number(doseInput.value) !== standard) params.set('dose', doseInput.value);
+      const boxes = [...quick.querySelectorAll('[data-q-retailer]')];
+      if (!boxes.every((b) => b.checked)) params.set('r', boxes.filter((b) => b.checked).map((b) => b.value).join(','));
+      if (quick.querySelector('[data-q-intl]').checked) params.set('intl', '1');
+      if (quick.querySelector('[data-q-stock]').checked) params.set('stock', '1');
+      const q = params.toString();
+      location.href = `/c/${c.slug}/${cls}/${q ? `?${q}` : ''}`;
+    });
   }
 
   if (form && input) {
