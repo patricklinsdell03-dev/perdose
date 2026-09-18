@@ -36,6 +36,13 @@ asking). Under the current £5 grant about £3.75 is used, itemised in DECISIONS
 batch of 20 compounds costs ~65p to validate; a first feed of ~N relevant products costs ~1p
 per product, once (readings are cached).
 
+**Learn pages (Phase 9) — tooling built 2026-09-18, second session; no page drafted yet.**
+`make content COMPOUND=<id>` drafts a page from Europe PMC research (estimate ~19p for
+magnesium; hard cap 50p a page; `DRY=1` is free). `make content-check` is part of `make check`
+and writes `data/export/learn.json`; the site publishes only approved pages listed there with a
+matching fingerprint. The evidence-grading rules in `config/content.yml` are a **proposal
+awaiting Patrick** — no page can be approved before they are. Checklist: `content/REVIEW.md`.
+
 ## 2. Hard rules the next chat must keep
 
 All of `CLAUDE.md`, plus these learned the hard way:
@@ -62,7 +69,10 @@ All of `CLAUDE.md`, plus these learned the hard way:
    grant remains — ask before exceeding £5).
 3. Reapplications on Awin after the profile fix (Patrick clicks; Claude may do it in his Chrome
    only with his explicit say-so, as on 2026-09-18).
-4. Nothing else is blocked on him unless a feed arrives.
+4. Learn pages: approve (or change) the grading rules in `config/content.yml`; say which
+   supplements to draft first and the budget (~10–25p each); whether to build the "What people
+   report" thread summaries (needs his curated threads and a Reddit-terms check).
+5. Nothing else is blocked on him unless a feed arrives.
 
 ## 4. The plan, phase by phase (brief §17 numbering)
 
@@ -115,9 +125,12 @@ Steps, in order:
 4. Amazon via Product Advertising API once Associates qualifies (currently excluded).
 
 ### Phase 9: learn pages (brief §20) — can run any time, but every page needs Patrick's
-approval (`review_status: approved`) and must pass `make content-check`. `make content` (the
-drafting command) is not built yet; building it is the first task of Phase 9. No health claims,
-no quotes/usernames/brands in anecdote sections, no automated Reddit crawling.
+approval (`review_status: approved`) and must pass `make content-check`. `make content` is
+built (2026-09-18; RUNBOOK "Learn pages"). Next: Patrick approves the grading rules, then draft
+the first page (magnesium is a good first: most data), Patrick reviews it with
+`content/REVIEW.md`, a solicitor reads that one page (brief §20.5), then the other nine.
+Not built: the "What people report" thread summaries (placeholder text for now). No health
+claims, no quotes/usernames/brands in anecdote sections, no automated Reddit crawling.
 
 ### Design polish backlog (brief §12.4 refinement list)
 Best-row emphasis on phones; zero-results/empty states; spacing and dark-mode contrast on
@@ -128,7 +141,7 @@ real phones with Patrick; the "Capsule" language is fixed — refine within it o
   → `make all` (no AI calls).
 - Draft batch 6 (ask first: it spends ~65p).
 - Re-read `docs/RETAILER_CANDIDATES.md` and check remaining names on Awin as Patrick asks.
-- Build `make content` (Phase 9 drafting) so learn pages can start.
+- Draft learn pages once the grading rules are approved (ask first: ~10–25p each).
 
 ## 6. Opening prompt for the new chat
 
