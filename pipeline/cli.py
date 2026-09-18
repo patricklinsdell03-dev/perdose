@@ -273,6 +273,7 @@ def _brand_names() -> list[str]:
 def run_content(compound_id: str, dry_run: bool) -> int:
     from datetime import date
 
+    from pipeline.content.ai import DraftingFailed
     from pipeline.content.config import load_content_config
     from pipeline.content.run import ContentError, draft
 
@@ -295,6 +296,17 @@ def run_content(compound_id: str, dry_run: bool) -> int:
         )
     except ContentError as error:
         print(f"content: {error}")
+        return 1
+    except DraftingFailed as error:
+        print(f"content: {error}. Answers already received are saved; run it again to retry.")
+        return 1
+    except (anthropic.AuthenticationError, anthropic.PermissionDeniedError):
+        raise  # explained by main()
+    except anthropic.APIError as error:
+        print(
+            f"content: the AI service returned an error ({type(error).__name__}). Answers "
+            "already received are saved, so running it again later only pays for the rest."
+        )
         return 1
 
     research = [s for s in report.studies if s.role == "research"]
