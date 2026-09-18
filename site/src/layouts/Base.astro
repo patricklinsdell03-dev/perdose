@@ -85,6 +85,7 @@ const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : i
           what to take. If you are under 18, pregnant, take medication or have a health condition, speak to a pharmacist
           or GP.
         </p>
+        {site.amazon_tag && <p class="muted small">As an Amazon Associate, {site.name} earns from qualifying purchases.</p>}
       </div>
     </footer>
   </body>

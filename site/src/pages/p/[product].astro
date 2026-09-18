@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import type { ProductView } from '../../lib/data';
 import { compoundSlug, products, retailerName } from '../../lib/data';
 import { BASIS_TEXT, amount, days, doseLabel, isoToLong, money, pack, perDose, perServing } from '../../lib/format';
-import { site } from '../../lib/site';
+import { amazonSearchUrl, site } from '../../lib/site';
 
 export function getStaticPaths() {
   return products().map((product) => ({ params: { product: product.id }, props: { product } }));
@@ -163,5 +163,11 @@ const report = `mailto:${site.contact_email}?subject=${encodeURIComponent(`Error
     )
   }
 
+  {amazonSearchUrl(product.name, product.brand) && (
+    <p class="amazon-note">
+      <a href={amazonSearchUrl(product.name, product.brand)!} target="_blank" rel="sponsored nofollow noopener">Check this product on Amazon</a>
+      <span class="muted"> — Amazon prices are not yet compared here; they will be once Amazon's product data is available to us.</span>
+    </p>
+  )}
   {site.contact_email && <p><a href={report}>Report an error with this product</a></p>}
 </Base>

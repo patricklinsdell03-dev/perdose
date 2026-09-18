@@ -7,7 +7,7 @@
 import type { ClassData, CompoundRule, Offer } from '../lib/data';
 import { compoundSlug, isInternational, retailerName, ukRanked } from '../lib/data';
 import { BASIS_TEXT, amount, days, doseLabel, isoToLong, money, pack, perDose, perServing } from '../lib/format';
-import { site } from '../lib/site';
+import { amazonSearchUrl, site } from '../lib/site';
 
 interface Props {
   compound: CompoundRule;
@@ -168,6 +168,11 @@ function working(offer: Offer): string[] {
                         <span>{money(offer.price_gbp)}</span>
                         <span>View at {retailerName(offer.retailer_id)}</span>
                       </a>
+                      {amazonSearchUrl(offer.display_name, offer.brand) && (
+                        <a class="amazon-check" href={amazonSearchUrl(offer.display_name, offer.brand)!} target="_blank" rel="sponsored nofollow noopener">
+                          Check on Amazon <span class="muted">(price not compared)</span>
+                        </a>
+                      )}
                     </td>
                   </tr>
                   <tr class="detail" data-detail-for={offer.listing_id} hidden={combo || isInternational(offer)}>

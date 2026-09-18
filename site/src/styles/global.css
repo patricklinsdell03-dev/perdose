@@ -1022,3 +1022,19 @@ dl.facts dd {
   cursor: pointer;
   font: inherit;
 }
+
+/* Interim Amazon search link: quiet text, never a buy capsule (brief v1.8). */
+.amazon-check {
+  display: block;
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  text-decoration: none;
+}
+.amazon-check:hover {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+.amazon-note {
+  font-size: 0.95rem;
+}
