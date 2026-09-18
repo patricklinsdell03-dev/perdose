@@ -1,0 +1,200 @@
+---
+// Combinations (Patrick, 2026-09-18): multivitamins and multi-ingredient products. Say what
+// you need per day; see every product that covers all of it, cheapest per day first.
+import Base from '../layouts/Base.astro';
+import { rules } from '../lib/data';
+
+const compounds = rules.filter((c) => c.id !== 'multivitamin').sort((a, b) => a.name.localeCompare(b.name));
+// Common combinations; each is a set of "at least X per day" requirements in the compound's unit.
+const presets = [
+  { id: 'zma', label: 'ZMA', needs: { zinc: 10, magnesium: 300, vitamin_b6: 5 } },
+  { id: 'd3k2', label: 'Vitamin D3 + K2', needs: { vitamin_d3: 1000, vitamin_k2: 75 } },
+  { id: 'cad3', label: 'Calcium + D3', needs: { calcium: 400, vitamin_d3: 400 } },
+  { id: 'mgb6', label: 'Magnesium + B6', needs: { magnesium: 200, vitamin_b6: 2 } },
+  { id: 'czn', label: 'Vitamin C + zinc', needs: { vitamin_c: 200, zinc: 10 } },
+  { id: 'bcomplex', label: 'B-complex', needs: { vitamin_b1: 1, vitamin_b2: 1, vitamin_b6: 1, vitamin_b12: 2, vitamin_b9: 200 } },
+  { id: 'fec', label: 'Iron + vitamin C', needs: { iron: 14, vitamin_c: 40 } },
+  { id: 'o3d3', label: 'Omega-3 + D3', needs: { omega_3: 500, vitamin_d3: 1000 } },
+  { id: 'multi', label: 'Any multivitamin', needs: {}, multivitamin: true },
+];
+---
+
+<Base
+  title="Combinations — multivitamins and multi-ingredient products by price per day"
+  description="Say what you need per day and see every multivitamin or combination product that covers it, cheapest per daily serving first."
+  searchKind="Guide"
+  searchSummary="Multivitamins and combination products filtered by what a serving must contain, cheapest per day first."
+>
+  <h1 data-pagefind-meta="title">Combinations</h1>
+  <p class="lede">
+    Multivitamins and products that combine several ingredients. Tell us what a daily serving must contain and we
+    show everything that covers it, cheapest per day first. Pick a common combination or set your own.
+  </p>
+
+  <section class="combos" data-combos data-compounds={JSON.stringify(compounds.map((c) => ({ id: c.id, name: c.name, unit: c.unit, dose: c.standard_dose })))} data-presets={JSON.stringify(presets)}>
+    <p class="combo-presets" data-presets-row>
+      {presets.map((p) => <button type="button" class="chip-button" data-preset={p.id}>{p.label}</button>)}
+    </p>
+
+    <form class="controls" data-needs-form>
+      <fieldset>
+        <legend>A daily serving must contain at least</legend>
+        <ul class="needs" data-needs></ul>
+        <p>
+          <select data-add-compound aria-label="Add an ingredient">
+            <option value="">Add an ingredient…</option>
+            {compounds.map((c) => <option value={c.id}>{c.name}</option>)}
+          </select>
+        </p>
+      </fieldset>
+      <fieldset>
+        <legend>Show</legend>
+        <label class="check"><input type="checkbox" data-opt="multi" /> Multivitamins only</label>
+        <label class="check"><input type="checkbox" data-opt="stock" checked /> In stock only</label>
+        <label class="check"><input type="checkbox" data-opt="intl" /> Include sellers shipping from outside the UK</label>
+      </fieldset>
+    </form>
+
+    <div class="combo-results" data-results aria-live="polite"></div>
+    <p class="muted small">
+      Amounts are per serving as stated on each label, read by the same process as every table (see
+      <a href="/methodology/">how we compare</a>). Price per day is the pack price divided by its servings. We may earn
+      commission from these links; it never affects the order.
+    </p>
+  </section>
+</Base>
+
+<script is:inline type="module">
+  const section = document.querySelector('[data-combos]');
+  const compounds = JSON.parse(section.dataset.compounds);
+  const presets = JSON.parse(section.dataset.presets);
+  const needsList = section.querySelector('[data-needs]');
+  const results = section.querySelector('[data-results]');
+  const addSelect = section.querySelector('[data-add-compound]');
+  const opt = (n) => section.querySelector(`[data-opt="${n}"]`);
+  const money = (v) => `£${v.toFixed(2)}`;
+  const byId = (id) => compounds.find((c) => c.id === id);
+  const unitLabel = (u) => ({ mg: 'mg', mcg: 'µg', IU: 'IU' })[u] ?? u;
+  let data = null;
+
+  function addNeed(id, min) {
+    const c = byId(id);
+    if (!c || needsList.querySelector(`[data-need="${id}"]`)) return;
+    const li = document.createElement('li');
+    li.dataset.need = id;
+    li.innerHTML = `<span class="need-name"></span> <input type="number" min="0" step="any" inputmode="decimal" aria-label="Minimum per day"> <span class="muted"></span> <button type="button" class="link-button" aria-label="Remove">×</button>`;
+    li.querySelector('.need-name').textContent = c.name;
+    li.querySelector('input').value = String(min ?? c.dose);
+    li.querySelector('.muted').textContent = unitLabel(c.unit) + ' a day';
+    li.querySelector('button').addEventListener('click', () => { li.remove(); update(); });
+    needsList.append(li);
+  }
+
+  function needs() {
+    return [...needsList.querySelectorAll('[data-need]')].map((li) => ({ id: li.dataset.need, min: Number(li.querySelector('input').value) || 0 }));
+  }
+
+  function render() {
+    results.replaceChildren();
+    if (!data) return;
+    const req = needs();
+    const multiOnly = opt('multi').checked;
+    const onlyStock = opt('stock').checked;
+    const intl = opt('intl').checked;
+    const rows = [];
+    for (const item of data.items) {
+      if (multiOnly && !item.multivitamin) continue;
+      if (!req.every((r) => (item.actives[r.id] ?? 0) >= r.min)) continue;
+      const offers = item.offers.filter((o) => (!onlyStock || o.in_stock) && (intl || o.ships_from === 'GB'));
+      if (!offers.length) continue;
+      const best = offers.map((o) => ({ ...o, perDay: o.price_gbp / o.servings })).sort((a, b) => a.perDay - b.perDay)[0];
+      rows.push({ item, best });
+    }
+    rows.sort((a, b) => a.best.perDay - b.best.perDay);
+    const head = document.createElement('p');
+    head.className = 'muted';
+    head.textContent = rows.length
+      ? `${rows.length} ${rows.length === 1 ? 'product covers' : 'products cover'} this, cheapest per day first.`
+      : req.length || multiOnly
+        ? 'Nothing we list covers all of that yet. Loosen an amount, or remove an ingredient.'
+        : 'Add an ingredient or pick a combination above.';
+    results.append(head);
+    for (const { item, best } of rows) {
+      const card = document.createElement('article');
+      card.className = 'card combo-card';
+      const title = document.createElement('h3');
+      const link = document.createElement('a');
+      link.href = `/p/${item.id}/`;
+      link.textContent = item.name;
+      title.append(link);
+      if (item.brand) {
+        const b = document.createElement('span');
+        b.className = 'muted small';
+        b.textContent = ` ${item.brand}`;
+        title.append(b);
+      }
+      card.append(title);
+      const contents = document.createElement('p');
+      contents.className = 'combo-contents';
+      const parts = Object.entries(item.actives).map(([id, amt]) => {
+        const c = byId(id);
+        const needed = req.find((r) => r.id === id);
+        const txt = `${c ? c.name : id} ${amt} ${unitLabel(c?.unit ?? '')}`;
+        return needed ? `<strong>${txt}</strong>` : txt;
+      });
+      const others = item.other_names.slice(0, 6).join(', ') + (item.other_names.length > 6 ? '…' : '');
+      contents.innerHTML = parts.join(' · ') + (others ? `<span class="muted"> · also ${others}</span>` : '') + (item.multivitamin ? '<span class="chip">multivitamin</span>' : '');
+      card.append(contents);
+      const buy = document.createElement('p');
+      const a = document.createElement('a');
+      a.href = best.url; a.target = '_blank'; a.rel = 'sponsored nofollow noopener'; a.className = 'button';
+      const rname = (data.retailers.find((r) => r.id === best.retailer_id) || {}).name || best.retailer_id;
+      a.innerHTML = `<span>${money(best.perDay)} a day</span><span>${money(best.price_gbp)} at ${rname}</span>`;
+      buy.append(a);
+      const meta = document.createElement('span');
+      meta.className = 'muted small';
+      meta.textContent = ` ${best.servings} servings`;
+      buy.append(meta);
+      card.append(buy);
+      results.append(card);
+    }
+  }
+
+  function update() {
+    const params = new URLSearchParams();
+    const req = needs();
+    if (req.length) params.set('need', req.map((r) => `${r.id}:${r.min}`).join(','));
+    if (opt('multi').checked) params.set('multi', '1');
+    if (!opt('stock').checked) params.set('stock', '0');
+    if (opt('intl').checked) params.set('intl', '1');
+    const q = params.toString();
+    history.replaceState(null, '', q ? `?${q}` : location.pathname);
+    render();
+  }
+
+  function applyPreset(id) {
+    const p = presets.find((x) => x.id === id);
+    if (!p) return;
+    needsList.replaceChildren();
+    for (const [cid, min] of Object.entries(p.needs)) addNeed(cid, min);
+    opt('multi').checked = Boolean(p.multivitamin);
+    update();
+  }
+
+  section.querySelectorAll('[data-preset]').forEach((b) => b.addEventListener('click', () => applyPreset(b.dataset.preset)));
+  addSelect.addEventListener('change', () => { addNeed(addSelect.value); addSelect.value = ''; update(); });
+  section.querySelector('[data-needs-form]').addEventListener('input', update);
+  section.querySelector('[data-needs-form]').addEventListener('submit', (e) => e.preventDefault());
+
+  const params = new URLSearchParams(location.search);
+  for (const pair of (params.get('need') || '').split(',').filter(Boolean)) {
+    const [id, min] = pair.split(':');
+    addNeed(id, Number(min));
+  }
+  if (params.get('multi') === '1') opt('multi').checked = true;
+  if (params.get('stock') === '0') opt('stock').checked = false;
+  if (params.get('intl') === '1') opt('intl').checked = true;
+  const response = await fetch('/combos-data.json');
+  data = await response.json();
+  render();
+</script>
