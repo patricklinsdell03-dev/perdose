@@ -7,12 +7,20 @@ import { rules } from '../lib/data';
 const compounds = rules.filter((c) => c.id !== 'multivitamin').sort((a, b) => a.name.localeCompare(b.name));
 // Common combinations; each is a set of "at least X per day" requirements in the compound's unit.
 const presets = [
+  // The ten most common combinations on UK shelves, then a few more. Amounts are starting
+  // filters ("a serving has at least this much"), editable, never recommendations.
   { id: 'zma', label: 'ZMA', needs: { zinc: 10, magnesium: 300, vitamin_b6: 5 } },
   { id: 'd3k2', label: 'Vitamin D3 + K2', needs: { vitamin_d3: 1000, vitamin_k2: 75 } },
+  { id: 'calmagzinc', label: 'Calcium, magnesium & zinc', needs: { calcium: 300, magnesium: 150, zinc: 5 } },
+  { id: 'joint', label: 'Glucosamine & chondroitin', needs: { glucosamine: 500, chondroitin: 100 } },
+  { id: 'czn', label: 'Vitamin C + zinc', needs: { vitamin_c: 80, zinc: 5 } },
+  { id: 'immune', label: 'Vitamin C, D3 & zinc', needs: { vitamin_c: 80, vitamin_d3: 400, zinc: 5 } },
+  { id: 'bcomplex', label: 'B-complex', needs: { vitamin_b1: 1, vitamin_b2: 1, vitamin_b6: 1, vitamin_b12: 2, vitamin_b9: 200 } },
+  { id: 'hsn', label: 'Hair, skin & nails (biotin, zinc, selenium)', needs: { vitamin_b7: 50, zinc: 5, selenium: 25 } },
+  { id: 'folateb12', label: 'Folic acid + B12', needs: { vitamin_b9: 200, vitamin_b12: 2.5 } },
+  { id: 'caftheanine', label: 'Caffeine + L-theanine', needs: { caffeine: 50, l_theanine: 100 } },
   { id: 'cad3', label: 'Calcium + D3', needs: { calcium: 400, vitamin_d3: 400 } },
   { id: 'mgb6', label: 'Magnesium + B6', needs: { magnesium: 200, vitamin_b6: 2 } },
-  { id: 'czn', label: 'Vitamin C + zinc', needs: { vitamin_c: 200, zinc: 10 } },
-  { id: 'bcomplex', label: 'B-complex', needs: { vitamin_b1: 1, vitamin_b2: 1, vitamin_b6: 1, vitamin_b12: 2, vitamin_b9: 200 } },
   { id: 'fec', label: 'Iron + vitamin C', needs: { iron: 14, vitamin_c: 40 } },
   { id: 'o3d3', label: 'Omega-3 + D3', needs: { omega_3: 500, vitamin_d3: 1000 } },
   { id: 'multi', label: 'Any multivitamin', needs: {}, multivitamin: true },
@@ -57,6 +65,7 @@ const presets = [
 
     <div class="combo-results" data-results aria-live="polite"></div>
     <p class="muted small">
+      Preset amounts are starting filters you can change, not recommendations of how much to take.
       Amounts are per serving as stated on each label, read by the same process as every table (see
       <a href="/methodology/">how we compare</a>). Price per day is the pack price divided by its servings. We may earn
       commission from these links; it never affects the order.
