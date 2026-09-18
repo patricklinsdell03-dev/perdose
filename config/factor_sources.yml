@@ -37,3 +37,8 @@ sources:
   - { compound: citrulline, form: malate_2_1, substance: "citrulline malate 2:1", atoms: { C: 16, H: 32, N: 6, O: 11 }, active_atoms: { C: 6, H: 13, N: 3, O: 3 }, active_count: 2 }
   - { compound: citrulline, form: malate_1_1, substance: "citrulline malate 1:1", atoms: { C: 10, H: 19, N: 3, O: 8 }, active_atoms: { C: 6, H: 13, N: 3, O: 3 }, active_count: 1 }
   - { compound: hmb, form: calcium_hmb, substance: "calcium beta-hydroxy-beta-methylbutyrate monohydrate", atoms: { Ca: 1, C: 10, H: 20, O: 7 }, active_atoms: { C: 5, H: 10, O: 3 }, active_count: 2 }
+  - { compound: choline, form: choline, substance: "choline (cation)", atoms: { C: 5, H: 14, N: 1, O: 1 }, active_atoms: { C: 5, H: 14, N: 1, O: 1 }, active_count: 1 }
+  - { compound: choline, form: bitartrate, substance: "choline bitartrate", atoms: { C: 9, H: 19, N: 1, O: 7 }, active_atoms: { C: 5, H: 14, N: 1, O: 1 }, active_count: 1 }
+  - { compound: carnitine, form: base, substance: "L-carnitine", atoms: { C: 7, H: 15, N: 1, O: 3 }, active_atoms: { C: 7, H: 15, N: 1, O: 3 }, active_count: 1 }
+  - { compound: carnitine, form: tartrate, substance: "L-carnitine L-tartrate (2:1)", atoms: { C: 18, H: 36, N: 2, O: 12 }, active_atoms: { C: 7, H: 15, N: 1, O: 3 }, active_count: 2 }
+  - { compound: carnitine, form: alcar, substance: "acetyl-L-carnitine (compared on its own mass)", atoms: { C: 9, H: 17, N: 1, O: 4 }, active_atoms: { C: 9, H: 17, N: 1, O: 4 }, active_count: 1 }

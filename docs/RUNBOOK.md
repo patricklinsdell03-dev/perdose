@@ -137,9 +137,9 @@ To review a batch:
 2. Spot-check about one in ten test labels in `tests/golden/drafts/batch_NN.yml` against a real product page: does a real label look like that?
 3. `make golden DRAFT=batch_NN` shows the batch's results (rules must be 100 %, saved AI readings at least 90 %). It costs nothing. `make golden-live DRAFT=batch_NN` re-reads every label with the real AI (about 1p per label).
 
-Batches 01–03 were approved and made live (2026-09-17/18), so `config/drafts/` is empty until the next batch is drafted.
+Batches 01–04 were approved and made live (2026-09-17/18), so `config/drafts/` is empty until the next batch is drafted.
 
-To approve: tell Claude "approve batch NN" (or do it by hand: move the compounds into `config/compounds.yml`, the formulas into `config/factor_sources.yml`, the labels into `tests/golden/labels.yml` and the saved readings into `tests/golden/cache/`, then `make check`). New supplements only get pages once a retailer's data contains products for them.
+Label ids must not collide with the live set (g = prototype, d/e/f/h = batches 1–4). To approve: tell Claude "approve batch NN" (or do it by hand: move the compounds into `config/compounds.yml`, the formulas into `config/factor_sources.yml`, the labels into `tests/golden/labels.yml` and the saved readings into `tests/golden/cache/`, then `make check`). New supplements only get pages once a retailer's data contains products for them.
 
 ## Refreshing the hand-collected prices (`make seed-refresh` / `make seed-refresh-apply`)
 

@@ -3877,5 +3877,1103 @@
     ]
    }
   ]
+ },
+ {
+  "id": "vitamin_a",
+  "name": "Vitamin A",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "vitamin A",
+  "unit": "mcg",
+  "standard_dose": 800.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin a",
+   "retinol",
+   "retinyl palmitate",
+   "retinyl acetate",
+   "beta-carotene",
+   "beta carotene",
+   "betacarotene"
+  ],
+  "classes": [
+   {
+    "id": "va_retinol",
+    "label": "Retinol (palmitate / acetate)",
+    "slug": "retinol",
+    "standard_dose": 800.0,
+    "forms": [
+     {
+      "id": "retinol",
+      "names": [
+       "retinol",
+       "retinyl palmitate",
+       "retinyl acetate",
+       "palmitate",
+       "acetate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "va_carotene",
+    "label": "Beta-carotene",
+    "slug": "beta-carotene",
+    "standard_dose": 800.0,
+    "forms": [
+     {
+      "id": "beta_carotene",
+      "names": [
+       "beta-carotene",
+       "beta carotene",
+       "betacarotene",
+       "mixed carotenoids"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_e",
+  "name": "Vitamin E",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "vitamin E",
+  "unit": "mg",
+  "standard_dose": 268.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin e",
+   "d-alpha tocopherol",
+   "dl-alpha tocopherol",
+   "tocopherol",
+   "tocopherols",
+   "tocotrienols",
+   "alpha-te"
+  ],
+  "classes": [
+   {
+    "id": "ve_natural",
+    "label": "Natural (d-alpha)",
+    "slug": "d-alpha",
+    "standard_dose": 268.0,
+    "forms": [
+     {
+      "id": "d_alpha",
+      "names": [
+       "d-alpha",
+       "d-alpha tocopherol",
+       "d-alpha tocopheryl",
+       "natural",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ve_synthetic",
+    "label": "Synthetic (dl-alpha)",
+    "slug": "dl-alpha",
+    "standard_dose": 268.0,
+    "forms": [
+     {
+      "id": "dl_alpha",
+      "names": [
+       "dl-alpha",
+       "dl-alpha tocopherol",
+       "dl-alpha tocopheryl",
+       "synthetic"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ve_mixed",
+    "label": "Mixed tocopherols / tocotrienols",
+    "slug": "mixed-tocopherols",
+    "standard_dose": 268.0,
+    "forms": [
+     {
+      "id": "mixed",
+      "names": [
+       "mixed tocopherols",
+       "tocotrienols",
+       "full spectrum",
+       "gamma tocopherol"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_k1",
+  "name": "Vitamin K1",
+  "category": "vitamins",
+  "tier": 3,
+  "comparison_quantity": "vitamin K1",
+  "unit": "mcg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin k1",
+   "k1",
+   "phylloquinone",
+   "phytonadione",
+   "phytomenadione"
+  ],
+  "classes": [
+   {
+    "id": "k1",
+    "label": "Vitamin K1",
+    "slug": "vitamin-k1",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "phylloquinone",
+      "names": [
+       "phylloquinone",
+       "phytonadione",
+       "phytomenadione",
+       "k1",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "choline",
+  "name": "Choline",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "choline",
+  "unit": "mg",
+  "standard_dose": 250.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "choline",
+   "choline bitartrate",
+   "choline chloride",
+   "phosphatidylcholine"
+  ],
+  "classes": [
+   {
+    "id": "cho_other",
+    "label": "Other forms",
+    "slug": "choline-other",
+    "standard_dose": 250.0,
+    "forms": [
+     {
+      "id": "choline",
+      "names": [
+       "choline",
+       "unspecified"
+      ],
+      "elemental_factor": 1.0
+     },
+     {
+      "id": "other",
+      "names": [
+       "chloride",
+       "phosphatidylcholine",
+       "lecithin",
+       "choline chloride"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cho_bitartrate",
+    "label": "Choline bitartrate",
+    "slug": "choline-bitartrate",
+    "standard_dose": 250.0,
+    "forms": [
+     {
+      "id": "bitartrate",
+      "names": [
+       "bitartrate",
+       "choline bitartrate"
+      ],
+      "elemental_factor": 0.411
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "carnitine",
+  "name": "L-Carnitine",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "L-carnitine",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "carnitine",
+   "l-carnitine",
+   "l-carnitine tartrate",
+   "l-carnitine l-tartrate",
+   "lclt",
+   "carnipure",
+   "acetyl-l-carnitine",
+   "acetyl l-carnitine",
+   "alcar"
+  ],
+  "classes": [
+   {
+    "id": "car_base",
+    "label": "L-Carnitine",
+    "slug": "l-carnitine",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "base",
+      "names": [
+       "l-carnitine",
+       "carnitine",
+       "base",
+       "liquid",
+       "unspecified"
+      ],
+      "elemental_factor": 1.0
+     }
+    ]
+   },
+   {
+    "id": "car_tartrate",
+    "label": "L-Carnitine tartrate",
+    "slug": "l-carnitine-tartrate",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "tartrate",
+      "names": [
+       "tartrate",
+       "l-tartrate",
+       "lclt",
+       "carnipure"
+      ],
+      "elemental_factor": 0.682
+     }
+    ]
+   },
+   {
+    "id": "car_alcar",
+    "label": "Acetyl-L-carnitine (ALCAR)",
+    "slug": "alcar",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "alcar",
+      "names": [
+       "acetyl-l-carnitine",
+       "acetyl l-carnitine",
+       "alcar",
+       "acetyl"
+      ],
+      "elemental_factor": 1.0
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "curcumin",
+  "name": "Turmeric / curcumin",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "curcuminoids",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "curcumin",
+   "turmeric",
+   "curcuminoids",
+   "curcuma longa",
+   "meriva",
+   "longvida",
+   "theracurmin",
+   "bcm-95",
+   "curcumin c3",
+   "novasol",
+   "curcuwin"
+  ],
+  "classes": [
+   {
+    "id": "cur_95",
+    "label": "Curcumin extract (95% curcuminoids)",
+    "slug": "curcumin",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "extract_95",
+      "names": [
+       "extract",
+       "95% curcuminoids",
+       "95%",
+       "standardised",
+       "curcumin",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cur_branded",
+    "label": "Branded bioavailable forms",
+    "slug": "curcumin-branded",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "branded",
+      "names": [
+       "meriva",
+       "longvida",
+       "theracurmin",
+       "bcm-95",
+       "curcumin c3",
+       "c3 complex",
+       "novasol",
+       "curcuwin",
+       "cavacurmin",
+       "phytosome"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cur_powder",
+    "label": "Turmeric root powder",
+    "slug": "turmeric-powder",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "root_powder",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root",
+       "turmeric powder"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "green_tea_extract",
+  "name": "Green tea extract",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "EGCG",
+  "unit": "mg",
+  "standard_dose": 400.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "green tea extract",
+   "green tea",
+   "egcg",
+   "camellia sinensis",
+   "epigallocatechin gallate"
+  ],
+  "classes": [
+   {
+    "id": "gte",
+    "label": "Green tea extract (by EGCG)",
+    "slug": "green-tea-extract",
+    "standard_dose": 400.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "decaffeinated",
+       "standardised",
+       "50% egcg",
+       "98% polyphenols",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "milk_thistle",
+  "name": "Milk thistle",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "silymarin",
+  "unit": "mg",
+  "standard_dose": 150.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "milk thistle",
+   "silymarin",
+   "silybum marianum",
+   "silybin",
+   "silibinin"
+  ],
+  "classes": [
+   {
+    "id": "mt",
+    "label": "Milk thistle (by silymarin)",
+    "slug": "milk-thistle",
+    "standard_dose": 150.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "seed extract",
+       "80% silymarin",
+       "standardised",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cranberry",
+  "name": "Cranberry",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "proanthocyanidins (PACs)",
+  "unit": "mg",
+  "standard_dose": 36.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "cranberry",
+   "vaccinium macrocarpon",
+   "cran-max",
+   "pacran",
+   "proanthocyanidins"
+  ],
+  "classes": [
+   {
+    "id": "cran_pac",
+    "label": "By PAC content",
+    "slug": "cranberry",
+    "standard_dose": 36.0,
+    "forms": [
+     {
+      "id": "pac_stated",
+      "names": [
+       "pac",
+       "pacs",
+       "proanthocyanidins",
+       "36mg pac",
+       "standardised",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cran_extract",
+    "label": "Extract mass (PACs not stated)",
+    "slug": "cranberry-extract",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "cran-max",
+       "pacran",
+       "fruit powder",
+       "powder",
+       "juice powder"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "molybdenum",
+  "name": "Molybdenum",
+  "category": "minerals",
+  "tier": 3,
+  "comparison_quantity": "elemental molybdenum",
+  "unit": "mcg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "molybdenum",
+   "sodium molybdate",
+   "molybdenum glycinate"
+  ],
+  "classes": [
+   {
+    "id": "mo",
+    "label": "Molybdenum",
+    "slug": "molybdenum",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "molybdenum",
+      "names": [
+       "sodium molybdate",
+       "molybdate",
+       "glycinate",
+       "chelate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "pqq",
+  "name": "PQQ",
+  "category": "general-health",
+  "tier": 3,
+  "comparison_quantity": "PQQ",
+  "unit": "mg",
+  "standard_dose": 20.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "pqq",
+   "pyrroloquinoline quinone",
+   "bioqq",
+   "mgcpqq"
+  ],
+  "classes": [
+   {
+    "id": "pqq",
+    "label": "PQQ",
+    "slug": "pqq",
+    "standard_dose": 20.0,
+    "forms": [
+     {
+      "id": "pqq",
+      "names": [
+       "pqq",
+       "disodium salt",
+       "bioqq",
+       "mgcpqq",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "nr",
+  "name": "Nicotinamide riboside",
+  "category": "general-health",
+  "tier": 3,
+  "comparison_quantity": "nicotinamide riboside",
+  "unit": "mg",
+  "standard_dose": 300.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "nicotinamide riboside",
+   "niagen",
+   "nr",
+   "nr chloride",
+   "tru niagen"
+  ],
+  "classes": [
+   {
+    "id": "nr",
+    "label": "Nicotinamide riboside",
+    "slug": "nicotinamide-riboside",
+    "standard_dose": 300.0,
+    "forms": [
+     {
+      "id": "nr",
+      "names": [
+       "nicotinamide riboside",
+       "niagen",
+       "chloride",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "lycopene",
+  "name": "Lycopene",
+  "category": "general-health",
+  "tier": 3,
+  "comparison_quantity": "lycopene",
+  "unit": "mg",
+  "standard_dose": 10.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "lycopene",
+   "lyc-o-mato",
+   "tomato extract"
+  ],
+  "classes": [
+   {
+    "id": "lyc",
+    "label": "Lycopene",
+    "slug": "lycopene",
+    "standard_dose": 10.0,
+    "forms": [
+     {
+      "id": "lycopene",
+      "names": [
+       "lycopene",
+       "tomato extract",
+       "lyc-o-mato",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "phosphatidylserine",
+  "name": "Phosphatidylserine",
+  "category": "fatty-acids",
+  "tier": 2,
+  "comparison_quantity": "phosphatidylserine",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "phosphatidylserine",
+   "phosphatidyl serine",
+   "sharp-ps",
+   "sharp ps"
+  ],
+  "classes": [
+   {
+    "id": "ps",
+    "label": "Phosphatidylserine",
+    "slug": "phosphatidylserine",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "ps",
+      "names": [
+       "phosphatidylserine",
+       "sunflower",
+       "soy",
+       "sharp-ps",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "mct_oil",
+  "name": "MCT oil",
+  "category": "fatty-acids",
+  "tier": 2,
+  "comparison_quantity": "MCT (C8 + C10)",
+  "unit": "mg",
+  "standard_dose": 10000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "oil_components",
+  "aliases": [
+   "mct oil",
+   "mct",
+   "medium chain triglycerides",
+   "caprylic acid",
+   "c8 oil",
+   "c8 mct"
+  ],
+  "classes": [
+   {
+    "id": "mct",
+    "label": "MCT oil (C8 + C10)",
+    "slug": "mct-oil",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "mct",
+      "names": [
+       "mct",
+       "c8/c10",
+       "60/40",
+       "70/30",
+       "medium chain triglycerides",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "mct_c8",
+    "label": "Pure C8 (caprylic)",
+    "slug": "c8-mct",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "c8",
+      "names": [
+       "c8",
+       "pure c8",
+       "caprylic acid",
+       "100% c8"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cordyceps",
+  "name": "Cordyceps",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "mushroom extract or powder",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "cordyceps",
+   "cordyceps sinensis",
+   "cordyceps militaris",
+   "cs-4"
+  ],
+  "classes": [
+   {
+    "id": "cor_fruit",
+    "label": "Fruiting body extract",
+    "slug": "cordyceps",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "fruiting_body",
+      "names": [
+       "fruiting body",
+       "fruiting body extract",
+       "extract",
+       "militaris"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cor_mycelium",
+    "label": "Mycelium (incl. CS-4)",
+    "slug": "cordyceps-mycelium",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "mycelium",
+      "names": [
+       "mycelium",
+       "mycelia",
+       "cs-4",
+       "cs4"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cor_powder",
+    "label": "Whole mushroom powder",
+    "slug": "cordyceps-powder",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder",
+       "mushroom powder",
+       "whole mushroom"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "reishi",
+  "name": "Reishi",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "mushroom extract or powder",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "reishi",
+   "ganoderma lucidum",
+   "ganoderma",
+   "lingzhi"
+  ],
+  "classes": [
+   {
+    "id": "rei_fruit",
+    "label": "Fruiting body extract",
+    "slug": "reishi",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "fruiting_body",
+      "names": [
+       "fruiting body",
+       "fruiting body extract",
+       "extract",
+       "dual extract"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "rei_mycelium",
+    "label": "Mycelium",
+    "slug": "reishi-mycelium",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "mycelium",
+      "names": [
+       "mycelium",
+       "mycelia"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "rei_powder",
+    "label": "Whole mushroom powder",
+    "slug": "reishi-powder",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder",
+       "mushroom powder",
+       "whole mushroom"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ginger",
+  "name": "Ginger",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "ginger extract or root",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "ginger",
+   "zingiber officinale",
+   "ginger root"
+  ],
+  "classes": [
+   {
+    "id": "gin_extract",
+    "label": "Extract",
+    "slug": "ginger-extract",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "standardised",
+       "5% gingerols",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "gin_root",
+    "label": "Root powder",
+    "slug": "ginger-root",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "root",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "garlic",
+  "name": "Garlic",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "garlic preparation",
+  "unit": "mg",
+  "standard_dose": 600.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "garlic",
+   "allium sativum",
+   "aged garlic",
+   "kyolic",
+   "allicin"
+  ],
+  "classes": [
+   {
+    "id": "gar_aged",
+    "label": "Aged garlic extract",
+    "slug": "aged-garlic",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "aged",
+      "names": [
+       "aged garlic",
+       "aged garlic extract",
+       "kyolic",
+       "age"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "gar_allicin",
+    "label": "Allicin-standardised",
+    "slug": "garlic-allicin",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "allicin_std",
+      "names": [
+       "allicin",
+       "standardised",
+       "allicin yield",
+       "allicin potential"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "gar_powder",
+    "label": "Garlic powder",
+    "slug": "garlic-powder",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder",
+       "garlic powder",
+       "odourless",
+       "oil",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tart_cherry",
+  "name": "Tart cherry",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "tart cherry extract",
+  "unit": "mg",
+  "standard_dose": 480.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "tart cherry",
+   "montmorency cherry",
+   "montmorency",
+   "sour cherry",
+   "cherryactive"
+  ],
+  "classes": [
+   {
+    "id": "tc",
+    "label": "Tart cherry (capsules & powder)",
+    "slug": "tart-cherry",
+    "standard_dose": 480.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "powder",
+       "concentrate powder",
+       "capsules",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
  }
 ]

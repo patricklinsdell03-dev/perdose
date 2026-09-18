@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T09:31:32+01:00",
+ "generated_at": "2026-09-18T10:08:51+01:00",
  "prompt_version": "1.1.0",
  "retailers": [
   {
@@ -101,6 +101,26 @@
   "citicoline",
   "huperzine_a",
   "lutein",
-  "leucine"
+  "leucine",
+  "vitamin_a",
+  "vitamin_e",
+  "vitamin_k1",
+  "choline",
+  "carnitine",
+  "curcumin",
+  "green_tea_extract",
+  "milk_thistle",
+  "cranberry",
+  "molybdenum",
+  "pqq",
+  "nr",
+  "lycopene",
+  "phosphatidylserine",
+  "mct_oil",
+  "cordyceps",
+  "reishi",
+  "ginger",
+  "garlic",
+  "tart_cherry"
  ]
 }

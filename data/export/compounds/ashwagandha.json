@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T09:31:32+01:00",
+ "generated_at": "2026-09-18T10:08:51+01:00",
  "compound": {
   "id": "ashwagandha",
   "name": "Ashwagandha",
@@ -364,14 +364,14 @@
       "servings": 60.0
      },
      "form_id": "ksm66",
-     "amount_per_serving": 500.0,
+     "amount_per_serving": 25.0,
      "amount_unit": "mg",
-     "amount_basis": "stated_extract",
+     "amount_basis": "stated_constituent",
      "is_primary": true,
-     "price_per_unit": 0.000433,
-     "price_per_std_dose": 0.25980000000000003,
-     "cost_per_month": 7.7940000000000005,
-     "days_supply": 50.0,
+     "price_per_unit": 0.00866,
+     "price_per_std_dose": 5.196,
+     "cost_per_month": 155.88,
+     "days_supply": 2.5,
      "tested_flag": null,
      "claimed": [],
      "other_actives": [
