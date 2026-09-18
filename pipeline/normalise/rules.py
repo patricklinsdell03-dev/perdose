@@ -178,7 +178,13 @@ def _stated_amount(active, amount, compound: Compound, form, label_text):
     if amount is None:
         return out
     out.value = amount
-    if compound.label_convention == "compound_default":
+    # "500 mg extract (of which 250 mg trans-resveratrol)": the active's own stated content
+    # is the dose when the compound names it as its standardisation component.
+    if compound.standardisation_component:
+        content = _component(active, compound.standardisation_component, compound, label_text)
+        if content is not None:
+            out.value = content
+    if compound.compound_mass_is_dose:
         # "creatine 4.4 g (from 5 g monohydrate)": the compound mass is the convention.
         compound_mass = _component(active, "compound_mass", compound, label_text)
         if compound_mass is not None:
@@ -213,6 +219,11 @@ def _extract_standardised(active, amount, compound: Compound, form, label_text):
         out.value = extract_mass
     elif amount is not None and active.amount_refers_to in ("extract", "compound"):
         out.value = amount
+    elif amount is not None and active.amount_refers_to in ("unclear", None):
+        # "Rhodiola 200mg": for a herb the bare number is the mass of whatever form the
+        # product is (extract or powder — the form decides the table), so it is usable,
+        # at the same reduced confidence as any other unqualified number.
+        out.value, out.confidence_cap = amount, UNCLEAR_CONFIDENCE_CAP
     elif amount is not None:
         out.reasons.append("extract_basis_unclear")
     return out

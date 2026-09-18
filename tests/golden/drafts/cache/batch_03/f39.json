@@ -1,0 +1,42 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "psyllium",
+        "form_raw": null,
+        "form_id": "powder",
+        "amount_per_serving": 3.0,
+        "amount_unit": "g",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Psyllium 3g"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [
+      "Inulin"
+    ],
+    "pack_units": 300,
+    "pack_unit_type": "gram",
+    "units_per_serving": 5.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No stated form for psyllium, assumed powder",
+      "amount_refers_to unclear as no cue words given"
+    ],
+    "evidence": {
+      "pack_units": "300g",
+      "units_per_serving": "5g serving"
+    }
+  }
+}

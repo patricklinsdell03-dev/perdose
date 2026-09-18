@@ -75,6 +75,10 @@ class Compound(_Model):
     # Phrases in which an alias hit does not count: "calcium HMB" is not a calcium product,
     # "magnesium stearate" is an excipient. Blanked out before candidates are found.
     alias_exclusions: list[str] = []
+    # simple_mass only: a stated "compound_mass" component replaces the headline amount
+    # (creatine: 5 g monohydrate is the dose, not the 4.4 g creatine it provides). Off by
+    # default, because "600 mg (50% alpha-GPC, providing 300 mg)" must keep the 300.
+    compound_mass_is_dose: bool = False
     accepted_cofactors: list[str] = []
     heuristics: Heuristics | None = None
     classes: dict[str, ClassInfo]

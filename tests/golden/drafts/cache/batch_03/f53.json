@@ -1,0 +1,50 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "huperzine_a",
+        "form_raw": "Huperzia Serrata Extract, 1% Huperzine A",
+        "form_id": "huperzia_serrata_extract",
+        "amount_per_serving": 200.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "extract_mass",
+            "amount": 20.0,
+            "unit": "mg"
+          },
+          {
+            "name": "huperzine_a",
+            "amount": 1.0,
+            "unit": "percent"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "200µg",
+          "components": "Huperzia Serrata Extract 20mg (1% Huperzine A, 200µg)"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size (units per serving) not explicitly stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}

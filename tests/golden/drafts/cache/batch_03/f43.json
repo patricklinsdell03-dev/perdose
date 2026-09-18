@@ -1,0 +1,37 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "chlorella",
+        "form_raw": "Tablets",
+        "form_id": "chlorella_unspecified",
+        "amount_per_serving": 3000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "6 tablets provide 3000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 300,
+    "pack_unit_type": "tablet",
+    "units_per_serving": 6.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "300 Tablets",
+      "units_per_serving": "6 tablets provide 3000mg"
+    }
+  }
+}

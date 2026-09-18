@@ -1,0 +1,50 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "valerian",
+        "form_raw": "root extract",
+        "form_id": "root extract",
+        "amount_per_serving": 250.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "herb_equivalent",
+            "amount": 1000.0,
+            "unit": "mg"
+          },
+          {
+            "name": "extract_mass",
+            "amount": 250.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "4:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "1000mg (from 250mg 4:1 root extract)",
+          "herb_equivalent": "1000mg",
+          "extract_mass": "250mg 4:1 root extract"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "tablet",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "60 Tablets",
+      "units_per_serving": "2 tablets"
+    }
+  }
+}

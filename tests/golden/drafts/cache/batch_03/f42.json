@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "spirulina",
+        "form_raw": "tablets",
+        "form_id": "tablets",
+        "amount_per_serving": 1500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Spirulina 1500mg"
+        }
+      },
+      {
+        "compound_id": "chlorella",
+        "form_raw": "tablets",
+        "form_id": "chlorella",
+        "amount_per_serving": 1500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Chlorella 1500mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 180,
+    "pack_unit_type": "tablet",
+    "units_per_serving": 6.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "amount per serving vs per tablet ambiguous - unclear if 1500mg is per 6 tablets or per tablet"
+    ],
+    "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "6 tablets"
+    }
+  }
+}

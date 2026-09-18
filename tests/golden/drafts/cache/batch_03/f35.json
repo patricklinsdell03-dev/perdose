@@ -1,0 +1,39 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "apple_cider_vinegar",
+        "form_raw": "gummies",
+        "form_id": "gummy",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "2 gummies provide 1000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "gummy",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "headline 500mg per gummy vs 1000mg per 2-gummy serving, unit basis unclear"
+    ],
+    "evidence": {
+      "pack_units": "60 Gummies",
+      "units_per_serving": "2 gummies provide 1000mg"
+    }
+  }
+}

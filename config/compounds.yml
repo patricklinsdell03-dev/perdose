@@ -172,6 +172,7 @@ compounds:
     unit: mg
     standard_dose: 5000
     label_convention: compound_default
+    compound_mass_is_dose: true   # "4.4 g creatine (from 5 g monohydrate)": the 5 g is the dose
     normalisation_type: simple_mass
     aliases: [creatine, creatine monohydrate, creapure, micronised creatine, micronized creatine, creatine hcl, creatine hydrochloride]
     accepted_cofactors: []

@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "ginkgo",
+        "form_raw": "50:1 leaf extract",
+        "form_id": "leaf",
+        "amount_per_serving": 120.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "extract_mass",
+            "amount": 120.0,
+            "unit": "mg"
+          },
+          {
+            "name": "herb_equivalent",
+            "amount": 6000.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "50:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "6000mg (from 120mg 50:1 leaf extract)",
+          "extract_mass": "120mg 50:1 leaf extract",
+          "herb_equivalent": "6000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not explicitly stated"
+    ],
+    "evidence": {
+      "pack_units": "120 Tablets"
+    }
+  }
+}

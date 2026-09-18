@@ -1,0 +1,45 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "tongkat_ali",
+        "form_raw": "extract (2% eurycomanone)",
+        "form_id": "standardised",
+        "amount_per_serving": 200.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "eurycomanone",
+            "amount": 2.0,
+            "unit": "percent"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Tongkat Ali Extract 200mg",
+          "eurycomanone": "2% eurycomanone"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "units per serving not stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

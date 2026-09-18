@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "saw_palmetto",
+        "form_raw": "extract, 85-95% fatty acids",
+        "form_id": "extract",
+        "amount_per_serving": 320.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Saw Palmetto Extract 320mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "softgel",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not explicitly stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Softgels"
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "ginkgo",
+        "form_raw": "Extract (24% flavone glycosides, 6% terpene lactones)",
+        "form_id": "standardised",
+        "amount_per_serving": 120.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "flavone glycosides",
+            "amount": 24.0,
+            "unit": "percent"
+          },
+          {
+            "name": "terpene lactones",
+            "amount": 6.0,
+            "unit": "percent"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Ginkgo Biloba Extract 120mg",
+          "flavone glycosides": "24% flavone glycosides",
+          "terpene lactones": "6% terpene lactones"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "units_per_serving not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Tablets"
+    }
+  }
+}

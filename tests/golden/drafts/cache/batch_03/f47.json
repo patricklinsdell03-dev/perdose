@@ -1,0 +1,45 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "alpha_gpc",
+        "form_raw": "50% Alpha-GPC",
+        "form_id": "50%",
+        "amount_per_serving": 300.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [
+          {
+            "name": "compound_mass",
+            "amount": 600.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "providing 300mg",
+          "compound_mass": "Alpha GPC 600mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "Serving size (capsules per serving) not explicitly stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}
