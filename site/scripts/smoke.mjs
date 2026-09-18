@@ -1,6 +1,6 @@
 // Smoke test on the built site (brief §15). Run after `astro build`.
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
 
 const dist = new URL('../dist/', import.meta.url).pathname.replace(/^\/([A-Za-z]:)/, '$1');
 const failures = [];
@@ -44,6 +44,16 @@ for (const file of files) {
 // 4. Search index and share images exist.
 check(existsSync(join(dist, 'pagefind/pagefind-ui.js')), 'Pagefind index missing');
 check(existsSync(join(dist, 'og/magnesium/bisglycinate.png')), 'share image missing');
+
+// 5. Learn pages: only the approved, checked pages listed by `make content-check` (brief §20.4).
+const manifestFile = resolve(process.cwd(), process.env.PERDOSE_LEARN_MANIFEST ?? '../data/export/learn.json');
+const approved = existsSync(manifestFile)
+  ? JSON.parse(readFileSync(manifestFile, 'utf8')).pages.map((p) => p.compound_id.replaceAll('_', '-'))
+  : [];
+const learnDir = join(dist, 'learn');
+for (const slug of existsSync(learnDir) ? readdirSync(learnDir) : []) {
+  check(approved.includes(slug), `learn/${slug}/ was built but is not an approved, checked page`);
+}
 
 if (failures.length) {
   console.error(`smoke: ${failures.length} problem(s)\n - ${failures.slice(0, 20).join('\n - ')}`);

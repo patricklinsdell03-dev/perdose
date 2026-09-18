@@ -5,6 +5,7 @@ import Base from '../../../layouts/Base.astro';
 import type { CompoundData } from '../../../lib/data';
 import { CATEGORY_LABELS, compoundSlug, compounds, defaultClass, retailerName, ukRanked } from '../../../lib/data';
 import { doseLabel, money, monthYear, perDose } from '../../../lib/format';
+import { learnPages } from '../../../lib/learn';
 
 export function getStaticPaths() {
   // Pages with no products are never built (brief §12.5).
@@ -27,6 +28,8 @@ const title = `Cheapest ${c.name} in the UK — price ${doseLabel(c, c.standard_
 const description = ukRanked(cls).length
   ? `${c.name} from ${perDose(ukRanked(cls)[0].price_per_std_dose)} ${doseLabel(c, cls.standard_dose)} across ${retailerCount} retailers, ${ranked.length} products. Compared form by form.`
   : `${c.name} prices compared form by form.`;
+// The approved learn page's 100-120-word excerpt, if there is one (brief §12.1).
+const glance = (await learnPages()).get(c.id)?.data.at_a_glance;
 ---
 
 <Base title={title} description={description} image={`/og/${compoundSlug(c.id)}/${cls.slug}.png`} searchTerms={c.aliases} searchWeight={4} searchKind="Compare">
@@ -38,6 +41,16 @@ const description = ukRanked(cls).length
 
   <h2>{c.name} — {cls.label}</h2>
   <ClassView data={data} cls={cls} />
+
+  {
+    glance && (
+      <aside class="at-a-glance prose" aria-labelledby="glance-title">
+        <h2 id="glance-title">{c.name} at a glance</h2>
+        <p>{glance}</p>
+        <p><a href={`/learn/${compoundSlug(c.id)}/`}>Read the overview: forms and what the research says</a></p>
+      </aside>
+    )
+  }
 
   {
     unknown && unknown.unverified.length > 0 && (

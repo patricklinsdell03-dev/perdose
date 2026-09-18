@@ -1,0 +1,32 @@
+---
+// Learn page (brief §20.2): editorial, no product tables; the only link to prices is the
+// "Compare prices" block at the end. Built only for approved, checked pages (content.config.ts).
+import { render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { compoundSlug, rules } from '../../lib/data';
+import { isoToLong } from '../../lib/format';
+import { learnPages } from '../../lib/learn';
+
+export async function getStaticPaths() {
+  const entries = [...(await learnPages()).values()];
+  return entries.map((entry) => ({ params: { compound: compoundSlug(entry.id) }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const name = rules.find((c) => c.id === entry.id)?.name ?? entry.id;
+const summary = entry.data.at_a_glance ?? `${name}: what it is, the forms sold, and what published research has measured.`;
+---
+
+<Base title={`${name}: forms and what the research says`} description={summary} searchKind="Guide" searchSummary={`What ${name} is, its forms, and what studies found.`}>
+  <div class="prose learn">
+    <p class="breadcrumb"><a href="/">Home</a> › <a href="/a-z/">A–Z</a> › {name}</p>
+    <h1 data-pagefind-meta="title">{name}: an overview</h1>
+    <p class="muted learn-note">
+      What it is and what published studies measured — not advice about whether to take it. Drafted with the help of an
+      AI model from the summaries of the studies cited, then checked by a person on {isoToLong(entry.data.reviewed_on)}.
+      Evidence grades follow <a href="/methodology/#grading">fixed rules</a>.
+    </p>
+    <Content />
+  </div>
+</Base>

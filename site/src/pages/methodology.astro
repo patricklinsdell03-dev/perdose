@@ -2,9 +2,12 @@
 import Base from '../layouts/Base.astro';
 import { meta, rules } from '../lib/data';
 import { amount, isoToLong } from '../lib/format';
+import { learnPages, rubric } from '../lib/learn';
 import { site } from '../lib/site';
 
 const withFactors = rules.filter((c) => c.classes.some((k) => k.forms.some((f) => f.elemental_factor)));
+// The grading rules are shown once a learn page is published (they must be approved first).
+const grading = (await learnPages()).size > 0 && rubric?.status === 'approved' ? rubric : null;
 ---
 
 <Base title="How we compare prices" description="What we normalise, what we estimate, what we do not compare, and why no retailer can pay for position.">
@@ -120,6 +123,30 @@ const withFactors = rules.filter((c) => c.classes.some((k) => k.forms.some((f) =
         </tbody>
       </table>
     </div>
+
+    {
+      grading && (
+        <>
+          <h2 id="grading">How we grade research on overview pages</h2>
+          <p>
+            Overview pages summarise published meta-analyses, systematic reviews and randomised trials, found in Europe
+            PMC. An AI model reads each study’s summary and records, with the exact words it relied on, whether people
+            took the supplement by mouth, how many took part and what the study found. It never chooses the grade: the
+            grade comes from these fixed rules, applied by ordinary code. A person checks every page before it is
+            published.
+          </p>
+          <dl class="facts">
+            {Object.entries(grading.grades).map(([grade, rule]) => (
+              <>
+                <dt>{grade}</dt>
+                <dd>{rule}</dd>
+              </>
+            ))}
+          </dl>
+          <p>{grading.weighting}</p>
+        </>
+      )
+    }
 
     <h2>No paid placement</h2>
     <p>
