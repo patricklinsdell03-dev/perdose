@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T23:19:23+01:00",
+ "generated_at": "2026-09-18T01:58:17+01:00",
  "prompt_version": "1.1.0",
  "retailers": [
   {
@@ -8,7 +8,7 @@
    "listings": 28,
    "in_stock": 28,
    "last_seen": "2026-09-17",
-   "days_stale": 0
+   "days_stale": 1
   },
   {
    "id": "healthspan",
@@ -16,7 +16,7 @@
    "listings": 28,
    "in_stock": 28,
    "last_seen": "2026-09-17",
-   "days_stale": 0
+   "days_stale": 1
   },
   {
    "id": "holland_barrett",
@@ -24,7 +24,7 @@
    "listings": 15,
    "in_stock": 15,
    "last_seen": "2026-09-17",
-   "days_stale": 0
+   "days_stale": 1
   },
   {
    "id": "myprotein",
@@ -32,7 +32,7 @@
    "listings": 28,
    "in_stock": 28,
    "last_seen": "2026-09-17",
-   "days_stale": 0
+   "days_stale": 1
   }
  ],
  "products": 99,
@@ -61,6 +61,26 @@
   "coq10",
   "glucosamine",
   "msm",
-  "caffeine"
+  "caffeine",
+  "vitamin_b1",
+  "vitamin_b2",
+  "vitamin_b3",
+  "inositol",
+  "copper",
+  "manganese",
+  "boron",
+  "citrulline",
+  "arginine",
+  "lysine",
+  "tryptophan",
+  "gaba",
+  "betaine",
+  "hmb",
+  "astaxanthin",
+  "berberine",
+  "quercetin",
+  "alpha_lipoic_acid",
+  "chondroitin",
+  "hyaluronic_acid"
  ]
 }

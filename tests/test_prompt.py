@@ -49,6 +49,6 @@ def test_short_description_is_untouched():
 
 
 def test_alias_exclusions_stop_excipients_and_other_salts_becoming_candidates():
-    assert "calcium" not in ids("Calcium HMB Powder 250g")  # hmb itself is still a draft
+    assert ids("Calcium HMB Powder 250g") == ["hmb"]
     assert ids("Zinc Picolinate 50mg — contains magnesium stearate") == ["zinc"]
     assert ids("Calcium Citrate 1000mg 90 Tablets") == ["calcium"]

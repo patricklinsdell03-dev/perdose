@@ -1916,5 +1916,988 @@
     ]
    }
   ]
+ },
+ {
+  "id": "vitamin_b1",
+  "name": "Thiamine (vitamin B1)",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "thiamine",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "thiamine",
+   "thiamin",
+   "vitamin b1",
+   "benfotiamine"
+  ],
+  "classes": [
+   {
+    "id": "b1_thiamine",
+    "label": "Thiamine",
+    "slug": "thiamine",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "thiamine",
+      "names": [
+       "thiamine",
+       "thiamin",
+       "thiamine hcl",
+       "thiamine hydrochloride",
+       "thiamine mononitrate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b1_benfotiamine",
+    "label": "Benfotiamine",
+    "slug": "benfotiamine",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "benfotiamine",
+      "names": [
+       "benfotiamine"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b2",
+  "name": "Riboflavin (vitamin B2)",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "riboflavin",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "riboflavin",
+   "vitamin b2",
+   "riboflavin-5-phosphate",
+   "r5p"
+  ],
+  "classes": [
+   {
+    "id": "b2_riboflavin",
+    "label": "Riboflavin",
+    "slug": "riboflavin",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "riboflavin",
+      "names": [
+       "riboflavin",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b2_r5p",
+    "label": "Riboflavin-5-phosphate",
+    "slug": "r5p",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "r5p",
+      "names": [
+       "riboflavin-5-phosphate",
+       "riboflavin 5 phosphate",
+       "r5p",
+       "r-5-p"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "vitamin_b3",
+  "name": "Niacin (vitamin B3)",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "vitamin B3",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "niacin",
+   "vitamin b3",
+   "niacinamide",
+   "nicotinamide",
+   "nicotinic acid",
+   "inositol hexanicotinate",
+   "no-flush niacin"
+  ],
+  "classes": [
+   {
+    "id": "b3_niacin",
+    "label": "Niacin (nicotinic acid)",
+    "slug": "niacin",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "niacin",
+      "names": [
+       "niacin",
+       "nicotinic acid",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b3_niacinamide",
+    "label": "Niacinamide",
+    "slug": "niacinamide",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "niacinamide",
+      "names": [
+       "niacinamide",
+       "nicotinamide"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "b3_ihn",
+    "label": "Inositol hexanicotinate (no-flush)",
+    "slug": "inositol-hexanicotinate",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "ihn",
+      "names": [
+       "inositol hexanicotinate",
+       "inositol hexaniacinate",
+       "no-flush niacin",
+       "no flush niacin",
+       "flush-free niacin"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "inositol",
+  "name": "Inositol",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "inositol",
+  "unit": "mg",
+  "standard_dose": 2000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "inositol",
+   "myo-inositol",
+   "myo inositol",
+   "d-chiro-inositol",
+   "d-chiro inositol"
+  ],
+  "classes": [
+   {
+    "id": "ino_myo",
+    "label": "Myo-inositol",
+    "slug": "myo-inositol",
+    "standard_dose": 2000.0,
+    "forms": [
+     {
+      "id": "myo",
+      "names": [
+       "myo-inositol",
+       "myo inositol",
+       "inositol",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ino_dchiro",
+    "label": "D-chiro-inositol",
+    "slug": "d-chiro-inositol",
+    "standard_dose": 600.0,
+    "forms": [
+     {
+      "id": "d_chiro",
+      "names": [
+       "d-chiro-inositol",
+       "d-chiro inositol",
+       "dci"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "copper",
+  "name": "Copper",
+  "category": "minerals",
+  "tier": 3,
+  "comparison_quantity": "elemental copper",
+  "unit": "mg",
+  "standard_dose": 1.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "copper",
+   "copper gluconate",
+   "copper bisglycinate",
+   "copper citrate"
+  ],
+  "classes": [
+   {
+    "id": "cu_all",
+    "label": "Copper",
+    "slug": "copper",
+    "standard_dose": 1.0,
+    "forms": [
+     {
+      "id": "gluconate",
+      "names": [
+       "gluconate"
+      ],
+      "elemental_factor": 0.14
+     },
+     {
+      "id": "bisglycinate",
+      "names": [
+       "bisglycinate",
+       "glycinate",
+       "chelate"
+      ],
+      "elemental_factor": 0.3
+     },
+     {
+      "id": "other",
+      "names": [
+       "citrate",
+       "sulphate",
+       "sulfate",
+       "oxide",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "manganese",
+  "name": "Manganese",
+  "category": "minerals",
+  "tier": 3,
+  "comparison_quantity": "elemental manganese",
+  "unit": "mg",
+  "standard_dose": 2.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "manganese",
+   "manganese gluconate",
+   "manganese bisglycinate",
+   "manganese citrate"
+  ],
+  "classes": [
+   {
+    "id": "mn_all",
+    "label": "Manganese",
+    "slug": "manganese",
+    "standard_dose": 2.0,
+    "forms": [
+     {
+      "id": "manganese",
+      "names": [
+       "gluconate",
+       "bisglycinate",
+       "glycinate",
+       "citrate",
+       "sulphate",
+       "sulfate",
+       "chelate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "boron",
+  "name": "Boron",
+  "category": "minerals",
+  "tier": 2,
+  "comparison_quantity": "elemental boron",
+  "unit": "mg",
+  "standard_dose": 3.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "boron",
+   "boron citrate",
+   "boron glycinate",
+   "calcium fructoborate",
+   "fruitex-b"
+  ],
+  "classes": [
+   {
+    "id": "b_all",
+    "label": "Boron",
+    "slug": "boron",
+    "standard_dose": 3.0,
+    "forms": [
+     {
+      "id": "salts",
+      "names": [
+       "citrate",
+       "glycinate",
+       "aspartate",
+       "chelate",
+       "boron citrate",
+       "calcium fructoborate",
+       "fructoborate",
+       "fruitex-b",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "citrulline",
+  "name": "L-Citrulline",
+  "category": "amino-acids",
+  "tier": 1,
+  "comparison_quantity": "L-citrulline",
+  "unit": "mg",
+  "standard_dose": 3000.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "citrulline",
+   "l-citrulline",
+   "citrulline malate"
+  ],
+  "classes": [
+   {
+    "id": "cit_base",
+    "label": "L-Citrulline (pure)",
+    "slug": "l-citrulline",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "base",
+      "names": [
+       "l-citrulline",
+       "citrulline",
+       "pure",
+       "base",
+       "unspecified"
+      ],
+      "elemental_factor": 1.0
+     }
+    ]
+   },
+   {
+    "id": "cit_malate",
+    "label": "Citrulline malate",
+    "slug": "citrulline-malate",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "malate_2_1",
+      "names": [
+       "malate 2:1",
+       "citrulline malate 2:1",
+       "2:1"
+      ],
+      "elemental_factor": 0.723
+     },
+     {
+      "id": "malate_1_1",
+      "names": [
+       "malate 1:1",
+       "citrulline malate 1:1",
+       "1:1"
+      ],
+      "elemental_factor": 0.566
+     },
+     {
+      "id": "malate_unknown",
+      "names": [
+       "malate",
+       "citrulline malate"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "arginine",
+  "name": "L-Arginine",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "L-arginine",
+  "unit": "mg",
+  "standard_dose": 3000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "arginine",
+   "l-arginine",
+   "arginine akg",
+   "aakg",
+   "arginine alpha-ketoglutarate"
+  ],
+  "classes": [
+   {
+    "id": "arg_base",
+    "label": "L-Arginine",
+    "slug": "l-arginine",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "base",
+      "names": [
+       "l-arginine",
+       "arginine",
+       "arginine hcl",
+       "base",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "arg_akg",
+    "label": "Arginine AKG",
+    "slug": "aakg",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "akg",
+      "names": [
+       "akg",
+       "aakg",
+       "alpha-ketoglutarate",
+       "alpha ketoglutarate"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "lysine",
+  "name": "L-Lysine",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "L-lysine",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "lysine",
+   "l-lysine",
+   "lysine hcl",
+   "lysine hydrochloride"
+  ],
+  "classes": [
+   {
+    "id": "lys",
+    "label": "L-Lysine",
+    "slug": "l-lysine",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "l_lysine",
+      "names": [
+       "l-lysine",
+       "lysine",
+       "lysine hcl",
+       "lysine hydrochloride",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "tryptophan",
+  "name": "L-Tryptophan",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "L-tryptophan",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "tryptophan",
+   "l-tryptophan"
+  ],
+  "classes": [
+   {
+    "id": "trp",
+    "label": "L-Tryptophan",
+    "slug": "l-tryptophan",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "l_tryptophan",
+      "names": [
+       "l-tryptophan",
+       "tryptophan",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "gaba",
+  "name": "GABA",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "GABA",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "gaba",
+   "gamma-aminobutyric acid",
+   "gamma aminobutyric acid",
+   "pharmagaba"
+  ],
+  "classes": [
+   {
+    "id": "gaba",
+    "label": "GABA",
+    "slug": "gaba",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "gaba",
+      "names": [
+       "gaba",
+       "gamma-aminobutyric acid",
+       "pharmagaba",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "betaine",
+  "name": "Betaine (TMG)",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "betaine anhydrous",
+  "unit": "mg",
+  "standard_dose": 2500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "betaine anhydrous",
+   "tmg",
+   "trimethylglycine",
+   "betaine"
+  ],
+  "classes": [
+   {
+    "id": "tmg",
+    "label": "Betaine anhydrous (TMG)",
+    "slug": "tmg",
+    "standard_dose": 2500.0,
+    "forms": [
+     {
+      "id": "anhydrous",
+      "names": [
+       "anhydrous",
+       "tmg",
+       "trimethylglycine",
+       "betaine anhydrous",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "hmb",
+  "name": "HMB",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "HMB",
+  "unit": "mg",
+  "standard_dose": 3000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "hmb",
+   "beta-hydroxy beta-methylbutyrate",
+   "hydroxymethylbutyrate",
+   "calcium hmb",
+   "myhmb"
+  ],
+  "classes": [
+   {
+    "id": "hmb_ca",
+    "label": "Calcium HMB",
+    "slug": "calcium-hmb",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "calcium_hmb",
+      "names": [
+       "calcium hmb",
+       "ca-hmb",
+       "calcium",
+       "myhmb",
+       "unspecified"
+      ],
+      "elemental_factor": 0.808
+     }
+    ]
+   },
+   {
+    "id": "hmb_fa",
+    "label": "HMB free acid",
+    "slug": "hmb-free-acid",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "free_acid",
+      "names": [
+       "free acid",
+       "hmb-fa",
+       "free-acid"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "astaxanthin",
+  "name": "Astaxanthin",
+  "category": "fatty-acids",
+  "tier": 2,
+  "comparison_quantity": "astaxanthin",
+  "unit": "mg",
+  "standard_dose": 4.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "astaxanthin",
+   "astareal",
+   "astapure"
+  ],
+  "classes": [
+   {
+    "id": "asta",
+    "label": "Astaxanthin",
+    "slug": "astaxanthin",
+    "standard_dose": 4.0,
+    "forms": [
+     {
+      "id": "astaxanthin",
+      "names": [
+       "astaxanthin",
+       "astareal",
+       "astapure",
+       "haematococcus",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "berberine",
+  "name": "Berberine",
+  "category": "botanicals",
+  "tier": 1,
+  "comparison_quantity": "berberine",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "berberine",
+   "berberine hcl",
+   "dihydroberberine",
+   "glucovantage"
+  ],
+  "classes": [
+   {
+    "id": "berb_hcl",
+    "label": "Berberine HCl",
+    "slug": "berberine",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "hcl",
+      "names": [
+       "berberine hcl",
+       "hcl",
+       "hydrochloride",
+       "berberine",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "berb_dihydro",
+    "label": "Dihydroberberine",
+    "slug": "dihydroberberine",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "dihydroberberine",
+      "names": [
+       "dihydroberberine",
+       "glucovantage"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "quercetin",
+  "name": "Quercetin",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "quercetin",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "quercetin",
+   "quercetin dihydrate",
+   "quercetin phytosome",
+   "quercefit"
+  ],
+  "classes": [
+   {
+    "id": "quer",
+    "label": "Quercetin",
+    "slug": "quercetin",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "quercetin",
+      "names": [
+       "quercetin",
+       "dihydrate",
+       "quercetin dihydrate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "quer_phytosome",
+    "label": "Quercetin phytosome",
+    "slug": "quercetin-phytosome",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "phytosome",
+      "names": [
+       "phytosome",
+       "quercefit"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "alpha_lipoic_acid",
+  "name": "Alpha-lipoic acid",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "alpha-lipoic acid",
+  "unit": "mg",
+  "standard_dose": 300.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "alpha lipoic acid",
+   "alpha-lipoic acid",
+   "ala",
+   "lipoic acid",
+   "r-ala",
+   "r-lipoic acid",
+   "thioctic acid"
+  ],
+  "classes": [
+   {
+    "id": "ala_racemic",
+    "label": "Alpha-lipoic acid",
+    "slug": "alpha-lipoic-acid",
+    "standard_dose": 300.0,
+    "forms": [
+     {
+      "id": "racemic",
+      "names": [
+       "alpha-lipoic acid",
+       "alpha lipoic acid",
+       "ala",
+       "racemic",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ala_r",
+    "label": "R-lipoic acid",
+    "slug": "r-lipoic-acid",
+    "standard_dose": 300.0,
+    "forms": [
+     {
+      "id": "r_ala",
+      "names": [
+       "r-ala",
+       "r-lipoic acid",
+       "r lipoic acid",
+       "na-r-ala",
+       "r-alpha lipoic acid"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "chondroitin",
+  "name": "Chondroitin",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "chondroitin sulfate",
+  "unit": "mg",
+  "standard_dose": 800.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "chondroitin",
+   "chondroitin sulfate",
+   "chondroitin sulphate"
+  ],
+  "classes": [
+   {
+    "id": "chon",
+    "label": "Chondroitin sulfate",
+    "slug": "chondroitin",
+    "standard_dose": 800.0,
+    "forms": [
+     {
+      "id": "sulfate",
+      "names": [
+       "chondroitin sulfate",
+       "chondroitin sulphate",
+       "sulfate",
+       "sulphate",
+       "chondroitin",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "hyaluronic_acid",
+  "name": "Hyaluronic acid",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "hyaluronic acid",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "hyaluronic acid",
+   "sodium hyaluronate",
+   "hyaluronan"
+  ],
+  "classes": [
+   {
+    "id": "ha",
+    "label": "Hyaluronic acid",
+    "slug": "hyaluronic-acid",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "hyaluronic_acid",
+      "names": [
+       "hyaluronic acid",
+       "sodium hyaluronate",
+       "hyaluronan",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
  }
 ]

@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-17T23:19:23+01:00",
+ "generated_at": "2026-09-18T01:58:17+01:00",
  "compound": {
   "id": "l_theanine",
   "name": "L-Theanine",
@@ -49,6 +49,7 @@
      "name": "Holland & Barrett L-Theanine 200mg 60 Capsules",
      "display_name": "L-Theanine 200mg 60 Capsules",
      "retailer_id": "holland_barrett",
+     "ships_from": "GB",
      "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-l-theanine-200mg-60-capsules-6100028792",
      "image_url": null,
      "price_gbp": 13.99,
@@ -107,6 +108,7 @@
      "name": "Higher Nature L-Theanine 100mg - Green Tea Extract - 90 Vegan Capsules",
      "display_name": "L-Theanine 100mg - Green Tea Extract",
      "retailer_id": "holland_barrett",
+     "ships_from": "GB",
      "url": "https://www.hollandandbarrett.com/shop/product/higher-nature-l-theanine-100mg-green-tea-extract-90-vegan-capsules-6100023557",
      "image_url": null,
      "price_gbp": 28.95,

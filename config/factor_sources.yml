@@ -3,6 +3,7 @@
 # using IUPAC abridged standard atomic weights (https://iupac.qmul.ac.uk/AtWt/).
 # tests/test_factors.py recomputes each entry and fails if compounds.yml drifts by > 1.5 %.
 # NIH ODS fact sheets could not be machine-read on 2026-09-17 (HTTP 403), so they are not cited.
+# `active_atoms` + `active_count` sources are actives that are molecules (citrulline, HMB): factor = active mass x count / molecular mass.
 version: 1
 atomic_weights_source: "IUPAC abridged standard atomic weights, https://iupac.qmul.ac.uk/AtWt/"
 checked_on: 2026-09-17
@@ -30,3 +31,9 @@ sources:
   - { compound: potassium, form: citrate,          element: K,  substance: "tripotassium citrate monohydrate", atoms: { K: 3, C: 6, H: 7, O: 8 } }
   - { compound: potassium, form: chloride,         element: K,  substance: "potassium chloride", atoms: { K: 1, Cl: 1 } }
   - { compound: potassium, form: gluconate,        element: K,  substance: "potassium gluconate", atoms: { K: 1, C: 6, H: 11, O: 7 } }
+  - { compound: copper, form: gluconate,    element: Cu, substance: "copper(II) gluconate", atoms: { Cu: 1, C: 12, H: 22, O: 14 } }
+  - { compound: copper, form: bisglycinate, element: Cu, substance: "copper bisglycinate, anhydrous", atoms: { Cu: 1, C: 4, H: 8, N: 2, O: 4 } }
+  - { compound: citrulline, form: base, substance: "L-citrulline", atoms: { C: 6, H: 13, N: 3, O: 3 }, active_atoms: { C: 6, H: 13, N: 3, O: 3 }, active_count: 1 }
+  - { compound: citrulline, form: malate_2_1, substance: "citrulline malate 2:1", atoms: { C: 16, H: 32, N: 6, O: 11 }, active_atoms: { C: 6, H: 13, N: 3, O: 3 }, active_count: 2 }
+  - { compound: citrulline, form: malate_1_1, substance: "citrulline malate 1:1", atoms: { C: 10, H: 19, N: 3, O: 8 }, active_atoms: { C: 6, H: 13, N: 3, O: 3 }, active_count: 1 }
+  - { compound: hmb, form: calcium_hmb, substance: "calcium beta-hydroxy-beta-methylbutyrate monohydrate", atoms: { Ca: 1, C: 10, H: 20, O: 7 }, active_atoms: { C: 5, H: 10, O: 3 }, active_count: 2 }
