@@ -1,0 +1,98 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "msm",
+  "name": "MSM",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "methylsulfonylmethane",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "msm",
+   "methylsulfonylmethane",
+   "methylsulphonylmethane"
+  ],
+  "classes": [
+   {
+    "id": "msm",
+    "label": "MSM",
+    "slug": "msm",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "msm",
+      "names": [
+       "msm",
+       "optimsm",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "msm",
+   "label": "MSM",
+   "slug": "msm",
+   "standard_dose": 1000.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "holland_barrett:069856",
+     "product_id": "holland-barrett-holland-barrett-high-strength-glucosamine-chondroitin-complex-180-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett High Strength Glucosamine & Chondroitin Complex 180 Tablets",
+     "display_name": "High Strength Glucosamine & Chondroitin Complex 180 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-high-strength-glucosamine-chondroitin-complex-180-tablets-6100014056",
+     "image_url": null,
+     "price_gbp": 17.63,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "msm",
+     "amount_per_serving": 400.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": false,
+     "price_per_unit": 0.0007345833333333333,
+     "price_per_std_dose": 0.7345833333333333,
+     "cost_per_month": 22.037499999999998,
+     "days_supply": 24.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "glucosamine",
+      "chondroitin",
+      "vitamin_c",
+      "ginger",
+      "Hydrolysed Bovine Collagen",
+      "Sweet Orange Fruit Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 Tablet/tablets per day",
+      "amount_per_serving": "MSM (Methylsulphonylmethane) ; 400mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

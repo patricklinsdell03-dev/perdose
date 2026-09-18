@@ -1,0 +1,198 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "lutein",
+  "name": "Lutein",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "lutein",
+  "unit": "mg",
+  "standard_dose": 10.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "lutein",
+   "floraglo",
+   "lutemax",
+   "marigold extract"
+  ],
+  "classes": [
+   {
+    "id": "lut",
+    "label": "Lutein",
+    "slug": "lutein",
+    "standard_dose": 10.0,
+    "forms": [
+     {
+      "id": "lutein",
+      "names": [
+       "lutein",
+       "floraglo",
+       "lutemax",
+       "free lutein",
+       "lutein esters",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "lut",
+   "label": "Lutein",
+   "slug": "lutein",
+   "standard_dose": 10.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "bulk:BBLE-CMVC-TABS-0270-V2",
+     "product_id": "bulk-complete-multivitamin-complex-270-tablets",
+     "brand": "Bulk",
+     "name": "Complete Multivitamin Complex - 270 Tablets",
+     "display_name": "Complete Multivitamin Complex",
+     "retailer_id": "bulk",
+     "ships_from": "GB",
+     "url": "https://www.bulk.com/uk/products/complete-multivitamin-complex/bble-cmvc",
+     "image_url": null,
+     "price_gbp": 25.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 270,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "lutein",
+     "amount_per_serving": 10.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": false,
+     "price_per_unit": 0.028877777777777777,
+     "price_per_std_dose": 0.28877777777777774,
+     "cost_per_month": 8.663333333333332,
+     "days_supply": 90.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "multivitamin",
+      "calcium",
+      "magnesium",
+      "vitamin_c",
+      "green_tea_extract",
+      "choline",
+      "iron",
+      "Citrus Aurantium Bioflavonoids",
+      "Grape Seed Extract",
+      "Tomato Extract (Lycopene)",
+      "Vitamin E",
+      "Inositol",
+      "Quercetin",
+      "Zinc Oxide",
+      "Niacin",
+      "Vitamin D3",
+      "Co Enzyme Q10",
+      "Pantothenic Acid",
+      "Black Pepper Extract (Piperine)",
+      "Vitamin A",
+      "Lactobacillus Acidophilus",
+      "Vitamin K1",
+      "Thiamin",
+      "Riboflavin",
+      "Vitamin B6",
+      "Folic Acid",
+      "Chromium Chloride",
+      "Biotin",
+      "Sodium Selenite",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270 Tablets",
+      "units_per_serving": "Per Serving (3 Tablets)",
+      "amount_per_serving": "Lutein ; 10 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BBLE-CMVC-TABS-0090-V2",
+     "product_id": "bulk-complete-multivitamin-complex-90-tablets",
+     "brand": "Bulk",
+     "name": "Complete Multivitamin Complex - 90 Tablets",
+     "display_name": "Complete Multivitamin Complex",
+     "retailer_id": "bulk",
+     "ships_from": "GB",
+     "url": "https://www.bulk.com/uk/products/complete-multivitamin-complex/bble-cmvc",
+     "image_url": null,
+     "price_gbp": 9.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "lutein",
+     "amount_per_serving": 10.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": false,
+     "price_per_unit": 0.0333,
+     "price_per_std_dose": 0.333,
+     "cost_per_month": 9.99,
+     "days_supply": 30.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "multivitamin",
+      "calcium",
+      "magnesium",
+      "vitamin_c",
+      "green_tea_extract",
+      "choline",
+      "iron",
+      "Citrus Bioflavonoids",
+      "Grape Seed Extract",
+      "Quercetin",
+      "Inositol",
+      "Niacin",
+      "Zinc Oxide",
+      "Vitamin E",
+      "Lactobacillus Acidophilus",
+      "Coenzyme Q10",
+      "Pantothenic Acid",
+      "Black Pepper Extract (Piperine)",
+      "Lycopene (Tomato Extract)",
+      "Riboflavin",
+      "Thiamine",
+      "Vitamin B6",
+      "Vitamin A",
+      "Folic Acid",
+      "Biotin",
+      "Vitamin K1",
+      "Chromium Chloride",
+      "Selenium",
+      "Vitamin D3",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Take three tablets throughout the day",
+      "amount_per_serving": "Lutein ; 10 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

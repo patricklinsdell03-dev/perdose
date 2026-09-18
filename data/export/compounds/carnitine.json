@@ -1,0 +1,167 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "carnitine",
+  "name": "L-Carnitine",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "L-carnitine",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "carnitine",
+   "l-carnitine",
+   "l-carnitine tartrate",
+   "l-carnitine l-tartrate",
+   "lclt",
+   "carnipure",
+   "acetyl-l-carnitine",
+   "acetyl l-carnitine",
+   "alcar"
+  ],
+  "classes": [
+   {
+    "id": "car_base",
+    "label": "L-Carnitine",
+    "slug": "l-carnitine",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "base",
+      "names": [
+       "l-carnitine",
+       "carnitine",
+       "base",
+       "liquid",
+       "unspecified"
+      ],
+      "elemental_factor": 1.0
+     }
+    ]
+   },
+   {
+    "id": "car_tartrate",
+    "label": "L-Carnitine tartrate",
+    "slug": "l-carnitine-tartrate",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "tartrate",
+      "names": [
+       "tartrate",
+       "l-tartrate",
+       "lclt",
+       "carnipure"
+      ],
+      "elemental_factor": 0.682
+     }
+    ]
+   },
+   {
+    "id": "car_alcar",
+    "label": "Acetyl-L-carnitine (ALCAR)",
+    "slug": "alcar",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "alcar",
+      "names": [
+       "acetyl-l-carnitine",
+       "acetyl l-carnitine",
+       "alcar",
+       "acetyl"
+      ],
+      "elemental_factor": 1.0
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "car_alcar",
+   "label": "Acetyl-L-carnitine (ALCAR)",
+   "slug": "alcar",
+   "standard_dose": 1000.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:multivitality-70-plus",
+     "product_id": "healthspan-healthspan-multivitality-70-plus-120-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan MultiVitality 70 Plus 120 Tablets",
+     "display_name": "MultiVitality 70 Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/multivitality-70-plus/",
+     "image_url": null,
+     "price_gbp": 20.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "alcar",
+     "amount_per_serving": 20.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.008745833333333333,
+     "price_per_std_dose": 8.745833333333334,
+     "cost_per_month": 262.375,
+     "days_supply": 2.4,
+     "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
+     "other_actives": [
+      "multivitamin",
+      "vitamin_c",
+      "magnesium",
+      "calcium",
+      "vitamin_b3",
+      "zinc",
+      "panax_ginseng",
+      "Vitamin A",
+      "Vitamin D3",
+      "Vitamin E",
+      "Vitamin K1",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin",
+      "Iron",
+      "Copper",
+      "Iodine",
+      "Manganese",
+      "Selenium",
+      "Chromium",
+      "Phosphorus",
+      "Boron",
+      "Citrus Bioflavonoids",
+      "Coenzyme Q10",
+      "Bitter Orange (Citrus aurantium) Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Acetyl L Carnitine ; 20 mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

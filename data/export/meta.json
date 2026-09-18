@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T19:16:59+01:00",
+ "generated_at": "2026-09-18T20:29:46+01:00",
  "retailers": [
   {
    "id": "bulk",
@@ -26,7 +26,8 @@
    "ships_from": "GB",
    "shipping": {
     "rule": "free_over",
-    "threshold_gbp": 30.0
+    "threshold_gbp": 30.0,
+    "flat_gbp": 3.49
    }
   },
   {
@@ -40,28 +41,42 @@
   }
  ],
  "counts": {
-  "products": 99,
+  "products": 118,
   "compounds": {
-   "magnesium": 19,
-   "zinc": 14,
-   "vitamin_d3": 16,
+   "magnesium": 33,
+   "zinc": 27,
+   "vitamin_d3": 19,
    "vitamin_k2": 5,
-   "omega_3": 18,
+   "omega_3": 19,
    "creatine": 12,
    "ashwagandha": 8,
-   "vitamin_c": 16,
+   "vitamin_c": 32,
    "vitamin_b12": 7,
    "l_theanine": 2,
-   "vitamin_b6": 9,
+   "vitamin_b6": 11,
    "vitamin_b7": 1,
+   "calcium": 13,
+   "iron": 11,
+   "potassium": 1,
+   "glucosamine": 1,
+   "msm": 1,
    "vitamin_b1": 2,
    "vitamin_b2": 2,
-   "vitamin_b3": 2,
-   "copper": 5,
+   "vitamin_b3": 14,
+   "copper": 6,
+   "manganese": 1,
    "astaxanthin": 3,
-   "vitamin_e": 1,
-   "choline": 3,
-   "green_tea_extract": 2
+   "chondroitin": 1,
+   "ginkgo": 1,
+   "panax_ginseng": 1,
+   "lutein": 2,
+   "vitamin_a": 2,
+   "vitamin_e": 8,
+   "choline": 6,
+   "carnitine": 1,
+   "green_tea_extract": 4,
+   "ginger": 1,
+   "multivitamin": 16
   },
   "classes": {
    "mg_glycinate": 5,
@@ -70,12 +85,14 @@
    "mg_other": 2,
    "zn_citrate": 3,
    "zn_gluconate": 2,
+   "zn_glycinate": 0,
    "zn_oxide": 0,
+   "zn_sulfate": 0,
    "zn_other": 3,
-   "d3": 14,
+   "d3": 15,
    "k2_mk7": 3,
    "unknown": 0,
-   "o3_fish": 12,
+   "o3_fish": 13,
    "o3_krill": 3,
    "o3_algae": 3,
    "cr_mono": 12,
@@ -89,14 +106,33 @@
    "b6_pyridoxine": 0,
    "b6_p5p": 0,
    "biotin": 0,
+   "ca_carbonate": 0,
+   "ca_citrate": 0,
+   "ca_other": 0,
+   "fe_bisglycinate": 0,
+   "fe_fumarate": 0,
+   "k_gluconate": 0,
+   "glucosamine_sulfate": 0,
+   "msm": 0,
    "b1_thiamine": 0,
    "b2_riboflavin": 0,
    "b3_niacinamide": 0,
    "cu_all": 1,
+   "mn_all": 0,
    "asta": 0,
+   "chon": 0,
+   "gink_std": 0,
+   "png_extract": 0,
+   "lut": 0,
+   "va_retinol": 0,
    "ve_natural": 0,
+   "ve_synthetic": 0,
    "cho_other": 0,
-   "gte": 0
+   "cho_bitartrate": 0,
+   "car_alcar": 0,
+   "gte": 0,
+   "gin_extract": 0,
+   "mv": 16
   }
  }
 }

@@ -1,0 +1,158 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "panax_ginseng",
+  "name": "Panax ginseng",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "root extract",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "panax ginseng",
+   "korean ginseng",
+   "red ginseng",
+   "korean red ginseng",
+   "asian ginseng",
+   "ginseng"
+  ],
+  "classes": [
+   {
+    "id": "png_extract",
+    "label": "Root extract",
+    "slug": "panax-ginseng",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "standardised",
+       "korean red",
+       "red ginseng",
+       "ginsenosides",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "png_powder",
+    "label": "Root powder",
+    "slug": "panax-ginseng-powder",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "png_extract",
+   "label": "Root extract",
+   "slug": "panax-ginseng",
+   "standard_dose": 200.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:multivitality-70-plus",
+     "product_id": "healthspan-healthspan-multivitality-70-plus-120-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan MultiVitality 70 Plus 120 Tablets",
+     "display_name": "MultiVitality 70 Plus 120 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/multivitality-70-plus/",
+     "image_url": null,
+     "price_gbp": 20.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "extract",
+     "amount_per_serving": 15.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": false,
+     "price_per_unit": 0.01166111111111111,
+     "price_per_std_dose": 2.332222222222222,
+     "cost_per_month": 69.96666666666667,
+     "days_supply": 9.0,
+     "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
+     "other_actives": [
+      "multivitamin",
+      "vitamin_c",
+      "magnesium",
+      "calcium",
+      "vitamin_b3",
+      "carnitine",
+      "zinc",
+      "Vitamin A",
+      "Vitamin D3",
+      "Vitamin E",
+      "Vitamin K1",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin",
+      "Iron",
+      "Copper",
+      "Iodine",
+      "Manganese",
+      "Selenium",
+      "Chromium",
+      "Phosphorus",
+      "Boron",
+      "Citrus Bioflavonoids",
+      "Coenzyme Q10",
+      "Bitter Orange (Citrus aurantium) Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Panax Ginseng Root Extract ; 15 mg ; equivalent to Panax Ginseng 60 mg",
+      "herb_equivalent": "equivalent to Panax Ginseng 60 mg"
+     },
+     "components": [
+      {
+       "name": "extract_mass",
+       "amount": 15.0,
+       "unit": "mg"
+      },
+      {
+       "name": "herb_equivalent",
+       "amount": 60.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

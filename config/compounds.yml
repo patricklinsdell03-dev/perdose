@@ -1739,7 +1739,7 @@ compounds:
     standard_dose: 1
     label_convention: compound_default
     normalisation_type: per_serving
-    aliases: [multivitamin, multi-vitamin, multi vitamin, multivitamins, multivits, a-z, a to z, multinutrient, multi-nutrient, wellman, wellwoman, centrum, one a day]
+    aliases: [multivitamin, multi-vitamin, multi vitamin, multivitamins, multivits, multivitality, multi vitality, multimineral, a-z, a to z, multinutrient, multi-nutrient, wellman, wellwoman, ultra man, ultra woman, centrum, one a day]
     alias_exclusions: [with multivitamin]
     accepted_cofactors: []
     classes:

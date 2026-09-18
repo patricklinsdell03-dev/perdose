@@ -1,0 +1,101 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "chondroitin",
+  "name": "Chondroitin",
+  "category": "general-health",
+  "tier": 2,
+  "comparison_quantity": "chondroitin sulfate",
+  "unit": "mg",
+  "standard_dose": 800.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "chondroitin",
+   "chondroitin sulfate",
+   "chondroitin sulphate"
+  ],
+  "classes": [
+   {
+    "id": "chon",
+    "label": "Chondroitin sulfate",
+    "slug": "chondroitin",
+    "standard_dose": 800.0,
+    "forms": [
+     {
+      "id": "sulfate",
+      "names": [
+       "chondroitin sulfate",
+       "chondroitin sulphate",
+       "sulfate",
+       "sulphate",
+       "chondroitin",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "chon",
+   "label": "Chondroitin sulfate",
+   "slug": "chondroitin",
+   "standard_dose": 800.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "holland_barrett:069856",
+     "product_id": "holland-barrett-holland-barrett-high-strength-glucosamine-chondroitin-complex-180-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett High Strength Glucosamine & Chondroitin Complex 180 Tablets",
+     "display_name": "High Strength Glucosamine & Chondroitin Complex 180 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-high-strength-glucosamine-chondroitin-complex-180-tablets-6100014056",
+     "image_url": null,
+     "price_gbp": 17.63,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "sulfate",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": false,
+     "price_per_unit": 0.0009794444444444445,
+     "price_per_std_dose": 0.7835555555555556,
+     "cost_per_month": 23.506666666666668,
+     "days_supply": 22.5,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "glucosamine",
+      "msm",
+      "vitamin_c",
+      "ginger",
+      "Hydrolysed Bovine Collagen",
+      "Sweet Orange Fruit Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 Tablet/tablets per day",
+      "amount_per_serving": "Chondroitin Sulphate ; 300mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

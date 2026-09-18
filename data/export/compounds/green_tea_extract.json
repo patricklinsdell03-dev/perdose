@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T19:16:59+01:00",
+ "generated_at": "2026-09-18T20:29:46+01:00",
  "compound": {
   "id": "green_tea_extract",
   "name": "Green tea extract",
@@ -48,6 +48,85 @@
    "standard_dose": 400.0,
    "ranked": [],
    "combinations": [
+    {
+     "listing_id": "bulk:BBLE-CMVC-TABS-0270-V2",
+     "product_id": "bulk-complete-multivitamin-complex-270-tablets",
+     "brand": "Bulk",
+     "name": "Complete Multivitamin Complex - 270 Tablets",
+     "display_name": "Complete Multivitamin Complex",
+     "retailer_id": "bulk",
+     "ships_from": "GB",
+     "url": "https://www.bulk.com/uk/products/complete-multivitamin-complex/bble-cmvc",
+     "image_url": null,
+     "price_gbp": 25.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 270,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "extract",
+     "amount_per_serving": 45.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_constituent",
+     "is_primary": false,
+     "price_per_unit": 0.006417283950617284,
+     "price_per_std_dose": 2.5669135802469136,
+     "cost_per_month": 77.00740740740741,
+     "days_supply": 10.125,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "multivitamin",
+      "calcium",
+      "magnesium",
+      "vitamin_c",
+      "choline",
+      "lutein",
+      "iron",
+      "Citrus Aurantium Bioflavonoids",
+      "Grape Seed Extract",
+      "Tomato Extract (Lycopene)",
+      "Vitamin E",
+      "Inositol",
+      "Quercetin",
+      "Zinc Oxide",
+      "Niacin",
+      "Vitamin D3",
+      "Co Enzyme Q10",
+      "Pantothenic Acid",
+      "Black Pepper Extract (Piperine)",
+      "Vitamin A",
+      "Lactobacillus Acidophilus",
+      "Vitamin K1",
+      "Thiamin",
+      "Riboflavin",
+      "Vitamin B6",
+      "Folic Acid",
+      "Chromium Chloride",
+      "Biotin",
+      "Sodium Selenite",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "270 Tablets",
+      "units_per_serving": "Per Serving (3 Tablets)",
+      "amount_per_serving": "Green Tea Extract ; 100 mg (providing (-)-epigallocatechin- 3-gallate (EGCG) 45mg)",
+      "EGCG": "providing (-)-epigallocatechin- 3-gallate (EGCG) 45mg"
+     },
+     "components": [
+      {
+       "name": "EGCG",
+       "amount": 45.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
     {
      "listing_id": "holland_barrett:104905",
      "product_id": "holland-barrett-holland-barrett-l-theanine-200mg-60-capsules",
@@ -111,6 +190,89 @@
     }
    ],
    "unverified": [
+    {
+     "listing_id": "bulk:BBLE-CMVC-TABS-0090-V2",
+     "product_id": "bulk-complete-multivitamin-complex-90-tablets",
+     "brand": "Bulk",
+     "name": "Complete Multivitamin Complex - 90 Tablets",
+     "display_name": "Complete Multivitamin Complex",
+     "retailer_id": "bulk",
+     "ships_from": "GB",
+     "url": "https://www.bulk.com/uk/products/complete-multivitamin-complex/bble-cmvc",
+     "image_url": null,
+     "price_gbp": 9.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "extract",
+     "amount_per_serving": null,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": false,
+     "price_per_unit": null,
+     "price_per_std_dose": null,
+     "cost_per_month": null,
+     "days_supply": null,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "multivitamin",
+      "calcium",
+      "magnesium",
+      "vitamin_c",
+      "choline",
+      "lutein",
+      "iron",
+      "Citrus Bioflavonoids",
+      "Grape Seed Extract",
+      "Quercetin",
+      "Inositol",
+      "Niacin",
+      "Zinc Oxide",
+      "Vitamin E",
+      "Lactobacillus Acidophilus",
+      "Coenzyme Q10",
+      "Pantothenic Acid",
+      "Black Pepper Extract (Piperine)",
+      "Lycopene (Tomato Extract)",
+      "Riboflavin",
+      "Thiamine",
+      "Vitamin B6",
+      "Vitamin A",
+      "Folic Acid",
+      "Biotin",
+      "Vitamin K1",
+      "Chromium Chloride",
+      "Selenium",
+      "Vitamin D3",
+      "Vitamin B12"
+     ],
+     "review_reasons": [
+      {
+       "code": "amount_missing",
+       "text": "We could not find the amount per serving in the listing."
+      }
+     ],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Take three tablets throughout the day",
+      "amount_per_serving": "Green Tea Extract ; 100 mg (providing (-)-epigallocatechin- 3-gallate (EGCG) 45mg)"
+     },
+     "components": [
+      {
+       "name": "EGCG",
+       "amount": 45.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
     {
      "listing_id": "holland_barrett:108496",
      "product_id": "higher-nature-higher-nature-l-theanine-100mg-green-tea-extract-90-vegan-capsules",

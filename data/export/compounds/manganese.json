@@ -1,0 +1,125 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "manganese",
+  "name": "Manganese",
+  "category": "minerals",
+  "tier": 3,
+  "comparison_quantity": "elemental manganese",
+  "unit": "mg",
+  "standard_dose": 2.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "manganese",
+   "manganese gluconate",
+   "manganese bisglycinate",
+   "manganese citrate"
+  ],
+  "classes": [
+   {
+    "id": "mn_all",
+    "label": "Manganese",
+    "slug": "manganese",
+    "standard_dose": 2.0,
+    "forms": [
+     {
+      "id": "manganese",
+      "names": [
+       "gluconate",
+       "bisglycinate",
+       "glycinate",
+       "citrate",
+       "sulphate",
+       "sulfate",
+       "chelate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "mn_all",
+   "label": "Manganese",
+   "slug": "manganese",
+   "standard_dose": 2.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:multivitality-for-vegetarians-and-vegans",
+     "product_id": "healthspan-healthspan-multivitality-for-vegetarians-vegans-120-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan MultiVitality For Vegetarians & Vegans 120 Tablets",
+     "display_name": "MultiVitality For Vegetarians & Vegans 120 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/multivitality-for-vegetarians-and-vegans/",
+     "image_url": null,
+     "price_gbp": 14.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "manganese",
+     "amount_per_serving": 2.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.06245833333333333,
+     "price_per_std_dose": 0.12491666666666666,
+     "cost_per_month": 3.7475,
+     "days_supply": 120.0,
+     "tested_flag": null,
+     "claimed": [
+      "vegan",
+      "vegetarian"
+     ],
+     "other_actives": [
+      "multivitamin",
+      "calcium",
+      "magnesium",
+      "vitamin_c",
+      "iron",
+      "zinc",
+      "vitamin_b3",
+      "Vitamin A",
+      "Vitamin D3",
+      "Vitamin E",
+      "Vitamin K1",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin",
+      "Copper",
+      "Iodine",
+      "Selenium",
+      "Chromium",
+      "Molybdenum",
+      "Boron"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Manganese ; 2 mg ; 100% NRV"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

@@ -1,0 +1,163 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "potassium",
+  "name": "Potassium",
+  "category": "minerals",
+  "tier": 2,
+  "comparison_quantity": "elemental potassium",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "potassium",
+   "potassium citrate",
+   "potassium chloride",
+   "potassium gluconate"
+  ],
+  "classes": [
+   {
+    "id": "k_citrate",
+    "label": "Citrate",
+    "slug": "citrate",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "citrate",
+      "names": [
+       "citrate"
+      ],
+      "elemental_factor": 0.362
+     }
+    ]
+   },
+   {
+    "id": "k_chloride",
+    "label": "Chloride",
+    "slug": "chloride",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "chloride",
+      "names": [
+       "chloride"
+      ],
+      "elemental_factor": 0.524
+     }
+    ]
+   },
+   {
+    "id": "k_gluconate",
+    "label": "Gluconate",
+    "slug": "gluconate",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "gluconate",
+      "names": [
+       "gluconate"
+      ],
+      "elemental_factor": 0.167
+     }
+    ]
+   },
+   {
+    "id": "k_other",
+    "label": "Other forms",
+    "slug": "other",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "other",
+      "names": [
+       "bicarbonate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "k_gluconate",
+   "label": "Gluconate",
+   "slug": "gluconate",
+   "standard_dose": 200.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:multivitality-pro-90",
+     "product_id": "healthspan-healthspan-multivitality-pro-90-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan MultiVitality Pro 90 Tablets",
+     "display_name": "MultiVitality Pro 90 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/multivitality-pro-90/",
+     "image_url": null,
+     "price_gbp": 19.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 90,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 90.0
+     },
+     "form_id": "gluconate",
+     "amount_per_serving": 4.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.05552777777777777,
+     "price_per_std_dose": 11.105555555555554,
+     "cost_per_month": 333.16666666666663,
+     "days_supply": 1.8,
+     "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
+     "other_actives": [
+      "multivitamin",
+      "calcium",
+      "vitamin_c",
+      "magnesium",
+      "vitamin_e",
+      "zinc",
+      "Vitamin A",
+      "Vitamin D3",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Niacin",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin",
+      "Iron",
+      "Iodine",
+      "Manganese",
+      "Selenium",
+      "Chromium",
+      "Molybdenum",
+      "Probiotic Culture"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Potassium ; 4 mg",
+      "form_raw": "Potassium Gluconate"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

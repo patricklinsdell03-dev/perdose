@@ -24,7 +24,7 @@ retailers:
     enabled: true
     feed: { type: seed_csv }
     link: { template: "{url}" }
-    shipping: { rule: free_over, threshold_gbp: 30 }
+    shipping: { rule: free_over, threshold_gbp: 30, flat_gbp: 3.49 }   # £3.49 standard (1-3 days) from the product pages' shipping data, 2026-09-18
     notes: "No barcodes on product pages. Hosts marketplace sellers ('Sold by ...') alongside own brand."
 
   - id: optimum_nutrition

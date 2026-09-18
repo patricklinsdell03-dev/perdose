@@ -1,0 +1,178 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "vitamin_a",
+  "name": "Vitamin A",
+  "category": "vitamins",
+  "tier": 2,
+  "comparison_quantity": "vitamin A",
+  "unit": "mcg",
+  "standard_dose": 800.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "vitamin_unit",
+  "aliases": [
+   "vitamin a",
+   "retinol",
+   "retinyl palmitate",
+   "retinyl acetate",
+   "beta-carotene",
+   "beta carotene",
+   "betacarotene"
+  ],
+  "classes": [
+   {
+    "id": "va_retinol",
+    "label": "Retinol (palmitate / acetate)",
+    "slug": "retinol",
+    "standard_dose": 800.0,
+    "forms": [
+     {
+      "id": "retinol",
+      "names": [
+       "retinol",
+       "retinyl palmitate",
+       "retinyl acetate",
+       "palmitate",
+       "acetate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "va_carotene",
+    "label": "Beta-carotene",
+    "slug": "beta-carotene",
+    "standard_dose": 800.0,
+    "forms": [
+     {
+      "id": "beta_carotene",
+      "names": [
+       "beta-carotene",
+       "beta carotene",
+       "betacarotene",
+       "mixed carotenoids"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "va_retinol",
+   "label": "Retinol (palmitate / acetate)",
+   "slug": "retinol",
+   "standard_dose": 800.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "bulk:BPB-GUMY-VMOR-0120",
+     "product_id": "bulk-multivitamin-gummies-120-gummies",
+     "brand": "Bulk",
+     "name": "Multivitamin Gummies - 120 Gummies",
+     "display_name": "Multivitamin Gummies",
+     "retailer_id": "bulk",
+     "ships_from": "GB",
+     "url": "https://www.bulk.com/uk/products/multivitamin-gummies/bpb-gumy-vm",
+     "image_url": null,
+     "price_gbp": 25.49,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 120,
+      "unit_type": "gummy",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "retinol",
+     "amount_per_serving": 600.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0007080555555555555,
+     "price_per_std_dose": 0.5664444444444444,
+     "cost_per_month": 16.993333333333332,
+     "days_supply": 45.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "multivitamin",
+      "vitamin_c",
+      "zinc",
+      "vitamin_e",
+      "vitamin_b3",
+      "vitamin_b6",
+      "Biotin",
+      "Potassium Iodide",
+      "Vitamin D"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Gummies",
+      "units_per_serving": "Per Serving (2 gummies)",
+      "amount_per_serving": "Vitamin A ; 600 µg RE ; 75",
+      "form_raw": "Vitamin A (Retinyl Palmitate)"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "bulk:BPB-GUMY-VMOR-0060",
+     "product_id": "bulk-multivitamin-gummies-60-gummies",
+     "brand": "Bulk",
+     "name": "Multivitamin Gummies - 60 Gummies",
+     "display_name": "Multivitamin Gummies",
+     "retailer_id": "bulk",
+     "ships_from": "GB",
+     "url": "https://www.bulk.com/uk/products/multivitamin-gummies/bpb-gumy-vm",
+     "image_url": null,
+     "price_gbp": 14.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 60,
+      "unit_type": "gummy",
+      "units_per_serving": 2.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "retinol",
+     "amount_per_serving": 600.0,
+     "amount_unit": "mcg",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0008327777777777778,
+     "price_per_std_dose": 0.6662222222222223,
+     "cost_per_month": 19.986666666666668,
+     "days_supply": 22.5,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "multivitamin",
+      "vitamin_c",
+      "zinc",
+      "vitamin_e",
+      "vitamin_b3",
+      "vitamin_b6",
+      "Biotin",
+      "Potassium Iodide (Iodine)",
+      "Vitamin D (Cholecalciferol)"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "60 Gummies",
+      "units_per_serving": "Per Serving (2 gummies)",
+      "amount_per_serving": "Vitamin A ; 600 µg RE ; 75"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

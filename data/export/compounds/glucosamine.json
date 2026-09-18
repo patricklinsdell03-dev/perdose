@@ -1,0 +1,117 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "glucosamine",
+  "name": "Glucosamine",
+  "category": "general-health",
+  "tier": 1,
+  "comparison_quantity": "glucosamine salt (as stated)",
+  "unit": "mg",
+  "standard_dose": 1500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "glucosamine",
+   "glucosamine sulphate",
+   "glucosamine sulfate",
+   "glucosamine hcl",
+   "glucosamine hydrochloride"
+  ],
+  "classes": [
+   {
+    "id": "glucosamine_sulfate",
+    "label": "Sulphate (2KCl)",
+    "slug": "sulphate",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "sulfate_2kcl",
+      "names": [
+       "sulphate",
+       "sulfate",
+       "sulphate 2kcl",
+       "sulfate 2kcl"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "glucosamine_hcl",
+    "label": "HCl",
+    "slug": "hcl",
+    "standard_dose": 1500.0,
+    "forms": [
+     {
+      "id": "hcl",
+      "names": [
+       "hcl",
+       "hydrochloride"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "glucosamine_sulfate",
+   "label": "Sulphate (2KCl)",
+   "slug": "sulphate",
+   "standard_dose": 1500.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "holland_barrett:069856",
+     "product_id": "holland-barrett-holland-barrett-high-strength-glucosamine-chondroitin-complex-180-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett High Strength Glucosamine & Chondroitin Complex 180 Tablets",
+     "display_name": "High Strength Glucosamine & Chondroitin Complex 180 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-high-strength-glucosamine-chondroitin-complex-180-tablets-6100014056",
+     "image_url": null,
+     "price_gbp": 17.63,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "sulfate_2kcl",
+     "amount_per_serving": 888.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_compound",
+     "is_primary": true,
+     "price_per_unit": 0.0003308933933933934,
+     "price_per_std_dose": 0.4963400900900901,
+     "cost_per_month": 14.890202702702704,
+     "days_supply": 35.52,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "chondroitin",
+      "msm",
+      "vitamin_c",
+      "ginger",
+      "Hydrolysed Bovine Collagen",
+      "Sweet Orange Fruit Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 Tablet/tablets per day",
+      "amount_per_serving": "Glucosamine ; 888mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

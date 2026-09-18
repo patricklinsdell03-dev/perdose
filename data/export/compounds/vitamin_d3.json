@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T19:16:59+01:00",
+ "generated_at": "2026-09-18T20:29:46+01:00",
  "compound": {
   "id": "vitamin_d3",
   "name": "Vitamin D3",
@@ -595,6 +595,51 @@
      "branded_extract": null
     },
     {
+     "listing_id": "holland_barrett:076289",
+     "product_id": "holland-barrett-holland-barrett-omega-3-fish-oil-d3-1200mg-120-capsules",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Omega 3 Fish Oil + D3 1200mg 120 Capsules",
+     "display_name": "Omega 3 Fish Oil + D3 1200mg 120 Capsules",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-omega-3-fish-oil-d3-1200mg-120-capsules-6100011447",
+     "image_url": null,
+     "price_gbp": 12.5,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 120,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "d3",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "IU",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.00010416666666666667,
+     "price_per_std_dose": 0.10416666666666667,
+     "cost_per_month": 3.125,
+     "days_supply": 120.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "omega_3",
+      "vitamin_e"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Capsules",
+      "units_per_serving": "Take 1 Capsule/capsules per day",
+      "servings_stated": "120 Capsules",
+      "amount_per_serving": "Vitamin D3 ; 25ug (1000 I.U.)"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
      "listing_id": "healthspan:elite-vitamin-d3-1000iu",
      "product_id": "healthspan-elite-healthspan-elite-vitamin-d3-1000iu-120-tablets",
      "brand": "Healthspan Elite",
@@ -678,6 +723,117 @@
     }
    ],
    "combinations": [
+    {
+     "listing_id": "bulk:VSER-VMUL-CAPS-0090",
+     "product_id": "bulk-vegan-multivitamin-complex-90-capsules",
+     "brand": "Bulk",
+     "name": "Vegan Multivitamin Complex - 90 Capsules",
+     "display_name": "Vegan Multivitamin Complex",
+     "retailer_id": "bulk",
+     "ships_from": "GB",
+     "url": "https://www.bulk.com/uk/products/vegan-multivitamin/vser-vmul",
+     "image_url": null,
+     "price_gbp": 13.32,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 90,
+      "unit_type": "capsule",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 30.0
+     },
+     "form_id": "d3_vegan",
+     "amount_per_serving": 1000.0,
+     "amount_unit": "IU",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.000444,
+     "price_per_std_dose": 0.444,
+     "cost_per_month": 13.32,
+     "days_supply": 30.0,
+     "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
+     "other_actives": [
+      "multivitamin",
+      "calcium",
+      "magnesium",
+      "vitamin_c",
+      "iron",
+      "zinc",
+      "vitamin_b3",
+      "Bacillus Coagulans (LactoSpore)",
+      "Pantothenic Acid",
+      "Vitamin E",
+      "Vitamin K2 (MK-7)",
+      "Vitamin A (Retinol)",
+      "Vitamin B6",
+      "Riboflavin",
+      "Thiamin",
+      "Copper Bisglycinate",
+      "Folic Acid",
+      "Kelp Extract (Iodine)",
+      "Biotin",
+      "Vitamin B12"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "90 Capsules",
+      "units_per_serving": "Take 3 capsules daily",
+      "amount_per_serving": "Vitamin D ; 25 µg ; 500",
+      "form_raw": "Vegan Vitamin D3 (D3V)"
+     },
+     "components": [],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:046964",
+     "product_id": "holland-barrett-holland-barrett-calcium-magnesium-vitamin-d-zinc-120-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Calcium Magnesium Vitamin D & Zinc 120 Tablets",
+     "display_name": "Calcium Magnesium Vitamin D & Zinc 120 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-calcium-magnesium-vitamin-d-zinc-tablets-6100127600",
+     "image_url": null,
+     "price_gbp": 5.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 120,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "d3",
+     "amount_per_serving": 100.0,
+     "amount_unit": "IU",
+     "amount_basis": "stated_elemental",
+     "is_primary": false,
+     "price_per_unit": 0.0004991666666666666,
+     "price_per_std_dose": 0.49916666666666665,
+     "cost_per_month": 14.975,
+     "days_supply": 12.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "calcium",
+      "magnesium",
+      "zinc"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Tablets",
+      "units_per_serving": "Take 1 Tablet per day",
+      "amount_per_serving": "Vitamin D ; 2.50µg (100 I.U.) ; 50%",
+      "form_raw": "Vitamin D (Cholecalciferol)"
+     },
+     "components": [],
+     "branded_extract": null
+    },
     {
      "listing_id": "myprotein:17679860",
      "product_id": "myprotein-magnesium-glycinate-3-in-1-capsules-2398mg-90capsules-30servings",

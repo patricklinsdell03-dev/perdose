@@ -1,0 +1,116 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "ginger",
+  "name": "Ginger",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "ginger extract or root",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "ginger",
+   "zingiber officinale",
+   "ginger root"
+  ],
+  "classes": [
+   {
+    "id": "gin_extract",
+    "label": "Extract",
+    "slug": "ginger-extract",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "standardised",
+       "5% gingerols",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "gin_root",
+    "label": "Root powder",
+    "slug": "ginger-root",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "root",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "gin_extract",
+   "label": "Extract",
+   "slug": "ginger-extract",
+   "standard_dose": 500.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "holland_barrett:069856",
+     "product_id": "holland-barrett-holland-barrett-high-strength-glucosamine-chondroitin-complex-180-tablets",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett High Strength Glucosamine & Chondroitin Complex 180 Tablets",
+     "display_name": "High Strength Glucosamine & Chondroitin Complex 180 Tablets",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-high-strength-glucosamine-chondroitin-complex-180-tablets-6100014056",
+     "image_url": null,
+     "price_gbp": 17.63,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 3.0,
+      "multipack_count": 1,
+      "servings": 60.0
+     },
+     "form_id": "extract",
+     "amount_per_serving": 15.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": false,
+     "price_per_unit": 0.01958888888888889,
+     "price_per_std_dose": 9.794444444444444,
+     "cost_per_month": 293.8333333333333,
+     "days_supply": 1.8,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "glucosamine",
+      "chondroitin",
+      "msm",
+      "vitamin_c",
+      "Hydrolysed Bovine Collagen",
+      "Sweet Orange Fruit Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Take 3 Tablet/tablets per day",
+      "amount_per_serving": "Ginger Root Extract ; 15mg"
+     },
+     "components": [],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

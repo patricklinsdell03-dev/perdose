@@ -1,0 +1,150 @@
+{
+ "generated_at": "2026-09-18T20:29:46+01:00",
+ "compound": {
+  "id": "ginkgo",
+  "name": "Ginkgo biloba",
+  "category": "botanicals",
+  "tier": 2,
+  "comparison_quantity": "leaf extract",
+  "unit": "mg",
+  "standard_dose": 120.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "ginkgo",
+   "ginkgo biloba",
+   "gingko"
+  ],
+  "classes": [
+   {
+    "id": "gink_std",
+    "label": "Standardised extract (24/6)",
+    "slug": "ginkgo",
+    "standard_dose": 120.0,
+    "forms": [
+     {
+      "id": "standardised",
+      "names": [
+       "standardised",
+       "standardized",
+       "extract",
+       "24/6",
+       "24% flavone glycosides",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "gink_unstd",
+    "label": "Unstandardised leaf",
+    "slug": "ginkgo-leaf",
+    "standard_dose": 120.0,
+    "forms": [
+     {
+      "id": "leaf",
+      "names": [
+       "leaf powder",
+       "leaf",
+       "powder",
+       "unstandardised"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ "classes": [
+  {
+   "id": "gink_std",
+   "label": "Standardised extract (24/6)",
+   "slug": "ginkgo",
+   "standard_dose": 120.0,
+   "ranked": [],
+   "combinations": [
+    {
+     "listing_id": "healthspan:multivitality-50-plus",
+     "product_id": "healthspan-healthspan-multivitality-50-plus-180-tablets",
+     "brand": "Healthspan",
+     "name": "Healthspan MultiVitality 50 Plus 180 Tablets",
+     "display_name": "MultiVitality 50 Plus 180 Tablets",
+     "retailer_id": "healthspan",
+     "ships_from": "GB",
+     "url": "https://www.healthspan.co.uk/multivitality-50-plus/",
+     "image_url": null,
+     "price_gbp": 20.99,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 180,
+      "unit_type": "tablet",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 180.0
+     },
+     "form_id": "standardised",
+     "amount_per_serving": 26.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_extract",
+     "is_primary": false,
+     "price_per_unit": 0.004485042735042735,
+     "price_per_std_dose": 0.5382051282051282,
+     "cost_per_month": 16.146153846153847,
+     "days_supply": 39.0,
+     "tested_flag": null,
+     "claimed": [
+      "vegan"
+     ],
+     "other_actives": [
+      "multivitamin",
+      "vitamin_c",
+      "magnesium",
+      "calcium",
+      "vitamin_b3",
+      "iron",
+      "zinc",
+      "Vitamin A",
+      "Vitamin D3",
+      "Vitamin E",
+      "Vitamin K1",
+      "Vitamin B1",
+      "Vitamin B2",
+      "Pantothenic Acid",
+      "Vitamin B6",
+      "Folic Acid",
+      "Vitamin B12",
+      "Biotin",
+      "Copper",
+      "Iodine",
+      "Manganese",
+      "Selenium",
+      "Chromium",
+      "Molybdenum",
+      "Phosphorus",
+      "Boron",
+      "Citrus Bioflavonoids",
+      "Bitter Orange Extract"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "180 Tablets",
+      "units_per_serving": "Swallow 1 tablet daily with water",
+      "amount_per_serving": "Ginkgo Biloba Extract ; 26 mg",
+      "herb_equivalent": "equivalent to Ginkgo Biloba Leaves 1000 mg"
+     },
+     "components": [
+      {
+       "name": "herb_equivalent",
+       "amount": 1000.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    }
+   ],
+   "unverified": []
+  }
+ ]
+}

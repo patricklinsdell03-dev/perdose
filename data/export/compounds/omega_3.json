@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T19:16:59+01:00",
+ "generated_at": "2026-09-18T20:29:46+01:00",
  "compound": {
   "id": "omega_3",
   "name": "Omega-3",
@@ -560,6 +560,70 @@
       {
        "name": "DHA",
        "amount": 120.0,
+       "unit": "mg"
+      }
+     ],
+     "branded_extract": null
+    },
+    {
+     "listing_id": "holland_barrett:076289",
+     "product_id": "holland-barrett-holland-barrett-omega-3-fish-oil-d3-1200mg-120-capsules",
+     "brand": "Holland & Barrett",
+     "name": "Holland & Barrett Omega 3 Fish Oil + D3 1200mg 120 Capsules",
+     "display_name": "Omega 3 Fish Oil + D3 1200mg 120 Capsules",
+     "retailer_id": "holland_barrett",
+     "ships_from": "GB",
+     "url": "https://www.hollandandbarrett.com/shop/product/holland-barrett-omega-3-fish-oil-d3-1200mg-120-capsules-6100011447",
+     "image_url": null,
+     "price_gbp": 12.5,
+     "in_stock": true,
+     "price_date": "2026-09-18",
+     "pack": {
+      "units": 120,
+      "unit_type": "capsule",
+      "units_per_serving": 1.0,
+      "multipack_count": 1,
+      "servings": 120.0
+     },
+     "form_id": "fish_unspecified",
+     "amount_per_serving": 300.0,
+     "amount_unit": "mg",
+     "amount_basis": "stated_component_sum",
+     "is_primary": true,
+     "price_per_unit": 0.00034722222222222224,
+     "price_per_std_dose": 0.3472222222222222,
+     "cost_per_month": 10.416666666666666,
+     "days_supply": 36.0,
+     "tested_flag": null,
+     "claimed": [],
+     "other_actives": [
+      "vitamin_d3",
+      "vitamin_e"
+     ],
+     "review_reasons": [],
+     "evidence": {
+      "pack_units": "120 Capsules",
+      "units_per_serving": "Take 1 Capsule/capsules per day",
+      "servings_stated": "120 Capsules",
+      "amount_per_serving": "Fish Oil ; 1200mg",
+      "EPA": "EPA (Eicosapentaenoic Acid) ; 180mg",
+      "DHA": "DHA (Docosahexaenoic Acid) ; 120mg",
+      "total_omega_3": "Total Omega-3 Fatty Acids ; 300mg"
+     },
+     "components": [
+      {
+       "name": "EPA",
+       "amount": 180.0,
+       "unit": "mg"
+      },
+      {
+       "name": "DHA",
+       "amount": 120.0,
+       "unit": "mg"
+      },
+      {
+       "name": "total_omega_3",
+       "amount": 300.0,
        "unit": "mg"
       }
      ],

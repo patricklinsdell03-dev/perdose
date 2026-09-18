@@ -4,7 +4,7 @@
   "name": "Magnesium",
   "category": "minerals",
   "unit": "mg",
-  "product_count": 19,
+  "product_count": 33,
   "retailer_count": 4,
   "classes": [
    {
@@ -54,7 +54,7 @@
   "name": "Zinc",
   "category": "minerals",
   "unit": "mg",
-  "product_count": 14,
+  "product_count": 27,
   "retailer_count": 4,
   "classes": [
    {
@@ -78,9 +78,29 @@
     "from_price_per_std_dose": 0.04845
    },
    {
+    "id": "zn_glycinate",
+    "label": "Bisglycinate",
+    "slug": "bisglycinate",
+    "standard_dose": 15.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
     "id": "zn_oxide",
     "label": "Oxide",
     "slug": "oxide",
+    "standard_dose": 15.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
+    "id": "zn_sulfate",
+    "label": "Sulphate",
+    "slug": "sulphate",
     "standard_dose": 15.0,
     "ranked_count": 0,
     "unverified_count": 0,
@@ -104,7 +124,7 @@
   "name": "Vitamin D3",
   "category": "vitamins",
   "unit": "IU",
-  "product_count": 16,
+  "product_count": 19,
   "retailer_count": 4,
   "classes": [
    {
@@ -112,7 +132,7 @@
     "label": "Vitamin D3",
     "slug": "d3",
     "standard_dose": 1000.0,
-    "ranked_count": 14,
+    "ranked_count": 15,
     "unverified_count": 0,
     "retailer_count": 4,
     "from_price_per_std_dose": 0.012665343915343916
@@ -154,7 +174,7 @@
   "name": "Omega-3",
   "category": "fatty-acids",
   "unit": "mg",
-  "product_count": 18,
+  "product_count": 19,
   "retailer_count": 4,
   "classes": [
    {
@@ -162,7 +182,7 @@
     "label": "Fish oil",
     "slug": "fish-oil",
     "standard_dose": 1000.0,
-    "ranked_count": 12,
+    "ranked_count": 13,
     "unverified_count": 0,
     "retailer_count": 4,
     "from_price_per_std_dose": 0.11194666666666665
@@ -244,7 +264,7 @@
   "name": "Vitamin C",
   "category": "vitamins",
   "unit": "mg",
-  "product_count": 16,
+  "product_count": 32,
   "retailer_count": 4,
   "classes": [
    {
@@ -324,7 +344,7 @@
   "name": "Vitamin B6",
   "category": "vitamins",
   "unit": "mg",
-  "product_count": 9,
+  "product_count": 11,
   "retailer_count": 3,
   "classes": [
    {
@@ -362,6 +382,136 @@
     "label": "Biotin",
     "slug": "biotin",
     "standard_dose": 5000.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "calcium",
+  "name": "Calcium",
+  "category": "minerals",
+  "unit": "mg",
+  "product_count": 13,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "ca_carbonate",
+    "label": "Carbonate",
+    "slug": "carbonate",
+    "standard_dose": 500.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
+    "id": "ca_citrate",
+    "label": "Citrate",
+    "slug": "citrate",
+    "standard_dose": 500.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
+    "id": "ca_other",
+    "label": "Other forms",
+    "slug": "other",
+    "standard_dose": 500.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "iron",
+  "name": "Iron",
+  "category": "minerals",
+  "unit": "mg",
+  "product_count": 11,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "fe_bisglycinate",
+    "label": "Bisglycinate (gentle iron)",
+    "slug": "bisglycinate",
+    "standard_dose": 14.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
+    "id": "fe_fumarate",
+    "label": "Fumarate",
+    "slug": "fumarate",
+    "standard_dose": 14.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "potassium",
+  "name": "Potassium",
+  "category": "minerals",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "k_gluconate",
+    "label": "Gluconate",
+    "slug": "gluconate",
+    "standard_dose": 200.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "glucosamine",
+  "name": "Glucosamine",
+  "category": "general-health",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "glucosamine_sulfate",
+    "label": "Sulphate (2KCl)",
+    "slug": "sulphate",
+    "standard_dose": 1500.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "msm",
+  "name": "MSM",
+  "category": "general-health",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "msm",
+    "label": "MSM",
+    "slug": "msm",
+    "standard_dose": 1000.0,
     "ranked_count": 0,
     "unverified_count": 0,
     "retailer_count": 0,
@@ -414,8 +564,8 @@
   "name": "Niacin (vitamin B3)",
   "category": "vitamins",
   "unit": "mg",
-  "product_count": 2,
-  "retailer_count": 1,
+  "product_count": 14,
+  "retailer_count": 3,
   "classes": [
    {
     "id": "b3_niacinamide",
@@ -434,7 +584,7 @@
   "name": "Copper",
   "category": "minerals",
   "unit": "mg",
-  "product_count": 5,
+  "product_count": 6,
   "retailer_count": 3,
   "classes": [
    {
@@ -446,6 +596,26 @@
     "unverified_count": 0,
     "retailer_count": 1,
     "from_price_per_std_dose": 0.1046
+   }
+  ]
+ },
+ {
+  "id": "manganese",
+  "name": "Manganese",
+  "category": "minerals",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "mn_all",
+    "label": "Manganese",
+    "slug": "manganese",
+    "standard_dose": 2.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
    }
   ]
  },
@@ -470,17 +640,127 @@
   ]
  },
  {
-  "id": "vitamin_e",
-  "name": "Vitamin E",
-  "category": "vitamins",
+  "id": "chondroitin",
+  "name": "Chondroitin",
+  "category": "general-health",
   "unit": "mg",
   "product_count": 1,
   "retailer_count": 1,
   "classes": [
    {
+    "id": "chon",
+    "label": "Chondroitin sulfate",
+    "slug": "chondroitin",
+    "standard_dose": 800.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "ginkgo",
+  "name": "Ginkgo biloba",
+  "category": "botanicals",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "gink_std",
+    "label": "Standardised extract (24/6)",
+    "slug": "ginkgo",
+    "standard_dose": 120.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "panax_ginseng",
+  "name": "Panax ginseng",
+  "category": "botanicals",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "png_extract",
+    "label": "Root extract",
+    "slug": "panax-ginseng",
+    "standard_dose": 200.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "lutein",
+  "name": "Lutein",
+  "category": "general-health",
+  "unit": "mg",
+  "product_count": 2,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "lut",
+    "label": "Lutein",
+    "slug": "lutein",
+    "standard_dose": 10.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "vitamin_a",
+  "name": "Vitamin A",
+  "category": "vitamins",
+  "unit": "mcg",
+  "product_count": 2,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "va_retinol",
+    "label": "Retinol (palmitate / acetate)",
+    "slug": "retinol",
+    "standard_dose": 800.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "vitamin_e",
+  "name": "Vitamin E",
+  "category": "vitamins",
+  "unit": "mg",
+  "product_count": 8,
+  "retailer_count": 3,
+  "classes": [
+   {
     "id": "ve_natural",
     "label": "Natural (d-alpha)",
     "slug": "d-alpha",
+    "standard_dose": 268.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
+    "id": "ve_synthetic",
+    "label": "Synthetic (dl-alpha)",
+    "slug": "dl-alpha",
     "standard_dose": 268.0,
     "ranked_count": 0,
     "unverified_count": 0,
@@ -494,14 +774,44 @@
   "name": "Choline",
   "category": "vitamins",
   "unit": "mg",
-  "product_count": 3,
-  "retailer_count": 2,
+  "product_count": 6,
+  "retailer_count": 4,
   "classes": [
    {
     "id": "cho_other",
     "label": "Other forms",
     "slug": "choline-other",
     "standard_dose": 250.0,
+    "ranked_count": 0,
+    "unverified_count": 1,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   },
+   {
+    "id": "cho_bitartrate",
+    "label": "Choline bitartrate",
+    "slug": "choline-bitartrate",
+    "standard_dose": 250.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "carnitine",
+  "name": "L-Carnitine",
+  "category": "amino-acids",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "car_alcar",
+    "label": "Acetyl-L-carnitine (ALCAR)",
+    "slug": "alcar",
+    "standard_dose": 1000.0,
     "ranked_count": 0,
     "unverified_count": 0,
     "retailer_count": 0,
@@ -514,8 +824,8 @@
   "name": "Green tea extract",
   "category": "botanicals",
   "unit": "mg",
-  "product_count": 2,
-  "retailer_count": 1,
+  "product_count": 4,
+  "retailer_count": 2,
   "classes": [
    {
     "id": "gte",
@@ -523,9 +833,49 @@
     "slug": "green-tea-extract",
     "standard_dose": 400.0,
     "ranked_count": 0,
-    "unverified_count": 1,
+    "unverified_count": 2,
     "retailer_count": 0,
     "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "ginger",
+  "name": "Ginger",
+  "category": "botanicals",
+  "unit": "mg",
+  "product_count": 1,
+  "retailer_count": 1,
+  "classes": [
+   {
+    "id": "gin_extract",
+    "label": "Extract",
+    "slug": "ginger-extract",
+    "standard_dose": 500.0,
+    "ranked_count": 0,
+    "unverified_count": 0,
+    "retailer_count": 0,
+    "from_price_per_std_dose": null
+   }
+  ]
+ },
+ {
+  "id": "multivitamin",
+  "name": "Multivitamin",
+  "category": "general-health",
+  "unit": "serving",
+  "product_count": 16,
+  "retailer_count": 3,
+  "classes": [
+   {
+    "id": "mv",
+    "label": "Multivitamins (per serving)",
+    "slug": "multivitamins",
+    "standard_dose": 1.0,
+    "ranked_count": 16,
+    "unverified_count": 0,
+    "retailer_count": 3,
+    "from_price_per_std_dose": 0.03370833333333333
    }
   ]
  }

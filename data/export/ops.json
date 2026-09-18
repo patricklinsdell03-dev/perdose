@@ -1,30 +1,30 @@
 {
- "generated_at": "2026-09-18T19:16:59+01:00",
+ "generated_at": "2026-09-18T20:29:46+01:00",
  "prompt_version": "1.1.0",
  "retailers": [
   {
    "id": "bulk",
    "name": "Bulk",
-   "listings": 28,
-   "in_stock": 28,
-   "last_seen": "2026-09-17",
-   "days_stale": 1
+   "listings": 34,
+   "in_stock": 34,
+   "last_seen": "2026-09-18",
+   "days_stale": 0
   },
   {
    "id": "healthspan",
    "name": "Healthspan",
-   "listings": 28,
-   "in_stock": 28,
-   "last_seen": "2026-09-17",
-   "days_stale": 1
+   "listings": 34,
+   "in_stock": 34,
+   "last_seen": "2026-09-18",
+   "days_stale": 0
   },
   {
    "id": "holland_barrett",
    "name": "Holland & Barrett",
-   "listings": 15,
-   "in_stock": 15,
-   "last_seen": "2026-09-17",
-   "days_stale": 1
+   "listings": 22,
+   "in_stock": 22,
+   "last_seen": "2026-09-18",
+   "days_stale": 0
   },
   {
    "id": "myprotein",
@@ -35,20 +35,17 @@
    "days_stale": 1
   }
  ],
- "products": 99,
+ "products": 118,
  "needs_review_total": 0,
  "needs_review_by_reason": {},
- "extractions": 99,
- "escalation_rate": 0.03,
+ "extractions": 118,
+ "escalation_rate": 0.025,
  "classes_lost": [],
  "zero_product_compounds": [
   "vitamin_b9",
-  "calcium",
-  "iron",
   "selenium",
   "iodine",
   "chromium",
-  "potassium",
   "beta_alanine",
   "glutamine",
   "taurine",
@@ -57,11 +54,8 @@
   "tyrosine",
   "five_htp",
   "coq10",
-  "glucosamine",
-  "msm",
   "caffeine",
   "inositol",
-  "manganese",
   "boron",
   "citrulline",
   "arginine",
@@ -73,14 +67,11 @@
   "berberine",
   "quercetin",
   "alpha_lipoic_acid",
-  "chondroitin",
   "hyaluronic_acid",
   "rhodiola",
   "lions_mane",
   "bacopa",
   "maca",
-  "ginkgo",
-  "panax_ginseng",
   "saw_palmetto",
   "tongkat_ali",
   "elderberry",
@@ -93,11 +84,8 @@
   "alpha_gpc",
   "citicoline",
   "huperzine_a",
-  "lutein",
   "leucine",
-  "vitamin_a",
   "vitamin_k1",
-  "carnitine",
   "curcumin",
   "milk_thistle",
   "cranberry",
@@ -109,9 +97,7 @@
   "mct_oil",
   "cordyceps",
   "reishi",
-  "ginger",
   "garlic",
-  "tart_cherry",
-  "multivitamin"
+  "tart_cherry"
  ]
 }

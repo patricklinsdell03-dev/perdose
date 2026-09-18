@@ -28,6 +28,10 @@ Nothing is invented. Where a page did not show something, the field is blank.
 - **in_stock** — every page showed a live buy box with a price; none was marked out of stock.
 - **Delivery** — a "free UK delivery on all orders, this week only" banner was showing. The standing rule shown is free over £30; the under-£30 charge was not displayed, so it is left out of `config/retailers.yml`.
 
+## Multivitamins and three combinations (added 2026-09-18, Patrick's stopgap)
+
+19 rows read from product pages on 2026-09-18, same conventions as above: Healthspan 6 (MultiVitality Gold / 50 Plus / 70 Plus / Vegetarians & Vegans / Pro, Elite Gold A-Z), Holland & Barrett 7 (ABC-Z Multivits, Ultra Man, Multivitamin Gummies, Vitabiotics Wellwoman 50+ sold by H&B, plus Calcium Magnesium Vitamin D & Zinc, High Strength Glucosamine & Chondroitin Complex, Omega 3 Fish Oil + D3), Bulk 6 (Multivitamin & Multimineral, Complete Multivitamin Complex 90 and 270, Vegan Multivitamin Complex, Multivitamin Gummies 60 and 120). Bulk pack sizes come from each variant's product code (`-0090` = 90), as before; Healthspan records the size selected when the page opens. Marketing and health-claim text on the pages was left out. Myprotein multivitamins were not collected. H&B's product pages publish their standard delivery charge (£3.49, 1–3 days) in their structured data, now in `config/retailers.yml`.
+
 ## Refreshing
 
 Prices go stale. To refresh, re-read the same URLs and update `price_gbp`, `in_stock`, `captured_on`. Live affiliate feeds replace these files in Phase 6.
