@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "dandelion",
+        "form_raw": "root extract",
+        "form_id": "root_extract",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "extract_mass",
+            "amount": 500.0,
+            "unit": "mg"
+          },
+          {
+            "name": "herb_equivalent",
+            "amount": 2000.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "4:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "2000mg (from 500mg 4:1 root extract)",
+          "extract_mass": "500mg 4:1 root extract",
+          "herb_equivalent": "2000mg (from 500mg 4:1 root extract)"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 100,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "units_per_serving not stated"
+    ],
+    "evidence": {
+      "pack_units": "100 Tablets"
+    }
+  }
+}

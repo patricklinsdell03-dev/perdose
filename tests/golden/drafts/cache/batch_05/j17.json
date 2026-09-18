@@ -1,0 +1,40 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "st_johns_wort",
+        "form_raw": null,
+        "form_id": "unspecified",
+        "amount_per_serving": 425.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "St John's Wort 425mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [
+      "THR"
+    ],
+    "confidence": 0.75,
+    "review_reasons": [
+      "THR (Traditional Herbal Registration) noted but no serving size stated, unclear if 425mg is per tablet or per serving"
+    ],
+    "evidence": {
+      "pack_units": "60 Tablets"
+    }
+  }
+}

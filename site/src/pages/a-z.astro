@@ -1,21 +1,32 @@
 ---
-// Every compound and every alias on one page (brief §12.1).
+// Every compound and every alias on one page (brief §12.1). Compounds the pipeline knows
+// but has no products for yet are listed too, unlinked, so coverage is visible.
 import Base from '../layouts/Base.astro';
-import { compoundSlug, compounds } from '../lib/data';
+import { compoundSlug, compounds, rules } from '../lib/data';
 
-const entries = compounds
-  .flatMap((data) => {
-    const names = new Set([data.compound.name, ...data.compound.aliases.map((a) => a.replace(/\b\w/, (ch) => ch.toUpperCase()))]);
+const priced = new Set(compounds.map((data) => data.compound.id));
+const entries = rules
+  .flatMap((compound) => {
+    const names = new Set([compound.name, ...compound.aliases.map((a) => a.replace(/\b\w/, (ch) => ch.toUpperCase()))]);
     return [...names]
       .filter((name) => name.length > 2)
-      .map((name) => ({ name, compound: data.compound.name, href: `/c/${compoundSlug(data.compound.id)}/` }));
+      .map((name) => ({
+        name,
+        compound: compound.name,
+        href: priced.has(compound.id) ? `/c/${compoundSlug(compound.id)}/` : null,
+      }));
   })
   .sort((a, b) => a.name.localeCompare(b.name, 'en-GB', { sensitivity: 'base' }));
 const letters = [...new Set(entries.map((e) => e.name[0].toUpperCase()))];
+const waiting = rules.length - priced.size;
 ---
 
 <Base title="A–Z of supplements we compare" description="Every supplement and alternative name we compare prices for, A to Z.">
   <h1 data-pagefind-meta="title">A–Z</h1>
+  <p class="muted">
+    {priced.size} supplements have price tables today.
+    {waiting > 0 && <> Another {waiting} are ready and marked “awaiting retailer data” — they get a page as soon as a retailer’s product feed includes them.</>}
+  </p>
   <p>{letters.map((letter) => <><a href={`#${letter}`}>{letter}</a>{' '}</>)}</p>
   {
     letters.map((letter) => (
@@ -24,8 +35,9 @@ const letters = [...new Set(entries.map((e) => e.name[0].toUpperCase()))];
         <ul class="az">
           {entries.filter((e) => e.name[0].toUpperCase() === letter).map((e) => (
             <li>
-              <a href={e.href}>{e.name}</a>
+              {e.href ? <a href={e.href}>{e.name}</a> : <span>{e.name}</span>}
               {e.name.toLowerCase() !== e.compound.toLowerCase() && <span class="muted"> — see {e.compound}</span>}
+              {!e.href && <span class="chip">awaiting retailer data</span>}
             </li>
           ))}
         </ul>

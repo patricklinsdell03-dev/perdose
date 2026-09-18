@@ -1,0 +1,60 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "curcumin",
+        "form_raw": "turmeric",
+        "form_id": "extract_95",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "curcuminoids",
+            "amount": 475.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Turmeric 500mg",
+          "curcuminoids": "475mg curcuminoids"
+        }
+      },
+      {
+        "compound_id": "boswellia",
+        "form_raw": null,
+        "form_id": "extract",
+        "amount_per_serving": 200.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Boswellia 200mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No serving size stated (capsules per serving unknown)",
+      "Boswellia amount not standardised to boswellic acid %"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

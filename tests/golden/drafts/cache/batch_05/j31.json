@@ -1,0 +1,50 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "mucuna",
+        "form_raw": "extract, 15% L-DOPA",
+        "form_id": "extract",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "l-dopa",
+            "amount": 75.0,
+            "unit": "mg"
+          },
+          {
+            "name": "l-dopa",
+            "amount": 15.0,
+            "unit": "percent"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Mucuna Pruriens Extract 500mg",
+          "l-dopa": "15% L-DOPA, 75mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "units per serving not stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}

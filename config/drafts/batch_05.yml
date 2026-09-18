@@ -1,0 +1,348 @@
+# DRAFT — NOT LIVE. Batch 5 of the registry expansion (brief §17 Phase 6b, Appendix F).
+# Nothing here reaches the site until Patrick approves it and the entries are moved into
+# config/compounds.yml (see docs/RUNBOOK.md, "Approving a drafted batch").
+#
+# First half of the tier-2/3 long tail: calming herbs, men's-health herbs, fibre and algae,
+# a few amino-acid derivatives. All use existing rules. Standard doses are Appendix F's
+# comparison units — never recommendations. Label ids in the golden file start with "j".
+version: 1
+compounds:
+
+  - id: echinacea
+    name: Echinacea
+    category: botanicals
+    tier: 3
+    comparison_quantity: echinacea extract or herb
+    unit: mg
+    standard_dose: 400
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [echinacea, echinacea purpurea, echinacea angustifolia]
+    accepted_cofactors: [vitamin c, zinc, elderberry]
+    classes:
+      ech: { label: "Echinacea", slug: echinacea }
+    forms:
+      - { id: echinacea, names: [extract, purpurea, angustifolia, root, herb, powder, unspecified], class: ech, note: "Purpurea and angustifolia share one class (brief F.6). THR-registered products are a label flag, not a class." }
+
+  - id: chamomile
+    name: Chamomile
+    category: botanicals
+    tier: 3
+    comparison_quantity: chamomile extract or flower
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [chamomile, camomile, matricaria recutita, matricaria chamomilla]
+    accepted_cofactors: [lemon balm, valerian, passionflower, lavender]
+    classes:
+      cham: { label: "Chamomile", slug: chamomile }
+    forms:
+      - { id: chamomile, names: [extract, flower, flower extract, powder, unspecified], class: cham }
+
+  - id: lemon_balm
+    name: Lemon balm
+    category: botanicals
+    tier: 3
+    comparison_quantity: lemon balm extract or leaf
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [lemon balm, melissa officinalis, melissa]
+    accepted_cofactors: [chamomile, valerian, passionflower, l-theanine]
+    classes:
+      lb: { label: "Lemon balm", slug: lemon-balm }
+    forms:
+      - { id: lemon_balm, names: [extract, leaf, leaf extract, powder, unspecified], class: lb }
+
+  - id: passionflower
+    name: Passionflower
+    category: botanicals
+    tier: 3
+    comparison_quantity: passionflower extract or herb
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [passionflower, passion flower, passiflora incarnata, passiflora]
+    accepted_cofactors: [valerian, chamomile, lemon balm, hops]
+    classes:
+      pf: { label: "Passionflower", slug: passionflower }
+    forms:
+      - { id: passionflower, names: [extract, herb, aerial parts, powder, unspecified], class: pf }
+
+  - id: hops
+    name: Hops
+    category: botanicals
+    tier: 3
+    comparison_quantity: hops extract or flower
+    unit: mg
+    standard_dose: 300
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [hops, humulus lupulus, hop extract, hop flower]
+    accepted_cofactors: [valerian, passionflower, chamomile]
+    classes:
+      hops: { label: "Hops", slug: hops }
+    forms:
+      - { id: hops, names: [extract, flower, strobile, powder, unspecified], class: hops }
+
+  - id: st_johns_wort
+    name: St John's wort
+    category: botanicals
+    tier: 3
+    comparison_quantity: St John's wort extract
+    unit: mg
+    standard_dose: 300
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: hypericin
+    aliases: [st john's wort, st johns wort, st. john's wort, hypericum perforatum, hypericum]
+    accepted_cofactors: []
+    classes:
+      sjw: { label: "St John's wort (0.3% hypericin)", slug: st-johns-wort }
+    forms:
+      - { id: extract, names: [extract, 0.3% hypericin, standardised, tablets, unspecified], class: sjw, note: "Brief F.6: THR-registered products only — the THR flag is a label attribute; the % hypericin is stored as a component." }
+
+  - id: nettle
+    name: Nettle
+    category: botanicals
+    tier: 3
+    comparison_quantity: nettle extract or powder
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [nettle, stinging nettle, urtica dioica, nettle root, nettle leaf]
+    accepted_cofactors: [saw palmetto, pumpkin seed, quercetin]
+    classes:
+      net_root: { label: "Nettle root", slug: nettle-root }
+      net_leaf: { label: "Nettle leaf", slug: nettle-leaf }
+    forms:
+      - { id: root, names: [root, root extract, nettle root], class: net_root }
+      - { id: leaf, names: [leaf, leaf extract, leaf powder, nettle leaf, herb, unspecified], class: net_leaf }
+
+  - id: dandelion
+    name: Dandelion
+    category: botanicals
+    tier: 3
+    comparison_quantity: dandelion extract or root
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [dandelion, taraxacum officinale, dandelion root, dandelion leaf]
+    accepted_cofactors: [milk thistle, artichoke]
+    classes:
+      dan: { label: "Dandelion", slug: dandelion }
+    forms:
+      - { id: dandelion, names: [root, root extract, leaf, extract, powder, unspecified], class: dan }
+
+  - id: holy_basil
+    name: Holy basil (tulsi)
+    category: botanicals
+    tier: 3
+    comparison_quantity: holy basil extract or leaf
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [holy basil, tulsi, ocimum sanctum, ocimum tenuiflorum]
+    accepted_cofactors: [ashwagandha, rhodiola]
+    classes:
+      hb: { label: "Holy basil", slug: holy-basil }
+    forms:
+      - { id: holy_basil, names: [extract, leaf, leaf extract, powder, unspecified], class: hb }
+
+  - id: gotu_kola
+    name: Gotu kola
+    category: botanicals
+    tier: 3
+    comparison_quantity: gotu kola extract or herb
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [gotu kola, centella asiatica, centella]
+    accepted_cofactors: [bacopa, ginkgo]
+    classes:
+      gk: { label: "Gotu kola", slug: gotu-kola }
+    forms:
+      - { id: gotu_kola, names: [extract, herb, leaf, powder, unspecified], class: gk }
+
+  - id: mucuna
+    name: Mucuna pruriens
+    category: botanicals
+    tier: 3
+    comparison_quantity: L-DOPA
+    unit: mg
+    standard_dose: 300
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: l-dopa
+    constituent_required: true
+    aliases: [mucuna, mucuna pruriens, velvet bean, l-dopa, levodopa]
+    accepted_cofactors: []
+    classes:
+      muc: { label: "Mucuna (by L-DOPA)", slug: mucuna }
+    forms:
+      - { id: extract, names: [extract, 15% l-dopa, standardised, seed extract, powder, unspecified], class: muc, note: "Dose = L-DOPA mg (brief F.6); a label without it goes to review." }
+
+  - id: kanna
+    name: Kanna (Sceletium)
+    category: botanicals
+    tier: 3
+    comparison_quantity: kanna extract
+    unit: mg
+    standard_dose: 25
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: alkaloids
+    aliases: [kanna, sceletium tortuosum, sceletium, zembrin]
+    accepted_cofactors: []
+    classes:
+      kan_generic: { label: "Kanna extract", slug: kanna }
+      kan_zembrin: { label: "Zembrin", slug: zembrin }
+    forms:
+      - { id: generic, names: [extract, powder, unspecified], class: kan_generic }
+      - { id: zembrin, names: [zembrin], class: kan_zembrin }
+
+  - id: shilajit
+    name: Shilajit
+    category: botanicals
+    tier: 2
+    comparison_quantity: shilajit
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: fulvic acid
+    aliases: [shilajit, mumijo, mumie, primavie]
+    accepted_cofactors: []
+    classes:
+      shi_capsule: { label: "Capsules & powder", slug: shilajit }
+      shi_resin: { label: "Resin", slug: shilajit-resin }
+    forms:
+      - { id: capsule, names: [capsules, capsule, powder, extract, primavie, unspecified], class: shi_capsule }
+      - { id: resin, names: [resin, paste, pure resin], class: shi_resin, note: "Pack size in grams; a serving is a stated mass (e.g. 300 mg 'rice grain')." }
+
+  - id: fenugreek
+    name: Fenugreek
+    category: botanicals
+    tier: 3
+    comparison_quantity: fenugreek seed extract
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [fenugreek, trigonella foenum-graecum, testofen]
+    accepted_cofactors: [zinc, magnesium, vitamin b6]
+    classes:
+      fen_generic: { label: "Fenugreek seed extract", slug: fenugreek }
+      fen_testofen: { label: "Testofen", slug: testofen }
+    forms:
+      - { id: generic, names: [seed extract, extract, seed powder, powder, unspecified], class: fen_generic }
+      - { id: testofen, names: [testofen], class: fen_testofen }
+
+  - id: tribulus
+    name: Tribulus
+    category: botanicals
+    tier: 3
+    comparison_quantity: tribulus extract
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: saponins
+    aliases: [tribulus, tribulus terrestris]
+    accepted_cofactors: [zinc, maca, fenugreek]
+    classes:
+      trib: { label: "Tribulus extract", slug: tribulus }
+    forms:
+      - { id: extract, names: [extract, 40% saponins, 90% saponins, standardised, fruit extract, powder, unspecified], class: trib, note: "Saponin % stored as a component; the extract mass is the dose." }
+
+  - id: horny_goat_weed
+    name: Horny goat weed
+    category: botanicals
+    tier: 3
+    comparison_quantity: horny goat weed extract
+    unit: mg
+    standard_dose: 500
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: icariin
+    aliases: [horny goat weed, epimedium, icariin]
+    accepted_cofactors: [maca, tribulus, zinc]
+    classes:
+      hgw: { label: "Horny goat weed extract", slug: horny-goat-weed }
+    forms:
+      - { id: extract, names: [extract, 10% icariin, 20% icariin, standardised, powder, unspecified], class: hgw, note: "Icariin % stored as a component; the extract mass is the dose." }
+
+  - id: grape_seed
+    name: Grape seed extract
+    category: botanicals
+    tier: 3
+    comparison_quantity: grape seed extract
+    unit: mg
+    standard_dose: 300
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: opc
+    aliases: [grape seed, grape seed extract, grapeseed, vitis vinifera, opc]
+    accepted_cofactors: [vitamin c, resveratrol]
+    classes:
+      gse: { label: "Grape seed extract", slug: grape-seed-extract }
+    forms:
+      - { id: extract, names: [extract, 95% opc, standardised, unspecified], class: gse, note: "OPC % stored as a component; the extract mass is the dose." }
+
+  - id: pine_bark
+    name: Pine bark extract
+    category: botanicals
+    tier: 3
+    comparison_quantity: pine bark extract
+    unit: mg
+    standard_dose: 100
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    aliases: [pine bark, pine bark extract, pycnogenol, pinus pinaster, maritime pine]
+    accepted_cofactors: [vitamin c]
+    classes:
+      pb_generic: { label: "Pine bark extract", slug: pine-bark }
+      pb_pycnogenol: { label: "Pycnogenol", slug: pycnogenol }
+    forms:
+      - { id: generic, names: [extract, bark extract, maritime pine, unspecified], class: pb_generic }
+      - { id: pycnogenol, names: [pycnogenol], class: pb_pycnogenol }
+
+  - id: boswellia
+    name: Boswellia
+    category: botanicals
+    tier: 3
+    comparison_quantity: boswellia extract
+    unit: mg
+    standard_dose: 300
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: boswellic acids
+    aliases: [boswellia, boswellia serrata, frankincense, akba, 5-loxin]
+    accepted_cofactors: [turmeric, curcumin, ginger]
+    classes:
+      bos: { label: "Boswellia extract", slug: boswellia }
+    forms:
+      - { id: extract, names: [extract, 65% boswellic acids, akba, 5-loxin, standardised, resin, unspecified], class: bos, note: "Boswellic acid % stored as a component; the extract mass is the dose." }
+
+  - id: moringa
+    name: Moringa
+    category: botanicals
+    tier: 3
+    comparison_quantity: moringa leaf
+    unit: mg
+    standard_dose: 1000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [moringa, moringa oleifera, moringa leaf]
+    accepted_cofactors: []
+    classes:
+      mor: { label: "Moringa leaf", slug: moringa }
+    forms:
+      - { id: moringa, names: [leaf powder, powder, capsules, extract, unspecified], class: mor }
