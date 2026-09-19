@@ -1,0 +1,40 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "betaine_hcl",
+        "form_raw": null,
+        "form_id": "betaine_hcl",
+        "amount_per_serving": 650.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Betaine HCl 650mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [
+      "Pepsin"
+    ],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

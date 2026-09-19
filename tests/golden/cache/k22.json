@@ -1,0 +1,45 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "glycerol",
+        "form_raw": "GlycerPump",
+        "form_id": "glycerpump",
+        "amount_per_serving": 2000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [
+          {
+            "name": "concentration",
+            "amount": 65.0,
+            "unit": "percent"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": "GlycerPump",
+        "evidence": {
+          "amount_per_serving": "providing 2000mg glycerol from GlycerPump 65%",
+          "concentration": "GlycerPump 65%"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 300,
+    "pack_unit_type": "gram",
+    "units_per_serving": 3.0,
+    "servings_stated": 100,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "300g",
+      "units_per_serving": "Serving size: 3g",
+      "servings_stated": "Servings per tub: 100"
+    }
+  }
+}

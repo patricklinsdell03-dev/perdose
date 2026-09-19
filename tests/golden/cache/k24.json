@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "glycerol",
+        "form_raw": "GlycerSize",
+        "form_id": "glycersize",
+        "amount_per_serving": 2000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": "GlycerSize",
+        "evidence": {
+          "amount_per_serving": "GlycerSize 2000mg"
+        }
+      },
+      {
+        "compound_id": "citrulline",
+        "form_raw": "Citrulline Malate",
+        "form_id": "malate_unknown",
+        "amount_per_serving": 6000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Citrulline Malate 6000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 40,
+    "pack_unit_type": "sachet",
+    "units_per_serving": 20.0,
+    "servings_stated": 40,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.75,
+    "review_reasons": [
+      "pack unit type inferred as scoop/sachet-like serving, no explicit container count given"
+    ],
+    "evidence": {
+      "units_per_serving": "20g Scoop",
+      "servings_stated": "40 Servings"
+    }
+  }
+}

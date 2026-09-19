@@ -1,0 +1,44 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "black_seed_oil",
+        "form_raw": "oil",
+        "form_id": "oil",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "total_oil",
+        "components": [
+          {
+            "name": "thymoquinone",
+            "amount": 3.0,
+            "unit": "percent"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "2 softgels provide 1000mg",
+          "thymoquinone": "3% thymoquinone"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "softgel",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "120 Softgels",
+      "units_per_serving": "2 Softgels"
+    }
+  }
+}

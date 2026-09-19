@@ -2289,3 +2289,248 @@ compounds:
       elec: { label: "Electrolytes (per serving)", slug: electrolytes }
     forms:
       - { id: electrolytes, names: [tablets, sachets, powder, capsules, unspecified], class: elec, note: "per_serving, same precedent as multivitamins (DECISIONS.md 2026-09-18): price per daily serving; the sodium/potassium/magnesium-per-serving grid the brief mentions (F.4) is a display follow-up, not a pipeline change, same as multivitamin's own noted gap. Dioralyte/oral-rehydration-therapy phrasing is excluded (audit finding, 2026-09-19): Boots and other UK pharmacies sell Dioralyte as a licensed medicine for rehydration during illness, and because per_serving needs no stated amount to become rank-eligible (only resolvable pack/serving counts), an ORT medicine could otherwise become a fully-priced row next to sports hydration products with nothing about it looking ambiguous to the pipeline. No live feed currently carries a pharmacy retailer, so this has no effect today; the exclusion is in place before one might." }
+
+  # ---- Batch 06 (approved by Patrick 2026-09-19; drafted in config/drafts; audited -- see DECISIONS.md) ----
+  - id: vitamin_b5
+    name: Pantothenic acid (B5)
+    category: vitamins
+    tier: 3
+    comparison_quantity: vitamin B5 (pantothenic acid)
+    unit: mg
+    standard_dose: 500
+    label_convention: elemental_default
+    normalisation_type: simple_mass
+    aliases: [vitamin b5, b5, pantothenic acid, calcium pantothenate, pantothenate]
+    accepted_cofactors: []
+    classes:
+      b5: { label: "Pantothenic acid (B5)", slug: vitamin-b5 }
+    forms:
+      - { id: calcium_pantothenate, names: [calcium pantothenate, pantothenate, pantothenic acid, unspecified], class: b5, note: "Labels state vitamin B5/pantothenic acid content directly (brief F.1); calcium pantothenate is the near-universal commercial salt, same convention as vitamin B6." }
+
+  - id: bcaa
+    name: BCAA
+    category: amino-acids
+    tier: 2
+    comparison_quantity: total BCAA (leucine + isoleucine + valine)
+    unit: mg
+    standard_dose: 5000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [bcaa, bcaas, branched chain amino acids, branched-chain amino acids]
+    accepted_cofactors: []
+    classes:
+      bcaa: { label: "BCAA (total)", slug: bcaa }
+    forms:
+      - { id: blend, names: ["2:1:1", "4:1:1", "8:1:1", instantised, unspecified], class: bcaa, note: "Dose = the stated total BCAA per serving (brief F.3); the ratio badge (2:1:1 etc.) does not change the class. A label that only breaks out individual amino acids with no combined 'BCAA' total has no headline amount to extract and goes to review, without any special-case code — the amount is simply missing. Leucine already exists as its own compound: a blend that separately states 'Leucine Xmg' with its own evidence gets a clean, correctly-resolved leucine active — but (audit finding, 2026-09-19, verified by executing the rules against the real cached model output for k05) it only actually RANKS in the standalone leucine table when the product as a whole is rank-eligible, i.e. when BCAA's own total is ALSO cleanly stated; needs_review is a product-level flag, so an unstated BCAA total suppresses the otherwise-clean leucine reading too, the same way it suppresses everything else on an unverified product. k06 (BCAA total stated + Beta-Alanine) demonstrates leucine-style secondary-active ranking is possible in principle (same mechanism as B6 inside magnesium+B6 combos) but does not itself contain a stated leucine figure to prove the positive case end to end." }
+
+  - id: eaa
+    name: EAA
+    category: amino-acids
+    tier: 2
+    comparison_quantity: total EAA (essential amino acids)
+    unit: mg
+    standard_dose: 10000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [eaa, eaas, essential amino acids]
+    accepted_cofactors: []
+    classes:
+      eaa: { label: "EAA (total)", slug: eaa }
+    forms:
+      - { id: blend, names: [instantised, unspecified], class: eaa, note: "Dose = the stated total EAA per serving (brief F.3); a label with no combined total goes to review, same reasoning as BCAA. EAA blends contain BCAAs too, so a product may legitimately rank in both the eaa and bcaa tables when both totals are separately stated. As with BCAA (audit finding, 2026-09-19), a secondary amino acid (leucine, lysine…) named with its own amount only actually ranks in its own standalone table when EAA's own total is also cleanly stated — needs_review is a product-level flag." }
+
+  - id: ornithine
+    name: L-Ornithine
+    category: amino-acids
+    tier: 3
+    comparison_quantity: L-ornithine
+    unit: mg
+    standard_dose: 1000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [ornithine, l-ornithine, ornithine hcl, ornithine hydrochloride]
+    accepted_cofactors: []
+    classes:
+      orn: { label: "L-Ornithine", slug: l-ornithine }
+    forms:
+      - { id: l_ornithine, names: [l-ornithine, ornithine, ornithine hcl, ornithine hydrochloride, unspecified], class: orn, note: "Ornithine alpha-ketoglutarate (OKG) is deliberately not aliased here — its ornithine content is not a simple mass match (the citrulline-malate lesson) — so a labelled OKG product currently goes unmatched rather than being treated as equivalent; revisit with its own factor if it appears in feeds." }
+
+  - id: betaine_hcl
+    name: Betaine HCl
+    category: amino-acids
+    tier: 3
+    comparison_quantity: betaine hydrochloride
+    unit: mg
+    standard_dose: 650
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [betaine hcl, betaine hydrochloride]
+    accepted_cofactors: [pepsin]
+    classes:
+      bhcl: { label: "Betaine HCl", slug: betaine-hcl }
+    forms:
+      - { id: betaine_hcl, names: [betaine hcl, betaine hydrochloride, unspecified], class: bhcl, note: "A different product from betaine/TMG (id `betaine`, brief F.3): sold for digestive use, usually combined with pepsin. See the live-file edit note at the top of this file — `betaine` needs an alias_exclusions entry so the two are never confused." }
+
+  - id: sodium_bicarbonate
+    name: Sodium bicarbonate
+    category: minerals
+    tier: 3
+    comparison_quantity: sodium bicarbonate
+    unit: mg
+    standard_dose: 5000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [sodium bicarbonate, sodium bicarb, bicarbonate, bicarb]
+    alias_exclusions: [potassium bicarbonate]
+    accepted_cofactors: []
+    classes:
+      bicarb: { label: "Sodium bicarbonate", slug: sodium-bicarbonate }
+    forms:
+      - { id: powder, names: [powder, capsules, unspecified], class: bicarb, note: "Sport-use 'bicarb loading' product (brief F.2/F.4). Effervescent vitamin/mineral tablets often list sodium bicarbonate as a disintegrant with no per-serving figure — the existing filler-skip rule (no stated amount, not the title subject) already drops those rather than treating them as an active; tested in the golden set below. Bare 'bicarbonate'/'bicarb' (widened after a live-validation miss) would otherwise also candidate-tag potassium bicarbonate, a different, real, live-registry salt (config/compounds.yml's potassium entry already has a bicarbonate form) — alias_exclusions added (audit finding, 2026-09-19)." }
+
+  - id: glycerol
+    name: Glycerol
+    category: sports
+    tier: 3
+    comparison_quantity: glycerol
+    unit: mg
+    standard_dose: 2000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [glycerol, glycerpump, glycersize, hydromax]
+    accepted_cofactors: []
+    classes:
+      gly: { label: "Glycerol", slug: glycerol }
+    forms:
+      - { id: glycerol, names: [powder, glycerpump, glycersize, hydromax, unspecified], class: gly, note: "'Glycerin'/'glycerine' (the softgel-capsule and gummy shell humectant, E422) is deliberately not aliased here — it appears in most gummies' and many softgels' shell ingredients at an unstated amount and is a different labelling convention, not this active. Only sport hyperhydration products (branded GlycerPump/GlycerSize/HydroMax, or plain 'glycerol powder') match." }
+
+  - id: cla
+    name: CLA
+    category: sports
+    tier: 3
+    comparison_quantity: conjugated linoleic acid
+    unit: mg
+    standard_dose: 3000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [cla, conjugated linoleic acid, tonalin]
+    accepted_cofactors: []
+    classes:
+      cla: { label: "CLA", slug: cla }
+    forms:
+      - { id: cla, names: [tonalin, safflower oil, unspecified], class: cla, note: "Softgel CLA states the CLA mass per serving directly (brief F.4); the stated figure already reflects conjugated-linoleic-acid content, same convention as black seed oil." }
+
+  - id: beetroot_nitrate
+    name: Beetroot / nitrate
+    category: sports
+    tier: 2
+    comparison_quantity: nitrate
+    unit: mg
+    standard_dose: 400
+    label_convention: compound_default
+    normalisation_type: extract_standardised
+    standardisation_component: nitrate
+    constituent_required: true
+    aliases: [beetroot, beet root, nitrate, beetroot extract, beetroot powder]
+    accepted_cofactors: []
+    classes:
+      br: { label: "Beetroot (by nitrate)", slug: beetroot }
+    forms:
+      - { id: extract, names: [extract, powder, capsules, concentrate, unspecified], class: br, note: "Dose = stated nitrate mg per serving (brief F.4); a label that states only beetroot/extract mass with no nitrate figure goes to review, same rule as milk thistle/curcumin. Juice shots sold by ml with no stated per-serving nitrate figure are excluded from ranking the same way (brief F.11)." }
+
+  - id: flaxseed_oil
+    name: Flaxseed oil (ALA)
+    category: fatty-acids
+    tier: 3
+    comparison_quantity: ALA (alpha-linolenic acid)
+    unit: mg
+    standard_dose: 1000
+    label_convention: compound_default
+    normalisation_type: oil_components
+    components_sum: [ALA]
+    aliases: [flaxseed oil, flax oil, linseed oil, flaxseed]
+    accepted_cofactors: [vitamin e, tocopherol, tocopherols]
+    classes:
+      ala: { label: "Flaxseed oil (ALA)", slug: flaxseed-oil }
+    forms:
+      - { id: oil, names: [oil, softgel, liquid, unspecified], class: ala, note: "Dose = stated ALA mg per serving (brief F.5); a label that states only total oil mass with no ALA figure goes to review, same rule as omega-3's EPA+DHA. Bare 'ALA' is deliberately not aliased (audit finding, 2026-09-19): it collides exactly with the live alpha_lipoic_acid compound's own bare 'ala' alias (alpha-lipoic acid vs alpha-linolenic acid genuinely share the abbreviation) — the other four aliases already cover every realistic flaxseed listing without it." }
+
+  - id: evening_primrose
+    name: Evening primrose (GLA)
+    category: fatty-acids
+    tier: 3
+    comparison_quantity: GLA (gamma-linolenic acid)
+    unit: mg
+    standard_dose: 100
+    label_convention: compound_default
+    normalisation_type: oil_components
+    components_sum: [GLA]
+    aliases: [evening primrose, evening primrose oil, epo, gla]
+    accepted_cofactors: [vitamin e, tocopherol, tocopherols]
+    classes:
+      gla: { label: "Evening primrose oil (GLA)", slug: evening-primrose }
+    forms:
+      - { id: oil, names: [oil, softgel, unspecified], class: gla, note: "Dose = stated GLA mg per serving (brief F.5); a label that states only total oil mass with no GLA figure goes to review. Borage oil (a different, higher-GLA plant source, not in Appendix F) is deliberately not aliased here pending its own decision." }
+
+  - id: black_seed_oil
+    name: Black seed oil
+    category: fatty-acids
+    tier: 3
+    comparison_quantity: black seed oil
+    unit: mg
+    standard_dose: 1000
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [black seed oil, black cumin seed oil, nigella sativa, kalonji]
+    accepted_cofactors: []
+    classes:
+      bso: { label: "Black seed oil", slug: black-seed-oil }
+    forms:
+      - { id: oil, names: [oil, softgel, unspecified], class: bso, note: "Dose = stated oil mass (brief F.5); thymoquinone %, where stated, is stored as an informational component only and does not change the dose." }
+
+  - id: silica
+    name: Silica
+    category: minerals
+    tier: 3
+    comparison_quantity: silica (as labelled)
+    unit: mg
+    standard_dose: 50
+    label_convention: ambiguous
+    normalisation_type: mineral_elemental
+    heuristics:
+      # Bamboo/horsetail: never treat an unclear amount as elemental, at any size — route
+      # to review via the null factor instead (audit finding, 2026-09-19: elemental_default
+      # let an unclear bamboo/horsetail reading rank as if it were elemental, contradicting
+      # Appendix F.2's own "often unclear; expect review" and this compound's whole design).
+      # Orthosilicic acid: real doses are low (~5-10 mg), so an unclear reading at or below
+      # the standard dose is taken as elemental, same as every other elemental_default case.
+      unclear_amount:
+        compound_if_at_least: 0
+        compound_forms: [bamboo, horsetail]
+        elemental_if_at_most: 50
+    aliases: [silica, orthosilicic acid, choline-stabilised orthosilicic acid, ch-osa, biosil, bamboo extract, bamboo silica, horsetail, horsetail extract, equisetum arvense]
+    accepted_cofactors: [biotin]
+    classes:
+      si_bamboo: { label: "Bamboo extract", slug: bamboo-extract }
+      si_horsetail: { label: "Horsetail", slug: horsetail }
+      si_ortho: { label: "Orthosilicic acid", slug: orthosilicic-acid }
+    forms:
+      - { id: bamboo, names: [bamboo extract, bamboo silica, bamboo, unspecified], class: si_bamboo, elemental_factor: null, note: "Silica content of bamboo extract varies too widely by source to estimate a factor (same reasoning as iron bisglycinate/magnesium malate — never a flattering estimate); only a stated silica/silicon mg figure ranks. 'Silicon dioxide' (E551, the anti-caking excipient used across most unrelated tablets) is deliberately not aliased anywhere on this compound, on either the compound or form level. label_convention is 'ambiguous' with a heuristic (not 'elemental_default') so an unclear bamboo/horsetail reading always goes to review regardless of size — verified against the real live-model cache (audit finding, 2026-09-19): even a bare, clean-looking 'Choline-Stabilised Orthosilicic Acid 10mg' label came back amount_refers_to: unclear from the model, so elemental_default would have silently ranked any unclear bamboo/horsetail figure too." }
+      - { id: horsetail, names: [horsetail, equisetum, equisetum arvense, horsetail extract], class: si_horsetail, elemental_factor: null, note: "Same reasoning as bamboo — no factor, stated content only, never ranked on an unclear reading regardless of size." }
+      - { id: orthosilicic_acid, names: [orthosilicic acid, choline-stabilised orthosilicic acid, ch-osa, biosil], class: si_ortho, elemental_factor: null, standard_dose_override: 10, note: "Stabilised orthosilicic acid products are dosed far lower (~5-10 mg silicon/day) than bulk herbal extracts; own table at 10 mg so the comparison is meaningful. No factor — stated silicon content only; an unclear reading at or below 50 mg (the compound's own standard dose) is still taken as elemental, same as any other elemental_default-style compound, since real orthosilicic acid doses are always in that range." }
+
+  - id: zinc_carnosine
+    name: Zinc carnosine
+    category: general-health
+    tier: 3
+    comparison_quantity: zinc carnosine (as PepZin GI)
+    unit: mg
+    standard_dose: 75
+    label_convention: compound_default
+    normalisation_type: simple_mass
+    aliases: [zinc carnosine, zinc-carnosine, zinc l-carnosine, pepzin gi, pepzin]
+    accepted_cofactors: []
+    classes:
+      zncar: { label: "Zinc carnosine", slug: zinc-carnosine }
+    forms:
+      - { id: pepzin, names: [pepzin gi, pepzin, zinc carnosine, zinc l-carnosine, unspecified], class: zncar, note: "A separate compound from zinc (brief F.8): the stated mass is the zinc-carnosine complex (PepZin GI), not elemental zinc. See the live-file edit note at the top of this file — `zinc` needs an alias_exclusions entry so it is never offered as a plain zinc candidate." }

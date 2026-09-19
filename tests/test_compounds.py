@@ -24,7 +24,7 @@ def test_registry_loads_the_prototype_compounds_and_batch_one():
     registry = load_registry()
     ids = {c.id for c in registry.compounds}
     assert PROTOTYPE_IDS <= ids
-    assert len(ids) == 122  # 119 + batch 8 (3; nmn, lithium orotate held) (DECISIONS.md)
+    assert len(ids) == 136  # 122 + batch 6 (14; agmatine held) (DECISIONS.md)
     assert registry.get("magnesium").form("bisglycinate").form_class == "mg_glycinate"
 
 

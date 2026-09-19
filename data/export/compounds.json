@@ -6445,5 +6445,562 @@
     ]
    }
   ]
+ },
+ {
+  "id": "vitamin_b5",
+  "name": "Pantothenic acid (B5)",
+  "category": "vitamins",
+  "tier": 3,
+  "comparison_quantity": "vitamin B5 (pantothenic acid)",
+  "unit": "mg",
+  "standard_dose": 500.0,
+  "label_convention": "elemental_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "vitamin b5",
+   "b5",
+   "pantothenic acid",
+   "calcium pantothenate",
+   "pantothenate"
+  ],
+  "classes": [
+   {
+    "id": "b5",
+    "label": "Pantothenic acid (B5)",
+    "slug": "vitamin-b5",
+    "standard_dose": 500.0,
+    "forms": [
+     {
+      "id": "calcium_pantothenate",
+      "names": [
+       "calcium pantothenate",
+       "pantothenate",
+       "pantothenic acid",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "bcaa",
+  "name": "BCAA",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "total BCAA (leucine + isoleucine + valine)",
+  "unit": "mg",
+  "standard_dose": 5000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "bcaa",
+   "bcaas",
+   "branched chain amino acids",
+   "branched-chain amino acids"
+  ],
+  "classes": [
+   {
+    "id": "bcaa",
+    "label": "BCAA (total)",
+    "slug": "bcaa",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "blend",
+      "names": [
+       "2:1:1",
+       "4:1:1",
+       "8:1:1",
+       "instantised",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "eaa",
+  "name": "EAA",
+  "category": "amino-acids",
+  "tier": 2,
+  "comparison_quantity": "total EAA (essential amino acids)",
+  "unit": "mg",
+  "standard_dose": 10000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "eaa",
+   "eaas",
+   "essential amino acids"
+  ],
+  "classes": [
+   {
+    "id": "eaa",
+    "label": "EAA (total)",
+    "slug": "eaa",
+    "standard_dose": 10000.0,
+    "forms": [
+     {
+      "id": "blend",
+      "names": [
+       "instantised",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ornithine",
+  "name": "L-Ornithine",
+  "category": "amino-acids",
+  "tier": 3,
+  "comparison_quantity": "L-ornithine",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "ornithine",
+   "l-ornithine",
+   "ornithine hcl",
+   "ornithine hydrochloride"
+  ],
+  "classes": [
+   {
+    "id": "orn",
+    "label": "L-Ornithine",
+    "slug": "l-ornithine",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "l_ornithine",
+      "names": [
+       "l-ornithine",
+       "ornithine",
+       "ornithine hcl",
+       "ornithine hydrochloride",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "betaine_hcl",
+  "name": "Betaine HCl",
+  "category": "amino-acids",
+  "tier": 3,
+  "comparison_quantity": "betaine hydrochloride",
+  "unit": "mg",
+  "standard_dose": 650.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "betaine hcl",
+   "betaine hydrochloride"
+  ],
+  "classes": [
+   {
+    "id": "bhcl",
+    "label": "Betaine HCl",
+    "slug": "betaine-hcl",
+    "standard_dose": 650.0,
+    "forms": [
+     {
+      "id": "betaine_hcl",
+      "names": [
+       "betaine hcl",
+       "betaine hydrochloride",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "sodium_bicarbonate",
+  "name": "Sodium bicarbonate",
+  "category": "minerals",
+  "tier": 3,
+  "comparison_quantity": "sodium bicarbonate",
+  "unit": "mg",
+  "standard_dose": 5000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "sodium bicarbonate",
+   "sodium bicarb",
+   "bicarbonate",
+   "bicarb"
+  ],
+  "classes": [
+   {
+    "id": "bicarb",
+    "label": "Sodium bicarbonate",
+    "slug": "sodium-bicarbonate",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder",
+       "capsules",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "glycerol",
+  "name": "Glycerol",
+  "category": "sports",
+  "tier": 3,
+  "comparison_quantity": "glycerol",
+  "unit": "mg",
+  "standard_dose": 2000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "glycerol",
+   "glycerpump",
+   "glycersize",
+   "hydromax"
+  ],
+  "classes": [
+   {
+    "id": "gly",
+    "label": "Glycerol",
+    "slug": "glycerol",
+    "standard_dose": 2000.0,
+    "forms": [
+     {
+      "id": "glycerol",
+      "names": [
+       "powder",
+       "glycerpump",
+       "glycersize",
+       "hydromax",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cla",
+  "name": "CLA",
+  "category": "sports",
+  "tier": 3,
+  "comparison_quantity": "conjugated linoleic acid",
+  "unit": "mg",
+  "standard_dose": 3000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "cla",
+   "conjugated linoleic acid",
+   "tonalin"
+  ],
+  "classes": [
+   {
+    "id": "cla",
+    "label": "CLA",
+    "slug": "cla",
+    "standard_dose": 3000.0,
+    "forms": [
+     {
+      "id": "cla",
+      "names": [
+       "tonalin",
+       "safflower oil",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "beetroot_nitrate",
+  "name": "Beetroot / nitrate",
+  "category": "sports",
+  "tier": 2,
+  "comparison_quantity": "nitrate",
+  "unit": "mg",
+  "standard_dose": 400.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "beetroot",
+   "beet root",
+   "nitrate",
+   "beetroot extract",
+   "beetroot powder"
+  ],
+  "classes": [
+   {
+    "id": "br",
+    "label": "Beetroot (by nitrate)",
+    "slug": "beetroot",
+    "standard_dose": 400.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "powder",
+       "capsules",
+       "concentrate",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "flaxseed_oil",
+  "name": "Flaxseed oil (ALA)",
+  "category": "fatty-acids",
+  "tier": 3,
+  "comparison_quantity": "ALA (alpha-linolenic acid)",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "oil_components",
+  "aliases": [
+   "flaxseed oil",
+   "flax oil",
+   "linseed oil",
+   "flaxseed"
+  ],
+  "classes": [
+   {
+    "id": "ala",
+    "label": "Flaxseed oil (ALA)",
+    "slug": "flaxseed-oil",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "oil",
+      "names": [
+       "oil",
+       "softgel",
+       "liquid",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "evening_primrose",
+  "name": "Evening primrose (GLA)",
+  "category": "fatty-acids",
+  "tier": 3,
+  "comparison_quantity": "GLA (gamma-linolenic acid)",
+  "unit": "mg",
+  "standard_dose": 100.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "oil_components",
+  "aliases": [
+   "evening primrose",
+   "evening primrose oil",
+   "epo",
+   "gla"
+  ],
+  "classes": [
+   {
+    "id": "gla",
+    "label": "Evening primrose oil (GLA)",
+    "slug": "evening-primrose",
+    "standard_dose": 100.0,
+    "forms": [
+     {
+      "id": "oil",
+      "names": [
+       "oil",
+       "softgel",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "black_seed_oil",
+  "name": "Black seed oil",
+  "category": "fatty-acids",
+  "tier": 3,
+  "comparison_quantity": "black seed oil",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "black seed oil",
+   "black cumin seed oil",
+   "nigella sativa",
+   "kalonji"
+  ],
+  "classes": [
+   {
+    "id": "bso",
+    "label": "Black seed oil",
+    "slug": "black-seed-oil",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "oil",
+      "names": [
+       "oil",
+       "softgel",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "silica",
+  "name": "Silica",
+  "category": "minerals",
+  "tier": 3,
+  "comparison_quantity": "silica (as labelled)",
+  "unit": "mg",
+  "standard_dose": 50.0,
+  "label_convention": "ambiguous",
+  "normalisation_type": "mineral_elemental",
+  "aliases": [
+   "silica",
+   "orthosilicic acid",
+   "choline-stabilised orthosilicic acid",
+   "ch-osa",
+   "biosil",
+   "bamboo extract",
+   "bamboo silica",
+   "horsetail",
+   "horsetail extract",
+   "equisetum arvense"
+  ],
+  "classes": [
+   {
+    "id": "si_bamboo",
+    "label": "Bamboo extract",
+    "slug": "bamboo-extract",
+    "standard_dose": 50.0,
+    "forms": [
+     {
+      "id": "bamboo",
+      "names": [
+       "bamboo extract",
+       "bamboo silica",
+       "bamboo",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "si_horsetail",
+    "label": "Horsetail",
+    "slug": "horsetail",
+    "standard_dose": 50.0,
+    "forms": [
+     {
+      "id": "horsetail",
+      "names": [
+       "horsetail",
+       "equisetum",
+       "equisetum arvense",
+       "horsetail extract"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "si_ortho",
+    "label": "Orthosilicic acid",
+    "slug": "orthosilicic-acid",
+    "standard_dose": 10.0,
+    "forms": [
+     {
+      "id": "orthosilicic_acid",
+      "names": [
+       "orthosilicic acid",
+       "choline-stabilised orthosilicic acid",
+       "ch-osa",
+       "biosil"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "zinc_carnosine",
+  "name": "Zinc carnosine",
+  "category": "general-health",
+  "tier": 3,
+  "comparison_quantity": "zinc carnosine (as PepZin GI)",
+  "unit": "mg",
+  "standard_dose": 75.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "zinc carnosine",
+   "zinc-carnosine",
+   "zinc l-carnosine",
+   "pepzin gi",
+   "pepzin"
+  ],
+  "classes": [
+   {
+    "id": "zncar",
+    "label": "Zinc carnosine",
+    "slug": "zinc-carnosine",
+    "standard_dose": 75.0,
+    "forms": [
+     {
+      "id": "pepzin",
+      "names": [
+       "pepzin gi",
+       "pepzin",
+       "zinc carnosine",
+       "zinc l-carnosine",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
  }
 ]

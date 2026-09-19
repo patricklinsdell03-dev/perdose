@@ -1,0 +1,37 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "betaine_hcl",
+        "form_raw": "Betaine Hydrochloride",
+        "form_id": "betaine_hcl",
+        "amount_per_serving": 1300.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "2 capsules provide 1300mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "capsule",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.95,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "120 Capsules",
+      "units_per_serving": "2 Capsules"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "evening_primrose",
+        "form_raw": "oil",
+        "form_id": "oil",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "total_oil",
+        "components": [
+          {
+            "name": "GLA",
+            "amount": 90.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Evening Primrose Oil 1000mg",
+          "GLA": "GLA 90mg"
+        }
+      },
+      {
+        "compound_id": "vitamin_e",
+        "form_raw": null,
+        "form_id": null,
+        "amount_per_serving": 5.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin E 5mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "softgel",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size not stated, unclear if amounts are per softgel or per multiple softgels",
+      "vitamin E form not specified"
+    ],
+    "evidence": {
+      "pack_units": "60 Softgels"
+    }
+  }
+}

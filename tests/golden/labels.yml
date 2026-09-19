@@ -11124,7 +11124,1340 @@ labels:
       needs_review: false
     description: 'Proves the per_serving design note: a multi-nutrient per_serving product is
       many ingredients by design, never flagged as a combination, same as multivitamins.'
-
+  - id: k01
+    compounds:
+    - vitamin_b5
+    title: Vitamin B5 (Calcium Pantothenate) 500mg 90 Tablets
+    extraction:
+      actives:
+      - compound_id: vitamin_b5
+        form_raw: Calcium Pantothenate
+        form_id: calcium_pantothenate
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 500mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Tablets
+    expect:
+      compound: vitamin_b5
+      amount: 500
+      servings: 90
+      basis: stated_elemental
+      needs_review: false
+  - id: k02
+    compounds:
+    - vitamin_b5
+    title: Pantothenic Acid 250mg — 2 Tablets Daily — 120 Tablets
+    extraction:
+      actives:
+      - compound_id: vitamin_b5
+        form_raw: null
+        form_id: calcium_pantothenate
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 2 tablets daily (500mg)
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: tablet
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 120 Tablets
+        units_per_serving: 2 tablets daily
+    expect:
+      amount: 500
+      servings: 60
+      basis: stated_elemental
+      needs_review: false
+    description: 'Each tablet contains 250mg pantothenic acid. Directions: take 2 tablets daily (500mg).'
+  - id: k03
+    compounds:
+    - vitamin_b5
+    - vitamin_b6
+    title: Vitamin B5 250mg & Vitamin B6 20mg 60 Tablets
+    extraction:
+      actives:
+      - compound_id: vitamin_b5
+        form_raw: null
+        form_id: calcium_pantothenate
+        amount_per_serving: 250
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin B5 250mg
+        components: []
+      - compound_id: vitamin_b6
+        form_raw: null
+        form_id: pyridoxine_hcl
+        amount_per_serving: 20
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin B6 20mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Tablets
+    expect:
+      compound: vitamin_b5
+      amount: 250
+      multi_ingredient: true
+      needs_review: false
+  - id: k04
+    compounds:
+    - bcaa
+    title: BCAA 2:1:1 5000mg — 5 Capsules — 150 Capsules
+    extraction:
+      actives:
+      - compound_id: bcaa
+        form_raw: "2:1:1"
+        form_id: blend
+        amount_per_serving: 5000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 5000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 150
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 5
+      evidence:
+        pack_units: 150 Capsules
+        units_per_serving: 5 Capsules
+    expect:
+      compound: bcaa
+      amount: 5000
+      servings: 30
+      basis: stated_compound
+      needs_review: false
+  - id: k05
+    compounds:
+    - bcaa
+    title: BCAA — Leucine 2500mg, Isoleucine 1250mg, Valine 1250mg — 60 Capsules
+    extraction:
+      actives:
+      - compound_id: bcaa
+        form_raw: null
+        form_id: null
+        amount_per_serving: null
+        amount_unit: null
+        amount_refers_to: unclear
+        evidence: {}
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.85
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: bcaa
+      needs_review: true
+      review_reason: amount_missing
+  - id: k06
+    compounds:
+    - bcaa
+    - beta_alanine
+    title: BCAA (2:1:1) 5000mg & Beta-Alanine 2000mg — 10g Scoop — 300g Powder
+    extraction:
+      actives:
+      - compound_id: bcaa
+        form_raw: "2:1:1"
+        form_id: blend
+        amount_per_serving: 5000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 5000mg
+        components: []
+      - compound_id: beta_alanine
+        form_raw: null
+        form_id: null
+        amount_per_serving: 2000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Beta-Alanine 2000mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 300
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 10
+      evidence:
+        pack_units: 300g Powder
+        units_per_serving: 10g Scoop
+    expect:
+      compound: bcaa
+      amount: 5000
+      servings: 30
+      multi_ingredient: true
+      needs_review: false
+  - id: k07
+    compounds:
+    - eaa
+    title: EAA Essential Amino Acids 10000mg — 12g Scoop — 360g Powder
+    extraction:
+      actives:
+      - compound_id: eaa
+        form_raw: null
+        form_id: blend
+        amount_per_serving: 10000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 10000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 360
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 12
+      evidence:
+        pack_units: 360g Powder
+        units_per_serving: 12g Scoop
+    expect:
+      compound: eaa
+      amount: 10000
+      servings: 30
+      basis: stated_compound
+      needs_review: false
+  - id: k08
+    compounds:
+    - eaa
+    title: EAA Matrix — Leucine 3000mg, Lysine 1500mg, Valine 1200mg and more — 300g Powder — 15g Scoop
+    extraction:
+      actives:
+      - compound_id: eaa
+        form_raw: null
+        form_id: null
+        amount_per_serving: null
+        amount_unit: null
+        amount_refers_to: unclear
+        evidence: {}
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 300
+      pack_unit_type: gram
+      confidence: 0.85
+      units_per_serving: 15
+      evidence:
+        pack_units: 300g Powder
+        units_per_serving: 15g Scoop
+    expect:
+      compound: eaa
+      needs_review: true
+      review_reason: amount_missing
+  - id: k09
+    compounds:
+    - eaa
+    - l_theanine
+    title: EAA 10000mg & L-Theanine 200mg — 20g Scoop — 600g Powder
+    extraction:
+      actives:
+      - compound_id: eaa
+        form_raw: null
+        form_id: blend
+        amount_per_serving: 10000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: EAA 10000mg
+        components: []
+      - compound_id: l_theanine
+        form_raw: null
+        form_id: l_theanine
+        amount_per_serving: 200
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: L-Theanine 200mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 600
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 20
+      evidence:
+        pack_units: 600g Powder
+        units_per_serving: 20g Scoop
+    expect:
+      compound: eaa
+      amount: 10000
+      servings: 30
+      multi_ingredient: true
+      needs_review: false
+  - id: k10
+    compounds:
+    - ornithine
+    title: L-Ornithine 500mg 120 Capsules
+    extraction:
+      actives:
+      - compound_id: ornithine
+        form_raw: L-Ornithine
+        form_id: l_ornithine
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 500mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 120 Capsules
+    expect:
+      compound: ornithine
+      amount: 500
+      servings: 120
+      basis: stated_compound
+      needs_review: false
+  - id: k11
+    compounds:
+    - ornithine
+    title: Ornithine HCl 1000mg — 2 Capsules — 180 Capsules
+    extraction:
+      actives:
+      - compound_id: ornithine
+        form_raw: Ornithine HCl
+        form_id: l_ornithine
+        amount_per_serving: 2000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 2 capsules provide 2000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 180
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 180 Capsules
+        units_per_serving: 2 capsules
+    expect:
+      amount: 2000
+      servings: 90
+      basis: stated_compound
+      needs_review: false
+    description: 'Each capsule contains 1000mg Ornithine HCl. 2 capsules provide 2000mg.'
+  - id: k12
+    compounds:
+    - ornithine
+    - arginine
+    title: Ornithine 500mg & Arginine 1000mg Night Recovery 60 Capsules
+    extraction:
+      actives:
+      - compound_id: ornithine
+        form_raw: null
+        form_id: l_ornithine
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Ornithine 500mg
+        components: []
+      - compound_id: arginine
+        form_raw: null
+        form_id: null
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Arginine 1000mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: ornithine
+      amount: 500
+      multi_ingredient: true
+      needs_review: false
+  - id: k13
+    compounds:
+    - betaine_hcl
+    title: Betaine HCl 650mg with Pepsin 60 Capsules
+    extraction:
+      actives:
+      - compound_id: betaine_hcl
+        form_raw: Betaine HCl
+        form_id: betaine_hcl
+        amount_per_serving: 650
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 650mg
+        components: []
+      is_single_ingredient: false
+      other_actives:
+      - Pepsin
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: betaine_hcl
+      amount: 650
+      multi_ingredient: false
+      needs_review: false
+  - id: k14
+    compounds:
+    - betaine_hcl
+    title: Betaine Hydrochloride 1300mg — 2 Capsules — 120 Capsules
+    extraction:
+      actives:
+      - compound_id: betaine_hcl
+        form_raw: Betaine Hydrochloride
+        form_id: betaine_hcl
+        amount_per_serving: 1300
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 2 capsules provide 1300mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 120 Capsules
+        units_per_serving: 2 capsules
+    expect:
+      amount: 1300
+      servings: 60
+      basis: stated_compound
+      needs_review: false
+    description: 'Each capsule contains 650mg Betaine Hydrochloride. 2 capsules provide 1300mg.'
+  - id: k15
+    compounds:
+    - betaine_hcl
+    - betaine
+    title: Digestive Complex — Betaine HCl 650mg & Betaine Anhydrous (TMG) 500mg — 60 Capsules
+    extraction:
+      actives:
+      - compound_id: betaine_hcl
+        form_raw: Betaine HCl
+        form_id: betaine_hcl
+        amount_per_serving: 650
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Betaine HCl 650mg
+        components: []
+      - compound_id: betaine
+        form_raw: Betaine Anhydrous (TMG)
+        form_id: anhydrous
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Betaine Anhydrous (TMG) 500mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: betaine_hcl
+      amount: 650
+      multi_ingredient: true
+      needs_review: false
+      actives:
+      - compound: betaine
+        amount: 500
+  - id: k19
+    compounds:
+    - sodium_bicarbonate
+    title: Sodium Bicarbonate Powder 200g — 5g Serving
+    extraction:
+      actives:
+      - compound_id: sodium_bicarbonate
+        form_raw: Powder
+        form_id: powder
+        amount_per_serving: 5000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 'Serving size: 5g'
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 200
+      pack_unit_type: gram
+      confidence: 0.95
+      units_per_serving: 5
+      evidence:
+        pack_units: 200g
+        units_per_serving: 'Serving size: 5g'
+    expect:
+      compound: sodium_bicarbonate
+      amount: 5000
+      servings: 40
+      basis: stated_compound
+      needs_review: false
+    description: 'Serving size: 5g. Servings per pack: 40. Per serving: Sodium bicarbonate 5g.'
+  - id: k20
+    compounds:
+    - sodium_bicarbonate
+    title: Bicarb Loading Capsules — 12 Capsules Provide 6000mg — 120 Capsules
+    extraction:
+      actives:
+      - compound_id: sodium_bicarbonate
+        form_raw: null
+        form_id: powder
+        amount_per_serving: 6000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 12 Capsules Provide 6000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: capsule
+      confidence: 0.9
+      units_per_serving: 12
+      evidence:
+        pack_units: 120 Capsules
+        units_per_serving: 12 Capsules Provide 6000mg
+    expect:
+      amount: 6000
+      servings: 10
+      basis: stated_compound
+      needs_review: false
+  - id: k21
+    compounds:
+    - sodium_bicarbonate
+    - vitamin_c
+    title: Effervescent Vitamin C 1000mg 20 Tablets
+    extraction:
+      actives:
+      - compound_id: vitamin_c
+        form_raw: null
+        form_id: ascorbic_acid
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin C 1000mg
+        components: []
+      is_single_ingredient: false
+      other_actives:
+      - Sodium bicarbonate
+      - Citric acid
+      pack_units: 20
+      pack_unit_type: tablet
+      confidence: 0.95
+      evidence:
+        pack_units: 20 Tablets
+    expect:
+      compound: vitamin_c
+      amount: 1000
+      needs_review: false
+    description: 'Ingredients: Ascorbic acid (Vitamin C), citric acid, sodium bicarbonate, sodium saccharin, orange flavouring. Per tablet: Vitamin C 1000mg.'
+  - id: k22
+    compounds:
+    - glycerol
+    title: GlycerPump Glycerol Powder 65% 300g — 3g Scoop
+    extraction:
+      actives:
+      - compound_id: glycerol
+        form_raw: GlycerPump
+        form_id: glycerol
+        amount_per_serving: 2000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: providing 2000mg glycerol
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 300
+      pack_unit_type: gram
+      confidence: 0.9
+      units_per_serving: 3
+      evidence:
+        pack_units: 300g
+        units_per_serving: 'Serving size: 3g'
+    expect:
+      compound: glycerol
+      amount: 2000
+      servings: 100
+      basis: stated_compound
+      needs_review: false
+    description: 'Serving size: 3g (providing 2000mg glycerol from GlycerPump 65%). Servings per tub: 100.'
+  - id: k23
+    compounds:
+    - glycerol
+    title: HydroMax Glycerol 1500mg 90 Capsules
+    extraction:
+      actives:
+      - compound_id: glycerol
+        form_raw: HydroMax
+        form_id: glycerol
+        amount_per_serving: 1500
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 1500mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      amount: 1500
+      servings: 90
+      basis: stated_compound
+      needs_review: false
+  - id: k24
+    compounds:
+    - glycerol
+    - citrulline
+    title: Pump Formula — GlycerSize 2000mg & Citrulline Malate 6000mg — 20g Scoop — 40 Servings
+    extraction:
+      actives:
+      - compound_id: glycerol
+        form_raw: GlycerSize
+        form_id: glycerol
+        amount_per_serving: 2000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: GlycerSize 2000mg
+        components: []
+      - compound_id: citrulline
+        form_raw: Citrulline Malate
+        form_id: malate_2_1
+        amount_per_serving: 6000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Citrulline Malate 6000mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 40
+      pack_unit_type: sachet
+      confidence: 0.95
+      servings_stated: 40
+      evidence:
+        pack_units: 40 Servings
+    expect:
+      compound: glycerol
+      amount: 2000
+      multi_ingredient: true
+      needs_review: false
+  - id: k25
+    compounds:
+    - cla
+    title: CLA 1000mg 90 Softgels
+    extraction:
+      actives:
+      - compound_id: cla
+        form_raw: null
+        form_id: cla
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 1000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Softgels
+    expect:
+      compound: cla
+      amount: 1000
+      servings: 90
+      basis: stated_compound
+      needs_review: false
+  - id: k26
+    compounds:
+    - cla
+    title: Tonalin CLA 3000mg — 3 Softgels — 180 Softgels
+    extraction:
+      actives:
+      - compound_id: cla
+        form_raw: Tonalin
+        form_id: cla
+        amount_per_serving: 3000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 3 softgels provide 3000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 180
+      pack_unit_type: softgel
+      confidence: 0.95
+      units_per_serving: 3
+      evidence:
+        pack_units: 180 Softgels
+        units_per_serving: 3 softgels
+    expect:
+      amount: 3000
+      servings: 60
+      basis: stated_compound
+      needs_review: false
+    description: 'Each softgel contains 1000mg Tonalin CLA. 3 softgels provide 3000mg.'
+  - id: k27
+    compounds:
+    - cla
+    - green_tea_extract
+    title: Fat Loss Formula — CLA 2000mg & Green Tea Extract 500mg (200mg EGCG) 60 Softgels
+    extraction:
+      actives:
+      - compound_id: cla
+        form_raw: null
+        form_id: cla
+        amount_per_serving: 2000
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: CLA 2000mg
+        components: []
+      - compound_id: green_tea_extract
+        form_raw: null
+        form_id: null
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Green Tea Extract 500mg
+          egcg: 200mg EGCG
+        components:
+        - name: egcg
+          amount: 200
+          unit: mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Softgels
+    expect:
+      compound: cla
+      amount: 2000
+      multi_ingredient: true
+      needs_review: false
+  - id: k28
+    compounds:
+    - beetroot_nitrate
+    title: Beetroot Extract 500mg (providing 6% nitrate, 30mg) 90 Capsules
+    extraction:
+      actives:
+      - compound_id: beetroot_nitrate
+        form_raw: Extract
+        form_id: extract
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 500mg
+          nitrate: providing 6% nitrate, 30mg
+        components:
+        - name: nitrate
+          amount: 30
+          unit: mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      compound: beetroot_nitrate
+      amount: 30
+      servings: 90
+      basis: stated_constituent
+      needs_review: false
+  - id: k29
+    compounds:
+    - beetroot_nitrate
+    title: Beetroot Powder 5000mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: beetroot_nitrate
+        form_raw: Powder
+        form_id: extract
+        amount_per_serving: 5000
+        amount_unit: mg
+        amount_refers_to: unclear
+        evidence:
+          amount_per_serving: 5000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.9
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: beetroot_nitrate
+      needs_review: true
+      review_reason: constituent_not_stated
+  - id: k30
+    compounds:
+    - beetroot_nitrate
+    - vitamin_c
+    title: Beetroot Extract 500mg (60mg Nitrate) with Vitamin C 80mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: beetroot_nitrate
+        form_raw: null
+        form_id: extract
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: Beetroot Extract 500mg
+          nitrate: 60mg Nitrate
+        components:
+        - name: nitrate
+          amount: 60
+          unit: mg
+      - compound_id: vitamin_c
+        form_raw: null
+        form_id: ascorbic_acid
+        amount_per_serving: 80
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin C 80mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: beetroot_nitrate
+      amount: 60
+      multi_ingredient: true
+      needs_review: false
+  - id: k31
+    compounds:
+    - flaxseed_oil
+    title: Flaxseed Oil 1000mg (ALA 550mg) 180 Softgels
+    extraction:
+      actives:
+      - compound_id: flaxseed_oil
+        form_raw: null
+        form_id: oil
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: total_oil
+        evidence:
+          amount_per_serving: 1000mg
+          ALA: ALA 550mg
+        components:
+        - name: ALA
+          amount: 550
+          unit: mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 180
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 180 Softgels
+    expect:
+      compound: flaxseed_oil
+      amount: 550
+      servings: 180
+      basis: stated_component_sum
+      needs_review: false
+  - id: k32
+    compounds:
+    - flaxseed_oil
+    title: Organic Flaxseed Oil 2000mg 90 Softgels
+    extraction:
+      actives:
+      - compound_id: flaxseed_oil
+        form_raw: null
+        form_id: oil
+        amount_per_serving: 2000
+        amount_unit: mg
+        amount_refers_to: total_oil
+        evidence:
+          amount_per_serving: 2000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: softgel
+      confidence: 0.9
+      evidence:
+        pack_units: 90 Softgels
+    expect:
+      compound: flaxseed_oil
+      needs_review: true
+      review_reason: no_ala
+  - id: k33
+    compounds:
+    - flaxseed_oil
+    - vitamin_e
+    title: Flaxseed Oil 1000mg (ALA 550mg) with Vitamin E 10mg 90 Softgels
+    extraction:
+      actives:
+      - compound_id: flaxseed_oil
+        form_raw: null
+        form_id: oil
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: total_oil
+        evidence:
+          amount_per_serving: Flaxseed Oil 1000mg
+          ALA: ALA 550mg
+        components:
+        - name: ALA
+          amount: 550
+          unit: mg
+      - compound_id: vitamin_e
+        form_raw: null
+        form_id: null
+        amount_per_serving: 10
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin E 10mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Softgels
+    expect:
+      compound: flaxseed_oil
+      amount: 550
+      multi_ingredient: false
+      needs_review: false
+  - id: k34
+    compounds:
+    - evening_primrose
+    title: Evening Primrose Oil 1000mg (GLA 90mg) 180 Softgels
+    extraction:
+      actives:
+      - compound_id: evening_primrose
+        form_raw: null
+        form_id: oil
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: total_oil
+        evidence:
+          amount_per_serving: 1000mg
+          GLA: GLA 90mg
+        components:
+        - name: GLA
+          amount: 90
+          unit: mg
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 180
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 180 Softgels
+    expect:
+      compound: evening_primrose
+      amount: 90
+      servings: 180
+      basis: stated_component_sum
+      needs_review: false
+  - id: k35
+    compounds:
+    - evening_primrose
+    title: Evening Primrose Oil 500mg 90 Softgels
+    extraction:
+      actives:
+      - compound_id: evening_primrose
+        form_raw: null
+        form_id: oil
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: total_oil
+        evidence:
+          amount_per_serving: 500mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: softgel
+      confidence: 0.9
+      evidence:
+        pack_units: 90 Softgels
+    expect:
+      compound: evening_primrose
+      needs_review: true
+      review_reason: no_gla
+  - id: k36
+    compounds:
+    - evening_primrose
+    - vitamin_e
+    title: Evening Primrose Oil 1000mg (GLA 90mg) with Vitamin E 5mg 60 Softgels
+    extraction:
+      actives:
+      - compound_id: evening_primrose
+        form_raw: null
+        form_id: oil
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: total_oil
+        evidence:
+          amount_per_serving: Evening Primrose Oil 1000mg
+          GLA: GLA 90mg
+        components:
+        - name: GLA
+          amount: 90
+          unit: mg
+      - compound_id: vitamin_e
+        form_raw: null
+        form_id: null
+        amount_per_serving: 5
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin E 5mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Softgels
+    expect:
+      compound: evening_primrose
+      amount: 90
+      multi_ingredient: false
+      needs_review: false
+  - id: k37
+    compounds:
+    - black_seed_oil
+    title: Black Seed Oil 1000mg (Cold Pressed) 180 Softgels
+    extraction:
+      actives:
+      - compound_id: black_seed_oil
+        form_raw: null
+        form_id: oil
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 1000mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 180
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 180 Softgels
+    expect:
+      compound: black_seed_oil
+      amount: 1000
+      servings: 180
+      needs_review: false
+  - id: k38
+    compounds:
+    - black_seed_oil
+    title: Nigella Sativa Oil 500mg (3% Thymoquinone) — 2 Softgels — 120 Softgels
+    extraction:
+      actives:
+      - compound_id: black_seed_oil
+        form_raw: Nigella Sativa Oil
+        form_id: oil
+        amount_per_serving: 1000
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: 2 softgels provide 1000mg
+          thymoquinone: 3% Thymoquinone
+        components:
+        - name: thymoquinone
+          amount: 3
+          unit: percent
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: softgel
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 120 Softgels
+        units_per_serving: 2 softgels
+    expect:
+      amount: 1000
+      servings: 60
+      needs_review: false
+    description: 'Each softgel contains 500mg Nigella sativa (black seed) oil (3% thymoquinone). 2 softgels provide 1000mg.'
+  - id: k39
+    compounds:
+    - black_seed_oil
+    - vitamin_d3
+    title: Black Seed Oil 500mg with Vitamin D3 1000IU 60 Softgels
+    extraction:
+      actives:
+      - compound_id: black_seed_oil
+        form_raw: null
+        form_id: oil
+        amount_per_serving: 500
+        amount_unit: mg
+        amount_refers_to: compound
+        evidence:
+          amount_per_serving: Black Seed Oil 500mg
+        components: []
+      - compound_id: vitamin_d3
+        form_raw: null
+        form_id: d3
+        amount_per_serving: 1000
+        amount_unit: IU
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin D3 1000IU
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: softgel
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Softgels
+    expect:
+      compound: black_seed_oil
+      amount: 500
+      multi_ingredient: true
+      needs_review: false
+  - id: k40
+    compounds:
+    - silica
+    title: Bamboo Extract Silica 300mg (providing 210mg silica) 90 Capsules
+    extraction:
+      actives:
+      - compound_id: silica
+        form_raw: Bamboo Extract
+        form_id: bamboo
+        amount_per_serving: 210
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: providing 210mg silica
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 90
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 90 Capsules
+    expect:
+      compound: silica
+      form_class: si_bamboo
+      amount: 210
+      servings: 90
+      basis: stated_elemental
+      needs_review: false
+  - id: k41
+    compounds:
+    - silica
+    title: Choline-Stabilised Orthosilicic Acid (ch-OSA) 10mg 30 Capsules
+    extraction:
+      actives:
+      - compound_id: silica
+        form_raw: Choline-Stabilised Orthosilicic Acid
+        form_id: orthosilicic_acid
+        amount_per_serving: 10
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 10mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 30
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 30 Capsules
+    expect:
+      form_class: si_ortho
+      amount: 10
+      servings: 30
+      standard_dose: 10
+      basis: stated_elemental
+      needs_review: false
+  - id: k42
+    compounds:
+    - silica
+    title: Horsetail Extract 300mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: silica
+        form_raw: Horsetail Extract
+        form_id: horsetail
+        amount_per_serving: 300
+        amount_unit: mg
+        amount_refers_to: extract
+        evidence:
+          amount_per_serving: 300mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.85
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: silica
+      form_class: si_horsetail
+      needs_review: true
+      review_reason: ambiguous_basis
+    description: 'A herbal-extract-labelled silica source reads naturally as amount_refers_to
+      "extract" rather than "elemental"/"compound"/"unclear" — the mineral_elemental resolver
+      correctly treats that as an unhandled case and sends it to review (ambiguous_basis) rather
+      than guessing, exactly the "no flattering estimate" outcome Appendix F asks for ("often
+      unclear; expect review"). Silica products that state their silicon content in an
+      "elemental"-style figure (see k40/k41) still rank normally.'
+  - id: k43
+    compounds:
+    - zinc_carnosine
+    title: Zinc Carnosine (PepZin GI) 75mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: zinc_carnosine
+        form_raw: PepZin GI
+        form_id: pepzin
+        amount_per_serving: 75
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 75mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: zinc_carnosine
+      amount: 75
+      servings: 60
+      basis: stated_compound
+      needs_review: false
+  - id: k44
+    compounds:
+    - zinc_carnosine
+    title: Zinc-Carnosine Complex 150mg — 2 Capsules — 120 Capsules
+    extraction:
+      actives:
+      - compound_id: zinc_carnosine
+        form_raw: Zinc-Carnosine Complex
+        form_id: pepzin
+        amount_per_serving: 150
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: 2 capsules provide 150mg
+        components: []
+      is_single_ingredient: true
+      other_actives: []
+      pack_units: 120
+      pack_unit_type: capsule
+      confidence: 0.95
+      units_per_serving: 2
+      evidence:
+        pack_units: 120 Capsules
+        units_per_serving: 2 capsules
+    expect:
+      amount: 150
+      servings: 60
+      basis: stated_compound
+      needs_review: false
+    description: 'Each capsule contains 75mg zinc-carnosine complex (PepZin GI). 2 capsules provide 150mg.'
+  - id: k45
+    compounds:
+    - zinc_carnosine
+    - vitamin_b6
+    title: Digestive Support — Zinc Carnosine 75mg & Vitamin B6 5mg 60 Capsules
+    extraction:
+      actives:
+      - compound_id: zinc_carnosine
+        form_raw: null
+        form_id: pepzin
+        amount_per_serving: 75
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Zinc Carnosine 75mg
+        components: []
+      - compound_id: vitamin_b6
+        form_raw: null
+        form_id: pyridoxine_hcl
+        amount_per_serving: 5
+        amount_unit: mg
+        amount_refers_to: elemental
+        evidence:
+          amount_per_serving: Vitamin B6 5mg
+      is_single_ingredient: false
+      other_actives: []
+      pack_units: 60
+      pack_unit_type: capsule
+      confidence: 0.95
+      evidence:
+        pack_units: 60 Capsules
+    expect:
+      compound: zinc_carnosine
+      amount: 75
+      multi_ingredient: true
+      needs_review: false
 # Must be dropped at ingest, never extracted (Appendix B). Checked from Phase 3, when the
 # ingest alias filter exists. Synthetic titles.
 negatives:

@@ -1,0 +1,68 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "eaa",
+        "form_raw": null,
+        "form_id": "blend",
+        "amount_per_serving": null,
+        "amount_unit": null,
+        "amount_refers_to": null,
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {}
+      },
+      {
+        "compound_id": "leucine",
+        "form_raw": null,
+        "form_id": "l_leucine",
+        "amount_per_serving": 3000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Leucine 3000mg"
+        }
+      },
+      {
+        "compound_id": "lysine",
+        "form_raw": null,
+        "form_id": "l_lysine",
+        "amount_per_serving": 1500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Lysine 1500mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [
+      "Valine"
+    ],
+    "pack_units": 300,
+    "pack_unit_type": "gram",
+    "units_per_serving": 15.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.7,
+    "review_reasons": [
+      "No total EAA amount per serving stated, only individual amino acids listed",
+      "Serving size given as scoop weight but total EAA blend amount unclear"
+    ],
+    "evidence": {
+      "pack_units": "300g Powder",
+      "units_per_serving": "15g Scoop"
+    }
+  }
+}

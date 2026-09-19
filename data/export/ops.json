@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19T01:58:51+01:00",
+ "generated_at": "2026-09-19T02:04:06+01:00",
  "prompt_version": "1.1.0",
  "retailers": [
   {
@@ -130,6 +130,20 @@
   "beta_glucan",
   "colostrum",
   "dextrose_carbs",
-  "electrolytes"
+  "electrolytes",
+  "vitamin_b5",
+  "bcaa",
+  "eaa",
+  "ornithine",
+  "betaine_hcl",
+  "sodium_bicarbonate",
+  "glycerol",
+  "cla",
+  "beetroot_nitrate",
+  "flaxseed_oil",
+  "evening_primrose",
+  "black_seed_oil",
+  "silica",
+  "zinc_carnosine"
  ]
 }

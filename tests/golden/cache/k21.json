@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "vitamin_c",
+        "form_raw": "Ascorbic acid",
+        "form_id": "ascorbic_acid",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin C 1000mg"
+        }
+      },
+      {
+        "compound_id": "sodium_bicarbonate",
+        "form_raw": "sodium bicarbonate",
+        "form_id": "powder",
+        "amount_per_serving": null,
+        "amount_unit": null,
+        "amount_refers_to": null,
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {}
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 20,
+    "pack_unit_type": "tablet",
+    "units_per_serving": 1.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [
+      "sodium bicarbonate amount not stated"
+    ],
+    "evidence": {
+      "pack_units": "20 Tablets",
+      "units_per_serving": "Per tablet"
+    }
+  }
+}
