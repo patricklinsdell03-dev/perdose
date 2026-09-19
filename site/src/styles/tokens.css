@@ -53,10 +53,13 @@
   --ring-best: 0 0 0 2px var(--color-link);
   /* Only for panels that open over the page (the sort and filter panel). */
   --shadow-overlay: 0 12px 32px rgb(28 27 41 / 0.14);
+  color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
+/* Dark palette: only when the visitor switches it on (footer toggle). The light Capsule
+   design is the default on every device, whatever its system setting (Patrick, 2026-09-19). */
+:root[data-theme='dark'] {
+  color-scheme: dark;
     --color-background: #14141c;
     --color-surface: #1e1e2a;
     --color-sunken: #282836;
@@ -76,5 +79,4 @@
     --color-rank-off-bottom: #34344a;
     --color-on-rank: #ffffff;
     --shadow-overlay: 0 12px 32px rgb(0 0 0 / 0.5);
-  }
 }
