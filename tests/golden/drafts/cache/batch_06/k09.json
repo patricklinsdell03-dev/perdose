@@ -1,0 +1,54 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "eaa",
+        "form_raw": null,
+        "form_id": "blend",
+        "amount_per_serving": 10000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "EAA 10000mg"
+        }
+      },
+      {
+        "compound_id": "l_theanine",
+        "form_raw": null,
+        "form_id": "l_theanine",
+        "amount_per_serving": 200.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "L-Theanine 200mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 600,
+    "pack_unit_type": "gram",
+    "units_per_serving": 20.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No form specified for EAA blend",
+      "No description provided to confirm serving details"
+    ],
+    "evidence": {
+      "pack_units": "600g Powder",
+      "units_per_serving": "20g Scoop"
+    }
+  }
+}

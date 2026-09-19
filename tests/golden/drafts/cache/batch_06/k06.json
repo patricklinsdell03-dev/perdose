@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "bcaa",
+        "form_raw": "2:1:1",
+        "form_id": "blend",
+        "amount_per_serving": 5000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": "2:1:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "BCAA (2:1:1) 5000mg"
+        }
+      },
+      {
+        "compound_id": "beta_alanine",
+        "form_raw": "Beta-Alanine",
+        "form_id": "beta_alanine",
+        "amount_per_serving": 2000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Beta-Alanine 2000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 300,
+    "pack_unit_type": "gram",
+    "units_per_serving": 10.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "amount_refers_to for BCAA and beta-alanine assumed compound mass as no elemental cues given"
+    ],
+    "evidence": {
+      "pack_units": "300g Powder",
+      "units_per_serving": "10g Scoop"
+    }
+  }
+}

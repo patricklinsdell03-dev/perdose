@@ -1,0 +1,52 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "agmatine",
+        "form_raw": "Sulfate",
+        "form_id": "sulfate",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Agmatine Sulfate 500mg"
+        }
+      },
+      {
+        "compound_id": "citrulline",
+        "form_raw": "L-Citrulline",
+        "form_id": "base",
+        "amount_per_serving": 3000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "L-Citrulline 3000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": null,
+    "pack_unit_type": null,
+    "units_per_serving": null,
+    "servings_stated": 30,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "pack unit type and units_per_serving not stated"
+    ],
+    "evidence": {
+      "servings_stated": "30 Servings"
+    }
+  }
+}

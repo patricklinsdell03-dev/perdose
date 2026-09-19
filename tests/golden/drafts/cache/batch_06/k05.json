@@ -1,0 +1,71 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "bcaa",
+        "form_raw": null,
+        "form_id": "blend",
+        "amount_per_serving": null,
+        "amount_unit": null,
+        "amount_refers_to": "unclear",
+        "components": [
+          {
+            "name": "leucine",
+            "amount": 2500.0,
+            "unit": "mg"
+          },
+          {
+            "name": "isoleucine",
+            "amount": 1250.0,
+            "unit": "mg"
+          },
+          {
+            "name": "valine",
+            "amount": 1250.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "2:1:1",
+        "branded_extract": null,
+        "evidence": {
+          "leucine": "Leucine 2500mg",
+          "isoleucine": "Isoleucine 1250mg",
+          "valine": "Valine 1250mg"
+        }
+      },
+      {
+        "compound_id": "leucine",
+        "form_raw": null,
+        "form_id": "l_leucine",
+        "amount_per_serving": 2500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Leucine 2500mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.75,
+    "review_reasons": [
+      "no serving size stated",
+      "no total BCAA amount given"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

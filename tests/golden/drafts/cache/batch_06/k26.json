@@ -1,0 +1,37 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "cla",
+        "form_raw": "Tonalin",
+        "form_id": "cla - tonalin",
+        "amount_per_serving": 3000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": "Tonalin",
+        "evidence": {
+          "amount_per_serving": "3 softgels provide 3000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 180,
+    "pack_unit_type": "softgel",
+    "units_per_serving": 3.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "180 Softgels",
+      "units_per_serving": "3 softgels provide 3000mg"
+    }
+  }
+}

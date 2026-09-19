@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "agmatine",
+        "form_raw": "agmatine sulfate",
+        "form_id": "sulfate",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "1000mg Agmatex, agmatine sulfate"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 250,
+    "pack_unit_type": "gram",
+    "units_per_serving": 1.0,
+    "servings_stated": 250,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "Powder 250g",
+      "units_per_serving": "Serving size: 1g",
+      "servings_stated": "Servings per pack: 250"
+    }
+  }
+}

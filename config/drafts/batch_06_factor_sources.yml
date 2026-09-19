@@ -1,0 +1,8 @@
+# DRAFT — formulas behind every factor in batch_06.yml. None: silica deliberately carries no
+# elemental_factor on any form (commercial material varies too widely to estimate honestly —
+# same reasoning as iron bisglycinate); every other batch-6 compound is simple_mass,
+# oil_components or extract_standardised, compared on a stated mass/constituent, not a salt
+# conversion.
+version: 1
+checked_on: 2026-09-19
+sources: []
