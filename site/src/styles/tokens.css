@@ -15,30 +15,42 @@
   --color-coral: #ff5c4d;
   --color-on-coral: #1c1b29;
   --color-coral-text: #c2372a;
-  --color-success: #0e5e6f;
   --color-warning: #8a5a00;
-  --color-warning-tint: #fdf3dc;
-  --color-rank-off-top: #c9ccd6;
-  --color-rank-off-bottom: #9498a8;
+  /* Rank capsule for every row but the cheapest: light grey over a darker grey. The number
+     sits on the lower half, where white passes AA. */
+  --color-rank-off-top: #d3d6df;
+  --color-rank-off-bottom: #6b6f80;
+  --color-on-rank: #ffffff;
 
   --font-display: 'Red Hat Display Variable', 'Red Hat Display', system-ui, sans-serif;
   --font-body: 'Red Hat Text Variable', 'Red Hat Text', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'Red Hat Mono Variable', 'Red Hat Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Type scale. Reading text stays 16px; headings and the per-dose figure grow on wide screens. */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.3rem, 1.1rem + 0.8vw, 1.6rem);
+  --text-2xl: clamp(1.9rem, 1.3rem + 2.2vw, 2.9rem);
+  --text-3xl: clamp(2.3rem, 1.2rem + 4vw, 4.1rem);
+  /* The price per dose: always the largest figure in a row (brief §12.4 rule 3). */
+  --text-figure: clamp(1.45rem, 1.2rem + 0.8vw, 1.85rem);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 1rem;
   --space-4: 1.5rem;
   --space-5: 2.5rem;
-
-  --text-sm: 0.875rem;
-  --text-base: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: 2rem;
+  --space-6: 4rem;
 
   --radius: 12px;
   --radius-card: 18px;
   --radius-pill: 999px;
+
+  /* The cheapest row's ring (mock-up B2). */
+  --ring-best: 0 0 0 2px var(--color-link);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -49,17 +61,17 @@
     --color-text: #eeedf5;
     --color-muted: #a6a5b8;
     --color-line: #34344a;
-    --color-accent: #1a8296;
+    /* A touch darker than before so white text on teal passes AA (5.0:1). */
+    --color-accent: #177a8d;
     --color-link: #5fd0e0;
     --color-accent-tint: #173239;
     --color-on-accent: #ffffff;
     --color-coral: #ff6b5e;
     --color-on-coral: #1c1b29;
     --color-coral-text: #ff8d82;
-    --color-success: #5fd0e0;
     --color-warning: #f0c05a;
-    --color-warning-tint: #33290f;
     --color-rank-off-top: #4a4a60;
     --color-rank-off-bottom: #34344a;
+    --color-on-rank: #ffffff;
   }
 }

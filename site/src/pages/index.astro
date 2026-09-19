@@ -51,7 +51,9 @@ const cards = compounds
       </p>
       <ul class="search-results" id="search-results"></ul>
     </div>
-    <form class="quick" data-quick data-quick-choices={JSON.stringify(quick)} action="/c/" method="get">
+    <!-- Quick compare needs JavaScript (the form list depends on the supplement), so it stays
+         hidden until the script runs; without it, the cards below and the A–Z still work. -->
+    <form class="quick" data-quick data-quick-choices={JSON.stringify(quick)} hidden>
       <label>
         Supplement
         <select name="compound" data-q-compound required>
@@ -94,7 +96,7 @@ const cards = compounds
             <span class="unit">{doseLabel(data.compound, lead.standard_dose)}</span>
           </a>
           {rest.length > 0 && (
-            <ul>
+            <ul class="forms">
               {rest.map((cls) => (
                 <li>
                   <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>
@@ -210,6 +212,7 @@ const cards = compounds
   // Quick compare: build the table URL with its filters as URL state.
   const quick = document.querySelector('[data-quick]');
   if (quick) {
+    quick.hidden = false;
     const choices = JSON.parse(quick.dataset.quickChoices);
     const compoundSel = quick.querySelector('[data-q-compound]');
     const classSel = quick.querySelector('[data-q-class]');

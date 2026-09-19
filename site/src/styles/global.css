@@ -37,19 +37,21 @@ h3 {
   text-wrap: balance;
 }
 h1 {
-  font-size: clamp(1.6rem, 4.5vw, var(--text-xl));
+  font-size: var(--text-2xl);
   font-weight: 900;
-  line-height: 1.1;
+  line-height: 1.05;
   margin: 0 0 var(--space-3);
 }
 h2 {
-  font-size: var(--text-lg);
+  font-size: var(--text-xl);
   font-weight: 800;
-  margin: var(--space-5) 0 var(--space-2);
+  line-height: 1.2;
+  margin: var(--space-5) 0 var(--space-3);
 }
 h3 {
-  font-size: var(--text-base);
+  font-size: var(--text-md);
   font-weight: 700;
+  line-height: 1.3;
   margin: var(--space-4) 0 var(--space-2);
 }
 
@@ -180,6 +182,9 @@ footer nav {
 small {
   color: var(--color-muted);
   font-size: var(--text-sm);
+}
+.small {
+  font-size: var(--text-xs);
 }
 .breadcrumb {
   font-size: var(--text-sm);
@@ -370,15 +375,22 @@ tr.detail td {
   gap: var(--space-2) var(--space-3);
   align-items: start;
 }
+/* The rank capsule: upright, two halves. The number sits in the lower (darker) half, where
+   white text passes AA — teal on the cheapest row, dark grey on the rest. */
 .rank {
-  width: 1.35rem;
-  height: 2.7rem;
+  width: 1.5rem;
+  height: 3rem;
   border-radius: var(--radius-pill);
   display: grid;
-  place-items: center;
-  font: 700 0.75rem/1 var(--font-mono);
-  color: #fff;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  font: 700 var(--text-xs)/1 var(--font-mono);
+  color: var(--color-on-rank);
   background: linear-gradient(var(--color-rank-off-top) 50%, var(--color-rank-off-bottom) 50%);
+}
+.rank::before {
+  content: '';
 }
 tr.is-best .rank {
   background: linear-gradient(var(--color-coral) 50%, var(--color-accent) 50%);
@@ -484,6 +496,26 @@ tr.detail details[open] {
 details ul {
   margin: var(--space-2) 0;
   padding-left: 1.1rem;
+}
+
+/* Questions on compound pages read as questions, not small print. */
+.faq details {
+  border-top: 1px solid var(--color-line);
+  padding: var(--space-3) 0;
+}
+.faq details:last-of-type {
+  border-bottom: 1px solid var(--color-line);
+}
+.faq summary {
+  font: 700 var(--text-md)/1.35 var(--font-display);
+  color: var(--color-text);
+}
+.faq summary:hover {
+  color: var(--color-link);
+}
+.faq details p {
+  margin: 0;
+  color: var(--color-muted);
 }
 .quotes .field {
   color: var(--color-muted);
@@ -746,7 +778,7 @@ dl.facts dd {
   max-width: 46rem;
 }
 .hero h1 {
-  font-size: clamp(2rem, 7vw, 3.25rem);
+  font-size: var(--text-3xl);
   line-height: 1.02;
   letter-spacing: -0.03em;
 }
@@ -792,7 +824,7 @@ dl.facts dd {
 .card ul {
   margin: 0;
 }
-.card li {
+.card .forms li {
   display: flex;
   justify-content: space-between;
   gap: var(--space-2);
@@ -980,7 +1012,7 @@ dl.facts dd {
   min-width: 0;
   font: 500 1rem/1.3 var(--font-body);
   color: var(--color-text);
-  background: var(--color-ground);
+  background: var(--color-background);
   border: 1px solid var(--color-line);
   border-radius: var(--radius);
   padding: 0.5rem 0.6rem;
@@ -1019,8 +1051,9 @@ dl.facts dd {
   grid-column: 1 / -1;
   justify-self: start;
   border: 0;
+  padding: 0;
+  background: none;
   cursor: pointer;
-  font: inherit;
 }
 
 /* Interim Amazon search link: quiet text, never a buy capsule (brief v1.8). */
