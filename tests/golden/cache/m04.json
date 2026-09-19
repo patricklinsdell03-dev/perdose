@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "american_ginseng",
+        "form_raw": "Root Extract",
+        "form_id": "extract",
+        "amount_per_serving": 200.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "200mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "No serving size stated"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}

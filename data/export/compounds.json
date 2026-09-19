@@ -5926,5 +5926,376 @@
     ]
    }
   ]
+ },
+ {
+  "id": "chaga",
+  "name": "Chaga",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "mushroom extract or powder",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "chaga",
+   "inonotus obliquus"
+  ],
+  "classes": [
+   {
+    "id": "cha_fruit",
+    "label": "Fruiting body extract",
+    "slug": "fruiting-body",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "fruiting_body",
+      "names": [
+       "fruiting body",
+       "fruiting body extract",
+       "fruit body",
+       "extract"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cha_mycelium",
+    "label": "Mycelium",
+    "slug": "mycelium",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "mycelium",
+      "names": [
+       "mycelium",
+       "mycelia",
+       "mycelial biomass"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cha_powder",
+    "label": "Whole mushroom powder",
+    "slug": "powder",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "powder",
+       "mushroom powder",
+       "whole mushroom",
+       "chunks",
+       "chaga chunks"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "american_ginseng",
+  "name": "American ginseng",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "root extract",
+  "unit": "mg",
+  "standard_dose": 200.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "american ginseng",
+   "panax quinquefolius",
+   "quinquefolius"
+  ],
+  "classes": [
+   {
+    "id": "ag_extract",
+    "label": "Root extract",
+    "slug": "american-ginseng",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "extract",
+       "standardised",
+       "5% ginsenosides",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "ag_powder",
+    "label": "Root powder",
+    "slug": "american-ginseng-powder",
+    "standard_dose": 200.0,
+    "forms": [
+     {
+      "id": "powder",
+      "names": [
+       "root powder",
+       "powder",
+       "whole root"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "glucomannan",
+  "name": "Glucomannan",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "glucomannan",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "glucomannan",
+   "konjac",
+   "konjac root",
+   "amorphophallus konjac"
+  ],
+  "classes": [
+   {
+    "id": "glm",
+    "label": "Glucomannan",
+    "slug": "glucomannan",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "glucomannan",
+      "names": [
+       "capsules",
+       "powder",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "inulin",
+  "name": "Inulin / FOS",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "inulin / fructo-oligosaccharides",
+  "unit": "mg",
+  "standard_dose": 5000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "inulin",
+   "fos",
+   "fructooligosaccharides",
+   "fructo-oligosaccharides",
+   "chicory root fibre",
+   "chicory root fiber",
+   "chicory inulin"
+  ],
+  "classes": [
+   {
+    "id": "inl",
+    "label": "Inulin / FOS",
+    "slug": "inulin",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "inulin",
+      "names": [
+       "powder",
+       "capsules",
+       "chicory root",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "fibre_phgg",
+  "name": "PHGG",
+  "category": "general-health",
+  "tier": 3,
+  "comparison_quantity": "partially hydrolysed guar gum",
+  "unit": "mg",
+  "standard_dose": 5000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "phgg",
+   "partially hydrolysed guar gum",
+   "partially hydrolyzed guar gum",
+   "sunfiber",
+   "guar gum fibre"
+  ],
+  "classes": [
+   {
+    "id": "phgg",
+    "label": "PHGG",
+    "slug": "phgg",
+    "standard_dose": 5000.0,
+    "forms": [
+     {
+      "id": "phgg",
+      "names": [
+       "powder",
+       "sunfiber",
+       "capsules",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "sea_moss",
+  "name": "Sea moss",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "sea moss (Irish moss)",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "sea moss",
+   "irish moss",
+   "chondrus crispus",
+   "sea moss gel",
+   "wildcrafted sea moss"
+  ],
+  "classes": [
+   {
+    "id": "sm",
+    "label": "Sea moss",
+    "slug": "sea-moss",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "sea_moss",
+      "names": [
+       "powder",
+       "capsules",
+       "raw",
+       "gel",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "black_pepper",
+  "name": "Black pepper (piperine)",
+  "category": "botanicals",
+  "tier": 3,
+  "comparison_quantity": "piperine",
+  "unit": "mg",
+  "standard_dose": 5.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "extract_standardised",
+  "aliases": [
+   "black pepper",
+   "piperine",
+   "bioperine",
+   "piper nigrum"
+  ],
+  "classes": [
+   {
+    "id": "bp",
+    "label": "Black pepper extract (piperine)",
+    "slug": "black-pepper",
+    "standard_dose": 5.0,
+    "forms": [
+     {
+      "id": "extract",
+      "names": [
+       "bioperine",
+       "extract",
+       "95% piperine",
+       "standardised",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "beta_glucan",
+  "name": "Beta-glucan",
+  "category": "general-health",
+  "tier": 3,
+  "comparison_quantity": "beta-glucan",
+  "unit": "mg",
+  "standard_dose": 250.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "beta-glucan",
+   "beta glucan",
+   "beta-glucans",
+   "wellmune"
+  ],
+  "classes": [
+   {
+    "id": "bg_oat",
+    "label": "Oat beta-glucan",
+    "slug": "oat-beta-glucan",
+    "standard_dose": 250.0,
+    "forms": [
+     {
+      "id": "oat",
+      "names": [
+       "oat",
+       "oat beta-glucan",
+       "oat bran",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "bg_yeast",
+    "label": "Yeast beta-glucan (1,3/1,6)",
+    "slug": "yeast-beta-glucan",
+    "standard_dose": 250.0,
+    "forms": [
+     {
+      "id": "yeast",
+      "names": [
+       "yeast",
+       "yeast beta-glucan",
+       "1,3/1,6",
+       "1,3-1,6",
+       "wellmune"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
  }
 ]

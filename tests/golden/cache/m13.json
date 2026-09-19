@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "fibre_phgg",
+        "form_raw": "Sunfiber",
+        "form_id": "sunfiber",
+        "amount_per_serving": 5000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": "Sunfiber",
+        "evidence": {
+          "amount_per_serving": "5000mg PHGG, Sunfiber"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 300,
+    "pack_unit_type": "gram",
+    "units_per_serving": 5.0,
+    "servings_stated": 60,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "300g Powder",
+      "units_per_serving": "Serving size: 5g",
+      "servings_stated": "Servings per tub: 60"
+    }
+  }
+}

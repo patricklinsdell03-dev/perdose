@@ -1,0 +1,51 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "chaga",
+        "form_raw": "extract",
+        "form_id": "fruiting_body",
+        "amount_per_serving": 5000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "extract_mass",
+            "amount": 500.0,
+            "unit": "mg"
+          },
+          {
+            "name": "herb_equivalent",
+            "amount": 5000.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "8:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "5000mg (from 500mg 8:1 extract)",
+          "extract_mass": "500mg 8:1 extract",
+          "herb_equivalent": "Chaga 5000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "serving size (units per serving) not stated"
+    ],
+    "evidence": {
+      "pack_units": "120 Tablets"
+    }
+  }
+}
