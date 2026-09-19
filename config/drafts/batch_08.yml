@@ -1,19 +1,7 @@
-# DRAFT — NOT LIVE. Batch 8 of the registry expansion (brief §17 Phase 6b, Appendix F).
-# Nothing here reaches the site until Patrick approves it and the entries are moved into
-# config/compounds.yml (see docs/RUNBOOK.md, "Approving a drafted batch").
-#
-# Colostrum and carbohydrate powders follow the collagen precedent — `simple_mass`, not the
-# brief's unbuilt `per_gram_macro` type (DECISIONS.md 2026-09-18). Electrolytes follow the
-# multivitamin precedent — `per_serving` (DECISIONS.md 2026-09-18). Standard doses are
-# Appendix F's comparison units — never recommendations. Label ids in the golden file start
-# with "n".
-#
-# nmn and lithium_orotate are HELD at merge time (unauthorised GB novel food, both with
-# direct dated primary-source confirmation — docs/DECISIONS.md 2026-09-19). Their compound
-# entries and golden labels stay in these draft files but are not copied into the live files.
+# HELD only (batch 08's other 3 compounds were approved and merged into
+# config/compounds.yml on 2026-09-19; see docs/DECISIONS.md).
 version: 1
 compounds:
-
   - id: nmn
     name: NMN
     category: general-health
@@ -45,55 +33,3 @@ compounds:
       li_orotate: { label: "Lithium orotate", slug: lithium-orotate }
     forms:
       - { id: orotate, names: [orotate, unspecified], class: li_orotate, elemental_factor: null, note: "HELD (docs/DECISIONS.md 2026-09-19): the sole EU authorisation attempt for lithium orotate dihydrate (NF/2024/30250) was formally terminated without authorisation 2026-03-27; separately, lithium is not on the permitted-minerals list in Schedule 1 to the Food Supplements (England) Regulations 2003 at all, a second independent bar. No factor is set even in draft: by formula the monohydrate (C5H3LiN2O4.H2O) computes to ~3.85% Li, close to the brief's ~3.8%, but the EU application was specifically for the dihydrate (~3.50% Li by the same formula, further from the brief's figure) and real commercial material isn't confirmed either way — a question to settle from real labels only if this is ever unblocked, not now. Drafted and validated so the work is ready, but not merged; `elemental_factor` stays null so nothing could accidentally rank on an estimate." }
-
-  - id: colostrum
-    name: Colostrum
-    category: general-health
-    tier: 3
-    comparison_quantity: colostrum
-    unit: mg
-    standard_dose: 1000
-    label_convention: compound_default
-    normalisation_type: simple_mass
-    aliases: [colostrum, bovine colostrum, colostrum powder]
-    accepted_cofactors: []
-    classes:
-      col: { label: "Colostrum", slug: colostrum }
-    forms:
-      - { id: colostrum, names: [powder, capsules, unspecified], class: col, note: "simple_mass, not the brief's unbuilt per_gram_macro type, same precedent as collagen (DECISIONS.md 2026-09-18). Dose = stated colostrum mass; IgG %, where stated, is stored as an informational component only and does not change the dose." }
-
-  - id: dextrose_carbs
-    name: Carbohydrate powders
-    category: sports
-    tier: 3
-    comparison_quantity: carbohydrate (as labelled)
-    unit: mg
-    standard_dose: 50000
-    label_convention: compound_default
-    normalisation_type: simple_mass
-    aliases: [dextrose, maltodextrin, cyclic dextrin, cluster dextrin, highly branched cyclic dextrin, hbcd]
-    accepted_cofactors: [electrolytes, sodium, citrulline]
-    classes:
-      dex: { label: "Dextrose", slug: dextrose }
-      malto: { label: "Maltodextrin", slug: maltodextrin }
-      cyclic_dex: { label: "Cyclic dextrin (cluster dextrin)", slug: cyclic-dextrin }
-    forms:
-      - { id: dextrose, names: [dextrose, glucose powder, unspecified], class: dex }
-      - { id: maltodextrin, names: [maltodextrin], class: malto }
-      - { id: cyclic_dextrin, names: [cyclic dextrin, cluster dextrin, highly branched cyclic dextrin, hbcd], class: cyclic_dex }
-
-  - id: electrolytes
-    name: Electrolytes
-    category: sports
-    tier: 3
-    comparison_quantity: daily serving
-    unit: serving
-    standard_dose: 1
-    label_convention: compound_default
-    normalisation_type: per_serving
-    aliases: [electrolytes, electrolyte, hydration tablets, electrolyte tablets, electrolyte powder, electrolyte sachets, hydration sachets, rehydration salts]
-    accepted_cofactors: []
-    classes:
-      elec: { label: "Electrolytes (per serving)", slug: electrolytes }
-    forms:
-      - { id: electrolytes, names: [tablets, sachets, powder, capsules, unspecified], class: elec, note: "per_serving, same precedent as multivitamins (DECISIONS.md 2026-09-18): price per daily serving; the sodium/potassium/magnesium-per-serving grid the brief mentions (F.4) is a display follow-up, not a pipeline change, same as multivitamin's own noted gap." }

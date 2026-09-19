@@ -6297,5 +6297,153 @@
     ]
    }
   ]
+ },
+ {
+  "id": "colostrum",
+  "name": "Colostrum",
+  "category": "general-health",
+  "tier": 3,
+  "comparison_quantity": "colostrum",
+  "unit": "mg",
+  "standard_dose": 1000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "colostrum",
+   "bovine colostrum",
+   "colostrum powder"
+  ],
+  "classes": [
+   {
+    "id": "col",
+    "label": "Colostrum",
+    "slug": "colostrum",
+    "standard_dose": 1000.0,
+    "forms": [
+     {
+      "id": "colostrum",
+      "names": [
+       "powder",
+       "capsules",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "dextrose_carbs",
+  "name": "Carbohydrate powders",
+  "category": "sports",
+  "tier": 3,
+  "comparison_quantity": "carbohydrate (as labelled)",
+  "unit": "mg",
+  "standard_dose": 50000.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "simple_mass",
+  "aliases": [
+   "dextrose",
+   "maltodextrin",
+   "cyclic dextrin",
+   "cluster dextrin",
+   "highly branched cyclic dextrin",
+   "hbcd"
+  ],
+  "classes": [
+   {
+    "id": "dex",
+    "label": "Dextrose",
+    "slug": "dextrose",
+    "standard_dose": 50000.0,
+    "forms": [
+     {
+      "id": "dextrose",
+      "names": [
+       "dextrose",
+       "glucose powder",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "malto",
+    "label": "Maltodextrin",
+    "slug": "maltodextrin",
+    "standard_dose": 50000.0,
+    "forms": [
+     {
+      "id": "maltodextrin",
+      "names": [
+       "maltodextrin"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   },
+   {
+    "id": "cyclic_dex",
+    "label": "Cyclic dextrin (cluster dextrin)",
+    "slug": "cyclic-dextrin",
+    "standard_dose": 50000.0,
+    "forms": [
+     {
+      "id": "cyclic_dextrin",
+      "names": [
+       "cyclic dextrin",
+       "cluster dextrin",
+       "highly branched cyclic dextrin",
+       "hbcd"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "electrolytes",
+  "name": "Electrolytes",
+  "category": "sports",
+  "tier": 3,
+  "comparison_quantity": "daily serving",
+  "unit": "serving",
+  "standard_dose": 1.0,
+  "label_convention": "compound_default",
+  "normalisation_type": "per_serving",
+  "aliases": [
+   "electrolytes",
+   "electrolyte",
+   "hydration tablets",
+   "electrolyte tablets",
+   "electrolyte powder",
+   "electrolyte sachets",
+   "hydration sachets",
+   "rehydration salts"
+  ],
+  "classes": [
+   {
+    "id": "elec",
+    "label": "Electrolytes (per serving)",
+    "slug": "electrolytes",
+    "standard_dose": 1.0,
+    "forms": [
+     {
+      "id": "electrolytes",
+      "names": [
+       "tablets",
+       "sachets",
+       "powder",
+       "capsules",
+       "unspecified"
+      ],
+      "elemental_factor": null
+     }
+    ]
+   }
+  ]
  }
 ]

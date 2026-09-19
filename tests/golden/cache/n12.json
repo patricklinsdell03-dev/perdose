@@ -1,0 +1,54 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "dextrose_carbs",
+        "form_raw": "Cluster Dextrin",
+        "form_id": "cyclic_dextrin",
+        "amount_per_serving": 30.0,
+        "amount_unit": "g",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Cluster Dextrin 30g"
+        }
+      },
+      {
+        "compound_id": "citrulline",
+        "form_raw": "Citrulline Malate",
+        "form_id": "malate_unknown",
+        "amount_per_serving": 6000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Citrulline Malate 6000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 900,
+    "pack_unit_type": "gram",
+    "units_per_serving": 30.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "Citrulline malate ratio (1:1 or 2:1) not specified",
+      "900g tub with 30g scoop implies 30 servings, not stated explicitly"
+    ],
+    "evidence": {
+      "pack_units": "900g Tub",
+      "units_per_serving": "30g Scoop"
+    }
+  }
+}

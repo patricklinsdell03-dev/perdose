@@ -1,0 +1,37 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "electrolytes",
+        "form_raw": "tablets",
+        "form_id": "electrolytes - tablets",
+        "amount_per_serving": null,
+        "amount_unit": null,
+        "amount_refers_to": null,
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {}
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 20,
+    "pack_unit_type": "tablet",
+    "units_per_serving": 1.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [
+      "no amount per serving stated"
+    ],
+    "evidence": {
+      "pack_units": "20 Tablets",
+      "units_per_serving": "1 Tablet per Serving"
+    }
+  }
+}

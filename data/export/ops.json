@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19T01:55:22+01:00",
+ "generated_at": "2026-09-19T01:58:51+01:00",
  "prompt_version": "1.1.0",
  "retailers": [
   {
@@ -127,6 +127,9 @@
   "fibre_phgg",
   "sea_moss",
   "black_pepper",
-  "beta_glucan"
+  "beta_glucan",
+  "colostrum",
+  "dextrose_carbs",
+  "electrolytes"
  ]
 }
