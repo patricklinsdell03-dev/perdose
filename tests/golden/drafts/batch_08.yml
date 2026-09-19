@@ -1,0 +1,495 @@
+# DRAFT golden labels for config/drafts/batch_08.yml — synthetic test inputs (brief §15),
+# three per compound: straightforward, awkward, combination. Patrick spot-checks ~10 %
+# against real product pages before the batch goes live. Same format as ../labels.yml.
+#
+# nmn (n01-n03) and lithium_orotate (n04-n06) are prepared here for completeness but are
+# HELD at merge time — both read as unauthorised GB novel foods (docs/DECISIONS.md
+# 2026-09-19) — so they are not moved into tests/golden/labels.yml along with the rest of
+# this batch.
+version: 1
+labels:
+- id: n01
+  compounds:
+  - nmn
+  title: NMN 250mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: nmn
+      form_raw: null
+      form_id: nmn
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 250mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: nmn
+    amount: 250
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+- id: n02
+  compounds:
+  - nmn
+  title: Beta-NMN 250mg — 2 Capsules — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: nmn
+      form_raw: Beta-NMN
+      form_id: nmn
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2 capsules provide 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    amount: 500
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+  description: 'Each capsule contains 250mg Beta-NMN. 2 capsules provide 500mg.'
+- id: n03
+  compounds:
+  - nmn
+  - resveratrol
+  title: NMN 250mg & Resveratrol 250mg Longevity 60 Capsules
+  extraction:
+    actives:
+    - compound_id: nmn
+      form_raw: null
+      form_id: nmn
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: NMN 250mg
+      components: []
+    - compound_id: resveratrol
+      form_raw: null
+      form_id: null
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Resveratrol 250mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: nmn
+    amount: 250
+    multi_ingredient: true
+    needs_review: false
+- id: n04
+  compounds:
+  - lithium_orotate
+  title: Lithium Orotate 1000mcg (Elemental Lithium) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: lithium_orotate
+      form_raw: null
+      form_id: orotate
+      amount_per_serving: 1000
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 1000mcg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: lithium_orotate
+    amount: 1000
+    servings: 60
+    basis: stated_elemental
+    needs_review: false
+- id: n05
+  compounds:
+  - lithium_orotate
+  title: Lithium Orotate 5mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: lithium_orotate
+      form_raw: null
+      form_id: orotate
+      amount_per_serving: 5000
+      amount_unit: mcg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: 5mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.9
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: lithium_orotate
+    needs_review: true
+    review_reason: ambiguous_basis
+  description: 'A bare "Lithium Orotate 5mg" with no "elemental"/"providing" qualifier is
+    genuinely ambiguous (label_convention: ambiguous, no heuristics configured for this held
+    compound), so it goes to review as ambiguous_basis rather than guessing which reading is
+    meant — proves the "never a flattering estimate" rule holds even for a held,
+    not-yet-shippable compound. (No elemental factor is configured either way, so even a
+    clearly compound-mass reading would also be unrankable — see the compound note.)'
+- id: n06
+  compounds:
+  - lithium_orotate
+  - vitamin_b12
+  title: Lithium Orotate 1000mcg (Elemental Lithium) with Vitamin B12 10mcg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: lithium_orotate
+      form_raw: null
+      form_id: orotate
+      amount_per_serving: 1000
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Lithium Orotate 1000mcg (Elemental Lithium)
+      components: []
+    - compound_id: vitamin_b12
+      form_raw: null
+      form_id: unspecified
+      amount_per_serving: 10
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Vitamin B12 10mcg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: lithium_orotate
+    amount: 1000
+    multi_ingredient: true
+    needs_review: false
+- id: n07
+  compounds:
+  - colostrum
+  title: Bovine Colostrum 1000mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: colostrum
+      form_raw: Bovine Colostrum
+      form_id: colostrum
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 1000mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: colostrum
+    amount: 1000
+    servings: 90
+    basis: stated_compound
+    needs_review: false
+- id: n08
+  compounds:
+  - colostrum
+  title: Colostrum Powder 500mg (30% IgG) — 2 Capsules — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: colostrum
+      form_raw: Powder
+      form_id: colostrum
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2 capsules provide 1000mg
+        igg: 30% IgG
+      components:
+      - name: igg
+        amount: 30
+        unit: percent
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    amount: 1000
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+  description: 'Each capsule contains 500mg colostrum powder (30% IgG). 2 capsules provide 1000mg.'
+- id: n09
+  compounds:
+  - colostrum
+  - vitamin_d3
+  title: Colostrum 1000mg & Vitamin D3 1000IU Immune Support 60 Capsules
+  extraction:
+    actives:
+    - compound_id: colostrum
+      form_raw: null
+      form_id: colostrum
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Colostrum 1000mg
+      components: []
+    - compound_id: vitamin_d3
+      form_raw: null
+      form_id: d3
+      amount_per_serving: 1000
+      amount_unit: IU
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Vitamin D3 1000IU
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: colostrum
+    amount: 1000
+    multi_ingredient: true
+    needs_review: false
+- id: n10
+  compounds:
+  - dextrose_carbs
+  title: Dextrose Powder 1kg — 50g Scoop
+  extraction:
+    actives:
+    - compound_id: dextrose_carbs
+      form_raw: Dextrose
+      form_id: dextrose
+      amount_per_serving: 50000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 'Serving size: 50g'
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 1000
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 50
+    evidence:
+      pack_units: 1kg
+      units_per_serving: 'Serving size: 50g'
+  expect:
+    compound: dextrose_carbs
+    form_class: dex
+    amount: 50000
+    servings: 20
+    basis: stated_compound
+    needs_review: false
+  description: 'Pack size: 1kg (1000g). Serving size: 50g. Servings per bag: 20.'
+- id: n11
+  compounds:
+  - dextrose_carbs
+  title: Maltodextrin 1kg — 40g Scoop
+  extraction:
+    actives:
+    - compound_id: dextrose_carbs
+      form_raw: Maltodextrin
+      form_id: maltodextrin
+      amount_per_serving: 40000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: 'Serving size: 40g'
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 1000
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 40
+    evidence:
+      pack_units: 1kg
+      units_per_serving: 'Serving size: 40g'
+  expect:
+    form_class: malto
+    amount: 40000
+    servings: 25
+    basis: stated_compound
+    needs_review: false
+  description: 'Pack size: 1kg (1000g). Serving size: 40g. Servings per bag: 25.'
+- id: n12
+  compounds:
+  - dextrose_carbs
+  - citrulline
+  title: Cluster Dextrin 30g & Citrulline Malate 6000mg — 30g Scoop — 900g Tub
+  extraction:
+    actives:
+    - compound_id: dextrose_carbs
+      form_raw: Cluster Dextrin
+      form_id: cyclic_dextrin
+      amount_per_serving: 30000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Cluster Dextrin 30g
+      components: []
+    - compound_id: citrulline
+      form_raw: Citrulline Malate
+      form_id: malate_2_1
+      amount_per_serving: 6000
+      amount_unit: mg
+      amount_refers_to: compound
+      evidence:
+        amount_per_serving: Citrulline Malate 6000mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 900
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 30
+    evidence:
+      pack_units: 900g Tub
+      units_per_serving: 30g Scoop
+  expect:
+    compound: dextrose_carbs
+    form_class: cyclic_dex
+    amount: 30000
+    servings: 30
+    multi_ingredient: false
+    needs_review: false
+- id: n13
+  compounds:
+  - electrolytes
+  title: Electrolyte Tablets 20 Tablets — 1 Tablet per Serving
+  extraction:
+    actives:
+    - compound_id: electrolytes
+      form_raw: null
+      form_id: electrolytes
+      amount_per_serving: null
+      amount_unit: null
+      amount_refers_to: null
+      evidence: {}
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 20
+    pack_unit_type: tablet
+    confidence: 0.95
+    units_per_serving: 1
+    evidence:
+      pack_units: 20 Tablets
+      units_per_serving: 1 Tablet per Serving
+  expect:
+    compound: electrolytes
+    servings: 20
+    basis: per_serving
+    needs_review: false
+- id: n14
+  compounds:
+  - electrolytes
+  title: Hydration Sachets — 1 Sachet Daily — 30 Sachets
+  extraction:
+    actives:
+    - compound_id: electrolytes
+      form_raw: null
+      form_id: electrolytes
+      amount_per_serving: null
+      amount_unit: null
+      amount_refers_to: null
+      evidence: {}
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 30
+    pack_unit_type: sachet
+    confidence: 0.95
+    units_per_serving: 1
+    evidence:
+      pack_units: 30 Sachets
+      units_per_serving: 1 Sachet Daily
+  expect:
+    servings: 30
+    basis: per_serving
+    needs_review: false
+- id: n15
+  compounds:
+  - electrolytes
+  - vitamin_c
+  title: Electrolyte Powder with Vitamin C 60mg — 1 Sachet — 20 Sachets
+  extraction:
+    actives:
+    - compound_id: electrolytes
+      form_raw: null
+      form_id: electrolytes
+      amount_per_serving: null
+      amount_unit: null
+      amount_refers_to: null
+      evidence: {}
+      components: []
+    - compound_id: vitamin_c
+      form_raw: null
+      form_id: ascorbic_acid
+      amount_per_serving: 60
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Vitamin C 60mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 20
+    pack_unit_type: sachet
+    confidence: 0.95
+    units_per_serving: 1
+    evidence:
+      pack_units: 20 Sachets
+      units_per_serving: 1 Sachet
+  expect:
+    compound: electrolytes
+    servings: 20
+    multi_ingredient: false
+    needs_review: false
+  description: 'Proves the per_serving design note: a multi-nutrient per_serving product is
+    many ingredients by design, never flagged as a combination, same as multivitamins.'

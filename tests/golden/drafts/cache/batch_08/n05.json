@@ -1,0 +1,40 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "lithium_orotate",
+        "form_raw": "Orotate",
+        "form_id": "orotate",
+        "amount_per_serving": 5.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Lithium Orotate 5mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "amount_refers_to unclear: no elemental/compound cue words in listing",
+      "units_per_serving not stated",
+      "no elemental factor configured for lithium orotate, so amount could not be classified as elemental or compound"
+    ],
+    "evidence": {
+      "pack_units": "90 Capsules"
+    }
+  }
+}

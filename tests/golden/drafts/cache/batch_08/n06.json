@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": true,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "lithium_orotate",
+        "form_raw": "Orotate",
+        "form_id": "orotate",
+        "amount_per_serving": 1000.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Lithium Orotate 1000mcg"
+        }
+      },
+      {
+        "compound_id": "vitamin_b12",
+        "form_raw": null,
+        "form_id": "unspecified",
+        "amount_per_serving": 10.0,
+        "amount_unit": "mcg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Vitamin B12 10mcg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "no serving size stated",
+      "amount_refers_to unclear for both actives due to no elemental/compound cues"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

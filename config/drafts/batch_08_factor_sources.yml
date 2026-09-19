@@ -1,0 +1,13 @@
+# DRAFT — formulas behind every factor in batch_08.yml. Currently none are configured:
+# lithium_orotate's form deliberately carries `elemental_factor: null` (see its note in
+# batch_08.yml) even though it is a mineral_elemental compound, both because it is held on
+# UK legal grounds and because the correct hydrate isn't settled. Reference calculation only,
+# not wired into any factor (not added to compounds.yml, so tests/test_factors.py does not
+# need a Li atomic weight yet):
+#   lithium orotate monohydrate C5H3LiN2O4.H2O: Li 6.94 / MW 180.044 = 3.85% (closest to the
+#     brief's ~3.8%)
+#   lithium orotate dihydrate C5H3LiN2O4.2H2O: Li 6.94 / MW 198.059 = 3.50% (the hydrate named
+#     in the EU novel-food application NF/2024/30250)
+version: 1
+checked_on: 2026-09-19
+sources: []
