@@ -106,10 +106,14 @@ All of `CLAUDE.md`, plus these learned the hard way:
    getting thin; the registry is close to Appendix F's ~150-compound target (see §21.3/Appendix F
    itself for what's left, mainly a handful of niche botanicals and the CFU/per-gram-macro
    compounds below).
-4. **Probiotics**: proposed but not built (Patrick's explicit instruction this run). CFU-based
-   comparison needs a new `cfu_count` normalisation type (brief §6.5, "later") and Patrick's
-   answer to a few questions only he can settle — see the proposal in this run's chat report, or
-   ask Claude to restate it. Digestive enzymes and everything in Appendix F.11 stay excluded.
+4. **Probiotics**: proposed, still not built — but the open questions are now resolved (Patrick,
+   2026-09-19: "use recommended simplicity"; full reasoning in docs/DECISIONS.md). Decided: take
+   the stated CFU figure at face value (no manufacture-vs-expiry adjustment logic); use the
+   single combined total on multi-strain products (per-strain amounts, if given, are stored as
+   informational components only); one class to start, no split by strain/technology. What's
+   still needed before this can be drafted: a new `cfu_count` normalisation type (brief §6.5,
+   "later") — a real code addition (a resolver function plus a `CFU` unit), not a
+   compounds.yml-only change. Digestive enzymes and everything in Appendix F.11 stay excluded.
 5. Reapplications on Awin after the profile fix (Patrick clicks; Claude may do it in his Chrome
    only with his explicit say-so).
 6. Nothing else is blocked on him unless a feed arrives.
