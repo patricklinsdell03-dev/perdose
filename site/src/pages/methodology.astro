@@ -81,9 +81,11 @@ const grading = (await learnPages()).size > 0 && rubric?.status === 'approved' ?
     <p>
       Products are ranked only against others of the same form. Magnesium citrate is never ranked against magnesium
       bisglycinate, creatine monohydrate never against creatine HCl, MK-7 never against MK-4. Products with several
-      active ingredients are kept out of the main tables, because their price cannot fairly be assigned to one
-      ingredient. Delivery charges are not included, because they depend on the size of your basket; each retailer’s
-      delivery terms are listed below.
+      active ingredients are not ranked alongside single-ingredient ones. You can switch them into a table with
+      “Include combination products”; they are then marked as combinations, their price counts the one ingredient
+      only, and they are never labelled the cheapest. The <a href="/combinations/">Combinations</a> page compares them
+      by what a daily serving contains. Table prices leave out delivery, because it depends on the size of your basket;
+      <a href="/basket/">Build a basket</a> adds each retailer’s delivery charge, and the terms are listed below.
     </p>
 
     <h2 id="unverified">What “unverified” means</h2>

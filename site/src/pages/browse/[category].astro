@@ -1,9 +1,9 @@
 ---
 // Browse by ingredient class, never by health goal (brief §12.1).
+import CompoundCard from '../../components/CompoundCard.astro';
 import Base from '../../layouts/Base.astro';
 import type { CompoundData } from '../../lib/data';
 import { CATEGORY_LABELS, compoundSlug, compounds, pageClasses, ukRanked } from '../../lib/data';
-import { doseLabel, perDose } from '../../lib/format';
 
 export function getStaticPaths() {
   const categories = [...new Set(compounds.map((d) => d.compound.category))];
@@ -20,26 +20,36 @@ interface Props {
 const { items } = Astro.props;
 const { category } = Astro.params;
 const label = CATEGORY_LABELS[category ?? ''] ?? category;
+const priced = items.filter((d) => pageClasses(d).some((cls) => ukRanked(cls).length > 0));
+const comboOnly = items.filter((d) => !priced.includes(d) && pageClasses(d).length > 0);
 ---
 
 <Base title={`${label}: UK prices per dose`} description={`${label} compared by price per standard dose across UK retailers.`}>
-  <p class="breadcrumb"><a href="/">Home</a></p>
-  <h1 data-pagefind-meta="title">{label}</h1>
-  <ul class="cards">
-    {
-      items.map((data) => (
-        <li class="card">
-          <h3><a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a></h3>
-          <ul>
-            {pageClasses(data).filter((cls) => ukRanked(cls).length > 0).map((cls) => (
-              <li>
-                <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>: from{' '}
-                <strong>{perDose(ukRanked(cls)[0].price_per_std_dose)}</strong> {doseLabel(data.compound, cls.standard_dose)}
-              </li>
-            ))}
-          </ul>
-        </li>
-      ))
-    }
-  </ul>
+  <header class="page-hero">
+    <div>
+      <p class="breadcrumb"><a href="/">Home</a></p>
+      <h1 data-pagefind-meta="title">{label}</h1>
+      <p class="page-sub">Compared by price per standard dose across UK retailers. Pick one to see every form side by side.</p>
+    </div>
+  </header>
+  {
+    priced.length > 0 && (
+      <ul class="cards">
+        {priced.map((data) => <CompoundCard data={data} level={2} />)}
+      </ul>
+    )
+  }
+  {
+    comboOnly.length > 0 && (
+      <p class="also">
+        Also compared, so far only in combination products:{' '}
+        {comboOnly.map((data, i) => (
+          <>
+            <a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a>
+            {i < comboOnly.length - 1 ? ', ' : '.'}
+          </>
+        ))}
+      </p>
+    )
+  }
 </Base>

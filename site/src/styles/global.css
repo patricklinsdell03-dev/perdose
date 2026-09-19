@@ -659,7 +659,8 @@ html:has(.toolbar) {
   accent-color: var(--color-accent);
 }
 
-/* Table (wide screens) */
+/* Plain data tables (methodology, the operator page): white card, quiet headings. The price
+   tables have their own card layout (.offer-table, below). */
 .table-wrap {
   overflow-x: auto;
   background: var(--color-surface);
@@ -693,27 +694,10 @@ thead th {
 thead .num {
   font-family: var(--font-body);
 }
-td.key {
-  font-family: var(--font-display);
-  font-weight: 900;
-  font-size: 1.15rem;
-  letter-spacing: -0.02em;
-  color: var(--color-link);
-}
 @media (min-width: 52.01rem) {
-  tbody tr.offer + tr.detail + tr.offer td,
-  tbody tr.offer + tr.offer td {
+  .table-wrap tbody tr + tr td {
     border-top: 1px solid var(--color-line);
   }
-}
-tr.detail td {
-  padding-top: 0;
-}
-.product {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--space-2) var(--space-3);
-  align-items: start;
 }
 /* The rank capsule: upright, two halves. The number sits in the lower (darker) half, where
    white text passes AA — teal on the cheapest row, dark grey on the rest. */
@@ -734,21 +718,6 @@ tr.detail td {
 }
 tr.is-best .rank {
   background: linear-gradient(var(--color-coral) 50%, var(--color-accent) 50%);
-}
-.name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: var(--color-text);
-  text-decoration: none;
-}
-.name:hover {
-  text-decoration: underline;
-}
-.by {
-  display: block;
-  font-size: 0.78rem;
-  color: var(--color-muted);
 }
 .badge.combo {
   color: var(--color-coral-text);
@@ -1078,15 +1047,6 @@ details summary {
 details[open] > summary {
   margin-bottom: var(--space-2);
 }
-tr.detail details > *:not(summary) {
-  font-family: var(--font-mono);
-  font-size: 0.8125rem;
-}
-tr.detail details[open] {
-  background: var(--color-background);
-  border-radius: var(--radius);
-  padding: var(--space-2) var(--space-3);
-}
 details ul {
   margin: var(--space-2) 0;
   padding-left: 1.1rem;
@@ -1157,6 +1117,34 @@ dl.facts dt {
 dl.facts dd {
   margin: 0;
 }
+/* Product page: the label facts as small tiles, like the figures in a price card. */
+.fact-tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+  gap: 0.6rem;
+  margin: 0;
+}
+.fact-tiles > div {
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+}
+.fact-tiles dt {
+  font-size: var(--text-xs);
+  color: var(--color-muted);
+}
+.fact-tiles dd {
+  margin: 0.2rem 0 0;
+  font-weight: 600;
+}
+.fact-tiles .basis {
+  font-weight: 400;
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.product-prices .table-meta {
+  margin-top: 0;
+}
 
 .az {
   columns: 16rem;
@@ -1168,124 +1156,40 @@ dl.facts dd {
   margin-bottom: var(--space-1);
 }
 
-/* Narrow screens: each row becomes a capsule-direction card — name, three figure tiles
-   with price per dose biggest (brief §12.2), then the buy capsule full width. */
+/* Narrow screens: plain data tables stack each row into a small card. Only tables inside
+   .table-wrap — the basket and learn-page tables keep their own layouts. */
 @media (max-width: 52rem) {
   .table-wrap {
     background: none;
     padding: 0;
     overflow: visible;
   }
-  thead {
+  .table-wrap thead {
     display: none;
   }
-  table,
-  tbody,
-  tr,
-  td {
+  .table-wrap :is(table, tbody, tr, td) {
     display: block;
     width: 100%;
   }
-  tr.offer {
+  .table-wrap tr.offer.plain {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    grid-template-areas:
-      'product product product'
-      'pack pack serving'
-      'dose month days'
-      'buy buy buy';
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-2);
-    margin-top: var(--space-3);
+    margin-top: var(--space-2);
     padding: var(--space-3);
     background: var(--color-surface);
-    border-radius: var(--radius-card) var(--radius-card) 0 0;
+    border-radius: var(--radius-card);
   }
-  tr.offer.is-best {
-    box-shadow: inset 0 4px 0 var(--color-accent);
-  }
-  tbody tr.offer td {
-    border: 0;
+  .table-wrap tr.offer.plain td {
     padding: 0;
+    border: 0;
     text-align: left;
     white-space: normal;
   }
-  td[data-cell='product'] {
-    grid-area: product;
-  }
-  td[data-cell='pack'] {
-    grid-area: pack;
-  }
-  td[data-cell='serving'] {
-    grid-area: serving;
-  }
-  td[data-cell='pack'],
-  td[data-cell='serving'] {
-    font-size: 0.78rem;
-    color: var(--color-muted);
-    font-family: var(--font-body);
-  }
-  tbody tr.offer td[data-cell='dose'],
-  tbody tr.offer td[data-cell='month'],
-  tbody tr.offer td[data-cell='days'] {
-    background: var(--color-background);
-    border-radius: var(--radius);
-    padding: var(--space-2);
-    font-size: 0.95rem;
-  }
-  tbody tr.offer td[data-cell='dose'] {
-    grid-area: dose;
-    background: var(--color-accent-tint);
-    font-size: 1.35rem;
-  }
-  td[data-cell='month'] {
-    grid-area: month;
-  }
-  td[data-cell='days'] {
-    grid-area: days;
-  }
-  td[data-cell='dose']::before,
-  td[data-cell='month']::before,
-  td[data-cell='days']::before {
-    content: attr(data-label);
-    display: block;
-    font: 400 0.7rem/1.3 var(--font-body);
-    letter-spacing: 0;
-    color: var(--color-muted);
-  }
-  td.buy {
-    grid-area: buy;
-  }
-  td.buy .button {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    text-align: center;
-    font-size: 0.9rem;
-  }
-  tr.detail {
-    padding: 0 var(--space-3) var(--space-3);
-    background: var(--color-surface);
-    border-radius: 0 0 var(--radius-card) var(--radius-card);
-  }
-  tr.detail td {
-    padding: 0;
-  }
-  /* product-page tables keep a simple stacked layout */
-  tr.offer.plain {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: none;
-    border-radius: var(--radius-card);
-  }
-  tr.offer.plain td {
-    grid-area: auto;
-  }
-  tr.offer.plain td[data-label]::before {
+  .table-wrap tr.offer.plain td[data-label]::before {
     content: attr(data-label) ': ';
-    display: inline;
     color: var(--color-muted);
-    font: 400 0.78rem/1.3 var(--font-body);
-  }
-  tr.offer.plain td.buy {
-    grid-column: 1 / -1;
+    font: 400 var(--text-xs)/1.3 var(--font-body);
   }
 }
 
@@ -1358,12 +1262,6 @@ dl.facts dd {
 .hit-summary {
   color: var(--color-muted);
   font-size: 0.875rem;
-}
-
-@media (max-width: 52rem) {
-  td[data-cell='serving']::after {
-    content: ' a serving';
-  }
 }
 
 /* Home: the opening (headline, search, quick compare, facts) with a real example card beside
