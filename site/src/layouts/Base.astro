@@ -4,6 +4,8 @@ import '@fontsource-variable/red-hat-text';
 import '@fontsource-variable/red-hat-mono';
 import '../styles/tokens.css';
 import '../styles/global.css';
+import { CATEGORY_LABELS, compounds, meta } from '../lib/data';
+import { isoToLong } from '../lib/format';
 import { site } from '../lib/site';
 
 interface Props {
@@ -27,6 +29,18 @@ const { title, description = site.tagline, image, noindex = false, jsonLd, searc
 const pageTitle = title ? `${title} | ${site.name}` : `${site.name} — ${site.tagline}`;
 const canonical = site.base_url ? new URL(Astro.url.pathname, site.base_url).href : undefined;
 const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : image;
+
+const path = Astro.url.pathname;
+const isHome = path === '/';
+const NAV = [
+  { href: '/#search', label: 'Search', search: true },
+  { href: '/combinations/', label: 'Combinations' },
+  { href: '/basket/', label: 'Build a basket' },
+  { href: '/a-z/', label: 'A–Z' },
+  { href: '/methodology/', label: 'How we compare' },
+  { href: '/about/', label: 'About' },
+];
+const categories = Object.keys(CATEGORY_LABELS).filter((id) => compounds.some((d) => d.compound.category === id));
 ---
 
 <!doctype html>
@@ -50,43 +64,76 @@ const imageUrl = image && site.base_url ? new URL(image, site.base_url).href : i
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <p class="disclosure">
-      <span class="wrap" style="display:block">{site.disclosure} <a href="/disclosure/">Full disclosure</a>.</span>
+      <span class="wrap" style="display:block">
+        <span class:list={{ 'wide-only': Boolean(site.disclosure_short) }}>{site.disclosure}</span>
+        {site.disclosure_short && <span class="narrow-only">{site.disclosure_short}</span>}{' '}
+        <a href="/disclosure/">Full disclosure</a>.
+      </span>
     </p>
     <header class="site-header">
       <div class="wrap">
         <a href="/" class="site-name"><span class="capsule" aria-hidden="true"></span>{site.name.toLowerCase()}</a>
         <nav aria-label="Main">
-          <a href="/#search">Search</a>
-          <a href="/combinations/">Combinations</a>
-          <a href="/basket/">Build a basket</a>
-          <a href="/a-z/">A–Z</a>
-          <a href="/methodology/">How we compare</a>
-          <a href="/about/">About</a>
+          {
+            NAV.map((item) => (
+              <a
+                href={item.href}
+                class:list={{ 'nav-search': item.search }}
+                aria-current={!item.search && path.startsWith(item.href) ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))
+          }
         </nav>
+        <div class="header-end">
+          {
+            !isHome && (
+              <form class="header-search" action="/" method="get" role="search">
+                <label class="sr-only" for="header-q">Search supplements and products</label>
+                <input id="header-q" type="search" name="q" placeholder="Search supplements" autocomplete="off" />
+              </form>
+            )
+          }
+          <span class="updated">Updated {isoToLong(meta.generated_at)}</span>
+        </div>
       </div>
     </header>
-    <main class="wrap" data-pagefind-body={noindex ? undefined : true} data-pagefind-weight={searchWeight}>
+    <main id="main" class="wrap" data-pagefind-body={noindex ? undefined : true} data-pagefind-weight={searchWeight}>
       <span hidden data-pagefind-meta="kind[data-v]" data-v={searchKind}></span>
       <span hidden data-pagefind-meta="summary[data-v]" data-v={searchSummary}></span>
       <slot />
       {searchTerms.length > 0 && <p class="sr-only" data-pagefind-weight="10">Also known as: {searchTerms.join(', ')}.</p>}
     </main>
-    <footer>
+    <footer class="site-footer">
       <span hidden>Impact-Site-Verification: b6cad2ff-e231-40ab-ad47-03b66249976d</span>
-      <div class="wrap">
-        <nav aria-label="Footer">
-          <a href="/methodology/">Methodology</a>
+      <div class="wrap footer-grid">
+        <div class="footer-about">
+          <a href="/" class="site-name"><span class="capsule" aria-hidden="true"></span>{site.name.toLowerCase()}</a>
+          <p>{site.tagline}.</p>
+          <p>
+            Not medical advice. We compare prices of supplements people have already decided to buy; we do not recommend
+            what to take. If you are under 18, pregnant, take medication or have a health condition, speak to a pharmacist
+            or GP.
+          </p>
+          {site.amazon_tag && <p class="small">As an Amazon Associate, {site.name} earns from qualifying purchases.</p>}
+        </div>
+        <nav aria-label="Compare prices" class="footer-links">
+          <h2>Compare</h2>
+          <a href="/a-z/">A–Z of supplements</a>
+          {categories.map((id) => <a href={`/browse/${id}/`}>{CATEGORY_LABELS[id]}</a>)}
+          <a href="/combinations/">Combinations</a>
+          <a href="/basket/">Build a basket</a>
+        </nav>
+        <nav aria-label="About this site" class="footer-links">
+          <h2>This site</h2>
+          <a href="/methodology/">How we compare</a>
           <a href="/disclosure/">Affiliate disclosure</a>
           <a href="/about/">About</a>
-          <a href="/a-z/">A–Z</a>
+          {site.contact_email && <a href={`mailto:${site.contact_email}`}>Contact us</a>}
         </nav>
-        <p>
-          Not medical advice. We compare prices of supplements people have already decided to buy; we do not recommend
-          what to take. If you are under 18, pregnant, take medication or have a health condition, speak to a pharmacist
-          or GP.
-        </p>
-        {site.amazon_tag && <p class="muted small">As an Amazon Associate, {site.name} earns from qualifying purchases.</p>}
       </div>
     </footer>
   </body>

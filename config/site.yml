@@ -5,6 +5,8 @@ tagline: UK supplement prices compared per standard dose
 disclosure: >-
   We earn commission on purchases made through our links. It never affects ranking:
   tables are ordered purely by price per dose, and no retailer or brand can pay for position.
+# Phones show this shorter line instead, with the same "Full disclosure" link.
+disclosure_short: We may earn commission from our links. It never affects the order.
 contact_email: "hello@perdose.co.uk"   # forwards to Patrick via Cloudflare Email Routing
 # Amazon Associates store id (not a secret). Blank = no Amazon links. Until the Product
 # Advertising API is granted, Amazon appears only as a "Check on Amazon" search link that is

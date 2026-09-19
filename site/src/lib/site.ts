@@ -7,6 +7,8 @@ export interface SiteConfig {
   base_url: string;
   tagline: string;
   disclosure: string;
+  /** Shown on phones in place of `disclosure`, beside the same "Full disclosure" link. */
+  disclosure_short?: string;
   contact_email: string;
   amazon_tag?: string;
 }
