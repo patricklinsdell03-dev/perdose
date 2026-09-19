@@ -1,0 +1,59 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "chaga",
+        "form_raw": "Extract",
+        "form_id": "fruiting_body",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "beta-glucans",
+            "amount": 30.0,
+            "unit": "percent"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Chaga Extract 500mg",
+          "beta-glucans": "providing 30% Beta-Glucans"
+        }
+      },
+      {
+        "compound_id": "reishi",
+        "form_raw": "Extract",
+        "form_id": "fruiting_body",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Reishi Extract 500mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "30% Beta-Glucans is a standardisation percentage of the chaga extract, not a separate beta-glucan active; units_per_serving not stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

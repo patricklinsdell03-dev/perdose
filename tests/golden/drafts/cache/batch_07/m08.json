@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "glucomannan",
+        "form_raw": null,
+        "form_id": "glucomannan - unspecified",
+        "amount_per_serving": 1.0,
+        "amount_unit": "g",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Konjac glucomannan 1g"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 200,
+    "pack_unit_type": "gram",
+    "units_per_serving": 1.0,
+    "servings_stated": 200,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "200g",
+      "units_per_serving": "Serving size: 1g",
+      "servings_stated": "Servings per tub: 200"
+    }
+  }
+}

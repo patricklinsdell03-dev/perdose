@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "fibre_phgg",
+        "form_raw": null,
+        "form_id": "phgg - powder, sunfiber, capsules, unspecified",
+        "amount_per_serving": 5000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "PHGG 5000mg"
+        }
+      },
+      {
+        "compound_id": "psyllium",
+        "form_raw": "Husk",
+        "form_id": "powder",
+        "amount_per_serving": 3000.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Psyllium Husk 3000mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.75,
+    "review_reasons": [
+      "form given as capsules but amounts likely refer to powder content pre-encapsulation, unclear if per-serving amounts are per capsule or per serving of multiple capsules",
+      "serving size not stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

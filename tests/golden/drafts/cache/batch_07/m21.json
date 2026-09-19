@@ -1,0 +1,59 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "curcumin",
+        "form_raw": "Curcuminoids",
+        "form_id": "extract_95",
+        "amount_per_serving": 500.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "curcuminoids",
+            "amount": 475.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Curcumin 500mg",
+          "curcuminoids": "475mg Curcuminoids"
+        }
+      },
+      {
+        "compound_id": "black_pepper",
+        "form_raw": "BioPerine",
+        "form_id": "extract",
+        "amount_per_serving": 5.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": "BioPerine",
+        "evidence": {
+          "amount_per_serving": "BioPerine 5mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [
+      "units_per_serving not stated"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

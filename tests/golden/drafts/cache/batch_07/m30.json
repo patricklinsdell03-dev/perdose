@@ -1,0 +1,53 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "dmae",
+        "form_raw": null,
+        "form_id": "dmae - unspecified",
+        "amount_per_serving": 250.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "DMAE 250mg"
+        }
+      },
+      {
+        "compound_id": "bacopa",
+        "form_raw": null,
+        "form_id": "generic - unspecified",
+        "amount_per_serving": 300.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Bacopa 300mg"
+        }
+      }
+    ],
+    "is_single_ingredient": false,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.8,
+    "review_reasons": [
+      "No serving size stated",
+      "Amount refers to unclear for both actives"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules"
+    }
+  }
+}

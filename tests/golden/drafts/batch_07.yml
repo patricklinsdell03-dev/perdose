@@ -1,0 +1,975 @@
+# DRAFT golden labels for config/drafts/batch_07.yml — synthetic test inputs (brief §15),
+# three per compound: straightforward, awkward, combination. Patrick spot-checks ~10 %
+# against real product pages before the batch goes live. Same format as ../labels.yml.
+#
+# dmae (m28-m30) and uridine (m25-m27) are prepared here for completeness but are HELD at
+# merge time — both read as unauthorised/unclear GB novel foods (docs/DECISIONS.md 2026-09-19)
+# — so they are not moved into tests/golden/labels.yml along with the rest of this batch.
+version: 1
+labels:
+- id: m01
+  compounds:
+  - chaga
+  title: Chaga Mushroom Extract 500mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: chaga
+      form_raw: Extract
+      form_id: fruiting_body
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: chaga
+    form_class: cha_fruit
+    amount: 500
+    servings: 90
+    basis: stated_extract
+    needs_review: false
+- id: m02
+  compounds:
+  - chaga
+  title: Chaga 5000mg (from 500mg 8:1 extract) 120 Tablets
+  extraction:
+    actives:
+    - compound_id: chaga
+      form_raw: extract
+      form_id: fruiting_body
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 500mg 8:1 extract
+        extract_mass: 500mg
+      components:
+      - name: extract_mass
+        amount: 500
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: tablet
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Tablets
+  expect:
+    amount: 500
+    servings: 120
+    basis: stated_extract
+    needs_review: false
+- id: m03
+  compounds:
+  - chaga
+  - reishi
+  - beta_glucan
+  title: Chaga Extract 500mg (providing 30% Beta-Glucans) & Reishi Extract 500mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: chaga
+      form_raw: Extract
+      form_id: fruiting_body
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Chaga Extract 500mg
+        beta-glucans: 30% Beta-Glucans
+      components:
+      - name: beta-glucans
+        amount: 30
+        unit: percent
+    - compound_id: reishi
+      form_raw: Extract
+      form_id: fruiting_body
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Reishi Extract 500mg
+      components: []
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: chaga
+    amount: 500
+    multi_ingredient: true
+    needs_review: false
+  description: 'Deliberately stress-tests the batch-7 beta_glucan trap (docs/DECISIONS.md /
+    config/drafts/batch_07.yml note on the chaga entry): a mushroom-standardisation percentage
+    must not create a spurious beta_glucan active. The reference extraction above (calc-only)
+    asserts the correct reading has no beta_glucan active at all; whether the live model agrees
+    is exactly what `make golden-live DRAFT=batch_07` on this label proves or disproves.'
+- id: m04
+  compounds:
+  - american_ginseng
+  title: American Ginseng Root Extract 200mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: american_ginseng
+      form_raw: Root Extract
+      form_id: extract
+      amount_per_serving: 200
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 200mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: american_ginseng
+    form_class: ag_extract
+    amount: 200
+    servings: 90
+    basis: stated_extract
+    needs_review: false
+- id: m05
+  compounds:
+  - american_ginseng
+  title: American Ginseng Root Powder 1000mg 120 Capsules
+  extraction:
+    actives:
+    - compound_id: american_ginseng
+      form_raw: Root Powder
+      form_id: powder
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 1000mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    form_class: ag_powder
+    amount: 1000
+    servings: 120
+    basis: stated_extract
+    needs_review: false
+- id: m06
+  compounds:
+  - american_ginseng
+  - rhodiola
+  title: American Ginseng 200mg & Rhodiola 200mg Energy 60 Capsules
+  extraction:
+    actives:
+    - compound_id: american_ginseng
+      form_raw: null
+      form_id: extract
+      amount_per_serving: 200
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: American Ginseng 200mg
+      components: []
+    - compound_id: rhodiola
+      form_raw: null
+      form_id: null
+      amount_per_serving: 200
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Rhodiola 200mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: american_ginseng
+    amount: 200
+    multi_ingredient: true
+    needs_review: false
+- id: m07
+  compounds:
+  - glucomannan
+  title: Glucomannan 1000mg (Konjac Root) 180 Capsules
+  extraction:
+    actives:
+    - compound_id: glucomannan
+      form_raw: null
+      form_id: glucomannan
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 1000mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 180
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 180 Capsules
+  expect:
+    compound: glucomannan
+    amount: 1000
+    servings: 180
+    basis: stated_compound
+    needs_review: false
+- id: m08
+  compounds:
+  - glucomannan
+  title: Konjac Glucomannan Powder 200g — 1g Scoop
+  extraction:
+    actives:
+    - compound_id: glucomannan
+      form_raw: Konjac
+      form_id: glucomannan
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 'Serving size: 1g'
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 200
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 1
+    evidence:
+      pack_units: 200g
+      units_per_serving: 'Serving size: 1g'
+  expect:
+    amount: 1000
+    servings: 200
+    basis: stated_compound
+    needs_review: false
+  description: 'Serving size: 1g. Servings per tub: 200. Per serving: Konjac glucomannan 1g.'
+- id: m09
+  compounds:
+  - glucomannan
+  - chromium
+  title: Glucomannan 1000mg & Chromium 200mcg Weight Management 90 Capsules
+  extraction:
+    actives:
+    - compound_id: glucomannan
+      form_raw: null
+      form_id: glucomannan
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Glucomannan 1000mg
+      components: []
+    - compound_id: chromium
+      form_raw: null
+      form_id: null
+      amount_per_serving: 200
+      amount_unit: mcg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Chromium 200mcg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: glucomannan
+    amount: 1000
+    multi_ingredient: true
+    needs_review: false
+- id: m10
+  compounds:
+  - inulin
+  title: Inulin (FOS) 5000mg — 2 Capsules — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: inulin
+      form_raw: null
+      form_id: inulin
+      amount_per_serving: 5000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2 capsules provide 5000mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    compound: inulin
+    amount: 5000
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+  description: 'Each capsule contains 2500mg inulin (FOS). 2 capsules provide 5000mg.'
+- id: m11
+  compounds:
+  - inulin
+  title: Organic Inulin Powder 500g — Serving Size 4g
+  extraction:
+    actives:
+    - compound_id: inulin
+      form_raw: Powder
+      form_id: inulin
+      amount_per_serving: 4000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Serving Size 4g
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 500
+    pack_unit_type: gram
+    confidence: 0.9
+    units_per_serving: 4
+    evidence:
+      pack_units: 500g
+      units_per_serving: Serving Size 4g
+  expect:
+    amount: 4000
+    servings: 125
+    basis: stated_compound
+    needs_review: false
+- id: m12
+  compounds:
+  - inulin
+  - magnesium
+  title: Multi-Strain Probiotic 20 Billion CFU with Magnesium Citrate 100mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: magnesium
+      form_raw: Magnesium Citrate
+      form_id: citrate
+      amount_per_serving: 100
+      amount_unit: mg
+      amount_refers_to: unclear
+      evidence:
+        amount_per_serving: Magnesium Citrate 100mg
+      components: []
+    - compound_id: inulin
+      form_raw: null
+      form_id: null
+      amount_per_serving: null
+      amount_unit: null
+      amount_refers_to: unclear
+      evidence: {}
+      components: []
+    is_single_ingredient: false
+    other_actives:
+    - Probiotic blend
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.9
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: magnesium
+    amount: 100
+    basis: stated_elemental
+    needs_review: false
+  description: 'Ingredients: probiotic blend (Lactobacillus, Bifidobacterium strains), magnesium
+    citrate, inulin (prebiotic fibre, bulking agent), vegetable capsule (HPMC). Deliberately
+    stress-tests the "inulin as a filler" trap: inulin is named only in the ingredients list,
+    with no stated amount and not named in the title, so the existing filler-skip rule should
+    drop it rather than sending the whole product to review or making it the primary active.'
+- id: m13
+  compounds:
+  - fibre_phgg
+  title: PHGG (Sunfiber) 5000mg 300g Powder — 5g Scoop
+  extraction:
+    actives:
+    - compound_id: fibre_phgg
+      form_raw: Sunfiber
+      form_id: phgg
+      amount_per_serving: 5000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 5000mg PHGG
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 300
+    pack_unit_type: gram
+    confidence: 0.95
+    units_per_serving: 5
+    evidence:
+      pack_units: 300g
+      units_per_serving: 'Serving size: 5g'
+  expect:
+    compound: fibre_phgg
+    amount: 5000
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+  description: 'Serving size: 5g (5000mg PHGG, Sunfiber). Servings per tub: 60.'
+- id: m14
+  compounds:
+  - fibre_phgg
+  title: Partially Hydrolysed Guar Gum 1250mg — 2 Capsules — 180 Capsules
+  extraction:
+    actives:
+    - compound_id: fibre_phgg
+      form_raw: null
+      form_id: phgg
+      amount_per_serving: 2500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2 capsules provide 2500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 180
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 180 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    amount: 2500
+    servings: 90
+    basis: stated_compound
+    needs_review: false
+  description: 'Each capsule contains 1250mg partially hydrolysed guar gum. 2 capsules provide 2500mg.'
+- id: m15
+  compounds:
+  - fibre_phgg
+  - psyllium
+  title: PHGG 5000mg & Psyllium Husk 3000mg Fibre Complex 60 Capsules
+  extraction:
+    actives:
+    - compound_id: fibre_phgg
+      form_raw: null
+      form_id: phgg
+      amount_per_serving: 5000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: PHGG 5000mg
+      components: []
+    - compound_id: psyllium
+      form_raw: null
+      form_id: null
+      amount_per_serving: 3000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Psyllium Husk 3000mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: fibre_phgg
+    amount: 5000
+    multi_ingredient: true
+    needs_review: false
+- id: m16
+  compounds:
+  - sea_moss
+  title: Sea Moss (Irish Moss) 1000mg 120 Capsules
+  extraction:
+    actives:
+    - compound_id: sea_moss
+      form_raw: null
+      form_id: sea_moss
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 1000mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 120 Capsules
+  expect:
+    compound: sea_moss
+    amount: 1000
+    servings: 120
+    basis: stated_compound
+    needs_review: false
+- id: m17
+  compounds:
+  - sea_moss
+  title: Wildcrafted Sea Moss Gel 473ml Jar
+  extraction:
+    actives:
+    - compound_id: sea_moss
+      form_raw: Gel
+      form_id: sea_moss
+      amount_per_serving: null
+      amount_unit: null
+      amount_refers_to: unclear
+      evidence: {}
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 473
+    pack_unit_type: ml
+    confidence: 0.85
+    evidence:
+      pack_units: 473ml Jar
+  expect:
+    compound: sea_moss
+    needs_review: true
+    review_reason: amount_missing
+- id: m18
+  compounds:
+  - sea_moss
+  title: Sea Moss 1000mg with Bladderwrack & Burdock Root 60 Capsules
+  extraction:
+    actives:
+    - compound_id: sea_moss
+      form_raw: null
+      form_id: sea_moss
+      amount_per_serving: 1000
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Sea Moss 1000mg
+      components: []
+    is_single_ingredient: false
+    other_actives:
+    - Bladderwrack
+    - Burdock Root
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: sea_moss
+    amount: 1000
+    multi_ingredient: true
+    needs_review: false
+- id: m19
+  compounds:
+  - black_pepper
+  title: BioPerine 5mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: black_pepper
+      form_raw: BioPerine
+      form_id: extract
+      amount_per_serving: 5
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 5mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: black_pepper
+    amount: 5
+    servings: 90
+    basis: stated_extract
+    needs_review: false
+- id: m20
+  compounds:
+  - black_pepper
+  title: Black Pepper Extract 10mg (providing 9.5mg Piperine) 60 Capsules
+  extraction:
+    actives:
+    - compound_id: black_pepper
+      form_raw: Extract
+      form_id: extract
+      amount_per_serving: 10
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: 10mg
+        piperine: providing 9.5mg Piperine
+      components:
+      - name: piperine
+        amount: 9.5
+        unit: mg
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    amount: 9.5
+    servings: 60
+    basis: stated_constituent
+    needs_review: false
+- id: m21
+  compounds:
+  - black_pepper
+  - curcumin
+  title: Curcumin 500mg (475mg Curcuminoids) with BioPerine 5mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: curcumin
+      form_raw: null
+      form_id: extract_95
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Curcumin 500mg
+        curcuminoids: 475mg Curcuminoids
+      components:
+      - name: curcuminoids
+        amount: 475
+        unit: mg
+    - compound_id: black_pepper
+      form_raw: BioPerine
+      form_id: extract
+      amount_per_serving: 5
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: BioPerine 5mg
+      components: []
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: curcumin
+    amount: 475
+    multi_ingredient: false
+    needs_review: false
+    actives:
+    - compound: black_pepper
+      amount: 5
+  description: 'Proves the black_pepper design note: curcumin stays single-ingredient (its
+    accepted_cofactors already lists black pepper/piperine/BioPerine) while BioPerine still
+    gets its own resolved active and its own row in the new black_pepper table — the same
+    precedent as B6 inside a magnesium+B6 combo.'
+- id: m22
+  compounds:
+  - beta_glucan
+  title: Oat Beta-Glucan 250mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: beta_glucan
+      form_raw: Oat
+      form_id: oat
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 250mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: beta_glucan
+    form_class: bg_oat
+    amount: 250
+    servings: 90
+    basis: stated_compound
+    needs_review: false
+- id: m23
+  compounds:
+  - beta_glucan
+  title: Yeast Beta-Glucan (1,3/1,6) 250mg — 2 Capsules — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: beta_glucan
+      form_raw: "Yeast Beta-Glucan (1,3/1,6)"
+      form_id: yeast
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2 capsules provide 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    form_class: bg_yeast
+    amount: 500
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+  description: 'Each capsule contains 250mg yeast beta-glucan (1,3/1,6). 2 capsules provide 500mg.'
+- id: m24
+  compounds:
+  - beta_glucan
+  - vitamin_c
+  title: Oat Beta-Glucan 250mg & Vitamin C 40mg Immune Support 60 Capsules
+  extraction:
+    actives:
+    - compound_id: beta_glucan
+      form_raw: Oat
+      form_id: oat
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Oat Beta-Glucan 250mg
+      components: []
+    - compound_id: vitamin_c
+      form_raw: null
+      form_id: ascorbic_acid
+      amount_per_serving: 40
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Vitamin C 40mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: beta_glucan
+    amount: 250
+    multi_ingredient: true
+    needs_review: false
+- id: m25
+  compounds:
+  - uridine
+  title: Uridine Monophosphate 250mg 60 Capsules
+  extraction:
+    actives:
+    - compound_id: uridine
+      form_raw: Monophosphate
+      form_id: ump
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 250mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: uridine
+    amount: 250
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+- id: m26
+  compounds:
+  - uridine
+  title: "UMP (Uridine-5'-Monophosphate) 250mg — 2 Capsules — 120 Capsules"
+  extraction:
+    actives:
+    - compound_id: uridine
+      form_raw: UMP
+      form_id: ump
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2 capsules provide 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    amount: 500
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+  description: "Each capsule contains 250mg uridine-5'-monophosphate. 2 capsules provide 500mg."
+- id: m27
+  compounds:
+  - uridine
+  - alpha_gpc
+  title: Uridine 250mg & Alpha-GPC 300mg Nootropic Stack 60 Capsules
+  extraction:
+    actives:
+    - compound_id: uridine
+      form_raw: null
+      form_id: ump
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Uridine 250mg
+      components: []
+    - compound_id: alpha_gpc
+      form_raw: null
+      form_id: null
+      amount_per_serving: 300
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: Alpha-GPC 300mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: uridine
+    amount: 250
+    multi_ingredient: false
+    needs_review: false
+- id: m28
+  compounds:
+  - dmae
+  title: DMAE Bitartrate 250mg 90 Capsules
+  extraction:
+    actives:
+    - compound_id: dmae
+      form_raw: Bitartrate
+      form_id: dmae
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 250mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 90
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 90 Capsules
+  expect:
+    compound: dmae
+    amount: 250
+    servings: 90
+    basis: stated_compound
+    needs_review: false
+- id: m29
+  compounds:
+  - dmae
+  title: DMAE 250mg — 2 Capsules — 120 Capsules
+  extraction:
+    actives:
+    - compound_id: dmae
+      form_raw: null
+      form_id: dmae
+      amount_per_serving: 500
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: 2 capsules provide 500mg
+      components: []
+    is_single_ingredient: true
+    other_actives: []
+    pack_units: 120
+    pack_unit_type: capsule
+    confidence: 0.95
+    units_per_serving: 2
+    evidence:
+      pack_units: 120 Capsules
+      units_per_serving: 2 capsules
+  expect:
+    amount: 500
+    servings: 60
+    basis: stated_compound
+    needs_review: false
+  description: 'Each capsule contains 250mg DMAE. 2 capsules provide 500mg.'
+- id: m30
+  compounds:
+  - dmae
+  - bacopa
+  title: DMAE 250mg & Bacopa 300mg Focus Formula 60 Capsules
+  extraction:
+    actives:
+    - compound_id: dmae
+      form_raw: null
+      form_id: dmae
+      amount_per_serving: 250
+      amount_unit: mg
+      amount_refers_to: elemental
+      evidence:
+        amount_per_serving: DMAE 250mg
+      components: []
+    - compound_id: bacopa
+      form_raw: null
+      form_id: null
+      amount_per_serving: 300
+      amount_unit: mg
+      amount_refers_to: extract
+      evidence:
+        amount_per_serving: Bacopa 300mg
+    is_single_ingredient: false
+    other_actives: []
+    pack_units: 60
+    pack_unit_type: capsule
+    confidence: 0.95
+    evidence:
+      pack_units: 60 Capsules
+  expect:
+    compound: dmae
+    amount: 250
+    multi_ingredient: true
+    needs_review: false
