@@ -1,0 +1,57 @@
+---
+// One supplement on the home and browse pages: its lead form's cheapest price per dose (from a
+// UK-based seller), whose it is, the other forms' prices, and how much we compared.
+import type { CompoundData } from '../lib/data';
+import { compoundSlug, defaultClass, pageClasses, retailerName, ukRanked } from '../lib/data';
+import { doseLabel, perDose } from '../lib/format';
+
+interface Props {
+  data: CompoundData;
+  /** Heading level for the supplement's name, to fit the page's outline. */
+  level?: 2 | 3 | 4;
+}
+
+const { data, level = 3 } = Astro.props;
+const c = data.compound;
+const slug = compoundSlug(c.id);
+const priced = pageClasses(data).filter((cls) => ukRanked(cls).length > 0);
+const lead = priced.includes(defaultClass(data)) ? defaultClass(data) : priced[0];
+const rest = priced.filter((cls) => cls !== lead);
+const offers = data.classes.flatMap((k) => [...k.ranked, ...k.combinations, ...k.unverified]);
+const products = new Set(offers.map((o) => o.product_id)).size;
+const retailers = new Set(offers.map((o) => o.retailer_id)).size;
+const best = lead ? ukRanked(lead)[0] : undefined;
+const Heading = `h${level}` as 'h2' | 'h3' | 'h4';
+---
+
+{
+  lead && best && (
+    <li class="card compound-card">
+      <Heading class="card-title">
+        <a href={`/c/${slug}/`}>{c.name}</a>
+      </Heading>
+      <a class="lead" href={`/c/${slug}/${lead.slug}/`}>
+        <span class="from">{rest.length ? `${lead.label} from` : 'From'}</span>
+        <span class="figure">{perDose(best.price_per_std_dose)}</span>
+        <span class="unit">
+          {doseLabel(c, lead.standard_dose)} · at {retailerName(best.retailer_id)}
+        </span>
+      </a>
+      {
+        rest.length > 0 && (
+          <ul class="forms">
+            {rest.map((cls) => (
+              <li>
+                <a href={`/c/${slug}/${cls.slug}/`}>{cls.label}</a>
+                <strong>{perDose(ukRanked(cls)[0].price_per_std_dose)}</strong>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+      <p class="count">
+        {products} {products === 1 ? 'product' : 'products'} · {retailers} {retailers === 1 ? 'retailer' : 'retailers'}
+      </p>
+    </li>
+  )
+}

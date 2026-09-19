@@ -1,9 +1,10 @@
 ---
+import CompoundCard from '../components/CompoundCard.astro';
+import OfferRow from '../components/OfferRow.astro';
 import Base from '../layouts/Base.astro';
-import { CATEGORY_LABELS, compoundSlug, compounds, defaultClass, meta, pageClasses, ukRanked } from '../lib/data';
-import { amount, doseLabel, isoToLong, perDose } from '../lib/format';
+import { CATEGORY_LABELS, compoundSlug, compounds, meta, pageClasses, ukRanked } from '../lib/data';
+import { amount, doseLabel, formHeading, isoToLong, lowerFirst } from '../lib/format';
 
-const categories = [...new Set(compounds.map((d) => d.compound.category))];
 // Quick compare (brief v1.9): pick supplement → form → dose → retailers, land on the table filtered.
 const quick = compounds
   .map((d) => ({
@@ -17,104 +18,151 @@ const quick = compounds
   }))
   .filter((c) => c.classes.length > 0)
   .sort((a, b) => a.name.localeCompare(b.name));
-const cards = compounds
-  .map((data) => {
-    const priced = pageClasses(data).filter((cls) => ukRanked(cls).length > 0);
-    const lead = priced.includes(defaultClass(data)) ? defaultClass(data) : priced[0];
-    const products = new Set(data.classes.flatMap((c) => [...c.ranked, ...c.combinations, ...c.unverified].map((o) => o.product_id)));
-    return { data, lead, rest: priced.filter((cls) => cls !== lead), products: products.size };
+
+// The example card beside the opening: the real cheapest magnesium bisglycinate from the same
+// data as the tables (the brief's own example), or else the form compared across most retailers.
+const candidates = compounds.flatMap((data) => pageClasses(data).map((cls) => ({ data, cls, uk: ukRanked(cls) })));
+const example =
+  candidates.find((x) => x.cls.id === 'mg_glycinate' && x.uk.length > 0) ??
+  candidates
+    .filter((x) => x.uk.length > 0)
+    .sort((a, b) => new Set(b.uk.map((o) => o.retailer_id)).size - new Set(a.uk.map((o) => o.retailer_id)).size)[0];
+
+// Supplements grouped by ingredient class, in the brief's order (never by health goal, §12.1).
+// Those found so far only in combination products are listed by name under their group.
+const order = Object.keys(CATEGORY_LABELS);
+const groups = [...new Set(compounds.map((d) => d.compound.category))]
+  .sort((a, b) => (order.indexOf(a) + 1 || 99) - (order.indexOf(b) + 1 || 99))
+  .map((id) => {
+    const members = compounds.filter((d) => d.compound.category === id);
+    const priced = members.filter((d) => pageClasses(d).some((cls) => ukRanked(cls).length > 0));
+    const comboOnly = members.filter((d) => !priced.includes(d) && pageClasses(d).length > 0);
+    return { id, label: CATEGORY_LABELS[id] ?? id, priced, comboOnly };
   })
-  .filter((card) => card.lead);
+  .filter((group) => group.priced.length + group.comboOnly.length > 0);
+const ukRetailers = meta.retailers.filter((r) => r.ships_from === 'GB');
 ---
 
 <Base>
-  <section class="hero">
-    <h1>What supplements <em>really</em> cost, per dose.</h1>
-    <p class="lede">
-      Tubs, servings and labels are all different, so shelf prices tell you very little. We work out the price of the
-      same dose of every product, form by form, and rank them. No one can pay to be higher.
-    </p>
-    <div id="search" class="hero-search" data-pagefind-ignore>
-      <form class="search-box" role="search" aria-label="Search this site" id="search-form">
-        <input
-          id="search-input"
-          type="search"
-          name="q"
-          autocomplete="off"
-          placeholder="Search magnesium, vitamin D, fish oil…"
-          aria-label="Search supplements and products"
-        />
-        <button type="reset" id="search-clear" hidden>Clear</button>
-      </form>
-      <p class="search-status" id="search-status" role="status" aria-live="polite">
-        <noscript>Search needs JavaScript. Browse below, or use the <a href="/a-z/">A–Z</a>.</noscript>
+  <section class="home-hero">
+    <div class="home-intro">
+      <h1>What supplements <em>really</em> cost, per dose.</h1>
+      <p class="lede">
+        Tubs, servings and labels are all different, so shelf prices tell you very little. We work out the price of the
+        same dose of every product, form by form, and rank them. No one can pay to be higher.
       </p>
-      <ul class="search-results" id="search-results"></ul>
+      <div id="search" class="hero-search" data-pagefind-ignore>
+        <form class="search-box" role="search" aria-label="Search this site" id="search-form">
+          <input
+            id="search-input"
+            type="search"
+            name="q"
+            autocomplete="off"
+            placeholder="Search magnesium, vitamin D, fish oil…"
+            aria-label="Search supplements and products"
+          />
+          <button type="reset" id="search-clear" hidden>Clear</button>
+        </form>
+        <p class="search-status" id="search-status" role="status" aria-live="polite">
+          <noscript>Search needs JavaScript. Browse below, or use the <a href="/a-z/">A–Z</a>.</noscript>
+        </p>
+        <ul class="search-results" id="search-results"></ul>
+      </div>
     </div>
+
     <!-- Quick compare needs JavaScript (the form list depends on the supplement), so it stays
          hidden until the script runs; without it, the cards below and the A–Z still work. -->
     <form class="quick" data-quick data-quick-choices={JSON.stringify(quick)} hidden>
-      <label>
-        Supplement
-        <select name="compound" data-q-compound required>
-          <option value="">Choose…</option>
-          {quick.map((c) => <option value={c.id}>{c.name}</option>)}
-        </select>
-      </label>
-      <label>
-        Form
-        <select name="cls" data-q-class></select>
-      </label>
-      <label>
-        Your daily dose
-        <span class="dose-wrap"><input type="number" name="dose" min="0" step="any" inputmode="decimal" data-q-dose /> <span data-q-unit></span></span>
-      </label>
-      <fieldset>
-        <legend>Retailers</legend>
-        {meta.retailers.map((r) => (
-          <label class="check"><input type="checkbox" name="r" value={r.id} checked data-q-retailer /> {r.name}</label>
-        ))}
-        <label class="check"><input type="checkbox" name="intl" value="1" data-q-intl /> Include sellers shipping from outside the UK</label>
-        <label class="check"><input type="checkbox" name="stock" value="1" data-q-stock /> In stock only</label>
-      </fieldset>
-      <button type="submit" class="button quick-go"><span>Compare</span><span>Show the table</span></button>
+      <div class="quick-row">
+        <label>
+          Supplement
+          <select name="compound" data-q-compound required>
+            <option value="">Choose…</option>
+            {quick.map((c) => <option value={c.id}>{c.name}</option>)}
+          </select>
+        </label>
+        <label>
+          Form
+          <select name="cls" data-q-class></select>
+        </label>
+        <label>
+          Your daily dose
+          <span class="dose-wrap"><input type="number" name="dose" min="0" step="any" inputmode="decimal" data-q-dose /> <span data-q-unit></span></span>
+        </label>
+        <button type="submit" class="pill-button quick-go">Compare prices</button>
+      </div>
+      <details class="quick-more">
+        <summary>More options: retailers, stock, sellers abroad</summary>
+        <fieldset>
+          <legend class="sr-only">Retailers and options</legend>
+          {meta.retailers.map((r) => (
+            <label class="check"><input type="checkbox" name="r" value={r.id} checked data-q-retailer /> {r.name}</label>
+          ))}
+          <label class="check"><input type="checkbox" name="stock" value="1" data-q-stock /> In stock only</label>
+          <label class="check"><input type="checkbox" name="intl" value="1" data-q-intl /> Include sellers shipping from outside the UK</label>
+        </fieldset>
+      </details>
     </form>
-    <p class="muted">
-      {meta.counts.products} products · {meta.retailers.map((r) => r.name).join(', ')} · prices checked {isoToLong(meta.generated_at)}
+
+    <p class="facts">
+      <span><strong>{meta.counts.products}</strong> products</span>
+      <span><strong>{ukRetailers.length}</strong> UK retailers: {ukRetailers.map((r) => r.name).join(', ')}</span>
+      <span>Prices checked {isoToLong(meta.generated_at)}</span>
     </p>
+
+    {
+      example && (
+        <figure class="example" data-pagefind-ignore>
+          <figcaption>
+            <span class="example-title">{formHeading(example.data.compound, example.cls)}</span>
+            <span class="example-note">
+              The cheapest {doseLabel(example.data.compound, example.cls.standard_dose)}, straight from our table
+            </span>
+          </figcaption>
+          <div class="offer-list">
+            <table class="offer-table" role="table">
+              <caption class="sr-only">Example: the cheapest {lowerFirst(formHeading(example.data.compound, example.cls))}</caption>
+              <tbody role="rowgroup">
+                <OfferRow compound={example.data.compound} cls={example.cls} offer={example.uk[0]} rank={1} best open />
+              </tbody>
+            </table>
+          </div>
+          <p class="example-more">
+            <a href={`/c/${compoundSlug(example.data.compound.id)}/${example.cls.slug}/`}>
+              See all {example.uk.length} {lowerFirst(example.cls.label.replace(/\s*\(.*\)$/, ''))} prices
+            </a>
+          </p>
+        </figure>
+      )
+    }
   </section>
 
-  <h2>Compare prices</h2>
-  <ul class="cards">
-    {
-      cards.map(({ data, lead, rest, products }) => (
-        <li class="card">
-          <h3><a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a></h3>
-          <a class="lead" href={`/c/${compoundSlug(data.compound.id)}/${lead.slug}/`}>
-            <span class="from">{rest.length ? `${lead.label} from` : 'from'}</span>
-            <span class="figure">{perDose(ukRanked(lead)[0].price_per_std_dose)}</span>
-            <span class="unit">{doseLabel(data.compound, lead.standard_dose)}</span>
-          </a>
-          {rest.length > 0 && (
-            <ul class="forms">
-              {rest.map((cls) => (
-                <li>
-                  <a href={`/c/${compoundSlug(data.compound.id)}/${cls.slug}/`}>{cls.label}</a>
-                  <strong>{perDose(ukRanked(cls)[0].price_per_std_dose)}</strong>
-                </li>
-              ))}
-            </ul>
-          )}
-          <p class="muted count">{products} products</p>
-        </li>
-      ))
-    }
-  </ul>
-
-  <h2>Browse by type</h2>
-  <ul class="tabs">
-    {categories.map((id) => <li><a href={`/browse/${id}/`}>{CATEGORY_LABELS[id] ?? id}</a></li>)}
-  </ul>
+  <h2 class="home-compare">Compare prices</h2>
+  {
+    groups.map((group) => (
+      <section class="home-group" aria-labelledby={`group-${group.id}`}>
+        <h3 id={`group-${group.id}`}>
+          <a href={`/browse/${group.id}/`}>{group.label}</a>
+        </h3>
+        {group.priced.length > 0 && (
+          <ul class="cards">
+            {group.priced.map((data) => <CompoundCard data={data} level={4} />)}
+          </ul>
+        )}
+        {group.comboOnly.length > 0 && (
+          <p class="also">
+            Also compared, so far only in combination products:{' '}
+            {group.comboOnly.map((data, i) => (
+              <>
+                <a href={`/c/${compoundSlug(data.compound.id)}/`}>{data.compound.name}</a>
+                {i < group.comboOnly.length - 1 ? ', ' : '.'}
+              </>
+            ))}
+          </p>
+        )}
+      </section>
+    ))
+  }
 </Base>
 
 <script is:inline type="module">
