@@ -174,7 +174,12 @@ compounds are drafted but only the original 10 have any products at all.
 draft the first page (magnesium is a good first: most data), Patrick reviews it with
 `content/REVIEW.md`, a solicitor reads that one page, then the rest.
 
-### Design polish backlog (brief §12.4 refinement list) — unchanged
+### Design polish backlog (brief §12.4 refinement list)
+The refinement pass of 2026-09-19 (brief v1.10, DECISIONS.md) brought the site up to mock-up B2:
+card rows at every width, sticky dose bar, price-page headings, home example card and grouped
+cards, header/footer, product and browse pages. Still open: a full design pass on the basket
+page; spacing checked with Patrick on real phones. The "Capsule" language is fixed — refine
+within it only.
 
 ## 5. Useful work while waiting for approvals (no input needed)
 - Seed price refresh every ~2 weeks: `make seed-refresh` → fill the CSV → `make seed-refresh-apply`
