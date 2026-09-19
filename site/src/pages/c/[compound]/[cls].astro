@@ -1,10 +1,11 @@
 ---
 import ClassView from '../../../components/ClassView.astro';
 import CompoundExplainer from '../../../components/CompoundExplainer.astro';
+import FromTile from '../../../components/FromTile.astro';
 import Base from '../../../layouts/Base.astro';
 import type { ClassData, CompoundData } from '../../../lib/data';
 import { CATEGORY_LABELS, compoundSlug, compounds, pageClasses, retailerName, ukRanked } from '../../../lib/data';
-import { doseLabel, monthYear, perDose } from '../../../lib/format';
+import { doseLabel, formHeading, lowerFirst, monthYear, perDose } from '../../../lib/format';
 import { site } from '../../../lib/site';
 
 export function getStaticPaths() {
@@ -23,18 +24,23 @@ interface Props {
 
 const { data, cls } = Astro.props;
 const c = data.compound;
-const heading = cls.label.toLowerCase().includes(c.name.toLowerCase()) ? cls.label : `${c.name} ${cls.label}`;
+const heading = formHeading(c, cls);
+const per = doseLabel(c, cls.standard_dose);
+const uk = ukRanked(cls);
+const ukRetailers = new Set(uk.map((o) => o.retailer_id)).size;
 const retailerCount = new Set(cls.ranked.map((o) => o.retailer_id)).size;
-const title = `Cheapest ${heading} in the UK — price ${doseLabel(c, cls.standard_dose)} (${monthYear(data.generated_at)})`;
-const description = ukRanked(cls).length
-  ? `From ${perDose(ukRanked(cls)[0].price_per_std_dose)} ${doseLabel(c, cls.standard_dose)} across ${retailerCount} ${retailerCount === 1 ? 'retailer' : 'retailers'}, ${cls.ranked.length} ${cls.ranked.length === 1 ? 'product' : 'products'}.`
-  : `${heading}: products we could not yet verify.`;
+const title = `Cheapest ${/^Other forms/.test(heading) ? lowerFirst(heading) : heading} in the UK — price ${per} (${monthYear(data.generated_at)})`;
+const description = uk.length
+  ? `From ${perDose(uk[0].price_per_std_dose)} ${per} across ${retailerCount} ${retailerCount === 1 ? 'retailer' : 'retailers'}, ${cls.ranked.length} ${cls.ranked.length === 1 ? 'product' : 'products'}.`
+  : cls.combinations.length
+    ? `${heading}: so far only in combination products, priced ${per} counting the ${lowerFirst(c.name)} only.`
+    : `${heading}: products we could not yet verify.`;
 
 const absolute = (p: string) => (site.base_url ? new URL(p, site.base_url).href : p);
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: `${heading} ranked by price ${doseLabel(c, cls.standard_dose)}`,
+  name: `${heading} ranked by price ${per}`,
   numberOfItems: cls.ranked.length,
   itemListElement: cls.ranked.map((offer, index) => ({
     '@type': 'ListItem',
@@ -54,12 +60,37 @@ const jsonLd = {
   searchWeight={2}
   searchKind="Compare"
 >
-  <p class="breadcrumb">
-    <a href="/">Home</a> › <a href={`/browse/${c.category}/`}>{CATEGORY_LABELS[c.category]}</a> ›{' '}
-    <a href={`/c/${compoundSlug(c.id)}/`}>{c.name}</a>
-  </p>
-  <h1 data-pagefind-meta="title">{heading}: price {doseLabel(c, cls.standard_dose)}</h1>
-  <CompoundExplainer data={data} cls={cls} />
+  <header class="page-hero">
+    <div>
+      <p class="breadcrumb">
+        <a href="/">Home</a> › <a href={`/browse/${c.category}/`}>{CATEGORY_LABELS[c.category]}</a> ›{' '}
+        <a href={`/c/${compoundSlug(c.id)}/`}>{c.name}</a>
+      </p>
+      <h1>{heading}</h1>
+      <span hidden data-pagefind-meta="title[data-v]" data-v={`${heading}: price ${per}`}></span>
+      <p class="page-sub">
+        {
+          uk.length > 0 ? (
+            <>
+              What it <em>really</em> costs {per}, across {ukRetailers} UK {ukRetailers === 1 ? 'retailer' : 'retailers'}. A unit
+              for comparing, not advice.
+            </>
+          ) : cls.combinations.length > 0 ? (
+            <>Priced {per}. So far this form only turns up in combination products.</>
+          ) : (
+            <>Priced {per}. Nothing here could be verified yet.</>
+          )
+        }
+      </p>
+    </div>
+    <FromTile compound={c} cls={cls} />
+  </header>
+
   <ClassView data={data} cls={cls} />
-  <p class="muted"><a href="/methodology/">How we compare</a> · <a href={`/c/${compoundSlug(c.id)}/`}>All {c.name.toLowerCase()} forms</a></p>
+
+  <section class="how">
+    <h2>How we work out these prices</h2>
+    <CompoundExplainer data={data} cls={cls} />
+    <p class="muted"><a href="/methodology/">Our full method</a> · <a href={`/c/${compoundSlug(c.id)}/`}>All {lowerFirst(c.name)} forms</a></p>
+  </section>
 </Base>

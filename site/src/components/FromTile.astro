@@ -1,0 +1,30 @@
+---
+// The headline figure beside a price page's heading on wider screens: the cheapest price per
+// dose from a UK-based seller, and whose it is. Nothing is shown when nothing is ranked.
+import type { ClassData, CompoundRule } from '../lib/data';
+import { retailerName, ukRanked } from '../lib/data';
+import { doseLabel, perDose } from '../lib/format';
+
+interface Props {
+  compound: CompoundRule;
+  cls: ClassData;
+}
+
+const { compound, cls } = Astro.props;
+const uk = ukRanked(cls);
+const best = uk[0];
+---
+
+{
+  best && (
+    <aside class="from-tile" aria-label="Cheapest price per dose">
+      <span class="from-label">
+        {uk.length === 1 ? `Only product so far, ${doseLabel(compound, cls.standard_dose)}` : `Cheapest ${doseLabel(compound, cls.standard_dose)}`}
+      </span>
+      <span class="from-figure">{perDose(best.price_per_std_dose)}</span>
+      <span class="from-what">
+        <a href={`/p/${best.product_id}/`}>{best.display_name}</a> · {retailerName(best.retailer_id)}
+      </span>
+    </aside>
+  )
+}

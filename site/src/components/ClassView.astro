@@ -8,9 +8,11 @@ import OfferTable from './OfferTable.astro';
 interface Props {
   data: CompoundData;
   cls: ClassData;
+  /** On the compound page the tabs link away to class pages, so the shown form is only "current". */
+  overview?: boolean;
 }
 
-const { data, cls } = Astro.props;
+const { data, cls, overview = false } = Astro.props;
 const base = `/c/${compoundSlug(data.compound.id)}`;
 const classes = pageClasses(data);
 ---
@@ -18,10 +20,10 @@ const classes = pageClasses(data);
 {
   classes.length > 1 && (
     <nav aria-label={`${data.compound.name} forms`}>
-      <ul class="tabs">
+      <ul class="tabs" data-tabs>
         {classes.map((item) => (
           <li>
-            <a href={`${base}/${item.slug}/`} aria-current={item.id === cls.id ? 'page' : undefined}>
+            <a href={`${base}/${item.slug}/`} aria-current={item.id === cls.id ? (overview ? 'true' : 'page') : undefined}>
               {item.label} {item.ranked.length + item.unverified.length > 0 ? `(${item.ranked.length + item.unverified.length})` : '(combinations)'}
             </a>
           </li>
@@ -32,3 +34,13 @@ const classes = pageClasses(data);
 }
 
 <OfferTable compound={data.compound} cls={cls} />
+
+<script>
+  // On phones the tabs scroll sideways; bring the current one into view without moving the page.
+  for (const list of document.querySelectorAll<HTMLElement>('[data-tabs]')) {
+    const current = list.querySelector<HTMLElement>('[aria-current]');
+    if (current && list.scrollWidth > list.clientWidth) {
+      list.scrollLeft = current.offsetLeft - list.offsetLeft - (list.clientWidth - current.offsetWidth) / 2;
+    }
+  }
+</script>

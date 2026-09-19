@@ -51,6 +51,8 @@
 
   /* The cheapest row's ring (mock-up B2). */
   --ring-best: 0 0 0 2px var(--color-link);
+  /* Only for panels that open over the page (the sort and filter panel). */
+  --shadow-overlay: 0 12px 32px rgb(28 27 41 / 0.14);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -73,5 +75,6 @@
     --color-rank-off-top: #4a4a60;
     --color-rank-off-bottom: #34344a;
     --color-on-rank: #ffffff;
+    --shadow-overlay: 0 12px 32px rgb(0 0 0 / 0.5);
   }
 }

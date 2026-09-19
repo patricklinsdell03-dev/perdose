@@ -55,48 +55,62 @@ const emptyText = combos
   {
     rows.length > 0 && (
       <>
-        <form class="controls" data-controls>
-          <label class="dose">
-            Your daily dose
-            <span>
-              <input type="number" name="dose" min="0" step="any" value={dose} data-dose inputmode="decimal" />
+        {/* A slim bar that stays in view while scrolling the table (mock-up B2's dose bar):
+            your dose, then sort and filters folded into one panel. */}
+        <form class="toolbar" data-controls data-pagefind-ignore>
+          <label class="dose-field">
+            <span class="dose-label">Your <span class="wide-only">daily </span>dose</span>
+            <span class="dose-input">
+              <input type="number" name="dose" min="0" step="any" value={dose} data-dose inputmode="decimal" aria-describedby={`dose-hint-${cls.id}`} />
               {unitLabel}
             </span>
           </label>
-          <label>
-            Sort by
-            <select name="sort" data-sort>
-              <option value="dose">Price per dose</option>
-              <option value="month">Cost per month</option>
-              <option value="pack">Pack price</option>
-              <option value="days">Days' supply (longest first)</option>
-            </select>
-          </label>
-          {retailers.length > 1 && (
-            <fieldset>
-              <legend>Retailers</legend>
-              {retailers.map((id) => (
-                <label class="check">
-                  <input type="checkbox" name="retailer" value={id} checked data-retailer-filter /> {retailerName(id)}
-                </label>
-              ))}
-            </fieldset>
-          )}
-          <fieldset>
-            <legend>Show</legend>
-            <label class="check"><input type="checkbox" data-filter="stock" /> In stock only</label>
-            <label class="check"><input type="checkbox" data-filter="tested" /> Testing claim on label</label>
-            {combos > 0 && (
-              <label class="check">
-                <input type="checkbox" data-filter="combos" /> Include combination products ({combos})
+          <p class="dose-hint" id={`dose-hint-${cls.id}`}>
+            Compared at {dose.toLocaleString('en-GB')} {unitLabel}. Enter the amount you take to see your own costs.
+          </p>
+          <details class="filters" data-filters>
+            <summary>
+              <span class="wide-only">Sort and filter</span><span class="narrow-only">Filters</span>
+              <span class="filter-count" data-filter-count hidden></span>
+            </summary>
+            <div class="filters-panel">
+              <label class="sort-field">
+                Sort by
+                <select name="sort" data-sort>
+                  <option value="dose">Price per dose</option>
+                  <option value="month">Cost per month</option>
+                  <option value="pack">Pack price</option>
+                  <option value="days">Days' supply (longest first)</option>
+                </select>
               </label>
-            )}
-            {international > 0 && (
-              <label class="check">
-                <input type="checkbox" data-filter="intl" /> Include sellers shipping from outside the UK ({international})
-              </label>
-            )}
-          </fieldset>
+              {retailers.length > 1 && (
+                <fieldset>
+                  <legend>Retailers</legend>
+                  {retailers.map((id) => (
+                    <label class="check">
+                      <input type="checkbox" name="retailer" value={id} checked data-retailer-filter /> {retailerName(id)}
+                    </label>
+                  ))}
+                </fieldset>
+              )}
+              <fieldset>
+                <legend>Show</legend>
+                <label class="check"><input type="checkbox" data-filter="stock" /> In stock only</label>
+                <label class="check"><input type="checkbox" data-filter="tested" /> Testing claim on label</label>
+                {combos > 0 && (
+                  <label class="check">
+                    <input type="checkbox" data-filter="combos" /> Include combination products ({combos})
+                  </label>
+                )}
+                {international > 0 && (
+                  <label class="check">
+                    <input type="checkbox" data-filter="intl" /> Include sellers shipping from outside the UK ({international})
+                  </label>
+                )}
+              </fieldset>
+              <button type="button" class="button-plain" data-clear>Clear sort and filters</button>
+            </div>
+          </details>
         </form>
 
         <div class="offer-list" data-table hidden={uk.length === 0}>
@@ -206,6 +220,9 @@ const emptyText = combos
     const emptyText = empty?.querySelector<HTMLElement>('[data-empty-text]');
     const emptyDefault = { title: emptyTitle?.textContent ?? '', text: emptyText?.textContent ?? '' };
     const showButtons = [...section.querySelectorAll<HTMLButtonElement>('[data-show]')];
+    const retailerBoxes = [...section.querySelectorAll<HTMLInputElement>('[data-retailer-filter]')];
+    const filtersPanel = section.querySelector<HTMLDetailsElement>('details[data-filters]');
+    const filterCount = section.querySelector<HTMLElement>('[data-filter-count]');
 
     // The cheapest row shows its working open. The panel follows the cheapest row as the
     // ranking changes — until the visitor opens or closes one themselves.
@@ -304,9 +321,25 @@ const emptyText = combos
         empty.hidden = anyVisible;
         if (emptyTitle) emptyTitle.textContent = filtered ? 'No products match these filters' : emptyDefault.title;
         if (emptyText) {
-          emptyText.textContent = filtered ? 'Tick more retailers, or untick “In stock only” or “Testing claim on label”.' : emptyDefault.text;
+          emptyText.textContent = filtered
+            ? 'Open “Sort and filter” to tick more retailers or untick an option — or clear them all.'
+            : emptyDefault.text;
         }
         for (const button of showButtons) button.hidden = filtered;
+      }
+
+      // How many sort/filter settings differ from the defaults, shown on the folded panel.
+      const changed = [
+        retailerBoxes.some((b) => !b.checked),
+        onlyStock,
+        onlyTested,
+        showCombos,
+        showIntl,
+        sortSelect.value !== 'dose',
+      ].filter(Boolean).length;
+      if (filterCount) {
+        filterCount.textContent = String(changed);
+        filterCount.hidden = changed === 0;
       }
 
       const heading = section.querySelector<HTMLElement>('[data-dose-heading]');
@@ -320,9 +353,10 @@ const emptyText = combos
       sortSelect.value === 'dose' ? next.delete('sort') : next.set('sort', sortSelect.value);
       showCombos ? next.set('combos', '1') : next.delete('combos');
       showIntl ? next.set('intl', '1') : next.delete('intl');
-      const allBoxes = [...section.querySelectorAll<HTMLInputElement>('[data-retailer-filter]')];
-      const allChecked = allBoxes.every((b) => b.checked);
-      allChecked || !allBoxes.length ? next.delete('r') : next.set('r', allBoxes.filter((b) => b.checked).map((b) => b.value).join(','));
+      const allChecked = retailerBoxes.every((b) => b.checked);
+      allChecked || !retailerBoxes.length
+        ? next.delete('r')
+        : next.set('r', retailerBoxes.filter((b) => b.checked).map((b) => b.value).join(','));
       onlyStock ? next.set('stock', '1') : next.delete('stock');
       onlyTested ? next.set('tested', '1') : next.delete('tested');
       const query = next.toString();
@@ -337,6 +371,29 @@ const emptyText = combos
         if (!box) return;
         box.checked = true;
         update();
+      });
+    }
+
+    section.querySelector('[data-clear]')?.addEventListener('click', () => {
+      for (const box of retailerBoxes) box.checked = true;
+      for (const name of ['stock', 'tested', 'combos', 'intl']) {
+        const box = filter(name);
+        if (box) box.checked = false;
+      }
+      sortSelect.value = 'dose';
+      update();
+    });
+
+    // The folded panel closes with Escape or a click elsewhere, like any menu.
+    if (filtersPanel) {
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && filtersPanel.open) {
+          filtersPanel.open = false;
+          filtersPanel.querySelector('summary')?.focus();
+        }
+      });
+      document.addEventListener('click', (event) => {
+        if (filtersPanel.open && !filtersPanel.contains(event.target as Node)) filtersPanel.open = false;
       });
     }
 

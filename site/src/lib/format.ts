@@ -22,6 +22,31 @@ export function doseLabel(compound: CompoundRule, dose: number): string {
   return `per ${amount(dose, compound.unit)}${short}`;
 }
 
+/** "Calcium" -> "calcium", but "Vitamin D3", "MSM" and "L-theanine" keep their capitals. */
+export const lowerFirst = (text: string) => (/^[A-Z][a-z]/.test(text) ? text[0].toLowerCase() + text.slice(1) : text);
+
+// Forms whose label does not read well after the compound's name. Keyed by class id, which
+// never changes (brief §5); the label itself stays as it is for tabs.
+const FORM_HEADINGS: Record<string, string> = {
+  col_bovine: 'Bovine collagen',
+  col_marine: 'Marine collagen',
+  col_other: 'Collagen (unspecified source)',
+  b3_niacinamide: 'Niacinamide (vitamin B3)',
+};
+
+/** The name of one form's table: "Magnesium Bisglycinate (glycinate)", "Thiamine (vitamin B1)",
+ * "Other forms of zinc". Used for page headings, titles and share cards. */
+export function formHeading(compound: CompoundRule, cls: { id: string; label: string }): string {
+  const { name } = compound;
+  const { label } = cls;
+  if (FORM_HEADINGS[cls.id]) return FORM_HEADINGS[cls.id];
+  if (label.toLowerCase().includes(name.toLowerCase())) return label;
+  if (name.toLowerCase().includes(label.toLowerCase())) return name;
+  if (/^other forms\b/i.test(label)) return `Other forms of ${lowerFirst(name)}`;
+  if (/^blends\b/i.test(label)) return `${name} ${lowerFirst(label)}`;
+  return `${name} ${label}`;
+}
+
 /** Per-dose prices: 3 significant figures, never fewer than 2 decimals (£0.0833, £0.233, £2.23). */
 export function perDose(value: number | null): string {
   if (value === null) return '—';
