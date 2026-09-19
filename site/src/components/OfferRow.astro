@@ -1,0 +1,142 @@
+---
+// One product in a price table (brief §12.2), drawn as a Capsule card (mock-up B2): rank
+// capsule · name and label facts · three figure tiles with the price per dose biggest · buy
+// capsule · the working. A table row, so the table keeps its meaning for screen readers and
+// the table script can sort and filter it. Also used alone for the home page's live example.
+import type { ClassData, CompoundRule, Offer } from '../lib/data';
+import { compoundSlug, isInternational, retailerName } from '../lib/data';
+import { BASIS_TEXT, amount, days, doseLabel, money, pack, perDose, perServing } from '../lib/format';
+import { amazonSearchUrl, site } from '../lib/site';
+
+interface Props {
+  compound: CompoundRule;
+  cls: ClassData;
+  offer: Offer;
+  /** Position in the ranking, or "+" for a combination product (never ranked). */
+  rank: number | string;
+  combo?: boolean;
+  best?: boolean;
+  practical?: boolean;
+  /** Show the working open (the cheapest row does). */
+  open?: boolean;
+  /** Combination products and sellers abroad start hidden until the visitor opts in. */
+  hidden?: boolean;
+}
+
+const { compound, cls, offer, rank, combo = false, best = false, practical = false, open = best, hidden = false } = Astro.props;
+const dose = cls.standard_dose;
+const doseHeading = doseLabel(compound, dose).replace(/^per/, 'Per');
+const retailer = retailerName(offer.retailer_id);
+const others = offer.other_actives.map((a) => a.replaceAll('_', ' ').toLowerCase());
+const meta = [
+  offer.brand && offer.brand !== retailer ? offer.brand : null,
+  retailer,
+  pack(offer),
+  compound.unit !== 'serving' && offer.amount_per_serving !== null ? `${perServing(offer)} a serving` : null,
+]
+  .filter(Boolean)
+  .join(' · ');
+const amazon = amazonSearchUrl(offer.display_name, offer.brand);
+
+function working(): string[] {
+  const lines: string[] = [];
+  const p = offer.pack;
+  if (p.units && p.units_per_serving && p.servings) {
+    const packs = p.multipack_count > 1 ? ` × ${p.multipack_count} packs` : '';
+    lines.push(`Servings: ${p.units}${packs} ÷ ${p.units_per_serving} per serving = ${+p.servings.toFixed(1)}`);
+  } else if (p.servings) {
+    lines.push(`Servings: ${+p.servings.toFixed(1)} (as stated on the label)`);
+  }
+  if (offer.amount_per_serving !== null && p.servings && offer.price_per_std_dose !== null) {
+    const total = offer.amount_per_serving * p.servings;
+    lines.push(`In the pack: ${+p.servings.toFixed(1)} × ${amount(offer.amount_per_serving, offer.amount_unit)} = ${amount(total, offer.amount_unit)}`);
+    lines.push(`${money(offer.price_gbp)} ÷ ${amount(total, offer.amount_unit)} × ${amount(dose, compound.unit)} = ${perDose(offer.price_per_std_dose)} ${doseLabel(compound, dose)}`);
+  }
+  return lines;
+}
+
+function reportLink(): string {
+  const subject = `Error report: ${offer.product_id}`;
+  const body = `Product: ${offer.name}\nProduct id: ${offer.product_id}\nRetailer: ${retailer}\nPage: /c/${compoundSlug(compound.id)}/${cls.slug}/\nWhat I saw:\n`;
+  return `mailto:${site.contact_email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+---
+
+<tr
+  class:list={['offer-card', { 'is-best': best, 'is-combo': combo }]}
+  role="row"
+  data-row
+  data-id={offer.listing_id}
+  data-ppu={offer.price_per_unit}
+  data-total={(offer.days_supply ?? 0) * dose}
+  data-price={offer.price_gbp}
+  data-retailer={offer.retailer_id}
+  data-stock={offer.in_stock ? '1' : '0'}
+  data-tested={offer.tested_flag ? '1' : '0'}
+  data-combo={combo ? '1' : '0'}
+  data-intl={isInternational(offer) ? '1' : '0'}
+  hidden={hidden}
+>
+  <td role="cell" class="c-rank"><span class="rank" data-rank>{rank}</span></td>
+  <td role="cell" class="c-product" data-cell="product">
+    <span class="pick" data-badge="cheapest" hidden={!best}>Cheapest per dose</span>
+    <span class="pick practical" data-badge="practical" hidden={!practical}>Best value under 6 months' supply</span>
+    <a href={`/p/${offer.product_id}/`} class="name">{offer.display_name}</a>
+    <span class="meta">{meta}</span>
+    {
+      (combo || others.length > 0 || isInternational(offer) || offer.tested_flag || offer.claimed.length > 0 || !offer.in_stock) && (
+        <span class="badges">
+          {combo && <span class="badge combo">Combination: price counts the {compound.name.toLowerCase()} only</span>}
+          {others.length > 0 && <span class="chip">also contains {others.slice(0, 3).join(', ')}{others.length > 3 ? '…' : ''}</span>}
+          {isInternational(offer) && <span class="chip">ships from {offer.ships_from === 'US' ? 'the US' : offer.ships_from} — check delivery and duties</span>}
+          {offer.tested_flag && <span class="badge">Testing claimed on label</span>}
+          {offer.claimed.map((flag) => <span class="chip">claimed: {flag}</span>)}
+          {!offer.in_stock && <span class="badge warn">Out of stock</span>}
+        </span>
+      )
+    }
+  </td>
+  <td role="cell" class="tile key" data-cell="dose" data-label={doseHeading}>{perDose(offer.price_per_std_dose)}</td>
+  <td role="cell" class="tile" data-cell="month" data-label="Per month">{money(offer.cost_per_month)}</td>
+  <td role="cell" class="tile" data-cell="days" data-label="Lasts">{days(offer.days_supply)}</td>
+  <td role="cell" class="c-buy">
+    <a href={offer.url} target="_blank" rel="sponsored nofollow noopener" class="button">
+      <span>{money(offer.price_gbp)}</span>
+      <span>View at {retailer}<span class="sr-only"> (opens in a new tab)</span></span>
+    </a>
+    {
+      amazon && (
+        <a class="amazon-check" href={amazon} target="_blank" rel="sponsored nofollow noopener">
+          Also on Amazon <span>(price not compared)</span>
+        </a>
+      )
+    }
+  </td>
+  <td role="cell" class="c-working">
+    <details data-working open={open}>
+      <summary>Show the working</summary>
+      <div class="working">
+        <ul>
+          {working().map((line) => <li>{line}</li>)}
+          <li>Amount per serving: {BASIS_TEXT[offer.amount_basis] ?? offer.amount_basis}.</li>
+          {others.length > 0 && <li>Also contains: {others.join(', ')}. The price counts the {compound.name.toLowerCase()} only.</li>}
+        </ul>
+        {
+          Object.keys(offer.evidence).length > 0 && (
+            <details class="quotes-more">
+              <summary>What the retailer's listing says</summary>
+              <ul class="quotes">
+                {Object.entries(offer.evidence).map(([field, quote]) => (
+                  <li>
+                    <span class="field">{field.replaceAll('_', ' ').replace('components.', '')}</span> “{quote}”
+                  </li>
+                ))}
+              </ul>
+            </details>
+          )
+        }
+        {site.contact_email && <p class="report"><a href={reportLink()}>Is this wrong? Tell us</a></p>}
+      </div>
+    </details>
+  </td>
+</tr>

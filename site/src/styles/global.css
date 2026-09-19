@@ -19,6 +19,7 @@ a {
   color: var(--color-link);
   text-underline-offset: 0.15em;
 }
+/* The focus ring follows each element's own shape, so capsules and pills keep round ends. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -26,7 +27,6 @@ select:focus-visible,
 summary:focus-visible {
   outline: 2px solid var(--color-link);
   outline-offset: 2px;
-  border-radius: 4px;
 }
 
 h1,
@@ -473,6 +473,260 @@ tr.is-combo .rank {
   color: var(--color-on-accent);
 }
 .button:hover > span:last-child {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+/* Price tables as Capsule cards (mock-up B2, brief §12.4). One card per product: rank capsule,
+   name and label facts, three figure tiles with the price per dose biggest, the buy capsule,
+   then the working. Phones stack the card; wide screens line the cards up in columns so they
+   still scan side by side. The markup stays a table (with explicit roles, since CSS layout
+   can hide table meaning from screen readers) so the script can sort and filter rows. */
+.offer-table,
+.offer-table tbody {
+  display: block;
+  width: 100%;
+  font-size: var(--text-base);
+}
+.offer-table tbody {
+  display: grid;
+  gap: 0.75rem;
+}
+.offer-table thead {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+/* The list is a size container: a card stacks in a narrow space (a phone, the home page's
+   example) and spreads out in a wide one, whatever the screen. */
+.offer-list {
+  container: offers / inline-size;
+}
+.offer-table tr.offer-card {
+  display: grid;
+  grid-template-columns: 1.5rem minmax(0, 1fr) auto auto;
+  grid-template-areas:
+    'rank product product product'
+    'dose dose month days'
+    'buy buy buy buy'
+    'working working working working';
+  gap: 0.5rem;
+  align-items: center;
+  padding: var(--space-3);
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+}
+.offer-table tr.offer-card.is-best {
+  box-shadow: var(--ring-best);
+}
+.offer-table td {
+  display: block;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  text-align: left;
+}
+.offer-table .c-rank {
+  grid-area: rank;
+}
+.offer-table .c-product {
+  grid-area: product;
+  display: grid;
+  gap: 0.15rem;
+}
+.offer-table [data-cell='dose'] {
+  grid-area: dose;
+}
+.offer-table [data-cell='month'] {
+  grid-area: month;
+}
+.offer-table [data-cell='days'] {
+  grid-area: days;
+}
+.offer-table .c-buy {
+  grid-area: buy;
+  display: grid;
+  gap: 0.35rem;
+}
+.offer-table .c-working {
+  grid-area: working;
+}
+.offer-table .pick {
+  font: 600 var(--text-xs)/1.3 var(--font-body);
+  color: var(--color-link);
+}
+.offer-table .pick.practical {
+  color: var(--color-coral-text);
+}
+.offer-table .name {
+  font: 700 var(--text-md)/1.25 var(--font-display);
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+.offer-table .name:hover {
+  text-decoration: underline;
+}
+.offer-table .meta {
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+}
+.offer-table .badges {
+  margin-top: 0.3rem;
+}
+/* Figure tiles: label on top, figure below. The price per dose is tinted and biggest. */
+.offer-table .tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: stretch;
+  gap: 0.25rem;
+  padding: 0.5rem 0.625rem;
+  border-radius: var(--radius);
+  background: var(--color-background);
+  font: 600 0.9375rem/1.2 var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.offer-table .tile::before {
+  content: attr(data-label);
+  font: 400 var(--text-xs)/1.25 var(--font-body);
+  letter-spacing: 0;
+  color: var(--color-muted);
+  white-space: normal;
+}
+.offer-table .tile.key {
+  background: var(--color-accent-tint);
+  font: 900 var(--text-figure)/1.05 var(--font-display);
+  letter-spacing: -0.02em;
+  color: var(--color-link);
+}
+.offer-table .button {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  white-space: normal;
+  font-size: var(--text-sm);
+}
+.offer-table .button > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  line-height: 1.2;
+  text-align: center;
+}
+.offer-table .amazon-check {
+  margin: 0;
+  text-align: center;
+  font-size: var(--text-xs);
+}
+.offer-table .c-working summary {
+  width: max-content;
+  font-size: var(--text-sm);
+}
+.offer-table details[open] > summary {
+  margin-bottom: 0;
+}
+.offer-table .working {
+  margin-top: var(--space-2);
+  padding: 0.75rem var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-background);
+  font: 400 0.8125rem/1.7 var(--font-mono);
+  overflow-wrap: anywhere;
+}
+.offer-table .working ul {
+  margin: 0;
+  padding-left: 1.1rem;
+}
+.offer-table .working p {
+  margin: 0.5rem 0 0.25rem;
+  font-family: var(--font-body);
+}
+.offer-table .quotes-more {
+  margin-top: 0.4rem;
+}
+.offer-table .quotes-more summary {
+  font: 400 var(--text-xs)/1.5 var(--font-body);
+}
+.offer-table .quotes-more[open] > summary {
+  margin-bottom: 0.25rem;
+}
+.offer-table .working .report {
+  font-size: var(--text-xs);
+}
+/* Tablets and laptops: product on the left, the three tiles on the right with the buy capsule
+   under them, in the same place on every card so the figures scan down the page. */
+@container offers (min-width: 46rem) {
+  .offer-table tr.offer-card {
+    grid-template-columns: 1.5rem minmax(0, 1fr) 10.5rem 7rem 7rem;
+    grid-template-areas:
+      'rank product dose month days'
+      'rank product buy buy buy'
+      '. working working working working';
+    column-gap: var(--space-3);
+    row-gap: 0.6rem;
+    padding: 1.1rem var(--space-4) 0.85rem;
+  }
+  .offer-table .tile {
+    align-self: center;
+    height: 4.5rem;
+    padding: 0.55rem 0.75rem;
+  }
+  .offer-table .tile::before {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+/* Wide screens: one line per product. */
+@container offers (min-width: 70rem) {
+  .offer-table tr.offer-card {
+    grid-template-columns: 1.5rem minmax(0, 1fr) 10.5rem 7rem 7rem 14rem;
+    grid-template-areas:
+      'rank product dose month days buy'
+      '. working working working working working';
+    row-gap: 0.4rem;
+  }
+}
+
+/* When nothing can be ranked (a form sold only in combination products, or only from
+   abroad) or the filters leave nothing: say so plainly and offer the way forward. */
+.empty-state {
+  padding: var(--space-5) var(--space-4);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  text-align: center;
+}
+.empty-state h3 {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-lg);
+}
+.empty-state p {
+  max-width: 38rem;
+  margin: 0 auto;
+  color: var(--color-muted);
+}
+.empty-state .empty-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+.pill-button {
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  font: 700 var(--text-sm)/1.2 var(--font-display);
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+}
+.pill-button:hover {
   filter: brightness(1.12);
 }
 
@@ -958,7 +1212,7 @@ dl.facts dd {
 }
 .basket-total .figure {
   font: 800 2rem/1.1 var(--font-display);
-  color: var(--color-accent);
+  color: var(--color-link);
   letter-spacing: -0.02em;
 }
 .basket-card ul {
@@ -1089,8 +1343,8 @@ dl.facts dd {
   cursor: pointer;
 }
 .chip-button:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: var(--color-link);
+  color: var(--color-link);
 }
 .needs {
   list-style: none;

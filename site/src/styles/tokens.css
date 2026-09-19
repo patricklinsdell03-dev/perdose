@@ -36,7 +36,7 @@
   --text-2xl: clamp(1.9rem, 1.3rem + 2.2vw, 2.9rem);
   --text-3xl: clamp(2.3rem, 1.2rem + 4vw, 4.1rem);
   /* The price per dose: always the largest figure in a row (brief §12.4 rule 3). */
-  --text-figure: clamp(1.45rem, 1.2rem + 0.8vw, 1.85rem);
+  --text-figure: clamp(1.3rem, 1rem + 1.5vw, 1.85rem);
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
