@@ -1730,3 +1730,32 @@ dl.facts dd {
 .combo-contents .chip {
   margin-left: 0.4rem;
 }
+
+/* Supplement cards carry a real Capsule offer card (Patrick, 2026-09-19). */
+.cards:has(.compound-card) {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 24rem), 1fr));
+}
+.compound-card {
+  display: grid;
+  gap: var(--space-2);
+  align-content: start;
+}
+.compound-card .card-title {
+  margin: 0;
+}
+.compound-card-note {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: var(--text-sm);
+}
+.compound-card-offer {
+  margin: 0;
+}
+.compound-card-offer .offer-table {
+  margin: 0;
+}
+.compound-card-more {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}

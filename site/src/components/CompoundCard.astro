@@ -1,9 +1,12 @@
 ---
-// One supplement on the home and browse pages: its lead form's cheapest price per dose (from a
-// UK-based seller), whose it is, the other forms' prices, and how much we compared.
+// One supplement on the home and browse pages (Patrick, 2026-09-19: every card in the Capsule
+// style): the lead form's cheapest UK product drawn as the same Capsule card the price tables
+// use — rank capsule, the price per dose biggest, buy capsule — then the other forms' prices
+// and how much we compared.
 import type { CompoundData } from '../lib/data';
-import { compoundSlug, defaultClass, pageClasses, retailerName, ukRanked } from '../lib/data';
-import { doseLabel, perDose } from '../lib/format';
+import { compoundSlug, defaultClass, pageClasses, ukRanked } from '../lib/data';
+import { doseLabel, formHeading, lowerFirst, perDose } from '../lib/format';
+import OfferRow from './OfferRow.astro';
 
 interface Props {
   data: CompoundData;
@@ -20,7 +23,8 @@ const rest = priced.filter((cls) => cls !== lead);
 const offers = data.classes.flatMap((k) => [...k.ranked, ...k.combinations, ...k.unverified]);
 const products = new Set(offers.map((o) => o.product_id)).size;
 const retailers = new Set(offers.map((o) => o.retailer_id)).size;
-const best = lead ? ukRanked(lead)[0] : undefined;
+const leadOffers = lead ? ukRanked(lead) : [];
+const best = leadOffers[0];
 const Heading = `h${level}` as 'h2' | 'h3' | 'h4';
 ---
 
@@ -30,13 +34,22 @@ const Heading = `h${level}` as 'h2' | 'h3' | 'h4';
       <Heading class="card-title">
         <a href={`/c/${slug}/`}>{c.name}</a>
       </Heading>
-      <a class="lead" href={`/c/${slug}/${lead.slug}/`}>
-        <span class="from">{rest.length ? `${lead.label} from` : 'From'}</span>
-        <span class="figure">{perDose(best.price_per_std_dose)}</span>
-        <span class="unit">
-          {doseLabel(c, lead.standard_dose)} · at {retailerName(best.retailer_id)}
-        </span>
-      </a>
+      <p class="compound-card-note">
+        {rest.length ? `${lead.label}: cheapest ${doseLabel(c, lead.standard_dose)}` : `Cheapest ${doseLabel(c, lead.standard_dose)}`}
+      </p>
+      <div class="offer-list compound-card-offer">
+        <table class="offer-table" role="table">
+          <caption class="sr-only">The cheapest {lowerFirst(formHeading(c, lead))}</caption>
+          <tbody role="rowgroup">
+            <OfferRow compound={c} cls={lead} offer={best} rank={1} best open={false} />
+          </tbody>
+        </table>
+      </div>
+      <p class="compound-card-more">
+        <a href={`/c/${slug}/${lead.slug}/`}>
+          See all {leadOffers.length} {rest.length ? lowerFirst(lead.label.replace(/\s*\(.*\)$/, '')) : ''} prices
+        </a>
+      </p>
       {
         rest.length > 0 && (
           <ul class="forms">
