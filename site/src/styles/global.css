@@ -491,6 +491,20 @@ html:has(.toolbar) {
   color: var(--color-text);
   font: 600 var(--text-base)/1.2 var(--font-mono);
 }
+.period-field {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+}
+.period-field select {
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-background);
+  color: var(--color-text);
+  font: 600 var(--text-sm)/1.2 var(--font-body);
+}
 .dose-hint {
   flex: 1;
   min-width: 12rem;
@@ -600,6 +614,9 @@ html:has(.toolbar) {
   }
   .dose-input input {
     width: 5rem;
+  }
+  .period-field .dose-label {
+    display: none;
   }
 }
 @media print {

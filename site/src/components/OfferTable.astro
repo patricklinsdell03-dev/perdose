@@ -65,6 +65,15 @@ const emptyText = combos
               {unitLabel}
             </span>
           </label>
+          <label class="period-field">
+            <span class="dose-label">Show price</span>
+            <select name="per" data-period>
+              <option value="dose">Per dose</option>
+              <option value="week">Per week</option>
+              <option value="month">Per month</option>
+              <option value="year">Per year</option>
+            </select>
+          </label>
           <p class="dose-hint" id={`dose-hint-${cls.id}`}>
             Compared at {dose.toLocaleString('en-GB')} {unitLabel}. Enter the amount you take to see your own costs.
           </p>
@@ -209,6 +218,7 @@ const emptyText = combos
     const body = section.querySelector<HTMLElement>('[data-rows]');
     const doseInput = section.querySelector<HTMLInputElement>('[data-dose]');
     const sortSelect = section.querySelector<HTMLSelectElement>('[data-sort]');
+    const periodSelect = section.querySelector<HTMLSelectElement>('[data-period]');
     if (!body || !doseInput || !sortSelect) continue;
 
     const standardDose = Number(section.dataset.standardDose);
@@ -238,6 +248,13 @@ const emptyText = combos
     const fromUrl = Number(params.get('dose'));
     if (fromUrl > 0) doseInput.value = String(fromUrl);
     if (params.get('sort')) sortSelect.value = params.get('sort') ?? 'dose';
+    // The main figure can be the cost per week, month or year at your daily dose (?per=month).
+    const PERIODS: Record<string, { days: number; label: string }> = {
+      week: { days: 7, label: 'Per week' },
+      month: { days: 30, label: 'Per month' },
+      year: { days: 365, label: 'Per year' },
+    };
+    if (periodSelect && PERIODS[params.get('per') ?? '']) periodSelect.value = params.get('per') ?? 'dose';
     const combosBox = filter('combos');
     if (combosBox && params.get('combos') === '1') combosBox.checked = true;
     const intlBox = filter('intl');
@@ -270,10 +287,29 @@ const emptyText = combos
         const intl = row.dataset.intl === '1';
         const value = { row, combo, dose: perUnit * dose, days: total / dose, pack: Number(row.dataset.price) };
         const doseCell = row.querySelector<HTMLElement>('[data-cell="dose"]')!;
-        doseCell.textContent = perDose(value.dose);
+        const monthCell = row.querySelector<HTMLElement>('[data-cell="month"]')!;
         doseCell.dataset.standardLabel ??= doseCell.dataset.label ?? '';
-        doseCell.dataset.label = dose === standardDose ? doseCell.dataset.standardLabel : 'Per your dose';
-        row.querySelector('[data-cell="month"]')!.textContent = `£${(value.dose * 30).toFixed(2)}`;
+        const doseText = perDose(value.dose);
+        const doseLabelText = dose === standardDose ? doseCell.dataset.standardLabel : 'Per your dose';
+        const period = PERIODS[periodSelect?.value ?? 'dose'];
+        if (period) {
+          // Main tile: cost over the period at this daily dose; second tile: the per-dose price
+          // (or per month, when the main tile already shows something else).
+          doseCell.textContent = `£${(value.dose * period.days).toFixed(2)}`;
+          doseCell.dataset.label = period.label;
+          if (period.days === 30) {
+            monthCell.textContent = doseText;
+            monthCell.dataset.label = doseLabelText;
+          } else {
+            monthCell.textContent = `£${(value.dose * 30).toFixed(2)}`;
+            monthCell.dataset.label = 'Per month';
+          }
+        } else {
+          doseCell.textContent = doseText;
+          doseCell.dataset.label = doseLabelText;
+          monthCell.textContent = `£${(value.dose * 30).toFixed(2)}`;
+          monthCell.dataset.label = 'Per month';
+        }
         row.querySelector('[data-cell="days"]')!.textContent = days(value.days);
         const visible =
           (!combo || showCombos) &&
@@ -343,14 +379,21 @@ const emptyText = combos
       }
 
       const heading = section.querySelector<HTMLElement>('[data-dose-heading]');
+      const chosen = PERIODS[periodSelect?.value ?? 'dose'];
       if (heading) {
         heading.dataset.standard ??= heading.textContent ?? '';
-        heading.textContent = dose === standardDose ? heading.dataset.standard : 'Per your dose';
+        heading.textContent = chosen ? chosen.label : dose === standardDose ? heading.dataset.standard : 'Per your dose';
+      }
+      const monthHeading = heading?.nextElementSibling as HTMLElement | null;
+      if (monthHeading) {
+        monthHeading.textContent =
+          chosen?.days === 30 ? (dose === standardDose ? heading!.dataset.standard ?? '' : 'Per your dose') : 'Per month';
       }
 
       const next = new URLSearchParams(location.search);
       dose === standardDose ? next.delete('dose') : next.set('dose', String(dose));
       sortSelect.value === 'dose' ? next.delete('sort') : next.set('sort', sortSelect.value);
+      chosen ? next.set('per', periodSelect!.value) : next.delete('per');
       showCombos ? next.set('combos', '1') : next.delete('combos');
       showIntl ? next.set('intl', '1') : next.delete('intl');
       const allChecked = retailerBoxes.every((b) => b.checked);
@@ -399,6 +442,6 @@ const emptyText = combos
 
     section.querySelector('[data-controls]')?.addEventListener('input', update);
     section.querySelector('[data-controls]')?.addEventListener('submit', (event) => event.preventDefault());
-    if (fromUrl > 0 || params.get('sort') || combosBox?.checked || intlBox?.checked || wantedRetailers?.length || params.get('stock') || params.get('tested')) update();
+    if (fromUrl > 0 || params.get('per') || params.get('sort') || combosBox?.checked || intlBox?.checked || wantedRetailers?.length || params.get('stock') || params.get('tested')) update();
   }
 </script>
