@@ -1,0 +1,39 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "fenugreek",
+        "form_raw": "Testofen",
+        "form_id": "testofen",
+        "amount_per_serving": 300.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "unclear",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": "Testofen",
+        "evidence": {
+          "amount_per_serving": "Testofen Fenugreek 300mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 60,
+    "pack_unit_type": "capsule",
+    "units_per_serving": 2.0,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.85,
+    "review_reasons": [
+      "amount_refers_to unclear, no cue words distinguishing extract vs compound mass"
+    ],
+    "evidence": {
+      "pack_units": "60 Capsules",
+      "units_per_serving": "2 capsules"
+    }
+  }
+}

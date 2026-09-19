@@ -1,0 +1,43 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "hops",
+        "form_raw": "extract",
+        "form_id": "hops - extract",
+        "amount_per_serving": 300.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "herb_equivalent",
+            "amount": 1200.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "4:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "300mg 4:1 extract",
+          "herb_equivalent": "Hop Flower 1200mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 90,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "90 Tablets"
+    }
+  }
+}

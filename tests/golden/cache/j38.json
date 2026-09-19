@@ -1,0 +1,38 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "shilajit",
+        "form_raw": "resin",
+        "form_id": "resin",
+        "amount_per_serving": 300.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "compound",
+        "components": [],
+        "extract_ratio": null,
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "Purified shilajit resin 300mg"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 30,
+    "pack_unit_type": "gram",
+    "units_per_serving": 0.3,
+    "servings_stated": 100,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [],
+    "evidence": {
+      "pack_units": "Pure Himalayan Shilajit Resin 30g",
+      "units_per_serving": "Serving size: 300mg",
+      "servings_stated": "Servings per jar: 100"
+    }
+  }
+}

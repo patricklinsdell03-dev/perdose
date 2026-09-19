@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-18T21:55:00+01:00",
+ "generated_at": "2026-09-19T01:33:21+01:00",
  "prompt_version": "1.1.0",
  "retailers": [
   {
@@ -8,7 +8,7 @@
    "listings": 34,
    "in_stock": 34,
    "last_seen": "2026-09-18",
-   "days_stale": 0
+   "days_stale": 1
   },
   {
    "id": "healthspan",
@@ -16,7 +16,7 @@
    "listings": 35,
    "in_stock": 35,
    "last_seen": "2026-09-18",
-   "days_stale": 0
+   "days_stale": 1
   },
   {
    "id": "holland_barrett",
@@ -24,7 +24,7 @@
    "listings": 27,
    "in_stock": 27,
    "last_seen": "2026-09-18",
-   "days_stale": 0
+   "days_stale": 1
   },
   {
    "id": "myprotein",
@@ -32,7 +32,7 @@
    "listings": 28,
    "in_stock": 28,
    "last_seen": "2026-09-17",
-   "days_stale": 1
+   "days_stale": 2
   }
  ],
  "products": 124,
@@ -100,6 +100,25 @@
   "cordyceps",
   "reishi",
   "garlic",
-  "tart_cherry"
+  "tart_cherry",
+  "echinacea",
+  "chamomile",
+  "lemon_balm",
+  "passionflower",
+  "hops",
+  "st_johns_wort",
+  "nettle",
+  "dandelion",
+  "holy_basil",
+  "gotu_kola",
+  "mucuna",
+  "shilajit",
+  "fenugreek",
+  "tribulus",
+  "horny_goat_weed",
+  "grape_seed",
+  "pine_bark",
+  "boswellia",
+  "moringa"
  ]
 }

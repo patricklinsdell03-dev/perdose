@@ -1,0 +1,45 @@
+{
+  "prompt_version": "1.1.0",
+  "model_id": "claude-sonnet-5",
+  "escalated": false,
+  "extraction": {
+    "actives": [
+      {
+        "compound_id": "echinacea",
+        "form_raw": "root extract",
+        "form_id": "extract",
+        "amount_per_serving": 400.0,
+        "amount_unit": "mg",
+        "amount_refers_to": "extract",
+        "components": [
+          {
+            "name": "herb_equivalent",
+            "amount": 4000.0,
+            "unit": "mg"
+          }
+        ],
+        "extract_ratio": "10:1",
+        "branded_extract": null,
+        "evidence": {
+          "amount_per_serving": "400mg 10:1 root extract",
+          "herb_equivalent": "4000mg (from 400mg 10:1 root extract)"
+        }
+      }
+    ],
+    "is_single_ingredient": true,
+    "other_actives": [],
+    "pack_units": 120,
+    "pack_unit_type": "tablet",
+    "units_per_serving": null,
+    "servings_stated": null,
+    "multipack_count": null,
+    "tested_claims": [],
+    "confidence": 0.9,
+    "review_reasons": [
+      "serving size (units per serving) not stated"
+    ],
+    "evidence": {
+      "pack_units": "120 Tablets"
+    }
+  }
+}
