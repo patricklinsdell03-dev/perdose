@@ -56,7 +56,7 @@ const Heading = `h${level}` as 'h2' | 'h3' | 'h4';
             {rest.map((cls) => (
               <li>
                 <a href={`/c/${slug}/${cls.slug}/`}>{cls.label}</a>
-                <strong>{perDose(ukRanked(cls)[0].price_per_std_dose)}</strong>
+                <strong data-form-price={ukRanked(cls)[0].price_per_std_dose}>{perDose(ukRanked(cls)[0].price_per_std_dose)}</strong>
               </li>
             ))}
           </ul>

@@ -68,6 +68,7 @@ function reportLink(): string {
   data-row
   data-id={offer.listing_id}
   data-ppu={offer.price_per_unit}
+  data-std={dose}
   data-total={(offer.days_supply ?? 0) * dose}
   data-price={offer.price_gbp}
   data-retailer={offer.retailer_id}

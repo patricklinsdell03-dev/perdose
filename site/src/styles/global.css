@@ -1340,11 +1340,12 @@ dl.facts dd {
 }
 @media (min-width: 64rem) {
   .home-hero {
-    grid-template-columns: minmax(0, 1fr) minmax(22rem, 26rem);
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-      'intro example'
-      'quick example'
-      'facts example';
+      'intro'
+      'quick'
+      'facts';
+    max-width: 60rem;
     align-items: start;
     padding-top: var(--space-5);
   }
